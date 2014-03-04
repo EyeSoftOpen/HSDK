@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="EyeSoft.Testing.Domain.Helpers.Domain1" assembly="EyeSoft.Testing" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Child">
+		<cache usage="nonstrict-read-write" region="MyRegion" />
+		<id name="Id" type="Guid">
+			<generator class="assigned" />
+		</id>
+		<property name="Street" not-null="true" />
+		<many-to-one name="School" column="SchoolId" not-null="true" />
+	</class>
+	<class name="School">
+		<cache usage="nonstrict-read-write" region="MyRegion" />
+		<id name="Id" type="Guid">
+			<generator class="assigned" />
+		</id>
+		<property name="Name" not-null="true" />
+		<bag name="ChildList" lazy="true" inverse="true" cascade="merge">
+			<key column="SchoolId" />
+			<one-to-many class="Child" />
+		</bag>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A77251F3-1232-476B-B8C8-B85A276D1043}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EyeSoft.ServiceModel</RootNamespace>
+    <AssemblyName>EyeSoft.ServiceModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindingExtensions.cs" />
+    <Compile Include="Bindings.cs" />
+    <Compile Include="ChannelFactoryExtensions.cs" />
+    <Compile Include="ChannelFactoryHelper.cs" />
+    <Compile Include="ChannelFactoryHelper%27TContract.cs" />
+    <Compile Include="Description\ErrorHandlerAttribute.cs" />
+    <Compile Include="Description\ServiceBehaviors.cs" />
+    <Compile Include="Extensions\ClientCredentialsExtensions.cs" />
+    <Compile Include="Extensions\Registration\IServiceConfiguration.cs" />
+    <Compile Include="Extensions\Registration\IServiceConfigurationBehaviors.cs" />
+    <Compile Include="Extensions\Registration\IServiceConfigurationBindings.cs" />
+    <Compile Include="Extensions\Registration\RouteCollectionExtensions.cs" />
+    <Compile Include="Extensions\Registration\ServiceConfiguration.cs" />
+    <Compile Include="Extensions\ServiceHostExtensions.cs" />
+    <Compile Include="Internals\ActivatorInstanceProvider.cs" />
+    <Compile Include="Internals\LocatorInstanceProvider.cs" />
+    <Compile Include="Internals\LocatorServiceHost.cs" />
+    <Compile Include="IOperationContext.cs" />
+    <Compile Include="IServiceSecurityContext.cs" />
+    <Compile Include="LocatorServiceHostFactory.cs" />
+    <Compile Include="OperationContextBase.cs" />
+    <Compile Include="OperationContextExtensions.cs" />
+    <Compile Include="Properties\BaseAssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceDefaults.cs" />
+    <Compile Include="ServiceHostConfigurator.cs" />
+    <Compile Include="ServiceOperationContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
+      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

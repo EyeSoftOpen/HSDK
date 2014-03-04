@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C698468-5881-42DE-AC91-ABC1034950BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EyeSoft.ServiceModel</RootNamespace>
+    <AssemblyName>EyeSoft.ServiceModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <BuildPackage>true</BuildPackage>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\4.0\ServiceModel\BindingExtensions.cs">
+      <Link>BindingExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Bindings.cs">
+      <Link>Bindings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\ChannelFactoryExtensions.cs">
+      <Link>ChannelFactoryExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\ChannelFactoryHelper%27TContract.cs">
+      <Link>ChannelFactoryHelper%27TContract.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\ChannelFactoryHelper.cs">
+      <Link>ChannelFactoryHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Description\ErrorHandlerAttribute.cs">
+      <Link>Description\ErrorHandlerAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Description\ServiceBehaviors.cs">
+      <Link>Description\ServiceBehaviors.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Extensions\ClientCredentialsExtensions.cs">
+      <Link>Extensions\ClientCredentialsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Extensions\Registration\IServiceConfiguration.cs">
+      <Link>Extensions\Registration\IServiceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Extensions\Registration\IServiceConfigurationBehaviors.cs">
+      <Link>Extensions\Registration\IServiceConfigurationBehaviors.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Extensions\Registration\IServiceConfigurationBindings.cs">
+      <Link>Extensions\Registration\IServiceConfigurationBindings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Extensions\Registration\RouteCollectionExtensions.cs">
+      <Link>Extensions\Registration\RouteCollectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Extensions\Registration\ServiceConfiguration.cs">
+      <Link>Extensions\Registration\ServiceConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Extensions\ServiceHostExtensions.cs">
+      <Link>Extensions\ServiceHostExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Internals\ActivatorInstanceProvider.cs">
+      <Link>Internals\ActivatorInstanceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Internals\LocatorInstanceProvider.cs">
+      <Link>Internals\LocatorInstanceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Internals\LocatorServiceHost.cs">
+      <Link>Internals\LocatorServiceHost.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\IOperationContext.cs">
+      <Link>IOperationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\IServiceSecurityContext.cs">
+      <Link>IServiceSecurityContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\LocatorServiceHostFactory.cs">
+      <Link>LocatorServiceHostFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\OperationContextBase.cs">
+      <Link>OperationContextBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\OperationContextExtensions.cs">
+      <Link>OperationContextExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\Properties\BaseAssemblyInfo.cs">
+      <Link>Properties\BaseAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\ServiceDefaults.cs">
+      <Link>ServiceDefaults.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\ServiceHostConfigurator.cs">
+      <Link>ServiceHostConfigurator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\ServiceModel\ServiceOperationContext.cs">
+      <Link>ServiceOperationContext.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
+      <Project>{4c464a88-7d14-4755-9ebf-82bbe1b168ed}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,126 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:viewModels="clr-namespace:EyeSoft.Demo.FiscalCode.Wpf.ViewModels"
+	xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+	mc:Ignorable="d" x:Class="EyeSoft.Demo.FiscalCode.Wpf.MainWindow"
+	Title="EyeSoft - Italian FiscalCode v. 1.2.0.0000"
+	Width="370"	
+	Height="310"
+	ResizeMode="CanMinimize"
+	WindowStartupLocation="CenterScreen">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Themes\Generic.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<DataTemplate x:Key="CalculateFiscalCodeTemplate" DataType="viewModels:CalculateFiscalCodeViewModel">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="258" />
+					</Grid.ColumnDefinitions>
+					<Label Grid.Row="0" Grid.Column="0" Content="Firstname"/>
+					<Label Grid.Row="1" Grid.Column="0" Content="Lastname"/>
+					<Label Grid.Row="2" Grid.Column="0" Content="Town" HorizontalAlignment="Right"/>
+					<TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}" Grid.Column="1" Grid.Row="0" />
+					<TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}" Grid.Column="1" Grid.Row="1" />
+					<controls:AutoCompleteBox
+						Text="{Binding TownSearch, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"
+						MinimumPrefixLength="2"
+						IsTextCompletionEnabled="True"
+						ItemsSource="{Binding Towns}" 
+						Grid.Column="1" Grid.Row="2" 
+					/>
+					<StackPanel Grid.ColumnSpan="2" Grid.Row="3" Orientation="Vertical" Margin="0,3,0,0">
+							<StackPanel Orientation="Horizontal">
+								<StackPanel Margin="5,0,0,0" Orientation="Horizontal">
+									<Label Content="Birthdate"/>
+									<DatePicker Margin="5,0,0,0" SelectedDate="{Binding Birthdate}" Width="112" />
+								</StackPanel>
+								<StackPanel Margin="30,0,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
+									<Label Content="Sex"/>
+									<ComboBox Width="80" SelectedIndex="{Binding Sex, UpdateSourceTrigger=PropertyChanged}">
+										<ComboBoxItem Content="Male" IsSelected="True"/>
+										<ComboBoxItem Content="Female"/>
+									</ComboBox>
+								</StackPanel>
+							</StackPanel>
+							<TextBlock Margin="5,10,0,0" Text="Fiscal code" />
+							<TextBox
+								HorizontalContentAlignment="Center"
+								FontSize="18"
+								Foreground="Green"
+								Text="{Binding FiscalCode, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+								IsReadOnly="True"
+							/>
+						</StackPanel>
+				</Grid>
+			</DataTemplate>
+			<DataTemplate x:Key="ValidateFiscalCodeTemplate" DataType="viewModels:ValidateFiscalCodeViewModel">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="258" />
+					</Grid.ColumnDefinitions>
+					<Label Content="Fiscal code" Grid.Column="0" Grid.Row="0" />
+					<TextBox
+						Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+						FontSize="18"
+						Foreground="Green"
+						Text="{Binding FiscalCode, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+					/>
+					<Label Grid.Column="0" Grid.Row="2" Content="Firstname"/>
+					<TextBox Grid.Column="1" Grid.Row="2" IsReadOnly="True" Text="{Binding FirstName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+					<Label Grid.Column="0" Grid.Row="3" Content="Lastname"/>
+					<TextBox Grid.Column="1" Grid.Row="3" IsReadOnly="True" Text="{Binding LastName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+		
+					<StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical">
+						<StackPanel Orientation="Horizontal">
+							<StackPanel Margin="3,0,0,0" Orientation="Horizontal">
+								<Label Content="Birthdate"/>
+								<TextBox Margin="13,0,0,0" Text="{Binding Birthdate}" IsReadOnly="True" Width="112" />
+							</StackPanel>
+							<StackPanel Margin="22,0,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
+								<Label Content="Sex"/>
+								<TextBox Width="80" IsReadOnly="True" Text="{Binding Sex, UpdateSourceTrigger=PropertyChanged}" />
+							</StackPanel>
+						</StackPanel>
+					</StackPanel>
+					<Label Grid.Column="0" Grid.Row="5" Content="Town" HorizontalAlignment="Right"/>
+					<TextBox Grid.Column="1" Grid.Row="5" IsReadOnly="True" Text="{Binding Town, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+				</Grid>
+			</DataTemplate>
+			<DataTemplate x:Key="Main" DataType="viewModels:MainViewModel">
+				<Grid>
+					<TabControl>
+						<TabItem Header="Calculate">
+							<ContentControl Content="{Binding CalculateFiscalCode}" ContentTemplate="{StaticResource CalculateFiscalCodeTemplate}" />
+						</TabItem>
+						<TabItem Header="Validate">
+							<ContentControl Content="{Binding ValidateFiscalCode}" ContentTemplate="{StaticResource ValidateFiscalCodeTemplate}" />
+						</TabItem>
+					</TabControl>
+				</Grid>
+			</DataTemplate>
+		</ResourceDictionary>
+	</Window.Resources>
+	<ContentControl Margin="5,10,5,5" Content="{Binding}" ContentTemplate="{StaticResource Main}" />
+</Window>

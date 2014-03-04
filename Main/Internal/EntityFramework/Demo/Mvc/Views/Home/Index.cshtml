@@ -1,0 +1,63 @@
+﻿@model EyeSoft.EntityFramework.Caching.Demo.Mvc.Models.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Entity Framework 2nd Level Caching</h2>
+<p>
+    This example shows the 2nd level cache in action
+</p>
+<p>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.CacheHits)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.CacheHits)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.CacheAdds)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.CacheAdds)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.CacheMisses)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.CacheMisses)
+    </div>
+</p>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post)) {    
+    <div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.SearchTerm)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.SearchTerm)
+        </div>
+        <p>
+            <input type="submit" value="Search For Customers" />
+        </p>
+    </div>
+}
+<div>
+    <h4>Matching Customers</h4>
+    <table id="customersGrid">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Customers)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

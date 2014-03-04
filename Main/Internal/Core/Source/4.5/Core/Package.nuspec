@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>$title$</id>
+		<title>$title$</title>
+		<version>$version$</version>
+		<owners>$author$</owners>
+		<description>$description$</description>
+		<copyright>$author$</copyright>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<authors>Matteo Migliore</authors>
+		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+		<iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
+		<tags>contract checking, message broker, LINQ, expression parser, IO, TPL, type auto-mapper, benchmark, calendar, schedule, serialization</tags>
+	</metadata>
+	<files>
+		<file src="..\..\4.0\Core\bin\release\$id$.dll" target="lib\net40\" />
+		<file src="..\..\4.0\Core\bin\release\$id$.pdb" target="lib\net40\" />
+	</files>
+</package>

@@ -1,0 +1,39 @@
+﻿<Window 
+	x:Class="EyeSoft.Docs.Settings.Wpf.Main"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:viewModels="clr-namespace:EyeSoft.Docs.Settings.ViewModels;assembly=EyeSoft.Docs.Settings.ViewModels"
+	mc:Ignorable="d"
+	d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel, IsDesignTimeCreatable=False}"
+	Title="EyeSoft - HSDK - Wpf.Facilities.Lab"
+	WindowStartupLocation="CenterScreen"
+	Height="350" Width="525">
+	<Window.Resources>
+		<Style TargetType="TextBlock">
+			<Setter Property="HorizontalAlignment" Value="Right" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+		<Style TargetType="TextBox">
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+			<Setter Property="Padding" Value="5" />
+		</Style>
+	</Window.Resources>
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40" />
+			<RowDefinition Height="10" />
+			<RowDefinition Height="40" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="50" />
+			<ColumnDefinition Width="10" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Text="Name"/>
+		<TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" />
+		<TextBlock Text="Address" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" />
+		<TextBox Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="2" />
+	</Grid>
+</Window>

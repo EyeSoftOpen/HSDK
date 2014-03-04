@@ -1,0 +1,38 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>EyeSoft.Testing</id>
+		<version>1.4.0.0020</version>
+		<title />
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Test helpers for domain and WCF.</description>
+		<copyright>EyeSoft</copyright>
+		<tags>domain WCF testing test TDD MOQ</tags>
+		<authors>Matteo Migliore</authors>
+		<owners>EyeSoft</owners>
+		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+		<dependencies>
+			<dependency id="EyeSoft.Core" version="1.4.0.0700" />
+			<dependency id="EyeSoft.Domain" version="0.4.4.3040" />
+			<dependency id="EyeSoft.Data" version="0.4.1.0050" />
+			<dependency id="Moq" version="4.0.10827.0" />
+			<dependency id="SharpTestsEx" version="1.1.1.0" />
+		</dependencies>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" targetFramework="" />
+			<frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="" />
+			<frameworkAssembly assemblyName="System.Core" targetFramework="" />
+			<frameworkAssembly assemblyName="System.Runtime.Serialization" targetFramework="" />
+			<frameworkAssembly assemblyName="System.ServiceModel" targetFramework="" />
+			<frameworkAssembly assemblyName="System.Xml" targetFramework="" />
+			<frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework="" />
+		</frameworkAssemblies>
+	</metadata>
+	<files>
+		<file src="obj\Debug\EyeSoft.Testing.dll" target="lib\net40\EyeSoft.Testing.dll" />
+		<file src="obj\Debug\EyeSoft.Testing.pdb" target="lib\net40\EyeSoft.Testing.pdb" />
+		<file src="**\*.*" target="src" exclude="bin\**\*.*;obj\**\*.*;**\*.csproj*;packages.config" />
+	</files>
+</package>

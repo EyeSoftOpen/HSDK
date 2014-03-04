@@ -1,0 +1,69 @@
+﻿<Window 
+	x:Class="EyeSoft.Windows.Model.Demo.Views.Main"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:viewModels="clr-namespace:EyeSoft.Windows.Model.Demo.ViewModels;assembly=EyeSoft.Windows.Model.Demo.ViewModels"
+	mc:Ignorable="d"
+	d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel, IsDesignTimeCreatable=False}"
+	Title="EyeSoft - HSDK - Windows.Model.Lab" Height="350" Width="525"
+	WindowStartupLocation="CenterScreen">
+	<Window.Resources>
+		<DataTemplate x:Key="Customer" DataType="{x:Type viewModels:CustomerViewModel}">
+			<StackPanel Orientation="Horizontal">
+				<Button Width="16" Height="16" Command="{Binding DeleteCommand}" Content="X" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,10,0" Background="#FDFDFD" />
+				<TextBlock Text="{Binding FullName}" />
+			</StackPanel>
+		</DataTemplate>
+	</Window.Resources>
+	<Grid Margin="20">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="30" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition Height="30" />
+			<RowDefinition Height="40" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+			<Button Content="Reload" Command="{Binding ReloadCommand}" />
+		</StackPanel>
+		<Rectangle Grid.Row="0" Grid.Column="1" Name="Rectangle" Width="20" Height="20" Fill="#4676c6" Margin="5" VerticalAlignment="Center">
+			<Rectangle.RenderTransform>
+				<RotateTransform Angle="0" CenterX="10" CenterY="10"/>
+			</Rectangle.RenderTransform>
+			<Rectangle.Triggers>
+				<EventTrigger RoutedEvent="Rectangle.Loaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="(TextBlock.RenderTransform).(RotateTransform.Angle)" From="0" To="360" Duration="0:0:5" RepeatBehavior="Forever" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+			</Rectangle.Triggers>
+		</Rectangle>
+		<StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+			<Button Content="Dialog" Width="50" HorizontalAlignment="Left" Command="{Binding ShowChildCommand}" />
+			<TextBox Text="{Binding FullName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true, NotifyOnValidationError=true}" Margin="5, 0" Width="100" />
+			<TextBlock Text="Length" Margin="30,5,0,0" />
+			<TextBlock Text="{Binding NameLength, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,0,0" />
+		</StackPanel>
+		<StackPanel Grid.Row="2" Grid.Column="0">
+			<TextBlock>Main customer</TextBlock>
+			<TextBlock Text="{Binding MainCustomer.FirstName}" />
+		</StackPanel>
+		<ListBox Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" ItemsSource="{Binding CustomerCollection}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<Button Width="20" Height="20" Padding="3" Command="{Binding DeleteCommand}" Content="X" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,10,0" />
+						<TextBlock Text="{Binding FullName}" />
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+</Window>

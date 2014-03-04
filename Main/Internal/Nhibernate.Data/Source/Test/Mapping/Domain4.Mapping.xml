@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" default-access="backfield" namespace="EyeSoft.Testing.Domain.Helpers.Domain4" assembly="EyeSoft.Testing" xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Blog">
+		<id name="Id" access="property" type="Guid" unsaved-value="00000000-0000-0000-0000-000000000000">
+			<generator class="assigned" />
+		</id>
+		<version name="Version" access="property" type="Timestamp" />
+		<property name="OwnerEmail" access="property" not-null="true" />
+		<bag name="PostList" access="property" lazy="true" cascade="merge,delete-orphan">
+			<key column="BlogId" />
+			<one-to-many class="Post" />
+		</bag>
+	</class>
+	<class name="Post">
+		<id name="Id" access="property" type="Guid" unsaved-value="00000000-0000-0000-0000-000000000000">
+			<generator class="assigned" />
+		</id>
+		<version name="Version" access="property" type="Timestamp" />
+		<property name="Title" access="property" not-null="true" />
+		<property name="Created" access="property" not-null="true" />
+		<many-to-one name="Blog" access="property" column="BlogId" not-null="true" cascade="merge" />
+		<property name="Data" access="property" not-null="true" />
+		<property name="Modified" access="property" />
+	</class>
+</hibernate-mapping>

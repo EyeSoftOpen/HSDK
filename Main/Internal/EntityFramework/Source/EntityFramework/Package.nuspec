@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>EyeSoft.Data.EntityFramework</id>
+		<version>0.3.0.0040-beta1</version>
+		<authors>Matteo Migliore</authors>
+		<owners>EyeSoft</owners>
+		<title />
+		<description>Entity Framework provider toolkit. Code from http://code.msdn.microsoft.com/EFProviderWrappers, refactored.</description>
+		<copyright>EyeSoft</copyright>
+		<tags>entity framework caching tracing SQL database</tags>
+		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" />
+			<frameworkAssembly assemblyName="System.Core" />
+			<frameworkAssembly assemblyName="System.Data" />
+			<frameworkAssembly assemblyName="System.Data.Entity" />
+		</frameworkAssemblies>
+		<dependencies>
+			<dependency id="EyeSoft.Data" version="0.4.1.0050" />
+			<dependency id="EyeSoft.Domain" version="0.4.4.3040" />
+			<dependency id="EntityFramework" version="6.0.0-beta1" />
+		</dependencies>
+	</metadata>
+</package>

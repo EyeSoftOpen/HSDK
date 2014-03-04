@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B89C9243-CF13-4B38-8199-9125BA7B625C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EyeSoft.Domain</RootNamespace>
+    <AssemblyName>EyeSoft.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregates\IValueObject%27T.cs" />
+    <Compile Include="Aggregates\Entity%27T.cs" />
+    <Compile Include="Aggregates\Entity.cs" />
+    <Compile Include="Aggregates\Aggregate%27TKey.cs" />
+    <Compile Include="Aggregates\Aggregate.cs" />
+    <Compile Include="Aggregates\IEntity.cs" />
+    <Compile Include="Aggregates\IAggregate.cs" />
+    <Compile Include="Aggregates\VersionedAggregate%27T.cs" />
+    <Compile Include="Aggregates\VersionedAggregate.cs" />
+    <Compile Include="Aggregates\VersionedEntity%27T.cs" />
+    <Compile Include="Aggregates\VersionedEntity.cs" />
+    <Compile Include="DomainEvents\DomainEventAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transactional\Discover\DomainEntityDiscover.cs" />
+    <Compile Include="Transactional\Discover\IRepositoryDiscover.cs" />
+    <Compile Include="Transactional\Discover\RepositoryDiscover.cs" />
+    <Compile Include="Transactional\Discover\UnitOfWorkEntities.cs" />
+    <Compile Include="Transactional\Repositories\ILoadRepository%27T.cs" />
+    <Compile Include="Transactional\Repositories\Implementations\ReadOnlyRepository%27T.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transactional\Repositories\Implementations\Repository%27T.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transactional\Repositories\IReadRepository%27T.cs" />
+    <Compile Include="Transactional\Repositories\IRepository%27T.cs" />
+    <Compile Include="Transactional\ITransactionalCollectionFactory.cs" />
+    <Compile Include="Transactional\IReadTransactionalCollection.cs" />
+    <Compile Include="Transactional\ITransactionalCollection.cs" />
+    <Compile Include="Transactional\Repositories\IWriteRepository%27T.cs" />
+    <Compile Include="Transactional\UnitOfWork\ReadOnlyUnitOfWork.cs" />
+    <Compile Include="Transactional\UnitOfWork\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
+      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir).nuget\NuGet.exe" pack -Symbols "$(ProjectDir)Package.nuspec"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

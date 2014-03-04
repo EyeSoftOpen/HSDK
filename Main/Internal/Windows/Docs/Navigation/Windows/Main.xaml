@@ -1,0 +1,64 @@
+﻿<controls:MetroWindow 
+	x:Class="EyeSoft.Demo.Navigation.Windows.Presentation.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	mc:Ignorable="d"
+    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+	xmlns:core="clr-namespace:EyeSoft.Demo.Navigation.Windows.Presentation.Core"
+	xmlns:viewModels="clr-namespace:EyeSoft.Demo.Navigation.Windows.ViewModels;assembly=EyeSoft.Demo.Navigation.Windows.ViewModels"
+	WindowStartupLocation="CenterScreen"
+	d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel, IsDesignTimeCreatable=True}"
+	Title="Navigation Demo"
+	Height="250"
+	Width="410"
+	MinWidth="410"
+	MinHeight="250"
+	BorderBrush="{DynamicResource BorderColor}"
+	BorderThickness="1,0,1,1"
+	ShowTitleBar="True"
+	ShowIconOnTitleBar="true">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Themes\MahApps.xaml" />
+				<ResourceDictionary Source="Themes\MahApps.Dark.xaml" />
+				<ResourceDictionary Source="Themes\Generic.xaml" />
+				<ResourceDictionary Source="Resources/Icons.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<core:NavigationDemoViewModelToComponentConverter x:Key="NavigationDemoViewModelToComponentConverter" />
+		</ResourceDictionary>
+	</Window.Resources>
+	<controls:MetroWindow.WindowCommands>
+		<controls:WindowCommands>
+			<Button>
+				<StackPanel Orientation="Horizontal">
+					<Rectangle Width="20" Height="20">
+						<Rectangle.Fill>
+							<VisualBrush Stretch="Fill" Visual="{StaticResource appbar_settings}" />
+						</Rectangle.Fill>
+					</Rectangle>
+					<TextBlock Margin="10,0,0,0" Text="settings" />
+				</StackPanel>
+			</Button>
+		</controls:WindowCommands>
+	</controls:MetroWindow.WindowCommands>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="90" />
+			<ColumnDefinition Width="10" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<StackPanel>
+			<Button BorderThickness="1,0,1,0" Command="{Binding GoToWelcomeCommand}" HorizontalContentAlignment="Left" Content="Welcome"  />
+			<Button Command="{Binding GoToTimeCommand}" HorizontalContentAlignment="Left" Content="Time" />
+		</StackPanel>
+		<controls:TransitioningContentControl
+			Grid.Column="2"
+			Margin="20"
+			Transition="Left"
+			Content="{Binding Content, Converter={StaticResource NavigationDemoViewModelToComponentConverter}}"
+		/>
+	</Grid>
+</controls:MetroWindow>

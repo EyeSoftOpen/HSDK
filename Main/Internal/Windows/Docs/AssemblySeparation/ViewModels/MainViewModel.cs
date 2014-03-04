@@ -1,0 +1,20 @@
+﻿namespace EyeSoft.AssemblySeparation.ViewModels
+{
+	using System;
+
+	using EyeSoft.Windows.Model;
+
+	public class MainViewModel : ViewModel
+	{
+		public MainViewModel()
+		{
+			Property(() => Name).OnChanged(x => Console.WriteLine("Changed name to {0}.", x));
+		}
+
+		public string Name
+		{
+			get { return GetProperty<string>(); }
+			set { SetProperty(value); }
+		}
+	}
+}

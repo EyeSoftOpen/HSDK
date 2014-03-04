@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+	xmlns:converters="clr-namespace:EyeSoft.Windows.Model.Converters;assembly=EyeSoft.Windows.Model">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary>
+			<converters:ErrorConverter x:Key="ErrorConverter" />
+		</ResourceDictionary>
+	</ResourceDictionary.MergedDictionaries>
+
+	<Style TargetType="controls:MetroWindow">
+		<Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
+	</Style>
+
+	<Style TargetType="UserControl">
+		<Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
+	</Style>
+
+	<Style x:Key="NoBorderButtonBase" TargetType="{x:Type ButtonBase}">
+		<Setter Property="Width" Value="30" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Border Name="border" Background="{TemplateBinding Background}">
+						<Grid Margin="2" Width="{TemplateBinding Background}">
+							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Name="content"/>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="{DynamicResource BackgroundDarkColor}" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style TargetType="Hyperlink">
+		<Setter Property="Foreground" Value="Black" />
+		<Setter Property="TextDecorations" Value="None" />
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Foreground" Value="{DynamicResource AccentColorBrush}" />
+				<Setter Property="TextDecorations" Value="Underline" />
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="True">
+				<Setter Property="Cursor" Value="Hand" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style TargetType="Button">
+		<Setter Property="Background" Value="Black" />
+		<Setter Property="Height" Value="30" />
+	</Style>
+</ResourceDictionary>

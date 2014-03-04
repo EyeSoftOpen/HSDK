@@ -1,0 +1,14 @@
+﻿<Window 
+	x:Class="EyeSoft.AssemblySeparation.Wpf.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:viewModels="clr-namespace:EyeSoft.AssemblySeparation.ViewModels;assembly=EyeSoft.AssemblySeparation.ViewModels"
+	d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel, IsDesignTimeCreatable=True}"
+	Title="EyeSoft - AssemblySeparation" Height="350" Width="525">
+	<Grid>
+		<TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" Width="200" Height="40" />
+	</Grid>
+</Window>
