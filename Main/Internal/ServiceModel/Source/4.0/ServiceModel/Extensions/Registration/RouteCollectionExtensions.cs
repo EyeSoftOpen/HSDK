@@ -14,6 +14,7 @@ namespace EyeSoft.ServiceModel.Registration
 		public static RouteCollection AddService<TContract, TService>(
 			this RouteCollection routes,
 			Binding[] bindings = null,
+			string[] allowedSchemes = null,
 			ILocator locator = null,
 			params IServiceBehavior[] behaviors)
 			where TService : class, TContract
@@ -27,7 +28,7 @@ namespace EyeSoft.ServiceModel.Registration
 
 			var hostConfigurator = new ServiceHostConfigurator(typeof(TContract), behaviors, bindings);
 
-			var serviceHostFactory = new LocatorServiceHostFactory(hostConfigurator, locator);
+			var serviceHostFactory = new LocatorServiceHostFactory(hostConfigurator, locator, allowedSchemes);
 
 			var serviceRoute = new ServiceRoute(serviceType.Name, serviceHostFactory, serviceType);
 
@@ -38,6 +39,7 @@ namespace EyeSoft.ServiceModel.Registration
 
 		public static IServiceConfiguration ConfigureService<TContract, TService>(
 			this ICollection<RouteBase> routes,
+			string[] allowedSchemes = null,
 			ILocator locator = null)
 			where TService : class, TContract
 		{
@@ -46,7 +48,7 @@ namespace EyeSoft.ServiceModel.Registration
 				locator = Locator.Instance;
 			}
 
-			return new ServiceConfiguration(locator, routes, typeof(TContract), typeof(TService));
+			return new ServiceConfiguration(locator, routes, allowedSchemes, typeof(TContract), typeof(TService));
 		}
 	}
 }

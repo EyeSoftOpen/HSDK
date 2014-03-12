@@ -2,11 +2,11 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright EyeSoft© 2014")]
 [assembly: AssemblyProduct("EyeSoft.Testing")]
 
 [assembly: AssemblyTitle("EyeSoft.Testing")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Test helpers for domain and WCF.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,6 +1,10 @@
 ﻿namespace EyeSoft.ServiceModel.Hosting.Web
 {
 	using System;
+	using System.Linq;
+	using System.Security.Cryptography.X509Certificates;
+	using System.ServiceModel;
+	using System.ServiceModel.Description;
 	using System.Web;
 	using System.Web.Http;
 	using System.Web.Routing;
@@ -29,15 +33,21 @@
 
 			var exceptionlessErrorHandlerBehavior = new ExceptionErrorHandlerBehaviorAttribute();
 
-			var serviceCredentials = ServiceBehaviors.ServiceCredentials("EyeMobile", () => new CustomUsernameValidator());
-
 			locator
 				.Transient<Calculator>()
 				.Transient<IMathService, MathService>();
 
-			routes.ConfigureService<IMathService, MathService>()
-				.Behaviors(serviceCredentials, exceptionlessErrorHandlerBehavior)
-				.Bindings(Bindings.WsMessageWithUsername.SetClockSkew(TimeSpan.FromMinutes(15)));
+			var serviceCredentials =
+				ServiceBehaviors.ServiceCredentials("EyeSoft", () => new CustomUsernameValidator());
+
+			var binding = new WSHttpBinding(SecurityMode.TransportWithMessageCredential);
+			binding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
+
+			var metadata = new ServiceMetadataBehavior { HttpsGetEnabled = true };
+
+			routes.ConfigureService<IMathService, MathService>(new[] { "https" })
+				.Behaviors(serviceCredentials, exceptionlessErrorHandlerBehavior, metadata)
+				.Bindings(binding);
 		}
 	}
 }

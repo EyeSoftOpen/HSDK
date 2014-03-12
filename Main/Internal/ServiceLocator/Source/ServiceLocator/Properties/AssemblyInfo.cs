@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("EyeSoft.ServiceLocator")]
 
 [assembly: AssemblyTitle("EyeSoft.ServiceLocator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An inversion control abstraction system.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

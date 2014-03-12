@@ -16,16 +16,19 @@ namespace EyeSoft.ServiceModel.Registration
 
 		private readonly ICollection<RouteBase> routes;
 
+		private readonly string[] allowedSchemes;
+
 		private readonly Type contractType;
 
 		private readonly Type serviceType;
 
 		private IServiceBehavior[] serviceBehaviors;
 
-		public ServiceConfiguration(ILocator locator, ICollection<RouteBase> routes, Type contractType, Type serviceType)
+		public ServiceConfiguration(ILocator locator, ICollection<RouteBase> routes, string[] allowedSchemes, Type contractType, Type serviceType)
 		{
 			this.locator = locator;
 			this.routes = routes;
+			this.allowedSchemes = allowedSchemes;
 			this.contractType = contractType;
 			this.serviceType = serviceType;
 		}
@@ -41,7 +44,9 @@ namespace EyeSoft.ServiceModel.Registration
 		{
 			var hostConfigurator = new ServiceHostConfigurator(contractType, serviceBehaviors, bindings);
 
-			routes.Add(new ServiceRoute(serviceType.Name, new LocatorServiceHostFactory(hostConfigurator, locator), serviceType));
+			var hostFactory = new LocatorServiceHostFactory(hostConfigurator, locator, allowedSchemes);
+
+			routes.Add(new ServiceRoute(serviceType.Name, hostFactory, serviceType));
 
 			return routes;
 		}

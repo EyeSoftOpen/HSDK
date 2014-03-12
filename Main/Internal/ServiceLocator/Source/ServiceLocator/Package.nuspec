@@ -1,29 +1,20 @@
 <?xml version="1.0"?>
-<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-		<id>EyeSoft.ServiceLocator</id>
-		<version>1.0.2.2040</version>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>$title$</id>
+		<title>$title$</title>
+		<version>$version$</version>
+		<owners>$author$</owners>
+		<description>$description$</description>
+		<copyright>$author$</copyright>
 		<authors>Matteo Migliore</authors>
-		<owners>EyeSoft</owners>
 		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
 		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>	
+		<iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>An inversion control abstraction system.</description>
-		<summary></summary>
-		<frameworkAssemblies>
-			<frameworkAssembly assemblyName="System" />
-			<frameworkAssembly assemblyName="System.Core" />
-			<frameworkAssembly assemblyName="System.Web.Mvc" />
-		</frameworkAssemblies>
+		<tags>ioc ioc inversion-of-control locator castle windsor unity</tags>
 		<dependencies>
-			<dependency id="CommonServiceLocator" version="1.0" />
-			<dependency id="EyeSoft.Core" version="1.4.0.0630" />
+			<dependency id="EyeSoft.Core" version="1.4.0.0980" />
 		</dependencies>
 	</metadata>
-	<files>
-		<file src="obj\Debug\EyeSoft.ServiceLocator.dll" target="lib\net40\EyeSoft.ServiceLocator.dll" />
-		<file src="obj\Debug\EyeSoft.ServiceLocator.pdb" target="lib\net40\EyeSoft.ServiceLocator.pdb" />
-		<file src="**\*.*" target="src" exclude="bin\**\*.*;obj\**\*.*;**\*.csproj*;packages.config" />
-	</files>
 </package>
