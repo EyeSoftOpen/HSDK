@@ -1,8 +1,5 @@
 ﻿namespace EyeSoft.ServiceModel.Hosting.Web
 {
-	using System;
-	using System.Linq;
-	using System.Security.Cryptography.X509Certificates;
 	using System.ServiceModel;
 	using System.ServiceModel.Description;
 	using System.Web;
