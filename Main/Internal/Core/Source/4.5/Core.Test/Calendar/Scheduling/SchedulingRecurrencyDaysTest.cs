@@ -88,6 +88,18 @@
 		}
 
 		[TestMethod]
+		public void VerifyDatesWithWeeklyRecurrencyWhereEventIsExactlyStartDate()
+		{
+			var start2 = new DateTime(2014, 11, 10);
+			var end2 = new DateTime(2014, 11, 16);
+			var currentDate = new DateTime(2014, 09, 15);
+			var lastFrequency = new DateTime(2014, 12, 31);
+
+			Scheduling.RecurrencyDays(RecurrencyFrequency.Weekly, start2, end2, currentDate, lastFrequency)
+				.Should().Have.SameSequenceAs(start2);
+		}
+
+		[TestMethod]
 		public void VerifyDatesWithWeeklyRecurrencyWhereEventIsPastStartDate()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Weekly, start, end, start.AddDays(2))
@@ -100,7 +112,7 @@
 			var endDate = end.AddDays(22);
 
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Biweekly, start, endDate, eventDate)
-				.Should().Have.SameSequenceAs(new DateTime(Year, 2, 18), new DateTime(Year, 3, 4));
+				.Should().Have.SameSequenceAs(new DateTime(Year, 2, 4), new DateTime(Year, 2, 18), new DateTime(Year, 3, 4));
 		}
 
 		[TestMethod]

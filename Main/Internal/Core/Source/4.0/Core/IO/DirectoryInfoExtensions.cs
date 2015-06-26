@@ -27,7 +27,7 @@
 				return;
 			}
 
-			directoryInfo.Delete();
+			directoryInfo.Delete(true);
 		}
 	}
 }

@@ -93,7 +93,7 @@
 					return null;
 			}
 
-			while (startRecurrencyDate <= start)
+			while (startRecurrencyDate < start)
 			{
 				startRecurrencyDate = NextDate(startRecurrencyDate.Value, recurrency);
 			}

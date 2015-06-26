@@ -208,13 +208,13 @@
       <Project>{F213CB7D-2938-412D-9577-1D59D08753E3}</Project>
       <Name>EyeSoft.SharpTests.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Testing\Source\Testing\EyeSoft.Testing.csproj">
       <Project>{B3EC5E2B-D251-417D-BD42-8BA9E6B60885}</Project>
       <Name>EyeSoft.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\4.0\Core\EyeSoft.Core.csproj">
+      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
+      <Name>EyeSoft.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

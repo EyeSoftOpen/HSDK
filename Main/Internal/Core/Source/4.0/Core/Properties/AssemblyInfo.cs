@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
@@ -17,7 +18,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.4.0.0980")]
 [assembly: AssemblyFileVersion("1.4.0.0980")]
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
+[assembly: InternalsVisibleTo(
 	"EyeSoft.Core.Test, PublicKey=" +
 	"00240000048000009400000006020000002400005253413100040000010001000bdb332a5b20b5" +
 	"f950200568074b1962cf720a08415cc6523199ad011fe310b90146b983aaa1e23cb878c87e8fc6" +
