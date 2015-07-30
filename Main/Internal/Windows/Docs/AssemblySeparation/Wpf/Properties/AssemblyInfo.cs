@@ -2,12 +2,12 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 
-[assembly: AssemblyTitle("EyeSoft.AssemblySeparation.Wpf")]
+[assembly: AssemblyTitle("EyeSoft.AssemblySeparation.Windows")]
 [assembly: AssemblyProduct("EyeSoft.AssemblySeparation")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

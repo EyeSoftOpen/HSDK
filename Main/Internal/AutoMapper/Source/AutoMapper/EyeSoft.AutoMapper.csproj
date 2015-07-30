@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -52,6 +52,9 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\..\..\..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="EyeSoft.Core">
+      <HintPath>..\..\..\..\Libraries\EyeSoft.Core\Current\4.0\EyeSoft.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,12 +63,6 @@
     <Compile Include="AutoMapperProjection.cs" />
     <Compile Include="AutoMapperMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Package.nuspec">

@@ -2,12 +2,12 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 
-[assembly: AssemblyTitle("EyeSoft.Docs.Logging.Wpf")]
-[assembly: AssemblyProduct("EyeSoft.Docs.Logging.Wpf")]
+[assembly: AssemblyTitle("EyeSoft.Docs.Logging.Windows")]
+[assembly: AssemblyProduct("EyeSoft.Docs.Logging.Windows")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

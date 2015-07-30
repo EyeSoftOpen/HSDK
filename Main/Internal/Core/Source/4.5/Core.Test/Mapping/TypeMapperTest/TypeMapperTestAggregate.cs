@@ -4,7 +4,6 @@
 	using System.Linq;
 
 	using EyeSoft.Mapping;
-	using EyeSoft.Testing.Domain.Helpers.Domain4;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -14,7 +13,7 @@
 	public class TypeMapperTestAggregate
 	{
 		[TestMethod]
-		public virtual void CheckMappingOfAggregate()
+		public void CheckMappingOfAggregate()
 		{
 			var mappedType =
 				TypeMapperFactory.Create().Map<Blog>();
@@ -25,6 +24,21 @@
 
 			collection.Name.Should().Be.EqualTo("PostList");
 			collection.Type.Should().Be.EqualTo(typeof(IList<Post>));
+		}
+
+		// ReSharper disable once ClassNeverInstantiated.Local
+		private class Blog
+		{
+			// ReSharper disable once UnusedMember.Local
+			public string Name { get; set; }
+
+			// ReSharper disable once UnusedMember.Local
+			public IList<Post> PostList { get; set; }
+		}
+
+		// ReSharper disable once ClassNeverInstantiated.Local
+		private class Post
+		{
 		}
 	}
 }

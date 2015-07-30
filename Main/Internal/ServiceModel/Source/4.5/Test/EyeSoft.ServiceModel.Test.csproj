@@ -51,6 +51,12 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\..\..\..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="EyeSoft.Core">
+      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\4.5\EyeSoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EyeSoft.Web">
+      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Web\4.5.1\EyeSoft.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\..\..\..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
@@ -92,18 +98,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj">
-      <Project>{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}</Project>
-      <Name>EyeSoft.ServiceLocator.Windsor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj">
-      <Project>{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}</Project>
-      <Name>EyeSoft.ServiceLocator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServiceModel\EyeSoft.ServiceModel.csproj">
       <Project>{6c698468-5881-42de-ac91-abc1034950bd}</Project>
       <Name>EyeSoft.ServiceModel</Name>

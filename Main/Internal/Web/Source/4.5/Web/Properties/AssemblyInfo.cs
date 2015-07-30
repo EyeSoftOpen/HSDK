@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
 [assembly: AssemblyProduct("EyeSoft.Web")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2014")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
 
 [assembly: AssemblyTitle("EyeSoft.Web")]
 [assembly: AssemblyDescription("Web and HTTP classes and extensions.")]

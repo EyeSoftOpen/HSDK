@@ -80,10 +80,6 @@
       <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Testing\EyeSoft.Testing.csproj">
-      <Project>{B3EC5E2B-D251-417D-BD42-8BA9E6B60885}</Project>
-      <Name>EyeSoft.Testing</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

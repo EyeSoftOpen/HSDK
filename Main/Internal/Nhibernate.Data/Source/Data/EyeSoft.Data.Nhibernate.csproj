@@ -83,13 +83,9 @@
     <Compile Include="Mapping\Mappers\ReferenceMapper%27T.cs" />
     <Compile Include="Mapping\ModelAnnotationsMapper.cs" />
     <Compile Include="Mapping\TypeAnnotationsMapper.cs" />
-    <Compile Include="NhibernateConfiguration.cs" />
     <Compile Include="NhibernateDatabaseSchema.cs" />
     <Compile Include="NhibernateHelper.cs" />
-    <Compile Include="NhibernateFactory.cs" />
     <Compile Include="NhibernateSessionTracker.cs" />
-    <Compile Include="Transactional\NhibernateReadTransactionalCollection.cs" />
-    <Compile Include="Transactional\NhibernateTransactionalCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

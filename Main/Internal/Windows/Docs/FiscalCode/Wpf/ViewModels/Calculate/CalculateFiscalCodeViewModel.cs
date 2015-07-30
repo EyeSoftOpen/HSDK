@@ -1,4 +1,4 @@
-namespace EyeSoft.Demo.FiscalCode.Wpf.ViewModels
+namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 {
 	using System;
 	using System.Collections.Generic;

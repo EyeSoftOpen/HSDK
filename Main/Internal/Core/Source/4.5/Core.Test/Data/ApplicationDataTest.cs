@@ -5,9 +5,7 @@
 
 	using EyeSoft.Data;
 	using EyeSoft.IO;
-	using EyeSoft.Serialization;
 	using EyeSoft.Test.Data.Helpers;
-	using EyeSoft.Xml.Serialization;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -56,7 +54,9 @@
 		[TestMethod]
 		public void LoadProtecedDataOfNotExistingFileVerifyDataIsNull()
 		{
+			// ReSharper disable once RedundantAssignment
 			var dataTestStorage = new DataTestStorage(false);
+
 			Storage.Reset(() => dataTestStorage);
 
 			dataSettings.Load().Should().Be.Null();

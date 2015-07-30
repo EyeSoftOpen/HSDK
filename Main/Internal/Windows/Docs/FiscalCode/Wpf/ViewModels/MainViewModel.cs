@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Demo.FiscalCode.Wpf.ViewModels
+﻿namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 {
 	using System.Threading.Tasks;
 
@@ -17,12 +17,14 @@
 
 		public CalculateFiscalCodeViewModel CalculateFiscalCode
 		{
-			get; private set;
+			get;
+			private set;
 		}
 
 		public ValidateFiscalCodeViewModel ValidateFiscalCode
 		{
-			get; private set;
+			get;
+			private set;
 		}
 	}
 }

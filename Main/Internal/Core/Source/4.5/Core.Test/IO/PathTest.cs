@@ -12,7 +12,7 @@
 		[TestMethod]
 		public void VerifyTrimmedPathDoesNotContainDirectorySeparator()
 		{
-			@"C:\temp\".TrimPath().Should().Be.EqualTo("c:\temp");
+			@"c:\temp\".TrimPath().Should().Be.EqualTo(@"c:\temp");
 		}
 
 		[TestMethod]

@@ -1,4 +1,4 @@
-namespace EyeSoft.Demo.FiscalCode.Wpf.ViewModels
+namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 {
 	using EyeSoft.Accounting.Italian;
 	using EyeSoft.FluentValidation;

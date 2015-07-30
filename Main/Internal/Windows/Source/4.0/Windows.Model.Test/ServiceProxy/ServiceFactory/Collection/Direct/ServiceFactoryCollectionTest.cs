@@ -1,5 +1,7 @@
 ﻿namespace EyeSoft.Windows.Model.Test
 {
+	using System.Threading;
+
 	using EyeSoft.Windows.Model.Collections.ObjectModel;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
@@ -16,10 +18,20 @@
 		{
 			IObservableCollection<CustomerViewModel> collection = null;
 
+			var manualResetEvent = new ManualResetEvent(false);
+
 			factoryHelper
 				.ServiceFactory
 				.Fill(x => x.GetCustomersWithTurnoverGreatherThan(0))
-				.Completed<CustomerViewModel>(x => { collection = x; });
+				.Completed<CustomerViewModel>(
+					x =>
+						{
+							collection = x;
+							
+							manualResetEvent.Set();
+						});
+
+			manualResetEvent.WaitOne();
 
 			collection.Should().Have.SameSequenceAs(Known.CustomerModel.All);
 		}

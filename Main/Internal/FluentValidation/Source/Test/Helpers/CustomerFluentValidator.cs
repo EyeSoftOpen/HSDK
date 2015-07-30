@@ -1,7 +1,5 @@
 ﻿namespace EyeSoft.FluentValidation.Test
 {
-	using EyeSoft.Test.Validation;
-
 	using global::FluentValidation;
 
 	internal class CustomerFluentValidator : FluentValidator<ValidatorTest.ValidableCustomer>

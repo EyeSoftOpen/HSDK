@@ -3,7 +3,6 @@
 	using System.Collections.Generic;
 
 	using EyeSoft.Mapping.Strategies;
-	using EyeSoft.Testing.Domain.Helpers.Domain1;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,6 +32,10 @@
 		public void ExtractPrimitivePropertyOnCollectionTypeExpectedReturnsFalse()
 		{
 			CheckProperty<List<School>>(false);
+		}
+
+		private class School
+		{
 		}
 	}
 }

@@ -1,9 +1,10 @@
-﻿namespace EyeSoft.Docs.Settings.Wpf
+﻿namespace EyeSoft.Docs.Settings.Windows
 {
 	using EyeSoft.Docs.Settings.ViewModels;
 	using EyeSoft.Serialization;
-	using EyeSoft.ServiceStack.Text;
 	using EyeSoft.Windows.Model;
+
+	using Newtonsoft.Json;
 
 	public partial class App
 	{

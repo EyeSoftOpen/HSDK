@@ -21,7 +21,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
-		<AutoGenerateBindingRedirects />
+    <AutoGenerateBindingRedirects />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -156,10 +156,6 @@
     <ProjectReference Include="..\..\..\..\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj">
       <Project>{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}</Project>
       <Name>EyeSoft.ServiceLocator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Testing\Source\Testing\EyeSoft.Testing.csproj">
-      <Project>{B3EC5E2B-D251-417D-BD42-8BA9E6B60885}</Project>
-      <Name>EyeSoft.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Docs\Demo\Configuration\EyeSoft.Windows.Model.Demo.Configuration.csproj">
       <Project>{78ABA50A-3434-4013-889A-3092D74B4854}</Project>

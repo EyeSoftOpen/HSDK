@@ -4,7 +4,6 @@
 	using System.Linq;
 
 	using EyeSoft.Mapping;
-	using EyeSoft.Testing.Domain.Helpers.Domain2;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,6 +32,18 @@
 						.Register<CustomerAggregate>()
 						.Register<CustomerAggregate>())
 				.Should().Throw<ArgumentException>();
+		}
+
+		private class CustomerAggregate
+		{
+		}
+
+		private class HeadOffice
+		{
+		}
+
+		private class Order
+		{
 		}
 	}
 }

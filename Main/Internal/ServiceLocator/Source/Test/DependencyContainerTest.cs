@@ -1,11 +1,11 @@
 ﻿namespace EyeSoft.ServiceLocator.Test
 {
 	using System;
-	using System.Web.Mvc;
 
-	using EyeSoft.Extensions;
 	using EyeSoft.ServiceLocator;
 	using EyeSoft.ServiceLocator.Test.Helpers;
+
+	using Microsoft.Practices.ServiceLocation;
 
 	using SharpTestsEx;
 
@@ -42,10 +42,10 @@
 
 		public virtual void ResolveANotRegisterServiceExpectedNullInstance()
 		{
-			container
-				.Convert<IDependencyResolver>()
-				.GetService(typeof(INotRegisteredService))
-				.Should().Be.Null();
+			Executing.This(() => container
+				.GetService(typeof(INotRegisteredService)))
+				.Should()
+				.Throw<ActivationException>();
 		}
 
 		protected abstract IDependencyContainer CreateDependencyContainer();

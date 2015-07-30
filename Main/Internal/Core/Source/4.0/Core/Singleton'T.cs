@@ -1,7 +1,6 @@
 ﻿namespace EyeSoft
 {
 	using System;
-	using System.Diagnostics;
 
 	public class Singleton<T> where T : class
 	{
@@ -88,7 +87,7 @@
 			}
 		}
 
-		public void Reset(T instance)
+		internal void Reset(T instance)
 		{
 			lock (lockInstance)
 			{
@@ -98,7 +97,7 @@
 			}
 		}
 
-		public void Reset(Func<T> func)
+		internal void Reset(Func<T> func)
 		{
 			lock (lockInstance)
 			{

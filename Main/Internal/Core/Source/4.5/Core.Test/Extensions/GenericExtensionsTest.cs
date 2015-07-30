@@ -4,10 +4,8 @@
 	using System.Collections.Generic;
 	using System.Linq;
 
-	using EyeSoft.Domain;
 	using EyeSoft.Extensions;
 	using EyeSoft.Test.Helpers;
-	using EyeSoft.Testing.Domain.Helpers.Domain1;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,6 +14,10 @@
 	[TestClass]
 	public class GenericExtensionsTest
 	{
+		private interface IAggregate
+		{
+		}
+
 		[TestMethod]
 		public void IsDefaultOnGenericDefaultValueReturnsTrue()
 		{
@@ -73,6 +75,40 @@
 				.Extend().GetFlatternChildren(type => type.IsEnumerableOf<IAggregate>() || type.Implements<IAggregate>())
 				.Cast<IAggregate>()
 				.Count().Should().Be.EqualTo(2);
+		}
+
+		private static class Known
+		{
+			public static class Schools
+			{
+				public static class SchoolWithTwoChildren
+				{
+					public static IObjectExtender<School> Extend()
+					{
+						return new ObjectExtender<School>(new School("Bill", "Steve"));
+					}
+				}
+			}
+		}
+
+		private class School
+		{
+			public School(string bill, string steve)
+			{
+				Children = new[] { new Child(bill), new Child(steve) };
+			}
+
+			private IEnumerable<IAggregate> Children { get; set; }
+		}
+
+		private class Child : IAggregate
+		{
+			public Child(string name)
+			{
+				Name = name;
+			}
+
+			private string Name { get; set; }
 		}
 	}
 }

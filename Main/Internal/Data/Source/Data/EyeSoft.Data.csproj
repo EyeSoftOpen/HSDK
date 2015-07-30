@@ -1,99 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EyeSoft.Data</RootNamespace>
-    <AssemblyName>EyeSoft.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Common\DbCommandExtensions.cs" />
-    <Compile Include="SqlClient\Maintenance\DatabaseLogger.cs" />
-    <Compile Include="SqlClient\Maintenance\DbMaintenanceOperationType.cs" />
-    <Compile Include="SqlClient\Maintenance\LoggerExceptions.cs" />
-    <Compile Include="Common\DatabaseProviderExtensions.cs" />
-    <Compile Include="Common\DatabaseProvider.cs" />
-    <Compile Include="Common\DatabaseProviders.cs" />
-    <Compile Include="Common\DatabaseSchemaExtensions.cs" />
-    <Compile Include="Common\DbDataReaderExtensions.cs" />
-    <Compile Include="Common\IDatabaseProvider.cs" />
-    <Compile Include="Common\IDatabaseSchema.cs" />
-    <Compile Include="Common\SchemaAction.cs" />
-    <Compile Include="SqlClient\Helper\CreateDatabaseCommand.cs" />
-    <Compile Include="SqlClient\Helper\DatabaseExistsCommand.cs" />
-    <Compile Include="SqlClient\Helper\DropDatabaseCommand.cs" />
-    <Compile Include="SqlClient\GenericCommand.cs" />
-    <Compile Include="SqlClient\Helper\SqlHelper.cs" />
-    <Compile Include="SqlClient\Helper\DenyDeleteGrantsCommand.cs" />
-    <Compile Include="SqlClient\Helper\BackupCommand.cs" />
-    <Compile Include="SqlClient\Helper\Base\HelperCommand%27T.cs" />
-    <Compile Include="SqlClient\Helper\Base\HelperCommand.cs" />
-    <Compile Include="SqlClient\Helper\Base\IHelperCommand%27T.cs" />
-    <Compile Include="SqlClient\Helper\Base\IHelperCommand.cs" />
-    <Compile Include="SqlClient\Helper\DatabaseListCommand.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlClient\Helper\RestoreCommand.cs" />
-    <Compile Include="SqlClient\Maintenance\DbMaintenanceSettings.cs" />
-    <Compile Include="SqlClient\SqlDatabaseProvider.cs" />
-    <Compile Include="SqlClient\SqlDatabase.cs" />
-    <Compile Include="SqlClient\Maintenance\SqlDatabases.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Package.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir).nuget\NuGet.exe" pack -Symbols "$(ProjectDir)Package.nuspec"</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion>8.0.30703</ProductVersion>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ProjectGuid>{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>EyeSoft.Data</RootNamespace>
+		<AssemblyName>EyeSoft.Data</AssemblyName>
+		<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+		<SccProjectName>SAK</SccProjectName>
+		<SccLocalPath>SAK</SccLocalPath>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccProvider>SAK</SccProvider>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup>
+		<SignAssembly>true</SignAssembly>
+	</PropertyGroup>
+	<PropertyGroup>
+		<DelaySign>false</DelaySign>
+	</PropertyGroup>
+	<PropertyGroup>
+		<AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Data" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Common\DbCommandExtensions.cs" />
+		<Compile Include="SqlClient\Maintenance\DatabaseLogger.cs" />
+		<Compile Include="SqlClient\Maintenance\DbMaintenanceOperationType.cs" />
+		<Compile Include="SqlClient\Maintenance\LoggerExceptions.cs" />
+		<Compile Include="Common\DatabaseProviderExtensions.cs" />
+		<Compile Include="Common\DatabaseProvider.cs" />
+		<Compile Include="Common\DatabaseProviders.cs" />
+		<Compile Include="Common\DatabaseSchemaExtensions.cs" />
+		<Compile Include="Common\DbDataReaderExtensions.cs" />
+		<Compile Include="Common\IDatabaseProvider.cs" />
+		<Compile Include="Common\IDatabaseSchema.cs" />
+		<Compile Include="Common\SchemaAction.cs" />
+		<Compile Include="SqlClient\Helper\CreateDatabaseCommand.cs" />
+		<Compile Include="SqlClient\Helper\DatabaseExistsCommand.cs" />
+		<Compile Include="SqlClient\Helper\DropDatabaseCommand.cs" />
+		<Compile Include="SqlClient\GenericCommand.cs" />
+		<Compile Include="SqlClient\Helper\SqlHelper.cs" />
+		<Compile Include="SqlClient\Helper\DenyDeleteGrantsCommand.cs" />
+		<Compile Include="SqlClient\Helper\BackupCommand.cs" />
+		<Compile Include="SqlClient\Helper\Base\HelperCommand%27T.cs" />
+		<Compile Include="SqlClient\Helper\Base\HelperCommand.cs" />
+		<Compile Include="SqlClient\Helper\Base\IHelperCommand%27T.cs" />
+		<Compile Include="SqlClient\Helper\Base\IHelperCommand.cs" />
+		<Compile Include="SqlClient\Helper\DatabaseListCommand.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="SqlClient\Helper\RestoreCommand.cs" />
+		<Compile Include="SqlClient\Maintenance\DbMaintenanceSettings.cs" />
+		<Compile Include="SqlClient\SqlDatabaseProvider.cs" />
+		<Compile Include="SqlClient\SqlDatabase.cs" />
+		<Compile Include="SqlClient\Maintenance\SqlDatabases.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
+			<Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
+			<Name>EyeSoft.Core</Name>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Package.nuspec" />
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<PropertyGroup>
+		<PostBuildEvent>"$(SolutionDir).nuget\NuGet.exe" pack -Symbols "$(ProjectDir)Package.nuspec"</PostBuildEvent>
+	</PropertyGroup>
+	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 			 Other similar extension points exist, see Microsoft.Common.targets.
 	<Target Name="BeforeBuild">
 	</Target>

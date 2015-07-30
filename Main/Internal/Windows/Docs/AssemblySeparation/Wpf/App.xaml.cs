@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.AssemblySeparation.Wpf
+﻿namespace EyeSoft.AssemblySeparation.Windows
 {
 	using EyeSoft.AssemblySeparation.ViewModels;
 	using EyeSoft.Windows.Model;

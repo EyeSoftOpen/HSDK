@@ -44,6 +44,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EyeSoft.Core, Version=1.4.0.990, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\4.5\EyeSoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EyeSoft.ServiceLocator">
+      <HintPath>..\..\..\..\..\Libraries\EyeSoft.ServiceLocator\4.0\EyeSoft.ServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EyeSoft.ServiceLocator.Windsor">
+      <HintPath>..\..\..\..\..\Libraries\EyeSoft.ServiceLocator.Windsor\4.0\EyeSoft.ServiceLocator.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EyeSoft.Web">
+      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Web\4.5.1\EyeSoft.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\..\..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -62,7 +75,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -93,22 +105,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
-      <Project>{0E048E30-4DFC-4362-8056-F809E4AF4FB1}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj">
-      <Project>{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}</Project>
-      <Name>EyeSoft.ServiceLocator.Windsor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj">
-      <Project>{e3495af5-eaa2-4afe-80e3-ad44f1df481b}</Project>
-      <Name>EyeSoft.ServiceLocator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Web\Source\4.5\Web\EyeSoft.Web.csproj">
-      <Project>{134c2203-97c9-416d-83e2-5fcbb5d2eb5e}</Project>
-      <Name>EyeSoft.Web</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServiceModel\EyeSoft.ServiceModel.csproj">
       <Project>{6C698468-5881-42DE-AC91-ABC1034950BD}</Project>
       <Name>EyeSoft.ServiceModel</Name>

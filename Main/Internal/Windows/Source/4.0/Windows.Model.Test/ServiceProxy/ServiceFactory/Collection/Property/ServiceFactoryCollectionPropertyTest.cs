@@ -2,6 +2,7 @@
 {
 	using System;
 	using System.Linq;
+	using System.Threading;
 
 	using EyeSoft.Windows.Model.Collections.ObjectModel;
 	using EyeSoft.Windows.Model.Demo.Contract;
@@ -51,9 +52,13 @@
 		[TestMethod]
 		public void ServiceFactoryLoadACollectionVerifyWorksCompleted()
 		{
-			var viewModel = new ViewModelCompleted(factoryHelper);
+			var manualResetEvent = new ManualResetEvent(false);
+
+			var viewModel = new ViewModelCompleted(factoryHelper, manualResetEvent);
 
 			var all = Known.Customer.All.Select(x => x.Id);
+
+			manualResetEvent.WaitOne();
 
 			viewModel
 				.CustomerCollection
@@ -100,7 +105,7 @@
 
 		private class ViewModelCompleted : CollectionViewModel
 		{
-			public ViewModelCompleted(ServiceFactoryHelper factoryHelper)
+			public ViewModelCompleted(ServiceFactoryHelper factoryHelper, ManualResetEvent manualResetEvent)
 			{
 				factoryHelper
 					.ServiceFactory
@@ -109,6 +114,8 @@
 					.Completed(x =>
 					{
 						Completed = x.First().Id;
+
+						manualResetEvent.Set();
 					});
 			}
 

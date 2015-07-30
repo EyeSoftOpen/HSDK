@@ -3,7 +3,6 @@ namespace EyeSoft.Test.Mapping.Strategies
 	using System.Collections.Generic;
 
 	using EyeSoft.Mapping.Strategies;
-	using EyeSoft.Testing.Domain.Helpers.Domain1;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,6 +32,10 @@ namespace EyeSoft.Test.Mapping.Strategies
 		public void NotExtractReadOnlyCollections()
 		{
 			CheckProperty<School>(false);
+		}
+
+		public class School
+		{
 		}
 	}
 }

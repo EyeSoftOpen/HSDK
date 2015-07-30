@@ -82,7 +82,7 @@
 			SetScheduler(loggerScheduler);
 			SetTaskFactory(taskFactory);
 		}
-		
+
 		private static void SetScheduler(ILoggerTaskScheduler taskScheduler)
 		{
 			SetStaticField<TaskScheduler>(taskScheduler, "s_defaultTaskScheduler");

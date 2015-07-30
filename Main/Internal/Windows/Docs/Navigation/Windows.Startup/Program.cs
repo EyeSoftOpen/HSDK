@@ -14,7 +14,7 @@
 
 	using MessageBox = System.Windows.MessageBox;
 
-	public class Program
+	public static class Program
 	{
 		[STAThread]
 		public static void Main()
@@ -47,9 +47,9 @@
 					application.Start(debugOrInstalledPath, "EyeSoft.Demo.Navigation.Windows.Presentation");
 				}
 			}
-			catch (Exception ex)
+			catch (Exception exception)
 			{
-				MessageBox.Show(ex.ToString(), "Error on the application");
+				MessageBox.Show(exception.ToString(), "Error on the application");
 			}
 		}
 
@@ -57,19 +57,22 @@
 		{
 			var runtimePath = ApplicationRuntime.RuntimePath("EyeSoft", "NavigationDemo");
 			var debugPath = ApplicationRuntime.DebugPath(@"Internal\Windows\Docs\Navigation\Windows\");
-			
+
 			Storage.Directory(runtimePath).Create();
 			Storage.GetFiles(debugPath, "*.*").ToList().ForEach(f => f.CopyTo(Path.Combine(runtimePath, f.Name), true));
 		}
 
 		////private static string InstallUsingShimmer()
 		////{
-		////	var shimmerConfiguration =
-		////		new ShimmerConfiguration("Navigation.Demo", "navigationdemo.eye-soft.com", @"Internal\Wpf.Facilities\Docs\Navigation\Windows\");
+		////var shimmerConfiguration =
+		////	new ShimmerConfiguration(
+		////			"Navigation.Demo",
+		////			"navigationdemo.eye-soft.com",
+		////			@"Internal\Wpf.Facilities\Docs\Navigation\Windows\");
 
 		////	var debugOrInstalledPath = shimmerConfiguration.UrlOrPath;
 		////		ShimmerInstaller.Install(shimmerConfiguration, OnUpdatesAvailable);
-			
+
 		////	return debugOrInstalledPath;
 		////}
 

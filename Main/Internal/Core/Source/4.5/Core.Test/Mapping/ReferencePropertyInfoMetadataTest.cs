@@ -5,7 +5,6 @@
 
 	using EyeSoft.Mapping;
 	using EyeSoft.Test.Helpers;
-	using EyeSoft.Testing.Reflection;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 

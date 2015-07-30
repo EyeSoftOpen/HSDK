@@ -2,7 +2,6 @@ namespace EyeSoft.Test.Mapping.Strategies
 {
 	using EyeSoft.Mapping;
 	using EyeSoft.Mapping.Strategies;
-	using EyeSoft.Testing.Reflection;
 
 	using SharpTestsEx;
 

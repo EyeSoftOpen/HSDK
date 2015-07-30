@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
 [assembly: AssemblyProduct("EyeSoft.Accounting.Italian.Istat")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
 
 [assembly: AssemblyTitle("EyeSoft.Accounting.Italian.Istat.Test")]
 [assembly: AssemblyDescription("")]

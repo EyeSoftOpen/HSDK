@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
@@ -7,7 +6,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("EyeSoft.Core")]
 
 [assembly: AssemblyTitle("EyeSoft.Core")]
-[assembly: AssemblyDescription("Contracts ensuring, Messanging, LINQ expression parser and extension methods, Task Parallel Library helpers, Type auto-mapping for storage and benchmark.")]
+[assembly: AssemblyDescription(
+	"Contracts ensuring, Messanging, LINQ expression parser and extension methods, " +
+	"Task Parallel Library helpers, Type auto-mapping for storage and benchmark.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -15,13 +16,16 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 [assembly: Guid("dcd88297-ecc1-4017-937f-14357479d48b")]
-[assembly: AssemblyVersion("1.4.0.0980")]
-[assembly: AssemblyFileVersion("1.4.0.0980")]
+[assembly: AssemblyVersion("1.4.0.0990")]
+[assembly: AssemblyFileVersion("1.4.0.0990")]
 
-[assembly: InternalsVisibleTo(
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
 	"EyeSoft.Core.Test, PublicKey=" +
-	"00240000048000009400000006020000002400005253413100040000010001000bdb332a5b20b5" +
-	"f950200568074b1962cf720a08415cc6523199ad011fe310b90146b983aaa1e23cb878c87e8fc6" +
-	"d969ae6cb9ae264084779d73e1a7fca187063a4c16c7e30b39affa7e19daf33731b4ffa6320cc8" +
-	"b43da657231b2398ca165846a49e42374bb443e344b1987da657e43f868c4675011284a4a101b3" +
-	"cd34c8a3")]
+		"0024000004800000140100000602000000240000525341310008000001000100b15645c56b6f2c" +
+		"52ff34036a74184b325041bdd35127b6bdeb6e5fd652148ba27714b15fd654deece4066a6033d0" +
+		"4708ad339c63e11dd2a86e053370042ca45f0cc9f7c3acb315b730de3273c33a7f44c2fb0b1df8" +
+		"1a593199e277e4304d239f8e7fe42fe7e2d660c81137a38a4de77499a68e9251e819cae272b91a" +
+		"fbdefe737dc504da52596c4a79d77f1c9c3ed42c61496d9ab035888956ac075d1c58334bf27413" +
+		"c185f525e5957a8a42ca0a70a7c59ecc6d7018b96e94ca6feb9c04eee35e1c79b40d548b0310ff" +
+		"60ef8b6c3d1423e97ad4ba64109112539e48038851b677284a4f3c1cb685f6f6916d9935b2b55c" +
+		"93074f1c9423f20754ecc08e71ffca")]

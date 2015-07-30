@@ -1,7 +1,5 @@
 ﻿namespace EyeSoft.FluentValidation.Test
 {
-	using EyeSoft.Test.Validation;
-
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 	[TestClass]
@@ -38,6 +36,5 @@
 		{
 			validatorTest.CheckValidPropertiesExpectedNoErrors();
 		}
-
 	}
 }

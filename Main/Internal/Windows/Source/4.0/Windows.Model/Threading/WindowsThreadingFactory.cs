@@ -43,45 +43,29 @@
 		{
 			VerifySynchronizationContext();
 
-			#if RELEASE
 			return TaskScheduler.FromCurrentSynchronizationContext();
-			#endif
-
-			#if DEBUG
-			if (!IsRunningInTest())
-			{
-				return TaskScheduler.FromCurrentSynchronizationContext();
-			}
-
-			ThreadingFactory.Reset();
-			return ThreadingFactory.SetCurrentThreadScheduler().Scheduler;
-			#endif
 		}
 
-		public static void VerifySynchronizationContext()
+		private static void VerifySynchronizationContext()
 		{
 			if (SynchronizationContext.Current != null)
 			{
 				return;
 			}
 
-			#if DEBUG
 			if (IsRunningInTest())
 			{
 				SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
 				return;
 			}
-			#endif
 
 			var context = new DispatcherSynchronizationContext(Application.Current.Dispatcher);
 			SynchronizationContext.SetSynchronizationContext(context);
 		}
 
-		#if DEBUG
 		private static bool IsRunningInTest()
 		{
 			return Application.Current == null;
 		}
-		#endif
 	}
 }

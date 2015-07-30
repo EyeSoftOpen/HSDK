@@ -22,7 +22,7 @@
 		private static void ConfigureService()
 		{
 			var serviceHostConfigurator = new ServiceHostConfigurator(typeof(IFooService), null, null);
-			var serviceHostFactory = new LocatorServiceHostFactory(serviceHostConfigurator, new Mock<ILocator>().Object);
+			var serviceHostFactory = new LocatorServiceHostFactory(serviceHostConfigurator, new Mock<ILocator>().Object, null);
 			serviceHostFactory.Should().Not.Be.Null();
 		}
 	}

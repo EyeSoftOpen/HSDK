@@ -5,8 +5,12 @@ namespace EyeSoft.Windows.Model
 
 	public static class DialogService
 	{
-		private static readonly Singleton<IDialogService> singletonInstance =
-			new Singleton<IDialogService>(() => new DefaultDialogService());
+		private static readonly Singleton<IDialogService> singletonInstance;
+
+		static DialogService()
+		{
+			singletonInstance = new Singleton<IDialogService>(() => new DefaultDialogService());
+		}
 
 		public static OpenedWindowsCollection OpenedWindows
 		{

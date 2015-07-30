@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Data", "Internal\Data\Source\Data\EyeSoft.Data.csproj", "{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Data.Test", "Internal\Data\Source\Test\EyeSoft.Data.Test.csproj", "{946A906F-1F26-4C7F-AD99-3101BD37D2D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Data.Nhibernate", "Internal\Nhibernate.Data\Source\Data\EyeSoft.Data.Nhibernate.csproj", "{52AB02E4-C248-4173-8088-086EA624CF18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Data.Nhibernate.Test", "Internal\Nhibernate.Data\Source\Test\EyeSoft.Data.Nhibernate.Test.csproj", "{840DB79B-439B-4883-99BD-B1A4DC129D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Core", "Internal\Core\Source\4.0\Core\EyeSoft.Core.csproj", "{4C464A88-7D14-4755-9EBF-82BBE1B168ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Domain", "Internal\Domain\Source\Domain\EyeSoft.Domain.csproj", "{B89C9243-CF13-4B38-8199-9125BA7B625C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Data.SqLite", "Internal\SqLite\Source\SqLite\EyeSoft.Data.SqLite.csproj", "{0B0297D0-A56F-46D9-902B-654075E8223C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = Internal\\Data\\Source\\Data\\EyeSoft.Data.csproj
+		SccProjectName0 = Internal/Data/Source/Data
+		SccAuxPath0 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath0 = Internal\\Data\\Source\\Data
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Internal\\Data\\Source\\Test\\EyeSoft.Data.Test.csproj
+		SccProjectName1 = Internal/Data/Source/Test
+		SccAuxPath1 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath1 = Internal\\Data\\Source\\Test
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = Internal\\Nhibernate.Data\\Source\\Data\\EyeSoft.Data.Nhibernate.csproj
+		SccProjectName2 = Internal/Nhibernate.Data/Source/Data
+		SccAuxPath2 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath2 = Internal\\Nhibernate.Data\\Source\\Data
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = Internal\\Nhibernate.Data\\Source\\Test\\EyeSoft.Data.Nhibernate.Test.csproj
+		SccProjectName3 = Internal/Nhibernate.Data/Source/Test
+		SccAuxPath3 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath3 = Internal\\Nhibernate.Data\\Source\\Test
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = Internal\\Core\\Source\\4.0\\Core\\EyeSoft.Core.csproj
+		SccProjectName4 = Internal/Core/Source/4.0/Core
+		SccAuxPath4 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath4 = Internal\\Core\\Source\\4.0\\Core
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = Internal\\Domain\\Source\\Domain\\EyeSoft.Domain.csproj
+		SccProjectName5 = Internal/Domain/Source/Domain
+		SccAuxPath5 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath5 = Internal\\Domain\\Source\\Domain
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = Internal\\SqLite\\Source\\SqLite\\EyeSoft.Data.SqLite.csproj
+		SccProjectName6 = Internal/SqLite/Source/SqLite
+		SccAuxPath6 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath6 = Internal\\SqLite\\Source\\SqLite
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946A906F-1F26-4C7F-AD99-3101BD37D2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946A906F-1F26-4C7F-AD99-3101BD37D2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946A906F-1F26-4C7F-AD99-3101BD37D2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946A906F-1F26-4C7F-AD99-3101BD37D2D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52AB02E4-C248-4173-8088-086EA624CF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52AB02E4-C248-4173-8088-086EA624CF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52AB02E4-C248-4173-8088-086EA624CF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52AB02E4-C248-4173-8088-086EA624CF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840DB79B-439B-4883-99BD-B1A4DC129D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840DB79B-439B-4883-99BD-B1A4DC129D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840DB79B-439B-4883-99BD-B1A4DC129D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840DB79B-439B-4883-99BD-B1A4DC129D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89C9243-CF13-4B38-8199-9125BA7B625C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89C9243-CF13-4B38-8199-9125BA7B625C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89C9243-CF13-4B38-8199-9125BA7B625C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89C9243-CF13-4B38-8199-9125BA7B625C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0297D0-A56F-46D9-902B-654075E8223C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0297D0-A56F-46D9-902B-654075E8223C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0297D0-A56F-46D9-902B-654075E8223C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0297D0-A56F-46D9-902B-654075E8223C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = a9556ffc-1a6f-449c-a00f-a63aa56560bf
+	EndGlobalSection
+EndGlobal

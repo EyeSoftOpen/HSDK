@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Demo.FiscalCode.Wpf
+﻿namespace EyeSoft.Demo.FiscalCode.Windows
 {
 	public partial class MainWindow
 	{

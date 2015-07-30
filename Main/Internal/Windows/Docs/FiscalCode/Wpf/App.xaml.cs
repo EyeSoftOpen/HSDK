@@ -1,8 +1,9 @@
-﻿namespace EyeSoft.Demo.FiscalCode.Wpf
+﻿namespace EyeSoft.Demo.FiscalCode.Windows
 {
-	using EyeSoft.Demo.FiscalCode.Wpf.ViewModels;
+	using EyeSoft.Demo.FiscalCode.Windows.ViewModels;
 	using EyeSoft.Windows;
 	using EyeSoft.Windows.Model;
+	using EyeSoft.Windows.Model.Conventions;
 
 	public partial class App
 	{
@@ -16,6 +17,8 @@
 				}
 
 				this.InstallExceptionHandler();
+
+				////DialogService.Set(() => new DefaultDialogService(new DefaultViewModelToViewConvention(typeof(MainWindow))));
 
 				DialogService.ShowModal<MainViewModel>();
 			}

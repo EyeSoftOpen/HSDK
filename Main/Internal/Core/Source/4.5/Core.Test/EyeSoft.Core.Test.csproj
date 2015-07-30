@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EyeSoft.Test</RootNamespace>
     <AssemblyName>EyeSoft.Core.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SccProjectName>SAK</SccProjectName>
@@ -200,20 +200,12 @@
     <Compile Include="Xml\Serialization\XmlSerializerTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Domain\Source\Domain\EyeSoft.Domain.csproj">
-      <Project>{B89C9243-CF13-4B38-8199-9125BA7B625C}</Project>
-      <Name>EyeSoft.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\SharpTestsEx.Extensions\Source\Extensions\EyeSoft.SharpTests.Extensions.csproj">
       <Project>{F213CB7D-2938-412D-9577-1D59D08753E3}</Project>
       <Name>EyeSoft.SharpTests.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Testing\Source\Testing\EyeSoft.Testing.csproj">
-      <Project>{B3EC5E2B-D251-417D-BD42-8BA9E6B60885}</Project>
-      <Name>EyeSoft.Testing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
+    <ProjectReference Include="..\Core\EyeSoft.Core.csproj">
+      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
   </ItemGroup>

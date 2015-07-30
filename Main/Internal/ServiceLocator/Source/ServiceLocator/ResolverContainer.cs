@@ -2,8 +2,6 @@ namespace EyeSoft.ServiceLocator
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web.Mvc;
 
 	using Microsoft.Practices.ServiceLocation;
 
@@ -12,16 +10,6 @@ namespace EyeSoft.ServiceLocator
 		protected ResolverContainer(bool throwExceptionOnMissingComponent = true)
 			: base(throwExceptionOnMissingComponent)
 		{
-		}
-
-		object IDependencyResolver.GetService(Type serviceType)
-		{
-			return !IsRegistered(serviceType) ? null : GetInstance(serviceType);
-		}
-
-		IEnumerable<object> IDependencyResolver.GetServices(Type serviceType)
-		{
-			return !IsRegistered(serviceType) ? Enumerable.Empty<object>() : GetAllInstances(serviceType);
 		}
 
 		TService IServiceLocator.GetInstance<TService>()

@@ -4,7 +4,7 @@
 	using System.Collections.Generic;
 	using System.Reflection;
 
-	internal class DefaultNormalizer
+	public class DefaultNormalizer
 	{
 		private readonly IDictionary<string, EnumerablePropertyInfo> stringPropertiesCache =
 			new Dictionary<string, EnumerablePropertyInfo>();

@@ -1,5 +1,7 @@
 ﻿namespace EyeSoft.Windows.Model.Test.Item.Direct
 {
+	using System.Threading;
+
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
@@ -16,9 +18,18 @@
 		{
 			CustomerDto customer = null;
 
+			var manualResetEvent = new ManualResetEvent(false);
+
 			factoryHelper.ServiceFactory
 				.Fill(x => x.GetMainCustomer())
-				.Completed(x => { customer = x; });
+				.Completed(
+					x =>
+						{
+							customer = x;
+							manualResetEvent.Set();
+						});
+
+			manualResetEvent.WaitOne();
 
 			customer.Should().Be.EqualTo(Known.Customer.Main);
 
@@ -38,10 +49,19 @@
 		{
 			CustomerViewModel model = null;
 
+			var manuelResetEvent = new ManualResetEvent(false);
+
 			factoryHelper
 				.ServiceFactory
 				.Fill(x => x.GetMainCustomer())
-				.Completed<CustomerViewModel>(x => { model = x; });
+				.Completed<CustomerViewModel>(
+					x =>
+					{
+						model = x;
+						manuelResetEvent.Set();
+					});
+
+			manuelResetEvent.WaitOne();
 
 			model.Should().Be.EqualTo(Known.CustomerModel.Main);
 		}

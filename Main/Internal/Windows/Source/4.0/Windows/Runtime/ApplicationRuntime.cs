@@ -48,7 +48,11 @@
 			return RuntimePath(company, applicationName, DefaultInstallationType, subFolders);
 		}
 
-		public static string RuntimePath(string company, string applicationName, InstallationType installationType, params string[] subFolders)
+		public static string RuntimePath(
+			string company,
+			string applicationName,
+			InstallationType installationType,
+			params string[] subFolders)
 		{
 			subFolders = subFolders ?? Enumerable.Empty<string>().ToArray();
 

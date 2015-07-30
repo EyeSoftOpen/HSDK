@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.AssemblySeparation.Wpf
+﻿namespace EyeSoft.AssemblySeparation.Windows
 {
 	public partial class MainWindow
 	{

@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{4506B456-4D98-4AF1-AA30-1E366E608618}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E4E140BA-4BDF-4562-B58C-9787A8FC4448}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceLocator", "Internal\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj", "{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceLocator.Test", "Internal\ServiceLocator\Source\Test\EyeSoft.ServiceLocator.Test.csproj", "{5E636F21-F17E-47E1-8B7B-1540F33A1B0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceLocator.Windsor", "Internal\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj", "{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLocator", "ServiceLocator", "{D8357ACF-F270-4166-89A8-13735CAAF6C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Castle", "Castle", "{6CE51BC4-9346-40C1-846F-72C1B945DBB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceLocator.Windsor.Test", "Internal\ServiceLocator.Windsor\Source\Test\EyeSoft.ServiceLocator.Windsor.Test.csproj", "{19E80E08-B4AC-4826-B44C-7A147B1F7854}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = Internal\\ServiceLocator\\Source\\ServiceLocator\\EyeSoft.ServiceLocator.csproj
+		SccProjectTopLevelParentUniqueName0 = EyeSoft.Hsdk.IoC.sln
+		SccProjectName0 = Internal/ServiceLocator/Source/ServiceLocator
+		SccAuxPath0 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath0 = Internal\\ServiceLocator\\Source\\ServiceLocator
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Internal\\ServiceLocator\\Source\\Test\\EyeSoft.ServiceLocator.Test.csproj
+		SccProjectTopLevelParentUniqueName1 = EyeSoft.Hsdk.IoC.sln
+		SccProjectName1 = Internal/ServiceLocator/Source/Test
+		SccAuxPath1 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath1 = Internal\\ServiceLocator\\Source\\Test
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = Internal\\ServiceLocator.Windsor\\Source\\WindsorAdapter\\EyeSoft.ServiceLocator.Windsor.csproj
+		SccProjectTopLevelParentUniqueName2 = EyeSoft.Hsdk.IoC.sln
+		SccProjectName2 = Internal/ServiceLocator.Windsor/Source/WindsorAdapter
+		SccAuxPath2 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath2 = Internal\\ServiceLocator.Windsor\\Source\\WindsorAdapter
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = Internal\\ServiceLocator.Windsor\\Source\\Test\\EyeSoft.ServiceLocator.Windsor.Test.csproj
+		SccProjectTopLevelParentUniqueName3 = EyeSoft.Hsdk.IoC.sln
+		SccProjectName3 = Internal/ServiceLocator.Windsor/Source/Test
+		SccAuxPath3 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath3 = Internal\\ServiceLocator.Windsor\\Source\\Test
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E636F21-F17E-47E1-8B7B-1540F33A1B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E636F21-F17E-47E1-8B7B-1540F33A1B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E636F21-F17E-47E1-8B7B-1540F33A1B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E636F21-F17E-47E1-8B7B-1540F33A1B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19E80E08-B4AC-4826-B44C-7A147B1F7854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19E80E08-B4AC-4826-B44C-7A147B1F7854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19E80E08-B4AC-4826-B44C-7A147B1F7854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19E80E08-B4AC-4826-B44C-7A147B1F7854}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B} = {D8357ACF-F270-4166-89A8-13735CAAF6C9}
+		{5E636F21-F17E-47E1-8B7B-1540F33A1B0B} = {D8357ACF-F270-4166-89A8-13735CAAF6C9}
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F} = {6CE51BC4-9346-40C1-846F-72C1B945DBB9}
+		{D8357ACF-F270-4166-89A8-13735CAAF6C9} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{6CE51BC4-9346-40C1-846F-72C1B945DBB9} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{19E80E08-B4AC-4826-B44C-7A147B1F7854} = {6CE51BC4-9346-40C1-846F-72C1B945DBB9}
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = a9556ffc-1a6f-449c-a00f-a63aa56560bf
+	EndGlobalSection
+EndGlobal

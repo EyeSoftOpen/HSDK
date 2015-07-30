@@ -1,8 +1,6 @@
 ﻿namespace EyeSoft.Data.Test.SqlClient
 {
-
 	using EyeSoft.Data.SqlClient;
-	using EyeSoft.Testing.Data;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 

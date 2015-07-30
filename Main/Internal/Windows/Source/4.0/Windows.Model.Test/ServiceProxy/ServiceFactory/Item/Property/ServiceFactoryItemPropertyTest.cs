@@ -1,5 +1,7 @@
 ﻿namespace EyeSoft.Windows.Model.Test.Item.Property
 {
+	using System.Threading;
+
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
@@ -23,7 +25,11 @@
 		[TestMethod]
 		public void ServiceFactoryLoadAPropertyVerifyWorksCompleted()
 		{
-			var viewModel = new ViewModelCompleted(factoryHelper);
+			var manualResetEvent = new ManualResetEvent(false);
+
+			var viewModel = new ViewModelCompleted(factoryHelper, manualResetEvent);
+
+			manualResetEvent.WaitOne();
 
 			viewModel.MainCustomer.FirstName
 				.Should().Be.EqualTo(Known.Customer.Main.FirstName.ToUpper());
@@ -41,7 +47,7 @@
 
 		private class ViewModelCompleted : CollectionViewModel
 		{
-			public ViewModelCompleted(ServiceFactoryHelper factoryHelper)
+			public ViewModelCompleted(ServiceFactoryHelper factoryHelper, ManualResetEvent manualResetEvent)
 			{
 				factoryHelper
 					.ServiceFactory
@@ -49,6 +55,8 @@
 					.Fill(x => x.GetMainCustomer())
 					.Completed(x =>
 					{
+						manualResetEvent.Set();
+
 						x.FirstName = x.FirstName.ToUpper();
 					});
 			}

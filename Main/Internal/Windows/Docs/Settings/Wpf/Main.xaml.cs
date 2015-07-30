@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Docs.Settings.Wpf
+﻿namespace EyeSoft.Docs.Settings.Windows
 {
 	public partial class Main
 	{

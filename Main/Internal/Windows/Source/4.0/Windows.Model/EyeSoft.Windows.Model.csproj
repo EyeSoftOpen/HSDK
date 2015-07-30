@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0311E947-B90B-47AB-8C28-526D65C17827}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EyeSoft.Windows.Model</RootNamespace>
+    <AssemblyName>EyeSoft.Windows.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <BuildPackage>true</BuildPackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EyeSoft.Core, Version=1.4.0.990, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\Current\4.0\EyeSoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\Filter\EnumerableFilterExtensions.cs" />
+    <Compile Include="Collections\ObjectModel\IReadOnlyObservableCollection%27T.cs" />
+    <Compile Include="Collections\ObjectModel\SyncCollection%27T.cs" />
+    <Compile Include="Collections\ObjectModel\EnumerableExtensions.cs" />
+    <Compile Include="ExceptionLogger\DialogLogger.cs" />
+    <Compile Include="ExceptionLogger\ExceptionHandler.cs" />
+    <Compile Include="Input\CommandsDiscoverFactory.cs" />
+    <Compile Include="ServiceProxy\Collection\Direct\ICollectionFilled.cs" />
+    <Compile Include="ServiceProxy\Collection\Direct\ICollectionLoaded.cs" />
+    <Compile Include="ServiceProxy\Collection\Direct\Implementations\CollectionFilled.cs" />
+    <Compile Include="ServiceProxy\Collection\Property\ICollectionFilled.cs" />
+    <Compile Include="ServiceProxy\Collection\Property\ICollectionLoaded.cs" />
+    <Compile Include="ServiceProxy\Collection\Property\ICollectionPropertyFilled.cs" />
+    <Compile Include="ServiceProxy\Collection\Property\ICollectionSorted.cs" />
+    <Compile Include="ServiceProxy\Collection\Property\Implementations\CollectionLoaded.cs" />
+    <Compile Include="ServiceProxy\Collection\Property\Implementations\CollectionFilled.cs" />
+    <Compile Include="Collections\ObjectModel\DefaultCollectionFactory.cs" />
+    <Compile Include="Collections\ObjectModel\ICollectionFactory.cs" />
+    <Compile Include="Collections\ObjectModel\IObservableCollection%27T.cs" />
+    <Compile Include="ServiceProxy\Item\Property\IItemPropertyFilled.cs" />
+    <Compile Include="Collections\ObjectModel\CollectionFactory.cs" />
+    <Compile Include="ServiceProxy\With\IValueAction.cs" />
+    <Compile Include="ServiceProxy\With\IValueExecuted.cs" />
+    <Compile Include="ServiceProxy\LoaderParams.cs" />
+    <Compile Include="ServiceProxy\DataService.cs" />
+    <Compile Include="ServiceProxy\Item\ItemFilled.cs" />
+    <Compile Include="ServiceProxy\Item\Property\Implementations\ItemLoaded.cs" />
+    <Compile Include="ServiceProxy\Item\Property\IItemFilled.cs" />
+    <Compile Include="ServiceProxy\Item\Property\IItemLoaded.cs" />
+    <Compile Include="ServiceProxy\Item\Direct\IItemLoaded.cs" />
+    <Compile Include="ServiceProxy\ServiceFactory.cs" />
+    <Compile Include="ServiceProxy\With\Implementations\ValueExecuted.cs" />
+    <Compile Include="ServiceProxy\With\Implementations\ValueAction%27TService%27TStart.cs" />
+    <Compile Include="AutoUserControl.cs" />
+    <Compile Include="Conventions\DefaultViewModelToViewConvention.cs" />
+    <Compile Include="Converters\ErrorConverter.cs" />
+    <Compile Include="DialogService\DialogService.cs" />
+    <Compile Include="DialogService\IDialogViewModel.cs" />
+    <Compile Include="DialogService\IMessageBox.cs" />
+    <Compile Include="DialogService\MessageBox.cs" />
+    <Compile Include="DialogService\OpenedWindowsCollection.cs" />
+    <Compile Include="Threading\WindowsThreadingFactory.cs" />
+    <Compile Include="Threading\DispatcherTaskScheduler.cs" />
+    <Compile Include="Threading\DispatcherTimerFactory.cs" />
+    <Compile Include="Threading\DispatcherTimer.cs" />
+    <Compile Include="ViewModels\ConfirmCancelViewModel.cs" />
+    <Compile Include="ViewModels\ConfirmCancelViewModel%27TRet.cs" />
+    <Compile Include="Collections\Filter\FilterApplier.cs" />
+    <Compile Include="Collections\Filter\FullTextFilter%27T.cs" />
+    <Compile Include="Collections\Filter\IFilter.cs" />
+    <Compile Include="Collections\Filter\IFilterable.cs" />
+    <Compile Include="Collections\Filter\StringComparers.cs" />
+    <Compile Include="ViewModels\Helpers\Property\FluentInterface\IAfterFirstChangeViewModelProperty.cs" />
+    <Compile Include="ViewModels\Helpers\Property\FluentInterface\IChangeViewModelProperty.cs" />
+    <Compile Include="ViewModels\Helpers\Property\FluentInterface\IChangingViewModelProperty.cs" />
+    <Compile Include="ViewModels\Helpers\Property\FluentInterface\IFirstChangeViewModelProperty.cs" />
+    <Compile Include="ViewModels\Helpers\Property\FluentInterface\IViewModelProperty.cs" />
+    <Compile Include="ViewModels\Helpers\Property\PropertyInfoDictionary.cs" />
+    <Compile Include="ViewModels\Helpers\Property\ViewModelProperty%27TProperty.cs" />
+    <Compile Include="ViewModels\IConfirmCancelViewModel.cs" />
+    <Compile Include="ViewModels\IIdentityViewModel%27T.cs" />
+    <Compile Include="ViewModels\Helpers\INotifyViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\INavigableViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\NavigableViewModel.cs" />
+    <Compile Include="ViewModels\Navigation\ShellViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelController.cs" />
+    <Compile Include="ViewModels\ViewModelFactory.cs" />
+    <Compile Include="Execution\AsyncExecution.cs" />
+    <Compile Include="Execution\Execution.cs" />
+    <Compile Include="Collections\ObjectModel\ConcurrentObservableCollection%27T.cs" />
+    <Compile Include="Execution\SyncExecution.cs" />
+    <Compile Include="Input\AsyncCommandT.cs" />
+    <Compile Include="Input\CommandBuilder.cs" />
+    <Compile Include="Input\CommandMethod.cs" />
+    <Compile Include="Input\GenericCommandFactory.cs" />
+    <Compile Include="Input\IGenericCommandFactory.cs" />
+    <Compile Include="Input\INonGenericCommandFactory.cs" />
+    <Compile Include="Input\NonGenericCommandFactory.cs" />
+    <Compile Include="ViewModels\AutoRegisterViewModel.cs" />
+    <Compile Include="BindingListExtensions.cs" />
+    <Compile Include="Input\AsyncCommand.cs" />
+    <Compile Include="Input\CommandConvention.cs" />
+    <Compile Include="Input\CommandFactory.cs" />
+    <Compile Include="Input\CommandMethods.cs" />
+    <Compile Include="Input\CommandsDiscover.cs" />
+    <Compile Include="Conventions\ViewModelToViewConvention.cs" />
+    <Compile Include="ApplicationExtensions.cs" />
+    <Compile Include="DialogService\DefaultDialogService.cs" />
+    <Compile Include="Execution\DispatcherExtensions.cs" />
+    <Compile Include="Input\ICommandFactory.cs" />
+    <Compile Include="DialogService\IDialogService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DefaultValidator.cs" />
+    <Compile Include="ViewModels\IdentityViewModel.cs" />
+    <Compile Include="ViewModels\IdentityViewModel%27T.cs" />
+    <Compile Include="ViewModels\Helpers\Property\ViewModelProperties.cs" />
+    <Compile Include="ViewModels\Helpers\Property\ViewModelProperty.cs" />
+    <Compile Include="ViewModels\Helpers\PropertiesChanges.cs" />
+    <Compile Include="ViewModels\Helpers\Property\PropertiesValue%27T.cs" />
+    <Compile Include="ViewModels\Helpers\PropertyChangeMetadata.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="ViewModels\Helpers\ViewModelExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--<Import Project="$(SolutionDir)\.nuget\nuget.targets" />-->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\..\..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\..\..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -22,7 +22,7 @@
     <SccProvider>SAK</SccProvider>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-		<AutoGenerateBindingRedirects />
+    <AutoGenerateBindingRedirects />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +58,9 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\..\..\..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="EyeSoft.Core">
+      <HintPath>..\..\..\..\Libraries\EyeSoft.Core\Current\4.0\EyeSoft.Core.dll</HintPath>
+    </Reference>
     <Reference Include="SharpTestsEx, Version=1.1.1.0, Culture=neutral, PublicKeyToken=8c60d8070630b1c1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\packages\SharpTestsEx.1.1.1\lib\SharpTestsEx.dll</HintPath>
@@ -83,19 +86,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AutomapperProjectTest.cs" />
     <Compile Include="AutoMapperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Source\4.5\Core.Test\EyeSoft.Core.Test.csproj">
-      <Project>{9702B58C-F6D0-4A75-A2A8-2F4A847536DD}</Project>
-      <Name>EyeSoft.Core.Test</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AutoMapper\EyeSoft.AutoMapper.csproj">
       <Project>{F41F8342-2124-44CC-85DE-B49D7DFA4C95}</Project>
       <Name>EyeSoft.AutoMapper</Name>

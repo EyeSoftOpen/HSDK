@@ -3,7 +3,6 @@
 	using System.ComponentModel;
 
 	using EyeSoft.Extensions;
-	using EyeSoft.Testing.Domain.Helpers.Domain3;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -40,9 +39,19 @@
 			executed = false;
 			person.Extend().Unregister("PropertyChanged");
 			person.Name = "Test2";
+			// ReSharper disable once ConditionIsAlwaysTrueOrFalse
 			executed.Should("The event was not unregistered from the Unregister extension method.").Be.False();
 
 			return person;
+		}
+
+		private class PersonNotify : ViewModel
+		{
+			public string Name
+			{
+				get { return GetProperty<string>(); }
+				set { SetProperty(value); }
+			}
 		}
 	}
 }

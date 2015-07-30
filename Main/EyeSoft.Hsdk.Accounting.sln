@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{4506B456-4D98-4AF1-AA30-1E366E608618}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E4E140BA-4BDF-4562-B58C-9787A8FC4448}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting", "Internal\Accounting\Source\Accounting\EyeSoft.Accounting.csproj", "{E14F83BE-7567-453E-8884-F02B6A7B0552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Italian", "Internal\Accounting\Source\Accounting.Italian\EyeSoft.Accounting.Italian.csproj", "{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Italian.Istat", "Internal\Accounting\Source\Accounting.Italian.Istat\EyeSoft.Accounting.Italian.Istat.csproj", "{B9A2F513-1B26-4A14-B56E-41D0CB323494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Italian.Istat.Test", "Internal\Accounting\Source\Accounting.Italian.Istat.Test\EyeSoft.Accounting.Italian.Istat.Test.csproj", "{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Italian.Test", "Internal\Accounting\Source\Account.Italian.Test\EyeSoft.Accounting.Italian.Test.csproj", "{2C432F34-F20E-44AF-B725-7427A8505E09}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = Internal\\Accounting\\Source\\Accounting\\EyeSoft.Accounting.csproj
+		SccProjectTopLevelParentUniqueName0 = EyeSoft.Hsdk.Accounting.sln
+		SccProjectName0 = Internal/Accounting/Source/Accounting
+		SccAuxPath0 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath0 = Internal\\Accounting\\Source\\Accounting
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Internal\\Accounting\\Source\\Accounting.Italian\\EyeSoft.Accounting.Italian.csproj
+		SccProjectTopLevelParentUniqueName1 = EyeSoft.Hsdk.Accounting.sln
+		SccProjectName1 = Internal/Accounting/Source/Accounting.Italian
+		SccAuxPath1 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath1 = Internal\\Accounting\\Source\\Accounting.Italian
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = Internal\\Accounting\\Source\\Accounting.Italian.Istat\\EyeSoft.Accounting.Italian.Istat.csproj
+		SccProjectTopLevelParentUniqueName2 = EyeSoft.Hsdk.Accounting.sln
+		SccProjectName2 = Internal/Accounting/Source/Accounting.Italian.Istat
+		SccAuxPath2 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath2 = Internal\\Accounting\\Source\\Accounting.Italian.Istat
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = Internal\\Accounting\\Source\\Accounting.Italian.Istat.Test\\EyeSoft.Accounting.Italian.Istat.Test.csproj
+		SccProjectTopLevelParentUniqueName3 = EyeSoft.Hsdk.Accounting.sln
+		SccProjectName3 = Internal/Accounting/Source/Accounting.Italian.Istat.Test
+		SccAuxPath3 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath3 = Internal\\Accounting\\Source\\Accounting.Italian.Istat.Test
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = Internal\\Accounting\\Source\\Account.Italian.Test\\EyeSoft.Accounting.Italian.Test.csproj
+		SccProjectTopLevelParentUniqueName4 = EyeSoft.Hsdk.Accounting.sln
+		SccProjectName4 = Internal/Accounting/Source/Account.Italian.Test
+		SccAuxPath4 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath4 = Internal\\Accounting\\Source\\Account.Italian.Test
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E14F83BE-7567-453E-8884-F02B6A7B0552} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{2C432F34-F20E-44AF-B725-7427A8505E09} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = a9556ffc-1a6f-449c-a00f-a63aa56560bf
+	EndGlobalSection
+EndGlobal

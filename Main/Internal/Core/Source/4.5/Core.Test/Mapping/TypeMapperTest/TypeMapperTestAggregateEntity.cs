@@ -1,9 +1,9 @@
 ﻿namespace EyeSoft.Test.Mapping
 {
+	using System.Collections.Generic;
 	using System.Linq;
 
 	using EyeSoft.Mapping;
-	using EyeSoft.Testing.Domain.Helpers.Domain2;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -18,7 +18,7 @@
 			var mappedType =
 				TypeMapperFactory
 					.Create()
-					.Map<CustomerAggregate>();
+					.Map<MappingTester>();
 
 			mappedType
 				.Primitives.Single(member => member.Name == "Name")
@@ -35,6 +35,30 @@
 			mappedType
 				.References.Single()
 				.Name.Should().Be.EqualTo("HeadOffice");
+		}
+
+		// ReSharper disable once ClassNeverInstantiated.Local
+		private class MappingTester
+		{
+			// ReSharper disable once UnusedMember.Local
+			public string Name { get; set; }
+
+			// ReSharper disable once UnusedMember.Local
+			public string FullName { get; set; }
+
+			// ReSharper disable once UnusedMember.Local
+			public IEnumerable<Order> Orders { get; set; }
+
+			public HeadOffice HeadOffice { get; set; }
+		}
+
+		// ReSharper disable once ClassNeverInstantiated.Local
+		private class Order
+		{
+		}
+
+		private class HeadOffice
+		{
 		}
 	}
 }

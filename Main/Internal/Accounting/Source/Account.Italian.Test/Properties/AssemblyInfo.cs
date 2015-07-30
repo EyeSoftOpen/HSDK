@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2012")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
 
 [assembly: AssemblyTitle("EyeSoft.Accounting.Italian.Test")]
 [assembly: AssemblyProduct("EyeSoft.Accounting.Italian")]

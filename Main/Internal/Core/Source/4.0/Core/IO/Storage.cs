@@ -2,7 +2,6 @@ namespace EyeSoft.IO
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Diagnostics;
 	using System.IO;
 	using System.Text;
 
@@ -104,7 +103,6 @@ namespace EyeSoft.IO
 			singletonInstance.Instance.DecompressFile(sourcePath, destinationPath);
 		}
 
-		[Conditional("DEBUG")]
 		public static void Reset(Func<IStorage> func)
 		{
 			singletonInstance.Reset(func);

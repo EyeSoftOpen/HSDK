@@ -13,7 +13,8 @@
 
 		public void Error(Exception exception)
 		{
-			Application.Current.Sync().Execute(() => DialogService.ShowMessage("Error", exception.Format(), MessageBoxButton.OK, MessageBoxImage.Error));
+			Application.Current.Sync()
+				.Execute(() => DialogService.ShowMessage("Error", exception.Format(), MessageBoxButton.OK, MessageBoxImage.Error));
 		}
 	}
 }

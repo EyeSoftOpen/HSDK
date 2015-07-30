@@ -38,6 +38,12 @@
 			var fileInfoMock = new Mock<IFileInfo>();
 			fileInfoMock.SetupGet(x => x.Exists).Returns(fileExists);
 
+			var directoryInfoMock = new Mock<IDirectoryInfo>();
+
+			directoryInfoMock.SetupGet(x => x.FullName).Returns(Path.GetDirectoryName(path));
+
+			fileInfoMock.SetupGet(x => x.Directory).Returns(directoryInfoMock.Object);
+
 			return fileInfoMock.Object;
 		}
 

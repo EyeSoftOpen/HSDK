@@ -147,6 +147,8 @@
 			const string Contents = "Hello! è";
 			const string ExpectedSha1 = "c9b8b0a8d68cc4a67246ac895fec46d2d7eb3f2f";
 
+			Storage.Reset(() => new FileSystemStorage());
+
 			Storage.WriteAllText(Path, Contents);
 			var text = Storage.ReadAllText(Path);
 

@@ -4,8 +4,13 @@
 	using System.Collections.Generic;
 	using System.Linq;
 
+	using Castle.MicroKernel;
 	using Castle.MicroKernel.Registration;
 	using Castle.Windsor;
+
+	using Microsoft.Practices.ServiceLocation;
+
+	using ComponentResolutionException = EyeSoft.ComponentResolutionException;
 
 	public class WindsorDependencyContainer : DependencyContainer
 	{
@@ -163,7 +168,16 @@
 
 		protected override object DoGetInstance(Type serviceType, string key)
 		{
-			return key != null ? container.Resolve(key, serviceType) : container.Resolve(serviceType);
+			try
+			{
+				var instance = key != null ? container.Resolve(key, serviceType) : container.Resolve(serviceType);
+
+				return instance;
+			}
+			catch (ComponentNotFoundException exception)
+			{
+				throw new ActivationException("Cannot find the component.", exception);
+			}
 		}
 
 		protected override IEnumerable<object> DoGetAllInstances(Type serviceType)

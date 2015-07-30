@@ -1,7 +1,5 @@
 ﻿namespace EyeSoft.ServiceLocator.Windsor.Test
 {
-	using Castle.MicroKernel.Registration;
-
 	using EyeSoft.ServiceLocator.Test;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
