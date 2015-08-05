@@ -10,6 +10,8 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 	public class PackagesFromSolutionCollected : FluentWorkflow
 	{
+		private readonly string solutionPath;
+
 		private readonly string solutionFolderPath;
 
 		private readonly BuildAndRevision buildAndRevision;
@@ -19,11 +21,13 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
 		public PackagesFromSolutionCollected(
+			string solutionPath,
 			string solutionFolderPath,
 			IEnumerable<string> packagesId,
 			BuildAndRevision buildAndRevision,
 			IReadOnlyDictionary<string, string> previousVersions)
 		{
+			this.solutionPath = solutionPath;
 			this.solutionFolderPath = solutionFolderPath;
 			this.buildAndRevision = buildAndRevision;
 			this.packagesId = packagesId;
@@ -46,7 +50,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 			if (packagesWithDifferentVersions.Any())
 			{
-				Console.WriteLine("Packages with different versions to be fixed");
+				ConsoleHelper.WriteLine("Packages with different versions to be fixed");
 
 				return new NuspecAndAssemblyInfoUpdated();
 			}
@@ -54,9 +58,10 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			var packages =
 				checkPackages
 					.OrderBy(x => x.Key)
-					.Select(x => new PackageWithFramework(x.Key, x.Value.Versions.First(), x.Value.Packages));
+					.Select(x => new PackageWithFramework(x.Key, x.Value.Versions.First(), x.Value.Packages))
+					.ToArray();
 
-			return new NuspecAndAssemblyInfoUpdated(solutionFolderPath, buildAndRevision, packages, previousVersions);
+			return new NuspecAndAssemblyInfoUpdated(solutionPath, buildAndRevision, packages, previousVersions);
 		}
 	}
 }

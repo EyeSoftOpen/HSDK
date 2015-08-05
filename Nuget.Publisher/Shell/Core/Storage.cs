@@ -2,8 +2,8 @@ namespace EyeSoft.Nuget.Publisher.Shell
 {
 	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
 
-	using global::System;
-	using global::System.IO;
+	using System;
+	using System.IO;
 
 	public static class Storage
 	{
@@ -29,7 +29,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		{
 			if (!canWrite)
 			{
-				////Console.WriteLine("Simulated write of contents in {0} file.", path);
+				////ConsoleHelper.WriteLine("Simulated write of contents in {0} file.", path);
 				return;
 			}
 
@@ -40,7 +40,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		{
 			if (!canWrite)
 			{
-				////Console.WriteLine("Simulated write of contents in {0} file.", path);
+				////ConsoleHelper.WriteLine("Simulated write of contents in {0} file.", path);
 				return;
 			}
 

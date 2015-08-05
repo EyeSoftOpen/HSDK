@@ -46,7 +46,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 			}
 			catch (Exception exception)
 			{
-				throw new IOException(string.Format("Cannot parse the file {0}.", assemblyInfoFile.FullName), exception);
+				throw new IOException($"Cannot parse the file {assemblyInfoFile.FullName}.", exception);
 			}
 		}
 	}

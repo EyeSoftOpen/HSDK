@@ -20,7 +20,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		{
 			var json = JsonConvert.SerializeObject(packageUpdateResults, Formatting.Indented);
 
-			Console.WriteLine(json);
+			ConsoleHelper.WriteLine(json);
 
 			return new UpdatePackagesDumped();
 		}

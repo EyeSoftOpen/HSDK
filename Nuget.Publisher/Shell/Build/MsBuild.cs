@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Nuget.Publisher.Shell.Build
 {
-	using global::System;
-	using global::System.Diagnostics;
-	using global::System.IO;
+	using System;
+	using System.Diagnostics;
+	using System.IO;
 
 	public static class MsBuild
 	{
@@ -25,8 +25,10 @@
 						RedirectStandardOutput = true
 					};
 
-			Console.WriteLine("Building the application...");
-			Console.WriteLine();
+			ConsoleHelper.WriteLine();
+			Console.Write("Building the application...");
+
+			var stopwatch = Stopwatch.StartNew();
 
 			using (var process = new Process { StartInfo = startInfo, EnableRaisingEvents = true })
 			{
@@ -39,16 +41,21 @@
 
 				process.WaitForExit();
 			}
+
+			stopwatch.Stop();
+
+			ConsoleHelper.WriteLine(" in {0}", stopwatch.Elapsed.ToHumanReadable());
+			ConsoleHelper.WriteLine();
 		}
 
 		private static void Log(object sender, DataReceivedEventArgs e)
 		{
-			if (e.Data == null)
-			{
-				return;
-			}
+			////if (e.Data == null)
+			////{
+			////	return;
+			////}
 
-			Console.WriteLine(e.Data);
+			////ConsoleHelper.WriteLine(e.Data);
 		}
 	}
 }

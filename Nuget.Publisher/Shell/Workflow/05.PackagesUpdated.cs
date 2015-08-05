@@ -15,12 +15,13 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		public PackagesUpdated(string solutionPath, IEnumerable<PackageUpdateResult> packageUpdateResults)
 		{
 			this.solutionPath = solutionPath;
+
 			this.packageUpdateResults = packageUpdateResults;
 		}
 
 		public SolutionBuilt BuildSolution()
 		{
-			MsBuild.Build(Path.Combine(solutionPath));
+			MsBuild.Build(solutionPath);
 
 			return new SolutionBuilt(packageUpdateResults);
 		}

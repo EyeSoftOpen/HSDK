@@ -1,5 +1,7 @@
 ﻿namespace EyeSoft.Nuget.Publisher.Shell
 {
+	using System;
+
 	public static class Program
 	{
 		public static void Main()

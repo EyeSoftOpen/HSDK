@@ -69,7 +69,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 							.Where(x => packages.ContainsKey(x.Id) && (packages[x.Id]() != new Version(x.Version)))
 							.ToArray();
 
-					var hasDepenciesUpdated = dependenciesToUpdate.Any();
+					////var hasDepenciesUpdated = dependenciesToUpdate.Any();
 
 					var updates = new List<PackageUpdate>();
 
@@ -110,7 +110,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 
 		public override string ToString()
 		{
-			return $"{Title} {PackageVersion} {TargetFramework}";
+			return $"{Title} {PackageVersion} FW {TargetFramework.Text}";
 		}
 
 		private static void UpdateAssemblyVersionLine(

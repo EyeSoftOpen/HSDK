@@ -10,7 +10,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 		{
 			Id = id;
 			Version = version;
-			FrameworkPackages = frameworkPackages;
+			FrameworkPackages = frameworkPackages.ToArray();
 		}
 
 		public string Id { get; }

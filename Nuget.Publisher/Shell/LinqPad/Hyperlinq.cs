@@ -16,5 +16,10 @@ namespace EyeSoft.Nuget.Publisher.Shell.LinqPad
 		public Action Action { get; private set; }
 
 		public string Text { get; private set; }
+
+		public override string ToString()
+		{
+			return Text;
+		}
 	}
 }

@@ -4,6 +4,8 @@
 
 	public class PreviousVersionsRetrieved : FluentWorkflow
 	{
+		private readonly string solutionPath;
+
 		private readonly string solutionFolderPath;
 
 		private readonly IEnumerable<string> packagesId;
@@ -13,11 +15,13 @@
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
 		public PreviousVersionsRetrieved(
+			string solutionPath,
 			string solutionFolderPath,
 			IEnumerable<string> packagesId,
 			BuildAndRevision buildAndRevision,
 			IReadOnlyDictionary<string, string> previousVersions)
 		{
+			this.solutionPath = solutionPath;
 			this.solutionFolderPath = solutionFolderPath;
 			this.packagesId = packagesId;
 			this.buildAndRevision = buildAndRevision;
@@ -26,7 +30,12 @@
 
 		public PackagesFromSolutionCollected CollectPackagesFromSolution()
 		{
-			return new PackagesFromSolutionCollected(solutionFolderPath, packagesId, buildAndRevision, previousVersions);
+			return new PackagesFromSolutionCollected(
+				solutionPath,
+				solutionFolderPath,
+				packagesId,
+				buildAndRevision,
+				previousVersions);
 		}
 	}
 }

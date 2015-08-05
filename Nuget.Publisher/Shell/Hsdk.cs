@@ -5,7 +5,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 	public static class Hsdk
 	{
-	    public const string SolutionFolderPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main";
+	    public const string SolutionFolderPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
 
 		private static readonly IEnumerable<string> packagesId =
 			new[]

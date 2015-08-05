@@ -60,11 +60,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ConsoleHelper.cs" />
+    <Compile Include="Core\SingularPluralTimeFormatter.cs" />
+    <Compile Include="Core\TimeSpanExtensions.cs" />
     <Compile Include="Workflow\FluentWorkflow.cs" />
-    <Compile Include="Workflow\08.NugetPackagesPublished.cs" />
-    <Compile Include="Workflow\06.PackagesUpdated.cs" />
-    <Compile Include="Workflow\02.PreviousVersionsUpdated.cs" />
-    <Compile Include="Workflow\07.SolutionBuilt.cs" />
+    <Compile Include="Workflow\07.NugetPackagesPublished.cs" />
+    <Compile Include="Workflow\05.PackagesUpdated.cs" />
+    <Compile Include="Workflow\08.PreviousVersionsUpdated.cs" />
+    <Compile Include="Workflow\06.SolutionBuilt.cs" />
     <Compile Include="Core\AssemblyInfo.cs" />
     <Compile Include="Core\AssemblyInfoData.cs" />
     <Compile Include="Core\AssemblyInfoLine.cs" />
@@ -81,9 +84,9 @@
     <Compile Include="Nuget\PackageWithFramework.cs" />
     <Compile Include="LinqPad\Util.cs" />
     <Compile Include="Workflow\01.BuildAndRevisionGenerated.cs" />
-    <Compile Include="Workflow\05.NuspecAndAssemblyInfoUpdated.cs" />
-    <Compile Include="Workflow\04.PackagesFromSolutionCollected.cs" />
-    <Compile Include="Workflow\03.PreviousVersionsRetrieved.cs" />
+    <Compile Include="Workflow\04.NuspecAndAssemblyInfoUpdated.cs" />
+    <Compile Include="Workflow\03.PackagesFromSolutionCollected.cs" />
+    <Compile Include="Workflow\02.PreviousVersionsRetrieved.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\Storage.cs" />

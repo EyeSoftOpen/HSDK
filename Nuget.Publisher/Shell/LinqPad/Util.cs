@@ -6,7 +6,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.LinqPad
 	{
 		public static string ReadLine(string prompt)
 		{
-			Console.WriteLine(prompt);
+			ConsoleHelper.WriteLine(prompt);
 			return Console.ReadLine();
 		}
 	}
