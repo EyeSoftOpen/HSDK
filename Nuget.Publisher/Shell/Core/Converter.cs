@@ -1,8 +1,8 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System;
-	using System.ComponentModel;
-	using System.Reflection;
+	using global::System;
+	using global::System.ComponentModel;
+	using global::System.Reflection;
 
 	public static class Converter
 	{
@@ -29,7 +29,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 			try
 			{
-				result = (T)parseMethod.Invoke(null, new object[] { value });
+				result = (T)parseMethod.Invoke(null, new[] { value });
 				return result;
 			}
 			catch

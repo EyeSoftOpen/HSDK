@@ -1,4 +1,4 @@
-namespace EyeSoft.Nuget.Publisher.Shell
+namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 {
 	using System;
 	using System.Collections.Generic;
@@ -13,15 +13,15 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			FrameworkPackages = frameworkPackages;
 		}
 
-		public string Id { get; private set; }
+		public string Id { get; }
 
-		public string Version { get; private set; }
+		public string Version { get; }
 
-		public IEnumerable<Package> FrameworkPackages { get; private set; }
+		public IEnumerable<Package> FrameworkPackages { get; }
 
 		public override string ToString()
 		{
-			return string.Format("{0} {1}", Id, Version);
+			return $"{Id} {Version}";
 		}
 
 		public IEnumerable<PackageUpdate> TryUpdateNuspecDependencies(

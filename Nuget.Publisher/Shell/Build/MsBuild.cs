@@ -1,17 +1,23 @@
-﻿namespace EyeSoft.Nuget.Publisher.Shell
+﻿namespace EyeSoft.Nuget.Publisher.Shell.Build
 {
-	using System;
-	using System.Diagnostics;
+	using global::System;
+	using global::System.Diagnostics;
+	using global::System.IO;
 
 	public static class MsBuild
 	{
+		public static void Build(string projectPath)
+		{
+			Build(projectPath, new FileInfo(projectPath).Directory.FullName);
+		}
+
 		public static void Build(string projectPath, string solutionFolder)
 		{
 			var startInfo =
 				new ProcessStartInfo
 					{
-						FileName = @"C:\Program Files (x86)\MSBuild\12.0\Bin\msbuild.exe",
-						Arguments = string.Format("{0} /p:Configuration=Release /m", projectPath),
+						FileName = @"C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe",
+						Arguments = $"{projectPath} /p:Configuration=Release /m",
 						WorkingDirectory = solutionFolder,
 						UseShellExecute = false,
 						CreateNoWindow = true,

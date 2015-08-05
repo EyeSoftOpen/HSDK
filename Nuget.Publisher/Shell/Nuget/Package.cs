@@ -1,13 +1,13 @@
-namespace EyeSoft.Nuget.Publisher.Shell
+namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 {
+	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
+
 	using System;
 	using System.Collections.Generic;
 	using System.Diagnostics;
 	using System.IO;
 	using System.Linq;
 	using System.Text;
-
-	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
 
 	using NuGet;
 
@@ -110,7 +110,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		public override string ToString()
 		{
-			return string.Format("{0} {1} {2}", Title, PackageVersion, TargetFramework);
+			return $"{Title} {PackageVersion} {TargetFramework}";
 		}
 
 		private static void UpdateAssemblyVersionLine(

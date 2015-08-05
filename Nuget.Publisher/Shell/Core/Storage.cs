@@ -1,9 +1,9 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System;
-	using System.IO;
-
 	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
+
+	using global::System;
+	using global::System.IO;
 
 	public static class Storage
 	{

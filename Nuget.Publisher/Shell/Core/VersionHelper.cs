@@ -1,6 +1,6 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System;
+	using global::System;
 
 	public static class VersionHelper
 	{
@@ -16,7 +16,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		public static Version Increment(int major, int minor)
 		{
-			var buildAndRevision = BuildAndRevision();
+			var buildAndRevision = GenerateBuildAndRevision();
 
 			return Increment(major, minor, buildAndRevision);
 		}
@@ -26,7 +26,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			return new Version(major, minor, (int)buildAndRevision.Build, (int)buildAndRevision.Revision);
 		}
 
-		public static BuildAndRevision BuildAndRevision()
+		public static BuildAndRevision GenerateBuildAndRevision()
 		{
 			var build = (DateTime.Today - new DateTime(2000, 1, 1)).TotalDays;
 			var revision = (DateTime.Now - DateTime.Today).TotalSeconds / 2;

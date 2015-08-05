@@ -1,4 +1,4 @@
-namespace EyeSoft.Nuget.Publisher.Shell
+namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 {
 	public class PackageUpdateResult
 	{
@@ -8,9 +8,9 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			Data = data;
 		}
 
-		public string Id { get; private set; }
+		public string Id { get; }
 
-		public PackageUpdateDataResult Data { get; private set; }
+		public PackageUpdateDataResult Data { get; }
 
 		public override string ToString()
 		{

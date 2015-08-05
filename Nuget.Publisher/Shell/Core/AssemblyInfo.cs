@@ -1,7 +1,7 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System.Collections.Generic;
-	using System.Linq;
+	using global::System.Collections.Generic;
+	using global::System.Linq;
 
 	public static class AssemblyInfo
 	{
@@ -40,7 +40,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private static string GetAssemblyLine(AssemblyInfoData data)
 		{
-			var assemblyLine = string.Format("[assembly: {0}(\"", data);
+			var assemblyLine = $"[assembly: {data}(\"";
 
 			return assemblyLine;
 		}

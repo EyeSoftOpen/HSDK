@@ -1,6 +1,6 @@
 namespace EyeSoft.Nuget.Publisher.Shell.LinqPad
 {
-	using System;
+	using global::System;
 
 	using Newtonsoft.Json;
 
