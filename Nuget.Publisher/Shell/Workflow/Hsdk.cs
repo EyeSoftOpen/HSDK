@@ -3,9 +3,11 @@ namespace EyeSoft.Nuget.Publisher.Shell
 	using System.Collections.Generic;
 	using System.Linq;
 
-	public static class Hsdk
+	public class HsdkWorkflow
 	{
 	    public const string SolutionFolderPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
+
+		private static readonly ISet<FluentWorkflow> workflow = new HashSet<FluentWorkflow>();
 
 		private static readonly IEnumerable<string> packagesId =
 			new[]
@@ -40,11 +42,15 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			.Select(x => string.Concat("EyeSoft.", x))
 			.ToArray();
 
-		public static BuildAndRevisionGenerated GenerateBuildAndRevision()
+		public BuildAndRevisionGenerated GenerateBuildAndRevision()
 		{
 			var buildAndRevision = VersionHelper.GenerateBuildAndRevision();
 
-			return new BuildAndRevisionGenerated(SolutionFolderPath, packagesId, buildAndRevision);
+			var step = new BuildAndRevisionGenerated(SolutionFolderPath, packagesId, buildAndRevision);
+
+			workflow.Add(step);
+
+			return step;
 		}
 	}
 }

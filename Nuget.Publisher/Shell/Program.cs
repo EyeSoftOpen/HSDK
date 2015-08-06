@@ -6,7 +6,7 @@
 	{
 		public static void Main()
 		{
-			Hsdk
+			new HsdkWorkflow()
 				.GenerateBuildAndRevision()
 				.GetPreviousVersions()
 				.CollectPackagesFromSolution()

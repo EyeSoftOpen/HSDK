@@ -4,11 +4,11 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 	public abstract class FluentWorkflow
 	{
-		////private static int order;
+		private static int order;
 
 		protected FluentWorkflow()
 		{
-			////Console.WriteLine("{0}] {1}", ++order, GetType().Name);
+			Console.WriteLine("{0}] {1}", ++order, GetType().Name);
 		}
 	}
 }

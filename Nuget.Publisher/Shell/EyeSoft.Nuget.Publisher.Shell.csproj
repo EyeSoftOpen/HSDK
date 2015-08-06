@@ -73,7 +73,7 @@
     <Compile Include="Core\AssemblyInfoLine.cs" />
     <Compile Include="Core\BuildAndRevision.cs" />
     <Compile Include="Core\Converter.cs" />
-    <Compile Include="Hsdk.cs" />
+    <Compile Include="Workflow\Hsdk.cs" />
     <Compile Include="LinqPad\Hyperlinq.cs" />
     <Compile Include="Build\MsBuild.cs" />
     <Compile Include="Nuget\Package.cs" />

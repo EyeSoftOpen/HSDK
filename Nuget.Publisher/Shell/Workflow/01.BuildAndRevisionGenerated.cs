@@ -13,7 +13,8 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly BuildAndRevision buildAndRevision;
 
-		public BuildAndRevisionGenerated(string solutionPath, IEnumerable<string> packagesId, BuildAndRevision buildAndRevision)
+		public BuildAndRevisionGenerated(
+			string solutionPath, IEnumerable<string> packagesId, BuildAndRevision buildAndRevision)
 		{
 			this.solutionPath = solutionPath;
 			this.packagesId = packagesId;
