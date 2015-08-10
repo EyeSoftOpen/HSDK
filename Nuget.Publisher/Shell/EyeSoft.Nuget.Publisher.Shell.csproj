@@ -63,16 +63,18 @@
     <Compile Include="Core\ConsoleHelper.cs" />
     <Compile Include="Core\SingularPluralTimeFormatter.cs" />
     <Compile Include="Core\TimeSpanExtensions.cs" />
-    <Compile Include="Workflow\FluentWorkflow.cs" />
-    <Compile Include="Workflow\07.NugetPackagesPublished.cs" />
-    <Compile Include="Workflow\05.PackagesUpdated.cs" />
-    <Compile Include="Workflow\08.PreviousVersionsUpdated.cs" />
-    <Compile Include="Workflow\06.SolutionBuilt.cs" />
+    <Compile Include="Workflow\07.CompileNugetPackagesStep.cs" />
+    <Compile Include="Workflow\FluentWorkflowStep.cs" />
+    <Compile Include="Workflow\09.UpdatePreviousVersionsStep.cs" />
+    <Compile Include="Workflow\06.BuildSolutionStep.cs" />
+    <Compile Include="Workflow\10.DumpUpdatedPackagesStep.cs" />
+    <Compile Include="Workflow\08.PublishNugetPackagesStep.cs" />
     <Compile Include="Core\AssemblyInfo.cs" />
     <Compile Include="Core\AssemblyInfoData.cs" />
     <Compile Include="Core\AssemblyInfoLine.cs" />
     <Compile Include="Core\BuildAndRevision.cs" />
     <Compile Include="Core\Converter.cs" />
+    <Compile Include="Workflow\01.GenerateBuildAndRevisionStep.cs" />
     <Compile Include="Workflow\Hsdk.cs" />
     <Compile Include="LinqPad\Hyperlinq.cs" />
     <Compile Include="Build\MsBuild.cs" />
@@ -83,15 +85,15 @@
     <Compile Include="Nuget\PackageUpdateResult.cs" />
     <Compile Include="Nuget\PackageWithFramework.cs" />
     <Compile Include="LinqPad\Util.cs" />
-    <Compile Include="Workflow\01.BuildAndRevisionGenerated.cs" />
-    <Compile Include="Workflow\04.NuspecAndAssemblyInfoUpdated.cs" />
-    <Compile Include="Workflow\03.PackagesFromSolutionCollected.cs" />
-    <Compile Include="Workflow\02.PreviousVersionsRetrieved.cs" />
+    <Compile Include="Workflow\02.RetrievePreviousVersionsStep.cs" />
+    <Compile Include="Workflow\05.UpdatePackagesStep.cs" />
+    <Compile Include="Workflow\04.UpdateNuspecAndAssemblyInfoStep.cs" />
+    <Compile Include="Workflow\03.CollectPackagesFromSolutionStep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\Storage.cs" />
     <Compile Include="Core\VersionHelper.cs" />
-    <Compile Include="Workflow\09.UpdatePackagesDumped.cs" />
+    <Compile Include="Workflow\11.WaitStep.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

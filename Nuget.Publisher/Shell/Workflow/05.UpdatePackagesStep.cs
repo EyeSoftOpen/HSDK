@@ -6,7 +6,7 @@
 
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
-	public class NuspecAndAssemblyInfoUpdated : FluentWorkflow
+	public class UpdatePackagesStep : FluentWorkflowStep
 	{
 		private readonly string solutionPath;
 
@@ -16,7 +16,7 @@
 
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
-		public NuspecAndAssemblyInfoUpdated(
+		public UpdatePackagesStep(
 			string solutionPath,
 			BuildAndRevision buildAndRevision,
 			IEnumerable<PackageWithFramework> packages,
@@ -28,11 +28,11 @@
 			this.previousVersions = previousVersions;
 		}
 
-		public NuspecAndAssemblyInfoUpdated()
+		public UpdatePackagesStep()
 		{
 		}
 
-		public PackagesUpdated UpdatePackages()
+		public BuildSolutionStep UpdatePackages()
 		{
 			var packageWithFrameworks = packages as PackageWithFramework[] ?? packages.ToArray();
 
@@ -68,7 +68,7 @@
 				packageUpdateResults.Add(packageUpdate);
 			}
 
-			return new PackagesUpdated(solutionPath, packageUpdateResults);
+			return new BuildSolutionStep(solutionPath, packageUpdateResults);
 		}
 	}
 }

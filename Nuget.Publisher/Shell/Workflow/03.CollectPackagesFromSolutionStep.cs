@@ -2,7 +2,7 @@
 {
 	using System.Collections.Generic;
 
-	public class PreviousVersionsRetrieved : FluentWorkflow
+	public class CollectPackagesFromSolutionStep : FluentWorkflowStep
 	{
 		private readonly string solutionPath;
 
@@ -14,7 +14,7 @@
 
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
-		public PreviousVersionsRetrieved(
+		public CollectPackagesFromSolutionStep(
 			string solutionPath,
 			string solutionFolderPath,
 			IEnumerable<string> packagesId,
@@ -28,9 +28,9 @@
 			this.previousVersions = previousVersions;
 		}
 
-		public PackagesFromSolutionCollected CollectPackagesFromSolution()
+		public UpdateNuspecAndAssemblyInfoStep CollectPackagesFromSolution()
 		{
-			return new PackagesFromSolutionCollected(
+			return new UpdateNuspecAndAssemblyInfoStep(
 				solutionPath,
 				solutionFolderPath,
 				packagesId,

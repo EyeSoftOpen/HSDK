@@ -5,7 +5,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 	using Newtonsoft.Json;
 
-	public class BuildAndRevisionGenerated : FluentWorkflow
+	public class RetrievePreviousVersionsStep : FluentWorkflowStep
 	{
 		private readonly string solutionPath;
 
@@ -13,7 +13,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly BuildAndRevision buildAndRevision;
 
-		public BuildAndRevisionGenerated(
+		public RetrievePreviousVersionsStep(
 			string solutionPath, IEnumerable<string> packagesId, BuildAndRevision buildAndRevision)
 		{
 			this.solutionPath = solutionPath;
@@ -21,7 +21,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			this.buildAndRevision = buildAndRevision;
 		}
 
-		public PreviousVersionsRetrieved GetPreviousVersions()
+		public CollectPackagesFromSolutionStep RetrievePreviousVersions()
 		{
 			var solutionFolderPath = new FileInfo(solutionPath).Directory.FullName;
 
@@ -31,7 +31,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 			var previousVersions = JsonConvert.DeserializeObject<IReadOnlyDictionary<string, string>>(json);
 
-			return new PreviousVersionsRetrieved(
+			return new CollectPackagesFromSolutionStep(
 				solutionPath,
 				solutionFolderPath,
 				packagesId,

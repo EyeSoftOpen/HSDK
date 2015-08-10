@@ -1,14 +1,11 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System;
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Linq;
-
-	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
-	public class PackagesFromSolutionCollected : FluentWorkflow
+	public class UpdateNuspecAndAssemblyInfoStep : FluentWorkflowStep
 	{
 		private readonly string solutionPath;
 
@@ -20,7 +17,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
-		public PackagesFromSolutionCollected(
+		public UpdateNuspecAndAssemblyInfoStep(
 			string solutionPath,
 			string solutionFolderPath,
 			IEnumerable<string> packagesId,
@@ -34,7 +31,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			this.previousVersions = previousVersions;
 		}
 
-		public NuspecAndAssemblyInfoUpdated UpdateNuspecAndAssemblyInfo()
+		public UpdatePackagesStep UpdateNuspecAndAssemblyInfo()
 		{
 			var checkPackages =
 				new DirectoryInfo(solutionFolderPath)
@@ -52,7 +49,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			{
 				ConsoleHelper.WriteLine("Packages with different versions to be fixed");
 
-				return new NuspecAndAssemblyInfoUpdated();
+				return new UpdatePackagesStep();
 			}
 
 			var packages =
@@ -61,7 +58,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 					.Select(x => new PackageWithFramework(x.Key, x.Value.Versions.First(), x.Value.Packages))
 					.ToArray();
 
-			return new NuspecAndAssemblyInfoUpdated(solutionPath, buildAndRevision, packages, previousVersions);
+			return new UpdatePackagesStep(solutionPath, buildAndRevision, packages, previousVersions);
 		}
 	}
 }

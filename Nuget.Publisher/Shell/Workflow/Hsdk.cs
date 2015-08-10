@@ -7,8 +7,6 @@ namespace EyeSoft.Nuget.Publisher.Shell
 	{
 	    public const string SolutionFolderPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
 
-		private static readonly ISet<FluentWorkflow> workflow = new HashSet<FluentWorkflow>();
-
 		private static readonly IEnumerable<string> packagesId =
 			new[]
 				{
@@ -42,15 +40,9 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			.Select(x => string.Concat("EyeSoft.", x))
 			.ToArray();
 
-		public BuildAndRevisionGenerated GenerateBuildAndRevision()
+		public RetrievePreviousVersionsStep GenerateBuildAndRevision()
 		{
-			var buildAndRevision = VersionHelper.GenerateBuildAndRevision();
-
-			var step = new BuildAndRevisionGenerated(SolutionFolderPath, packagesId, buildAndRevision);
-
-			workflow.Add(step);
-
-			return step;
+			return new GenerateBuildAndRevisionStep(SolutionFolderPath, packagesId).GenerateBuildAndRevision();
 		}
 	}
 }

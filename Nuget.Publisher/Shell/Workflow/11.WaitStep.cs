@@ -2,7 +2,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 {
 	using System;
 
-	public class UpdatePackagesDumped : FluentWorkflow
+	public class WaitStep : FluentWorkflowStep
 	{
 		public void Wait()
 		{

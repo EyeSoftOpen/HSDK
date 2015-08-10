@@ -7,16 +7,17 @@
 		public static void Main()
 		{
 			new HsdkWorkflow()
-				.GenerateBuildAndRevision()
-				.GetPreviousVersions()
-				.CollectPackagesFromSolution()
-				.UpdateNuspecAndAssemblyInfo()
-				.UpdatePackages()
-				.BuildSolution()
-				.PublishNugetPackages()
-				.UpdatePreviousVersions()
-				.DumpUpdatedPackages()
-				.Wait();
+				.GenerateBuildAndRevision()         //  1
+				.RetrievePreviousVersions()         //  2
+				.CollectPackagesFromSolution()      //  3
+				.UpdateNuspecAndAssemblyInfo()      //  4
+				.UpdatePackages()                   //  5
+				.BuildSolution()                    //  6
+				.CompileNugetPackages()				//  7
+				.PublishNugetPackages()             //  8
+				.UpdatePreviousVersions()           //  9
+				.DumpUpdatedPackages()              // 10
+				.Wait();                            // 11
 		}
 	}
 }

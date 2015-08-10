@@ -7,22 +7,22 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 	using Newtonsoft.Json;
 
-	public class PreviousVersionsUpdated : FluentWorkflow
+	public class DumpUpdatedPackagesStep : FluentWorkflowStep
 	{
 		private readonly IEnumerable<PackageUpdateResult> packageUpdateResults;
 
-		public PreviousVersionsUpdated(IEnumerable<PackageUpdateResult> packageUpdateResults)
+		public DumpUpdatedPackagesStep(IEnumerable<PackageUpdateResult> packageUpdateResults)
 		{
 			this.packageUpdateResults = packageUpdateResults;
 		}
 
-		public UpdatePackagesDumped DumpUpdatedPackages()
+		public WaitStep DumpUpdatedPackages()
 		{
 			var json = JsonConvert.SerializeObject(packageUpdateResults, Formatting.Indented);
 
 			ConsoleHelper.WriteLine(json);
 
-			return new UpdatePackagesDumped();
+			return new WaitStep();
 		}
 	}
 }
