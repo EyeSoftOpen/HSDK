@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{4506B456-4D98-4AF1-AA30-1E366E608618}"
 EndProject
@@ -22,9 +22,63 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Italian.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Italian.Test", "Internal\Accounting\Source\Account.Italian.Test\EyeSoft.Accounting.Italian.Test.csproj", "{2C432F34-F20E-44AF-B725-7427A8505E09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main", "Main", "{4E8042B8-7FDB-4782-B772-D1BB7EEF7450}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{6DE7C78B-76FD-4A99-A401-3376BD45A93F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{154011D0-559C-487A-9888-103EF2D1DC3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Core", "Internal\Core\Source\4.0\Core\EyeSoft.Core.csproj", "{4C464A88-7D14-4755-9EBF-82BBE1B168ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{62ABACAD-B744-48F4-B64A-CBE3193D7B38}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C432F34-F20E-44AF-B725-7427A8505E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4506B456-4D98-4AF1-AA30-1E366E608618} = {4E8042B8-7FDB-4782-B772-D1BB7EEF7450}
+		{E14F83BE-7567-453E-8884-F02B6A7B0552} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{B9A2F513-1B26-4A14-B56E-41D0CB323494} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{2C432F34-F20E-44AF-B725-7427A8505E09} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{154011D0-559C-487A-9888-103EF2D1DC3A} = {6DE7C78B-76FD-4A99-A401-3376BD45A93F}
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED} = {62ABACAD-B744-48F4-B64A-CBE3193D7B38}
+		{62ABACAD-B744-48F4-B64A-CBE3193D7B38} = {154011D0-559C-487A-9888-103EF2D1DC3A}
+	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
+		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
 		SccProjectUniqueName0 = Internal\\Accounting\\Source\\Accounting\\EyeSoft.Accounting.csproj
@@ -57,42 +111,12 @@ Global
 		SccAuxPath4 = https://picoware.visualstudio.com/defaultcollection
 		SccLocalPath4 = Internal\\Accounting\\Source\\Account.Italian.Test
 		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-	EndGlobalSection
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E14F83BE-7567-453E-8884-F02B6A7B0552}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9A2F513-1B26-4A14-B56E-41D0CB323494}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C432F34-F20E-44AF-B725-7427A8505E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C432F34-F20E-44AF-B725-7427A8505E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C432F34-F20E-44AF-B725-7427A8505E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C432F34-F20E-44AF-B725-7427A8505E09}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{E14F83BE-7567-453E-8884-F02B6A7B0552} = {4506B456-4D98-4AF1-AA30-1E366E608618}
-		{4F137981-7FAC-4E16-B3EE-90FC69DEFD29} = {4506B456-4D98-4AF1-AA30-1E366E608618}
-		{B9A2F513-1B26-4A14-B56E-41D0CB323494} = {4506B456-4D98-4AF1-AA30-1E366E608618}
-		{06BC1C36-BA0A-46CC-ACDD-0D2E0E1FA908} = {4506B456-4D98-4AF1-AA30-1E366E608618}
-		{2C432F34-F20E-44AF-B725-7427A8505E09} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		SccProjectUniqueName5 = Internal\\Core\\Source\\4.0\\Core\\EyeSoft.Core.csproj
+		SccProjectTopLevelParentUniqueName5 = EyeSoft.Hsdk.Accounting.sln
+		SccProjectName5 = Internal/Core/Source/4.0/Core
+		SccAuxPath5 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath5 = Internal\\Core\\Source\\4.0\\Core
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = a9556ffc-1a6f-449c-a00f-a63aa56560bf

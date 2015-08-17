@@ -1,4 +1,4 @@
-namespace EyeSoft.Wpf.Facilities.Demo.Configuration
+namespace EyeSoft.Windows.Model.Demo.Configuration
 {
 	using System;
 	using System.Collections.Generic;

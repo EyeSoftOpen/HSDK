@@ -1,24 +1,21 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System;
-	using System.Collections.Generic;
-
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	using Newtonsoft.Json;
 
 	public class DumpUpdatedPackagesStep : FluentWorkflowStep
 	{
-		private readonly IEnumerable<PackageUpdateResult> packageUpdateResults;
+		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public DumpUpdatedPackagesStep(IEnumerable<PackageUpdateResult> packageUpdateResults)
+		public DumpUpdatedPackagesStep(NugetPackageResultCollection nugetPackageResultCollection)
 		{
-			this.packageUpdateResults = packageUpdateResults;
+			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
 
 		public WaitStep DumpUpdatedPackages()
 		{
-			var json = JsonConvert.SerializeObject(packageUpdateResults, Formatting.Indented);
+			var json = JsonConvert.SerializeObject(nugetPackageResultCollection, Formatting.Indented);
 
 			ConsoleHelper.WriteLine(json);
 

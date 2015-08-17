@@ -51,12 +51,6 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\..\..\..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="EyeSoft.Core">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\4.5\EyeSoft.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.Web">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Web\4.5.1\EyeSoft.Web.dll</HintPath>
-    </Reference>
     <Reference Include="Moq">
       <HintPath>..\..\..\..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
@@ -98,6 +92,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
+      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Web\Source\4.5\Web\EyeSoft.Web.csproj">
+      <Project>{134c2203-97c9-416d-83e2-5fcbb5d2eb5e}</Project>
+      <Name>EyeSoft.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiceModel\EyeSoft.ServiceModel.csproj">
       <Project>{6c698468-5881-42de-ac91-abc1034950bd}</Project>
       <Name>EyeSoft.ServiceModel</Name>
@@ -108,6 +110,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

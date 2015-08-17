@@ -2,9 +2,9 @@
 {
 	using System.Threading;
 
+	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 

@@ -1,21 +1,19 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System.Collections.Generic;
-
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	public class PublishNugetPackagesStep : FluentWorkflowStep
 	{
-		private readonly IEnumerable<PackageUpdateResult> packageUpdateResults;
+		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public PublishNugetPackagesStep(IEnumerable<PackageUpdateResult> packageUpdateResults)
+		public PublishNugetPackagesStep(NugetPackageResultCollection nugetPackageResultCollection)
 		{
-			this.packageUpdateResults = packageUpdateResults;
+			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
 
 		public UpdatePreviousVersionsStep PublishNugetPackages()
 		{
-			return new UpdatePreviousVersionsStep(packageUpdateResults);
+			return new UpdatePreviousVersionsStep(nugetPackageResultCollection);
 		}
 	}
 }

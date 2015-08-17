@@ -5,8 +5,9 @@
 	using EyeSoft.AutoMapper;
 	using EyeSoft.Mapping;
 	using EyeSoft.Threading.Tasks;
+	using EyeSoft.Windows.Model.Demo.Configuration;
+	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration;
 	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
 
 	public class ServiceFactoryHelper : IDisposable
@@ -28,15 +29,9 @@
 
 		public ServiceFactory<ICustomerService> ServiceFactory { get; private set; }
 
-		public bool ItemLoaded
-		{
-			get { return service.ItemLoaded; }
-		}
+		public bool ItemLoaded => service.ItemLoaded;
 
-		public bool CollectionLoaded
-		{
-			get { return service.CollectionLoaded; }
-		}
+		public bool CollectionLoaded => service.CollectionLoaded;
 
 		public static ServiceFactoryHelper Create()
 		{
@@ -44,7 +39,7 @@
 
 			var customerServiceFactory = new DemoProxyFactory<ICustomerService>(serviceStub);
 
-			var serviceFactory = new ServiceFactory<ICustomerService>(customerServiceFactory);
+			var serviceFactory = new ServiceFactory<ICustomerService>(() => customerServiceFactory.Create());
 
 			var factory = new ServiceFactoryHelper(serviceFactory, serviceStub);
 

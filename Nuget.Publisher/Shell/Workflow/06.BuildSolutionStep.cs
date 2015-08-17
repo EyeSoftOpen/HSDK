@@ -1,8 +1,5 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System.Collections.Generic;
-	using System.IO;
-
 	using EyeSoft.Nuget.Publisher.Shell.Build;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
@@ -10,20 +7,20 @@ namespace EyeSoft.Nuget.Publisher.Shell
 	{
 		private readonly string solutionPath;
 
-		private readonly IEnumerable<PackageUpdateResult> packageUpdateResults;
+		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public BuildSolutionStep(string solutionPath, IEnumerable<PackageUpdateResult> packageUpdateResults)
+		public BuildSolutionStep(string solutionPath, NugetPackageResultCollection nugetPackageResultCollection)
 		{
 			this.solutionPath = solutionPath;
 
-			this.packageUpdateResults = packageUpdateResults;
+			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
 
 		public CompileNugetPackagesStep BuildSolution()
 		{
 			MsBuild.Build(solutionPath);
 
-			return new CompileNugetPackagesStep(packageUpdateResults);
+			return new CompileNugetPackagesStep(nugetPackageResultCollection);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-namespace EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers
+namespace EyeSoft.Windows.Model.Demo.Configuration.Helpers
 {
 	using System;
 	using System.Linq;

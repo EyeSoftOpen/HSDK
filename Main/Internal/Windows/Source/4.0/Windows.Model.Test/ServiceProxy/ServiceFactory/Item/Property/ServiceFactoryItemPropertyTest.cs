@@ -2,9 +2,9 @@
 {
 	using System.Threading;
 
+	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -47,7 +47,7 @@
 
 		private class ViewModelCompleted : CollectionViewModel
 		{
-			public ViewModelCompleted(ServiceFactoryHelper factoryHelper, ManualResetEvent manualResetEvent)
+			public ViewModelCompleted(ServiceFactoryHelper factoryHelper, EventWaitHandle manualResetEvent)
 			{
 				factoryHelper
 					.ServiceFactory
@@ -55,9 +55,9 @@
 					.Fill(x => x.GetMainCustomer())
 					.Completed(x =>
 					{
-						manualResetEvent.Set();
-
 						x.FirstName = x.FirstName.ToUpper();
+
+						manualResetEvent.Set();
 					});
 			}
 		}

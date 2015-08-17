@@ -86,7 +86,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
@@ -145,8 +144,8 @@
       <Project>{F41F8342-2124-44CC-85DE-B49D7DFA4C95}</Project>
       <Name>EyeSoft.AutoMapper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
+      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj">
@@ -169,8 +168,8 @@
       <Project>{11895956-DCAC-4868-BC56-676054AC3E43}</Project>
       <Name>EyeSoft.Windows.Model.Demo.ViewModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Windows.Model\EyeSoft.Windows.Model.csproj">
-      <Project>{0311E947-B90B-47AB-8C28-526D65C17827}</Project>
+    <ProjectReference Include="..\..\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
+      <Project>{83d0880a-fc3f-4c86-8ff5-f392ab1ffee9}</Project>
       <Name>EyeSoft.Windows.Model</Name>
     </ProjectReference>
   </ItemGroup>

@@ -2,7 +2,7 @@ namespace EyeSoft.Web.Http
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Web.Http.Dependencies;
+	using System.Web.Mvc;
 
 	using EyeSoft;
 
@@ -25,10 +25,6 @@ namespace EyeSoft.Web.Http
 			return new List<object>();
 		}
 
-		public IDependencyScope BeginScope()
-		{
-			return this;
-		}
 
 		public void Dispose()
 		{

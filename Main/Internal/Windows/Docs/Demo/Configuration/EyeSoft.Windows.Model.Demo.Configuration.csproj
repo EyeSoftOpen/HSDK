@@ -7,8 +7,8 @@
     <ProjectGuid>{78ABA50A-3434-4013-889A-3092D74B4854}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EyeSoft.Wpf.Facilities.Demo.Configuration</RootNamespace>
-    <AssemblyName>EyeSoft.Wpf.Facilities.Demo.Configuration</AssemblyName>
+    <RootNamespace>EyeSoft.Windows.Model.Demo.Configuration</RootNamespace>
+    <AssemblyName>EyeSoft.Windows.Model.Demo.Configuration</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -64,20 +64,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="EyeSoft.AutoMapper, Version=0.5.1.40, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.AutoMapper\4.0\EyeSoft.AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.Core, Version=1.4.0.990, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\4.5\EyeSoft.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.ServiceLocator">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.ServiceLocator\4.0\EyeSoft.ServiceLocator.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.ServiceLocator.Windsor">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.ServiceLocator.Windsor\4.0\EyeSoft.ServiceLocator.Windsor.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\..\..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -104,6 +90,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\AutoMapper\Source\AutoMapper\EyeSoft.AutoMapper.csproj">
+      <Project>{f41f8342-2124-44cc-85de-b49d7dfa4c95}</Project>
+      <Name>EyeSoft.AutoMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
+      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj">
+      <Project>{94067b97-7cb4-4eb5-a4b1-1d10aa713e3f}</Project>
+      <Name>EyeSoft.ServiceLocator.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj">
+      <Project>{e3495af5-eaa2-4afe-80e3-ad44f1df481b}</Project>
+      <Name>EyeSoft.ServiceLocator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Source\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
       <Project>{83d0880a-fc3f-4c86-8ff5-f392ab1ffee9}</Project>
       <Name>EyeSoft.Windows.Model</Name>

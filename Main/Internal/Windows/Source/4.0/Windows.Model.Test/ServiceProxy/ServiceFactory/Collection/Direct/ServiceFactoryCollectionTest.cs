@@ -3,8 +3,8 @@
 	using System.Threading;
 
 	using EyeSoft.Windows.Model.Collections.ObjectModel;
+	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -27,7 +27,7 @@
 					x =>
 						{
 							collection = x;
-							
+
 							manualResetEvent.Set();
 						});
 

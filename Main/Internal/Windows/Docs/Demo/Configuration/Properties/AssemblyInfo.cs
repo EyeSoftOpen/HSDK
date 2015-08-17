@@ -2,10 +2,10 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
 
-[assembly: AssemblyTitle("EyeSoft.Wpf.Facilities.Demo.Configuration")]
-[assembly: AssemblyProduct("EyeSoft.Wpf.Facilities.Demo")]
+[assembly: AssemblyTitle("EyeSoft.Windows.Model.Demo.Configuration")]
+[assembly: AssemblyProduct("EyeSoft.Windows.Model.Demo")]
 
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]

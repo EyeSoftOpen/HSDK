@@ -17,14 +17,14 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 
 		private readonly string[] lines;
 
-		private readonly FileInfo nuspecFile;
-
 		public Package(FileInfo assemblyInfoFile, string[] lines, string title, string version, string targetFramework, FileInfo nuspecFile)
 			: this(assemblyInfoFile, lines, title, version, targetFramework)
 		{
-			this.nuspecFile = nuspecFile;
+			NuspecFile = nuspecFile;
 			HasNuget = true;
 		}
+
+		public FileInfo NuspecFile { get; set; }
 
 		public Package(FileInfo assemblyInfoFile, string[] lines, string title, string version, string targetFramework)
 		{
@@ -34,20 +34,21 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 			Title = title;
 			PackageVersion = Version.Parse(version).ToString();
 			TargetFramework = new Hyperlinq(() => Process.Start(assemblyInfoFile.Directory.Parent.FullName), targetFramework);
+
 			////TargetFramework = Version.Parse(targetFramework).ToString();
 		}
 
-		public string Title { get; private set; }
+		public string Title { get; }
 
-		public string PackageVersion { get; private set; }
+		public string PackageVersion { get; }
 
-		public Hyperlinq TargetFramework { get; private set; }
+		public Hyperlinq TargetFramework { get; }
 
-		public bool HasNuget { get; private set; }
+		public bool HasNuget { get; }
 
 		public IEnumerable<PackageUpdate> TryUpdateNuspecDependencies(IReadOnlyDictionary<string, Func<Version>> packages)
 		{
-			var nuspec = File.ReadAllText(nuspecFile.FullName);
+			var nuspec = File.ReadAllText(NuspecFile.FullName);
 
 			nuspec = nuspec.Replace("$", "__");
 
@@ -70,7 +71,6 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 							.ToArray();
 
 					////var hasDepenciesUpdated = dependenciesToUpdate.Any();
-
 					var updates = new List<PackageUpdate>();
 
 					foreach (var dependencyToUpdate in dependenciesToUpdate)
@@ -88,7 +88,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 
 					nuspec = nuspec.Replace("__", "$");
 
-					Storage.WriteAllText(nuspecFile.FullName, nuspec);
+					Storage.WriteAllText(NuspecFile.FullName, nuspec);
 
 					return updates;
 				}
@@ -114,8 +114,8 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 		}
 
 		private static void UpdateAssemblyVersionLine(
-			string newVersion,
-			IReadOnlyList<AssemblyInfoLine> assemblyInfoLines,
+			string newVersion, 
+			IReadOnlyList<AssemblyInfoLine> assemblyInfoLines, 
 			AssemblyInfoData assemblyInfo)
 		{
 			var assemblyInfoVersion = assemblyInfo.ToString();

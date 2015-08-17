@@ -35,10 +35,7 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 			set { SetProperty(value); }
 		}
 
-		public string FullName
-		{
-			get { return "{FirstName} {LastName}".NamedFormat(FirstName, LastName); }
-		}
+		public string FullName => $"{FirstName} {LastName}";
 
 		public int Visits
 		{

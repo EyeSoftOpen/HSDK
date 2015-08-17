@@ -27,10 +27,7 @@
 			this.container = container;
 		}
 
-		public IWindsorContainer Container
-		{
-			get { return container; }
-		}
+		public IWindsorContainer Container => container;
 
 		public override bool IsRegistered(Type serviceType)
 		{

@@ -54,16 +54,6 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\..\..\..\..\packages\AutoMapper.3.1.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
-    <Reference Include="EyeSoft.Core, Version=1.4.0.990, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\4.5\EyeSoft.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.FluentValidation">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.FluentValidation\4.0\EyeSoft.FluentValidation.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.ServiceLocator">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.ServiceLocator\4.0\EyeSoft.ServiceLocator.dll</HintPath>
-    </Reference>
     <Reference Include="FluentValidation, Version=5.0.0.1, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\packages\FluentValidation-Signed.5.0.0.1\lib\Net40\FluentValidation.dll</HintPath>
@@ -82,7 +72,6 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -99,6 +88,14 @@
     <Compile Include="Validators\CustomerViewModelValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
+      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FluentValidation\Source\FluentValidation\EyeSoft.FluentValidation.csproj">
+      <Project>{1b6b2ce4-0605-4567-919f-9eadc60b1d43}</Project>
+      <Name>EyeSoft.FluentValidation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Source\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
       <Project>{83d0880a-fc3f-4c86-8ff5-f392ab1ffee9}</Project>
       <Name>EyeSoft.Windows.Model</Name>

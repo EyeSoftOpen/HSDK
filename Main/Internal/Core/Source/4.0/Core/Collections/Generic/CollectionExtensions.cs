@@ -10,8 +10,6 @@
 	{
 		public static ICollection<T> AddRange<T>(this ICollection<T> collection, IEnumerable<T> items)
 		{
-			Enforce.Argument(() => collection).Argument(() => items);
-
 			var list = collection as List<T>;
 
 			if (list != null)

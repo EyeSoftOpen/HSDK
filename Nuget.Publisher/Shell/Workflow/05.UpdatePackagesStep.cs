@@ -68,7 +68,7 @@
 				packageUpdateResults.Add(packageUpdate);
 			}
 
-			return new BuildSolutionStep(solutionPath, packageUpdateResults);
+			return new BuildSolutionStep(solutionPath, new NugetPackageResultCollection(packageUpdateResults));
 		}
 	}
 }

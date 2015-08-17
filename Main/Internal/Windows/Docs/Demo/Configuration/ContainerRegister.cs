@@ -1,4 +1,4 @@
-namespace EyeSoft.Wpf.Facilities.Demo.Configuration
+namespace EyeSoft.Windows.Model.Demo.Configuration
 {
 	using EyeSoft.AutoMapper;
 	using EyeSoft.Mapping;
@@ -7,9 +7,9 @@ namespace EyeSoft.Wpf.Facilities.Demo.Configuration
 	using EyeSoft.Timers;
 	using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Model.Collections.ObjectModel;
+	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Input;
 	using EyeSoft.Windows.Model.Threading;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
 
 	public static class ContainerRegister
 	{

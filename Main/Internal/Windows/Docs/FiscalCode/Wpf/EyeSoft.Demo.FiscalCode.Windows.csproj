@@ -89,22 +89,6 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EyeSoft.Accounting">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Accounting\Current\4.0\EyeSoft.Accounting.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.Accounting.Italian">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Accounting.Italian\Current\4.0\EyeSoft.Accounting.Italian.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.Accounting.Italian.Istat">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Accounting.Italian.Istat\Current\4.0\EyeSoft.Accounting.Italian.Istat.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.Core, Version=1.4.0.990, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\Current\4.5\EyeSoft.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.FluentValidation">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.FluentValidation\Current\4.0\EyeSoft.FluentValidation.dll</HintPath>
-    </Reference>
     <Reference Include="FluentValidation, Version=5.0.0.1, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\packages\FluentValidation-Signed.5.0.0.1\lib\Net40\FluentValidation.dll</HintPath>
@@ -194,12 +178,32 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj">
-      <Project>{0311E947-B90B-47AB-8C28-526D65C17827}</Project>
+    <ProjectReference Include="..\..\..\..\Accounting\Source\Accounting.Italian.Istat\EyeSoft.Accounting.Italian.Istat.csproj">
+      <Project>{b9a2f513-1b26-4a14-b56e-41d0cb323494}</Project>
+      <Name>EyeSoft.Accounting.Italian.Istat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Accounting\Source\Accounting.Italian\EyeSoft.Accounting.Italian.csproj">
+      <Project>{4f137981-7fac-4e16-b3ee-90fc69defd29}</Project>
+      <Name>EyeSoft.Accounting.Italian</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Accounting\Source\Accounting\EyeSoft.Accounting.csproj">
+      <Project>{e14f83be-7567-453e-8884-f02b6a7b0552}</Project>
+      <Name>EyeSoft.Accounting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
+      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FluentValidation\Source\FluentValidation\EyeSoft.FluentValidation.csproj">
+      <Project>{1b6b2ce4-0605-4567-919f-9eadc60b1d43}</Project>
+      <Name>EyeSoft.FluentValidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Source\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
+      <Project>{83d0880a-fc3f-4c86-8ff5-f392ab1ffee9}</Project>
       <Name>EyeSoft.Windows.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\4.0\Windows\EyeSoft.Windows.csproj">
-      <Project>{aeb9b57c-50e1-4858-86ac-6b9dc21031bb}</Project>
+    <ProjectReference Include="..\..\..\Source\4.5\Windows\EyeSoft.Windows.csproj">
+      <Project>{ea283877-0461-415e-941a-663cc13c371f}</Project>
       <Name>EyeSoft.Windows</Name>
     </ProjectReference>
   </ItemGroup>

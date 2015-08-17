@@ -1,20 +1,29 @@
-using System.Collections.Generic;
-using EyeSoft.Nuget.Publisher.Shell.Nuget;
-
 namespace EyeSoft.Nuget.Publisher.Shell
 {
+	using System.Diagnostics;
+	using System.Linq;
+
+	using EyeSoft.Nuget.Publisher.Shell.Nuget;
+
 	public class CompileNugetPackagesStep : FluentWorkflowStep
 	{
-		private readonly IEnumerable<PackageUpdateResult> packageUpdateResults;
+		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public CompileNugetPackagesStep(IEnumerable<PackageUpdateResult> packageUpdateResults)
+		public CompileNugetPackagesStep(NugetPackageResultCollection nugetPackageResultCollection)
 		{
-			this.packageUpdateResults = packageUpdateResults;
+			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
 
 		public PublishNugetPackagesStep CompileNugetPackages()
 		{
-			return new PublishNugetPackagesStep(packageUpdateResults);
+			var nuspecFiles = nugetPackageResultCollection.NugetPackages.Select(x => x.NuspecFile.FullName).ToArray();
+
+			foreach (var nuspec in nuspecFiles)
+			{
+				Process.Start("");
+			}
+
+			return new PublishNugetPackagesStep(nugetPackageResultCollection);
 		}
 	}
 }

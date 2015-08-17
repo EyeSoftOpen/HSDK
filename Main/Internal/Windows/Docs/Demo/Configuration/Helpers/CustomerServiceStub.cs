@@ -5,6 +5,7 @@ namespace EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers
 	using System.Linq;
 	using System.Threading;
 
+	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
 
 	internal class CustomerServiceStub : ICustomerService

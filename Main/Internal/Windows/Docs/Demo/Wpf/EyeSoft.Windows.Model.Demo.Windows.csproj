@@ -77,15 +77,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="EyeSoft.Core">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.Core\Current\4.5\EyeSoft.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.FluentValidation">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.FluentValidation\Current\4.0\EyeSoft.FluentValidation.dll</HintPath>
-    </Reference>
-    <Reference Include="EyeSoft.ServiceLocator">
-      <HintPath>..\..\..\..\..\Libraries\EyeSoft.ServiceLocator\Current\4.0\EyeSoft.ServiceLocator.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -137,13 +128,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\4.0\Windows\EyeSoft.Windows.csproj">
-      <Project>{aeb9b57c-50e1-4858-86ac-6b9dc21031bb}</Project>
-      <Name>EyeSoft.Windows</Name>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
+      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
+      <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj">
+      <Project>{94067b97-7cb4-4eb5-a4b1-1d10aa713e3f}</Project>
+      <Name>EyeSoft.ServiceLocator.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj">
+      <Project>{e3495af5-eaa2-4afe-80e3-ad44f1df481b}</Project>
+      <Name>EyeSoft.ServiceLocator</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Source\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
       <Project>{83d0880a-fc3f-4c86-8ff5-f392ab1ffee9}</Project>
       <Name>EyeSoft.Windows.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Source\4.5\Windows\EyeSoft.Windows.csproj">
+      <Project>{ea283877-0461-415e-941a-663cc13c371f}</Project>
+      <Name>EyeSoft.Windows</Name>
     </ProjectReference>
     <ProjectReference Include="..\Configuration\EyeSoft.Windows.Model.Demo.Configuration.csproj">
       <Project>{78ABA50A-3434-4013-889A-3092D74B4854}</Project>

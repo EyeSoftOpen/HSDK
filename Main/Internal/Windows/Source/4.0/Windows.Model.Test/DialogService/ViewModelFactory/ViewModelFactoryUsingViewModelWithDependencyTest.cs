@@ -44,7 +44,7 @@
 				TestDependency = testDependency;
 			}
 
-			public TestDependency TestDependency { get; private set; }
+			public TestDependency TestDependency { get; }
 		}
 
 		private class TestDependency

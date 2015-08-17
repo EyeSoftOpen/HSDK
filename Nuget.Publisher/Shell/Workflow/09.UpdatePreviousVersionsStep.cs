@@ -6,16 +6,16 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 	public class UpdatePreviousVersionsStep : FluentWorkflowStep
 	{
-		private readonly IEnumerable<PackageUpdateResult> packageUpdateResults;
+		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public UpdatePreviousVersionsStep(IEnumerable<PackageUpdateResult> packageUpdateResults)
+		public UpdatePreviousVersionsStep(NugetPackageResultCollection nugetPackageResultCollection)
 		{
-			this.packageUpdateResults = packageUpdateResults;
+			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
 
 		public DumpUpdatedPackagesStep UpdatePreviousVersions()
 		{
-			return new DumpUpdatedPackagesStep(packageUpdateResults);
+			return new DumpUpdatedPackagesStep(nugetPackageResultCollection);
 		}
 	}
 }

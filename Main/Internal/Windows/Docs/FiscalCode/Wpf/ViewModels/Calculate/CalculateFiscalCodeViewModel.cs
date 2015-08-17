@@ -95,7 +95,7 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 				return Enumerable.Empty<ValidationError>();
 			}
 
-			var errors = new CalculateFiscalCodeViewModelValidator().Validate(this).ToList();
+			var errors = new CalculateFiscalCodeViewModelValidator().Validate(this);
 
 			return errors;
 		}

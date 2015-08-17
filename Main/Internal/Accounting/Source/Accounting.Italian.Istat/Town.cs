@@ -16,7 +16,7 @@
 
 		public string Istat { get; private set; }
 
-		public string Name { get; private set; }
+		public string Name { get; }
 
 		public string City { get; private set; }
 
