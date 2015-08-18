@@ -22,7 +22,7 @@
 
 			var httpConfiguration = GlobalConfiguration.Configuration;
 
-			httpConfiguration.DependencyResolver = new HttpLocator(locator);
+			httpConfiguration.DependencyResolver = new DependencyResolver(locator);
 
 			httpConfiguration.RemoveXmlFormatterToUseJsonFormatter();
 

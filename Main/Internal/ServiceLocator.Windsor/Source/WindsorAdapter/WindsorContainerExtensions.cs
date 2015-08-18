@@ -25,7 +25,7 @@
 			var message = new StringBuilder();
 			var inspector = new DependencyInspector(message);
 
-			foreach (IExposeDependencyInfo handler in handlers)
+			foreach (var handler in handlers.Cast<IExposeDependencyInfo>())
 			{
 				handler.ObtainDependencyDetails(inspector);
 			}

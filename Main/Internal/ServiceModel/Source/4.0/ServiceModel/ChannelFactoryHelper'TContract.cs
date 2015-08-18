@@ -15,15 +15,21 @@
 
 		private readonly NetworkCredential credential;
 
-		public ChannelFactoryHelper(string host = ServiceDefaults.Http.Host, int port = ServiceDefaults.Http.Port, NetworkCredential credential = null, string dnsName = null, Binding binding = null, string serviceName = null)
+		public ChannelFactoryHelper(
+				string host = ServiceDefaults.Http.Host,
+				int port = ServiceDefaults.Http.Port,
+				NetworkCredential credential = null,
+				string dnsName = null,
+				Binding binding = null,
+				string serviceName = null)
 		{
 			this.credential = credential;
 
 			var url = new UriBuilder(host) { Port = port }.Uri.ToString();
-			
+
 			serviceName = serviceName ?? GetServiceFromContract();
 
-			var uri = new Uri(string.Format("{0}{1}", url, serviceName));
+			var uri = new Uri($"{url}{serviceName}");
 
 			if (dnsName == null)
 			{

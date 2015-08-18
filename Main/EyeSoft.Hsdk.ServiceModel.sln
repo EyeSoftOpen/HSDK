@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{4506B456-4D98-4AF1-AA30-1E366E608618}"
 EndProject
@@ -22,9 +22,99 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceModel.Test",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceModel.Hosting.Web", "Internal\ServiceModel\Source\4.5\Web\EyeSoft.ServiceModel.Hosting.Web.csproj", "{DAD9BBCE-8D56-41CB-9931-821E7DC27303}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModel", "ServiceModel", "{39421810-1430-4C69-A8A5-E9D99A7646F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{2AF2E4A1-5812-48A4-BC94-9B17BFC6D35B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Core", "Internal\Core\Source\4.0\Core\EyeSoft.Core.csproj", "{4C464A88-7D14-4755-9EBF-82BBE1B168ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4114067A-4739-4144-9592-2AC77DA9250D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{31A7DB5C-B2DB-4F87-A3F7-2045DC202545}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.5", "4.5", "{2D43B70E-3CAF-4492-AD5D-E18768CB076D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Core", "Internal\Core\Source\4.5\Core\EyeSoft.Core.csproj", "{0E048E30-4DFC-4362-8056-F809E4AF4FB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{D15BFF36-B7E0-4A71-9D59-388520175851}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Web", "Internal\Web\Source\4.5\Web\EyeSoft.Web.csproj", "{134C2203-97C9-416D-83E2-5FCBB5D2EB5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLocator", "ServiceLocator", "{210330AC-8A4D-49DD-811F-A94F55019834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceLocator", "Internal\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj", "{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLocator.Castle", "ServiceLocator.Castle", "{5B2A5AD8-BB0C-4B61-A957-6FB3A5F45D0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ServiceLocator.Windsor", "Internal\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj", "{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A77251F3-1232-476B-B8C8-B85A276D1043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77251F3-1232-476B-B8C8-B85A276D1043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77251F3-1232-476B-B8C8-B85A276D1043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77251F3-1232-476B-B8C8-B85A276D1043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C698468-5881-42DE-AC91-ABC1034950BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C698468-5881-42DE-AC91-ABC1034950BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C698468-5881-42DE-AC91-ABC1034950BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C698468-5881-42DE-AC91-ABC1034950BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E048E30-4DFC-4362-8056-F809E4AF4FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E048E30-4DFC-4362-8056-F809E4AF4FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E048E30-4DFC-4362-8056-F809E4AF4FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E048E30-4DFC-4362-8056-F809E4AF4FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{134C2203-97C9-416D-83E2-5FCBB5D2EB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{134C2203-97C9-416D-83E2-5FCBB5D2EB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{134C2203-97C9-416D-83E2-5FCBB5D2EB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{134C2203-97C9-416D-83E2-5FCBB5D2EB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4506B456-4D98-4AF1-AA30-1E366E608618} = {39421810-1430-4C69-A8A5-E9D99A7646F9}
+		{E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2} = {39421810-1430-4C69-A8A5-E9D99A7646F9}
+		{A77251F3-1232-476B-B8C8-B85A276D1043} = {4506B456-4D98-4AF1-AA30-1E366E608618}
+		{6C698468-5881-42DE-AC91-ABC1034950BD} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
+		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
+		{DAD9BBCE-8D56-41CB-9931-821E7DC27303} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED} = {31A7DB5C-B2DB-4F87-A3F7-2045DC202545}
+		{4114067A-4739-4144-9592-2AC77DA9250D} = {2AF2E4A1-5812-48A4-BC94-9B17BFC6D35B}
+		{31A7DB5C-B2DB-4F87-A3F7-2045DC202545} = {4114067A-4739-4144-9592-2AC77DA9250D}
+		{2D43B70E-3CAF-4492-AD5D-E18768CB076D} = {4114067A-4739-4144-9592-2AC77DA9250D}
+		{0E048E30-4DFC-4362-8056-F809E4AF4FB1} = {2D43B70E-3CAF-4492-AD5D-E18768CB076D}
+		{D15BFF36-B7E0-4A71-9D59-388520175851} = {2AF2E4A1-5812-48A4-BC94-9B17BFC6D35B}
+		{134C2203-97C9-416D-83E2-5FCBB5D2EB5E} = {D15BFF36-B7E0-4A71-9D59-388520175851}
+		{210330AC-8A4D-49DD-811F-A94F55019834} = {2AF2E4A1-5812-48A4-BC94-9B17BFC6D35B}
+		{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B} = {210330AC-8A4D-49DD-811F-A94F55019834}
+		{5B2A5AD8-BB0C-4B61-A957-6FB3A5F45D0F} = {2AF2E4A1-5812-48A4-BC94-9B17BFC6D35B}
+		{94067B97-7CB4-4EB5-A4B1-1D10AA713E3F} = {5B2A5AD8-BB0C-4B61-A957-6FB3A5F45D0F}
+	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 9
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
 		SccProjectUniqueName0 = Internal\\ServiceModel\\Source\\4.0\\ServiceModel\\EyeSoft.ServiceModel.csproj
@@ -51,37 +141,36 @@ Global
 		SccAuxPath3 = https://picoware.visualstudio.com/defaultcollection
 		SccLocalPath3 = Internal\\ServiceModel\\Source\\4.5\\Web
 		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-	EndGlobalSection
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A77251F3-1232-476B-B8C8-B85A276D1043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A77251F3-1232-476B-B8C8-B85A276D1043}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A77251F3-1232-476B-B8C8-B85A276D1043}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A77251F3-1232-476B-B8C8-B85A276D1043}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C698468-5881-42DE-AC91-ABC1034950BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C698468-5881-42DE-AC91-ABC1034950BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C698468-5881-42DE-AC91-ABC1034950BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C698468-5881-42DE-AC91-ABC1034950BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAD9BBCE-8D56-41CB-9931-821E7DC27303}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{A77251F3-1232-476B-B8C8-B85A276D1043} = {4506B456-4D98-4AF1-AA30-1E366E608618}
-		{6C698468-5881-42DE-AC91-ABC1034950BD} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
-		{D0D2DF68-8FBD-42F5-B954-C8D3297F33D9} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
-		{DAD9BBCE-8D56-41CB-9931-821E7DC27303} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
+		SccProjectUniqueName4 = Internal\\Core\\Source\\4.0\\Core\\EyeSoft.Core.csproj
+		SccProjectTopLevelParentUniqueName4 = EyeSoft.Hsdk.ServiceModel.sln
+		SccProjectName4 = Internal/Core/Source/4.0/Core
+		SccAuxPath4 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath4 = Internal\\Core\\Source\\4.0\\Core
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = Internal\\Core\\Source\\4.5\\Core\\EyeSoft.Core.csproj
+		SccProjectTopLevelParentUniqueName5 = EyeSoft.Hsdk.ServiceModel.sln
+		SccProjectName5 = Internal/Core/Source/4.5/Core
+		SccAuxPath5 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath5 = Internal\\Core\\Source\\4.5\\Core
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = Internal\\Web\\Source\\4.5\\Web\\EyeSoft.Web.csproj
+		SccProjectTopLevelParentUniqueName6 = EyeSoft.Hsdk.ServiceModel.sln
+		SccProjectName6 = Internal/Web/Source/4.5/Web
+		SccAuxPath6 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath6 = Internal\\Web\\Source\\4.5\\Web
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName7 = Internal\\ServiceLocator\\Source\\ServiceLocator\\EyeSoft.ServiceLocator.csproj
+		SccProjectTopLevelParentUniqueName7 = EyeSoft.Hsdk.ServiceModel.sln
+		SccProjectName7 = Internal/ServiceLocator/Source/ServiceLocator
+		SccAuxPath7 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath7 = Internal\\ServiceLocator\\Source\\ServiceLocator
+		SccProvider7 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName8 = Internal\\ServiceLocator.Windsor\\Source\\WindsorAdapter\\EyeSoft.ServiceLocator.Windsor.csproj
+		SccProjectTopLevelParentUniqueName8 = EyeSoft.Hsdk.ServiceModel.sln
+		SccProjectName8 = Internal/ServiceLocator.Windsor/Source/WindsorAdapter
+		SccAuxPath8 = https://picoware.visualstudio.com/defaultcollection
+		SccLocalPath8 = Internal\\ServiceLocator.Windsor\\Source\\WindsorAdapter
+		SccProvider8 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = a9556ffc-1a6f-449c-a00f-a63aa56560bf
