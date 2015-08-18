@@ -2,8 +2,6 @@ namespace EyeSoft.Transfer.Service.Test.Helpers
 {
 	using System.IO;
 
-	using EyeSoft.Testing.IO;
-
 	internal static class KnownFile
 	{
 		public const string Sha1 = "5f1de5c39655f34c149bdbbba70d0e1ec5a86eb5";
@@ -16,13 +14,6 @@ namespace EyeSoft.Transfer.Service.Test.Helpers
 
 		private const string Content = "Test text content fot the file.";
 
-		public static Stream Stream
-		{
-			get
-			{
-				return
-					new RandomStream(DocumentSize, false, Path.GetHashCode());
-			}
-		}
+		public static Stream Stream => new RandomStream(DocumentSize, false, Path.GetHashCode());
 	}
 }

@@ -31,7 +31,7 @@
 		<StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
 			<Button Content="Reload" Command="{Binding ReloadCommand}" />
 		</StackPanel>
-		<Rectangle Grid.Row="0" Grid.Column="1" Width="20" Height="20" Fill="#4676c6" Margin="5" VerticalAlignment="Center">
+		<Rectangle x:Name="Rectangle" Grid.Row="0" Grid.Column="1" Width="20" Height="20" Fill="#00AFF0" Margin="5" VerticalAlignment="Center">
 			<Rectangle.RenderTransform>
 				<RotateTransform Angle="0" CenterX="10" CenterY="10"/>
 			</Rectangle.RenderTransform>

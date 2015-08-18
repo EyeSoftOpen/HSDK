@@ -1,7 +1,6 @@
 ﻿namespace EyeSoft.Transfer.Service.Test.Chunking
 {
 	using EyeSoft.Security.Cryptography;
-	using EyeSoft.Testing.Domain;
 	using EyeSoft.Transfer.Chunking.Contracts;
 	using EyeSoft.Transfer.Chunking.Domain.Transactional;
 	using EyeSoft.Transfer.Service.Chunking;

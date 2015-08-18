@@ -12,7 +12,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D6467DA3-B6FE-4845-8177-FEC594C21DD1}"
 	ProjectSection(SolutionItems) = preProject
 		Solution.Items\Local.testsettings = Solution.Items\Local.testsettings
-		Performance1.psess = Performance1.psess
 		Solution.Items\TraceAndTestImpact.testsettings = Solution.Items\TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
@@ -63,7 +62,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Istat", "Istat", "{30294A65
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoMapper", "AutoMapper", "{E360C811-7792-4928-87C6-8BBD603F12C0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2A26B87E-CD6B-4454-8690-97C6C3A235E4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{2A26B87E-CD6B-4454-8690-97C6C3A235E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharpTestExtensions", "SharpTestExtensions", "{4E4F8008-B4A2-49C3-9855-7181C11726AC}"
 EndProject

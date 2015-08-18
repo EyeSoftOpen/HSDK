@@ -53,7 +53,7 @@ namespace EyeSoft.Windows.Model
 				return window;
 			}
 
-			var enumerableArguments = arguments == null ? null : arguments.ToArray();
+			var enumerableArguments = arguments?.ToArray();
 
 			viewModel = CreateWithLocatorOrWithReflection(viewModelType, enumerableArguments);
 			window.DataContext = viewModel;

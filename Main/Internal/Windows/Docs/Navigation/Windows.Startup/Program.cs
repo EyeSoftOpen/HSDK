@@ -30,7 +30,7 @@
 						return;
 					}
 
-					ExceptionlessClient.Current.Register();
+					ExceptionlessClient.Default.Register();
 
 					application.InstallExceptionHandler();
 

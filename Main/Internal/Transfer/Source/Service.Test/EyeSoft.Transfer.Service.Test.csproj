@@ -61,12 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chunking\DownloadChunkingServiceTest.cs" />
+    <Compile Include="Chunking\MemoryTransactionalCollectionFactory.cs" />
     <Compile Include="Helpers\BooleanCondition.cs" />
     <Compile Include="Helpers\BooleanConditionExtensions.cs" />
     <Compile Include="Helpers\BooleanExtensions.cs" />
     <Compile Include="Helpers\KnownFile.cs" />
     <Compile Include="Helpers\KnownRequestDto.cs" />
     <Compile Include="Helpers\KnownStorage.cs" />
+    <Compile Include="Helpers\RandomStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,10 +82,6 @@
     <ProjectReference Include="..\..\..\Domain\Source\Domain\EyeSoft.Domain.csproj">
       <Project>{B89C9243-CF13-4B38-8199-9125BA7B625C}</Project>
       <Name>EyeSoft.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Testing\Source\Testing\EyeSoft.Testing.csproj">
-      <Project>{B3EC5E2B-D251-417D-BD42-8BA9E6B60885}</Project>
-      <Name>EyeSoft.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\EyeSoft.Transfer.csproj">
       <Project>{2E3A337B-2CA1-45D1-B700-ACC812558BBE}</Project>
