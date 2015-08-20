@@ -22,16 +22,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 					return null;
 				}
 
-				var targetFrameworkElement = XElement.Load(projectFile.FullName)
-					.Descendants("{http://schemas.microsoft.com/developer/msbuild/2003}TargetFrameworkVersion")
-					.SingleOrDefault();
-
-				var targetFramework = "4.0";
-
-				if (targetFrameworkElement != null)
-				{
-					targetFramework = targetFrameworkElement.Value.Replace("v", null);
-				}
+				var targetFramework = ExtractTargetFramework(projectFile);
 
 				var version = AssemblyInfo.GetData(lines, AssemblyInfoData.AssemblyVersion);
 
@@ -39,15 +30,31 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 
 				if (nuspec == null)
 				{
-					return new Package(assemblyInfoFile, lines, title, version, targetFramework);
+					return new Package(projectFile, assemblyInfoFile, lines, title, version, targetFramework);
 				}
 
-				return new Package(assemblyInfoFile, lines, title, version, targetFramework, nuspec);
+				return new Package(projectFile, assemblyInfoFile, lines, title, version, targetFramework, nuspec);
 			}
 			catch (Exception exception)
 			{
 				throw new IOException($"Cannot parse the file {assemblyInfoFile.FullName}.", exception);
 			}
+		}
+
+		private static string ExtractTargetFramework(FileInfo projectFile)
+		{
+			var targetFrameworkElement =
+				XElement.Load(projectFile.FullName)
+					.Descendants("{http://schemas.microsoft.com/developer/msbuild/2003}TargetFrameworkVersion")
+					.SingleOrDefault();
+
+			var targetFramework = "4.0";
+
+			if (targetFrameworkElement != null)
+			{
+				targetFramework = targetFrameworkElement.Value.Replace("v", null);
+			}
+			return targetFramework;
 		}
 	}
 }

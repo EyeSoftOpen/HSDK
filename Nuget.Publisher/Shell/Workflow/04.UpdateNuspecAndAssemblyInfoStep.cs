@@ -3,13 +3,13 @@ namespace EyeSoft.Nuget.Publisher.Shell
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Linq;
+
+	using EyeSoft.Nuget.Publisher.Shell.Build;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	public class UpdateNuspecAndAssemblyInfoStep : FluentWorkflowStep
 	{
-		private readonly string solutionPath;
-
-		private readonly string solutionFolderPath;
+		private readonly SolutionSystemInfo solutionSystemInfo;
 
 		private readonly BuildAndRevision buildAndRevision;
 
@@ -18,14 +18,12 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
 		public UpdateNuspecAndAssemblyInfoStep(
-			string solutionPath,
-			string solutionFolderPath,
+			SolutionSystemInfo solutionSystemInfo,
 			IEnumerable<string> packagesId,
 			BuildAndRevision buildAndRevision,
 			IReadOnlyDictionary<string, string> previousVersions)
 		{
-			this.solutionPath = solutionPath;
-			this.solutionFolderPath = solutionFolderPath;
+			this.solutionSystemInfo = solutionSystemInfo;
 			this.buildAndRevision = buildAndRevision;
 			this.packagesId = packagesId;
 			this.previousVersions = previousVersions;
@@ -34,7 +32,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		public UpdatePackagesStep UpdateNuspecAndAssemblyInfo()
 		{
 			var checkPackages =
-				new DirectoryInfo(solutionFolderPath)
+				new DirectoryInfo(solutionSystemInfo.FolderPath)
 					.GetFiles("AssemblyInfo.cs", SearchOption.AllDirectories)
 					.Select(Packages.Parse)
 					.Where(x => x != null && packagesId.Contains(x.Title))
@@ -58,7 +56,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 					.Select(x => new PackageWithFramework(x.Key, x.Value.Versions.First(), x.Value.Packages))
 					.ToArray();
 
-			return new UpdatePackagesStep(solutionPath, buildAndRevision, packages, previousVersions);
+			return new UpdatePackagesStep(solutionSystemInfo, buildAndRevision, packages, previousVersions);
 		}
 	}
 }

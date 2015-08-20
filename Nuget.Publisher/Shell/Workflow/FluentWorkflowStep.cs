@@ -8,7 +8,9 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		protected FluentWorkflowStep()
 		{
-			Console.WriteLine("{0}] {1}", ++order, GetType().Name);
+			var step = GetType().Name.Replace("Step", null).SplitWordsFirstWordCapital();
+
+			Console.WriteLine("{0}] {1}", ++order, step);
 		}
 	}
 }

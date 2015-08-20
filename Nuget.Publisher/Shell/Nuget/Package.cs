@@ -4,39 +4,43 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 
 	using System;
 	using System.Collections.Generic;
-	using System.Diagnostics;
 	using System.IO;
 	using System.Linq;
 	using System.Text;
+
+	using EyeSoft.Nuget.Publisher.Shell.Diagnostics;
 
 	using NuGet;
 
 	public class Package
 	{
-		private readonly FileInfo assemblyInfoFile;
-
 		private readonly string[] lines;
 
-		public Package(FileInfo assemblyInfoFile, string[] lines, string title, string version, string targetFramework, FileInfo nuspecFile)
-			: this(assemblyInfoFile, lines, title, version, targetFramework)
+		public Package(FileInfo projectFile, FileInfo assemblyInfoFile, string[] lines, string title, string version, string targetFramework, FileInfo nuspecFile)
+			: this(projectFile, assemblyInfoFile, lines, title, version, targetFramework)
 		{
 			NuspecFile = nuspecFile;
 			HasNuget = true;
 		}
 
-		public FileInfo NuspecFile { get; set; }
-
-		public Package(FileInfo assemblyInfoFile, string[] lines, string title, string version, string targetFramework)
+		public Package(FileInfo projectFile, FileInfo assemblyInfoFile, string[] lines, string title, string version, string targetFramework)
 		{
-			this.assemblyInfoFile = assemblyInfoFile;
+			ProjectFile = projectFile;
+			AssemblyInfoFile = assemblyInfoFile;
 			this.lines = lines;
 
 			Title = title;
 			PackageVersion = Version.Parse(version).ToString();
-			TargetFramework = new Hyperlinq(() => Process.Start(assemblyInfoFile.Directory.Parent.FullName), targetFramework);
+			TargetFramework = new Hyperlinq(() => ProcessHelper.Start(AssemblyInfoFile.Directory.Parent.FullName), targetFramework);
 
 			////TargetFramework = Version.Parse(targetFramework).ToString();
 		}
+
+		public FileInfo ProjectFile { get; }
+
+		public FileInfo NuspecFile { get; }
+
+		public FileInfo AssemblyInfoFile { get; }
 
 		public string Title { get; }
 
@@ -105,7 +109,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 			UpdateAssemblyVersionLine(newVersion, assemblyInfoLines, AssemblyInfoData.AssemblyVersion);
 			UpdateAssemblyVersionLine(newVersion, assemblyInfoLines, AssemblyInfoData.AssemblyFileVersion);
 
-			Storage.WriteAllLines(assemblyInfoFile.FullName, assemblyInfoLines.Select(x => x.Line).ToArray());
+			Storage.WriteAllLines(AssemblyInfoFile.FullName, assemblyInfoLines.Select(x => x.Line).ToArray());
 		}
 
 		public override string ToString()

@@ -4,11 +4,12 @@
 	using System.Collections.Generic;
 	using System.Linq;
 
+	using EyeSoft.Nuget.Publisher.Shell.Build;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	public class UpdatePackagesStep : FluentWorkflowStep
 	{
-		private readonly string solutionPath;
+		private readonly SolutionSystemInfo solutionSystemInfo;
 
 		private readonly BuildAndRevision buildAndRevision;
 
@@ -17,12 +18,12 @@
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
 		public UpdatePackagesStep(
-			string solutionPath,
+			SolutionSystemInfo solutionSystemInfo,
 			BuildAndRevision buildAndRevision,
 			IEnumerable<PackageWithFramework> packages,
 			IReadOnlyDictionary<string, string> previousVersions)
 		{
-			this.solutionPath = solutionPath;
+			this.solutionSystemInfo = solutionSystemInfo;
 			this.buildAndRevision = buildAndRevision;
 			this.packages = packages;
 			this.previousVersions = previousVersions;
@@ -68,7 +69,7 @@
 				packageUpdateResults.Add(packageUpdate);
 			}
 
-			return new BuildSolutionStep(solutionPath, new NugetPackageResultCollection(packageUpdateResults));
+			return new BuildSolutionStep(solutionSystemInfo, new NugetPackageResultCollection(packageUpdateResults));
 		}
 	}
 }

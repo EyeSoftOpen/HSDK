@@ -5,22 +5,22 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 	public class BuildSolutionStep : FluentWorkflowStep
 	{
-		private readonly string solutionPath;
+		private readonly SolutionSystemInfo solutionSystemInfo;
 
 		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public BuildSolutionStep(string solutionPath, NugetPackageResultCollection nugetPackageResultCollection)
+		public BuildSolutionStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection)
 		{
-			this.solutionPath = solutionPath;
+			this.solutionSystemInfo = solutionSystemInfo;
 
 			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
 
 		public CompileNugetPackagesStep BuildSolution()
 		{
-			MsBuild.Build(solutionPath);
+			MsBuild.Build(solutionSystemInfo.FilePath);
 
-			return new CompileNugetPackagesStep(nugetPackageResultCollection);
+			return new CompileNugetPackagesStep(solutionSystemInfo, nugetPackageResultCollection);
 		}
 	}
 }

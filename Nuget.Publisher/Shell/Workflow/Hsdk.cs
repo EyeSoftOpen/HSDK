@@ -1,11 +1,14 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
 	using System.Collections.Generic;
+	using System.IO;
 	using System.Linq;
+
+	using EyeSoft.Nuget.Publisher.Shell.Build;
 
 	public class HsdkWorkflow
 	{
-	    public const string SolutionFolderPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
+		public const string SolutionPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
 
 		private static readonly IEnumerable<string> packagesId =
 			new[]
@@ -42,7 +45,11 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		public RetrievePreviousVersionsStep GenerateBuildAndRevision()
 		{
-			return new GenerateBuildAndRevisionStep(SolutionFolderPath, packagesId).GenerateBuildAndRevision();
+			var solutionFolderPath = new FileInfo(SolutionPath).Directory.FullName;
+
+			var solutionSystemInfo = new SolutionSystemInfo(solutionFolderPath, SolutionPath);
+
+			return new GenerateBuildAndRevisionStep(solutionSystemInfo, packagesId).GenerateBuildAndRevision();
 		}
 	}
 }

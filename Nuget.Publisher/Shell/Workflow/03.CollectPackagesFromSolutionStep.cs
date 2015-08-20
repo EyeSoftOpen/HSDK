@@ -2,11 +2,11 @@
 {
 	using System.Collections.Generic;
 
+	using EyeSoft.Nuget.Publisher.Shell.Build;
+
 	public class CollectPackagesFromSolutionStep : FluentWorkflowStep
 	{
-		private readonly string solutionPath;
-
-		private readonly string solutionFolderPath;
+		private readonly SolutionSystemInfo solutionSystemInfo;
 
 		private readonly IEnumerable<string> packagesId;
 
@@ -15,14 +15,12 @@
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
 		public CollectPackagesFromSolutionStep(
-			string solutionPath,
-			string solutionFolderPath,
+			SolutionSystemInfo solutionSystemInfo,
 			IEnumerable<string> packagesId,
 			BuildAndRevision buildAndRevision,
 			IReadOnlyDictionary<string, string> previousVersions)
 		{
-			this.solutionPath = solutionPath;
-			this.solutionFolderPath = solutionFolderPath;
+			this.solutionSystemInfo = solutionSystemInfo;
 			this.packagesId = packagesId;
 			this.buildAndRevision = buildAndRevision;
 			this.previousVersions = previousVersions;
@@ -31,8 +29,7 @@
 		public UpdateNuspecAndAssemblyInfoStep CollectPackagesFromSolution()
 		{
 			return new UpdateNuspecAndAssemblyInfoStep(
-				solutionPath,
-				solutionFolderPath,
+				solutionSystemInfo,
 				packagesId,
 				buildAndRevision,
 				previousVersions);

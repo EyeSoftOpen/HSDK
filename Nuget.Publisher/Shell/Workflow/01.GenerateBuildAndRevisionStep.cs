@@ -2,14 +2,16 @@ namespace EyeSoft.Nuget.Publisher.Shell
 {
 	using System.Collections.Generic;
 
+	using EyeSoft.Nuget.Publisher.Shell.Build;
+
 	public class GenerateBuildAndRevisionStep : FluentWorkflowStep
 	{
-		private readonly string solutionFolderPath;
+		private readonly SolutionSystemInfo solutionSystemInfo;
 		private readonly IEnumerable<string> packagesId;
 
-		public GenerateBuildAndRevisionStep(string solutionFolderPath, IEnumerable<string> packagesId)
+		public GenerateBuildAndRevisionStep(SolutionSystemInfo solutionSystemInfo, IEnumerable<string> packagesId)
 		{
-			this.solutionFolderPath = solutionFolderPath;
+			this.solutionSystemInfo = solutionSystemInfo;
 			this.packagesId = packagesId;
 		}
 
@@ -17,7 +19,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		{
 			var buildAndRevision = VersionHelper.GenerateBuildAndRevision();
 
-			return new RetrievePreviousVersionsStep(solutionFolderPath, packagesId, buildAndRevision);
+			return new RetrievePreviousVersionsStep(solutionSystemInfo, packagesId, buildAndRevision);
 		}
 	}
 }
