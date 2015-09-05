@@ -1,0 +1,173 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E3046A3F-7A64-4735-B79B-BBC7506FA42A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{B5F0E9DD-13C9-41D1-94B7-79439475929C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{75F68632-FB37-4C40-B64B-F8B116D4B31A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Architecture.Prototype.Accounting.Commanding", "Common\Modules\Accounting\Source\Commanding\EyeSoft.Architecture.Prototype.Accounting.Commanding.csproj", "{345599F8-6294-49BA-A1FF-1366B38E9AA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{9AA93276-27DF-49B9-A4A3-F0DBA49A71A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E3026309-0D5E-49F1-AF9D-F4FBC3F394C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Web.Http.Client", "Common\Modules\Http.Client\Source\Http.Client\EyeSoft.Web.Http.Client.csproj", "{619153ED-569A-4D3B-9B72-C4FDBF170936}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{22124235-7334-40A6-AE82-E9E24FD609A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{19A1133E-3B60-4B60-BBF8-F781ABFBC146}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{EE943A66-6785-45E2-8579-67A5A32F217B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Architecture.Prototype.Windows", "Presentation\Modules\Common\Source\Windows\EyeSoft.Architecture.Prototype.Windows.csproj", "{023AD869-B4FD-48F2-8F8A-E54874EDA14D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Architecture.Prototype.Windows.Model", "Presentation\Modules\Common\Source\Model\EyeSoft.Architecture.Prototype.Windows.Model.csproj", "{26A60352-4642-46BB-BFCC-9F44713604A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Architecture.Prototype.Windows.Configuration", "Presentation\Modules\Common\Source\Configuration\EyeSoft.Architecture.Prototype.Windows.Configuration.csproj", "{D2FB82EF-0CBF-41D5-B88F-DA6B82FD1C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Core", "..\..\Internal\Core\Source\4.0\Core\EyeSoft.Core.csproj", "{4C464A88-7D14-4755-9EBF-82BBE1B168ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HSDK", "HSDK", "{7EB96323-E896-4A9C-9CE0-2A44EA32A2E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{94652CAB-AAD4-4256-B241-A6618CD1C869}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{4A06F472-7360-400E-B52E-978AB696F901}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentValidation", "FluentValidation", "{65511883-CB07-4A60-88B8-142B4339367B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.FluentValidation", "..\..\Internal\FluentValidation\Source\FluentValidation\EyeSoft.FluentValidation.csproj", "{1B6B2CE4-0605-4567-919F-9EADC60B1D43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows.Model", "Windows.Model", "{2AE15462-04E4-4A3A-AD8B-CCA311763304}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Windows.Model", "..\..\Internal\Windows\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj", "{0311E947-B90B-47AB-8C28-526D65C17827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.0", "4.0", "{CA0A5B48-2002-4889-B6CC-EB724A5F039D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Prototype.Api.Web", "Service\Modules\Common\Source\Web\EyeSoft.Accounting.Prototype.Api.Web.csproj", "{723A034F-2255-46D4-BF4E-5AAD2441488E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Architecture.Prototype.Domain", "Service\Modules\Common\Source\Domain\EyeSoft.Architecture.Prototype.Domain.csproj", "{87CA5048-7836-4C66-80DC-4E41D8585814}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{345599F8-6294-49BA-A1FF-1366B38E9AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345599F8-6294-49BA-A1FF-1366B38E9AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345599F8-6294-49BA-A1FF-1366B38E9AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345599F8-6294-49BA-A1FF-1366B38E9AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619153ED-569A-4D3B-9B72-C4FDBF170936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619153ED-569A-4D3B-9B72-C4FDBF170936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619153ED-569A-4D3B-9B72-C4FDBF170936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619153ED-569A-4D3B-9B72-C4FDBF170936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023AD869-B4FD-48F2-8F8A-E54874EDA14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023AD869-B4FD-48F2-8F8A-E54874EDA14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023AD869-B4FD-48F2-8F8A-E54874EDA14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023AD869-B4FD-48F2-8F8A-E54874EDA14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A60352-4642-46BB-BFCC-9F44713604A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A60352-4642-46BB-BFCC-9F44713604A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A60352-4642-46BB-BFCC-9F44713604A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A60352-4642-46BB-BFCC-9F44713604A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2FB82EF-0CBF-41D5-B88F-DA6B82FD1C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FB82EF-0CBF-41D5-B88F-DA6B82FD1C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FB82EF-0CBF-41D5-B88F-DA6B82FD1C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FB82EF-0CBF-41D5-B88F-DA6B82FD1C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6B2CE4-0605-4567-919F-9EADC60B1D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6B2CE4-0605-4567-919F-9EADC60B1D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6B2CE4-0605-4567-919F-9EADC60B1D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6B2CE4-0605-4567-919F-9EADC60B1D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0311E947-B90B-47AB-8C28-526D65C17827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0311E947-B90B-47AB-8C28-526D65C17827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0311E947-B90B-47AB-8C28-526D65C17827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0311E947-B90B-47AB-8C28-526D65C17827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723A034F-2255-46D4-BF4E-5AAD2441488E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723A034F-2255-46D4-BF4E-5AAD2441488E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723A034F-2255-46D4-BF4E-5AAD2441488E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723A034F-2255-46D4-BF4E-5AAD2441488E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87CA5048-7836-4C66-80DC-4E41D8585814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CA5048-7836-4C66-80DC-4E41D8585814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CA5048-7836-4C66-80DC-4E41D8585814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CA5048-7836-4C66-80DC-4E41D8585814}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3046A3F-7A64-4735-B79B-BBC7506FA42A} = {22124235-7334-40A6-AE82-E9E24FD609A3}
+		{B5F0E9DD-13C9-41D1-94B7-79439475929C} = {22124235-7334-40A6-AE82-E9E24FD609A3}
+		{75F68632-FB37-4C40-B64B-F8B116D4B31A} = {22124235-7334-40A6-AE82-E9E24FD609A3}
+		{345599F8-6294-49BA-A1FF-1366B38E9AA8} = {75F68632-FB37-4C40-B64B-F8B116D4B31A}
+		{9AA93276-27DF-49B9-A4A3-F0DBA49A71A5} = {B5F0E9DD-13C9-41D1-94B7-79439475929C}
+		{E3026309-0D5E-49F1-AF9D-F4FBC3F394C1} = {B5F0E9DD-13C9-41D1-94B7-79439475929C}
+		{619153ED-569A-4D3B-9B72-C4FDBF170936} = {EE943A66-6785-45E2-8579-67A5A32F217B}
+		{EE943A66-6785-45E2-8579-67A5A32F217B} = {19A1133E-3B60-4B60-BBF8-F781ABFBC146}
+		{023AD869-B4FD-48F2-8F8A-E54874EDA14D} = {E3046A3F-7A64-4735-B79B-BBC7506FA42A}
+		{26A60352-4642-46BB-BFCC-9F44713604A1} = {E3046A3F-7A64-4735-B79B-BBC7506FA42A}
+		{D2FB82EF-0CBF-41D5-B88F-DA6B82FD1C17} = {E3046A3F-7A64-4735-B79B-BBC7506FA42A}
+		{4C464A88-7D14-4755-9EBF-82BBE1B168ED} = {4A06F472-7360-400E-B52E-978AB696F901}
+		{94652CAB-AAD4-4256-B241-A6618CD1C869} = {7EB96323-E896-4A9C-9CE0-2A44EA32A2E7}
+		{4A06F472-7360-400E-B52E-978AB696F901} = {94652CAB-AAD4-4256-B241-A6618CD1C869}
+		{65511883-CB07-4A60-88B8-142B4339367B} = {7EB96323-E896-4A9C-9CE0-2A44EA32A2E7}
+		{1B6B2CE4-0605-4567-919F-9EADC60B1D43} = {65511883-CB07-4A60-88B8-142B4339367B}
+		{2AE15462-04E4-4A3A-AD8B-CCA311763304} = {7EB96323-E896-4A9C-9CE0-2A44EA32A2E7}
+		{0311E947-B90B-47AB-8C28-526D65C17827} = {CA0A5B48-2002-4889-B6CC-EB724A5F039D}
+		{CA0A5B48-2002-4889-B6CC-EB724A5F039D} = {2AE15462-04E4-4A3A-AD8B-CCA311763304}
+		{723A034F-2255-46D4-BF4E-5AAD2441488E} = {9AA93276-27DF-49B9-A4A3-F0DBA49A71A5}
+		{87CA5048-7836-4C66-80DC-4E41D8585814} = {E3026309-0D5E-49F1-AF9D-F4FBC3F394C1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = ..\\..\\Internal\\Core\\Source\\4.0\\Core\\EyeSoft.Core.csproj
+		SccProjectTopLevelParentUniqueName0 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName0 = ../../Internal/Core/Source/4.0/Core
+		SccLocalPath0 = ..\\..\\Internal\\Core\\Source\\4.0\\Core
+		SccProjectUniqueName1 = ..\\..\\Internal\\FluentValidation\\Source\\FluentValidation\\EyeSoft.FluentValidation.csproj
+		SccProjectTopLevelParentUniqueName1 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName1 = ../../Internal/FluentValidation/Source/FluentValidation
+		SccLocalPath1 = ..\\..\\Internal\\FluentValidation\\Source\\FluentValidation
+		SccProjectUniqueName2 = ..\\..\\Internal\\Windows\\Source\\4.0\\Windows.Model\\EyeSoft.Windows.Model.csproj
+		SccProjectTopLevelParentUniqueName2 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName2 = ../../Internal/Windows/Source/4.0/Windows.Model
+		SccLocalPath2 = ..\\..\\Internal\\Windows\\Source\\4.0\\Windows.Model
+		SccLocalPath3 = .
+		SccProjectUniqueName4 = Common\\Modules\\Accounting\\Source\\Commanding\\EyeSoft.Architecture.Prototype.Accounting.Commanding.csproj
+		SccProjectTopLevelParentUniqueName4 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName4 = Common/Modules/Accounting/Source/Commanding
+		SccLocalPath4 = Common\\Modules\\Accounting\\Source\\Commanding
+		SccProjectUniqueName5 = Common\\Modules\\Http.Client\\Source\\Http.Client\\EyeSoft.Web.Http.Client.csproj
+		SccProjectTopLevelParentUniqueName5 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName5 = Common/Modules/Http.Client/Source/Http.Client
+		SccLocalPath5 = Common\\Modules\\Http.Client\\Source\\Http.Client
+		SccProjectUniqueName6 = Presentation\\Modules\\Common\\Source\\Configuration\\EyeSoft.Architecture.Prototype.Windows.Configuration.csproj
+		SccProjectTopLevelParentUniqueName6 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName6 = Presentation/Modules/Common/Source/Configuration
+		SccLocalPath6 = Presentation\\Modules\\Common\\Source\\Configuration
+		SccProjectUniqueName7 = Presentation\\Modules\\Common\\Source\\Model\\EyeSoft.Architecture.Prototype.Windows.Model.csproj
+		SccProjectTopLevelParentUniqueName7 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName7 = Presentation/Modules/Common/Source/Model
+		SccLocalPath7 = Presentation\\Modules\\Common\\Source\\Model
+		SccProjectUniqueName8 = Presentation\\Modules\\Common\\Source\\Windows\\EyeSoft.Architecture.Prototype.Windows.csproj
+		SccProjectTopLevelParentUniqueName8 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName8 = Presentation/Modules/Common/Source/Windows
+		SccLocalPath8 = Presentation\\Modules\\Common\\Source\\Windows
+		SccProjectUniqueName9 = Service\\Modules\\Common\\Source\\Domain\\EyeSoft.Architecture.Prototype.Domain.csproj
+		SccProjectTopLevelParentUniqueName9 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName9 = Service/Modules/Common/Source/Domain
+		SccLocalPath9 = Service\\Modules\\Common\\Source\\Domain
+		SccProjectUniqueName10 = Service\\Modules\\Common\\Source\\Web\\EyeSoft.Accounting.Prototype.Api.Web.csproj
+		SccProjectTopLevelParentUniqueName10 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName10 = Service/Modules/Common/Source/Web
+		SccLocalPath10 = Service\\Modules\\Common\\Source\\Web
+	EndGlobalSection
+EndGlobal

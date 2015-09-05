@@ -16,7 +16,6 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <BuildPackage>true</BuildPackage>
     <NuGetPackageImportStamp>
