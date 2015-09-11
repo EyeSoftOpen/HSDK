@@ -65,6 +65,10 @@
       <HintPath>..\..\..\..\..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EyeSoft.Core, Version=1.4.0.980, Culture=neutral, PublicKeyToken=4ac84b082287a719, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EyeSoft.Core.1.4.0.980\lib\net45\EyeSoft.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\..\..\..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -134,8 +138,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EstimateController.cs" />
+    <Compile Include="Controllers\FileResult.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Core\AppBuilderDependenciesExtensions.cs" />
     <Compile Include="Core\CastleResolver.cs" />
+    <Compile Include="Core\ValidateMimeMultipartContentFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\ReleasingDependencyScope.cs" />
     <Compile Include="Startup.cs" />
