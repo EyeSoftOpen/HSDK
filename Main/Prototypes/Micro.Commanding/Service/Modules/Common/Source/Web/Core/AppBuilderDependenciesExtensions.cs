@@ -1,6 +1,4 @@
-﻿using EyeSoft.Accounting.Prototype.Api.Web.Controllers;
-
-namespace EyeSoft.Accounting.Prototype.Api.Web.Core
+﻿namespace EyeSoft.Accounting.Prototype.Api.Web.Core
 {
 	using System.Data.SqlClient;
 	using System.Web.Http;
@@ -9,6 +7,8 @@ namespace EyeSoft.Accounting.Prototype.Api.Web.Core
 	using Castle.Windsor;
 
 	using Domain;
+
+	using EyeSoft.Accounting.Prototype.Api.Web.Controllers;
 
 	using Owin;
 

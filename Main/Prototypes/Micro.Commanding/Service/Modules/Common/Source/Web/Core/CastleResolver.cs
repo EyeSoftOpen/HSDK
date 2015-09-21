@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http.Dependencies;
-using Castle.Windsor;
-
-namespace EyeSoft.Accounting.Prototype.Api.Web.Core
+﻿namespace EyeSoft.Accounting.Prototype.Api.Web.Core
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Web.Http.Dependencies;
+
+	using Castle.Windsor;
+
 	internal class CastleResolver : IDependencyResolver
 	{
 		private readonly IWindsorContainer container;

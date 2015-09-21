@@ -145,6 +145,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+<AdditionalFiles Include="stylecop.json" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="ControllerConstraint.cs" />
     <Compile Include="Controllers\EstimateController.cs" />
@@ -170,6 +171,10 @@
       <Project>{87CA5048-7836-4C66-80DC-4E41D8585814}</Project>
       <Name>EyeSoft.Architecture.Prototype.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\..\packages\StyleCop.Analyzers.1.0.0-beta012\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\..\..\..\..\packages\StyleCop.Analyzers.1.0.0-beta012\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>

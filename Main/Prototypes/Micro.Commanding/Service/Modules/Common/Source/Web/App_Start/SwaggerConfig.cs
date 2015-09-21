@@ -1,7 +1,7 @@
 namespace EyeSoft.Accounting.Prototype.Api.Web
 {
-	using Owin;
 	using System.Web.Http;
+	using Owin;
 	using Swashbuckle.Application;
 
 	internal static class SwaggerConfig
