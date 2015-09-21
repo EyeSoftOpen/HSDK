@@ -1,7 +1,7 @@
-﻿namespace EyeSoft.Architecture.Prototype.Windows.Configuration
-{
-	using Model.ViewModels.Main.Persisters;
+﻿using EyeSoft.Web.Http.Client;
 
+namespace EyeSoft.Architecture.Prototype.Windows.Configuration
+{
 	internal class RestClientFactory : IRestClientFactory
 	{
 		private readonly string baseAddress;

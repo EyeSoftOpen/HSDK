@@ -1,4 +1,4 @@
-namespace Model.ViewModels.Main.Persisters
+namespace EyeSoft.Web.Http.Client
 {
 	using System;
 	using System.Net.Http;

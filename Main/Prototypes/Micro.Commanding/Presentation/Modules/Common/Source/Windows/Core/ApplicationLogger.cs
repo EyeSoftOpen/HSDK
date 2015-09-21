@@ -1,9 +1,8 @@
-﻿namespace Windows
+﻿using System;
+using EyeSoft.Logging;
+
+namespace EyeSoft.Architecture.Prototype.Windows.Core
 {
-	using System;
-
-	using EyeSoft.Logging;
-
 	public class ApplicationLogger : ILogger
 	{
 		public void Write(string message)

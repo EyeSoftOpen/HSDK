@@ -1,9 +1,9 @@
-﻿using System.IO;
-using System.Web;
-using EyeSoft.IO;
-
-namespace EyeSoft.Accounting.Prototype.Api.Web.Controllers
+﻿namespace EyeSoft.Accounting.Prototype.Api.Web.Controllers
 {
+	using System.IO;
+	using System.Web;
+	using EyeSoft.IO;
+
 	using System;
 	using System.Linq;
 	using System.Net.Http;

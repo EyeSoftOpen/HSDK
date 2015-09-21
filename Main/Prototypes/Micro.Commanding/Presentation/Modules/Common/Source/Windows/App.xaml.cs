@@ -1,15 +1,13 @@
-﻿namespace Windows
+﻿namespace EyeSoft.Architecture.Prototype.Windows
 {
 	using System;
-
 	using Castle.Windsor;
-
-	using EyeSoft.Architecture.Prototype.Windows.Configuration;
+	using EyeSoft.Architecture.Prototype.Windows.Core;
+	using EyeSoft.Architecture.Prototype.Windows.Model.ViewModels;
 	using EyeSoft.Logging;
 	using EyeSoft.Threading.Tasks;
 	using EyeSoft.Windows.Model;
-
-	using Model;
+	using EyeSoft.Windows.Model.DialogService;
 
 	public partial class App
 	{
@@ -27,7 +25,7 @@
 
 				var container = new WindsorContainer();
 
-				new Configuration(container).Install();
+				new Configuration.Configuration(container).Install();
 
 				DialogService.ShowMain<MainViewModel>();
 			}

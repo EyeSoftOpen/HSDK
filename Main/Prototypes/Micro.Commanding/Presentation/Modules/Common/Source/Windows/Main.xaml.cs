@@ -1,4 +1,4 @@
-﻿namespace Windows
+﻿namespace EyeSoft.Architecture.Prototype.Windows
 {
 	public partial class Main
 	{

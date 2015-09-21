@@ -1,6 +1,6 @@
-namespace Model.ViewModels.Main.Persisters
+namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 {
-	using System.Threading.Tasks;
+	using EyeSoft.Web.Http.Client;
 
 	public abstract class Persister<T> : IPersister<T>
 	{

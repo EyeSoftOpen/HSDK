@@ -1,8 +1,8 @@
-﻿namespace Model
+﻿namespace EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate
 {
 	using EyeSoft.FluentValidation;
 
-	using FluentValidation;
+	using global::FluentValidation;
 
 	public class EstimateViewModelValidator : FluentValidator<EstimateViewModel>
 	{

@@ -1,9 +1,8 @@
-﻿namespace Model
+﻿using EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate;
+using EyeSoft.Windows.Model.ViewModels.Navigation;
+
+namespace EyeSoft.Architecture.Prototype.Windows.Model.ViewModels
 {
-	using System;
-
-	using EyeSoft.Windows.Model;
-
 	public class MainViewModel : ShellViewModel
 	{
 		public MainViewModel()

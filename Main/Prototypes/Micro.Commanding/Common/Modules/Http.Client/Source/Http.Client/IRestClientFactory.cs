@@ -1,4 +1,4 @@
-namespace Model.ViewModels.Main.Persisters
+namespace EyeSoft.Web.Http.Client
 {
 	public interface IRestClientFactory
 	{

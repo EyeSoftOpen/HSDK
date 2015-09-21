@@ -1,10 +1,10 @@
-namespace WebApplication1.Controllers
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web.Http.Dependencies;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http.Dependencies;
 
+namespace EyeSoft.Accounting.Prototype.Api.Web.Core
+{
 	internal class ReleasingDependencyScope : IDependencyScope
 	{
 		private readonly IDependencyScope scope;

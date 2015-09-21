@@ -1,10 +1,10 @@
-﻿namespace Model
+﻿namespace EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate
 {
 	using System;
-
-	using Commanding;
-
-	using Model.ViewModels.Main.Persisters;
+	using EyeSoft.Architecture.Prototype.Accounting.Commanding;
+	using EyeSoft.Architecture.Prototype.Windows.Model.Base;
+	using EyeSoft.Web.Http.Client;
+	using EyeSoft.Windows.Model.ViewModels;
 
 	public class EstimateCustomerViewModel : PersisterViewModel<EstimateCustomerViewModel>
 	{
@@ -12,7 +12,8 @@
 		{
 			Id = id;
 
-			Persisters.Add(x => x.Name, () => new UpdateCustomerNameCommand { Id = Guid.NewGuid(), EstimateId = Id, CustomerName = Name });
+			Persisters
+				.Add(x => x.Name, () => new UpdateCustomerNameCommand { Id = Guid.NewGuid(), EstimateId = Id, CustomerName = Name });
 
 			Name = Resolver.Resolve<IRestClientFactory>().Create().Get<string>("estimate/getcustomername", Id);
 		}

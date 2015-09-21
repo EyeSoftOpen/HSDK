@@ -1,4 +1,6 @@
-﻿namespace EyeSoft.Accounting.Prototype.Api.Web.Core
+﻿using EyeSoft.Accounting.Prototype.Api.Web.Controllers;
+
+namespace EyeSoft.Accounting.Prototype.Api.Web.Core
 {
 	using System.Data.SqlClient;
 	using System.Web.Http;
@@ -10,11 +12,9 @@
 
 	using Owin;
 
-	using WebApplication1.Controllers;
-
-	public static class AppBuilderDependenciesExtensions
+	internal static class AppBuilderDependenciesExtensions
 	{
-		public static void ConfigureDependencyResolver(this IAppBuilder appBuilder, HttpConfiguration configuration)
+		public static IAppBuilder ConfigureDependencyResolver(this IAppBuilder appBuilder, HttpConfiguration configuration)
 		{
 			var container = new WindsorContainer();
 
@@ -24,6 +24,8 @@
 				.Register(Component.For<EstimateController>().LifestyleTransient());
 
 			configuration.DependencyResolver = new CastleResolver(container);
+
+			return appBuilder;
 		}
 	}
 }

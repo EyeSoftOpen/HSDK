@@ -1,4 +1,4 @@
-namespace Model.ViewModels.Main.Persisters
+namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 {
 	public interface IPersister
 	{

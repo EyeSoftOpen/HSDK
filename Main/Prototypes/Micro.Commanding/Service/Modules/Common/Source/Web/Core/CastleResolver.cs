@@ -1,13 +1,12 @@
-﻿namespace WebApplication1.Controllers
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http.Dependencies;
+using Castle.Windsor;
+
+namespace EyeSoft.Accounting.Prototype.Api.Web.Core
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web.Http.Dependencies;
-
-	using Castle.Windsor;
-
-	public class CastleResolver : IDependencyResolver
+	internal class CastleResolver : IDependencyResolver
 	{
 		private readonly IWindsorContainer container;
 

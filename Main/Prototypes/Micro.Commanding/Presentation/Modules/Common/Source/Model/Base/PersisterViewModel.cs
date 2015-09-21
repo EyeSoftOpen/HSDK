@@ -1,14 +1,11 @@
-namespace Model
+namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 {
 	using System;
 	using System.Collections.Generic;
 	using System.ComponentModel;
 	using System.Linq;
-
 	using EyeSoft.Timers;
-	using EyeSoft.Windows.Model;
-
-	using Model.ViewModels.Main.Persisters;
+	using EyeSoft.Windows.Model.ViewModels;
 
 	public abstract class PersisterViewModel<T> : IdentityViewModel
 	{

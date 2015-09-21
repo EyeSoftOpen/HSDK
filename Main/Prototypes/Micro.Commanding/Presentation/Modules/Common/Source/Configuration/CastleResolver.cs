@@ -1,4 +1,6 @@
-﻿namespace EyeSoft.Architecture.Prototype.Windows.Configuration
+﻿using EyeSoft.Architecture.Prototype.Windows.Model.Base;
+
+namespace EyeSoft.Architecture.Prototype.Windows.Configuration
 {
 	using System;
 
@@ -6,11 +8,11 @@
 
 	using Model;
 
-	internal class WinsorResolver : IResolver
+	internal class CastleResolver : IResolver
 	{
 		private readonly IWindsorContainer container;
 
-		public WinsorResolver(IWindsorContainer container)
+		public CastleResolver(IWindsorContainer container)
 		{
 			this.container = container;
 		}

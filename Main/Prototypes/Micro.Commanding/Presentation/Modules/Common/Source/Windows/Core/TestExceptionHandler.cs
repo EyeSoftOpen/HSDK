@@ -1,13 +1,12 @@
-namespace Windows
+using System;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
+using EyeSoft.Logging;
+using EyeSoft.Windows.Model.ExceptionLogger;
+
+namespace EyeSoft.Architecture.Prototype.Windows.Core
 {
-	using System;
-	using System.Threading.Tasks;
-	using System.Windows;
-	using System.Windows.Threading;
-
-	using EyeSoft.Logging;
-	using EyeSoft.Windows.Model;
-
 	public class TestExceptionHandler : ExceptionHandler
 	{
 		private readonly ILogger logger;

@@ -1,9 +1,8 @@
-namespace Model
+using System;
+using EyeSoft.Timers;
+
+namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 {
-	using System;
-
-	using EyeSoft.Timers;
-
 	internal class TimerAndAction
 	{
 		public TimerAndAction(ITimer timer, Action action)

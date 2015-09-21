@@ -1,9 +1,8 @@
-namespace Windows
+using System;
+using EyeSoft.Logging;
+
+namespace EyeSoft.Architecture.Prototype.Windows.Core
 {
-	using System;
-
-	using EyeSoft.Logging;
-
 	public class ApplicationTaskScheduler : EyeSoft.Threading.Tasks.Schedulers.LimitedConcurrencyLevelTaskScheduler
 	{
 		private readonly ILogger logger;

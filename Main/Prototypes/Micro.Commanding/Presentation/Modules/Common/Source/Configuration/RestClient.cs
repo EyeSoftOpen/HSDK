@@ -4,7 +4,7 @@ namespace EyeSoft.Architecture.Prototype.Windows.Configuration
 	using System.Net.Http;
 	using System.Threading.Tasks;
 
-	using Model.ViewModels.Main.Persisters;
+	using EyeSoft.Web.Http.Client;
 
 	internal class RestClient : IRestClient
 	{

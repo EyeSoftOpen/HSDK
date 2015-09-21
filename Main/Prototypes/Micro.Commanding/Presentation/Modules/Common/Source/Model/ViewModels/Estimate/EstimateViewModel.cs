@@ -1,13 +1,11 @@
-namespace Model
+namespace EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate
 {
 	using System;
 	using System.Collections.Generic;
-
-	using Commanding;
-
+	using EyeSoft.Architecture.Prototype.Accounting.Commanding;
+	using EyeSoft.Architecture.Prototype.Windows.Model.Base;
 	using EyeSoft.Validation;
-
-	using Model.ViewModels.Main.Persisters;
+	using EyeSoft.Web.Http.Client;
 
 	public class EstimateViewModel : PersisterViewModel<EstimateViewModel>
 	{

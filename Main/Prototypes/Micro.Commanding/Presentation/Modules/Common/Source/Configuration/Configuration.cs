@@ -1,10 +1,13 @@
-﻿namespace EyeSoft.Architecture.Prototype.Windows.Configuration
+﻿using EyeSoft.Architecture.Prototype.Windows.Model.Base;
+using EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate.Persisters;
+using EyeSoft.Web.Http.Client;
+
+namespace EyeSoft.Architecture.Prototype.Windows.Configuration
 {
 	using Castle.MicroKernel.Registration;
 	using Castle.Windsor;
 
 	using Model;
-	using Model.ViewModels.Main.Persisters;
 
 	public class Configuration
 	{
@@ -14,7 +17,7 @@
 		{
 			this.container = container;
 
-			Resolver.Set(new WinsorResolver(container));
+			Resolver.Set(new CastleResolver(container));
 		}
 
 		public void Install()

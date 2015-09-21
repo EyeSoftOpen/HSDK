@@ -1,12 +1,10 @@
-﻿namespace WebApplication1.Controllers
+﻿using System;
+using System.Web.Http;
+using Domain;
+using EyeSoft.Architecture.Prototype.Accounting.Commanding;
+
+namespace EyeSoft.Accounting.Prototype.Api.Web.Controllers
 {
-	using System;
-	using System.Web.Http;
-
-	using Commanding;
-
-	using Domain;
-
 	public class EstimateController : ApiController
 	{
 		private readonly IEstimateRepository repository;
@@ -16,6 +14,11 @@
 			this.repository = repository;
 		}
 
+		/// <summary>
+		/// Get description of the estimate
+		/// </summary>
+		/// <param name="id">The ID of the estimate</param>
+		/// <returns></returns>
 		[HttpGet]
 		public IHttpActionResult GetDescription(Guid id)
 		{

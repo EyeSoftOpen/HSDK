@@ -1,7 +1,7 @@
-namespace Model
-{
-	using System;
+using System;
 
+namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
+{
 	public static class Resolver
 	{
 		private static IResolver localResolver;
