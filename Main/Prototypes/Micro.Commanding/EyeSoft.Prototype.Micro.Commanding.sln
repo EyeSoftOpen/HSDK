@@ -51,6 +51,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Accounting.Prototyp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Architecture.Prototype.Domain", "Service\Modules\Common\Source\Domain\EyeSoft.Architecture.Prototype.Domain.csproj", "{87CA5048-7836-4C66-80DC-4E41D8585814}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D92B49A1-F2A0-4848-9E07-FF84DD6C5FD0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -128,19 +135,19 @@ Global
 		SccNumberOfProjects = 11
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = ..\\..\\Internal\\Core\\Source\\4.0\\Core\\EyeSoft.Core.csproj
-		SccProjectTopLevelParentUniqueName0 = EyeSoft.Prototype.Micro.Commanding.sln
-		SccProjectName0 = ../../Internal/Core/Source/4.0/Core
-		SccLocalPath0 = ..\\..\\Internal\\Core\\Source\\4.0\\Core
-		SccProjectUniqueName1 = ..\\..\\Internal\\FluentValidation\\Source\\FluentValidation\\EyeSoft.FluentValidation.csproj
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\Internal\\Core\\Source\\4.0\\Core\\EyeSoft.Core.csproj
 		SccProjectTopLevelParentUniqueName1 = EyeSoft.Prototype.Micro.Commanding.sln
-		SccProjectName1 = ../../Internal/FluentValidation/Source/FluentValidation
-		SccLocalPath1 = ..\\..\\Internal\\FluentValidation\\Source\\FluentValidation
-		SccProjectUniqueName2 = ..\\..\\Internal\\Windows\\Source\\4.0\\Windows.Model\\EyeSoft.Windows.Model.csproj
+		SccProjectName1 = ../../Internal/Core/Source/4.0/Core
+		SccLocalPath1 = ..\\..\\Internal\\Core\\Source\\4.0\\Core
+		SccProjectUniqueName2 = ..\\..\\Internal\\FluentValidation\\Source\\FluentValidation\\EyeSoft.FluentValidation.csproj
 		SccProjectTopLevelParentUniqueName2 = EyeSoft.Prototype.Micro.Commanding.sln
-		SccProjectName2 = ../../Internal/Windows/Source/4.0/Windows.Model
-		SccLocalPath2 = ..\\..\\Internal\\Windows\\Source\\4.0\\Windows.Model
-		SccLocalPath3 = .
+		SccProjectName2 = ../../Internal/FluentValidation/Source/FluentValidation
+		SccLocalPath2 = ..\\..\\Internal\\FluentValidation\\Source\\FluentValidation
+		SccProjectUniqueName3 = ..\\..\\Internal\\Windows\\Source\\4.0\\Windows.Model\\EyeSoft.Windows.Model.csproj
+		SccProjectTopLevelParentUniqueName3 = EyeSoft.Prototype.Micro.Commanding.sln
+		SccProjectName3 = ../../Internal/Windows/Source/4.0/Windows.Model
+		SccLocalPath3 = ..\\..\\Internal\\Windows\\Source\\4.0\\Windows.Model
 		SccProjectUniqueName4 = Common\\Modules\\Accounting\\Source\\Commanding\\EyeSoft.Architecture.Prototype.Accounting.Commanding.csproj
 		SccProjectTopLevelParentUniqueName4 = EyeSoft.Prototype.Micro.Commanding.sln
 		SccProjectName4 = Common/Modules/Accounting/Source/Commanding
