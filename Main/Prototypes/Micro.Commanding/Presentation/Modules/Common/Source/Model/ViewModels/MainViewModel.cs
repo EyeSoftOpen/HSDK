@@ -1,16 +1,22 @@
-﻿using EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate;
-using EyeSoft.Windows.Model.ViewModels.Navigation;
-
-namespace EyeSoft.Architecture.Prototype.Windows.Model.ViewModels
+﻿namespace EyeSoft.Architecture.Prototype.Windows.Model.ViewModels
 {
+	using System;
+
+	using EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate;
+	using EyeSoft.Windows.Model.ViewModels.Navigation;
+
 	public class MainViewModel : ShellViewModel
 	{
-		public MainViewModel()
+		public MainViewModel(string baseApiUrl)
 		{
 			Estimate = new EstimateViewModel();
 
+			SwaggerUrl = new Uri(new Uri(baseApiUrl), "/swagger").ToString();
+
 			//throw new InvalidOperationException();
 		}
+
+		public string SwaggerUrl { get; }
 
 		public EstimateViewModel Estimate { get; }
 

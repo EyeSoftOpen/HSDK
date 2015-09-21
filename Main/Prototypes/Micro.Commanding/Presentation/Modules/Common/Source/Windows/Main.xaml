@@ -7,9 +7,15 @@
 		xmlns:model="clr-namespace:EyeSoft.Architecture.Prototype.Windows.Model.ViewModels;assembly=EyeSoft.Architecture.Prototype.Windows.Model"
 		mc:Ignorable="d"
 		Title="Main" Height="350" Width="525" d:DataContext="{d:DesignInstance model:MainViewModel}"
-		WindowStartupLocation="CenterScreen">
+		WindowStartupLocation="CenterScreen"
+		BorderThickness="1"
+		BorderBrush="#00aff0">
 	<Grid Margin="10">
-        <StackPanel>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="30" />
+		</Grid.RowDefinitions>
+		<StackPanel>
 			<Rectangle x:Name="Rectangle" Width="20" Height="20" Fill="#00AFF0" HorizontalAlignment="Left" Margin="5,5,5,20" VerticalAlignment="Center">
 				<Rectangle.RenderTransform>
 					<RotateTransform Angle="0" CenterX="10" CenterY="10"/>
@@ -33,6 +39,13 @@
 				</StackPanel>
 			</UniformGrid>
 			<ListBox Height="60" />
-        </StackPanel>
-    </Grid>
+		</StackPanel>
+		<StackPanel Grid.Row="1">
+			<TextBlock>           
+				<Hyperlink NavigateUri="{Binding SwaggerUrl}" RequestNavigate="OnHyperlinkRequestNavigate">
+					API documentation
+				</Hyperlink>
+			</TextBlock>
+		</StackPanel>
+	</Grid>
 </controls:MetroWindow>

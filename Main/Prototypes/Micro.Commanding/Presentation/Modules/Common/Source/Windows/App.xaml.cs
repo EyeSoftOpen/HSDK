@@ -25,9 +25,11 @@
 
 				var container = new WindsorContainer();
 
-				new Configuration.Configuration(container).Install();
+				var configuration = new Configuration.Configuration(container);
 
-				DialogService.ShowMain<MainViewModel>();
+				configuration.Install();
+
+				DialogService.ShowMain(new MainViewModel(configuration.BaseApiUrl));
 			}
 			catch (Exception exception)
 			{
