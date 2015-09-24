@@ -3,11 +3,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using EyeSoft.Logging;
-using EyeSoft.Windows.Model.ExceptionLogger;
 
 namespace EyeSoft.Architecture.Prototype.Windows.Core
 {
-	public class TestExceptionHandler : ExceptionHandler
+    using EyeSoft.Windows.Model;
+
+    public class TestExceptionHandler : ExceptionHandler
 	{
 		private readonly ILogger logger;
 

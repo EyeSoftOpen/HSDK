@@ -39,6 +39,7 @@
 				</StackPanel>
 			</UniformGrid>
 			<ListBox Height="60" />
+			<Button Content="Open flyout" Command="{Binding OpenFlyoutCommand}" Width="60" HorizontalAlignment="Left"/>
 		</StackPanel>
 		<StackPanel Grid.Row="1">
 			<TextBlock>           
@@ -47,5 +48,8 @@
 				</Hyperlink>
 			</TextBlock>
 		</StackPanel>
+		<controls:Flyout Grid.Row="0" IsOpen="{Binding ShowFlyout}" Position="Right" Background="Gray">
+			<ContentControl DataContext="{Binding FlyoutDataContext}" Template="{Binding ., Converter={StaticResource FlyoutContent}}" />
+		</controls:Flyout>
 	</Grid>
 </controls:MetroWindow>

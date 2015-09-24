@@ -91,6 +91,10 @@
     <Compile Include="Base\PersisterViewModel.cs" />
     <Compile Include="Base\IResolver.cs" />
     <Compile Include="ViewModels\Estimate\Persisters\NameEstimateCustomerPersister.cs" />
+    <Compile Include="Converters\FlyoutContentConverter.cs" />
+    <Compile Include="FlyoutService\FlyoutService.cs" />
+    <Compile Include="ViewModels\FlyoutShellViewModel.cs" />
+    <Compile Include="ViewModels\FlyoutViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Estimate\Persisters\DescriptionEstimatePersister.cs" />

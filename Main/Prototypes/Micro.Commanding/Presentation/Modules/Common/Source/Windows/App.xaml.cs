@@ -7,7 +7,6 @@
 	using EyeSoft.Logging;
 	using EyeSoft.Threading.Tasks;
 	using EyeSoft.Windows.Model;
-	using EyeSoft.Windows.Model.DialogService;
 
 	public partial class App
 	{
@@ -15,6 +14,8 @@
 		{
 			try
 			{
+			    InitializeComponent();
+
 				var logger = new ApplicationLogger();
 
 				Logger.Register(logger);

@@ -5,7 +5,7 @@ namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 	using System.ComponentModel;
 	using System.Linq;
 	using EyeSoft.Timers;
-	using EyeSoft.Windows.Model.ViewModels;
+	using EyeSoft.Windows.Model;
 
 	public abstract class PersisterViewModel<T> : IdentityViewModel
 	{
