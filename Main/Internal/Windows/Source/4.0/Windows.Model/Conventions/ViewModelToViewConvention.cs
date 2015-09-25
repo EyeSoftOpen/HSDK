@@ -1,3 +1,5 @@
+using EyeSoft.Windows.Model.ViewModels;
+
 namespace EyeSoft.Windows.Model.Conventions
 {
 	using System.Windows;

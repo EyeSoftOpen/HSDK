@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.Collections
-{
-	using System.Collections.Generic;
-	using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
+namespace EyeSoft.Windows.Model.Collections.Filter
+{
 	public static class EnumerableFilterExtensions
 	{
 		public static IEnumerable<string> FilteredKeys(this IEnumerable<string> keys)

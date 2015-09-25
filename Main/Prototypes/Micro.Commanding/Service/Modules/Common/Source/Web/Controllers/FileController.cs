@@ -1,14 +1,14 @@
 ﻿namespace EyeSoft.Accounting.Prototype.Api.Web.Controllers
 {
-	using System.IO;
-	using System.Web;
-	using EyeSoft.IO;
-
 	using System;
+	using System.IO;
 	using System.Linq;
 	using System.Net.Http;
 	using System.Threading.Tasks;
+	using System.Web;
 	using System.Web.Http;
+
+	using EyeSoft.IO;
 
 	public class FileController : ApiController
 	{

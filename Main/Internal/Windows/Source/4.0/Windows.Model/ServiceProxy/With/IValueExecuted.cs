@@ -1,9 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.With
+﻿using System;
+using EyeSoft.Windows.Model.Collections.ObjectModel;
+
+namespace EyeSoft.Windows.Model.ServiceProxy.With
 {
-	using System;
-
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
-
 	public interface IValueExecuted<TStart>
 	{
 		void Completed(Action<TStart> action);

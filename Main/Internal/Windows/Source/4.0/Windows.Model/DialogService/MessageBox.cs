@@ -1,7 +1,7 @@
-namespace EyeSoft.Windows.Model
-{
-	using System.Windows;
+using System.Windows;
 
+namespace EyeSoft.Windows.Model.DialogService
+{
 	public sealed class MessageBox : IMessageBox
 	{
 		public MessageBoxResult ShowBox(

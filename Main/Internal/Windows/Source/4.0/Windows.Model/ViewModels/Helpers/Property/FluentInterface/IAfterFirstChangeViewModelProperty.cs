@@ -1,7 +1,7 @@
-namespace EyeSoft.Windows.Model
-{
-	using System;
+using System;
 
+namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property.FluentInterface
+{
 	public interface IAfterFirstChangeViewModelProperty<out TProperty> :
 		IChangeViewModelProperty<TProperty>,
 		IChangingViewModelProperty<TProperty>

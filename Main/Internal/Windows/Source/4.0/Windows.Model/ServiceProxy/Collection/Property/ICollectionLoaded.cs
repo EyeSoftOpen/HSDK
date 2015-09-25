@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Windows.Model.Collection.Property
-{
-	using System;
-	using System.Collections.Generic;
-	using System.Linq.Expressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
+namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Property
+{
 	public interface ICollectionLoaded<out TService, TCollectionType>
 		where TService : IDisposable
 	{

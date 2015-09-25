@@ -1,7 +1,7 @@
-namespace EyeSoft.Windows.Model
-{
-	using System.Windows;
+using System.Windows;
 
+namespace EyeSoft.Windows.Model.Execution
+{
 	public class AsyncExecution : Execution
 	{
 		internal AsyncExecution(Application application)

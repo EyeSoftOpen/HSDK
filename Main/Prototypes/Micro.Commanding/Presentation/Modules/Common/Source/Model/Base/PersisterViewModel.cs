@@ -5,13 +5,15 @@ namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 	using System.ComponentModel;
 	using System.Linq;
 	using EyeSoft.Timers;
-	using EyeSoft.Windows.Model;
+	using EyeSoft.Windows.Model.ViewModels;
 
 	public abstract class PersisterViewModel<T> : IdentityViewModel
 	{
 		private readonly Type viewModelType;
 
 		private readonly IDictionary<string, TimerAndAction> timerDictionary = new Dictionary<string, TimerAndAction>();
+
+		private readonly IDictionary<string, Type> persisterTypes;
 
 		private string lastChangedProperty;
 
@@ -24,6 +26,12 @@ namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 			viewModelType = GetType();
 
 			Persisters = new Persisters<T>();
+
+			persisterTypes =
+				viewModelType.Assembly
+					.GetTypes()
+					.Where(x => x.Implements(typeof(IPersister)) && !x.IsAbstract && !x.IsInterface)
+					.ToDictionary(k => k.Name, v => v);
 		}
 
 		protected Persisters<T> Persisters { get; }
@@ -62,10 +70,12 @@ namespace EyeSoft.Architecture.Prototype.Windows.Model.Base
 
 		private Type GetPersisterType(string propertyName)
 		{
-			var persisterName = $"Model.ViewModels.Main.Persisters.{propertyName}{viewModelType.Name.Replace("ViewModel", null)}Persister";
+			var persisterName = $"{propertyName}{viewModelType.Name.Replace("ViewModel", null)}Persister";
 
-			var persisterType = viewModelType.Assembly.GetType(persisterName, false);
+			Type persisterType;
 
+			persisterTypes.TryGetValue(persisterName, out persisterType);
+			
 			return persisterType;
 		}
 

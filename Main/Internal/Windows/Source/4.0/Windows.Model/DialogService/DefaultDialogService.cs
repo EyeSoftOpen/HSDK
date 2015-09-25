@@ -1,15 +1,15 @@
-namespace EyeSoft.Windows.Model
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Windows;
+using System.Windows.Input;
+using EyeSoft.Windows.Model.Conventions;
+using EyeSoft.Windows.Model.ViewModels;
+
+namespace EyeSoft.Windows.Model.DialogService
 {
-	using System;
-	using System.Collections.Generic;
-	using System.ComponentModel;
-	using System.Linq;
-	using System.Reflection;
-	using System.Windows;
-	using System.Windows.Input;
-
-	using EyeSoft.Windows.Model.Conventions;
-
 	public class DefaultDialogService : IDialogService
 	{
 		private static readonly MethodInfo keyDownMethod =

@@ -1,13 +1,12 @@
-namespace EyeSoft.Windows.Model
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Windows;
+using EyeSoft.Extensions;
+
+namespace EyeSoft.Windows.Model.ViewModels
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Reflection;
-	using System.Windows;
-
-	using EyeSoft.Extensions;
-
 	public class ViewModelFactory
 	{
 		private readonly IResolverLocator container;

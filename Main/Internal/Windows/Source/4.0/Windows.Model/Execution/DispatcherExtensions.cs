@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model
-{
-	using System;
-	using System.Windows.Threading;
+using System;
+using System.Windows.Threading;
 
+namespace EyeSoft.Windows.Model.Execution
+{
 	public static class DispatcherExtensions
 	{
 		public static object Invoke(this Dispatcher dispatcher, Action action)

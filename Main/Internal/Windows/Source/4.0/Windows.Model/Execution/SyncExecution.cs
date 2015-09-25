@@ -1,9 +1,9 @@
-namespace EyeSoft.Windows.Model
-{
-	using System;
-	using System.Windows;
-	using System.Windows.Threading;
+using System;
+using System.Windows;
+using System.Windows.Threading;
 
+namespace EyeSoft.Windows.Model.Execution
+{
 	public class SyncExecution : Execution
 	{
 		internal SyncExecution(Application application) : base(application, false)

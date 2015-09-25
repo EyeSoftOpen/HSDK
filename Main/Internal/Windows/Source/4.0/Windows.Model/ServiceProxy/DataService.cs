@@ -1,12 +1,11 @@
-namespace EyeSoft.Windows.Model
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using EyeSoft.Mapping;
+using EyeSoft.Windows.Model.Collections.ObjectModel;
+
+namespace EyeSoft.Windows.Model.ServiceProxy
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-
-	using EyeSoft.Mapping;
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
-
 	internal class DataService<TService> where TService : IDisposable
 	{
 		private readonly Func<TService> proxyCreator;

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Windows.Model
+﻿namespace EyeSoft.Windows.Model.ViewModels.Navigation
 {
 	public abstract class NavigableViewModel : AutoRegisterViewModel
 	{

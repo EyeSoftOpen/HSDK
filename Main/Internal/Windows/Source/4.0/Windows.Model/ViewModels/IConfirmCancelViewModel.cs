@@ -1,7 +1,7 @@
-namespace EyeSoft.Windows.Model
-{
-	using System.Windows.Input;
+using System.Windows.Input;
 
+namespace EyeSoft.Windows.Model.ViewModels
+{
 	public interface IConfirmCancelViewModel
 	{
 		ICommand ConfirmCommand { get; }

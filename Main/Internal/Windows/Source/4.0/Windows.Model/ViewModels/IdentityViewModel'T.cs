@@ -1,7 +1,7 @@
-﻿namespace EyeSoft.Windows.Model
-{
-	using System;
+﻿using System;
 
+namespace EyeSoft.Windows.Model.ViewModels
+{
 	public abstract class IdentityViewModel<T> : AutoRegisterViewModel, IIdentityViewModel<T>
 		where T : IComparable
 	{

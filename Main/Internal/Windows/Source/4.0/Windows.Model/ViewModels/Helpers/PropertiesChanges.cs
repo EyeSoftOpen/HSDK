@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model
-{
-	using System;
-	using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
+namespace EyeSoft.Windows.Model.ViewModels.Helpers
+{
 	internal class PropertyChanges
 	{
 		private readonly IList<PropertyChangeMetadata> changeActions = new List<PropertyChangeMetadata>();

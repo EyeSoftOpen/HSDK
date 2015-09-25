@@ -1,10 +1,12 @@
-﻿using System;
-using System.Web.Http;
-using Domain;
-using EyeSoft.Architecture.Prototype.Accounting.Commanding;
-
-namespace EyeSoft.Accounting.Prototype.Api.Web.Controllers
+﻿namespace EyeSoft.Accounting.Prototype.Api.Web.Controllers
 {
+	using System;
+	using System.Web.Http;
+
+	using Domain;
+
+	using EyeSoft.Architecture.Prototype.Accounting.Commanding;
+
 	public class EstimateController : ApiController
 	{
 		private readonly IEstimateRepository repository;
