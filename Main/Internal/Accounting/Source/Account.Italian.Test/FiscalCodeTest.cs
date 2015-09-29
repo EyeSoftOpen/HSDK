@@ -1,4 +1,5 @@
-﻿namespace EyeSoft.Accounting.Italian.Test
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+namespace EyeSoft.Accounting.Italian.Test
 {
 	using System;
 
@@ -45,6 +46,15 @@
 			var revertFiscalCode = new RevertedFiscalCode(wrongFiscalCode);
 			revertFiscalCode.IsValid.Should().Be.False();
 			revertFiscalCode.BirthDate.HasValue.Should().Be.False();
+		}
+
+		[TestMethod]
+		public void RevertLowerValidFiscalCode()
+		{
+			var lowerFiscalCode = Known.FiscalCodes.FemaleCode.ToLower();
+			var revertFiscalCode = new RevertedFiscalCode(lowerFiscalCode);
+			revertFiscalCode.IsValid.Should().Be.True();
+			revertFiscalCode.BirthDate.HasValue.Should().Be.True();
 		}
 	}
 }

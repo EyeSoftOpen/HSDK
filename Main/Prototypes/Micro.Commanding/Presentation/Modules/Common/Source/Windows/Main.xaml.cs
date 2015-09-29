@@ -1,6 +1,7 @@
 ﻿namespace EyeSoft.Architecture.Prototype.Windows
 {
 	using System.Diagnostics;
+	using System.Windows;
 	using System.Windows.Navigation;
 
 	public partial class Main

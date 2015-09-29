@@ -29,7 +29,7 @@ namespace EyeSoft.Accounting.Italian
 		public static int ToNumber(char monthCode)
 		{
 			return
-				monthToCode.Single(m => m.Value == monthCode).Key;
+				monthToCode.Single(m => m.Value == char.ToUpper(monthCode)).Key;
 		}
 	}
 }

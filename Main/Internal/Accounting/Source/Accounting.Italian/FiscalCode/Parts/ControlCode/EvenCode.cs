@@ -23,7 +23,7 @@ namespace EyeSoft.Accounting.Italian
 
 			var sum =
 				evenChars
-					.Select(x => codes[x])
+					.Select(x => codes[char.ToUpper(x)])
 					.Sum(x => x);
 
 			Total = sum;

@@ -15,12 +15,12 @@
 
 		protected string ExtractConsonants(string stringa)
 		{
-			return Regex.Replace(stringa, string.Format("[{0}\\s]", Vocals), string.Empty);
+			return Regex.Replace(stringa, $"[{Vocals}\\s]", string.Empty);
 		}
 
 		protected string ExtractVocals(string stringa)
 		{
-			return Regex.Replace(stringa, string.Format("[^{0}]", Vocals), string.Empty);
+			return Regex.Replace(stringa, $"[^{Vocals}]", string.Empty);
 		}
 
 		private string PurifiesAccentsAndSpaces(string name)

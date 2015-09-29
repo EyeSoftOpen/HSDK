@@ -11,12 +11,6 @@ namespace EyeSoft
 			this.tokens = tokens;
 		}
 
-		public string this[object index]
-		{
-			get
-			{
-				return tokens[(int)index];
-			}
-		}
+		public string this[object index] => tokens[(int)index];
 	}
 }

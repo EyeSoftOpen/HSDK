@@ -16,7 +16,7 @@ namespace EyeSoft.Accounting.Italian
 		{
 			var evenChars = partialCode.OddChars();
 
-			var sum = evenChars.Sum(x => codes[x]);
+			var sum = evenChars.Sum(x => codes[char.ToUpper(x)]);
 
 			Total = sum;
 		}
