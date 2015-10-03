@@ -6,6 +6,8 @@ namespace EyeSoft.Nuget.Publisher.Shell
 	using EyeSoft.Nuget.Publisher.Shell.Build;
 
 	using Newtonsoft.Json;
+	using System.Linq;
+	using System;
 
 	public class RetrievePreviousVersionsStep : FluentWorkflowStep
 	{
@@ -27,11 +29,35 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		{
 			var solutionFolderPath = solutionSystemInfo.FolderPath;
 
-			var jsonPath = Path.Combine(solutionFolderPath, "Libraries", "Hsdk.Packages.Version.json");
+			var jsonsPath = Path.Combine(solutionFolderPath, "Libraries");
 
-			var json = Storage.ReadAllText(jsonPath);
+			var previousVersions = new Dictionary<string, string>();
 
-			var previousVersions = JsonConvert.DeserializeObject<IReadOnlyDictionary<string, string>>(json);
+			var savedDictionaries = new DirectoryInfo(jsonsPath)
+				.GetFiles("*.json")
+				.Select(x => JsonConvert.DeserializeObject<IReadOnlyDictionary<string, string>>(Storage.ReadAllText(x.FullName)));
+
+			foreach (var dictionary in savedDictionaries)
+			{
+				foreach (var package in dictionary)
+				{
+					if(previousVersions.ContainsKey(package.Key))
+					{
+						var dictionaryVersion = new Version(previousVersions[package.Key]);
+
+						var savedVersion = new Version(package.Value);
+
+						if(savedVersion> dictionaryVersion)
+						{
+							previousVersions[package.Key] = savedVersion.ToString();
+						}
+					}
+					else
+					{
+						previousVersions.Add(package.Key, package.Value);
+					}
+				}
+			}
 
 			return new CollectPackagesFromSolutionStep(
 				solutionSystemInfo,

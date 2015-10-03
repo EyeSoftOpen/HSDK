@@ -13,10 +13,13 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public CompileNugetPackagesStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection)
+		private BuildAndRevision buildAndRevision;
+
+		public CompileNugetPackagesStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection, BuildAndRevision buildAndRevision)
 		{
 			this.solutionSystemInfo = solutionSystemInfo;
 			this.nugetPackageResultCollection = nugetPackageResultCollection;
+			this.buildAndRevision = buildAndRevision;
 		}
 
 		public PublishNugetPackagesStep CompileNugetPackages()
@@ -39,7 +42,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 				ProcessHelper.Start(nugetExePath, nuspecArgument, nugetCompilePath);
 			}
 
-			return new PublishNugetPackagesStep(nugetPackageResultCollection);
+			return new PublishNugetPackagesStep(solutionSystemInfo, nugetPackageResultCollection, buildAndRevision);
 		}
 	}
 }

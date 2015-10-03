@@ -9,9 +9,13 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		public BuildSolutionStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection)
+		private readonly BuildAndRevision buildAndRevision;
+
+		public BuildSolutionStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection, BuildAndRevision buildAndRevision)
 		{
-			this.solutionSystemInfo = solutionSystemInfo;
+            this.buildAndRevision = buildAndRevision;
+
+            this.solutionSystemInfo = solutionSystemInfo;
 
 			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
@@ -20,7 +24,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		{
 			MsBuild.Build(solutionSystemInfo.FilePath);
 
-			return new CompileNugetPackagesStep(solutionSystemInfo, nugetPackageResultCollection);
+			return new CompileNugetPackagesStep(solutionSystemInfo, nugetPackageResultCollection, buildAndRevision);
 		}
 	}
 }
