@@ -1,6 +1,7 @@
-namespace EyeSoft.Nuget.Publisher.Shell
+namespace EyeSoft.Nuget.Publisher.Shell.Workflow
 {
 	using EyeSoft.Nuget.Publisher.Shell.Build;
+	using EyeSoft.Nuget.Publisher.Shell.Core;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	public class BuildSolutionStep : FluentWorkflowStep
@@ -11,11 +12,11 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly BuildAndRevision buildAndRevision;
 
-		public BuildSolutionStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection, BuildAndRevision buildAndRevision)
+		public BuildSolutionStep(BuildAndRevision buildAndRevision, SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection)
 		{
-            this.buildAndRevision = buildAndRevision;
+			this.buildAndRevision = buildAndRevision;
 
-            this.solutionSystemInfo = solutionSystemInfo;
+			this.solutionSystemInfo = solutionSystemInfo;
 
 			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
@@ -24,7 +25,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		{
 			MsBuild.Build(solutionSystemInfo.FilePath);
 
-			return new CompileNugetPackagesStep(solutionSystemInfo, nugetPackageResultCollection, buildAndRevision);
+			return new CompileNugetPackagesStep(this.buildAndRevision, this.solutionSystemInfo, this.nugetPackageResultCollection);
 		}
 	}
 }

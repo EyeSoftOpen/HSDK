@@ -1,48 +1,50 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-    using Build;
-    using EyeSoft.Nuget.Publisher.Shell.Nuget;
+	using System.IO;
+	using Build;
+	using EyeSoft.Nuget.Publisher.Shell.Core;
+	using EyeSoft.Nuget.Publisher.Shell.Nuget;
+	using Newtonsoft.Json;
 
-    using Newtonsoft.Json;
-    using System.IO;
-    using System.Linq;
+	public class DumpUpdatedPackagesStep : FluentWorkflowStep
+	{
+		private readonly BuildAndRevision buildAndRevision;
 
-    public class DumpUpdatedPackagesStep : FluentWorkflowStep
-    {
-        private readonly BuildAndRevision buildAndRevision;
+		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-        private readonly NugetPackageResultCollection nugetPackageResultCollection;
+		private readonly SolutionSystemInfo solutionSystemInfo;
 
-        private SolutionSystemInfo solutionSystemInfo;
+		public DumpUpdatedPackagesStep(
+			BuildAndRevision buildAndRevision,
+			SolutionSystemInfo solutionSystemInfo,
+			NugetPackageResultCollection nugetPackageResultCollection)
+		{
+			this.solutionSystemInfo = solutionSystemInfo;
 
-        public DumpUpdatedPackagesStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection, BuildAndRevision buildAndRevision)
-        {
-            this.solutionSystemInfo = solutionSystemInfo;
+			this.buildAndRevision = buildAndRevision;
 
-            this.buildAndRevision = buildAndRevision;
+			this.nugetPackageResultCollection = nugetPackageResultCollection;
+		}
 
-            this.nugetPackageResultCollection = nugetPackageResultCollection;
-        }
+		public WaitStep DumpUpdatedPackages()
+		{
+			var json = JsonConvert.SerializeObject(nugetPackageResultCollection, Formatting.Indented);
 
-        public WaitStep DumpUpdatedPackages()
-        {
-            var json = JsonConvert.SerializeObject(nugetPackageResultCollection, Formatting.Indented);
+			ConsoleHelper.WriteLine(json);
 
-            ConsoleHelper.WriteLine(json);
+			var solutionFolderPath = solutionSystemInfo.FolderPath;
 
-            var solutionFolderPath = solutionSystemInfo.FolderPath;
+			var jsonPath = Path.Combine(solutionFolderPath, "Libraries", $"Hsdk.Packages.Version.{buildAndRevision.Build}.{buildAndRevision.Revision}.json");
 
-            var jsonPath = Path.Combine(solutionFolderPath, "Libraries", $"Hsdk.Packages.Version.{buildAndRevision.Build}.{buildAndRevision.Revision}.json");
+			Storage.CreateDirectory(new FileInfo(jsonPath).Directory.FullName);
 
-            Directory.CreateDirectory(new FileInfo(jsonPath).Directory.FullName);
+			var newVersions = nugetPackageResultCollection.NewPackagesVersions;
 
-            var newVersions = nugetPackageResultCollection.NewPackagesVersions;
+			var newJsonVersions = JsonConvert.SerializeObject(newVersions, Formatting.Indented);
 
-            var newJsonVersions = JsonConvert.SerializeObject(newVersions, Formatting.Indented);
+			Storage.WriteAllText(jsonPath, newJsonVersions);
 
-            File.WriteAllText(jsonPath, newJsonVersions);
-
-            return new WaitStep();
-        }
-    }
+			return new WaitStep();
+		}
+	}
 }

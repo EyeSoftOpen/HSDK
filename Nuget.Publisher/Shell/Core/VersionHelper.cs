@@ -1,5 +1,7 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
+	using EyeSoft.Nuget.Publisher.Shell.Core;
+
 	using global::System;
 
 	public static class VersionHelper

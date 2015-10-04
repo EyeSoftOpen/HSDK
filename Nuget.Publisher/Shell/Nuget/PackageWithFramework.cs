@@ -1,63 +1,65 @@
 namespace EyeSoft.Nuget.Publisher.Shell.Nuget
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
 
-    public class PackageWithFramework
-    {
-        public PackageWithFramework(string id, string version, IEnumerable<Package> frameworkPackages)
-        {
-            Id = id;
-            Version = version;
-            FrameworkPackages = frameworkPackages.ToArray();
-        }
+	using EyeSoft.Nuget.Publisher.Shell.Core;
 
-        public string Id { get; }
+	public class PackageWithFramework
+	{
+		public PackageWithFramework(string id, string version, IEnumerable<Package> frameworkPackages)
+		{
+			Id = id;
+			Version = version;
+			FrameworkPackages = frameworkPackages.ToArray();
+		}
 
-        public string Version { get; private set; }
+		public string Id { get; }
 
-        public IEnumerable<Package> FrameworkPackages { get; }
+		public string Version { get; private set; }
 
-        public override string ToString()
-        {
-            return $"{Id} {Version}";
-        }
+		public IEnumerable<Package> FrameworkPackages { get; }
 
-        public IEnumerable<PackageUpdate> TryUpdateNuspecDependencies(
-            IReadOnlyDictionary<string, Func<Version>> packagesVersion)
-        {
-            var nugetPackageReference = FrameworkPackages.Single(x => x.HasNuget);
+		public override string ToString()
+		{
+			return $"{Id} {Version}";
+		}
 
-            var updatedNuspecDependencies = nugetPackageReference.TryUpdateNuspecDependencies(packagesVersion);
+		public IEnumerable<PackageUpdate> TryUpdateNuspecDependencies(
+			IReadOnlyDictionary<string, Func<Version>> packagesVersion)
+		{
+			var nugetPackageReference = FrameworkPackages.Single(x => x.HasNuget);
 
-            return updatedNuspecDependencies;
-        }
+			var updatedNuspecDependencies = nugetPackageReference.TryUpdateNuspecDependencies(packagesVersion);
 
-        public void IncrementAssemblyInfo(BuildAndRevision buildAndRevision)
-        {
-            var newVersion = new Version(Version).Increment(buildAndRevision).ToString();
+			return updatedNuspecDependencies;
+		}
 
-            foreach (var frameworkPackage in FrameworkPackages)
-            {
-                frameworkPackage.IncrementAssemblyInfo(newVersion);
-            }
+		public void IncrementAssemblyInfo(BuildAndRevision buildAndRevision)
+		{
+			var newVersion = new Version(Version).Increment(buildAndRevision).ToString();
 
-            Version = newVersion;
-        }
+			foreach (var frameworkPackage in FrameworkPackages)
+			{
+				frameworkPackage.IncrementAssemblyInfo(newVersion);
+			}
 
-        public bool IsLatestVersion(string previousVersion)
-        {
-            var isLatestVersion = new Version(previousVersion) == new Version(Version);
+			Version = newVersion;
+		}
 
-            return isLatestVersion;
-        }
+		public bool IsLatestVersion(string previousVersion)
+		{
+			var isLatestVersion = new Version(previousVersion) == new Version(Version);
 
-        internal void UpdateNuspecVersion()
-        {
-            var nugetPackageReference = FrameworkPackages.Single(x => x.HasNuget);
+			return isLatestVersion;
+		}
 
-            nugetPackageReference.UpdateNuspecVersion(Version);
-        }
-    }
+		internal void UpdateNuspecVersion()
+		{
+			var nugetPackageReference = FrameworkPackages.Single(x => x.HasNuget);
+
+			nugetPackageReference.UpdateNuspecVersion(Version);
+		}
+	}
 }

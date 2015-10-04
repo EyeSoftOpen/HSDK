@@ -1,9 +1,9 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
-
 	using System;
 	using System.IO;
+
+	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
 
 	public static class Storage
 	{
@@ -45,6 +45,11 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			}
 
 			File.WriteAllLines(path, contents);
+		}
+
+		public static void CreateDirectory(string path)
+		{
+			Directory.CreateDirectory(path);
 		}
 	}
 }

@@ -1,6 +1,8 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
 	using Build;
+
+	using EyeSoft.Nuget.Publisher.Shell.Core;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	public class PublishNugetPackagesStep : FluentWorkflowStep
@@ -22,7 +24,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		public UpdatePreviousVersionsStep PublishNugetPackages()
 		{
-			return new UpdatePreviousVersionsStep(solutionSystemInfo, nugetPackageResultCollection, buildAndRevision);
+			return new UpdatePreviousVersionsStep(this.buildAndRevision, this.solutionSystemInfo, this.nugetPackageResultCollection);
 		}
 	}
 }

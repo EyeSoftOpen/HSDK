@@ -1,13 +1,12 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
+	using System;
 	using System.Collections.Generic;
 	using System.IO;
-
-	using EyeSoft.Nuget.Publisher.Shell.Build;
-
-	using Newtonsoft.Json;
 	using System.Linq;
-	using System;
+	using EyeSoft.Nuget.Publisher.Shell.Build;
+	using EyeSoft.Nuget.Publisher.Shell.Core;
+	using Newtonsoft.Json;
 
 	public class RetrievePreviousVersionsStep : FluentWorkflowStep
 	{
@@ -18,7 +17,9 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		private readonly BuildAndRevision buildAndRevision;
 
 		public RetrievePreviousVersionsStep(
-			SolutionSystemInfo solutionSystemInfo, IEnumerable<string> packagesId, BuildAndRevision buildAndRevision)
+			SolutionSystemInfo solutionSystemInfo,
+			IEnumerable<string> packagesId,
+			BuildAndRevision buildAndRevision)
 		{
 			this.solutionSystemInfo = solutionSystemInfo;
 			this.packagesId = packagesId;
@@ -41,13 +42,13 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			{
 				foreach (var package in dictionary)
 				{
-					if(previousVersions.ContainsKey(package.Key))
+					if (previousVersions.ContainsKey(package.Key))
 					{
 						var dictionaryVersion = new Version(previousVersions[package.Key]);
 
 						var savedVersion = new Version(package.Value);
 
-						if(savedVersion> dictionaryVersion)
+						if (savedVersion > dictionaryVersion)
 						{
 							previousVersions[package.Key] = savedVersion.ToString();
 						}
@@ -60,9 +61,9 @@ namespace EyeSoft.Nuget.Publisher.Shell
 			}
 
 			return new CollectPackagesFromSolutionStep(
+				buildAndRevision,
 				solutionSystemInfo,
 				packagesId,
-				buildAndRevision,
 				previousVersions);
 		}
 	}

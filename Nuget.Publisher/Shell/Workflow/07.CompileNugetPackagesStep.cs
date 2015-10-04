@@ -4,6 +4,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 	using System.Linq;
 
 	using EyeSoft.Nuget.Publisher.Shell.Build;
+	using EyeSoft.Nuget.Publisher.Shell.Core;
 	using EyeSoft.Nuget.Publisher.Shell.Diagnostics;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
@@ -13,13 +14,16 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly NugetPackageResultCollection nugetPackageResultCollection;
 
-		private BuildAndRevision buildAndRevision;
+		private readonly BuildAndRevision buildAndRevision;
 
-		public CompileNugetPackagesStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection, BuildAndRevision buildAndRevision)
+		public CompileNugetPackagesStep(
+			BuildAndRevision buildAndRevision,
+			SolutionSystemInfo solutionSystemInfo,
+			NugetPackageResultCollection nugetPackageResultCollection)
 		{
 			this.solutionSystemInfo = solutionSystemInfo;
-			this.nugetPackageResultCollection = nugetPackageResultCollection;
 			this.buildAndRevision = buildAndRevision;
+			this.nugetPackageResultCollection = nugetPackageResultCollection;
 		}
 
 		public PublishNugetPackagesStep CompileNugetPackages()

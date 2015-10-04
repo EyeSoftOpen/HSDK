@@ -5,6 +5,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 	using System.Linq;
 
 	using EyeSoft.Nuget.Publisher.Shell.Build;
+	using EyeSoft.Nuget.Publisher.Shell.Core;
 	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	public class UpdateNuspecAndAssemblyInfoStep : FluentWorkflowStep
@@ -18,9 +19,9 @@ namespace EyeSoft.Nuget.Publisher.Shell
 		private readonly IReadOnlyDictionary<string, string> previousVersions;
 
 		public UpdateNuspecAndAssemblyInfoStep(
+			BuildAndRevision buildAndRevision,
 			SolutionSystemInfo solutionSystemInfo,
 			IEnumerable<string> packagesId,
-			BuildAndRevision buildAndRevision,
 			IReadOnlyDictionary<string, string> previousVersions)
 		{
 			this.solutionSystemInfo = solutionSystemInfo;

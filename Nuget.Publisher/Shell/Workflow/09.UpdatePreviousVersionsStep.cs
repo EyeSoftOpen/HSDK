@@ -1,9 +1,9 @@
 namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using System.Collections.Generic;
 
-	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 	using Build;
+	using EyeSoft.Nuget.Publisher.Shell.Core;
+	using EyeSoft.Nuget.Publisher.Shell.Nuget;
 
 	public class UpdatePreviousVersionsStep : FluentWorkflowStep
 	{
@@ -13,7 +13,10 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		private readonly SolutionSystemInfo solutionSystemInfo;
 
-		public UpdatePreviousVersionsStep(SolutionSystemInfo solutionSystemInfo, NugetPackageResultCollection nugetPackageResultCollection, BuildAndRevision buildAndRevision)
+		public UpdatePreviousVersionsStep(
+			BuildAndRevision buildAndRevision,
+			SolutionSystemInfo solutionSystemInfo,
+			NugetPackageResultCollection nugetPackageResultCollection)
 		{
 			this.solutionSystemInfo = solutionSystemInfo;
 
@@ -24,7 +27,7 @@ namespace EyeSoft.Nuget.Publisher.Shell
 
 		public DumpUpdatedPackagesStep UpdatePreviousVersions()
 		{
-			return new DumpUpdatedPackagesStep(solutionSystemInfo, nugetPackageResultCollection, buildAndRevision);
+			return new DumpUpdatedPackagesStep(buildAndRevision, solutionSystemInfo, nugetPackageResultCollection);
 		}
 	}
 }
