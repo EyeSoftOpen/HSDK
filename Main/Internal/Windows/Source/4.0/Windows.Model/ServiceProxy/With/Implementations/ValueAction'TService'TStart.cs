@@ -1,9 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using EyeSoft.Mapping;
-
-namespace EyeSoft.Windows.Model.ServiceProxy.With.Implementations
+﻿namespace EyeSoft.Windows.Model.With
 {
+	using System;
+	using System.Threading.Tasks;
+
+	using EyeSoft.Mapping;
+
 	internal class ValueAction<TService, TStart> : IValueAction<TService, TStart> where TService : IDisposable
 	{
 		private readonly LoaderParams<TService> loaderParams;

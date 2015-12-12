@@ -1,9 +1,10 @@
-using System.Collections.Generic;
-using System.ComponentModel;
-using EyeSoft.Reflection;
-
-namespace EyeSoft.Windows.Model.ViewModels.Helpers
+namespace EyeSoft.Windows.Model
 {
+	using System.Collections.Generic;
+	using System.ComponentModel;
+
+	using EyeSoft.Reflection;
+
 	public static class ViewModelExtensions
 	{
 		// TODO: UPGRADE FW 45 - decomment using Framework 4.5

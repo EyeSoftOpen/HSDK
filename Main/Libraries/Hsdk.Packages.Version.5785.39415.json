@@ -1,0 +1,20 @@
+{
+  "EyeSoft.Accounting.Italian": "0.5.5785.39415",
+  "EyeSoft.Core": "1.4.5785.39415",
+  "EyeSoft.Data.SqLite": "0.2.5785.39415",
+  "EyeSoft.Accounting": "0.5.0.20",
+  "EyeSoft.Accounting.Italian.Istat": "0.5.0.80",
+  "EyeSoft.AutoMapper": "0.5.1.40",
+  "EyeSoft.Data": "0.4.1.50",
+  "EyeSoft.Data.Nhibernate": "0.7.8.50",
+  "EyeSoft.Domain": "0.4.4.3040",
+  "EyeSoft.FluentValidation": "0.1.1.50",
+  "EyeSoft.ServiceLocator": "1.0.2.2040",
+  "EyeSoft.ServiceLocator.Windsor": "2.2.2.2060",
+  "EyeSoft.ServiceModel": "0.1.0.70",
+  "EyeSoft.Shimmer.Client": "0.1.0.0",
+  "EyeSoft.Web": "0.1.0.0",
+  "EyeSoft.Windows": "0.1.0.100",
+  "EyeSoft.Windows.Installer.InstallMate": "0.1.0.30",
+  "EyeSoft.Windows.Model": "0.2.4.90"
+}

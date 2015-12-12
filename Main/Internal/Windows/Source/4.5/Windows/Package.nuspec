@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-	<metadata>
-		<id>$title$</id>
-		<title>$title$</title>
-		<version>$version$</version>
-		<owners>$author$</owners>
-		<description>$description$</description>
-		<copyright>$author$</copyright>
-		<authors>Matteo Migliore</authors>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
-		<tags>WPF windows converters MVVM presentation UI</tags>
-		<dependencies>
-			<dependency id="EyeSoft.Core" version="1.4.0.0940" />
-		</dependencies>
-	</metadata>
-	<files>
-		<file src="..\..\4.0\Windows\bin\release\$id$.dll" target="lib\net40\" />
-		<file src="..\..\4.0\Windows\bin\release\$id$.pdb" target="lib\net40\" />
-	</files>
+  <metadata>
+    <id>$title$</id>
+    <version>0.1.0.100</version>
+    <title>$title$</title>
+    <authors>Matteo Migliore</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>$author$</copyright>
+    <tags>WPF windows converters MVVM presentation UI</tags>
+    <dependencies>
+      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\4.0\Windows\bin\release\$id$.dll" target="lib\net40\" />
+    <file src="..\..\4.0\Windows\bin\release\$id$.pdb" target="lib\net40\" />
+  </files>
 </package>

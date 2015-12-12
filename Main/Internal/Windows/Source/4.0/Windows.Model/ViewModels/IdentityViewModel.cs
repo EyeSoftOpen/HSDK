@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace EyeSoft.Windows.Model.ViewModels
+﻿namespace EyeSoft.Windows.Model
 {
+	using System;
+
 	public abstract class IdentityViewModel : IdentityViewModel<Guid>
 	{
 		protected IdentityViewModel()

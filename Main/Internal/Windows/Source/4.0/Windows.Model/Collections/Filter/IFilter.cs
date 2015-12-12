@@ -1,4 +1,4 @@
-namespace EyeSoft.Windows.Model.Collections.Filter
+namespace EyeSoft.Windows.Model.Collections
 {
 	public interface IFilter
 	{

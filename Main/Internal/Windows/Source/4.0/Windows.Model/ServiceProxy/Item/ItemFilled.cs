@@ -1,11 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using EyeSoft.Mapping;
-using EyeSoft.Windows.Model.ServiceProxy.Item.Property;
-using EyeSoft.Windows.Model.Threading;
-
-namespace EyeSoft.Windows.Model.ServiceProxy.Item
+﻿namespace EyeSoft.Windows.Model.Item
 {
+	using System;
+	using System.Threading.Tasks;
+
+	using EyeSoft.Mapping;
+	using EyeSoft.Windows.Model.Item.Property;
+	using EyeSoft.Windows.Model.Threading;
+
 	internal class ItemFilled<TService, T, TProperty> :
 		IItemFilled<TProperty>,
 		IItemPropertyFilled<TProperty>

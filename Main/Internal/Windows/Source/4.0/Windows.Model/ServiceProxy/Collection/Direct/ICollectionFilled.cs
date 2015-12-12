@@ -1,8 +1,9 @@
-﻿using System;
-using EyeSoft.Windows.Model.Collections.ObjectModel;
-
-namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Direct
+﻿namespace EyeSoft.Windows.Model.Collection.Direct
 {
+	using System;
+
+	using EyeSoft.Windows.Model.Collections.ObjectModel;
+
 	public interface ICollectionFilled<TCollectionType>
 	{
 		void Completed(Action<IObservableCollection<TCollectionType>> completed);

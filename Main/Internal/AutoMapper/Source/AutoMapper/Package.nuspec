@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-	<metadata>
-		<id>EyeSoft.AutoMapper</id>
-		<version>0.5.1.0040</version>
-		<authors>Matteo Migliore</authors>
-		<owners>EyeSoft</owners>
-		<title />
-		<description>AutoMapper helper to create LINQ projections.</description>
-		<copyright>EyeSoft</copyright>
-		<tags>AutoMapper, LINQ, projections, NHibernate, Entity Framework</tags>
-		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<frameworkAssemblies>
-			<frameworkAssembly assemblyName="Microsoft.CSharp" />
-			<frameworkAssembly assemblyName="System" />
-			<frameworkAssembly assemblyName="System.Core" />
-		</frameworkAssemblies>
-		<dependencies>
-			<dependency id="AutoMapper" version="3.1.0" />
-			<dependency id="EyeSoft.Core" version="1.4.0.0490" />
-		</dependencies>
-	</metadata>
+  <metadata>
+    <id>EyeSoft.AutoMapper</id>
+    <version>0.5.1.40</version>
+    <title />
+    <authors>Matteo Migliore</authors>
+    <owners>EyeSoft</owners>
+    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AutoMapper helper to create LINQ projections.</description>
+    <copyright>EyeSoft</copyright>
+    <tags>AutoMapper, LINQ, projections, NHibernate, Entity Framework</tags>
+    <dependencies>
+      <dependency id="AutoMapper" version="3.1.0" />
+      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" />
+      <frameworkAssembly assemblyName="System" />
+      <frameworkAssembly assemblyName="System.Core" />
+    </frameworkAssemblies>
+  </metadata>
 </package>

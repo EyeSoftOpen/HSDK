@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Property
+﻿namespace EyeSoft.Windows.Model.Collection.Property
 {
+	using System;
+	using System.Collections.Generic;
+
 	public interface ICollectionSorted<out TService, TCollectionType>
 		where TService : IDisposable
 	{

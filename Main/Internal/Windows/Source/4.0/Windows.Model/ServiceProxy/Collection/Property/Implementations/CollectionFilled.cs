@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EyeSoft.Mapping;
-using EyeSoft.Windows.Model.Collections.ObjectModel;
-using EyeSoft.Windows.Model.Threading;
-
-namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Property.Implementations
+﻿namespace EyeSoft.Windows.Model.Collection.Property
 {
+	using System;
+	using System.Collections;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Threading.Tasks;
+
+	using EyeSoft.Mapping;
+	using EyeSoft.Windows.Model.Collections.ObjectModel;
+	using EyeSoft.Windows.Model.Threading;
+
 	internal class CollectionFilled<TService, T, TCollectionType> :
 		ICollectionFilled<TCollectionType>,
 		ICollectionPropertyFilled<TCollectionType>

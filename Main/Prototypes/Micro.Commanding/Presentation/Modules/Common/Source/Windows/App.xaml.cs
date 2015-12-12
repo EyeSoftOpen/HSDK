@@ -7,7 +7,6 @@
 	using EyeSoft.Logging;
 	using EyeSoft.Threading.Tasks;
 	using EyeSoft.Windows.Model;
-	using EyeSoft.Windows.Model.DialogService;
 
 	public partial class App
 	{

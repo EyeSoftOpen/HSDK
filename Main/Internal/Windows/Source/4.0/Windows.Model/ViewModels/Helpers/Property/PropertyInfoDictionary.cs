@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Windows.Input;
-
-namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property
+namespace EyeSoft.Windows.Model
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Reflection;
+	using System.Windows.Input;
+
 	internal class PropertyInfoDictionary
 	{
 		private const BindingFlags Bindings = BindingFlags.Public | BindingFlags.Instance;

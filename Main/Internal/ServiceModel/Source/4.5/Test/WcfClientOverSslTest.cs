@@ -1,89 +1,89 @@
-﻿namespace EyeSoft.ServiceModel.Test
-{
-	using System;
-	
-	using System.Security.Cryptography.X509Certificates;
-	using System.ServiceModel;
-	using System.ServiceModel.Security;
+﻿////namespace EyeSoft.ServiceModel.Test
+////{
+////	using System;
 
-	using Castle.Facilities.WcfIntegration;
-	using Castle.Facilities.WcfIntegration.Behaviors;
-	using Castle.MicroKernel.Registration;
-	using Castle.Windsor;
+////	using System.Security.Cryptography.X509Certificates;
+////	using System.ServiceModel;
+////	using System.ServiceModel.Security;
 
-	using EyeSoft.ServiceModel.Hosting.Web;
+////	using Castle.Facilities.WcfIntegration;
+////	using Castle.Facilities.WcfIntegration.Behaviors;
+////	using Castle.MicroKernel.Registration;
+////	using Castle.Windsor;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
+////	using EyeSoft.ServiceModel.Hosting.Web;
 
-	using SharpTestsEx;
+////	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	[TestClass]
-	public class WcfClientOverSslTest
-	{
-		[TestMethod]
-		public void VerifyWcfClienCallOverSsl()
-		{
-			new ProxyContainer("localhost", 44301, "EyeMobile", "user@domain.com", "1FUEI6TYmn9yUHWxeJpVafcE85o=")
-				.Register<IMathService>()
-				.Proxy<IMathService>()
-				.Sum(3, 5).Should().Be.EqualTo(8);
-		}
+////	using SharpTestsEx;
 
-		public class ProxyContainer
-		{
-			private readonly IWindsorContainer container = new WindsorContainer();
+////	[TestClass]
+////	public class WcfClientOverSslTest
+////	{
+////		[TestMethod]
+////		public void VerifyWcfClienCallOverSsl()
+////		{
+////			new ProxyContainer("localhost", 44301, "EyeMobile", "user@domain.com", "1FUEI6TYmn9yUHWxeJpVafcE85o=")
+////				.Register<IMathService>()
+////				.Proxy<IMathService>()
+////				.Sum(3, 5).Should().Be.EqualTo(8);
+////		}
 
-			private readonly string host;
+////		public class ProxyContainer
+////		{
+////			private readonly IWindsorContainer container = new WindsorContainer();
 
-			private readonly int port;
+////			private readonly string host;
 
-			private readonly string certificateName;
+////			private readonly int port;
 
-			private readonly string username;
+////			private readonly string certificateName;
 
-			private readonly string password;
+////			private readonly string username;
 
-			public ProxyContainer(string host, int port, string certificateName, string username, string password)
-			{
-				container.Kernel.AddFacility<WcfFacility>();
+////			private readonly string password;
 
-				this.host = host;
-				this.port = port;
-				this.certificateName = certificateName;
-				this.username = username;
-				this.password = password;
-			}
+////			public ProxyContainer(string host, int port, string certificateName, string username, string password)
+////			{
+////				container.Kernel.AddFacility<WcfFacility>();
 
-			public ProxyContainer Register<TContract>() where TContract : class
-			{
-				var binding = new WSHttpBinding(SecurityMode.TransportWithMessageCredential);
-				binding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
-				binding.SendTimeout = TimeSpan.FromMinutes(15);
-				binding.MaxReceivedMessageSize = int.MaxValue;
+////				this.host = host;
+////				this.port = port;
+////				this.certificateName = certificateName;
+////				this.username = username;
+////				this.password = password;
+////			}
 
-				var uri = new UriBuilder("https", host, port, typeof(TContract).Name.Substring(1)).Uri;
-				var identity = EndpointIdentity.CreateDnsIdentity(certificateName);
-				var address = new EndpointAddress(uri, identity);
+////			public ProxyContainer Register<TContract>() where TContract : class
+////			{
+////				var binding = new WSHttpBinding(SecurityMode.TransportWithMessageCredential);
+////				binding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
+////				binding.SendTimeout = TimeSpan.FromMinutes(15);
+////				binding.MaxReceivedMessageSize = int.MaxValue;
 
-				var endpoint = WcfEndpoint.BoundTo(binding).At(address);
+////				var uri = new UriBuilder("https", host, port, typeof(TContract).Name.Substring(1)).Uri;
+////				var identity = EndpointIdentity.CreateDnsIdentity(certificateName);
+////				var address = new EndpointAddress(uri, identity);
 
-				var credential =
-					new UserNameCredentials(username, password)
-						{
-							CertificateValidationMode = X509CertificateValidationMode.None,
-							RevocationMode = X509RevocationMode.NoCheck
-						};
+////				var endpoint = WcfEndpoint.BoundTo(binding).At(address);
 
-				var model = new DefaultClientModel { Endpoint = endpoint }.Credentials(credential);
-				container.Register(Component.For<TContract>().AsWcfClient(model).LifestyleTransient());
+////				var credential =
+////					new UserNameCredentials(username, password)
+////						{
+////							CertificateValidationMode = X509CertificateValidationMode.None,
+////							RevocationMode = X509RevocationMode.NoCheck
+////						};
 
-				return this;
-			}
+////				var model = new DefaultClientModel { Endpoint = endpoint }.Credentials(credential);
+////				container.Register(Component.For<TContract>().AsWcfClient(model).LifestyleTransient());
 
-			public TContract Proxy<TContract>() where TContract : class
-			{
-				return container.Resolve<TContract>();
-			}
-		}
-	}
-}
+////				return this;
+////			}
+
+////			public TContract Proxy<TContract>() where TContract : class
+////			{
+////				return container.Resolve<TContract>();
+////			}
+////		}
+////	}
+////}

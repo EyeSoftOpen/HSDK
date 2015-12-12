@@ -1,10 +1,9 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using EyeSoft.Windows.Model.ViewModels;
-
-namespace EyeSoft.Windows.Model.DialogService
+namespace EyeSoft.Windows.Model
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Windows;
+
 	public class OpenedWindowsCollection
 	{
 		private readonly HashSet<Window> openedWindows;

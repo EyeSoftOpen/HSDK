@@ -48,8 +48,8 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NuGet.Core, Version=2.8.60717.93, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\NuGet.Core.2.8.6\lib\net40-Client\NuGet.Core.dll</HintPath>
+    <Reference Include="NuGet.Core, Version=2.10.1.766, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.10.1\lib\net40-Client\NuGet.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -60,50 +60,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Build\SolutionSystemInfo.cs" />
-    <Compile Include="Core\ConsoleHelper.cs" />
-    <Compile Include="Core\StringExtensions.cs" />
-    <Compile Include="Diagnostics\ProcessHelper.cs" />
-    <Compile Include="Core\SingularPluralTimeFormatter.cs" />
-    <Compile Include="Core\TimeSpanExtensions.cs" />
-    <Compile Include="Nuget\NugetPackageResultCollection.cs" />
-    <Compile Include="Workflow\07.CompileNugetPackagesStep.cs" />
-    <Compile Include="Workflow\FluentWorkflowStep.cs" />
-    <Compile Include="Workflow\09.UpdatePreviousVersionsStep.cs" />
-    <Compile Include="Workflow\06.BuildSolutionStep.cs" />
-    <Compile Include="Workflow\10.DumpUpdatedPackagesStep.cs" />
-    <Compile Include="Workflow\08.PublishNugetPackagesStep.cs" />
-    <Compile Include="Core\AssemblyInfo.cs" />
-    <Compile Include="Core\AssemblyInfoData.cs" />
-    <Compile Include="Core\AssemblyInfoLine.cs" />
-    <Compile Include="Core\BuildAndRevision.cs" />
-    <Compile Include="Core\Converter.cs" />
-    <Compile Include="Workflow\01.GenerateBuildAndRevisionStep.cs" />
-    <Compile Include="Workflow\Hsdk.cs" />
-    <Compile Include="LinqPad\Hyperlinq.cs" />
-    <Compile Include="Build\MsBuild.cs" />
-    <Compile Include="Nuget\Package.cs" />
-    <Compile Include="Nuget\Packages.cs" />
-    <Compile Include="Nuget\PackageUpdate.cs" />
-    <Compile Include="Nuget\PackageUpdateDataResult.cs" />
-    <Compile Include="Nuget\PackageUpdateResult.cs" />
-    <Compile Include="Nuget\PackageWithFramework.cs" />
-    <Compile Include="LinqPad\Util.cs" />
-    <Compile Include="Workflow\02.RetrievePreviousVersionsStep.cs" />
-    <Compile Include="Workflow\05.UpdatePackagesStep.cs" />
-    <Compile Include="Workflow\04.UpdateNuspecAndAssemblyInfoStep.cs" />
-    <Compile Include="Workflow\03.CollectPackagesFromSolutionStep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Storage.cs" />
-    <Compile Include="Core\VersionHelper.cs" />
-    <Compile Include="Workflow\11.WaitStep.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Core\EyeSoft.Nuget.Publisher.Core.csproj">
+      <Project>{fb6e7f2d-bb38-42a0-82c4-8c7e336b47c7}</Project>
+      <Name>EyeSoft.Nuget.Publisher.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

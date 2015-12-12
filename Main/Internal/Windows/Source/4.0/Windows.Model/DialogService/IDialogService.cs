@@ -1,8 +1,7 @@
-using System.Windows;
-using EyeSoft.Windows.Model.ViewModels;
-
-namespace EyeSoft.Windows.Model.DialogService
+namespace EyeSoft.Windows.Model
 {
+	using System.Windows;
+
 	public interface IDialogService
 	{
 		OpenedWindowsCollection OpenedWindows { get; }

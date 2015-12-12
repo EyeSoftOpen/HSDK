@@ -35,7 +35,7 @@ namespace EyeSoft.Architecture.Prototype.Windows.Model.ViewModels.Estimate
 			get;
 		}
 
-		protected override IEnumerable<EyeSoft.Validation.ValidationError> Validate()
+		protected override IEnumerable<ValidationError> Validate()
 		{
 			return new EstimateViewModelValidator().Validate(this);
 		}

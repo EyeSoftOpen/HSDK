@@ -1,12 +1,13 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Threading;
-using EyeSoft.Diagnostic;
-using EyeSoft.Logging;
-
-namespace EyeSoft.Windows.Model.ExceptionLogger
+﻿namespace EyeSoft.Windows.Model
 {
+	using System;
+	using System.Threading.Tasks;
+	using System.Windows;
+	using System.Windows.Threading;
+
+	using EyeSoft.Diagnostic;
+	using EyeSoft.Logging;
+
 	public class ExceptionHandler
 	{
 		private readonly Application application;

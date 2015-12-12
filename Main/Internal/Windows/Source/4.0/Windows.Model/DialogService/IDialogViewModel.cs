@@ -1,4 +1,4 @@
-namespace EyeSoft.Windows.Model.DialogService
+namespace EyeSoft.Windows.Model
 {
 	public interface IDialogViewModel<out TRet>
 	{

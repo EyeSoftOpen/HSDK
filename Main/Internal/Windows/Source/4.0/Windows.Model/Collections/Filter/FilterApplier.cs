@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Data;
-
-namespace EyeSoft.Windows.Model.Collections.Filter
+﻿namespace EyeSoft.Windows.Model.Collections
 {
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Windows.Data;
+
 	public class FullTextFilterApplier<T> where T : IFilterable
 	{
 		private readonly IEnumerable<T> collection;

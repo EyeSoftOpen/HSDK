@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-	<metadata>
-		<id>EyeSoft.Accounting</id>
-		<version>0.5.0.0020</version>
-		<authors>Matteo Migliore</authors>
-		<owners>EyeSoft</owners>
-		<title />
-		<description>Provide a base class library for manage the accounting.</description>
-		<copyright>EyeSoft</copyright>
-		<tags>accounting, natural person, fiscal</tags>
-		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<frameworkAssemblies>
-			<frameworkAssembly assemblyName="System" />
-			<frameworkAssembly assemblyName="System.Core" />
-		</frameworkAssemblies>
-		<dependencies>
-			<dependency id="EyeSoft.Core" version="1.4.0.0740" />
-		</dependencies>
-	</metadata>
+  <metadata>
+    <id>EyeSoft.Accounting</id>
+    <version>0.5.0.20</version>
+    <title />
+    <authors>Matteo Migliore</authors>
+    <owners>EyeSoft</owners>
+    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provide a base class library for manage the accounting.</description>
+    <copyright>EyeSoft</copyright>
+    <tags>accounting, natural person, fiscal</tags>
+    <dependencies>
+      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" />
+      <frameworkAssembly assemblyName="System.Core" />
+    </frameworkAssemblies>
+  </metadata>
 </package>

@@ -1,6 +1,4 @@
-using EyeSoft.Windows.Model.DialogService;
-
-namespace EyeSoft.Windows.Model.ViewModels
+namespace EyeSoft.Windows.Model
 {
 	public abstract class ConfirmCancelViewModel<TRet> : ConfirmCancelViewModel, IDialogViewModel<TRet>
 	{

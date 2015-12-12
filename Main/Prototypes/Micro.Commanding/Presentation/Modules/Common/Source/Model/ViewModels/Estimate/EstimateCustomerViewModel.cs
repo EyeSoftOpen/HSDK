@@ -5,7 +5,7 @@
 	using EyeSoft.Architecture.Prototype.Windows.Model.Base;
 	using EyeSoft.Web.Http.Client;
 
-	public class EstimateCustomerViewModel : PersisterViewModel<EstimateCustomerViewModel>
+    public class EstimateCustomerViewModel : PersisterViewModel<EstimateCustomerViewModel>
 	{
 		public EstimateCustomerViewModel(Guid id)
 		{

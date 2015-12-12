@@ -1,20 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Input;
-using EyeSoft.Reflection;
-using EyeSoft.Validation;
-using EyeSoft.Windows.Model.Execution;
-using EyeSoft.Windows.Model.ViewModels.Helpers;
-using EyeSoft.Windows.Model.ViewModels.Helpers.Property;
-using EyeSoft.Windows.Model.ViewModels.Helpers.Property.FluentInterface;
-
-namespace EyeSoft.Windows.Model.ViewModels
+namespace EyeSoft.Windows.Model
 {
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel;
+	using System.Linq;
+	using System.Linq.Expressions;
+	using System.Runtime.CompilerServices;
+	using System.Windows;
+	using System.Windows.Input;
+
+	using EyeSoft.Reflection;
+	using EyeSoft.Validation;
+
 	public abstract class ViewModel : INotifyPropertyChanged, INotifyPropertyChanging, INotifyViewModel, IDataErrorInfo, IDisposable
 	{
 		private readonly ViewModelProperties viewModelProperties;
@@ -137,7 +134,7 @@ namespace EyeSoft.Windows.Model.ViewModels
 
 		protected virtual void Close()
 		{
-			Sync().Execute(() => DialogService.DialogService.Close(this));
+			Sync().Execute(() => DialogService.Close(this));
 		}
 
 		protected SyncExecution Sync()

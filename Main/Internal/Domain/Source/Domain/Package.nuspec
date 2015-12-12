@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-	<metadata>
-		<id>EyeSoft.Domain</id>
-		<version>0.4.4.3040</version>
-		<authors>Matteo Migliore</authors>
-		<owners>EyeSoft</owners>
-		<copyright>EyeSoft</copyright>
-		<title />
-		<description>Base classes to implement a Domain Model also using DDD (Domain Driven Development) and to abstract the ORM or the storage and change it simply.</description>
-		<tags>domain model DDD aggregate aggregateroot ORM wrapping</tags>
-		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<dependencies>			
-			<dependency id="EyeSoft.Core" version="1.4.0.0550" />
-		</dependencies>
-		<frameworkAssemblies>
-			<frameworkAssembly assemblyName="System" targetFramework="" />
-			<frameworkAssembly assemblyName="System.Core" targetFramework="" />
-		</frameworkAssemblies>
-	</metadata>
+  <metadata>
+    <id>EyeSoft.Domain</id>
+    <version>0.4.4.3040</version>
+    <title />
+    <authors>Matteo Migliore</authors>
+    <owners>EyeSoft</owners>
+    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Base classes to implement a Domain Model also using DDD (Domain Driven Development) and to abstract the ORM or the storage and change it simply.</description>
+    <copyright>EyeSoft</copyright>
+    <tags>domain model DDD aggregate aggregateroot ORM wrapping</tags>
+    <dependencies>
+      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
 </package>

@@ -1,9 +1,9 @@
-using System;
-using EyeSoft.Timers;
-using EyeSoft.Windows.Model.ServiceProxy;
-
-namespace EyeSoft.Windows.Model.ViewModels
+namespace EyeSoft.Windows.Model
 {
+	using System;
+
+	using EyeSoft.Timers;
+
 	public static class ViewModelController
 	{
 		private static readonly Singleton<IResolverLocator> singletonContainer =

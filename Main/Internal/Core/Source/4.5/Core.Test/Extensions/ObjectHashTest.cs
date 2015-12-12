@@ -58,7 +58,7 @@ namespace EyeSoft.Test
 		[TestMethod]
 		public void CheckCombinedHashCodesFromIstancesWithNullValues()
 		{
-			ObjectHash.CombineInvariant(new[] { "test", (object)null }).Should().Be.EqualTo(-354185609);
+			ObjectHash.CombineInvariant(new[] { "test", null }).Should().Be.EqualTo(-354185609);
 		}
 	}
 }

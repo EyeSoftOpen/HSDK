@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-		<id>EyeSoft.ServiceLocator.Windsor</id>
-		<version>2.2.2.2060</version>
-		<authors>Matteo Migliore</authors>
-		<owners>EyeSoft</owners>
-		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>A service locator adapter to implement CommonServiceLocator on top of Castle Windsor.</description>
-		<tags></tags>
-		<dependencies>
-			<dependency id="Castle.Core" version="3.2.0" />
-			<dependency id="Castle.Windsor" version="3.2.1" />
-			<dependency id="CommonServiceLocator" version="1.0" />
-			<dependency id="EyeSoft.Core" version="1.4.0.0630" />
-			<dependency id="EyeSoft.ServiceLocator" version="1.0.2.2040" />
-		</dependencies>
-	</metadata>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>EyeSoft.ServiceLocator.Windsor</id>
+    <version>2.2.2.2060</version>
+    <authors>Matteo Migliore</authors>
+    <owners>EyeSoft</owners>
+    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A service locator adapter to implement CommonServiceLocator on top of Castle Windsor.</description>
+    <tags />
+    <dependencies>
+      <dependency id="Castle.Core" version="3.2.0" />
+      <dependency id="Castle.Windsor" version="3.2.1" />
+      <dependency id="CommonServiceLocator" version="1.0" />
+      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+      <dependency id="EyeSoft.ServiceLocator" version="1.0.2.2040" />
+    </dependencies>
+  </metadata>
 </package>

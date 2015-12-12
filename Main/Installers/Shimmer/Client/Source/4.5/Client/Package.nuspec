@@ -1,23 +1,22 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-	<metadata>
-		<id>$id$</id>
-		<version>$version$</version>
-		<authors>Matteo Migliore</authors>
-		<owners>EyeSoft</owners>
-		<title>$title$</title>
-		<description>Shimmer client helpers.</description>
-		<copyright>$copyright$</copyright>
-		<tags>shimmer WIX installation Windows ClickOnce</tags>
-		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-	<dependencies>
-		<dependency id="EyeSoft.Core" version="1.4.0.0820" />
-		<dependency id="Shimmer.Client" version="0.7.4" />
-	</dependencies>
-	</metadata>
-	<files>
-	</files>
+  <metadata>
+    <id>$id$</id>
+    <version>0.1.0.0</version>
+    <title>$title$</title>
+    <authors>Matteo Migliore</authors>
+    <owners>EyeSoft</owners>
+    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Shimmer client helpers.</description>
+    <copyright>$copyright$</copyright>
+    <tags>shimmer WIX installation Windows ClickOnce</tags>
+    <dependencies>
+      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+      <dependency id="Shimmer.Client" version="0.7.4" />
+    </dependencies>
+  </metadata>
+  <files />
 </package>

@@ -1,9 +1,9 @@
-using System;
-using System.Windows;
-using System.Windows.Threading;
-
-namespace EyeSoft.Windows.Model.Execution
+namespace EyeSoft.Windows.Model
 {
+	using System;
+	using System.Windows;
+	using System.Windows.Threading;
+
 	public abstract class Execution
 	{
 		protected readonly Application application;

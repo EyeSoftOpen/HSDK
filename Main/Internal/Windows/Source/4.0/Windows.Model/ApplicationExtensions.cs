@@ -1,6 +1,3 @@
-using EyeSoft.Windows.Model.ExceptionLogger;
-using EyeSoft.Windows.Model.Execution;
-
 namespace EyeSoft.Windows.Model
 {
 	using System.Diagnostics;

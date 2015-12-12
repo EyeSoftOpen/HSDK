@@ -1,5 +1,3 @@
-using EyeSoft.Windows.Model.Execution;
-
 namespace EyeSoft.Windows.Model
 {
 	using System.Collections.Generic;

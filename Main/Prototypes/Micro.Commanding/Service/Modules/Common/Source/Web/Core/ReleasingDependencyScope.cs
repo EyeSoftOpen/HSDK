@@ -1,10 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http.Dependencies;
+
 namespace EyeSoft.Accounting.Prototype.Api.Web.Core
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web.Http.Dependencies;
-
 	internal class ReleasingDependencyScope : IDependencyScope
 	{
 		private readonly IDependencyScope scope;

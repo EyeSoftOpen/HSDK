@@ -1,14 +1,14 @@
+using System;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
+using EyeSoft.Logging;
+
 namespace EyeSoft.Architecture.Prototype.Windows.Core
 {
-	using System;
-	using System.Threading.Tasks;
-	using System.Windows;
-	using System.Windows.Threading;
+    using EyeSoft.Windows.Model;
 
-	using EyeSoft.Logging;
-	using EyeSoft.Windows.Model.ExceptionLogger;
-
-	public class TestExceptionHandler : ExceptionHandler
+    public class TestExceptionHandler : ExceptionHandler
 	{
 		private readonly ILogger logger;
 
@@ -21,7 +21,7 @@ namespace EyeSoft.Architecture.Prototype.Windows.Core
 		protected override void OnCurrentDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
 		{
 			logger.Error((Exception)e.ExceptionObject);
-			////base.OnCurrentDomainUnhandledException(sender, e);
+			//base.OnCurrentDomainUnhandledException(sender, e);
 		}
 
 		protected override void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
@@ -16,8 +16,8 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("54c6f3b6-a51e-4df4-8c53-9e349c180f4d")]
 
-[assembly: AssemblyVersion("0.5.5750.27689")]
-[assembly: AssemblyFileVersion("0.5.5750.27689")]
+[assembly: AssemblyVersion("0.5.5785.39415")]
+[assembly: AssemblyFileVersion("0.5.5785.39415")]
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
 	"EyeSoft.Accounting.Italian.Test, PublicKey=" +
