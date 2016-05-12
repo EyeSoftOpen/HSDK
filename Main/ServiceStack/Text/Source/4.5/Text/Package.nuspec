@@ -3,8 +3,8 @@
 	<metadata>
 		<id>EyeSoft.ServiceStack.Text</id>
 		<version>3.0.5975.29337</version>
-		<authors>Matteo Migliore</authors>
-		<owners>EyeSoft</owners>
+		<authors>Eye Soft</authors>
+		<owners>Eye Soft</owners>
 		<title />
 		<description>The ServiceStack serializer implementations for EyeSoft ecosystem.</description>
 		<copyright>EyeSoft</copyright>
