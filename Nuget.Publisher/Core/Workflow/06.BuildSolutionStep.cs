@@ -1,5 +1,6 @@
 namespace EyeSoft.Nuget.Publisher.Shell.Workflow
 {
+	using System.IO;
 
 	using EyeSoft.Nuget.Publisher.Shell.Build;
 	using EyeSoft.Nuget.Publisher.Shell.Core;
@@ -27,7 +28,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Workflow
 
 		public CompileNugetPackagesStep BuildSolution(bool logEnabled)
 		{
-			////new MsBuild(solutionSystemInfo.FilePath, new FileInfo(solutionSystemInfo.FilePath).Directory.FullName, logEnabled).Build();
+			new MsBuild(solutionSystemInfo.FilePath, new FileInfo(solutionSystemInfo.FilePath).Directory.FullName, logEnabled).Build();
 
 			return new CompileNugetPackagesStep(buildAndRevision, solutionSystemInfo, nugetPackageResultCollection);
 		}

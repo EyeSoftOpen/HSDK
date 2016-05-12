@@ -46,6 +46,16 @@ namespace EyeSoft.Nuget.Publisher.Shell.Workflow
 				ProcessHelper.Start(nugetExePath, nuspecArgument, nugetCompilePath, false);
 			}
 
+			var nugetServer = "https://www.nuget.org/api/v2/package";
+
+			var nugetPushArguments = nuspecFiles
+					.Select(nuspecFile => $"push {nuspecFile.FullName} -Source {nugetServer}");
+
+			foreach (var nuspecArgument in nugetPushArguments.AsParallel())
+			{
+				ProcessHelper.Start(nugetExePath, nuspecArgument, nugetCompilePath, false);
+			}
+
 			return new PublishNugetPackagesStep(solutionSystemInfo, nugetPackageResultCollection, buildAndRevision);
 		}
 	}
