@@ -4,10 +4,11 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+	xmlns:viewModels="clr-namespace:EyeSoft.Demo.FiscalCode.Windows.ViewModels"
 	mc:Ignorable="d" x:Class="EyeSoft.Demo.FiscalCode.Windows.MainWindow"
 	Title="EyeSoft - Italian FiscalCode v. 1.2.0.0000"
 	Width="370"	
-	Height="310"
+	Height="330"
 	ResizeMode="CanMinimize"
 	WindowStartupLocation="CenterScreen">
 	<Window.Resources>
@@ -73,6 +74,7 @@
 						<RowDefinition Height="Auto" />
 						<RowDefinition Height="Auto" />
 						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="Auto" />
@@ -90,7 +92,7 @@
 
 					<Label Grid.Column="0" Grid.Row="3" Content="Lastname"/>
 					<TextBox Grid.Column="1" Grid.Row="3" IsReadOnly="True" Text="{Binding LastName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
-		
+
 					<StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical">
 						<StackPanel Orientation="Horizontal">
 							<StackPanel Margin="3,0,0,0" Orientation="Horizontal">
@@ -105,6 +107,7 @@
 					</StackPanel>
 					<Label Grid.Column="0" Grid.Row="5" Content="Town" HorizontalAlignment="Right"/>
 					<TextBox Grid.Column="1" Grid.Row="5" IsReadOnly="True" Text="{Binding Town, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+					<CheckBox Grid.Column="1" Grid.Row="6" IsEnabled="False" IsChecked="{Binding IsValid, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">Is valid view model</CheckBox>
 				</Grid>
 			</DataTemplate>
 			<DataTemplate x:Key="Main" DataType="viewModels:MainViewModel">

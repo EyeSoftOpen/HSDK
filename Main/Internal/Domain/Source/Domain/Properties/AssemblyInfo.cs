@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
@@ -14,8 +14,8 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 [assembly: Guid("fdf41d2e-9b21-47f9-8ec3-ac208ace33ed")]
-[assembly: AssemblyVersion("0.4.4.3040")]
-[assembly: AssemblyFileVersion("0.4.4.3040")]
+[assembly: AssemblyVersion("2.3.5976.17804")]
+[assembly: AssemblyFileVersion("2.3.5976.17804")]
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
 	"EyeSoft.Domain.Test, PublicKey=" +

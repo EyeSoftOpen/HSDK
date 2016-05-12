@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$title$</id>
-    <version>0.5.5785.39415</version>
+    <version>2.3.5976.17804</version>
     <title>$title$</title>
     <authors>Matteo Migliore</authors>
     <owners>$author$</owners>
@@ -14,8 +14,8 @@
     <copyright>$author$</copyright>
     <tags>codice fiscale, istat, comuni, fiscal code, accounting, italian accounting</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
-      <dependency id="EyeSoft.Accounting" version="0.5.0.0020" />
+      <dependency id="EyeSoft.Core" version="2.3.5976.17804" />
+      <dependency id="EyeSoft.Accounting" version="2.3.5976.17804" />
     </dependencies>
   </metadata>
 </package>

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$title$</id>
-    <version>1.0.2.2040</version>
+    <version>2.3.5976.17804</version>
     <title>$title$</title>
     <authors>Matteo Migliore</authors>
     <owners>$author$</owners>
@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>ioc ioc inversion-of-control locator castle windsor unity</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+      <dependency id="EyeSoft.Core" version="2.3.5976.17804" />
     </dependencies>
   </metadata>
 </package>

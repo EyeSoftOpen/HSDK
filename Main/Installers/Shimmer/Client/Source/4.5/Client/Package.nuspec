@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$id$</id>
-    <version>0.1.0.0</version>
+    <version>3.0.5975.29337</version>
     <title>$title$</title>
     <authors>Matteo Migliore</authors>
     <owners>EyeSoft</owners>
@@ -14,7 +14,7 @@
     <copyright>$copyright$</copyright>
     <tags>shimmer WIX installation Windows ClickOnce</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="1.4.5785.39415" />
+      <dependency id="EyeSoft.Core" version="3.0.5975.29337" />
       <dependency id="Shimmer.Client" version="0.7.4" />
     </dependencies>
   </metadata>

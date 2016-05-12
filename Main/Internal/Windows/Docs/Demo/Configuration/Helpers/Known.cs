@@ -10,13 +10,15 @@ namespace EyeSoft.Windows.Model.Demo.Configuration.Helpers
 
 	internal static class Known
 	{
+		private static readonly MapperConfiguration mapperConfig = new MapperConfiguration(cfg => cfg.CreateMissingTypeMaps = true);
+
 		public static class CustomerModel
 		{
 			public static readonly IQueryable<CustomerViewModel> All =
-				Customer.All.Select(c => Mapper.DynamicMap<CustomerViewModel>(c)).AsQueryable();
+				Customer.All.Select(c => mapperConfig.CreateMapper().Map<CustomerViewModel>(c)).AsQueryable();
 
 			public static readonly CustomerViewModel Main =
-				Mapper.DynamicMap<CustomerViewModel>(Customer.Main);
+				mapperConfig.CreateMapper().Map<CustomerViewModel>(Customer.Main);
 		}
 
 		public static class Customer

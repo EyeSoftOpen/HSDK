@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("cda4cb20-0409-4ea3-bb28-779b72216220")]
 
-[assembly: AssemblyVersion("0.1.0.0030")]
-[assembly: AssemblyFileVersion("0.1.0.0030")]
+[assembly: AssemblyVersion("2.3.5976.17804")]
+[assembly: AssemblyFileVersion("2.3.5976.17804")]

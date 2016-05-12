@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>EyeSoft.ServiceStack.Text</id>
-		<version>1.0.0.0010</version>
+		<version>3.0.5975.29337</version>
 		<authors>Matteo Migliore</authors>
 		<owners>EyeSoft</owners>
 		<title />
@@ -15,7 +15,7 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<dependencies>
 			<dependency id="EyeSoft.Core" version="1.4.0.0460" />
-			<dependency id="ServiceStack.Text" version="3.9.54" />
+			<dependency id="ServiceStack.Text" version="4.0.56" />
 		</dependencies>
 	</metadata>
 </package>

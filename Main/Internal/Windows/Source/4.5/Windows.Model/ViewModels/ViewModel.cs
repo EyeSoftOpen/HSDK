@@ -12,7 +12,11 @@ namespace EyeSoft.Windows.Model
 	using EyeSoft.Reflection;
 	using EyeSoft.Validation;
 
-	public abstract class ViewModel : INotifyPropertyChanged, INotifyPropertyChanging, INotifyViewModel, IDataErrorInfo, IDisposable
+	public abstract class ViewModel : INotifyPropertyChanged,
+									INotifyPropertyChanging,
+									INotifyViewModel,
+									IDataErrorInfo,
+									IDisposable
 	{
 		private readonly ViewModelProperties viewModelProperties;
 
@@ -21,6 +25,8 @@ namespace EyeSoft.Windows.Model
 		private readonly HashSet<string> createdViewModelProperties = new HashSet<string>();
 
 		private bool disposed;
+
+		private bool hasErrors;
 
 		protected ViewModel()
 		{
@@ -37,17 +43,26 @@ namespace EyeSoft.Windows.Model
 
 		public int Changes
 		{
-			get { return viewModelProperties.Changes; }
+			get
+			{
+				return viewModelProperties.Changes;
+			}
 		}
 
 		public bool Changed
 		{
-			get { return viewModelProperties.Changes > 0; }
+			get
+			{
+				return viewModelProperties.Changes > 0;
+			}
 		}
 
 		public virtual bool IsValid
 		{
-			get { return !Validate().Any(); }
+			get
+			{
+				return !hasErrors;
+			}
 		}
 
 		public string Error
@@ -64,6 +79,11 @@ namespace EyeSoft.Windows.Model
 			get
 			{
 				var error = GetError(() => Validate(propertyName));
+
+				hasErrors = !error.IsNullOrWhiteSpace();
+
+				HandlePropertyChanged(nameof(IsValid));
+
 				return error;
 			}
 		}
@@ -158,6 +178,7 @@ namespace EyeSoft.Windows.Model
 		}
 
 		#region property get/set
+
 		protected T GetProperty<T>([CallerMemberName] string callerName = "")
 		{
 			var propertyName = callerName;
@@ -176,19 +197,20 @@ namespace EyeSoft.Windows.Model
 			var propertyName = callerName;
 			viewModelProperties.SetProperty(propertyInfoDictionary[propertyName], value, propertyChangedSuspended);
 		}
+
 		#endregion
 
 		protected IViewModelProperty<TProperty> Property<TProperty>(Expression<Func<TProperty>> propertyExpression)
 		{
 			var propertyName = propertyExpression.PropertyName();
 
-			#if DEBUG
+#if DEBUG
 			if (createdViewModelProperties.Contains(propertyName))
 			{
 				var message = string.Format("Cannot define the behavior on the property '{0}' more than once.", propertyName);
 				throw new InvalidOperationException(message);
 			}
-			#endif
+#endif
 
 			createdViewModelProperties.Add(propertyName);
 
@@ -216,9 +238,20 @@ namespace EyeSoft.Windows.Model
 				return;
 			}
 
-			viewModelProperties
-				.Changed(propertyInfoDictionary[e.PropertyName], () => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
+			viewModelProperties.Changed(
+				propertyInfoDictionary[e.PropertyName],
+				() => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
 
+			HandlePropertyChanged(e);
+		}
+
+		private void HandlePropertyChanged(string propertyName)
+		{
+			HandlePropertyChanged(new PropertyChangedEventArgs(propertyName));
+		}
+
+		private void HandlePropertyChanged(PropertyChangedEventArgs e)
+		{
 			var handler = PropertyChanged;
 
 			if (handler != null)

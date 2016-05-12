@@ -15,8 +15,8 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 [assembly: Guid("fb529e38-466f-408b-b8ac-037f27193c0c")]
-[assembly: AssemblyVersion("0.1.9.0000")]
-[assembly: AssemblyFileVersion("0.1.9.0000")]
+[assembly: AssemblyVersion("3.0.5975.29337")]
+[assembly: AssemblyFileVersion("3.0.5975.29337")]
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
 	"EyeSoft.Windows.Model.Test, PublicKey=" +

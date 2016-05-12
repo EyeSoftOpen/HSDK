@@ -2,9 +2,6 @@ namespace EyeSoft.Security.Cryptography
 {
 	using System.IO;
 	using System.Security.Cryptography;
-	using System.Text;
-
-	using EyeSoft.IO;
 
 	internal class HashAlgorithmWrapper : IHashAlgorithm
 	{
