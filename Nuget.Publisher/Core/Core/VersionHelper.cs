@@ -37,6 +37,7 @@ namespace EyeSoft.Nuget.Publisher.Core.Core
 			var build = localDateTime.Date.Subtract(referenceDateTime).TotalDays;
 			var revision = localDateTime.Subtract(DateTime.Today).TotalSeconds / 2;
 
+			////return new BuildAndRevision(5976, 28727);
 			return new BuildAndRevision((int)build, (int)revision);
 		}
 

@@ -46,10 +46,12 @@ namespace EyeSoft.Nuget.Publisher.Shell.Workflow
 				ProcessHelper.Start(nugetExePath, nuspecArgument, nugetCompilePath, false);
 			}
 
-			var nugetServer = "https://www.nuget.org/api/v2/package";
+			var updatedPackages = nugetPackageResultCollection.NugetPackages.Select(x => x.Title).ToArray();
 
-			var nugetPushArguments = nuspecFiles
-					.Select(nuspecFile => $"push {nuspecFile.FullName} -Source {nugetServer}");
+			var nugetPushArguments = new DirectoryInfo(nugetCompilePath)
+				.GetFiles()
+				.Where(n => n.Name.EndsWith($"{buildAndRevision.Build}.{buildAndRevision.Revision}.nupkg") && updatedPackages.Any(x => n.Name.StartsWith(x)))
+				.Select(nuspecFile => $"push {nuspecFile.FullName}");
 
 			foreach (var nuspecArgument in nugetPushArguments.AsParallel())
 			{
