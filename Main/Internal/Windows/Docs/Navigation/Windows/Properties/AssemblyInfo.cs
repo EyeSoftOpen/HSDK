@@ -4,7 +4,7 @@ using System.Windows;
 
 [assembly: AssemblyCompany("EyeSoft")]
 [assembly: AssemblyProduct("EyeSoft.Demo.Navigation.Windows")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.Demo.Navigation.Windows.Presentation")]
 [assembly: AssemblyDescription("")]
@@ -16,5 +16,5 @@ using System.Windows;
 
 [assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
 
-[assembly: AssemblyVersion("3.0.5975.29337")]
-[assembly: AssemblyFileVersion("3.0.5975.29337")]
+[assembly: AssemblyVersion("2.3.6002.26456")]
+[assembly: AssemblyFileVersion("2.3.6002.26456")]

@@ -1,6 +1,8 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Workflow
+namespace EyeSoft.Nuget.Publisher.Core.Workflow
 {
 	using System;
+
+	using EyeSoft.Nuget.Publisher.Core.Core;
 
 	public abstract class FluentWorkflowStep
 	{

@@ -1,18 +1,18 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Nuget
+namespace EyeSoft.Nuget.Publisher.Core.Nuget
 {
-    using EyeSoft.Nuget.Publisher.Shell.LinqPad;
+	using System;
+	using System.Collections.Generic;
+	using System.IO;
+	using System.Linq;
+	using System.Text;
 
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
+	using EyeSoft.Nuget.Publisher.Core.Core;
+	using EyeSoft.Nuget.Publisher.Core.Diagnostics;
+	using EyeSoft.Nuget.Publisher.Core.LinqPad;
 
-    using EyeSoft.Nuget.Publisher.Shell.Diagnostics;
+	using NuGet;
 
-    using NuGet;
-
-    public class Package
+	public class Package
     {
         private readonly string[] lines;
 

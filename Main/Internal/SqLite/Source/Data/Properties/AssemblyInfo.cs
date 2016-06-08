@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.Data.SqLite.Test")]
 [assembly: AssemblyProduct("EyeSoft.Data.SqLite")]
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 [assembly: Guid("fe7b7a3d-db18-4515-82e1-8edee612da75")]
-[assembly: AssemblyVersion("3.0.5975.29337")]
-[assembly: AssemblyFileVersion("3.0.5975.29337")]
+[assembly: AssemblyVersion("2.3.6002.26456")]
+[assembly: AssemblyFileVersion("2.3.6002.26456")]

@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.Accounting.Italian.Test")]
 [assembly: AssemblyProduct("EyeSoft.Accounting.Italian")]
@@ -16,5 +16,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("581cbfa1-263a-4e78-83fd-0cc34a216357")]
 
-[assembly: AssemblyVersion("3.0.5975.29337")]
-[assembly: AssemblyFileVersion("3.0.5975.29337")]
+[assembly: AssemblyVersion("2.3.6002.26456")]
+[assembly: AssemblyFileVersion("2.3.6002.26456")]

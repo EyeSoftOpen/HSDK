@@ -1,7 +1,9 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Diagnostics
+namespace EyeSoft.Nuget.Publisher.Core.Diagnostics
 {
 	using System;
 	using System.Diagnostics;
+
+	using EyeSoft.Nuget.Publisher.Core.Core;
 
 	public static class ProcessHelper
 	{

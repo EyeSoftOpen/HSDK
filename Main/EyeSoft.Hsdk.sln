@@ -265,6 +265,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Obsolete", "Obsolete", "{AF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Current", "Current", "{48708E13-4D07-4A9A-AA8F-F32C4EB297EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransactionalMail", "TransactionalMail", "{C8772E67-F292-433A-A1A1-D3228AA3CBFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ActiveCampaign", "ActiveCampaign", "{01073378-A1F2-408B-97B5-7BC346124CD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ActiveCampaign", "Integrations\ActiveCampaign\Source\4.5\ActiveCampaign\EyeSoft.ActiveCampaign.csproj", "{D536A032-8856-4B03-A54D-54BF3504CD17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -835,6 +841,18 @@ Global
 		{B4B4C295-9C0D-4973-9DFB-1BB33CBCD90C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B4B4C295-9C0D-4973-9DFB-1BB33CBCD90C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B4B4C295-9C0D-4973-9DFB-1BB33CBCD90C}.Release|x86.ActiveCfg = Release|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Debug|x86.Build.0 = Debug|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|x86.ActiveCfg = Release|Any CPU
+		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -952,9 +970,12 @@ Global
 		{89649D19-813C-485D-BD31-2C423647D7A4} = {A7CF2DC8-24A0-4A47-800A-CB3B77BB7531}
 		{AAE63379-3B53-43D4-AAEC-EA96733C9719} = {9F24D89D-9C39-452B-9A3B-9920F4486BDA}
 		{B4B4C295-9C0D-4973-9DFB-1BB33CBCD90C} = {F4C60A65-C984-4B41-8185-C9E881A5B1E0}
+		{C8772E67-F292-433A-A1A1-D3228AA3CBFE} = {48708E13-4D07-4A9A-AA8F-F32C4EB297EB}
+		{01073378-A1F2-408B-97B5-7BC346124CD2} = {C8772E67-F292-433A-A1A1-D3228AA3CBFE}
+		{D536A032-8856-4B03-A54D-54BF3504CD17} = {01073378-A1F2-408B-97B5-7BC346124CD2}
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 57
+		SccNumberOfProjects = 58
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
 		SccLocalPath0 = .
@@ -1182,6 +1203,10 @@ Global
 		SccProjectTopLevelParentUniqueName56 = EyeSoft.Hsdk.sln
 		SccProjectName56 = Internal/Windows/Docs/Testing/ViewModels.Testing
 		SccLocalPath56 = Internal\\Windows\\Docs\\Testing\\ViewModels.Testing
+		SccProjectUniqueName57 = Integrations\\ActiveCampaign\\Source\\4.5\\ActiveCampaign\\EyeSoft.ActiveCampaign.csproj
+		SccProjectTopLevelParentUniqueName57 = EyeSoft.Hsdk.sln
+		SccProjectName57 = Integrations/ActiveCampaign/Source/4.5/ActiveCampaign
+		SccLocalPath57 = Integrations\\ActiveCampaign\\Source\\4.5\\ActiveCampaign
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = 1e6b55d7-3c42-47df-920d-74d1da205f09

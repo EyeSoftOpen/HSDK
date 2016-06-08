@@ -1,7 +1,5 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Nuget
+namespace EyeSoft.Nuget.Publisher.Core.Nuget
 {
-	using System;
-
 	public class PackageUpdateResult
 	{
 		public PackageUpdateResult(string id, PackageUpdateDataResult data)

@@ -1,8 +1,8 @@
-namespace EyeSoft.Nuget.Publisher.Shell
+namespace EyeSoft.Nuget.Publisher.Core.Core
 {
-	using global::System;
-	using global::System.ComponentModel;
-	using global::System.Reflection;
+	using System;
+	using System.ComponentModel;
+	using System.Reflection;
 
 	public static class Converter
 	{

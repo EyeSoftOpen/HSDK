@@ -1,9 +1,9 @@
-namespace EyeSoft.Nuget.Publisher.Shell
+namespace EyeSoft.Nuget.Publisher.Core.Core
 {
 	using System;
 	using System.IO;
 
-	using EyeSoft.Nuget.Publisher.Shell.LinqPad;
+	using EyeSoft.Nuget.Publisher.Core.LinqPad;
 
 	public static class Storage
 	{

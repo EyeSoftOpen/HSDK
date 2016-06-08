@@ -2,7 +2,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.FluentValidation")]
 [assembly: AssemblyProduct("EyeSoft.FluentValidation")]
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 [assembly: Guid("8ff15607-6fc6-401c-9bd0-b00cf176f867")]
-[assembly: AssemblyVersion("2.3.5976.17804")]
-[assembly: AssemblyFileVersion("2.3.5976.17804")]
+[assembly: AssemblyVersion("2.3.6003.17677")]
+[assembly: AssemblyFileVersion("2.3.6003.17677")]

@@ -1,9 +1,9 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Workflow
+namespace EyeSoft.Nuget.Publisher.Core.Workflow
 {
 	using System.Collections.Generic;
 
+	using EyeSoft.Nuget.Publisher.Core.Build;
 	using EyeSoft.Nuget.Publisher.Core.Core;
-	using EyeSoft.Nuget.Publisher.Shell.Build;
 
 	public class GenerateBuildAndRevisionStep : FluentWorkflowStep
 	{

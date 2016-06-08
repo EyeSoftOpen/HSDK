@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Nuget.Publisher.Shell.LinqPad
+﻿namespace EyeSoft.Nuget.Publisher.Core.LinqPad
 {
 	using System;
 

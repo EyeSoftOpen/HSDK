@@ -1,12 +1,12 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Workflow
+namespace EyeSoft.Nuget.Publisher.Core.Workflow
 {
 	using System;
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Linq;
 
-	using EyeSoft.Nuget.Publisher.Shell.Build;
-	using EyeSoft.Nuget.Publisher.Shell.Core;
+	using EyeSoft.Nuget.Publisher.Core.Build;
+	using EyeSoft.Nuget.Publisher.Core.Core;
 
 	using Newtonsoft.Json;
 

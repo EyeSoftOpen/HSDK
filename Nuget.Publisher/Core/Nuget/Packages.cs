@@ -1,9 +1,11 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Nuget
+namespace EyeSoft.Nuget.Publisher.Core.Nuget
 {
-	using global::System;
-	using global::System.IO;
-	using global::System.Linq;
-	using global::System.Xml.Linq;
+	using System;
+	using System.IO;
+	using System.Linq;
+	using System.Xml.Linq;
+
+	using EyeSoft.Nuget.Publisher.Core.Core;
 
 	public static class Packages
 	{

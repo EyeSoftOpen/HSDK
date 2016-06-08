@@ -1,4 +1,4 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Workflow
+namespace EyeSoft.Nuget.Publisher.Core.Workflow
 {
 	using System;
 

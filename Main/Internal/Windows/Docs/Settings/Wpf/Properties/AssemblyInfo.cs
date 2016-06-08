@@ -7,7 +7,7 @@ using System.Windows;
 [assembly: AssemblyTitle("EyeSoft.Docs.Settings.Windows")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -15,5 +15,5 @@ using System.Windows;
 
 [assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
 
-[assembly: AssemblyVersion("3.0.5975.29337")]
-[assembly: AssemblyFileVersion("3.0.5975.29337")]
+[assembly: AssemblyVersion("2.3.6002.26456")]
+[assembly: AssemblyFileVersion("2.3.6002.26456")]

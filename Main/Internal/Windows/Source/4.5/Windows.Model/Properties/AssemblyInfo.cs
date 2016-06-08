@@ -2,7 +2,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2015")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyProduct("EyeSoft.Windows.Model")]
 [assembly: AssemblyTitle("EyeSoft.Windows.Model")]
@@ -16,8 +16,8 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("436aabbb-99d9-4357-91ee-f53fac24a8b7")]
 
-[assembly: AssemblyVersion("2.3.5976.17804")]
-[assembly: AssemblyFileVersion("2.3.5976.17804")]
+[assembly: AssemblyVersion("2.3.6003.17677")]
+[assembly: AssemblyFileVersion("2.3.6003.17677")]
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
 	"EyeSoft.Windows.Model.Test, PublicKey=" +

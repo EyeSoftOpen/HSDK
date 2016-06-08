@@ -1,4 +1,4 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Core
+namespace EyeSoft.Nuget.Publisher.Core.Core
 {
 	using System;
 

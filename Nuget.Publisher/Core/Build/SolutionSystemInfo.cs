@@ -1,4 +1,4 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Build
+namespace EyeSoft.Nuget.Publisher.Core.Build
 {
 	public class SolutionSystemInfo
 	{

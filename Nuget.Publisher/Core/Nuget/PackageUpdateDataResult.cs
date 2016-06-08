@@ -1,9 +1,8 @@
-﻿namespace EyeSoft.Nuget.Publisher.Shell.Nuget
+﻿namespace EyeSoft.Nuget.Publisher.Core.Nuget
 {
 	using System;
-
-	using global::System.Collections.Generic;
-	using global::System.Linq;
+	using System.Collections.Generic;
+	using System.Linq;
 
 	public class PackageUpdateDataResult
 	{

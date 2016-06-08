@@ -1,12 +1,12 @@
-﻿namespace EyeSoft.Nuget.Publisher.Shell.Workflow
+﻿namespace EyeSoft.Nuget.Publisher.Core.Workflow
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 
-	using EyeSoft.Nuget.Publisher.Shell.Build;
-	using EyeSoft.Nuget.Publisher.Shell.Core;
-	using EyeSoft.Nuget.Publisher.Shell.Nuget;
+	using EyeSoft.Nuget.Publisher.Core.Build;
+	using EyeSoft.Nuget.Publisher.Core.Core;
+	using EyeSoft.Nuget.Publisher.Core.Nuget;
 
 	public class UpdatePackagesStep : FluentWorkflowStep
 	{
@@ -39,13 +39,15 @@
 			var packageWithFrameworks = packages as PackageWithFramework[] ?? packages.ToArray();
 
 			packageWithFrameworks =
-				packageWithFrameworks.OrderBy(x => x.IsLatestVersion(previousVersions[x.Id])).ToArray();
+				packageWithFrameworks
+					.OrderBy(x => !previousVersions.ContainsKey(x.Id) || x.IsLatestVersion(previousVersions[x.Id]))
+					.ToArray();
 
 			var packageUpdateResults = new List<PackageUpdateResult>();
 
 			foreach (var package in packageWithFrameworks)
 			{
-				var isLatestVersion = package.IsLatestVersion(previousVersions[package.Id]);
+				var isLatestVersion = previousVersions.ContainsKey(package.Id) && package.IsLatestVersion(previousVersions[package.Id]);
 
 				if (isLatestVersion)
 				{
@@ -63,7 +65,7 @@
 			{
 				var nugetDependecies = package.TryUpdateNuspecDependencies(packagesVersion).ToArray();
 
-				var isLatestVersion = package.IsLatestVersion(previousVersions[package.Id]);
+				var isLatestVersion = previousVersions.ContainsKey(package.Id) && package.IsLatestVersion(previousVersions[package.Id]);
 
 				if (!nugetDependecies.Any() && isLatestVersion)
 				{

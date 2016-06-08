@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyCopyright("Copyright EyeSoft© 2013")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: AssemblyVersion("3.0.5975.29337")]
-[assembly: AssemblyFileVersion("3.0.5975.29337")]
+[assembly: AssemblyVersion("2.3.6002.26456")]
+[assembly: AssemblyFileVersion("2.3.6002.26456")]

@@ -1,4 +1,4 @@
-namespace EyeSoft.Nuget.Publisher.Shell
+namespace EyeSoft.Nuget.Publisher.Core.Core
 {
 	using System;
 	using System.Collections.Generic;

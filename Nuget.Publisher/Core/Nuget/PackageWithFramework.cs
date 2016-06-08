@@ -1,11 +1,10 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Nuget
+namespace EyeSoft.Nuget.Publisher.Core.Nuget
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 
 	using EyeSoft.Nuget.Publisher.Core.Core;
-	using EyeSoft.Nuget.Publisher.Shell.Core;
 
 	public class PackageWithFramework
 	{

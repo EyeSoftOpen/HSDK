@@ -1,6 +1,8 @@
-namespace EyeSoft.Nuget.Publisher.Shell.LinqPad
+namespace EyeSoft.Nuget.Publisher.Core.LinqPad
 {
 	using System;
+
+	using EyeSoft.Nuget.Publisher.Core.Core;
 
 	public static class Util
 	{

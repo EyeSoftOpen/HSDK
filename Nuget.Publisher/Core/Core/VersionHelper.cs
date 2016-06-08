@@ -2,8 +2,6 @@ namespace EyeSoft.Nuget.Publisher.Core.Core
 {
 	using System;
 
-	using EyeSoft.Nuget.Publisher.Shell.Core;
-
 	public static class VersionHelper
 	{
 		private static readonly DateTime referenceDateTime = new DateTime(2000, 1, 1);

@@ -1,8 +1,9 @@
-﻿namespace EyeSoft.Nuget.Publisher.Shell.Build
+﻿namespace EyeSoft.Nuget.Publisher.Core.Build
 {
 	using System;
 
-	using EyeSoft.Nuget.Publisher.Shell.Diagnostics;
+	using EyeSoft.Nuget.Publisher.Core.Diagnostics;
+
 	public class MsBuild
 	{
 		private readonly string projectPath;

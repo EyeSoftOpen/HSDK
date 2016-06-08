@@ -1,10 +1,10 @@
-namespace EyeSoft.Nuget.Publisher.Shell.Workflow
+namespace EyeSoft.Nuget.Publisher.Core.Workflow
 {
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Linq;
 
-	using EyeSoft.Nuget.Publisher.Shell.Build;
+	using EyeSoft.Nuget.Publisher.Core.Build;
 
 	public static class HsdkWorkflow
 	{
@@ -18,6 +18,7 @@ namespace EyeSoft.Nuget.Publisher.Shell.Workflow
 					"Accounting",
 					"Accounting.Italian",
 					"Accounting.Italian.Istat",
+					"ActiveCampaign",
 					"AutoMapper",
 					"Core",
 					"Data",

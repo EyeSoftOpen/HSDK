@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Nuget.Publisher.Shell
 {
-	using EyeSoft.Nuget.Publisher.Shell.Workflow;
+	using EyeSoft.Nuget.Publisher.Core.Workflow;
 
 	public static class Program
 	{
