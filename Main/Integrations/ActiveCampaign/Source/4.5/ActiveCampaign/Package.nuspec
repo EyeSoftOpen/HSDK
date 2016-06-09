@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-  <metadata>
-    <id>$title$</id>
-    <version>2.3.6003.17677</version>
-    <title>$title$</title>
-    <authors>Eye Soft</authors>
-    <owners>$author$</owners>
-    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-    <iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <copyright>$author$</copyright>
-    <tags>active campaign,email marketing,funnel,email automation</tags>
-  </metadata>
-  <files>
-    <file src="bin\release\$id$.dll" target="lib\net45\" />
-    <file src="bin\release\$id$.pdb" target="lib\net45\" />
-  </files>
+	<metadata>
+		<id>$title$</id>
+		<version>$version</version>
+		<title>$title$</title>
+		<authors>Eye Soft</authors>
+		<owners>$author$</owners>
+		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+		<iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<copyright>$author$</copyright>
+		<tags>active campaign,email marketing,funnel,email automation</tags>
+	</metadata>
+	<files>
+		<file src="bin\release\$id$.dll" target="lib\net46\" />
+		<file src="bin\release\$id$.pdb" target="lib\net46\" />
+	</files>
 </package>

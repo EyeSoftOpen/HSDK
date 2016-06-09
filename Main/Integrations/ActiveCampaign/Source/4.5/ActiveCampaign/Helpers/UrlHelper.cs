@@ -6,7 +6,7 @@
 	using System.Linq;
 	using System.Text.RegularExpressions;
 
-	public static class UrlHelper
+	internal static class UrlHelper
 	{
 		private static readonly ISet<string> knownProperties =
 			   new HashSet<string> { "Error", "UserDescription", "Version" };

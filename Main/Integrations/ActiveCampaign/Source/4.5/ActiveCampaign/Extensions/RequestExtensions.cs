@@ -5,7 +5,7 @@ namespace EyeSoft.ActiveCampaign.Extensions
 
 	using EyeSoft.ActiveCampaign.Commanding;
 
-	public static class RequestExtensions
+	internal static class RequestExtensions
 	{
 		public static NameValueCollection GetNamedValueCollection(this ActiveCampaignRequest request)
 		{

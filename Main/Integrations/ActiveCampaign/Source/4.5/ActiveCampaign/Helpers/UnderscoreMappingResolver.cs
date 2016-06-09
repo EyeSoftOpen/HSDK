@@ -5,10 +5,10 @@ namespace EyeSoft.ActiveCampaign.Helpers
 	using Newtonsoft.Json.Serialization;
 
 	internal class UnderscoreMappingResolver : DefaultContractResolver
-    {
-        protected override string ResolvePropertyName(string propertyName)
-        {
-            return propertyName.CamelCaseToUnderscore();
-        }
-    }
+	{
+		protected override string ResolvePropertyName(string propertyName)
+		{
+			return propertyName.CamelCaseToUnderscore();
+		}
+	}
 }

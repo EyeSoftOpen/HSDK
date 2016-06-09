@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("EyeSoft.Accounting")]
 
 [assembly: AssemblyTitle("EyeSoft.Accounting")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Provide a base class library for manage the accounting.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

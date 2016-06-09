@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("EyeSoft.Data")]
 [assembly: AssemblyProduct("EyeSoft.Data")]
 
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Data components to simplify read/write operations on RDBMS.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

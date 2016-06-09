@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.ServiceStack.Text")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("The ServiceStack serializer implementations for EyeSoft ecosystem.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
-		<id>EyeSoft.ServiceStack.Text</id>
-		<version>3.0.5975.29337</version>
+		<id>$title$</id>
+		<version>$version</version>
+		<title>$title$</title>
 		<authors>Eye Soft</authors>
-		<owners>Eye Soft</owners>
-		<title />
-		<description>The ServiceStack serializer implementations for EyeSoft ecosystem.</description>
-		<copyright>EyeSoft</copyright>
-		<tags>serialization JSON CSV JSV text</tags>
+		<owners>$author$</owners>
 		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
 		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
+		<iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<copyright>$author$</copyright>
+		<tags>serialization JSON CSV JSV text</tags>
 		<dependencies>
 			<dependency id="EyeSoft.Core" version="1.4.0.0460" />
 			<dependency id="ServiceStack.Text" version="4.0.56" />

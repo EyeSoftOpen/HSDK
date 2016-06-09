@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.Accounting.Italian.Istat")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Provide classes to query Italian cities and towns.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

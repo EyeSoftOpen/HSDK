@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-  <metadata>
-    <id>EyeSoft.Data</id>
-    <version>2.3.6003.17677</version>
-    <title />
-    <authors>Eye Soft</authors>
-    <owners>Eye Soft</owners>
-    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-    <iconUrl>http://images.eye-soft.com/Eye.Soft.Logo.Square.png</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Data components to simplify read/write operations on RDBMS.</description>
-    <copyright>EyeSoft</copyright>
-    <tags>data database sql</tags>
-    <dependencies>
-      <dependency id="EyeSoft.Core" version="2.3.6003.17677" />
-    </dependencies>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="" />
-      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
-      <frameworkAssembly assemblyName="System.Data" targetFramework="" />
-    </frameworkAssemblies>
-  </metadata>
+	<metadata>
+		<id>$title$</id>
+		<version>$version</version>
+		<title>$title$</title>
+		<authors>Eye Soft</authors>
+		<owners>$author$</owners>
+		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+		<iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<copyright>$author$</copyright>
+		<tags>data database sql</tags>
+		<dependencies>
+			<dependency id="EyeSoft.Core" version="2.3.6003.17677" />
+		</dependencies>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" targetFramework="" />
+			<frameworkAssembly assemblyName="System.Core" targetFramework="" />
+			<frameworkAssembly assemblyName="System.Data" targetFramework="" />
+		</frameworkAssemblies>
+	</metadata>
 </package>

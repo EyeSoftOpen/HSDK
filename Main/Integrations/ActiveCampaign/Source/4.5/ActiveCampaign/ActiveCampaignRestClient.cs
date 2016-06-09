@@ -20,16 +20,19 @@ namespace EyeSoft.ActiveCampaign
 
 		private readonly ActiveCampaignConnection connection;
 
+		private readonly string baseAddress;
+
 		protected ActiveCampaignRestClient(ActiveCampaignConnection connection)
 		{
 			this.connection = connection;
+			baseAddress = $"{connection.Account}/admin/api.php?";
 		}
 
 		internal TResult ExecuteGetRequest<TResult>(string action, ActiveCampaignRequest requestData)
 		{
 			var queryParameters = GetQueryString(action, requestData);
 
-			var urlAction = $"{GetBaseAddress()}&{queryParameters}";
+			var urlAction = $"{baseAddress}&{queryParameters}";
 
 			var client = connection.WebClient;
 
@@ -40,7 +43,7 @@ namespace EyeSoft.ActiveCampaign
 
 		internal TResult ExecutePostRequest<TResult>(string action, ActiveCampaignRequest request) where TResult : ActiveCampaignResponse
 		{
-			var urlAction = GetBaseAddress();
+			var urlAction = baseAddress;
 
 			SetRequestQueryValues(action, request);
 
@@ -55,14 +58,7 @@ namespace EyeSoft.ActiveCampaign
 			return GetResult<TResult>(action, result);
 		}
 
-		private string GetBaseAddress()
-		{
-			var accountUrl = connection.Account;
-
-			return accountUrl;
-		}
-
-		private TResult GetResult<TResult>(string action, string source)// where TResult : Response
+		private TResult GetResult<TResult>(string action, string source)
 		{
 			var result = JsonConvert.DeserializeObject<ActiveCampaignResponse>(source, settings);
 

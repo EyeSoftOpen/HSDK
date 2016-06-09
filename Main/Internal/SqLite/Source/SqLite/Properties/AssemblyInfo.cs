@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("EyeSoft.Data.SqLite")]
 
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("SQLite helpers.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

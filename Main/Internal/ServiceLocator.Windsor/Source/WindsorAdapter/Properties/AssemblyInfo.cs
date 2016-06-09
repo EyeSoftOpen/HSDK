@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("EyeSoft.ServiceLocator.Windsor")]
 
 [assembly: AssemblyTitle("EyeSoft.ServiceLocator.Windsor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A service locator adapter to implement CommonServiceLocator on top of Castle Windsor.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

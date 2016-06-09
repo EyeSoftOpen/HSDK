@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.Shimmer.Client")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Shimmer client helpers.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
 
 [assembly: AssemblyTitle("EyeSoft.Domain")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Base classes to implement a Domain Model also using DDD (Domain Driven Development) and to abstract the ORM or the storage and change it simply.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
