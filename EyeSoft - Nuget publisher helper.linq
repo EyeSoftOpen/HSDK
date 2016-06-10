@@ -30,7 +30,7 @@ namespace Query
 {
 	public static class NugetHelper
 	{
-		private static readonly DirectoryInfo solutionDirectory = new FileInfo(HsdkWorkflow.SolutionPath).Directory;
+		private static readonly DirectoryInfo solutionDirectory = new FileInfo(HsdkWorkflow.SolutionPath.Dump()).Directory;
 		private static readonly string nugetExePath = Path.Combine(solutionDirectory.FullName, @".nuget\NuGet.exe");
 		private static readonly string nugetCompilePath = Path.Combine(solutionDirectory.FullName, "Nuget.Packages");
 

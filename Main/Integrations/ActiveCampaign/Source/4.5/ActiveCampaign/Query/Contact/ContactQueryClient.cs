@@ -19,6 +19,11 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 			return GetContacts("all");
 		}
 
+		public Contact Get(string email)
+		{
+			return ExecuteGetRequest<Contact>("contact_view_email", new ContactViewEmailRequest(email));
+		}
+
 		private Contacts GetContacts(string ids)
 		{
 			var request = new ContactsRequest { Ids = ids };

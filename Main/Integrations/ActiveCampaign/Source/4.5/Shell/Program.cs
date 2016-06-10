@@ -20,7 +20,7 @@
 
 			using (var connection = new ActiveCampaignConnection(testData.Account, testData.ApiKey))
 			{
-				Commanding(connection, testData);
+				//Commanding(connection, testData);
 
 				Query(connection, testData);
 			}
@@ -47,6 +47,8 @@
 		private static void Query(ActiveCampaignConnection connection, ActiveCampaignTestData testData)
 		{
 			IContactQueryClient contactQueryClient = new ContactQueryClient(connection);
+
+			contactQueryClient.Get(testData.ContactEmail).Dump();
 
 			contactQueryClient.GetAllContacts().Dump();
 

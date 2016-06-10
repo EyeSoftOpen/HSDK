@@ -62,6 +62,11 @@ namespace EyeSoft.ActiveCampaign
 		{
 			var result = JsonConvert.DeserializeObject<ActiveCampaignResponse>(source, settings);
 
+			if (result.ResultCode == 0)
+			{
+				return default(TResult);
+			}
+
 			if (result.ResultCode != 1)
 			{
 				throw new InvalidOperationException($"Error on request '{action}'. Message: {result.ResultMessage}");

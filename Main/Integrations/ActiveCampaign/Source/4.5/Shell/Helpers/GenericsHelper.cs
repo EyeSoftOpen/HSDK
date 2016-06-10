@@ -8,6 +8,12 @@
 	{
 		public static T Dump<T>(this T obj)
 		{
+			if (Equals(obj, default(T)))
+			{
+				Console.WriteLine($"<{typeof(T).FullName}:null>");
+				return default(T);
+			}
+
 			var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
 
 			Console.WriteLine(json);

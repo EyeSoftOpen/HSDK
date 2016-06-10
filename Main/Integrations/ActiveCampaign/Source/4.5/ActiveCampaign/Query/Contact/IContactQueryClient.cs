@@ -9,5 +9,7 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 		Contacts GetContacts(params string[] ids);
 
 		Contacts GetAllContacts();
+
+		Contact Get(string email);
 	}
 }
