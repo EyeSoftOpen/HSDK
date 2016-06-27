@@ -79,11 +79,11 @@ namespace Query
 					.Select(x => new
 					{
 						x.Title,
+						x.Package,
 						x.Version,
 						x.DateTime,
-						Publish = !x.AssemblyVersions.AreEquals ? (object)"Versions mismatch" : new Hyperlinq(() => Publish(x.Package), "Publish"),
 						AssemblyVersionsAreEqual = x.AssemblyVersions.AreEquals,
-						x.AssemblyVersions
+						AssemblyVersions = x.AssemblyVersions.AreEquals ? null : x.AssemblyVersions
 					})
 					.Select(x => new
 					{
@@ -91,17 +91,39 @@ namespace Query
 						x.Title,
 						x.Version,
 						x.DateTime,
-						x.Publish,
 						x.AssemblyVersionsAreEqual,
-						x.AssemblyVersions
+						x.AssemblyVersions,
+						x.Package						
 					})
-					.OrderByDescending(x => x.AssemblyVersionsAreEqual)
-					.Dump(1);
+					.OrderByDescending(x => x.AssemblyVersionsAreEqual);
 
 			if (!buildSolution)
 			{
+				packagesToPublishWithVersions
+					.Select(x => new
+					{
+						x.Result,
+						x.Title,
+						x.Version,
+						x.DateTime,
+						x.AssemblyVersions
+					})
+					.Dump($"To allow the publish change the '{nameof(buildSolution)}' paremeter to true", 1);
+				
 				return;
 			}
+
+			packagesToPublishWithVersions
+				.Select(x => new
+				 {
+					x.Result,
+					x.Title,
+					Publish = x.AssemblyVersions != null ? (object)"Versions mismatch" : new Hyperlinq(() => Publish(x.Package), "Publish"),
+					x.Version,
+					x.DateTime,
+					x.AssemblyVersions
+				 })
+				 .Dump(1);
 
 			Directory.CreateDirectory(nugetCompilePath);
 
