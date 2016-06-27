@@ -1,7 +1,7 @@
 <Query Kind="Program">
   <Reference Relative="Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll</Reference>
-  <Namespace>EyeSoft.Nuget.Publisher.Shell</Namespace>
-  <Namespace>EyeSoft.Nuget.Publisher.Shell.Workflow</Namespace>
+  <Namespace>EyeSoft.Nuget.Publisher.Core.Core</Namespace>
+  <Namespace>EyeSoft.Nuget.Publisher.Core.Workflow</Namespace>
 </Query>
 
 void Main()

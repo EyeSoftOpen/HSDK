@@ -22,7 +22,7 @@ void Main()
 {
 	Util.AutoScrollResults = true;
 
-	NugetHelper.Pack();
+	NugetHelper.Pack(false);
 }
 }
 
@@ -34,20 +34,21 @@ namespace Query
 		private static readonly string nugetExePath = Path.Combine(solutionDirectory.FullName, @".nuget\NuGet.exe");
 		private static readonly string nugetCompilePath = Path.Combine(solutionDirectory.FullName, "Nuget.Packages");
 
-		public static void Pack()
+		public static void Pack(bool buildSolution)
 		{
 			var solutionPath = solutionDirectory.FullName;
 			var projectPath = Path.Combine(solutionPath, "EyeSoft.Hsdk.sln");
-			
-			new MsBuild(projectPath, solutionPath, true).Build();
-			
+
+			if (buildSolution)
+			{
+				new MsBuild(projectPath, solutionPath, true).Build();
+			}
+
 			var projectsPath = solutionDirectory
 				.GetFiles("*.csproj", SearchOption.AllDirectories)
 				.Where(x => x.Directory.GetFiles("*.nuspec").Any() && HsdkWorkflow.PackagesId.Contains(Path.GetFileNameWithoutExtension(x.Name)))
 				.OrderBy(x => x.Name)
 				.ToArray();
-
-			Directory.CreateDirectory(nugetCompilePath);
 
 			var packagesToPublish =
 				projectsPath
@@ -56,35 +57,71 @@ namespace Query
 						{
 							ProjectFile = x,
 							Package = Packages.Parse(x.Directory.GetFiles("AssemblyInfo.cs", SearchOption.AllDirectories).Single())
-						});
+						})
+					.Select(x => new
+					{
+						x.ProjectFile,
+						x.Package,
+						AssemblyVersions = new AssemblyVersions(x.Package.PackageVersion, new DirectoryInfo(Path.Combine(x.ProjectFile.DirectoryName, "Bin", "Release")).GetFiles($"{x.Package.Title}.dll").Single().FullName)
+					});
 
-			packagesToPublish
-				.Select(x => new
-				{
-					x.Package.Title,
-					Version = x.Package.PackageVersion.ToString(),
-					DateTime = x.Package.PackageVersion.ToDateTime(),
-					Publish = new Hyperlinq(() => Publish(x.Package), "Publish")
-				})
-				.Dump();
+
+			var packagesToPublishWithVersions =
+				packagesToPublish
+					.Select(x => new
+					{
+						x.Package.Title,
+						x.Package,
+						Version = x.Package.PackageVersion.ToString(),
+						DateTime = x.Package.PackageVersion.ToDateTime(),
+						x.AssemblyVersions
+					})
+					.Select(x => new
+					{
+						x.Title,
+						x.Version,
+						x.DateTime,
+						Publish = !x.AssemblyVersions.AreEquals ? (object)"Versions mismatch" : new Hyperlinq(() => Publish(x.Package), "Publish"),
+						AssemblyVersionsAreEqual = x.AssemblyVersions.AreEquals,
+						x.AssemblyVersions
+					})
+					.Select(x => new
+					{
+						Result = x.AssemblyVersionsAreEqual ? Util.Highlight("      ", "#00a300") : Util.Highlight("      ", "#ee1111"),
+						x.Title,
+						x.Version,
+						x.DateTime,
+						x.Publish,
+						x.AssemblyVersionsAreEqual,
+						x.AssemblyVersions
+					})
+					.OrderByDescending(x => x.AssemblyVersionsAreEqual)
+					.Dump(1);
+
+			if (!buildSolution)
+			{
+				return;
+			}
+
+			Directory.CreateDirectory(nugetCompilePath);
 
 			foreach (var packageWithProjectFile in packagesToPublish.AsParallel())
 			{
 				var arguments = $"pack -Prop Configuration=Release \"{packageWithProjectFile.ProjectFile.FullName}\"";
-				
+
 				var compiledPackagePath = packageWithProjectFile.Package.ToFilePath();
 
 				if (File.Exists(compiledPackagePath))
-                {
+				{
 					Console.WriteLine($"The pack {packageWithProjectFile.Package.Title} already exists, skypped.");
 					continue;
 				}
-				
+
 				Console.WriteLine($"Packing the file {packageWithProjectFile.Package.Title}...");
 
 				ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
 			}
-			
+
 			new Hyperlinq(() => packagesToPublish.Select(x => x.Package).ToList().ForEach(x => Publish(x)), "Publish all packages").Dump();
 		}
 
@@ -98,9 +135,24 @@ namespace Query
 		private static string ToFilePath(this Package package)
 		{
 			var fileName = $"{package.Title}.{package.PackageVersion.ToString()}.nupkg";
-			
+
 			var path = $"{Path.Combine(nugetCompilePath, fileName)}";
 
 			return path;
 		}
+	}
+
+	public class AssemblyVersions
+	{
+		public AssemblyVersions(Version packageVersion, string assemblyPath)
+		{
+			AssemblyVersion = Assembly.LoadFile(assemblyPath).GetName().Version.ToString();
+			FileVersion = FileVersionInfo.GetVersionInfo(assemblyPath).FileVersion;
+			
+			AreEquals = (packageVersion == new Version(AssemblyVersion)) && (packageVersion == new Version(FileVersion));
+		}
+
+		public string AssemblyVersion { get; }
+		public string FileVersion  { get; }
+		public bool AreEquals  { get; }
 	}
