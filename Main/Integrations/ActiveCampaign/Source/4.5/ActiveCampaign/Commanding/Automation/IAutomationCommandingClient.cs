@@ -6,8 +6,8 @@
 
 	public interface IAutomationCommandingClient : IDisposable
 	{
-		ActiveCampaignResponse AddContact(string contactEmail, string automation);
+		ActiveCampaignResponse AddContact(string contactEmail, int automation);
 
-		ActiveCampaignResponse RemoveContact(string contactEmail, string automation);
+		ActiveCampaignResponse RemoveContact(string contactEmail, int automation);
 	}
 }

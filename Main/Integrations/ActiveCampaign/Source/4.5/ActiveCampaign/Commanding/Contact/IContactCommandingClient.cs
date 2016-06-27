@@ -7,8 +7,10 @@ namespace EyeSoft.ActiveCampaign.Commanding.Contact
 
 	public interface IContactCommandingClient : IDisposable
 	{
-		ActiveCampaignResponse Add(ContactAdd contact);
+		ActiveCampaignResponse Add(AddContactCommand command);
 
-		ActiveCampaignResponse Delete(string contactId);
+		ActiveCampaignResponse Sync(SyncContactCommand command);
+
+		ActiveCampaignResponse Delete(int id);
 	}
 }

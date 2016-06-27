@@ -7,6 +7,7 @@
 	using EyeSoft.ActiveCampaign.Commanding.Automation;
 	using EyeSoft.ActiveCampaign.Commanding.Contact;
 	using EyeSoft.ActiveCampaign.Commanding.Contact.Models;
+	using EyeSoft.ActiveCampaign.Query.Automation;
 	using EyeSoft.ActiveCampaign.Query.Contact;
 	using EyeSoft.ActiveCampaign.Shell.Helpers;
 
@@ -48,20 +49,32 @@
 		{
 			IContactQueryClient contactQueryClient = new ContactQueryClient(connection);
 
-			contactQueryClient.Get(testData.ContactEmail).Dump();
+			contactQueryClient.GetAll().Dump();
 
-			contactQueryClient.GetAllContacts().Dump();
+			return;
 
 			contactQueryClient.GetContacts(testData.ContactId).Dump();
+
+			IAutomationQueryClient automationQueryClient = new AutomationQueryClient(connection);
+
+			automationQueryClient.GetAll().Dump();
 		}
 
 		private static void Commanding(ActiveCampaignConnection connection, ActiveCampaignTestData testData)
 		{
 			IContactCommandingClient contactCommandingClient = new ContactCommandingClient(connection);
 
-			contactCommandingClient.Delete(testData.ContactId).Dump();
+			IContactQueryClient contactQueryClient = new ContactQueryClient(connection);
 
-			contactCommandingClient.Add(new ContactAdd(testData.ContactId, testData.ContactEmail)).Dump();
+			var contact = contactQueryClient.Get(testData.ContactEmail).Dump();
+
+			contactCommandingClient.Delete(contact.Id).Dump();
+
+			contactCommandingClient.Add(new AddContactCommand(testData.ContactId, testData.ContactEmail)).Dump();
+
+			contact = contactQueryClient.Get(testData.ContactEmail).Dump();
+
+			contactCommandingClient.Sync(new SyncContactCommand(contact.Id, testData.ContactEmail) { FirstName = "Bill", LastName = "White" });
 
 			IAutomationCommandingClient automationCommandingClient = new AutomationCommandingClient(connection);
 

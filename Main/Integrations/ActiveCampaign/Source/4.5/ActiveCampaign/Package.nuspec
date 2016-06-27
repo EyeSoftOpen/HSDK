@@ -13,9 +13,12 @@
 		<description>$description$</description>
 		<copyright>$author$</copyright>
 		<tags>active campaign,email marketing,funnel,email automation</tags>
+		<dependencies>
+			<dependency id="EyeSoft.Core" version="2.3.5976.28727" />
+		</dependencies>
 	</metadata>
 	<files>
-		<file src="bin\release\$id$.dll" target="lib\net46\" />
-		<file src="bin\release\$id$.pdb" target="lib\net46\" />
+		<file src="bin\release\$id$.dll" />
+		<file src="bin\release\$id$.pdb" />
 	</files>
 </package>

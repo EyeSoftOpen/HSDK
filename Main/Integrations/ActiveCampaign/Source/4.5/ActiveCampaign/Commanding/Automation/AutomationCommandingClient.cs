@@ -10,12 +10,12 @@
 		{
 		}
 
-		public ActiveCampaignResponse AddContact(string contactEmail, string automation)
+		public ActiveCampaignResponse AddContact(string contactEmail, int automation)
 		{
 			return ExecutePostRequest<ActiveCampaignResponse>("automation_contact_add", new AutomationContactAdd(contactEmail, automation));
 		}
 
-		public ActiveCampaignResponse RemoveContact(string contactEmail, string automation)
+		public ActiveCampaignResponse RemoveContact(string contactEmail, int automation)
 		{
 			return ExecutePostRequest<ActiveCampaignResponse>("automation_contact_remove", new AutomationRemoveContact(contactEmail, automation));
 		}

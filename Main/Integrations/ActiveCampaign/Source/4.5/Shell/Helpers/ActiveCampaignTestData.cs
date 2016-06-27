@@ -2,7 +2,7 @@ namespace EyeSoft.ActiveCampaign.Shell.Helpers
 {
 	internal class ActiveCampaignTestData
 	{
-		public ActiveCampaignTestData(string account, string apiKey, string contactId, string contactEmail, string automation)
+		public ActiveCampaignTestData(string account, string apiKey, int contactId, string contactEmail, int automation)
 		{
 			Account = account;
 			ApiKey = apiKey;
@@ -15,10 +15,10 @@ namespace EyeSoft.ActiveCampaign.Shell.Helpers
 
 		public string ApiKey { get; }
 
-		public string ContactId { get; }
+		public int ContactId { get; }
 
 		public string ContactEmail { get; }
 
-		public string Automation { get; }
+		public int Automation { get; }
 	}
 }

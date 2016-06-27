@@ -8,16 +8,8 @@ namespace EyeSoft.ActiveCampaign
 	using EyeSoft.ActiveCampaign.Helpers;
 	using EyeSoft.ActiveCampaign.Query;
 
-	using Newtonsoft.Json;
-
 	public abstract class ActiveCampaignRestClient : IDisposable
 	{
-		private readonly JsonSerializerSettings settings = new JsonSerializerSettings
-		{
-			ContractResolver = new UnderscoreMappingResolver(),
-			NullValueHandling = NullValueHandling.Ignore
-		};
-
 		private readonly ActiveCampaignConnection connection;
 
 		private readonly string baseAddress;
@@ -36,9 +28,11 @@ namespace EyeSoft.ActiveCampaign
 
 			var client = connection.WebClient;
 
-			var result = client.DownloadString(urlAction);
+			var json = client.DownloadString(urlAction);
 
-			return GetResult<TResult>(action, result);
+			var result = GetResult<TResult>(action, json);
+
+			return result;
 		}
 
 		internal TResult ExecutePostRequest<TResult>(string action, ActiveCampaignRequest request) where TResult : ActiveCampaignResponse
@@ -53,26 +47,30 @@ namespace EyeSoft.ActiveCampaign
 
 			var byteResult = client.UploadValues(urlAction, requestData);
 
-			var result = Encoding.Default.GetString(byteResult);
+			var json = Encoding.Default.GetString(byteResult);
 
-			return GetResult<TResult>(action, result);
+			var result = GetResult<TResult>(action, json);
+
+			return result;
 		}
 
-		private TResult GetResult<TResult>(string action, string source)
+		private static TResult GetResult<TResult>(string action, string json)
 		{
-			var result = JsonConvert.DeserializeObject<ActiveCampaignResponse>(source, settings);
+			var response = JsonConvertWrapper.DeserializeObject<ActiveCampaignResponse>(json);
 
-			if (result.ResultCode == 0)
+			if (response.ResultCode == 0)
 			{
 				return default(TResult);
 			}
 
-			if (result.ResultCode != 1)
+			if (response.ResultCode != 1)
 			{
-				throw new InvalidOperationException($"Error on request '{action}'. Message: {result.ResultMessage}");
+				throw new InvalidOperationException($"Error on request '{action}'. Message: {response.ResultMessage}");
 			}
 
-			return JsonConvert.DeserializeObject<TResult>(source, settings);
+			var result = JsonConvertWrapper.DeserializeObject<TResult>(json);
+
+			return result;
 		}
 
 		private string GetQueryString(string action, ActiveCampaignRequest request)

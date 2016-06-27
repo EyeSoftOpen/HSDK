@@ -2,7 +2,7 @@ namespace EyeSoft.ActiveCampaign.Query.Account.Models
 {
 	public class AccountDetail
 	{
-		public string Id { get; set; }
+		public int Id { get; set; }
 
 		public string Username { get; set; }
 

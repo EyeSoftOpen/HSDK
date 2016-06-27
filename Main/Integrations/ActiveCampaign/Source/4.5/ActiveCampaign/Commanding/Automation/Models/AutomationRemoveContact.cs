@@ -2,7 +2,7 @@
 {
 	public class AutomationRemoveContact : ActiveCampaignRequest
 	{
-		public AutomationRemoveContact(string contactEmail, string automation)
+		public AutomationRemoveContact(string contactEmail, int automation)
 		{
 			ContactEmail = contactEmail;
 			Automation = automation;
@@ -10,6 +10,6 @@
 
 		public string ContactEmail { get; }
 
-		public string Automation { get; }
+		public int Automation { get; }
 	}
 }

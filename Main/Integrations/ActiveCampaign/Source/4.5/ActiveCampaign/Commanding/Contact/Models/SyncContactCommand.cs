@@ -1,17 +1,20 @@
-﻿namespace EyeSoft.ActiveCampaign.Commanding.Contact.Models
+namespace EyeSoft.ActiveCampaign.Commanding.Contact.Models
 {
 	using System.Collections.Generic;
 
-	public class ContactAdd : ActiveCampaignRequest
+	public class SyncContactCommand : ActiveCampaignRequest
 	{
-		public ContactAdd(string id, string email)
+		public SyncContactCommand(int id, string email)
 		{
+			Id = id;
 			Email = email;
 
-			var fields = new Dictionary<string, string> { { "345", id } };
+			var fields = new Dictionary<string, string>();
 
 			Fields = fields;
 		}
+
+		public int Id { get; }
 
 		public string Email { get; }
 

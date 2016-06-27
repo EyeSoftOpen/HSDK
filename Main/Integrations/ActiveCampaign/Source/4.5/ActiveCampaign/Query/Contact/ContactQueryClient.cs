@@ -1,5 +1,7 @@
 namespace EyeSoft.ActiveCampaign.Query.Contact
 {
+	using System.Collections.Generic;
+
 	using EyeSoft.ActiveCampaign.Query.Contact.Models;
 
 	public class ContactQueryClient : ActiveCampaignRestClient, IContactQueryClient
@@ -9,14 +11,14 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 		{
 		}
 
-		public Contacts GetContacts(params string[] ids)
+		public Contacts GetContacts(params int[] ids)
 		{
 			return GetContacts(string.Join(",", ids));
 		}
 
-		public Contacts GetAllContacts()
+		public IEnumerable<Contact> GetAll()
 		{
-			return GetContacts("all");
+			return GetContacts("all").Data;
 		}
 
 		public Contact Get(string email)
