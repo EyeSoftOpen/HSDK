@@ -11,6 +11,7 @@ namespace EyeSoft.Nuget.Publisher.Core.Workflow
 		// ReSharper disable once MemberCanBePrivate.Global
 		public const string SolutionPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
 
+
 		// ReSharper disable once MemberCanBePrivate.Global
 		public static readonly IEnumerable<string> PackagesId =
 			new[]
@@ -35,9 +36,9 @@ namespace EyeSoft.Nuget.Publisher.Core.Workflow
 					"ServiceLocator",
 					"ServiceLocator.Windsor",
 					"ServiceModel",
-					"ServiceStack.Text",
-					"SharpTests.Extensions",
-					"Shimmer.Client",
+					//"ServiceStack.Text",
+					//"SharpTests.Extensions",
+					//"Shimmer.Client",
 					"Web",
 					"Windows",
 					"Windows.Installer.InstallMate",
