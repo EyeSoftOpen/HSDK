@@ -1,8 +1,8 @@
 <Query Kind="Program">
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
   <NuGetReference>Castle.WcfIntegrationFacility</NuGetReference>
   <NuGetReference>Castle.Windsor</NuGetReference>
   <NuGetReference>De.TorstenMandelkow.MetroChart</NuGetReference>
@@ -12,17 +12,23 @@
   <NuGetReference>Microsoft.AspNet.WebApi.Client</NuGetReference>
   <NuGetReference>Newtonsoft.Json</NuGetReference>
   <NuGetReference>System.Data.SQLite.x64</NuGetReference>
+  <Namespace>EyeSoft.Nuget.Publisher.Core.Build</Namespace>
   <Namespace>EyeSoft.Nuget.Publisher.Core.Core</Namespace>
   <Namespace>EyeSoft.Nuget.Publisher.Core.Nuget</Namespace>
   <Namespace>EyeSoft.Nuget.Publisher.Core.Workflow</Namespace>
   <Namespace>Query</Namespace>
+  <Namespace>NuGet</Namespace>
 </Query>
 
 void Main()
 {
 	Util.AutoScrollResults = true;
-
-	NugetHelper.Pack(false);
+	
+//	VersionHelper.GenerateBuildAndRevision().Dump();
+//	
+//	return;
+//	
+	NugetHelper.Pack(true);
 }
 }
 
@@ -65,6 +71,15 @@ namespace Query
 						AssemblyVersions = new AssemblyVersions(x.Package.PackageVersion, new DirectoryInfo(Path.Combine(x.ProjectFile.DirectoryName, "Bin", "Release")).GetFiles($"{x.Package.Title}.dll").Single().FullName)
 					});
 
+			//			var buildAndRevision = VersionHelper.GenerateBuildAndRevision();
+			//			
+			//			var packagesWithFramework = packagesToPublish.Select(x => new PackageWithFramework(x.Package.Title, x.Package.PackageVersion, x.Package.TargetFramework);
+			//			
+			//			var previousVersions = new Dictionary<string, Version>();
+			//			
+			//			var updateDependencies = new UpdatePackagesStep(null, buildAndRevision, packagesWithFramework, previousVersions);
+			//			
+			//			updateDependencies.UpdatePackages();
 
 			var packagesToPublishWithVersions =
 				packagesToPublish
@@ -93,10 +108,17 @@ namespace Query
 						x.DateTime,
 						x.AssemblyVersionsAreEqual,
 						x.AssemblyVersions,
-						x.Package						
+						x.Package
 					})
 					.OrderByDescending(x => x.AssemblyVersionsAreEqual);
 
+			var packages = packagesToPublish.ToDictionary(k => k.Package.Title, v => (Func<Version>)(() => v.Package.PackageVersion));
+
+			foreach (var package in packagesToPublish)
+			{
+				package.Package.TryUpdateNuspecDependencies(packages);
+			}
+			
 			if (!buildSolution)
 			{
 				packagesToPublishWithVersions
@@ -109,23 +131,25 @@ namespace Query
 						x.AssemblyVersions
 					})
 					.Dump($"To allow the publish change the '{nameof(buildSolution)}' paremeter to true", 1);
-				
+
 				return;
 			}
 
 			packagesToPublishWithVersions
 				.Select(x => new
-				 {
+				{
 					x.Result,
 					x.Title,
 					Publish = x.AssemblyVersions != null ? (object)"Versions mismatch" : new Hyperlinq(() => Publish(x.Package), "Publish"),
 					x.Version,
 					x.DateTime,
 					x.AssemblyVersions
-				 })
+				})
 				 .Dump(1);
 
 			Directory.CreateDirectory(nugetCompilePath);
+			
+			nugetCompilePath.Dump();
 
 			foreach (var packageWithProjectFile in packagesToPublish.AsParallel())
 			{
@@ -149,9 +173,9 @@ namespace Query
 
 		private static void Publish(Package package)
 		{
-			var arguments = $"push \"{package.ToFilePath()}\" -Source https://www.nuget.org/api/v2/package";
-
-			ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
+//			var arguments = $"push \"{package.ToFilePath()}\" -Source https://www.nuget.org/api/v2/package";
+//
+//			ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
 		}
 
 		private static string ToFilePath(this Package package)
@@ -170,11 +194,11 @@ namespace Query
 		{
 			AssemblyVersion = Assembly.LoadFile(assemblyPath).GetName().Version.ToString();
 			FileVersion = FileVersionInfo.GetVersionInfo(assemblyPath).FileVersion;
-			
+
 			AreEquals = (packageVersion == new Version(AssemblyVersion)) && (packageVersion == new Version(FileVersion));
 		}
 
 		public string AssemblyVersion { get; }
-		public string FileVersion  { get; }
-		public bool AreEquals  { get; }
+		public string FileVersion { get; }
+		public bool AreEquals { get; }
 	}
