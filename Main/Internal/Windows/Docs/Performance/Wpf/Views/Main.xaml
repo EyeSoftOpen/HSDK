@@ -8,7 +8,21 @@
 	mc:Ignorable="d"
 	d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel, IsDesignTimeCreatable=False}"
 	Title="EyeSoft - HSDK - Wpf.Facilities.Lab" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+	<Window.Resources>
+		<!--Command="{Binding UpdateValueCommand}" CommandParameter="{x:Static viewModels:Area.Mastership}"-->
+		<DataTemplate x:Key="ItemTemplate" DataType="viewModels:PartyItemViewModel">
+			<ToggleButton
+                Command="{Binding UpdateValueCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext.Area}"
+				Content="{Binding Area}"
+				ToolTip="{Binding Value2}"/>
+		</DataTemplate>
+	</Window.Resources>
 	<Grid>
-		<ListBox ItemsSource="{Binding PartyList}" />
+        <!--<Button DockPanel.Dock="Top" Height="30" Content="Update all to Agenda" Command="{Binding UpdateItemCommand}" CommandParameter="{Binding Area}" />-->
+		<DockPanel LastChildFill="True">
+			
+			<ListBox ItemsSource="{Binding PartyList}" ItemTemplate="{StaticResource ItemTemplate}"/>
+		</DockPanel>
+		
 	</Grid>
 </Window>
