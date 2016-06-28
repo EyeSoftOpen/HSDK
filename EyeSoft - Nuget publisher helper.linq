@@ -1,8 +1,8 @@
 <Query Kind="Program">
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
   <NuGetReference>Castle.WcfIntegrationFacility</NuGetReference>
   <NuGetReference>Castle.Windsor</NuGetReference>
   <NuGetReference>De.TorstenMandelkow.MetroChart</NuGetReference>
@@ -28,7 +28,7 @@ void Main()
 //	
 //	return;
 //	
-	NugetHelper.Pack(true);
+	NugetHelper.Pack(false);
 }
 }
 

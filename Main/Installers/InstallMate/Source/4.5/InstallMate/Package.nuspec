@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-	<metadata>
-		<id>$title$</id>
-		<version>$version</version>
-		<title>$title$</title>
-		<authors>Eye Soft</authors>
-		<owners>$author$</owners>
-		<licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-		<projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
-		<iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>$description$</description>
-		<copyright>$author$</copyright>
-		<tags>installer Windows UI WPF InstallMate Tarma</tags>
-		<dependencies>
-			<dependency id="EyeSoft.Core" version="2.3.6003.17677" />
-			<dependency id="EyeSoft.Windows" version="2.3.6003.17677" />
-		</dependencies>
-	</metadata>
-	<files>
-		<file src="..\..\4.0\InstallMate\bin\release\$id$.dll" target="lib\net40\" />
-		<file src="..\..\4.0\InstallMate\bin\release\$id$.pdb" target="lib\net40\" />
-	</files>
+  <metadata>
+    <id>$title$</id>
+    <version>$version</version>
+    <title>$title$</title>
+    <authors>Eye Soft</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
+    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>$author$</copyright>
+    <tags>installer Windows UI WPF InstallMate Tarma</tags>
+    <dependencies>
+      <dependency id="EyeSoft.Core" version="2.3.6003.17677" />
+      <dependency id="EyeSoft.Windows" version="2.3.6003.17677" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\4.0\InstallMate\bin\release\$id$.dll" target="lib\net40\" />
+    <file src="..\..\4.0\InstallMate\bin\release\$id$.pdb" target="lib\net40\" />
+  </files>
 </package>
