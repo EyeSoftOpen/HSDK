@@ -1,273 +1,322 @@
 namespace EyeSoft.Windows.Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.ComponentModel;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Runtime.CompilerServices;
-	using System.Windows;
-	using System.Windows.Input;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Runtime.CompilerServices;
+    using System.Windows;
+    using System.Windows.Input;
 
-	using EyeSoft.Reflection;
-	using EyeSoft.Validation;
+    using EyeSoft.Logging;
+    using EyeSoft.Reflection;
+    using EyeSoft.Validation;
 
-	public abstract class ViewModel : INotifyPropertyChanged, INotifyPropertyChanging, INotifyViewModel, IDataErrorInfo, IDisposable
-	{
-		private readonly ViewModelProperties viewModelProperties;
+    public abstract class ViewModel : INotifyPropertyChanged,
+                                      INotifyPropertyChanging,
+                                      INotifyViewModel,
+                                      IDataErrorInfo,
+                                      IDisposable
+    {
+        private readonly ViewModelProperties viewModelProperties;
 
-		private readonly PropertyInfoDictionary propertyInfoDictionary;
+        private readonly PropertyInfoDictionary propertyInfoDictionary;
 
-		private readonly HashSet<string> createdViewModelProperties = new HashSet<string>();
+        private readonly HashSet<string> createdViewModelProperties = new HashSet<string>();
 
-		private bool disposed;
+        private bool disposed;
 
-		protected ViewModel()
-		{
-			propertyInfoDictionary = new PropertyInfoDictionary(this);
+        protected ViewModel()
+        {
+            propertyInfoDictionary = new PropertyInfoDictionary(this);
 
-			viewModelProperties = new ViewModelProperties(this);
-		}
+            viewModelProperties = new ViewModelProperties(this);
+        }
 
-		public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-		public event PropertyChangingEventHandler PropertyChanging;
+        public event PropertyChangingEventHandler PropertyChanging;
 
-		public bool IsPropertyChangedSuspended { get; private set; }
+        public bool IsPropertyChangedSuspended { get; private set; }
 
-		public int Changes
-		{
-			get { return viewModelProperties.Changes; }
-		}
+        public int Changes
+        {
+            get
+            {
+                return viewModelProperties.Changes;
+            }
+        }
 
-		public bool Changed
-		{
-			get { return viewModelProperties.Changes > 0; }
-		}
+        public bool Changed
+        {
+            get
+            {
+                return viewModelProperties.Changes > 0;
+            }
+        }
 
-		public virtual bool IsValid
-		{
-			get { return !Validate().Any(); }
-		}
+        public virtual bool IsValid
+        {
+            get
+            {
+                Logger.Write($"Get {nameof(IsValid)} of view model '{GetType().FullName}'");
+                return !Validate().Any();
+            }
+        }
 
-		public string Error
-		{
-			get
-			{
-				var error = GetError(Validate);
-				return error;
-			}
-		}
+        public string Error
+        {
+            get
+            {
+                var error = GetError(Validate);
+                HandlePropertyChanged(nameof(IsValid));
 
-		public string this[string propertyName]
-		{
-			get
-			{
-				var error = GetError(() => Validate(propertyName));
+                Logger.Write($"Getting error of view model '{GetType().FullName}'");
+                return error;
+            }
+        }
 
-				OnPropertyChanged(nameof(IsValid));
+        public string this[string propertyName]
+        {
+            get
+            {
+                Logger.Write($"Get error for property {propertyName} of '{GetType().FullName}'");
 
-				return error;
-			}
-		}
+                var error = GetError(() => Validate(propertyName));
 
-		public void Dispose()
-		{
-			Dispose(true);
+                HandlePropertyChanged(nameof(IsValid));
 
-			GC.SuppressFinalize(this);
-		}
+                return error;
+            }
+        }
 
-		public virtual bool CanClose()
-		{
-			return IsValid;
-		}
+        public void Dispose()
+        {
+            Logger.Write($"Disposing view model '{GetType().FullName}'");
 
-		public void ResumePropertyChanged()
-		{
-			IsPropertyChangedSuspended = false;
-		}
+            Dispose(true);
 
-		public void SuspendPropertyChanged()
-		{
-			IsPropertyChangedSuspended = true;
-		}
+            GC.SuppressFinalize(this);
+        }
 
-		void INotifyViewModel.OnPropertyChanged(string propertyName)
-		{
-			OnPropertyChanged(propertyName);
-		}
+        public virtual bool CanClose()
+        {
+            Logger.Write($"{nameof(CanClose)} view model '{GetType().FullName}'. Value {IsValid}");
 
-		void INotifyViewModel.OnPropertyChanging(string propertyName)
-		{
-			OnPropertyChanging(propertyName);
-		}
+            return IsValid;
+        }
 
-		protected internal virtual void Activated()
-		{
-		}
+        public void ResumePropertyChanged()
+        {
+            IsPropertyChangedSuspended = false;
+        }
 
-		protected internal virtual void KeyDown(KeyEventArgs keyEventArgs)
-		{
-		}
+        public void SuspendPropertyChanged()
+        {
+            IsPropertyChangedSuspended = true;
+        }
 
-		protected internal virtual void Dispose(bool disposing)
-		{
-			if (disposed)
-			{
-				return;
-			}
+        void INotifyViewModel.OnPropertyChanged(string propertyName)
+        {
+            OnPropertyChanged(propertyName);
+        }
 
-			if (disposing)
-			{
-				Release();
-			}
+        void INotifyViewModel.OnPropertyChanging(string propertyName)
+        {
+            OnPropertyChanging(propertyName);
+        }
 
-			disposed = true;
-		}
+        protected internal virtual void Activated()
+        {
+        }
 
-		protected internal virtual void Release()
-		{
-		}
+        protected internal virtual void KeyDown(KeyEventArgs keyEventArgs)
+        {
+        }
 
-		protected internal virtual void Shutdown()
-		{
-			Sync().Execute(() => Application.Current.Shutdown());
-		}
+        protected internal virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+            {
+                return;
+            }
 
-		protected virtual void Close()
-		{
-			Sync().Execute(() => DialogService.Close(this));
-		}
+            if (disposing)
+            {
+                Release();
+            }
 
-		protected SyncExecution Sync()
-		{
-			return new SyncExecution(Application.Current);
-		}
+            disposed = true;
+        }
 
-		protected AsyncExecution Async()
-		{
-			return new AsyncExecution(Application.Current);
-		}
+        protected internal virtual void Release()
+        {
+        }
 
-		protected virtual IEnumerable<ValidationError> Validate()
-		{
-			return new DefaultValidator().Validate(this);
-		}
+        protected internal virtual void Shutdown()
+        {
+            Sync().Execute(() => Application.Current.Shutdown());
+        }
 
-		protected virtual IEnumerable<ValidationError> Validate(string propertyName)
-		{
-			return Validate().Where(x => x.PropertyName == propertyName);
-		}
+        protected virtual void Close()
+        {
+            Sync().Execute(() => DialogService.Close(this));
+        }
 
-		#region property get/set
-		protected T GetProperty<T>([CallerMemberName] string callerName = "")
-		{
-			return viewModelProperties.GetProperty<T>(propertyInfoDictionary[callerName]);
-		}
+        protected SyncExecution Sync()
+        {
+            return new SyncExecution(Application.Current);
+        }
 
-		protected T GetPropertyValue<T>(string propertyName)
-		{
-			return viewModelProperties.GetProperty<T>(propertyInfoDictionary[propertyName]);
-		}
+        protected AsyncExecution Async()
+        {
+            return new AsyncExecution(Application.Current);
+        }
 
-		protected void SetProperty<T>(T value, bool suspendPropertyChanged = false, [CallerMemberName] string callerName = "")
-		{
-			var propertyChangedSuspended = suspendPropertyChanged || IsPropertyChangedSuspended;
+        protected virtual IEnumerable<ValidationError> Validate()
+        {
+            return new DefaultValidator().Validate(this);
+        }
 
-			viewModelProperties.SetProperty(propertyInfoDictionary[callerName], value, propertyChangedSuspended);
-		}
-		#endregion
+        protected virtual IEnumerable<ValidationError> Validate(string propertyName)
+        {
+            return Validate().Where(x => x.PropertyName == propertyName);
+        }
 
-		protected IViewModelProperty<TProperty> Property<TProperty>(Expression<Func<TProperty>> propertyExpression)
-		{
-			var propertyName = propertyExpression.PropertyName();
+        #region property get/set
 
-			#if DEBUG
-			if (createdViewModelProperties.Contains(propertyName))
-			{
-				var message = string.Format("Cannot define the behavior on the property '{0}' more than once.", propertyName);
-				throw new InvalidOperationException(message);
-			}
-			#endif
+        protected T GetProperty<T>([CallerMemberName] string callerName = "")
+        {
+            var propertyName = callerName;
 
-			createdViewModelProperties.Add(propertyName);
+            return GetPropertyValue<T>(propertyName);
+        }
 
-			return viewModelProperties.Property<TProperty>(propertyInfoDictionary[propertyName]);
-		}
+        protected T GetPropertyValue<T>(string propertyName)
+        {
+            var value = viewModelProperties.GetProperty<T>(propertyInfoDictionary[propertyName]);
 
-		#region PropertyChanged
+            Logger.Write($"{nameof(GetPropertyValue)} '{propertyName}' value '{value}'");
 
-		protected void OnPropertyChanged(string propertyName)
-		{
-			OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
-		}
+            return value;
+        }
 
-		protected void OnPropertyChanged(Expression<Func<object>> propertyExpression)
-		{
-			var propertyName = propertyExpression.PropertyName();
+        protected void SetProperty<T>(
+            T value,
+            bool suspendPropertyChanged = false,
+            [CallerMemberName] string callerName = "")
+        {
+            var propertyChangedSuspended = suspendPropertyChanged || IsPropertyChangedSuspended;
 
-			((INotifyViewModel)this).OnPropertyChanged(propertyName);
-		}
+            var propertyName = callerName;
 
-		protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
-		{
-			if (IsPropertyChangedSuspended)
-			{
-				return;
-			}
+            Logger.Write($"{nameof(SetProperty)} '{propertyName}' value '{value}'");
 
-			viewModelProperties
-				.Changed(propertyInfoDictionary[e.PropertyName], () => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
+            viewModelProperties.SetProperty(propertyInfoDictionary[propertyName], value, propertyChangedSuspended);
+        }
 
-			var handler = PropertyChanged;
+        #endregion
 
-			if (handler != null)
-			{
-				handler(this, e);
-			}
-		}
+        protected IViewModelProperty<TProperty> Property<TProperty>(Expression<Func<TProperty>> propertyExpression)
+        {
+            var propertyName = propertyExpression.PropertyName();
 
-		#endregion
+#if DEBUG
+            if (createdViewModelProperties.Contains(propertyName))
+            {
+                var message = $"Cannot define the behavior on the property '{propertyName}' more than once.";
 
-		#region PropertyChanging
+                throw new InvalidOperationException(message);
+            }
+#endif
 
-		protected void OnPropertyChanging(string propertyName)
-		{
-			OnPropertyChanging(new PropertyChangingEventArgs(propertyName));
-		}
+            createdViewModelProperties.Add(propertyName);
 
-		protected void OnPropertyChanging(Expression<Func<object>> propertyExpression)
-		{
-			var propertyName = propertyExpression.PropertyName();
+            return viewModelProperties.Property<TProperty>(propertyInfoDictionary[propertyName]);
+        }
 
-			((INotifyViewModel)this).OnPropertyChanging(propertyName);
-		}
+        #region PropertyChanged
 
-		protected virtual void OnPropertyChanging(PropertyChangingEventArgs e)
-		{
-			if (IsPropertyChangedSuspended)
-			{
-				return;
-			}
+        protected void OnPropertyChanged(string propertyName)
+        {
+            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
 
-			viewModelProperties
-				.Changing(propertyInfoDictionary[e.PropertyName], () => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
+        protected void OnPropertyChanged(Expression<Func<object>> propertyExpression)
+        {
+            var propertyName = propertyExpression.PropertyName();
 
-			var handler = PropertyChanging;
+            ((INotifyViewModel)this).OnPropertyChanged(propertyName);
+        }
 
-			if (handler != null)
-			{
-				handler(this, e);
-			}
-		}
-		#endregion
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (IsPropertyChangedSuspended)
+            {
+                return;
+            }
 
-		private string GetError(Func<IEnumerable<ValidationError>> validate)
-		{
-			var errors = validate().ToList();
+            viewModelProperties.Changed(
+                propertyInfoDictionary[e.PropertyName],
+                () => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
 
-			return !errors.Any() ? string.Empty : errors.Select(x => x.Message).JoinMultiLine();
-		}
-	}
+            HandlePropertyChanged(e);
+        }
+
+        private void HandlePropertyChanged(string propertyName)
+        {
+            Logger.Write($"Property changed for property {propertyName}");
+
+            HandlePropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void HandlePropertyChanged(PropertyChangedEventArgs e)
+        {
+            var handler = PropertyChanged;
+
+            handler?.Invoke(this, e);
+        }
+
+        #endregion
+
+        #region PropertyChanging
+
+        protected void OnPropertyChanging(string propertyName)
+        {
+            OnPropertyChanging(new PropertyChangingEventArgs(propertyName));
+        }
+
+        protected void OnPropertyChanging(Expression<Func<object>> propertyExpression)
+        {
+            var propertyName = propertyExpression.PropertyName();
+
+            ((INotifyViewModel)this).OnPropertyChanging(propertyName);
+        }
+
+        protected virtual void OnPropertyChanging(PropertyChangingEventArgs e)
+        {
+            if (IsPropertyChangedSuspended)
+            {
+                return;
+            }
+
+            viewModelProperties.Changing(
+                propertyInfoDictionary[e.PropertyName],
+                () => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
+
+            var handler = PropertyChanging;
+
+            handler?.Invoke(this, e);
+        }
+
+        #endregion
+
+        private string GetError(Func<IEnumerable<ValidationError>> validate)
+        {
+            var errors = validate().ToList();
+
+            return !errors.Any() ? string.Empty : errors.Select(x => x.Message).JoinMultiLine();
+        }
+    }
 }

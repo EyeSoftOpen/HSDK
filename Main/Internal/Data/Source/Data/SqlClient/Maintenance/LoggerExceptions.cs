@@ -25,7 +25,7 @@
 				new[]
 					{
 						"========================================================",
-						string.Format("WriteLog error at {0}", DateTime.Now.FullTime()),
+                        $"WriteLog error at {DateTime.Now.FullTime()}",
 						exception.Format()
 					};
 
