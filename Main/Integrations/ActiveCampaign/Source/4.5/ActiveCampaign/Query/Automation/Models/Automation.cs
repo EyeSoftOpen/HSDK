@@ -2,7 +2,7 @@ namespace EyeSoft.ActiveCampaign.Query.Automation.Models
 {
 	public class Automation
 	{
-		public Automation(int id, string name, string status)
+		public Automation(int id, string name, AutomationStatus status)
 		{
 			Id = id;
 			Name = name;
@@ -11,6 +11,6 @@ namespace EyeSoft.ActiveCampaign.Query.Automation.Models
 
 		public int Id { get; }
 		public string Name { get; }
-		public string Status { get; }
+		public AutomationStatus Status { get; }
 	}
 }

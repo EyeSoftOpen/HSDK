@@ -32,5 +32,12 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 
 			return ExecuteGetRequest<Contacts>("contact_list", request);
 		}
+
+		public IEnumerable<ContactAutomation> Automations(string email)
+		{
+			var request = new ContactAutomationListRequest(email);
+
+			return ExecuteGetRequest<ContactAutomationList>("contact_automation_list", request)?.Data;
+		}
 	}
 }

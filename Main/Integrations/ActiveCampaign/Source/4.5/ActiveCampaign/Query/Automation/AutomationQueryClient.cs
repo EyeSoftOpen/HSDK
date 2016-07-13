@@ -18,5 +18,12 @@ namespace EyeSoft.ActiveCampaign.Query.Automation
 
 			return ExecuteGetRequest<Automations>("automation_list", request).Data.OrderBy(x => x.Id);
 		}
+
+		public IEnumerable<AutomationContact> Contacts(int automationId)
+		{
+			var request = new AutomationContactListRequest(automationId);
+
+			return ExecuteGetRequest<AutomationContactList>("automation_contact_list", request)?.Data;
+		}
 	}
 }
