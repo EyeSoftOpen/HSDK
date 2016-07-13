@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>EyeSoft.AutoMapper</id>
-    <version>$version</version>
+    <version>$version$</version>
     <title />
     <authors>Eye Soft</authors>
     <owners>Eye Soft</owners>
@@ -15,7 +15,7 @@
     <tags>AutoMapper, LINQ, projections, NHibernate, Entity Framework</tags>
     <dependencies>
       <dependency id="AutoMapper" version="4.1.1" />
-      <dependency id="EyeSoft.Core" version="2.3.6003.17677" />
+      <dependency id="EyeSoft.Core" version="2.3.6024.17594" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="Microsoft.CSharp" />

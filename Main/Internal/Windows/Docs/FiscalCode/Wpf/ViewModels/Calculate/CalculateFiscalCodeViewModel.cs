@@ -64,7 +64,7 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 		{
 			get
 			{
-				if ((!IsValid) || (!Changed) || (Town == null))
+				if (!IsValid || !Changed || (Town == null))
 				{
 					return null;
 				}

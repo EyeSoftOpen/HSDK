@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1987482E-4AA1-4EDD-A299-A33E39C26242}"
 EndProject
@@ -270,6 +270,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ActiveCampaign", "ActiveCampaign", "{01073378-A1F2-408B-97B5-7BC346124CD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.ActiveCampaign", "Integrations\ActiveCampaign\Source\4.5\ActiveCampaign\EyeSoft.ActiveCampaign.csproj", "{D536A032-8856-4B03-A54D-54BF3504CD17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{4F51649F-C09C-426E-B6AA-6E489244FE0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Demo.Validation.Windows", "Internal\Windows\Docs\Validation\Windows\EyeSoft.Demo.Validation.Windows.csproj", "{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Demo.Validation.Windows.ViewModel", "Internal\Windows\Docs\Validation\ViewModels\EyeSoft.Demo.Validation.Windows.ViewModel.csproj", "{3D9BAB81-AAE1-4052-8971-7407AE63438B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -853,6 +859,30 @@ Global
 		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|x86.ActiveCfg = Release|Any CPU
 		{D536A032-8856-4B03-A54D-54BF3504CD17}.Release|x86.Build.0 = Release|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Debug|x86.Build.0 = Debug|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Release|x86.ActiveCfg = Release|Any CPU
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6}.Release|x86.Build.0 = Release|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Debug|x86.Build.0 = Debug|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Release|x86.ActiveCfg = Release|Any CPU
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -973,9 +1003,12 @@ Global
 		{C8772E67-F292-433A-A1A1-D3228AA3CBFE} = {48708E13-4D07-4A9A-AA8F-F32C4EB297EB}
 		{01073378-A1F2-408B-97B5-7BC346124CD2} = {C8772E67-F292-433A-A1A1-D3228AA3CBFE}
 		{D536A032-8856-4B03-A54D-54BF3504CD17} = {01073378-A1F2-408B-97B5-7BC346124CD2}
+		{4F51649F-C09C-426E-B6AA-6E489244FE0F} = {2A26B87E-CD6B-4454-8690-97C6C3A235E4}
+		{6015D09E-B249-4F28-B82B-ACBAFD9EC4C6} = {4F51649F-C09C-426E-B6AA-6E489244FE0F}
+		{3D9BAB81-AAE1-4052-8971-7407AE63438B} = {4F51649F-C09C-426E-B6AA-6E489244FE0F}
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 58
+		SccNumberOfProjects = 60
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
 		SccLocalPath0 = .
@@ -1207,6 +1240,14 @@ Global
 		SccProjectTopLevelParentUniqueName57 = EyeSoft.Hsdk.sln
 		SccProjectName57 = Integrations/ActiveCampaign/Source/4.5/ActiveCampaign
 		SccLocalPath57 = Integrations\\ActiveCampaign\\Source\\4.5\\ActiveCampaign
+		SccProjectUniqueName58 = Internal\\Windows\\Docs\\Validation\\Windows\\EyeSoft.Demo.Validation.Windows.csproj
+		SccProjectTopLevelParentUniqueName58 = EyeSoft.Hsdk.sln
+		SccProjectName58 = Internal/Windows/Docs/Validation/Windows
+		SccLocalPath58 = Internal\\Windows\\Docs\\Validation\\Windows
+		SccProjectUniqueName59 = Internal\\Windows\\Docs\\Validation\\ViewModels\\EyeSoft.Demo.Validation.Windows.ViewModel.csproj
+		SccProjectTopLevelParentUniqueName59 = EyeSoft.Hsdk.sln
+		SccProjectName59 = Internal/Windows/Docs/Validation/ViewModels
+		SccLocalPath59 = Internal\\Windows\\Docs\\Validation\\ViewModels
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = 1e6b55d7-3c42-47df-920d-74d1da205f09

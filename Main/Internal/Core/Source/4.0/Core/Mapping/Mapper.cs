@@ -25,5 +25,5 @@ namespace EyeSoft.Mapping
 		{
 			return Comparer.Equals(source, default(TSource)) ? destination : singletonInstance.Instance.Map(source, destination);
 		}
-	}
+    }
 }

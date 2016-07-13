@@ -9,6 +9,7 @@ namespace EyeSoft.Windows.Model
 	using System.Windows;
 	using System.Windows.Input;
 
+	using EyeSoft.Logging;
 	using EyeSoft.Reflection;
 	using EyeSoft.Validation;
 
@@ -26,7 +27,7 @@ namespace EyeSoft.Windows.Model
 
 		private bool disposed;
 
-		private bool hasErrors;
+		private bool isValid;
 
 		protected ViewModel()
 		{
@@ -61,7 +62,8 @@ namespace EyeSoft.Windows.Model
 		{
 			get
 			{
-				return !hasErrors;
+				Logger.Write($"Get {nameof(IsValid)} of view model '{GetType().FullName}'");
+				return !Validate().Any();
 			}
 		}
 
@@ -70,6 +72,10 @@ namespace EyeSoft.Windows.Model
 			get
 			{
 				var error = GetError(Validate);
+				HandlePropertyChanged(nameof(IsValid));
+
+				Logger.Write($"Getting error of view model '{GetType().FullName}'");
+
 				return error;
 			}
 		}
@@ -78,9 +84,9 @@ namespace EyeSoft.Windows.Model
 		{
 			get
 			{
-				var error = GetError(() => Validate(propertyName));
+				Logger.Write($"Get error for property {propertyName} of '{GetType().FullName}'");
 
-				hasErrors = !error.IsNullOrWhiteSpace();
+				var error = GetError(() => Validate(propertyName));
 
 				HandlePropertyChanged(nameof(IsValid));
 
@@ -90,6 +96,8 @@ namespace EyeSoft.Windows.Model
 
 		public void Dispose()
 		{
+			Logger.Write($"Disposing view model '{GetType().FullName}'");
+
 			Dispose(true);
 
 			GC.SuppressFinalize(this);
@@ -97,6 +105,8 @@ namespace EyeSoft.Windows.Model
 
 		public virtual bool CanClose()
 		{
+			Logger.Write($"{nameof(CanClose)} view model '{GetType().FullName}'. Value {IsValid}");
+
 			return IsValid;
 		}
 
@@ -182,12 +192,21 @@ namespace EyeSoft.Windows.Model
 		protected T GetProperty<T>([CallerMemberName] string callerName = "")
 		{
 			var propertyName = callerName;
-			return viewModelProperties.GetProperty<T>(propertyInfoDictionary[propertyName]);
+
+			return GetPropertyValue<T>(propertyName);
+
+			////var propertyValue = viewModelProperties.GetProperty<T>(propertyInfoDictionary[propertyName]);
+			////Logger.Write($"Read value {propertyValue} from property {propertyName}");
+			////return propertyValue;
 		}
 
 		protected T GetPropertyValue<T>(string propertyName)
 		{
-			return viewModelProperties.GetProperty<T>(propertyInfoDictionary[propertyName]);
+			var value = viewModelProperties.GetProperty<T>(propertyInfoDictionary[propertyName]);
+
+			Logger.Write($"{nameof(GetPropertyValue)} '{propertyName}' value '{value}'");
+
+			return value;
 		}
 
 		protected void SetProperty<T>(T value, bool suspendPropertyChanged = false, [CallerMemberName] string callerName = "")
@@ -195,6 +214,9 @@ namespace EyeSoft.Windows.Model
 			var propertyChangedSuspended = suspendPropertyChanged || IsPropertyChangedSuspended;
 
 			var propertyName = callerName;
+
+			Logger.Write($"{nameof(SetProperty)} '{propertyName}' value '{value}'");
+
 			viewModelProperties.SetProperty(propertyInfoDictionary[propertyName], value, propertyChangedSuspended);
 		}
 
@@ -207,7 +229,7 @@ namespace EyeSoft.Windows.Model
 #if DEBUG
 			if (createdViewModelProperties.Contains(propertyName))
 			{
-				var message = string.Format("Cannot define the behavior on the property '{0}' more than once.", propertyName);
+				var message = $"Cannot define the behavior on the property '{propertyName}' more than once.";
 				throw new InvalidOperationException(message);
 			}
 #endif
@@ -247,6 +269,8 @@ namespace EyeSoft.Windows.Model
 
 		private void HandlePropertyChanged(string propertyName)
 		{
+			Logger.Write($"Property changed for property {propertyName}");
+
 			HandlePropertyChanged(new PropertyChangedEventArgs(propertyName));
 		}
 
@@ -254,10 +278,7 @@ namespace EyeSoft.Windows.Model
 		{
 			var handler = PropertyChanged;
 
-			if (handler != null)
-			{
-				handler(this, e);
-			}
+			handler?.Invoke(this, e);
 		}
 
 		#endregion
@@ -272,6 +293,8 @@ namespace EyeSoft.Windows.Model
 		protected void OnPropertyChanging(Expression<Func<object>> propertyExpression)
 		{
 			var propertyName = propertyExpression.PropertyName();
+
+			Logger.Write($"{nameof(OnPropertyChanging)} on '{propertyName}'");
 
 			((INotifyViewModel)this).OnPropertyChanging(propertyName);
 		}
@@ -288,14 +311,11 @@ namespace EyeSoft.Windows.Model
 
 			var handler = PropertyChanging;
 
-			if (handler != null)
-			{
-				handler(this, e);
-			}
+			handler?.Invoke(this, e);
 		}
 		#endregion
 
-		private string GetError(Func<IEnumerable<ValidationError>> validate)
+		private static string GetError(Func<IEnumerable<ValidationError>> validate)
 		{
 			var errors = validate().ToList();
 

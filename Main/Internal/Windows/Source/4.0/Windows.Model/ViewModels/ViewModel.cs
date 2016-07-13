@@ -22,8 +22,6 @@ namespace EyeSoft.Windows.Model
 
 		private bool disposed;
 
-		private bool hasErrors;
-
 		protected ViewModel()
 		{
 			propertyInfoDictionary = new PropertyInfoDictionary(this);
@@ -49,7 +47,7 @@ namespace EyeSoft.Windows.Model
 
 		public virtual bool IsValid
 		{
-			get { return !hasErrors; }
+			get { return !Validate().Any(); }
 		}
 
 		public string Error
@@ -66,8 +64,6 @@ namespace EyeSoft.Windows.Model
 			get
 			{
 				var error = GetError(() => Validate(propertyName));
-
-				hasErrors = !error.IsNullOrWhiteSpace();
 
 				OnPropertyChanged(nameof(IsValid));
 

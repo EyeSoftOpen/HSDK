@@ -2,7 +2,7 @@ namespace EyeSoft.ActiveCampaign.Helpers
 {
 	using Newtonsoft.Json;
 
-	internal static class JsonConvertWrapper
+	public static class JsonConvertWrapper
 	{
 		private static readonly JsonSerializerSettings settings = new JsonSerializerSettings
 		{

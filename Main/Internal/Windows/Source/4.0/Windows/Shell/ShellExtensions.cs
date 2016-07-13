@@ -31,33 +31,42 @@
 				throw new FileNotFoundException(filePath);
 			}
 
-			dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID("Shell.Application"));
-
-			var path = Path.GetDirectoryName(filePath);
-			var fileName = Path.GetFileName(filePath);
-
-			var directory = shellApplication.NameSpace(path);
-			var link = directory.ParseName(fileName);
-
-			var verbs = link.Verbs();
-
-			var searhingVerb = pin ? "pin to taskbar" : "unpin from taskbar";
-
-			for (var i = 0; i < verbs.Count(); i++)
+			try
 			{
-				var verb = verbs.Item(i);
-				string verbName = verb.Name.Replace(@"&", null).ToLower();
 
-				if (!verbName.Equals(searhingVerb))
+				dynamic shellApplication = Activator.CreateInstance(Type.GetTypeFromProgID("Shell.Application"));
+
+				var path = Path.GetDirectoryName(filePath);
+				var fileName = Path.GetFileName(filePath);
+
+				var directory = shellApplication.NameSpace(path);
+				var link = directory.ParseName(fileName);
+
+				var verbs = link.Verbs();
+
+				var searhingVerb = pin ? "pin to taskbar" : "unpin from taskbar";
+
+				for (var i = 0; i < verbs.Count(); i++)
 				{
-					continue;
+					var verb = verbs.Item(i);
+					string verbName = verb.Name.Replace(@"&", null).ToLower();
+
+					if (!verbName.Equals(searhingVerb))
+					{
+						continue;
+					}
+
+					verb.DoIt();
+					break;
 				}
 
-				verb.DoIt();
-				break;
-			}
+				Marshal.ReleaseComObject(shellApplication);
 
-			Marshal.ReleaseComObject(shellApplication);
+			}
+			catch (Exception e)
+			{
+			    throw;
+			}
 		}
 	}
 }

@@ -17,8 +17,11 @@ void Main()
 			.GroupBy(x => x.Title)
 			.Select(x => new { Title = x.Key, x.First().Version })
 			.OrderBy(x => x.Title)
-			.Dump("Packages");
+			.GroupBy(x => x.Version)
+			.Select(x => new { Version = x.Key, Packages = x.Select(t => t.Title) });
 		
+	packagesVersion.Dump($"Packages - Latest version {packagesVersion.Max(x => Version.Parse(x.Version))}");
+	
 	packagesVersion
 		.Select(x => Version.Parse(x.Version).ToString())
 		.Distinct()

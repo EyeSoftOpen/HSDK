@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$title$</id>
-    <version>$version</version>
+    <version>$version$</version>
     <title>$title$</title>
     <authors>Eye Soft</authors>
     <owners>$author$</owners>
@@ -14,8 +14,8 @@
     <copyright>$author$</copyright>
     <tags>installer Windows UI WPF InstallMate Tarma</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="2.3.6003.17677" />
-      <dependency id="EyeSoft.Windows" version="2.3.6003.17677" />
+      <dependency id="EyeSoft.Core" version="2.3.6024.17594" />
+      <dependency id="EyeSoft.Windows" version="2.3.6024.17594" />
     </dependencies>
   </metadata>
   <files>

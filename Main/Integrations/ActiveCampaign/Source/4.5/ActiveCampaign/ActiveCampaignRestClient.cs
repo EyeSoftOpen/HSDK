@@ -20,7 +20,12 @@ namespace EyeSoft.ActiveCampaign
 			baseAddress = $"{connection.Account}/admin/api.php?";
 		}
 
-		internal TResult ExecuteGetRequest<TResult>(string action, ActiveCampaignRequest requestData)
+		public void Dispose()
+		{
+			connection.Dispose();
+		}
+
+		protected TResult ExecuteGetRequest<TResult>(string action, ActiveCampaignRequest requestData)
 		{
 			var queryParameters = GetQueryString(action, requestData);
 
@@ -35,7 +40,7 @@ namespace EyeSoft.ActiveCampaign
 			return result;
 		}
 
-		internal TResult ExecutePostRequest<TResult>(string action, ActiveCampaignRequest request) where TResult : ActiveCampaignResponse
+		protected TResult ExecutePostRequest<TResult>(string action, ActiveCampaignRequest request) where TResult : ActiveCampaignResponse
 		{
 			var urlAction = baseAddress;
 
@@ -85,11 +90,6 @@ namespace EyeSoft.ActiveCampaign
 			request.ApiKey = connection.ApiKey;
 			request.ApiAction = action;
 			request.ApiOutput = "json";
-		}
-
-		public void Dispose()
-		{
-			connection.Dispose();
 		}
 	}
 }

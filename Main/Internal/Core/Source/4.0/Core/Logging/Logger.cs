@@ -34,6 +34,7 @@
 			return agregatorLogger.Instance.Register(logger);
 		}
 
+		[Conditional("DEBUG")]
 		public static void Write(string message)
 		{
 			agregatorLogger.Instance.Write(message);

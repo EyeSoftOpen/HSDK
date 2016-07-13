@@ -9,14 +9,14 @@
 	{
 		private readonly string logFolder;
 
-		public XmlFileExceptionLogger(string logFolder)
+	    public XmlFileExceptionLogger(string logFolder)
 		{
 			this.logFolder = logFolder;
 		}
 
 		public void Write(string message)
 		{
-		}
+        }
 
 		public void Error(Exception exception)
 		{
@@ -26,9 +26,9 @@
 
 			Storage.Directory(currentLogPath).Create();
 
-			var logFilePath = Path.Combine(currentLogPath, string.Format("Log.{0}.xml", dateTime.ToString("HH.mm.ss")));
+			var erroLogFilePath = Path.Combine(currentLogPath, $"Error.Log.{dateTime.ToString("HH.mm.ss")}.xml");
 
-			using (var stream = Storage.OpenWrite(logFilePath))
+			using (var stream = Storage.OpenWrite(erroLogFilePath))
 			{
 				new ExceptionXElement(exception).Save(stream);
 			}
