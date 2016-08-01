@@ -2,6 +2,7 @@
 {
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
+	using System.Linq;
 
 	using EyeSoft.Collections.Generic;
 
@@ -25,6 +26,23 @@
 		}
 
 		[TestMethod]
+		public void SynchronizeHomogeneousCollectionWithActionOnDelete()
+		{
+			var collection = new Collection<Customer> { new Customer("1"), new Customer("4"), new Customer("5") };
+
+			var synchronizeWith = new[] { new Customer("1"), new Customer("5"), new Customer("6") };
+
+			collection.Synchronize(synchronizeWith, SetCustomerAsDeleted);
+
+			collection.Should().Have.SameSequenceAs(collection);
+
+			foreach (var item in collection.Except(synchronizeWith))
+			{
+				item.IsDeleted.Should().Be.True();
+			}
+		}
+
+		[TestMethod]
 		public void SynchronizeHeterogeneousCollection()
 		{
 			var collection = new Collection<Customer> { new Customer("1"), new Customer("4"), new Customer("5") };
@@ -34,6 +52,23 @@
 			collection.Synchronize(synchronizeWith, x => new Customer(x.Name));
 
 			collection.Should().Have.SameSequenceAs(new Customer("1"), new Customer("5"), new Customer("6"));
+		}
+
+		[TestMethod]
+		public void SynchronizeHeterogeneousCollectionWithActionOnDelete()
+		{
+			var collection = new Collection<Customer> { new Customer("1"), new Customer("4"), new Customer("5") };
+
+			var synchronizeWith = new[] { new CustomerDto("1"), new CustomerDto("5"), new CustomerDto("6") };
+
+			collection.Synchronize(synchronizeWith, x => new Customer(x.Name), null, null, SetCustomerAsDeleted);
+
+			collection.Should().Have.SameSequenceAs(collection);
+
+			foreach (var item in collection.Where(x => synchronizeWith.All(s => s.Name != x.Name)))
+			{
+				item.IsDeleted.Should().Be.True();
+			}
 		}
 
 		[TestMethod]
@@ -53,6 +88,11 @@
 			}
 		}
 
+		private void SetCustomerAsDeleted(Customer customer)
+		{
+			customer.IsDeleted = true;
+		}
+
 		private class Customer
 		{
 			public Customer(string name)
@@ -60,7 +100,9 @@
 				Name = name;
 			}
 
-			private string Name { get; set; }
+			public string Name { get; }
+
+			public bool IsDeleted { get; set; }
 
 			public override bool Equals(object obj)
 			{

@@ -31,12 +31,18 @@
 			return first.Synchronize(second, x => x);
 		}
 
+		public static ICollection<T> Synchronize<T>(this ICollection<T> first, IEnumerable<T> second, Action<T> remove)
+		{
+			return first.Synchronize(second, x => x, null, null, remove);
+		}
+
 		public static ICollection<TFirst> Synchronize<TFirst, TSecond>(
 			this ICollection<TFirst> first,
 			IEnumerable<TSecond> second,
 			Func<TSecond, TFirst> convert = null,
 			Func<TFirst, int> firstHash = null,
-			Func<TSecond, int> secondHash = null)
+			Func<TSecond, int> secondHash = null,
+			Action<TFirst> remove = null)
 		{
 			if (firstHash == null)
 			{
@@ -67,7 +73,14 @@
 
 			foreach (var item in toRemove)
 			{
-				first.Remove(item.Value);
+				if (remove == null)
+				{
+					first.Remove(item.Value);
+				}
+				else
+				{
+					remove(item.Value);
+				}
 			}
 
 			return first;
