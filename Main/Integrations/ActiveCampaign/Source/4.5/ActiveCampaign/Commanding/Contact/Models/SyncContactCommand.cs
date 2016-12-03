@@ -4,17 +4,14 @@ namespace EyeSoft.ActiveCampaign.Commanding.Contact.Models
 
 	public class SyncContactCommand : ActiveCampaignRequest
 	{
-		public SyncContactCommand(int id, string email)
+		public SyncContactCommand(string email)
 		{
-			Id = id;
 			Email = email;
 
 			var fields = new Dictionary<string, string>();
 
 			Fields = fields;
 		}
-
-		public int Id { get; }
 
 		public string Email { get; }
 
@@ -27,6 +24,8 @@ namespace EyeSoft.ActiveCampaign.Commanding.Contact.Models
 		public string Orgname { get; set; }
 
 		public string Tags { get; set; }
+
+		public string PValues { get; set; }
 
 		public IReadOnlyDictionary<string, string> Fields { get; }
 	}

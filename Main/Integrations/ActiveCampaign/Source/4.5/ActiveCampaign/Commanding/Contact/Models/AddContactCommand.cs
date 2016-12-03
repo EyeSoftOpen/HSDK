@@ -28,6 +28,8 @@
 
 		public string Tags { get; set; }
 
-		public IReadOnlyDictionary<string, string> Fields { get; }
+        public string PValues { get; set; }
+
+        public IReadOnlyDictionary<string, string> Fields { get; }
 	}
 }

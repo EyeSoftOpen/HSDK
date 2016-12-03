@@ -11,14 +11,14 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 		{
 		}
 
-		public Contacts GetContacts(params int[] ids)
+		public Contacts GetContacts(int page = 0, params int[] ids)
 		{
-			return GetContacts(string.Join(",", ids));
+			return GetContacts(string.Join(",", ids), page);
 		}
 
-		public IEnumerable<Contact> GetAll()
+		public IEnumerable<Contact> GetAll(int page = 0)
 		{
-			return GetContacts("all").Data;
+			return GetContacts("all", page).Data;
 		}
 
 		public Contact Get(string email)
@@ -26,9 +26,9 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 			return ExecuteGetRequest<Contact>("contact_view_email", new ContactViewEmailRequest(email));
 		}
 
-		private Contacts GetContacts(string ids)
+		private Contacts GetContacts(string ids, int page)
 		{
-			var request = new ContactsRequest { Ids = ids };
+			var request = new ContactsRequest { Ids = ids, Page = page };
 
 			return ExecuteGetRequest<Contacts>("contact_list", request);
 		}

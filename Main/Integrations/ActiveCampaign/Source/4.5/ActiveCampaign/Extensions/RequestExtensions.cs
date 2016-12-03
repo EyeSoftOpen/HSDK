@@ -26,7 +26,7 @@ namespace EyeSoft.ActiveCampaign.Extensions
 							}
 
 							var propertyName = pi.Name == PValuePropertyName ?
-								$"P[{propertyValue}]" :
+								$"p[{propertyValue}]" :
 								pi.Name.CamelCaseToUnderscore();
 
 							formFields.Add(propertyName, propertyValue.ToString());

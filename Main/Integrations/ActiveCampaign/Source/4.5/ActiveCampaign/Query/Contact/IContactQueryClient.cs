@@ -9,8 +9,8 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 	{
 		Contact Get(string email);
 
-		IEnumerable<Contact> GetAll();
+		IEnumerable<Contact> GetAll(int page = 0);
 
-		Contacts GetContacts(params int[] ids);
+		Contacts GetContacts(int page = 0, params int[] ids);
 	}
 }

@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>validation, fluent validation, FluentValidation, dependency injection, inversion of control</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="2.3.6024.17594" />
+      <dependency id="EyeSoft.Core" version="3.0.6057.30375" />
       <dependency id="FluentValidation-Signed" version="6.2.1.0" />
     </dependencies>
   </metadata>

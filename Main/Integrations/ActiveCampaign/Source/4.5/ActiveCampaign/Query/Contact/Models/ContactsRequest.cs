@@ -5,5 +5,7 @@ namespace EyeSoft.ActiveCampaign.Query.Contact.Models
 	public class ContactsRequest : ActiveCampaignRequest
 	{
 		public string Ids { get; set; }
+
+	    public int Page { get; set; }
 	}
 }
