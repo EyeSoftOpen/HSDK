@@ -630,8 +630,14 @@
     <Compile Include="..\..\4.0\Core\Logging\AggregatorLogger.cs">
       <Link>Logging\AggregatorLogger.cs</Link>
     </Compile>
+    <Compile Include="..\..\4.0\Core\Logging\ConsoleLogger.cs">
+      <Link>Logging\ConsoleLogger.cs</Link>
+    </Compile>
     <Compile Include="..\..\4.0\Core\Logging\DefaultAggregatorLogger.cs">
       <Link>Logging\DefaultAggregatorLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\Logging\FileExceptionLogger.cs">
+      <Link>Logging\FileExceptionLogger.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Core\Logging\IAggregatorLogger.cs">
       <Link>Logging\IAggregatorLogger.cs</Link>
@@ -1044,8 +1050,6 @@
     <Compile Include="..\..\4.0\Core\Xml\Serialization\XsltTransformer.cs">
       <Link>Xml\Serialization\XsltTransformer.cs</Link>
     </Compile>
-    <Compile Include="Logging\ConsoleLogger.cs" />
-    <Compile Include="Logging\FileExceptionLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

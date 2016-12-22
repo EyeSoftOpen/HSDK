@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>active campaign,email marketing,funnel,email automation</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6057.30375" />
+      <dependency id="EyeSoft.Core" version="3.0.6200.30732" />
     </dependencies>
   </metadata>
   <files>
