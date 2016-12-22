@@ -7,12 +7,12 @@ namespace EyeSoft.Nuget.Publisher.Core.Core
 
 	public static class Storage
 	{
-		private static readonly bool canWrite;
+	    private static readonly bool canWrite = true;
 
 		static Storage()
 		{
-			var choice = Util.ReadLine("Overwrite all Nuspec and AssemblyInfo files for real? [Y, N]");
-			canWrite = choice.Equals("y", StringComparison.InvariantCultureIgnoreCase);
+			////var choice = Util.ReadLine("Overwrite all Nuspec and AssemblyInfo files for real? [Y, N]");
+			////canWrite = choice.Equals("y", StringComparison.InvariantCultureIgnoreCase);
 		}
 
 		public static string[] ReadAllLines(string path)
