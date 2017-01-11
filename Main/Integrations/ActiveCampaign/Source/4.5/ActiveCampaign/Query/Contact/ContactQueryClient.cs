@@ -1,6 +1,7 @@
 namespace EyeSoft.ActiveCampaign.Query.Contact
 {
 	using System.Collections.Generic;
+	using System.Linq;
 
 	using EyeSoft.ActiveCampaign.Query.Contact.Models;
 
@@ -16,9 +17,16 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 			return GetContacts(string.Join(",", ids), page);
 		}
 
-		public IEnumerable<Contact> GetAll(int page = 0)
+		public IEnumerable<Contact> GetAll(int page = 0, string filterField = null, object[] filterValues = null)
 		{
-			return GetContacts("all", page).Data;
+			var result = GetContacts("all", page, filterField, filterValues);
+
+			if (result != null)
+			{
+				return result.Data;
+			}
+
+			return Enumerable.Empty<Contact>();
 		}
 
 		public Contact Get(string email)
@@ -26,9 +34,14 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 			return ExecuteGetRequest<Contact>("contact_view_email", new ContactViewEmailRequest(email));
 		}
 
-		private Contacts GetContacts(string ids, int page)
+		private Contacts GetContacts(string ids, int page, string filterField = null, object[] filterValues = null)
 		{
-			var request = new ContactsRequest { Ids = ids, Page = page };
+			if (!string.IsNullOrEmpty(filterField))
+			{
+				ids = null;
+			}
+
+			var request = new ContactsRequest { Ids = ids, Page = page, FilterField = filterField, FilterValues = filterValues };
 
 			return ExecuteGetRequest<Contacts>("contact_list", request);
 		}

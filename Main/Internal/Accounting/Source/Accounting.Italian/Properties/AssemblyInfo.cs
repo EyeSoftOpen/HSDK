@@ -16,8 +16,8 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("54c6f3b6-a51e-4df4-8c53-9e349c180f4d")]
 
-[assembly: AssemblyVersion("3.0.6200.30732")]
-[assembly: AssemblyFileVersion("3.0.6200.30732")]
+[assembly: AssemblyVersion("3.0.6201.15091")]
+[assembly: AssemblyFileVersion("3.0.6201.15091")]
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
 	"EyeSoft.Accounting.Italian.Test, PublicKey=" +

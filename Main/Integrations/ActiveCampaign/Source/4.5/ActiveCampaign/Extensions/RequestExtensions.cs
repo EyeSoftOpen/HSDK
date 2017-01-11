@@ -5,34 +5,56 @@ namespace EyeSoft.ActiveCampaign.Extensions
 
 	using EyeSoft.ActiveCampaign.Commanding;
 
-	internal static class RequestExtensions
-	{
-		public static NameValueCollection GetNamedValueCollection(this ActiveCampaignRequest request)
-		{
-			const string PValuePropertyName = "PValues";
+    internal static class RequestExtensions
+    {
+        public static NameValueCollection GetNamedValueCollection(this ActiveCampaignRequest request)
+        {
+            const string PValuePropertyName = "PValues";
 
-			var formFields = new NameValueCollection();
+            const string FilterFieldPropertyName = "FilterField";
 
-			request.GetType().GetProperties()
-				.ToList()
-				.ForEach(
-					pi =>
-						{
-							var propertyValue = pi.GetValue(request, null);
+            const string FilterValuePropertyName = "FilterValues";
 
-							if (propertyValue == null)
-							{
-								return;
-							}
+            var formFields = new NameValueCollection();
 
-							var propertyName = pi.Name == PValuePropertyName ?
-								$"p[{propertyValue}]" :
-								pi.Name.CamelCaseToUnderscore();
+            var properties = request
+                        .GetType()
+                        .GetProperties()
+                        .ToList();
 
-							formFields.Add(propertyName, propertyValue.ToString());
-						});
+            properties
+                .Where(p => p.Name != FilterFieldPropertyName)
+                .ToList()
+                .ForEach(
+                    pi =>
+                    {
+                        var propertyValue = pi.GetValue(request, null);
 
-			return formFields;
-		}
-	}
+                        if (propertyValue == null)
+                        {
+                            return;
+                        }
+
+                        string propertyName;
+
+                        if (pi.Name == PValuePropertyName)
+                        {
+                            propertyName = $"p[{propertyValue}]";
+                        }
+
+                        if (pi.Name == FilterValuePropertyName)
+                        {
+                            var filterField = properties.Single(p => p.Name == FilterFieldPropertyName).GetValue(request, null);
+
+                            propertyName = $"filters[{filterField}]";
+                        }
+
+                        propertyName = pi.Name.CamelCaseToUnderscore();
+
+                        formFields.Add(propertyName, propertyValue.ToString());
+                    });
+
+            return formFields;
+        }
+    }
 }

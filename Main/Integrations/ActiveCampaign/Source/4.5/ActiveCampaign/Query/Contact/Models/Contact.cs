@@ -9,7 +9,9 @@ namespace EyeSoft.ActiveCampaign.Query.Contact.Models
 	[DebuggerDisplay("{Email}")]
 	public class Contact
 	{
-		public int Id { get; set; }
+	    private const string NullDateString = "0000-00-00 00:00:00";
+
+	    public int Id { get; set; }
 
 		public string Email { get; set; }
 
@@ -19,13 +21,17 @@ namespace EyeSoft.ActiveCampaign.Query.Contact.Models
 		[JsonProperty(PropertyName = "last_name")]
 		public string LastName { get; set; }
 
-		[JsonProperty(PropertyName = "sdate")]
-		public DateTime? Subscribed { get; set; }
+        [JsonProperty(PropertyName = "sdate")]
+        public string SubscribedDate { get; set; }
 
-		[JsonProperty(PropertyName = "udate")]
-		public DateTime? Unsubscribed { get; set; }
+		public DateTime? Subscribed => ConvertDateTime(SubscribedDate);
 
-		[JsonProperty(PropertyName = "cdate")]
+        [JsonProperty(PropertyName = "udate")]
+		public string UnsubscribedDate { get; set; }
+
+        public DateTime? Unsubscribed => ConvertDateTime(UnsubscribedDate);
+
+        [JsonProperty(PropertyName = "cdate")]
 		public DateTime Creation { get; set; }
 
 		public string ListName { get; set; }
@@ -33,5 +39,15 @@ namespace EyeSoft.ActiveCampaign.Query.Contact.Models
 		public string Ua { get; set; }
 
 		public IEnumerable<ContactAction> Actions { get; set; }
+
+		private DateTime? ConvertDateTime(string dateTimeString)
+		{
+		    if (string.IsNullOrEmpty(dateTimeString) || dateTimeString == NullDateString)
+			{
+				return null;
+			}
+
+			return DateTime.Parse(dateTimeString);
+		}
 	}
 }

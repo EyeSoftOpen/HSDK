@@ -6,92 +6,135 @@
 	using System.Linq;
 	using System.Text.RegularExpressions;
 
-	internal static class UrlHelper
-	{
-		private static readonly ISet<string> knownProperties =
-			   new HashSet<string> { "Error", "UserDescription", "Version" };
+    internal static class UrlHelper
+    {
+        const string FilterFieldPropertyName = "FilterField";
 
-		public static string ToQueryString(this object request)
-		{
-			if (request == null)
-			{
-				return string.Empty;
-			}
+        const string FilterValuesPropertyName = "FilterValues";
 
-			var requestString = request as string;
+        private static readonly ISet<string> knownProperties =
+               new HashSet<string> { "Error", "UserDescription", "Version" };
 
-			if (requestString != null)
-			{
-				return requestString;
-			}
+        public static string ToQueryString(this object request)
+        {
+            if (request == null)
+            {
+                return string.Empty;
+            }
 
-			// Get all properties on the object
-			var properties =
-				request.GetType()
-					.GetProperties()
-					.Where(x => x.CanRead)
-					.Where(x => x.GetValue(request, null) != null)
-					.ToDictionary(
-						k => k.Name,
-						v =>
-						{
-							var value = v.GetValue(request, null);
-							return value.GetType().IsEnum ? (int)value : value;
-						});
+            var requestString = request as string;
 
-			// Get names for all IEnumerable properties (excl. string)
-			var propertyNames = properties.Where(x => !(x.Value is string) && x.Value is IEnumerable).Select(x => x.Key).ToList();
+            if (requestString != null)
+            {
+                return requestString;
+            }
 
-			// Concat all IEnumerable properties into a comma separated string
-			foreach (var key in propertyNames)
-			{
-				var valueType = properties[key].GetType();
+            // Get all properties on the object
+            var properties =
+                request.GetType()
+                    .GetProperties()
+                    .Where(x => x.CanRead)
+                    .Where(x => x.GetValue(request, null) != null)
+                    .ToDictionary(
+                        k => k.Name,
+                        v =>
+                        {
+                            var value = v.GetValue(request, null);
+                            return value.GetType().IsEnum ? (int)value : value;
+                        });
 
-				var valueElemType = valueType.IsGenericType ? valueType.GetGenericArguments()[0] : valueType.GetElementType();
+            // Get names for all IEnumerable properties (excl. string)
+            var propertyNames = properties.Where(x => !(x.Value is string) && x.Value is IEnumerable).Select(x => x.Key).ToList();
 
-				var isEnum = valueElemType.IsEnum;
+            // Concat all IEnumerable properties into a comma separated string
+            foreach (var key in propertyNames)
+            {
+                var valueType = properties[key].GetType();
 
-				Func<object, string> toString = x => isEnum ? ((int)x).ToString() : x.ToString();
+                var valueElemType = valueType.IsGenericType ? valueType.GetGenericArguments()[0] : valueType.GetElementType();
 
-				var isEnumerable = properties[key] is IEnumerable;
+                var isEnum = valueElemType.IsEnum;
 
-				if (!valueElemType.IsPrimitive && valueElemType != typeof(string) && !isEnumerable)
-				{
-					continue;
-				}
+                Func<object, string> toString = x => isEnum ? ((int)x).ToString() : x.ToString();
 
-				var enumerable = properties[key] as IEnumerable;
+                var isEnumerable = properties[key] is IEnumerable;
 
-				Func<IEnumerable, IEnumerable<string>> enumerableValues = x => x.Cast<object>().Select(i => toString(i));
+                if (!valueElemType.IsPrimitive && valueElemType != typeof(string) && !isEnumerable)
+                {
+                    continue;
+                }
 
-				properties[key] = string.Join(ResolvePropertyName(key) + "=", enumerableValues(enumerable).Select(x => x + "&")).TrimEnd('&');
-			}
+                var enumerable = properties[key] as IEnumerable;
 
-			// Concat all key/value pairs into a string separated by ampersand
-			return string.Join("&", properties.Select(x => string.Concat(ResolvePropertyName(x.Key), "=", x.Value.ToString())));
-		}
+                Func<IEnumerable, IEnumerable<string>> enumerableValues = x => x.Cast<object>().Select(i => toString(i));
 
-		public static string ToQueryString(this IEnumerable enumerbale, string enumerableName)
-		{
-			return string.Join("&", enumerbale.Cast<object>().Select(x => string.Concat(enumerableName, "=", x.ToString())));
-		}
+                string propertyName;
 
-		private static string ResolvePropertyName(string propertyName)
-		{
-			if (propertyName == "LogContext")
-			{
-				return propertyName;
-			}
+                if (key == FilterValuesPropertyName)
+                {
+                    var filterField = properties[FilterFieldPropertyName];
 
-			var newPropertyName =
-				Regex.Replace(propertyName, @"([A-Z])([A-Z][a-z])|([a-z0-9])([A-Z])", "$1$3_$2$4").ToLower();
+                    propertyName = $"filters[{filterField}]";
+                }
+                else
+                {
+                    propertyName = key;
+                }
 
-			if (knownProperties.Contains(propertyName))
-			{
-				newPropertyName = string.Concat("@", newPropertyName);
-			}
+                var tempName = CamelCaseToUnderscorePropertyName(propertyName);
 
-			return newPropertyName;
-		}
-	}
+                var tempValues = enumerableValues(enumerable).Select(x => x + "&").ToList();
+
+                string value;
+
+                if (tempValues.Count() == 1)
+                {
+                    value = $"{tempName}={string.Join("", tempValues)}";
+                }
+                else
+                {
+                    value = string.Join(tempName + "=", tempValues);
+                }
+
+                properties[key] = value.TrimEnd('&');
+            }
+
+            var propertiesValues = properties.Where(p => p.Key != FilterFieldPropertyName).Select(x => ResolvePropertyName(x.Key, x.Value.ToString()));
+
+            return string.Join("&", propertiesValues);
+        }
+
+        public static string ToQueryString(this IEnumerable enumerbale, string enumerableName)
+        {
+            return string.Join("&", enumerbale.Cast<object>().Select(x => string.Concat(enumerableName, "=", x.ToString())));
+        }
+
+        private static string ResolvePropertyName(string propertyName, string propertyValue)
+        {
+            if (propertyName == FilterValuesPropertyName)
+            {
+                return propertyValue;
+            }
+
+            return string.Concat(CamelCaseToUnderscorePropertyName(propertyName), "=", propertyValue);
+        }
+
+        private static string CamelCaseToUnderscorePropertyName(string propertyName)
+        {
+            if (propertyName == "LogContext")
+            {
+                return propertyName;
+            }
+
+            var newPropertyName =
+                Regex.Replace(propertyName, @"([A-Z])([A-Z][a-z])|([a-z0-9])([A-Z])", "$1$3_$2$4").ToLower();
+
+            if (knownProperties.Contains(propertyName))
+            {
+                newPropertyName = string.Concat("@", newPropertyName);
+            }
+
+            return newPropertyName;
+        }
+    }
 }
