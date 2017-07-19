@@ -23,6 +23,11 @@ namespace EyeSoft.Windows.Model
 
 		public int Changes { get; private set; }
 
+	    public void ResetPropertyChanges()
+	    {
+	        Changes = 0;
+	    }
+
 		public void Changing(PropertyInfo propertyInfo, Func<object> valueFactory)
 		{
 			var viewModelProperty = ViewModelProperty(propertyInfo);

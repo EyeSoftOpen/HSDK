@@ -1,60 +1,79 @@
 namespace EyeSoft.ActiveCampaign.Extensions
 {
-	using System.Collections.Specialized;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
 	using System.Linq;
 
 	using EyeSoft.ActiveCampaign.Commanding;
 
-    internal static class RequestExtensions
-    {
-        public static NameValueCollection GetNamedValueCollection(this ActiveCampaignRequest request)
-        {
-            const string PValuePropertyName = "PValues";
+	internal static class RequestExtensions
+	{
+		public static NameValueCollection GetNamedValueCollection(this ActiveCampaignRequest request)
+		{
+			const string PValuePropertyName = "PValues";
 
-            const string FilterFieldPropertyName = "FilterField";
+			const string FilterFieldPropertyName = "FilterField";
 
-            const string FilterValuePropertyName = "FilterValues";
+			const string FilterValuePropertyName = "FilterValues";
+
+            const string FieldsPropertyName = "Fields";
 
             var formFields = new NameValueCollection();
 
-            var properties = request
-                        .GetType()
-                        .GetProperties()
-                        .ToList();
+			var properties = request
+						.GetType()
+						.GetProperties()
+						.ToList();
 
-            properties
-                .Where(p => p.Name != FilterFieldPropertyName)
-                .ToList()
-                .ForEach(
-                    pi =>
-                    {
-                        var propertyValue = pi.GetValue(request, null);
+			properties
+				.Where(p => p.Name != FilterFieldPropertyName)
+				.ToList()
+				.ForEach(
+					pi =>
+					{
+						var propertyValue = pi.GetValue(request, null);
 
-                        if (propertyValue == null)
+						if (propertyValue == null)
+						{
+							return;
+						}
+
+						var propertyName = pi.Name;
+
+						if (propertyName == PValuePropertyName)
+						{
+							propertyName = $"p[{propertyValue}]";
+						}
+
+						if (propertyName == FilterValuePropertyName)
+						{
+							var filterField = properties.Single(p => p.Name == FilterFieldPropertyName).GetValue(request, null);
+
+							propertyName = $"filters[{filterField}]";
+						}
+
+                        if (propertyName == FieldsPropertyName)
                         {
+                            var fieldsValues = (IDictionary<string, string>)properties.Single(p => p.Name == FieldsPropertyName).GetValue(request, null);
+
+                            foreach (var field in fieldsValues)
+                            {
+                                var fieldName = $"field[%{field.Key}%, 0]";
+
+                                var fieldValue = field.Value;
+
+                                formFields.Add(fieldName, fieldValue);
+                            }
+
                             return;
                         }
 
-                        string propertyName;
+                        propertyName = propertyName.CamelCaseToUnderscore();
 
-                        if (pi.Name == PValuePropertyName)
-                        {
-                            propertyName = $"p[{propertyValue}]";
-                        }
+						formFields.Add(propertyName, propertyValue.ToString());
+					});
 
-                        if (pi.Name == FilterValuePropertyName)
-                        {
-                            var filterField = properties.Single(p => p.Name == FilterFieldPropertyName).GetValue(request, null);
-
-                            propertyName = $"filters[{filterField}]";
-                        }
-
-                        propertyName = pi.Name.CamelCaseToUnderscore();
-
-                        formFields.Add(propertyName, propertyValue.ToString());
-                    });
-
-            return formFields;
-        }
-    }
+			return formFields;
+		}
+	}
 }

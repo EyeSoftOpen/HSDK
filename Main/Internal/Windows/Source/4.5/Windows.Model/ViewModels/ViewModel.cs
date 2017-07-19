@@ -120,6 +120,11 @@ namespace EyeSoft.Windows.Model
             IsPropertyChangedSuspended = true;
         }
 
+        public void ResetPropertyChanges()
+        {
+            viewModelProperties.ResetPropertyChanges();
+        }
+
         void INotifyViewModel.OnPropertyChanged(string propertyName)
         {
             OnPropertyChanged(propertyName);

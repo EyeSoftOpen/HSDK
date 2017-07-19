@@ -8,9 +8,7 @@ namespace EyeSoft.ActiveCampaign.Commanding.Contact.Models
 		{
 			Email = email;
 
-			var fields = new Dictionary<string, string>();
-
-			Fields = fields;
+			Fields = new Dictionary<string, string>();
 		}
 
 		public string Email { get; }
@@ -27,6 +25,6 @@ namespace EyeSoft.ActiveCampaign.Commanding.Contact.Models
 
 		public string PValues { get; set; }
 
-		public IReadOnlyDictionary<string, string> Fields { get; }
+		public IDictionary<string, string> Fields { get; }
 	}
 }

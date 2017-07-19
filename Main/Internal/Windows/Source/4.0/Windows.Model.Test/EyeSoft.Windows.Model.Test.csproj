@@ -132,6 +132,7 @@
     <Compile Include="ViewModels\ViewModelPropertyPerformanceTest.cs" />
     <Compile Include="ViewModels\ViewModelReactPropertyChangedTest.cs" />
     <Compile Include="ViewModels\ViewModelReactPropertyChangingTest.cs" />
+    <Compile Include="ViewModels\ViewModelResetPropertyChanges.cs" />
     <Compile Include="ViewModels\ViewModelSuspendResume.cs" />
     <Compile Include="ViewModels\ViewModelTest.cs" />
   </ItemGroup>

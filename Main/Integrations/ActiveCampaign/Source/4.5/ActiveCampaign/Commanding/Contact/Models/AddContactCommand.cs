@@ -9,10 +9,8 @@
 			Id = id;
 			Email = email;
 
-			var fields = new Dictionary<string, string> { { "345", id.ToString() } };
-
-			Fields = fields;
-		}
+			Fields = new Dictionary<string, string>();
+        }
 
 		public int Id { get; }
 
@@ -30,6 +28,6 @@
 
         public string PValues { get; set; }
 
-        public IReadOnlyDictionary<string, string> Fields { get; }
+        public IDictionary<string, string> Fields { get; }
 	}
 }
