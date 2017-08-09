@@ -11,6 +11,8 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 
         IEnumerable<Contact> GetAll(int page = 0, string filterField = null, object[] filterValues = null);
 
-        Contacts GetContacts(int page = 0, params int[] ids);
+        IEnumerable<Contact> GetContacts(int page = 0, params int[] ids);
+
+        IEnumerable<PaginatedContacts.Contact> GetPaginated(int page = 0, int pageSize = 20, string filter = "0");
     }
 }

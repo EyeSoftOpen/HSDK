@@ -1,7 +1,7 @@
 namespace EyeSoft.ActiveCampaign.Query.Contact.Models
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
 	using System.Runtime.Serialization;
 
 	using EyeSoft.ActiveCampaign.Helpers;
@@ -9,7 +9,7 @@ namespace EyeSoft.ActiveCampaign.Query.Contact.Models
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Linq;
 
-	public class Contacts
+    internal class Contacts
 	{
 		public IEnumerable<Contact> Data { get; set; }
 

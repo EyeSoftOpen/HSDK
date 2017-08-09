@@ -99,6 +99,8 @@
     <Compile Include="Query\Contact\Models\Contacts.cs" />
     <Compile Include="Query\Contact\Models\ContactsRequest.cs" />
     <Compile Include="Query\Contact\Models\ContactViewEmailRequest.cs" />
+    <Compile Include="Query\Contact\Models\PaginatedContactRequest.cs" />
+    <Compile Include="Query\Contact\Models\PaginatedContacts.cs" />
     <Compile Include="Query\List\IListQueryClient.cs" />
     <Compile Include="Query\List\ListQueryClient.cs" />
     <Compile Include="Query\List\Models\List.cs" />
