@@ -8,6 +8,8 @@ namespace EyeSoft.ActiveCampaign.Query.Contact.Models
 
         public int PageSize { get; set; }
 
-        public string Filter { get; set; }
+        public int Filter { get; set; }
+
+        public int Public { get; set; }
     }
 }

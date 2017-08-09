@@ -13,6 +13,6 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 
         IEnumerable<Contact> GetContacts(int page = 0, params int[] ids);
 
-        IEnumerable<PaginatedContacts.Contact> GetPaginated(int page = 0, int pageSize = 20, string filter = "0");
+        IEnumerable<PaginatedContacts.Contact> GetPaginated(int page = 0, int pageSize = 20, int filter = 0, bool isPublic = true);
     }
 }

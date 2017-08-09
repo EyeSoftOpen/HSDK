@@ -41,11 +41,13 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 			return Enumerable.Empty<Contact>();
 		}
 
-		public IEnumerable<PaginatedContacts.Contact> GetPaginated(int page = 0, int pageSize = 20, string filter = "0")
+		public IEnumerable<PaginatedContacts.Contact> GetPaginated(int page = 0, int pageSize = 20, int filter = 0, bool isPublic = true)
 		{
 		    var offset = page * pageSize;
 
-			var request = new PaginatedContactsRequest { Offset = offset, PageSize = pageSize, Filter = filter };
+            var showPublic = isPublic ? 1 : 0;
+
+            var request = new PaginatedContactsRequest { Offset = offset, PageSize = pageSize, Filter = filter, Public = showPublic };
 
 			var result = ExecuteGetRequest<PaginatedContacts>("contact_paginator", request);
 
