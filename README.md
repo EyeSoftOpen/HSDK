@@ -107,7 +107,7 @@ Coordinator: Matteo Migliore
 Italian blog - http://blogs.ugidotnet.org/matteomigliore
 @matteomigliore http://twitter.com/matteomigliore
 
-![alt tag](https://avatars2.githubusercontent.com/u/432974?s=96&v=4)
+![alt tag](https://avatars2.githubusercontent.com/u/432974?s=64&v=4)
 
 
  
@@ -115,7 +115,7 @@ Michele Vicentini
 
 Contributor: Michele Vicentini
 
-![alt tag](https://avatars2.githubusercontent.com/u/4671775?s=460&v=4)
+![alt tag](https://avatars2.githubusercontent.com/u/4671775?s=64&v=4)
 
  
 Martino Bordin - Doc Martin Aka Sinnerman
