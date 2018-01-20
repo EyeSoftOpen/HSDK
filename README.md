@@ -115,7 +115,7 @@ Michele Vicentini
 
 Contributor: Michele Vicentini
 
-![alt tag](http://download-codeplex.sec.s-msft.com/Download?ProjectName=hsdk&DownloadId=714020)
+![alt tag](https://avatars2.githubusercontent.com/u/4671775?s=460&v=4)
 
  
 Martino Bordin - Doc Martin Aka Sinnerman
