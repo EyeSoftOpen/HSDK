@@ -17,13 +17,13 @@
 	{
 		public static void Main()
 		{
-			var testData = ReadActiveCampaignTestData(@"P:\ActiveCampaign\ActiveCampaignTestData.json");
+			////var testData = ReadActiveCampaignTestData(@"P:\ActiveCampaign\ActiveCampaignTestData.json");
 
-			using (var connection = new ActiveCampaignConnection(testData.Account, testData.ApiKey))
+			using (var connection = new ActiveCampaignConnection("https://picoware.api-us1.com", "7015c381d7246c6c4de1a9ed714e9dbd7ebc37dd9296b2116240b9d7ddd6923163a47dae"))
 			{
-				//Commanding(connection, testData);
+				Commanding(connection, null);
 
-				Query(connection, testData);
+				////Query(connection, testData);
 			}
 
 			Console.ReadLine();
@@ -62,25 +62,33 @@
 
 		private static void Commanding(ActiveCampaignConnection connection, ActiveCampaignTestData testData)
 		{
-			IContactCommandingClient contactCommandingClient = new ContactCommandingClient(connection);
+			var contactCommandingClient = new ContactCommandingClient(connection);
 
-			IContactQueryClient contactQueryClient = new ContactQueryClient(connection);
+            var addTagCommand = new AddTagsCommand("ing.vicentini@gmail.com", "tag1", "tag2", "tag3") ;
 
-			var contact = contactQueryClient.Get(testData.ContactEmail).Dump();
+            ////contactCommandingClient.AddTags(addTagCommand);
 
-			contactCommandingClient.Delete(contact.Id).Dump();
+            var removeTagsCommand = new RemoveTagsCommand("ing.vicentini@gmail.com", "tag2");
 
-			contactCommandingClient.Add(new AddContactCommand(testData.ContactId, testData.ContactEmail)).Dump();
+            contactCommandingClient.RemoveTags(removeTagsCommand);
 
-			contact = contactQueryClient.Get(testData.ContactEmail).Dump();
+            ////var contactQueryClient = new ContactQueryClient(connection);
 
-			contactCommandingClient.Sync(new SyncContactCommand(contact.Id, testData.ContactEmail) { FirstName = "Bill", LastName = "White" });
+            ////var contact = contactQueryClient.Get(testData.ContactEmail).Dump();
 
-			IAutomationCommandingClient automationCommandingClient = new AutomationCommandingClient(connection);
+            ////contactCommandingClient.Delete(contact.Id).Dump();
 
-			automationCommandingClient.AddContact(testData.ContactEmail, testData.Automation).Dump();
+            ////contactCommandingClient.Add(new AddContactCommand(testData.ContactId, testData.ContactEmail)).Dump();
 
-			automationCommandingClient.RemoveContact(testData.ContactEmail, testData.Automation).Dump();
-		}
+            ////contact = contactQueryClient.Get(testData.ContactEmail).Dump();
+
+            ////contactCommandingClient.Sync(new SyncContactCommand(testData.ContactEmail) { FirstName = "Bill", LastName = "White" });
+
+            ////IAutomationCommandingClient automationCommandingClient = new AutomationCommandingClient(connection);
+
+            ////automationCommandingClient.AddContact(testData.ContactEmail, testData.Automation).Dump();
+
+            ////automationCommandingClient.RemoveContact(testData.ContactEmail, testData.Automation).Dump();
+        }
 	}
 }

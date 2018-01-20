@@ -1,5 +1,6 @@
 namespace EyeSoft.ActiveCampaign.Extensions
 {
+    using System.Collections;
     using System.Collections.Generic;
     using System.Collections.Specialized;
 	using System.Linq;
@@ -70,7 +71,17 @@ namespace EyeSoft.ActiveCampaign.Extensions
 
                         propertyName = propertyName.CamelCaseToUnderscore();
 
-						formFields.Add(propertyName, propertyValue.ToString());
+                        if (pi.PropertyType.IsArray)
+                        {
+                            foreach (var value in (IEnumerable)propertyValue)
+                            {
+                                formFields.Add(propertyName, value.ToString());
+                            }
+
+                            return;
+                        }
+
+                        formFields.Add(propertyName, propertyValue.ToString());
 					});
 
 			return formFields;

@@ -25,7 +25,7 @@ void Main()
 	/// 3 - Run script
 	/// NOTE If versions are not equals check if version of projects for different FW on solution if are equals!!
 	
-	var newVersion = new Version("3.0.6200.30732");
+	var newVersion = new Version("3.0.6594.15302");
 	
 	NugetHelper.Pack(true, newVersion);
 }
@@ -172,7 +172,13 @@ namespace Query
 
 		private static void Publish(Package package)
 		{
-			var arguments = $"push \"{package.ToFilePath()}\" -Source https://www.nuget.org/api/v2/package";
+			var arguments = $"push \"{package.ToFilePath()}\" -Source https://api.nuget.org/v3/index.json";
+			
+			nugetExePath.Dump("ExePath");
+			
+			arguments.Dump("Arguments");
+			
+			nugetCompilePath.Dump("nugetCompilePath");
 
 			ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
 		}

@@ -63,7 +63,9 @@
     <Compile Include="Commanding\Contact\ContactCommandingClient.cs" />
     <Compile Include="Commanding\Contact\IContactCommandingClient.cs" />
     <Compile Include="Commanding\Contact\Models\AddContactCommand.cs" />
+    <Compile Include="Commanding\Contact\Models\AddTagsCommand.cs" />
     <Compile Include="Commanding\Contact\Models\DeleteContactCommand.cs" />
+    <Compile Include="Commanding\Contact\Models\RemoveTagsCommand.cs" />
     <Compile Include="Commanding\Contact\Models\SyncContactCommand.cs" />
     <Compile Include="Extensions\RequestExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

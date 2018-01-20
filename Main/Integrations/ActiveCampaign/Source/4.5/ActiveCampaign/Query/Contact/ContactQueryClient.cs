@@ -12,12 +12,12 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 		{
 		}
 
-        public Contact Get(string email)
-        {
-            return ExecuteGetRequest<Contact>("contact_view_email", new ContactViewEmailRequest(email));
-        }
+		public Contact Get(string email)
+		{
+			return ExecuteGetRequest<Contact>("contact_view_email", new ContactViewEmailRequest(email));
+		}
 
-        public IEnumerable<Contact> GetContacts(int page = 0, params int[] ids)
+		public IEnumerable<Contact> GetContacts(int page = 0, params int[] ids)
 		{
 			var result = GetContacts(string.Join(",", ids), page);
 
@@ -43,11 +43,11 @@ namespace EyeSoft.ActiveCampaign.Query.Contact
 
 		public IEnumerable<PaginatedContacts.Contact> GetPaginated(int page = 0, int pageSize = 20, int filter = 0, bool isPublic = true)
 		{
-		    var offset = page * pageSize;
+			var offset = page * pageSize;
 
-            var showPublic = isPublic ? 1 : 0;
+			var showPublic = isPublic ? 1 : 0;
 
-            var request = new PaginatedContactsRequest { Offset = offset, PageSize = pageSize, Filter = filter, Public = showPublic };
+			var request = new PaginatedContactsRequest { Offset = offset, Limit = pageSize, Filter = filter, Public = showPublic };
 
 			var result = ExecuteGetRequest<PaginatedContacts>("contact_paginator", request);
 

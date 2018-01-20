@@ -12,5 +12,9 @@ namespace EyeSoft.ActiveCampaign.Commanding.Contact
 		ActiveCampaignResponse Sync(SyncContactCommand command);
 
 		ActiveCampaignResponse Delete(int id);
-	}
+
+        ActiveCampaignResponse AddTags(AddTagsCommand command);
+
+        ActiveCampaignResponse RemoveTags(RemoveTagsCommand command);
+    }
 }

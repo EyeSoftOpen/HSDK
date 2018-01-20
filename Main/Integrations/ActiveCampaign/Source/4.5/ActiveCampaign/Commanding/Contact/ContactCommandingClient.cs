@@ -15,14 +15,24 @@ namespace EyeSoft.ActiveCampaign.Commanding.Contact
 			return ExecutePostRequest<ActiveCampaignResponse>("contact_add", command);
 		}
 
-		public ActiveCampaignResponse Sync(SyncContactCommand contact)
+		public ActiveCampaignResponse Sync(SyncContactCommand command)
 		{
-			return ExecutePostRequest<ActiveCampaignResponse>("contact_sync", contact);
+			return ExecutePostRequest<ActiveCampaignResponse>("contact_sync", command);
 		}
 
 		public ActiveCampaignResponse Delete(int id)
 		{
 			return ExecuteGetRequest<ActiveCampaignResponse>("contact_delete", new DeleteContactCommand(id));
 		}
-	}
+
+        public ActiveCampaignResponse AddTags(AddTagsCommand command)
+        {
+            return ExecutePostRequest<ActiveCampaignResponse>("contact_tag_add", command);
+        }
+
+        public ActiveCampaignResponse RemoveTags(RemoveTagsCommand command)
+        {
+            return ExecutePostRequest<ActiveCampaignResponse>("contact_tag_remove", command);
+        }
+    }
 }

@@ -6,7 +6,7 @@ namespace EyeSoft.ActiveCampaign.Query.Contact.Models
     {
         public int Offset { get; set; }
 
-        public int PageSize { get; set; }
+        public int Limit { get; set; }
 
         public int Filter { get; set; }
 
