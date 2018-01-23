@@ -7,7 +7,9 @@
 	using EyeSoft.ActiveCampaign.Commanding.Automation;
 	using EyeSoft.ActiveCampaign.Commanding.Contact;
 	using EyeSoft.ActiveCampaign.Commanding.Contact.Models;
-	using EyeSoft.ActiveCampaign.Query.Automation;
+    using EyeSoft.ActiveCampaign.Commanding.List;
+    using EyeSoft.ActiveCampaign.Commanding.List.Models;
+    using EyeSoft.ActiveCampaign.Query.Automation;
 	using EyeSoft.ActiveCampaign.Query.Contact;
 	using EyeSoft.ActiveCampaign.Shell.Helpers;
 
@@ -61,16 +63,22 @@
 		}
 
 		private static void Commanding(ActiveCampaignConnection connection, ActiveCampaignTestData testData)
-		{
-			var contactCommandingClient = new ContactCommandingClient(connection);
+        {
+            var client = new ListCommandingClient(connection);
 
-            var addTagCommand = new AddTagsCommand("ing.vicentini@gmail.com", "tag1", "tag2", "tag3") ;
+            var command = new AddListCommand("New list", "LEGALDESK", "Via Morgagni", "Verona", "IT");
+
+            client.Add(command);
+
+            ////var contactCommandingClient = new ContactCommandingClient(connection);
+
+            ////         var addTagCommand = new AddTagsCommand("ing.vicentini@gmail.com", "tag1", "tag2", "tag3") ;
 
             ////contactCommandingClient.AddTags(addTagCommand);
 
-            var removeTagsCommand = new RemoveTagsCommand("ing.vicentini@gmail.com", "tag2");
+            ////var removeTagsCommand = new RemoveTagsCommand("ing.vicentini@gmail.com", "tag2");
 
-            contactCommandingClient.RemoveTags(removeTagsCommand);
+            ////contactCommandingClient.RemoveTags(removeTagsCommand);
 
             ////var contactQueryClient = new ContactQueryClient(connection);
 

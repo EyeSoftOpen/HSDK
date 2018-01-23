@@ -15,6 +15,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -67,6 +68,9 @@
     <Compile Include="Commanding\Contact\Models\DeleteContactCommand.cs" />
     <Compile Include="Commanding\Contact\Models\RemoveTagsCommand.cs" />
     <Compile Include="Commanding\Contact\Models\SyncContactCommand.cs" />
+    <Compile Include="Commanding\List\IListCommandingClient.cs" />
+    <Compile Include="Commanding\List\ListCommandingClient.cs" />
+    <Compile Include="Commanding\List\Models\AddListCommand.cs" />
     <Compile Include="Extensions\RequestExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\NullToEmptyStringValueProvider.cs" />
@@ -110,11 +114,14 @@
     <Compile Include="Query\List\Models\Lists.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Package.nuspec" />
-    <None Include="packages.config" />
+    <None Include="Package.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commanding\List\" />
     <Folder Include="Commanding\User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

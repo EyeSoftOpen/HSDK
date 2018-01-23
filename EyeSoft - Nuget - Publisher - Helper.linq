@@ -1,6 +1,6 @@
 <Query Kind="Program">
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\pw.vs.com\dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\Es.Github\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\Es.Github\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
   <NuGetReference>Castle.WcfIntegrationFacility</NuGetReference>
   <NuGetReference>Castle.Windsor</NuGetReference>
   <NuGetReference>De.TorstenMandelkow.MetroChart</NuGetReference>
@@ -25,7 +25,7 @@ void Main()
 	/// 3 - Run script
 	/// NOTE If versions are not equals check if version of projects for different FW on solution if are equals!!
 	
-	var newVersion = new Version("3.0.6594.15302");
+	var newVersion = new Version("3.0.6596.33990");
 	
 	NugetHelper.Pack(true, newVersion);
 }
@@ -164,7 +164,7 @@ namespace Query
 
 				Console.WriteLine($"Packing the file {packageWithProjectFile.Package.Title}...");
 
-				ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
+				ProcessHelper.Start(nugetExePath.Dump("nugetExePath"), arguments.Dump("arguments"), nugetCompilePath.Dump("nugetCompilePath"), true);
 			}
 
 			new Hyperlinq(() => solutionPackages.Select(x => x.Package).ToList().ForEach(x => Publish(x)), "Publish all packages").Dump();
@@ -173,12 +173,6 @@ namespace Query
 		private static void Publish(Package package)
 		{
 			var arguments = $"push \"{package.ToFilePath()}\" -Source https://api.nuget.org/v3/index.json";
-			
-			nugetExePath.Dump("ExePath");
-			
-			arguments.Dump("Arguments");
-			
-			nugetCompilePath.Dump("nugetCompilePath");
 
 			ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
 		}
@@ -211,7 +205,7 @@ namespace Query
 	public static class HsdkWorkflow
 	{
 		// ReSharper disable once MemberCanBePrivate.Global
-		public const string SolutionPath = @"D:\Pw.Vs.com\Dc\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
+		public const string SolutionPath = @"D:\Es.Github\Es.Hsdk\Main\EyeSoft.Hsdk.sln";
 
 
 		// ReSharper disable once MemberCanBePrivate.Global

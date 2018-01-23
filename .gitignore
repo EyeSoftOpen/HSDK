@@ -2,4 +2,10 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Main/Installers/InstallMate/Source/4.0/InstallMate/bin
+.vs
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
