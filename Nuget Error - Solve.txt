@@ -1,0 +1,7 @@
+Nuget pack error: Pack not created after run script
+
+Open cmd line and go to nuget.exe folder
+Add nuget packages repository with this command line:
+nuget.exe config -set repositoryPath="D:\Es.Github\Es.Hsdk\Main\packages"
+
+Re-execute LP script

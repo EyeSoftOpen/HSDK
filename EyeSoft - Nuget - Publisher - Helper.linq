@@ -3,7 +3,6 @@
   <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\Es.Github\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
   <NuGetReference>Castle.WcfIntegrationFacility</NuGetReference>
   <NuGetReference>Castle.Windsor</NuGetReference>
-  <NuGetReference>De.TorstenMandelkow.MetroChart</NuGetReference>
   <NuGetReference>DotNetZip</NuGetReference>
   <NuGetReference>EyeSoft.Core</NuGetReference>
   <NuGetReference>HtmlAgilityPack</NuGetReference>
@@ -25,7 +24,7 @@ void Main()
 	/// 3 - Run script
 	/// NOTE If versions are not equals check if version of projects for different FW on solution if are equals!!
 	
-	var newVersion = new Version("3.0.6596.33990");
+	var newVersion = new Version("3.0.6603.29625");
 	
 	NugetHelper.Pack(true, newVersion);
 }
@@ -164,7 +163,7 @@ namespace Query
 
 				Console.WriteLine($"Packing the file {packageWithProjectFile.Package.Title}...");
 
-				ProcessHelper.Start(nugetExePath.Dump("nugetExePath"), arguments.Dump("arguments"), nugetCompilePath.Dump("nugetCompilePath"), true);
+				ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
 			}
 
 			new Hyperlinq(() => solutionPackages.Select(x => x.Package).ToList().ForEach(x => Publish(x)), "Publish all packages").Dump();
@@ -172,7 +171,7 @@ namespace Query
 
 		private static void Publish(Package package)
 		{
-			var arguments = $"push \"{package.ToFilePath()}\" -Source https://api.nuget.org/v3/index.json";
+			var arguments = $"push \"{package.ToFilePath()}\" -Source https://api.nuget.org/v3/index.json -ApiKey {Util.GetPassword("Nuget.ApiKey")}";
 
 			ProcessHelper.Start(nugetExePath, arguments, nugetCompilePath, true);
 		}
