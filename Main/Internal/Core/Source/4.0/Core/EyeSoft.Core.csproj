@@ -52,6 +52,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -303,6 +304,26 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Security\Cryptography\X509Certificates\X509CertificateSearch.cs" />
+    <Compile Include="SequentialIdentity\INewIdFormatter.cs" />
+    <Compile Include="SequentialIdentity\INewIdParser.cs" />
+    <Compile Include="SequentialIdentity\IProcessIdProvider.cs" />
+    <Compile Include="SequentialIdentity\ITickProvider.cs" />
+    <Compile Include="SequentialIdentity\IWorkerIdProvider.cs" />
+    <Compile Include="SequentialIdentity\NewId.cs" />
+    <Compile Include="SequentialIdentity\NewIdExtensions.cs" />
+    <Compile Include="SequentialIdentity\NewIdFormatters\Base32Formatter.cs" />
+    <Compile Include="SequentialIdentity\NewIdFormatters\DashedHexFormatter.cs" />
+    <Compile Include="SequentialIdentity\NewIdFormatters\HexFormatter.cs" />
+    <Compile Include="SequentialIdentity\NewIdFormatters\ZBase32Formatter.cs" />
+    <Compile Include="SequentialIdentity\NewIdGenerator.cs" />
+    <Compile Include="SequentialIdentity\NewIdParsers\Base32Parser.cs" />
+    <Compile Include="SequentialIdentity\NewIdParsers\ZBase32Parser.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\BestPossibleWorkerIdProvider.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\DateTimeTickProvider.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\HostNameHashWorkerIdProvider.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\NetworkAddressWorkerIdProvider.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\ProcessIdProvider.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\StopwatchTickProvider.cs" />
     <Compile Include="Serialization\SerializerExtensions.cs" />
     <Compile Include="Serialization\ISerializer%27T.cs" />
     <Compile Include="Serialization\ISerializerFactory.cs" />

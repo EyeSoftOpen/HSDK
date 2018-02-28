@@ -18,6 +18,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <BuildPackage>true</BuildPackage>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,6 +54,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -951,6 +953,63 @@
     <Compile Include="..\..\4.0\Core\Security\ICredentials.cs">
       <Link>Security\ICredentials.cs</Link>
     </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\INewIdFormatter.cs">
+      <Link>SequentialIdentity\INewIdFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\INewIdParser.cs">
+      <Link>SequentialIdentity\INewIdParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\IProcessIdProvider.cs">
+      <Link>SequentialIdentity\IProcessIdProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\ITickProvider.cs">
+      <Link>SequentialIdentity\ITickProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\IWorkerIdProvider.cs">
+      <Link>SequentialIdentity\IWorkerIdProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewId.cs">
+      <Link>SequentialIdentity\NewId.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdExtensions.cs">
+      <Link>SequentialIdentity\NewIdExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdFormatters\Base32Formatter.cs">
+      <Link>SequentialIdentity\NewIdFormatters\Base32Formatter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdFormatters\DashedHexFormatter.cs">
+      <Link>SequentialIdentity\NewIdFormatters\DashedHexFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdFormatters\HexFormatter.cs">
+      <Link>SequentialIdentity\NewIdFormatters\HexFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdFormatters\ZBase32Formatter.cs">
+      <Link>SequentialIdentity\NewIdFormatters\ZBase32Formatter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdGenerator.cs">
+      <Link>SequentialIdentity\NewIdGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdParsers\Base32Parser.cs">
+      <Link>SequentialIdentity\NewIdParsers\Base32Parser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdParsers\ZBase32Parser.cs">
+      <Link>SequentialIdentity\NewIdParsers\ZBase32Parser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdProviders\BestPossibleWorkerIdProvider.cs">
+      <Link>SequentialIdentity\NewIdProviders\BestPossibleWorkerIdProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdProviders\DateTimeTickProvider.cs">
+      <Link>SequentialIdentity\NewIdProviders\DateTimeTickProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdProviders\HostNameHashWorkerIdProvider.cs">
+      <Link>SequentialIdentity\NewIdProviders\HostNameHashWorkerIdProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdProviders\ProcessIdProvider.cs">
+      <Link>SequentialIdentity\NewIdProviders\ProcessIdProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\SequentialIdentity\NewIdProviders\StopwatchTickProvider.cs">
+      <Link>SequentialIdentity\NewIdProviders\StopwatchTickProvider.cs</Link>
+    </Compile>
     <Compile Include="..\..\4.0\Core\Serialization\ISerializer%27T.cs">
       <Link>Serialization\ISerializer%27T.cs</Link>
     </Compile>
@@ -1051,6 +1110,8 @@
       <Link>Xml\Serialization\XsltTransformer.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\NetworkAddressWorkerIdProvider.cs" />
+    <Compile Include="SequentialIdentity\NewIdProviders\WMINetworkAddressWorkerIdProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Package.nuspec">

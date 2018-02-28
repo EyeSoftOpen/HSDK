@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>ioc ioc inversion-of-control locator castle windsor unity</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6201.15091" />
+      <dependency id="EyeSoft.Core" version="3.0.6633.19873" />
     </dependencies>
   </metadata>
 </package>

@@ -7,7 +7,7 @@
 
 	public class ViewModelToComponentConverter : ValueConverter<object, FrameworkElement>
 	{
-	    protected override FrameworkElement Convert(object value, CultureInfo culture)
+	    public override FrameworkElement Convert(object value, CultureInfo culture)
 		{
 			if (value == null)
 			{

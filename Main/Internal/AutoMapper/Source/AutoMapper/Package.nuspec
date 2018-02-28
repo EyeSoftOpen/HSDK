@@ -15,7 +15,7 @@
     <tags>AutoMapper, LINQ, projections, NHibernate, Entity Framework</tags>
     <dependencies>
       <dependency id="AutoMapper" version="4.1.1" />
-      <dependency id="EyeSoft.Core" version="3.0.6201.15091" />
+      <dependency id="EyeSoft.Core" version="3.0.6633.19873" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="Microsoft.CSharp" />

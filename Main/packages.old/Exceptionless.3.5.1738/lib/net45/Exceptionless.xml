@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Exceptionless</name>
+    </assembly>
+    <members>
+        <member name="M:Exceptionless.ExceptionlessExtensions.Register(Exceptionless.ExceptionlessClient)">
+            <summary>
+            Reads configuration settings, configures various plugins and wires up to platform specific exception handlers. 
+            </summary>
+            <param name="client">The ExceptionlessClient.</param>
+        </member>
+        <member name="M:Exceptionless.ExceptionlessExtensions.Unregister(Exceptionless.ExceptionlessClient)">
+            <summary>
+            Unregisters platform specific exception handlers.
+            </summary>
+            <param name="client">The ExceptionlessClient.</param>
+        </member>
+    </members>
+</doc>

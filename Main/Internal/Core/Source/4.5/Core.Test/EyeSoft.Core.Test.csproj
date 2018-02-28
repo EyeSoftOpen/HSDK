@@ -21,6 +21,8 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,6 +63,9 @@
       <HintPath>..\..\..\..\..\packages\Moq.4.5.10\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, PublicKeyToken=8c60d8070630b1c1, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\SharpTestsEx.1.2.1\lib\SharpTestsEx.dll</HintPath>
       <Private>True</Private>
@@ -70,6 +75,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -107,6 +114,14 @@
     <Compile Include="Reflection\AssemblyExtensionsTest.cs" />
     <Compile Include="Reflection\Compression\AssemblyExtensionsCompressionTest.cs" />
     <Compile Include="Runtime\Serialization\BinarySerializerTest.cs" />
+    <Compile Include="SequentialIdentity\Formatter_Specs.cs" />
+    <Compile Include="SequentialIdentity\Generator_Specs.cs" />
+    <Compile Include="SequentialIdentity\GuidInterop_Specs.cs" />
+    <Compile Include="SequentialIdentity\LongTerm_Specs.cs" />
+    <Compile Include="SequentialIdentity\NetworkAddress_Specs.cs" />
+    <Compile Include="SequentialIdentity\NewId_Specs.cs" />
+    <Compile Include="SequentialIdentity\Provider_Specs.cs" />
+    <Compile Include="SequentialIdentity\Usage_Specs.cs" />
     <Compile Include="Serialization\SerializerTest.cs" />
     <Compile Include="ObjectTreeTest.cs" />
     <Compile Include="TypeExtensions.RootType.Test.cs" />
@@ -221,8 +236,24 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SequentialIdentity\guids.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SequentialIdentity\texts.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y $(ProjectDir)\SequentialIdentity\guids.txt  $(ProjectDir)$(OutDir)
+xcopy /y $(ProjectDir)\SequentialIdentity\texts.txt  $(ProjectDir)$(OutDir)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 			 Other similar extension points exist, see Microsoft.Common.targets.
 	<Target Name="BeforeBuild">

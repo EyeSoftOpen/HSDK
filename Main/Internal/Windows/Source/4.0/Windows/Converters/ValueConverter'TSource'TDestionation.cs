@@ -6,9 +6,9 @@
 
 	public abstract class ValueConverter<TSource, TDestination> : IValueConverter
 	{
-		protected abstract TDestination Convert(TSource value, CultureInfo culture);
+	    public abstract TDestination Convert(TSource value, CultureInfo culture);
 
-		protected virtual TSource ConvertBack(TDestination value, CultureInfo culture)
+	    public virtual TSource ConvertBack(TDestination value, CultureInfo culture)
 		{
 			throw new NotImplementedException();
 		}

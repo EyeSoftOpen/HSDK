@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: AssemblyVersion("2.3.6003.17677")]
-[assembly: AssemblyFileVersion("2.3.6003.17677")]
+[assembly: AssemblyVersion("3.0.6633.19873")]
+[assembly: AssemblyFileVersion("3.0.6633.19873")]
 
 [assembly: Guid("f02de716-1f00-4c72-a1b4-acd3c8053c73")]
