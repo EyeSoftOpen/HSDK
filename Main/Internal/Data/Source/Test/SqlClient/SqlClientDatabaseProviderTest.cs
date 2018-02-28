@@ -6,10 +6,9 @@
 
 	using SharpTestsEx;
 
-	[TestClass]
+	////[TestClass]: Integration test
 	public class SqlClientDatabaseProviderTest
 	{
-		[TestMethod]
 		public void CreateDatabase()
 		{
 			var connectionBuilder = ConnectionString.Get("SqlClient");

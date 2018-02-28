@@ -47,7 +47,9 @@
 		[TestMethod]
 		public void ServiceFactoryGetItemWithoutCompletedAncConversioneActionVerifyWorks()
 		{
-			CustomerViewModel model = null;
+	        global::AutoMapper.Mapper.CreateMap<CustomerDto, CustomerViewModel>();
+
+		    CustomerViewModel model = null;
 
 			var manuelResetEvent = new ManualResetEvent(false);
 

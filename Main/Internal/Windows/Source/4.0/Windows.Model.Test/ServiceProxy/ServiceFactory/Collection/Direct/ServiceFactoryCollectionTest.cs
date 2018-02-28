@@ -4,6 +4,7 @@
 
 	using EyeSoft.Windows.Model.Collections.ObjectModel;
 	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
+	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,6 +14,11 @@
 	[TestClass]
 	public class ServiceFactoryCollectionTest : ServiceFactoryTest
 	{
+	    public ServiceFactoryCollectionTest()
+	    {
+	        global::AutoMapper.Mapper.CreateMap<CustomerDto, CustomerViewModel>();
+	    }
+
 		[TestMethod]
 		public void ServiceFactoryGetCollectionWithCompletedActionVerifyWorks()
 		{

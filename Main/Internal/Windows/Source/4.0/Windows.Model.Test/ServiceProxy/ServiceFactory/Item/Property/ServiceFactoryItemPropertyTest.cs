@@ -16,6 +16,8 @@
 		[TestMethod]
 		public void ServiceFactoryLoadAPropertyVerifyWorks()
 		{
+		    global::AutoMapper.Mapper.CreateMap<CustomerDto, CustomerViewModel>();
+
 			var viewModel = new FilledViewModel(factoryHelper.ServiceFactory);
 
 			viewModel.MainCustomer
