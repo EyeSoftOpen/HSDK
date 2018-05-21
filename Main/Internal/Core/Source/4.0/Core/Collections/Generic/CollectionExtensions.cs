@@ -33,25 +33,19 @@
 
 		public static ICollection<T> Synchronize<T>(this ICollection<T> first, IEnumerable<T> second, Action<T> remove)
 		{
-			return first.Synchronize(second, x => x, null, null, remove);
+			return first.Synchronize(second, x => x, null, remove);
 		}
 
 		public static ICollection<TFirst> Synchronize<TFirst, TSecond>(
 			this ICollection<TFirst> first,
 			IEnumerable<TSecond> second,
 			Func<TSecond, TFirst> convert = null,
-			Func<TFirst, int> firstHash = null,
-			Func<TSecond, int> secondHash = null,
+			Func<TFirst, TSecond, bool> @equals = null,
 			Action<TFirst> remove = null)
 		{
-			if (firstHash == null)
+			if (@equals == null)
 			{
-				firstHash = x => x.GetHashCode();
-			}
-
-			if (secondHash == null)
-			{
-				secondHash = x => x.GetHashCode();
+				@equals = (x, y) => x.Equals(y);
 			}
 
 			if (convert == null)
@@ -59,27 +53,28 @@
 				convert = x => Mapper.Map<TFirst>(x);
 			}
 
-			var firstCollection = first.ToDictionary(x => firstHash(x), x => x);
-			var secondCollection = second.ToDictionary(x => secondHash(x), x => x);
+			var firstCollection = first.ToArray();
 
-			var toAdd = secondCollection.Where(item => firstCollection.All(x => x.Key != item.Key)).Select(x => convert(x.Value));
+			var secondCollection = second.ToArray();
+
+			var toAdd = secondCollection.Where(item => firstCollection.All(x => !@equals(x, item))).Select(x => convert(x));
 
 			foreach (var item in toAdd)
 			{
 				first.Add(item);
 			}
 
-			var toRemove = firstCollection.Where(item => secondCollection.All(x => x.Key != item.Key));
+			var toRemove = firstCollection.Where(item => secondCollection.All(x => !equals(item, x)));
 
 			foreach (var item in toRemove)
 			{
 				if (remove == null)
 				{
-					first.Remove(item.Value);
+					first.Remove(item);
 				}
 				else
 				{
-					remove(item.Value);
+					remove(item);
 				}
 			}
 

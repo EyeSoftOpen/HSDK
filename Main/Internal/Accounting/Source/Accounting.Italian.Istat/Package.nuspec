@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>codice fiscale, istat, comuni, fiscal code, accounting, italian accounting</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6633.19873" />
+      <dependency id="EyeSoft.Core" version="3.0.6670.26418" />
       <dependency id="EyeSoft.Accounting" version="3.0.6633.19873" />
     </dependencies>
     <frameworkAssemblies>

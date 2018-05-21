@@ -24,7 +24,7 @@ void Main()
 	/// 3 - Run script
 	/// NOTE If versions are not equals check if version of projects for different FW on solution if are equals!!
 	
-	var newVersion = new Version("3.0.6603.29625");
+	var newVersion = new Version("3.0.6670.26418");
 	
 	NugetHelper.Pack(true, newVersion);
 }

@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>domain model DDD aggregate aggregateroot ORM wrapping</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6633.19873" />
+      <dependency id="EyeSoft.Core" version="3.0.6670.26418" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="" />

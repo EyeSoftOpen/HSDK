@@ -61,7 +61,7 @@
 
 			var synchronizeWith = new[] { new CustomerDto("1"), new CustomerDto("5"), new CustomerDto("6") };
 
-			collection.Synchronize(synchronizeWith, x => new Customer(x.Name), null, null, SetCustomerAsDeleted);
+			collection.Synchronize(synchronizeWith, x => new Customer(x.Name), null, SetCustomerAsDeleted);
 
 			collection.Should().Have.SameSequenceAs(collection);
 

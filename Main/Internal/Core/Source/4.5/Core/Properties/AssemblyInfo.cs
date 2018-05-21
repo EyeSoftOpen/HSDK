@@ -15,8 +15,8 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("4210efe5-6aad-4dc9-8030-3758c3354cb7")]
 
-[assembly: AssemblyVersion("3.0.6633.19873")]
-[assembly: AssemblyFileVersion("3.0.6633.19873")]
+[assembly: AssemblyVersion("3.0.6670.26418")]
+[assembly: AssemblyFileVersion("3.0.6670.26418")]
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo(
 	"EyeSoft.Core.Test, PublicKey=" +

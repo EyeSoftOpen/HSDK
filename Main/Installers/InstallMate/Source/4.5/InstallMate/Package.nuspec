@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>installer Windows UI WPF InstallMate Tarma</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6633.19873" />
+      <dependency id="EyeSoft.Core" version="3.0.6670.26418" />
       <dependency id="EyeSoft.Windows" version="3.0.6633.26917" />
     </dependencies>
   </metadata>

@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>service service model wcf ioc inversion-of-control locator configuration</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6633.19873" />
+      <dependency id="EyeSoft.Core" version="3.0.6670.26418" />
     </dependencies>
   </metadata>
 </package>
