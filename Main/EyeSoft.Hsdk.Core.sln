@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Core", "Internal\Core\Source\4.0\Core\EyeSoft.Core.csproj", "{4C464A88-7D14-4755-9EBF-82BBE1B168ED}"
 EndProject
@@ -22,35 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E4E140
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core 2.0", "Core 2.0", "{FB58D100-F137-4195-8F23-A032026E44F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EyeSoft.Core.Core", "Internal\Core\Source\Core\EyeSoft.Core.Core.csproj", "{539F9706-4B40-4C5F-BFA1-D5BF0E2077BE}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://picoware.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = Internal\\Core\\Source\\4.0\\Core\\EyeSoft.Core.csproj
-		SccProjectTopLevelParentUniqueName0 = EyeSoft.Hsdk.Core.sln
-		SccProjectName0 = Internal/Core/Source/4.0/Core
-		SccAuxPath0 = https://picoware.visualstudio.com/defaultcollection
-		SccLocalPath0 = Internal\\Core\\Source\\4.0\\Core
-		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName1 = Internal\\Core\\Source\\4.5\\Core\\EyeSoft.Core.csproj
-		SccProjectTopLevelParentUniqueName1 = EyeSoft.Hsdk.Core.sln
-		SccProjectName1 = Internal/Core/Source/4.5/Core
-		SccAuxPath1 = https://picoware.visualstudio.com/defaultcollection
-		SccLocalPath1 = Internal\\Core\\Source\\4.5\\Core
-		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName2 = Internal\\Core\\Source\\4.5\\Core.Test\\EyeSoft.Core.Test.csproj
-		SccProjectTopLevelParentUniqueName2 = EyeSoft.Hsdk.Core.sln
-		SccProjectName2 = Internal/Core/Source/4.5/Core.Test
-		SccAuxPath2 = https://picoware.visualstudio.com/defaultcollection
-		SccLocalPath2 = Internal\\Core\\Source\\4.5\\Core.Test
-		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName3 = Internal\\SharpTestsEx.Extensions\\Source\\Extensions\\EyeSoft.SharpTests.Extensions.csproj
-		SccProjectName3 = Internal/SharpTestsEx.Extensions/Source/Extensions
-		SccAuxPath3 = https://picoware.visualstudio.com/defaultcollection
-		SccLocalPath3 = Internal\\SharpTestsEx.Extensions\\Source\\Extensions
-		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -72,6 +48,10 @@ Global
 		{F213CB7D-2938-412D-9577-1D59D08753E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F213CB7D-2938-412D-9577-1D59D08753E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F213CB7D-2938-412D-9577-1D59D08753E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539F9706-4B40-4C5F-BFA1-D5BF0E2077BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539F9706-4B40-4C5F-BFA1-D5BF0E2077BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539F9706-4B40-4C5F-BFA1-D5BF0E2077BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539F9706-4B40-4C5F-BFA1-D5BF0E2077BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +60,10 @@ Global
 		{4C464A88-7D14-4755-9EBF-82BBE1B168ED} = {4506B456-4D98-4AF1-AA30-1E366E608618}
 		{0E048E30-4DFC-4362-8056-F809E4AF4FB1} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
 		{9702B58C-F6D0-4A75-A2A8-2F4A847536DD} = {E985DF31-7DE1-4B55-85C8-BF61AC0D3BB2}
+		{539F9706-4B40-4C5F-BFA1-D5BF0E2077BE} = {FB58D100-F137-4195-8F23-A032026E44F2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A0C9F9F-F9C7-4CFC-A90D-ECDF786A44F9}
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = a9556ffc-1a6f-449c-a00f-a63aa56560bf

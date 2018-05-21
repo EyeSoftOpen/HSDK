@@ -1,116 +1,106 @@
 ﻿namespace EyeSoft
 {
-	using System;
+    using System;
 
-	public class Singleton<T> where T : class
-	{
-		private static readonly Lock<T> lockInstance = new Lock<T>();
+    public class Singleton<T> where T : class
+    {
+        private static readonly Lock<T> lockInstance = new Lock<T>();
 
-		private readonly string typeName = typeof(T).FullName;
+        private readonly string typeName = typeof(T).FullName;
 
-		private Lazy<T> singletonInstance;
+        private Lazy<T> singletonInstance;
 
-		private bool used;
+        private bool used;
 
-		public Singleton()
-		{
-		}
+        public Singleton()
+        {
+        }
 
-		public Singleton(Func<T> instance)
-		{
-			lock (lockInstance)
-			{
-				Enforce.Argument(() => instance);
+        public Singleton(Func<T> instance)
+        {
+            lock (lockInstance)
+            {
+                singletonInstance = new Lazy<T>(instance);
+            }
+        }
 
-				singletonInstance = new Lazy<T>(instance);
-			}
-		}
+        public T Instance
+        {
+            get
+            {
+                lock (lockInstance)
+                {
+                    if (singletonInstance == null)
+                    {
+                        ThrowExceptionIfNotInitialized();
+                    }
 
-		public T Instance
-		{
-			get
-			{
-				lock (lockInstance)
-				{
-					if (singletonInstance == null)
-					{
-						ThrowExceptionIfNotInitialized();
-					}
+                    var instance = singletonInstance.Value;
 
-					var instance = singletonInstance.Value;
+                    if (!singletonInstance.IsValueCreated)
+                    {
+                        ThrowExceptionIfNotInitialized();
+                    }
 
-					if (!singletonInstance.IsValueCreated)
-					{
-						ThrowExceptionIfNotInitialized();
-					}
+                    used = true;
 
-					used = true;
+                    return instance;
+                }
+            }
+        }
 
-					return instance;
-				}
-			}
-		}
+        public bool IsValueCreated { get; private set; }
 
-		public bool IsValueCreated { get; private set; }
+        public void Set(T instance)
+        {
+            lock (lockInstance)
+            {
+                Set(() => instance);
+            }
+        }
 
-		public void Set(T instance)
-		{
-			lock (lockInstance)
-			{
-				Enforce.Argument(() => instance);
+        public void Set(Func<T> valueFactory)
+        {
+            lock (lockInstance)
+            {
+                if (used)
+                {
+                    var message = string.Format("The singleton instance of type {0} can be changed only before any usage.", typeName);
+                    throw new InvalidOperationException(message);
+                }
 
-				Set(() => instance);
-			}
-		}
+                if (IsValueCreated || ((singletonInstance != null) && singletonInstance.IsValueCreated))
+                {
+                    var message = string.Format("The singleton instance of type {0} can be assigned only one time.", typeName);
+                    throw new InvalidOperationException(message);
+                }
 
-		public void Set(Func<T> valueFactory)
-		{
-			lock (lockInstance)
-			{
-				Enforce.Argument(() => valueFactory);
+                singletonInstance = new Lazy<T>(valueFactory);
 
-				if (used)
-				{
-					var message = string.Format("The singleton instance of type {0} can be changed only before any usage.", typeName);
-					throw new InvalidOperationException(message);
-				}
+                IsValueCreated = true;
+            }
+        }
 
-				if (IsValueCreated || ((singletonInstance != null) && singletonInstance.IsValueCreated))
-				{
-					var message = string.Format("The singleton instance of type {0} can be assigned only one time.", typeName);
-					throw new InvalidOperationException(message);
-				}
+        internal void Reset(T instance)
+        {
+            lock (lockInstance)
+            {
+                Reset(() => instance);
+            }
+        }
 
-				singletonInstance = new Lazy<T>(valueFactory);
+        internal void Reset(Func<T> func)
+        {
+            lock (lockInstance)
+            {
+                singletonInstance = new Lazy<T>(func);
+            }
+        }
 
-				IsValueCreated = true;
-			}
-		}
-
-		internal void Reset(T instance)
-		{
-			lock (lockInstance)
-			{
-				Enforce.Argument(() => instance);
-
-				Reset(() => instance);
-			}
-		}
-
-		internal void Reset(Func<T> func)
-		{
-			lock (lockInstance)
-			{
-				Enforce.Argument(() => func);
-
-				singletonInstance = new Lazy<T>(func);
-			}
-		}
-
-		private void ThrowExceptionIfNotInitialized()
-		{
-			var message = string.Format("The singleton instance of type {0} was not initialized.", typeName);
-			throw new InvalidOperationException(message);
-		}
-	}
+        private void ThrowExceptionIfNotInitialized()
+        {
+            var message = string.Format("The singleton instance of type {0} was not initialized.", typeName);
+            throw new InvalidOperationException(message);
+        }
+    }
 }

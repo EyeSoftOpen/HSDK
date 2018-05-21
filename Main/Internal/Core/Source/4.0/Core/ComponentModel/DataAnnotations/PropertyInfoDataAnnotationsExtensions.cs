@@ -1,43 +1,34 @@
 ﻿namespace EyeSoft.ComponentModel.DataAnnotations
 {
-	using System;
-	using System.ComponentModel.DataAnnotations;
-	using System.Reflection;
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.Reflection;
 
-	using EyeSoft.Extensions;
-	using EyeSoft.Mapping;
-	using EyeSoft.Reflection;
+    using EyeSoft.Extensions;
+    using EyeSoft.Mapping;
+    using EyeSoft.Reflection;
 
-	public static class MemberInfoDataAnnotationsExtensions
-	{
-		public static bool IsRequired(this MemberInfo memberInfo)
-		{
-			var memberMetadata = new MemberInfoMetadata(memberInfo);
+    public static class MemberInfoDataAnnotationsExtensions
+    {
+        public static bool IsRequired(this MemberInfo memberInfo)
+        {
+            var memberMetadata = new MemberInfoMetadata(memberInfo);
 
-			var isRequired =
-				memberInfo
-					.GetAttribute<RequiredAttribute>()
-					.IsNotNull();
+            var isRequired =
+                memberInfo
+                    .GetAttribute<RequiredAttribute>()
+                    .IsNotNull();
 
-			if (memberMetadata.Type.IsNullable() && isRequired)
-			{
-				const string MessageFormat =
-					"Member '{MemberName}' of type '{Type}' declared in '{DeclaringType}' cannot " +
-					"have Required attribute because it is a nullable type.";
+            if (memberMetadata.Type.IsNullable() && isRequired)
+            {
+                var message =
+                    $"Member '{memberMetadata.Name}' of type '{memberMetadata.Type}' declared in '{memberMetadata.DeclaringType}' cannot " +
+                    "have Required attribute because it is a nullable type.";
 
-				var message =
-					MessageFormat
-					.NamedFormat(
-						memberMetadata.Name,
-						memberMetadata.Type.FriendlyShortName(),
-						memberMetadata.DeclaringType.FullName);
+                throw new ArgumentException(message);
+            }
 
-				new ArgumentException(message)
-					.Throw();
-			}
-
-			return
-				isRequired;
-		}
-	}
+            return isRequired;
+        }
+    }
 }

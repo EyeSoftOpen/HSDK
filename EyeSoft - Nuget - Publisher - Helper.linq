@@ -1,6 +1,6 @@
 <Query Kind="Program">
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\Es.Github\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\Es.Github\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
+  <Reference>D:\Es.Github\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
+  <Reference>D:\Es.Github\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
   <NuGetReference>Castle.WcfIntegrationFacility</NuGetReference>
   <NuGetReference>Castle.Windsor</NuGetReference>
   <NuGetReference>DotNetZip</NuGetReference>
@@ -24,7 +24,7 @@ void Main()
 	/// 3 - Run script
 	/// NOTE If versions are not equals check if version of projects for different FW on solution if are equals!!
 	
-	var newVersion = new Version("3.0.6603.29625");
+	var newVersion = new Version("3.0.6715.33312");
 	
 	NugetHelper.Pack(true, newVersion);
 }

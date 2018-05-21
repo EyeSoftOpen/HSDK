@@ -1,54 +1,41 @@
 namespace EyeSoft.Mapping
 {
-	using System;
-	using System.ComponentModel.DataAnnotations;
-	using System.Reflection;
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.Reflection;
 
-	using EyeSoft.ComponentModel.DataAnnotations;
-	using EyeSoft.Extensions;
-	using EyeSoft.Reflection;
+    using EyeSoft.ComponentModel.DataAnnotations;
+    using EyeSoft.Extensions;
+    using EyeSoft.Reflection;
 
-	public class PrimitiveMemberInfoMetadata
-		: MemberInfoMetadata
-	{
-		private readonly int? length;
+    public class PrimitiveMemberInfoMetadata : MemberInfoMetadata
+    {
+        internal PrimitiveMemberInfoMetadata(MemberInfo memberInfo)
+            : base(memberInfo)
+        {
+            Required = memberInfo.IsRequired();
 
-		internal PrimitiveMemberInfoMetadata(MemberInfo memberInfo)
-			: base(memberInfo)
-		{
-			Required = memberInfo.IsRequired();
+            SupportLength = Type.IsOfType<string>();
 
-			SupportLength = Type.IsOfType<string>();
+            if (!SupportLength)
+            {
+                return;
+            }
 
-			if (!SupportLength)
-			{
-				return;
-			}
+            var stringLengthAttribute = memberInfo.GetAttribute<StringLengthAttribute>();
 
-			var stringLengthAttribute = memberInfo.GetAttribute<StringLengthAttribute>();
+            if (!stringLengthAttribute.IsNotNull())
+            {
+                return;
+            }
 
-			if (!stringLengthAttribute.IsNotNull())
-			{
-				return;
-			}
+            Length = stringLengthAttribute.MaximumLength;
+        }
 
-			length = stringLengthAttribute.MaximumLength;
-		}
+        public bool Required { get; private set; }
 
-		public bool Required { get; private set; }
+        public bool SupportLength { get; private set; }
 
-		public bool SupportLength { get; private set; }
-
-		public int? Length
-		{
-			get
-			{
-				Ensure
-					.That(SupportLength)
-					.WithException(new NotSupportedException("Check the SupportLength, the Length property is valid on string type."));
-
-				return length;
-			}
-		}
-	}
+        public int? Length { get; private set; }
+    }
 }
