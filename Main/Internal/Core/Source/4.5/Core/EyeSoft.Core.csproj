@@ -101,60 +101,6 @@
     <Compile Include="..\..\4.0\Core\CharSet.cs">
       <Link>CharSet.cs</Link>
     </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\ClassCodeDom.cs">
-      <Link>CodeDom\ClassCodeDom.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\ClassVisibility.cs">
-      <Link>CodeDom\ClassVisibility.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\CodeDomFluent.cs">
-      <Link>CodeDom\CodeDomFluent.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Compiler\CodeDomFluentCompiler.cs">
-      <Link>CodeDom\Compiler\CodeDomFluentCompiler.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Compiler\CompilerException.cs">
-      <Link>CodeDom\Compiler\CompilerException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Converters\ClassDomConverter.cs">
-      <Link>CodeDom\Converters\ClassDomConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Converters\CodeDomFluentConverter.cs">
-      <Link>CodeDom\Converters\CodeDomFluentConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Converters\IToStringConverter%27T.cs">
-      <Link>CodeDom\Converters\IToStringConverter%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Converters\MethodConverter.cs">
-      <Link>CodeDom\Converters\MethodConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Converters\MethodParameterConverter.cs">
-      <Link>CodeDom\Converters\MethodParameterConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\IMethodBody.cs">
-      <Link>CodeDom\IMethodBody.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\IMethodBodyMultiLine.cs">
-      <Link>CodeDom\IMethodBodyMultiLine.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\IReturnValueMethod.cs">
-      <Link>CodeDom\IReturnValueMethod.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\IVoidMethod.cs">
-      <Link>CodeDom\IVoidMethod.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\MemberVisibility.cs">
-      <Link>CodeDom\MemberVisibility.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Method.cs">
-      <Link>CodeDom\Method.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\MethodParameter.cs">
-      <Link>CodeDom\MethodParameter.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\CodeDom\Namespace.cs">
-      <Link>CodeDom\Namespace.cs</Link>
-    </Compile>
     <Compile Include="..\..\4.0\Core\Collections\Concurrent\SafeConcurrentDictionary%27TKey%27TValue.cs">
       <Link>Collections\Concurrent\SafeConcurrentDictionary%27TKey%27TValue.cs</Link>
     </Compile>
@@ -224,24 +170,6 @@
     <Compile Include="..\..\4.0\Core\ComponentModel\DataAnnotations\Schema\NotMappedAttribute.cs">
       <Link>ComponentModel\DataAnnotations\Schema\NotMappedAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\..\4.0\Core\Configuration\ConfigurationContext.cs">
-      <Link>Configuration\ConfigurationContext.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Configuration\FileConfigurationContext.cs">
-      <Link>Configuration\FileConfigurationContext.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Configuration\IConfigurationContext.cs">
-      <Link>Configuration\IConfigurationContext.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Conventions\MetadataConvention.cs">
-      <Link>Conventions\MetadataConvention.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Conventions\TypeConvention.cs">
-      <Link>Conventions\TypeConvention.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Conventions\TypeOrMetadataConvention.cs">
-      <Link>Conventions\TypeOrMetadataConvention.cs</Link>
-    </Compile>
     <Compile Include="..\..\4.0\Core\Conversion\Converters.cs">
       <Link>Conversion\Converters.cs</Link>
     </Compile>
@@ -262,30 +190,6 @@
     </Compile>
     <Compile Include="..\..\4.0\Core\Conversion\SourceDestinationComparer.cs">
       <Link>Conversion\SourceDestinationComparer.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\ApplicationData.cs">
-      <Link>Data\ApplicationData.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\ApplicationDataSettings%27T.cs">
-      <Link>Data\ApplicationDataSettings%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\ApplicationInfo.cs">
-      <Link>Data\ApplicationInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\DataScope.cs">
-      <Link>Data\DataScope.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\DataSettingsConfiguration.cs">
-      <Link>Data\DataSettingsConfiguration.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\DataSettingsKey.cs">
-      <Link>Data\DataSettingsKey.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\IApplicationDataSettings%27T.cs">
-      <Link>Data\IApplicationDataSettings%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Data\IApplicationSettings%27T.cs">
-      <Link>Data\IApplicationSettings%27T.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Core\DateTimeExtensions.cs">
       <Link>DateTimeExtensions.cs</Link>
@@ -335,143 +239,11 @@
     <Compile Include="..\..\4.0\Core\Diagnostic\IDebugger.cs">
       <Link>Diagnostic\IDebugger.cs</Link>
     </Compile>
-    <Compile Include="..\..\4.0\Core\Diagnostic\ProcessExtensions.cs">
-      <Link>Diagnostic\ProcessExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\..\4.0\Core\Diagnostic\SystemInspector.cs">
       <Link>Diagnostic\SystemInspector.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Core\DoubleExtensions.cs">
       <Link>DoubleExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Enforce.cs">
-      <Link>Enforce.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensure.cs">
-      <Link>Ensure.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\ConditionalException.cs">
-      <Link>Ensuring\ConditionalException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\Condition.cs">
-      <Link>Ensuring\Conditions\Condition.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\ConditionVerifier.cs">
-      <Link>Ensuring\Conditions\ConditionVerifier.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\IConditionVerifierArgumentNotVerifiedException.cs">
-      <Link>Ensuring\Conditions\IConditionVerifierArgumentNotVerifiedException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\IConditionVerifierArgumentVerifiedException.cs">
-      <Link>Ensuring\Conditions\IConditionVerifierArgumentVerifiedException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\IConditionVerifierEvaluate.cs">
-      <Link>Ensuring\Conditions\IConditionVerifierEvaluate.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\IConditionVerifierExpression.cs">
-      <Link>Ensuring\Conditions\IConditionVerifierExpression.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\IConditionVerifierNotVerifiedException.cs">
-      <Link>Ensuring\Conditions\IConditionVerifierNotVerifiedException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Conditions\IConditionVerifierVerifiedException.cs">
-      <Link>Ensuring\Conditions\IConditionVerifierVerifiedException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\EnsuringWrapper.cs">
-      <Link>Ensuring\EnsuringWrapper.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\CollectionIsEmptyException.cs">
-      <Link>Ensuring\Exceptions\CollectionIsEmptyException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\CollectionIsNotEmptyException.cs">
-      <Link>Ensuring\Exceptions\CollectionIsNotEmptyException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\ConditionNotVerifiedException.cs">
-      <Link>Ensuring\Exceptions\ConditionNotVerifiedException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\ConditionVerifiedException.cs">
-      <Link>Ensuring\Exceptions\ConditionVerifiedException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\EnsuringException.cs">
-      <Link>Ensuring\Exceptions\EnsuringException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\NotEqualException.cs">
-      <Link>Ensuring\Exceptions\NotEqualException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\ObjectNotNullException.cs">
-      <Link>Ensuring\Exceptions\ObjectNotNullException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\TypeIsEnumerableException.cs">
-      <Link>Ensuring\Exceptions\TypeIsEnumerableException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\TypeIsInterfaceException.cs">
-      <Link>Ensuring\Exceptions\TypeIsInterfaceException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\TypeIsNotEnumerableException.cs">
-      <Link>Ensuring\Exceptions\TypeIsNotEnumerableException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Exceptions\TypeIsNotInterfaceException.cs">
-      <Link>Ensuring\Exceptions\TypeIsNotInterfaceException.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\BooleanConditionExtensions.cs">
-      <Link>Ensuring\Extensions\BooleanConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\DictionaryConditionExtensions.cs">
-      <Link>Ensuring\Extensions\DictionaryConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\DoubleConditionExtensions.cs">
-      <Link>Ensuring\Extensions\DoubleConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\EnumerableConditionExtensions.cs">
-      <Link>Ensuring\Extensions\EnumerableConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\GenericConditionExtensions.cs">
-      <Link>Ensuring\Extensions\GenericConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\IntegerConditionExtensions.cs">
-      <Link>Ensuring\Extensions\IntegerConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\LongConditionExtensions.cs">
-      <Link>Ensuring\Extensions\LongConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\ObjectConditionExtensions.cs">
-      <Link>Ensuring\Extensions\ObjectConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\StringConditionExtensions.cs">
-      <Link>Ensuring\Extensions\StringConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Extensions\TypeConditionExtensions.cs">
-      <Link>Ensuring\Extensions\TypeConditionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\IBooleanCondition%27T.cs">
-      <Link>Ensuring\IBooleanCondition%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\ICondition%27T.cs">
-      <Link>Ensuring\ICondition%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\IEnsuring.cs">
-      <Link>Ensuring\IEnsuring.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Implementations\Condition%27T.cs">
-      <Link>Ensuring\Implementations\Condition%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\Implementations\ParameterCondition.cs">
-      <Link>Ensuring\Implementations\ParameterCondition.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\INamedCondition%27T.cs">
-      <Link>Ensuring\INamedCondition%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\INegableCondition%27T.cs">
-      <Link>Ensuring\INegableCondition%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\IParameterCondition.cs">
-      <Link>Ensuring\IParameterCondition.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\IWithExceptionCondition%27T.cs">
-      <Link>Ensuring\IWithExceptionCondition%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Ensuring\ParameterNameSetMoreThanOnceException.cs">
-      <Link>Ensuring\ParameterNameSetMoreThanOnceException.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Core\EnumerablePropertyInfo.cs">
       <Link>EnumerablePropertyInfo.cs</Link>
@@ -587,45 +359,6 @@
     <Compile Include="..\..\4.0\Core\IO\StreamExtensions.cs">
       <Link>IO\StreamExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\CodeDom\CachedCodeDomExpressionParser.cs">
-      <Link>Linq\Expressions\CodeDom\CachedCodeDomExpressionParser.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\CodeDom\CodeDomExpressionParser.cs">
-      <Link>Linq\Expressions\CodeDom\CodeDomExpressionParser.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\EnumerableExpressionExtensions.cs">
-      <Link>Linq\Expressions\EnumerableExpressionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\ExpressionExtensions.cs">
-      <Link>Linq\Expressions\ExpressionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\IExpressionParser.cs">
-      <Link>Linq\Expressions\IExpressionParser.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\IParameter%27T.cs">
-      <Link>Linq\Expressions\IParameter%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\Parameter%27T.cs">
-      <Link>Linq\Expressions\Parameter%27T.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\Parsing\ExpressionBuilder.cs">
-      <Link>Linq\Expressions\Parsing\ExpressionBuilder.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\Parsing\ExpressionInfo.cs">
-      <Link>Linq\Expressions\Parsing\ExpressionInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\Parsing\ExpressionParser.cs">
-      <Link>Linq\Expressions\Parsing\ExpressionParser.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\Parsing\ExpressionParserHelper.cs">
-      <Link>Linq\Expressions\Parsing\ExpressionParserHelper.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\Parsing\ExpressionResult.cs">
-      <Link>Linq\Expressions\Parsing\ExpressionResult.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Linq\Expressions\Parsing\ExpressionToken.cs">
-      <Link>Linq\Expressions\Parsing\ExpressionToken.cs</Link>
-    </Compile>
     <Compile Include="..\..\4.0\Core\Lock%27T.cs">
       <Link>Lock%27T.cs</Link>
     </Compile>
@@ -680,9 +413,6 @@
     <Compile Include="..\..\4.0\Core\Mapping\Data\MappingStrategy.cs">
       <Link>Mapping\Data\MappingStrategy.cs</Link>
     </Compile>
-    <Compile Include="..\..\4.0\Core\Mapping\DomainMapper.cs">
-      <Link>Mapping\DomainMapper.cs</Link>
-    </Compile>
     <Compile Include="..\..\4.0\Core\Mapping\IDomainMapper.cs">
       <Link>Mapping\IDomainMapper.cs</Link>
     </Compile>
@@ -736,15 +466,6 @@
     </Compile>
     <Compile Include="..\..\4.0\Core\Mapping\Strategies\ReferenceMemberStrategy.cs">
       <Link>Mapping\Strategies\ReferenceMemberStrategy.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Mapping\TypeMapper.cs">
-      <Link>Mapping\TypeMapper.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Mapping\TypeMapperConventions.cs">
-      <Link>Mapping\TypeMapperConventions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\Mapping\TypeMapperFactory.cs">
-      <Link>Mapping\TypeMapperFactory.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Core\Messanging\ExceptionMessage%27TSender%27TException.cs">
       <Link>Messanging\ExceptionMessage%27TSender%27TException.cs</Link>
@@ -1072,9 +793,6 @@
     </Compile>
     <Compile Include="..\..\4.0\Core\TypeExtensions.cs">
       <Link>TypeExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\4.0\Core\TypeNameHelper.cs">
-      <Link>TypeNameHelper.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Core\Validation\IValidator.cs">
       <Link>Validation\IValidator.cs</Link>

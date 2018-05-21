@@ -91,18 +91,11 @@
     <Compile Include="Calendar\Scheduling\SchedulingStartRecurrencyDateTest.cs" />
     <Compile Include="Calendar\Scheduling\SchedulingCalendarRangeTest.cs" />
     <Compile Include="Collections\Concurrent\SafeConcurrentDictionaryTest.cs" />
-    <Compile Include="Configuration\ConfigurationContextTest.cs" />
     <Compile Include="Helpers\Category.cs" />
     <Compile Include="Collections\Generic\CollectionExtensionsTest.cs" />
     <Compile Include="Collections\Generic\EqualityComparerTest.cs" />
     <Compile Include="ComparerFactoryTest.cs" />
     <Compile Include="ComparerTest.cs" />
-    <Compile Include="Data\ApplicationInfoDataSettingsPathTest.cs" />
-    <Compile Include="Data\ApplicationDataTest.cs" />
-    <Compile Include="Data\ApplicationDataSimplifiedTest.cs" />
-    <Compile Include="Data\ApplicationInfoTest.cs" />
-    <Compile Include="Data\DataSettingsTest.cs" />
-    <Compile Include="Data\Helpers\DataTestStorage.cs" />
     <Compile Include="DoubleExtensionsTest.cs" />
     <Compile Include="IO\FileSystemStorageTest.cs" />
     <Compile Include="IO\StorageTest.cs" />
@@ -125,21 +118,15 @@
     <Compile Include="Serialization\SerializerTest.cs" />
     <Compile Include="ObjectTreeTest.cs" />
     <Compile Include="TypeExtensions.RootType.Test.cs" />
-    <Compile Include="Ensuring\ObjectEnsureTest.cs" />
-    <Compile Include="Ensuring\EnforceTest.cs" />
     <Compile Include="Extensions\ObjectHashTest.cs" />
     <Compile Include="GenericTypeExtensionsTest.cs" />
     <Compile Include="DateTimeExtensionsTest.cs" />
     <Compile Include="Diagnostic\BenchmarkTest.cs" />
     <Compile Include="Conversion\ConvertersTest.cs" />
-    <Compile Include="Ensuring\DoubleEnsureTest.cs" />
-    <Compile Include="Ensuring\GuidEnsureTest.cs" />
-    <Compile Include="Ensuring\TypeEnsureTest.cs" />
     <Compile Include="Extensions\BooleanExtensionsTest.cs" />
     <Compile Include="Extensions\ObjectExtensionsTest.cs" />
     <Compile Include="Extensions\GenericExtensionsTest.cs" />
     <Compile Include="Helpers\Address.cs" />
-    <Compile Include="CodeDom\CodeDomFluentTest.cs" />
     <Compile Include="Helpers\Conversion\CustomerDtoToCustomerConverter.cs" />
     <Compile Include="Helpers\KnownCustomer.cs" />
     <Compile Include="Helpers\Teacher.cs" />
@@ -152,16 +139,11 @@
     <Compile Include="Calendar\Holiday\ItalianHolidayFactoryTest.cs" />
     <Compile Include="IO\FileInfoTest.cs" />
     <Compile Include="KnownCharSetTest.cs" />
-    <Compile Include="Linq\Expressions\EnumerableExpressionExtensionsTest.cs" />
-    <Compile Include="Linq\Expressions\ExpressionParserPerfomanceTest.cs" />
     <Compile Include="Helpers\TestEntity.cs" />
     <Compile Include="Helpers\ExpressionConstant.cs" />
     <Compile Include="Helpers\KnownCode.cs" />
     <Compile Include="Helpers\KnownEntity.cs" />
     <Compile Include="Helpers\KnownExpressions.cs" />
-    <Compile Include="Linq\EnumerableExtensionsTest.cs" />
-    <Compile Include="Linq\Expressions\CodeDom\CodeDomExpressionParserTest.cs" />
-    <Compile Include="Linq\Expressions\Parsing\ExpressionParserTest.cs" />
     <Compile Include="Mapping\AccessorHelperTest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -169,23 +151,12 @@
     <Compile Include="Mapping\MemberInfoValidatorTest.cs" />
     <Compile Include="Mapping\ProjectTest.cs" />
     <Compile Include="Mapping\ReferencePropertyInfoMetadataTest.cs" />
-    <Compile Include="Mapping\DomainMapperTest.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Mapping\PrimitivePropertyInfoMetadataTest.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestSimpleEntityWithWrongAttribute.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestVersionedEntityAndBlob.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestAggregate.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestAggregateEntity.cs" />
     <Compile Include="Mapping\Strategies\AllPrimitivePropertyStrategyTest.cs" />
     <Compile Include="Mapping\Strategies\CollectionPropertyStrategyTest.cs" />
     <Compile Include="Mapping\Strategies\PropertyStrategyTest.cs" />
     <Compile Include="Mapping\Strategies\ReferencePropertyStrategyTest.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestSimpleEntity.cs" />
     <Compile Include="Mapping\Strategies\OnlyValidablePrimitivePropertyStrategyTest.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestSimpleEntityUsingConvention.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestSimpleEntityWithMetadata.cs" />
-    <Compile Include="Mapping\TypeMapperTest\TypeMapperTestVersionedEntity.cs" />
     <Compile Include="Net\NetworkInformation\TcpPingTest.cs" />
     <Compile Include="Reflection\PropertyInfoExtensionsTest.cs" />
     <Compile Include="Reflection\ReflectorTest.cs" />
@@ -194,18 +165,11 @@
     <Compile Include="Runtime\Caching\MemoryCacheTest.cs" />
     <Compile Include="Runtime\InteropServices\NetworkTest.cs" />
     <Compile Include="Security\Cryptography\HashingTest.cs" />
-    <Compile Include="Ensuring\BooleanEnsureTest.cs" />
-    <Compile Include="Ensuring\EnsureEnumerableTest.cs" />
-    <Compile Include="Ensuring\GenericEnsureTest.cs" />
-    <Compile Include="Ensuring\LongEnsureTest.cs" />
-    <Compile Include="Ensuring\IntegerEnsureTest.cs" />
     <Compile Include="Helpers\XmlSerializable.cs" />
     <Compile Include="Helpers\CustomException.cs" />
     <Compile Include="Helpers\Message.cs" />
     <Compile Include="Messanging\MessegeBrokerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ensuring\EnsureTest.cs" />
-    <Compile Include="Reflection\ExpressionExtensionsTest.cs" />
     <Compile Include="SingletonTest.cs" />
     <Compile Include="StringExtensionsTest.cs" />
     <Compile Include="Threading\ThreadExtensions.cs" />
@@ -243,6 +207,9 @@
     <Content Include="SequentialIdentity\texts.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Linq\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

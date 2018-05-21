@@ -1,23 +1,18 @@
 namespace EyeSoft.Mapping
 {
-	using System.Reflection;
+    using System.Reflection;
 
-	using EyeSoft.ComponentModel.DataAnnotations;
+    using EyeSoft.ComponentModel.DataAnnotations;
 
-	public class ReferenceMemberInfoMetadata
-		: MemberInfoMetadata
-	{
-		internal ReferenceMemberInfoMetadata(MemberInfo memberInfo)
-			: base(memberInfo)
-		{
-			Ensure
-				.That(Type.IsPrimitiveType())
-				.Named(() => memberInfo)
-				.Is.False();
+    public class ReferenceMemberInfoMetadata
+        : MemberInfoMetadata
+    {
+        internal ReferenceMemberInfoMetadata(MemberInfo memberInfo)
+            : base(memberInfo)
+        {
+            Required = memberInfo.IsRequired();
+        }
 
-			Required = memberInfo.IsRequired();
-		}
-
-		public bool Required { get; private set; }
-	}
+        public bool Required { get; private set; }
+    }
 }

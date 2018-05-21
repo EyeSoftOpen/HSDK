@@ -2,5 +2,5 @@
 2. mount the "Sign\Signing.Certificate.tc" using the password decrypted with "Sign\Picoware.Crypt.Decrypt.Text.linq" qVae26zwSl/pkZNJhpdd0fcUUGnqgUrfFpC1qjrtVCo=
 3. build the "Main\EyeSoft.Hsdk.sln" solution
 4. obtain the VS_KEY_XXX from Visual Studio
-5. add Visual Studio Key command: - run : "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sn.exe" -i j:\EyeSoft.pfx {VS_KEY_XXXXXXXXXXXXXXXX}
+5. add Visual Studio Key command: - run : "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools\sn.exe" -i j:\EyeSoft.pfx {VS_KEY_XXXXXXXXXXXXXXXX}
 6. certificate password: tQ4/IFi6ygBlWD+NvCB8OK5s8c+1H6HEtWo/FsVU/lkVFGeC6SbDvYlqLKX5RS2z

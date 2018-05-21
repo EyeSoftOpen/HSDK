@@ -1,158 +1,146 @@
 namespace EyeSoft.Security.Cryptography
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Security.Cryptography;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Cryptography;
 
-	internal class DefaultHashing
-	{
-		private readonly IDictionary<string, HashAlgoritmRegistration> hashAlgorithmDictionary =
-			new Dictionary<string, HashAlgoritmRegistration>();
+    internal class DefaultHashing
+    {
+        private readonly IDictionary<string, HashAlgoritmRegistration> hashAlgorithmDictionary =
+            new Dictionary<string, HashAlgoritmRegistration>();
 
-		private readonly IDictionary<string, Func<IHashAlgorithm>> systmeHashAlgorithmDictionary =
-			new Dictionary<string, Func<IHashAlgorithm>>
-			{
-				{ HashAlgorithms.Md5, Create<MD5> },
-				{ HashAlgorithms.Sha1, Create<SHA1> },
-				{ HashAlgorithms.Sha256, Create<SHA256> },
-				{ HashAlgorithms.Sha384, Create<SHA384> },
-				{ HashAlgorithms.Sha512, Create<SHA512> },
-				{ HashAlgorithms.Ripemd160, Create<RIPEMD160> },
-			};
+        private readonly IDictionary<string, Func<IHashAlgorithm>> systmeHashAlgorithmDictionary =
+            new Dictionary<string, Func<IHashAlgorithm>>
+            {
+                { HashAlgorithms.Md5, Create<MD5> },
+                { HashAlgorithms.Sha1, Create<SHA1> },
+                { HashAlgorithms.Sha256, Create<SHA256> },
+                { HashAlgorithms.Sha384, Create<SHA384> },
+                { HashAlgorithms.Sha512, Create<SHA512> }
+            };
 
-		private readonly Singleton<Func<IHashAlgorithm>> defaultHashAlgorithm;
+        private readonly Singleton<Func<IHashAlgorithm>> defaultHashAlgorithm;
 
-		private readonly Singleton<IHashAlgorithmFactory> factory =
-			new Singleton<IHashAlgorithmFactory>(() => new HashAlgorithmFactoryWrapper());
+        private readonly Singleton<IHashAlgorithmFactory> factory =
+            new Singleton<IHashAlgorithmFactory>(() => new HashAlgorithmFactoryWrapper());
 
-		public DefaultHashing()
-		{
-			defaultHashAlgorithm = new Singleton<Func<IHashAlgorithm>>(() => () => Sha1);
-		}
+        public DefaultHashing()
+        {
+            defaultHashAlgorithm = new Singleton<Func<IHashAlgorithm>>(() => () => Sha1);
+        }
 
-		public Func<IHashAlgorithm> Default
-		{
-			get { return defaultHashAlgorithm.Instance; }
-		}
+        public Func<IHashAlgorithm> Default
+        {
+            get { return defaultHashAlgorithm.Instance; }
+        }
 
-		public IHashAlgorithm Md5
-		{
-			get { return Create(HashAlgorithms.Md5); }
-		}
+        public IHashAlgorithm Md5
+        {
+            get { return Create(HashAlgorithms.Md5); }
+        }
 
-		public IHashAlgorithm Sha1
-		{
-			get { return Create(HashAlgorithms.Sha1); }
-		}
+        public IHashAlgorithm Sha1
+        {
+            get { return Create(HashAlgorithms.Sha1); }
+        }
 
-		public IHashAlgorithm Sha256
-		{
-			get { return Create(HashAlgorithms.Sha256); }
-		}
+        public IHashAlgorithm Sha256
+        {
+            get { return Create(HashAlgorithms.Sha256); }
+        }
 
-		public IHashAlgorithm Sha384
-		{
-			get { return Create(HashAlgorithms.Sha384); }
-		}
+        public IHashAlgorithm Sha384
+        {
+            get { return Create(HashAlgorithms.Sha384); }
+        }
 
-		public IHashAlgorithm Sha512
-		{
-			get { return Create(HashAlgorithms.Sha512); }
-		}
+        public IHashAlgorithm Sha512
+        {
+            get { return Create(HashAlgorithms.Sha512); }
+        }
 
-		public IHashAlgorithm Ripemd160
-		{
-			get { return Create(HashAlgorithms.Ripemd160); }
-		}
+        public IHashAlgorithm Ripemd160
+        {
+            get { return Create(HashAlgorithms.Ripemd160); }
+        }
 
-		public void SetHashAlgorithm(Func<IHashAlgorithm> hashAlgorithm)
-		{
-			Enforce.Argument(() => hashAlgorithm);
+        public void SetHashAlgorithm(Func<IHashAlgorithm> hashAlgorithm)
+        {
+            defaultHashAlgorithm.Set(() => hashAlgorithm);
+        }
 
-			defaultHashAlgorithm.Set(() => hashAlgorithm);
-		}
+        public void SetHashAlgorithmFactory(IHashAlgorithmFactory hashAlgorithmFactory)
+        {
+            factory.Set(() => hashAlgorithmFactory);
+        }
 
-		public void SetHashAlgorithmFactory(IHashAlgorithmFactory hashAlgorithmFactory)
-		{
-			Enforce.Argument(() => hashAlgorithmFactory);
+        public void Register<T>() where T : IHashAlgorithm, new()
+        {
+            var providerName = typeof(T).Name.Replace("HashAlgorithm", null);
 
-			factory.Set(() => hashAlgorithmFactory);
-		}
+            Register<T>(providerName);
+        }
 
-		public void Register<T>() where T : IHashAlgorithm, new()
-		{
-			var providerName = typeof(T).Name.Replace("HashAlgorithm", null);
+        public void Register<T>(string providerName) where T : IHashAlgorithm, new()
+        {
+            if (HashAlgorithms.All.Any(p => p.IgnoreCaseEquals(providerName)))
+            {
+                var message = $"The provider name is a system hash algorithm and cannot be used. Provider name: {providerName}.";
 
-			Register<T>(providerName);
-		}
+                throw new ArgumentException(message);
+            }
 
-		public void Register<T>(string providerName) where T : IHashAlgorithm, new()
-		{
-			if (HashAlgorithms.All.Any(p => p.IgnoreCaseEquals(providerName)))
-			{
-				var message = "The provider name is a system hash algorithm and cannot be used. Provider name: {ProviderName}."
-					.NamedFormat(providerName);
+            var hashingType = typeof(T);
 
-				throw new ArgumentException(message);
-			}
+            var providerTypeAlreadyRegistered = hashAlgorithmDictionary.Any(p => p.Value.HashingType == hashingType);
 
-			var hashingType = typeof(T);
+            if (providerTypeAlreadyRegistered)
+            {
+                var message = $"The hash algorithm with the name {providerName} and type {hashingType} is already registered.";
 
-			var providerTypeAlreadyRegistered = hashAlgorithmDictionary.Any(p => p.Value.HashingType == hashingType);
+                throw new ArgumentException(message);
+            }
 
-			if (providerTypeAlreadyRegistered)
-			{
-				var message =
-					"The hash algorithm with the name {ProviderName} and type {ProviderType} is already registered."
-						.NamedFormat(providerName, hashingType.Name, hashingType);
+            hashAlgorithmDictionary.Add(providerName, new HashAlgoritmRegistration(() => new T(), hashingType));
+        }
 
-				throw new ArgumentException(message);
-			}
+        public IHashAlgorithm Create(string providerName)
+        {
+            if (systmeHashAlgorithmDictionary.ContainsKey(providerName))
+            {
+                return systmeHashAlgorithmDictionary[providerName]();
+            }
 
-			hashAlgorithmDictionary.Add(providerName, new HashAlgoritmRegistration(() => new T(), hashingType));
-		}
+            if (!hashAlgorithmDictionary.ContainsKey(providerName))
+            {
+                throw new ArgumentException(string.Format("The provider '{0}' is not known.", providerName));
+            }
 
-		public IHashAlgorithm Create(string providerName)
-		{
-			if (systmeHashAlgorithmDictionary.ContainsKey(providerName))
-			{
-				return systmeHashAlgorithmDictionary[providerName]();
-			}
+            return hashAlgorithmDictionary[providerName].Create();
+        }
 
-			Enforce.Argument(() => providerName);
+        public void Reset()
+        {
+            hashAlgorithmDictionary.Clear();
+        }
 
-			Ensure.That(factory).Is.Not.Null();
+        private static IHashAlgorithm Create<THashAlgorithm>() where THashAlgorithm : HashAlgorithm
+        {
+            return new HashAlgorithmWrapper(HashAlgorithm.Create(typeof(THashAlgorithm).Name));
+        }
 
-			if (!hashAlgorithmDictionary.ContainsKey(providerName))
-			{
-				throw new ArgumentException(string.Format("The provider '{0}' is not known.", providerName));
-			}
+        private class HashAlgoritmRegistration
+        {
+            public HashAlgoritmRegistration(Func<IHashAlgorithm> create, Type hashingType)
+            {
+                Create = create;
+                HashingType = hashingType;
+            }
 
-			return hashAlgorithmDictionary[providerName].Create();
-		}
+            public Func<IHashAlgorithm> Create { get; private set; }
 
-		public void Reset()
-		{
-			hashAlgorithmDictionary.Clear();
-		}
-
-		private static IHashAlgorithm Create<THashAlgorithm>() where THashAlgorithm : HashAlgorithm
-		{
-			return new HashAlgorithmWrapper(HashAlgorithm.Create(typeof(THashAlgorithm).Name));
-		}
-
-		private class HashAlgoritmRegistration
-		{
-			public HashAlgoritmRegistration(Func<IHashAlgorithm> create, Type hashingType)
-			{
-				Create = create;
-				HashingType = hashingType;
-			}
-
-			public Func<IHashAlgorithm> Create { get; private set; }
-
-			public Type HashingType { get; private set; }
-		}
-	}
+            public Type HashingType { get; private set; }
+        }
+    }
 }

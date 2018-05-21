@@ -1,85 +1,77 @@
 namespace EyeSoft.Calendar
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-	public class Holidays
-	{
-		private readonly HolidayEntries holidayEntries = new HolidayEntries();
+    public class Holidays
+    {
+        private readonly HolidayEntries holidayEntries = new HolidayEntries();
 
-		private readonly int startingYear;
-		private readonly int futureYears;
+        private readonly int startingYear;
+        private readonly int futureYears;
 
-		internal Holidays(int startingYear, int futureYears)
-		{
-			this.startingYear = startingYear;
-			this.futureYears = futureYears + 1;
-		}
+        internal Holidays(int startingYear, int futureYears)
+        {
+            this.startingYear = startingYear;
+            this.futureYears = futureYears + 1;
+        }
 
-		public Holidays Fixed(string name, AgnosticDay agnosticDay)
-		{
-			holidayEntries.Check(agnosticDay);
+        public Holidays Fixed(string name, AgnosticDay agnosticDay)
+        {
+            holidayEntries.Check(agnosticDay);
 
-			var holidays =
-				Enumerable
-					.Range(startingYear, futureYears)
-					.Select(currentYear => FixedHoliday(name, agnosticDay, currentYear))
-					.ToList();
+            var holidays =
+                Enumerable
+                    .Range(startingYear, futureYears)
+                    .Select(currentYear => FixedHoliday(name, agnosticDay, currentYear))
+                    .ToList();
 
-			holidayEntries.AddRange(holidays, true);
+            holidayEntries.AddRange(holidays, true);
 
-			return this;
-		}
+            return this;
+        }
 
-		public Holidays Entry(string name, params AgnosticDay[] dates)
-		{
-			Ensure
-				.That(dates.Length)
-				.Is.EqualsTo(futureYears);
+        public Holidays Entry(string name, params AgnosticDay[] dates)
+        {
+            var holidays =
+                dates
+                    .Select(
+                        (agnosticDay, year) =>
+                            Holiday.Entry(name, new DateTime(startingYear + year, agnosticDay.Month, agnosticDay.Day)))
+                    .ToList();
 
-			var holidays =
-				dates
-					.Select(
-						(agnosticDay, year) =>
-							Holiday.Entry(name, new DateTime(startingYear + year, agnosticDay.Month, agnosticDay.Day)))
-					.ToList();
+            var orderedHolidays = holidays.OrderBy(holiday => holiday.Date);
 
-			var orderedHolidays = holidays.OrderBy(holiday => holiday.Date);
+            holidayEntries.AddRange(holidays, false);
 
-			Ensure
-				.That(holidays.SequenceEqual(orderedHolidays))
-				.Is.True();
+            return this;
+        }
 
-			holidayEntries.AddRange(holidays, false);
+        public Holidays NextDay(string description)
+        {
+            var nextDayHolidays =
+                holidayEntries
+                    .LastHolidaysAdded
+                    .Select(holiday => Holiday.Create(description, holiday.Date.AddDays(1), holidayEntries.LastWasFixed));
 
-			return this;
-		}
+            holidayEntries.AddRange(nextDayHolidays.ToList());
 
-		public Holidays NextDay(string description)
-		{
-			var nextDayHolidays =
-				holidayEntries
-					.LastHolidaysAdded
-					.Select(holiday => Holiday.Create(description, holiday.Date.AddDays(1), holidayEntries.LastWasFixed));
+            return this;
+        }
 
-			holidayEntries.AddRange(nextDayHolidays.ToList());
+        public IEnumerable<Holiday> List()
+        {
+            return
+                holidayEntries.List();
+        }
 
-			return this;
-		}
+        private Holiday FixedHoliday(string descrizione, AgnosticDay agnosticDay, int currentYear)
+        {
+            var dateTime = new DateTime(currentYear, agnosticDay.Month, agnosticDay.Day);
 
-		public IEnumerable<Holiday> List()
-		{
-			return
-				holidayEntries.List();
-		}
-
-		private Holiday FixedHoliday(string descrizione, AgnosticDay agnosticDay, int currentYear)
-		{
-			var dateTime = new DateTime(currentYear, agnosticDay.Month, agnosticDay.Day);
-
-			return
-				Holiday.Fixed(descrizione, dateTime);
-		}
-	}
+            return
+                Holiday.Fixed(descrizione, dateTime);
+        }
+    }
 }

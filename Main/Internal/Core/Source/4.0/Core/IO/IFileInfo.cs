@@ -1,28 +1,23 @@
 namespace EyeSoft.IO
 {
-	using System.IO;
-	using System.Security.AccessControl;
+    using System.IO;
 
-	public interface IFileInfo : IFileSystemInfo
-	{
-		long Length { get; }
+    public interface IFileInfo : IFileSystemInfo
+    {
+        long Length { get; }
 
-		string DirectoryName { get; }
+        string DirectoryName { get; }
 
-		IDirectoryInfo Directory { get; }
+        IDirectoryInfo Directory { get; }
 
-		IFileInfo CopyTo(string destination);
+        IFileInfo CopyTo(string destination);
 
-		IFileInfo CopyTo(string destination, bool overwrite);
+        IFileInfo CopyTo(string destination, bool overwrite);
 
-		void MoveTo(string destination);
+        void MoveTo(string destination);
 
-		FileSystemSecurity GetAccessControl();
+        Stream OpenRead();
 
-		FileSystemSecurity GetAccessControl(AccessControlSections includeSections);
-
-		Stream OpenRead();
-
-		Stream OpenWrite();
-	}
+        Stream OpenWrite();
+    }
 }

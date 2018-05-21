@@ -1,85 +1,73 @@
 namespace EyeSoft.Diagnostic
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Diagnostics;
-	using System.Globalization;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Globalization;
+    using System.Linq;
 
-	using EyeSoft.Collections.Generic;
+    using EyeSoft.Collections.Generic;
 
-	public class BenchmarkActionScheduler
-		: IBenchmarkActionScheduler
-	{
-		private readonly int count;
+    public class BenchmarkActionScheduler
+        : IBenchmarkActionScheduler
+    {
+        private readonly int count;
 
-		private readonly IDictionary<string, Action> actionDictionary =
-			new Dictionary<string, Action>();
+        private readonly IDictionary<string, Action> actionDictionary =
+            new Dictionary<string, Action>();
 
-		private int actionIndex;
+        private int actionIndex;
 
-		internal BenchmarkActionScheduler(int count)
-		{
-			this.count = count;
-		}
+        internal BenchmarkActionScheduler(int count)
+        {
+            this.count = count;
+        }
 
-		public IBenchmarkActionScheduler Execute(Action action)
-		{
-			return Execute((actionIndex++).ToString(CultureInfo.InvariantCulture), action);
-		}
+        public IBenchmarkActionScheduler Execute(Action action)
+        {
+            return Execute((actionIndex++).ToString(CultureInfo.InvariantCulture), action);
+        }
 
-		public IBenchmarkActionScheduler Execute(string name, Action action)
-		{
-			Enforce
-				.Argument(() => name)
-				.Argument(() => action);
+        public IBenchmarkActionScheduler Execute(string name, Action action)
+        {
+            actionDictionary.Add(name, action);
+            return this;
+        }
 
-			actionDictionary.Add(name, action);
-			return this;
-		}
+        IEnumerable<BenchmarkReport> IBenchmarkActionScheduler.Report(int? digits)
+        {
+            var reportList = new List<BenchmarkReport>();
 
-		IEnumerable<BenchmarkReport> IBenchmarkActionScheduler.Report(int? digits)
-		{
-			if (digits.HasValue)
-			{
-				Ensure
-					.That(digits.Value)
-					.Named(() => digits)
-					.Is.Positive();
-			}
+            foreach (var action in actionDictionary)
+            {
+                var stopwatch = Stopwatch.StartNew();
 
-			var reportList = new List<BenchmarkReport>();
+                var localAction = action;
 
-			foreach (var action in actionDictionary)
-			{
-				var stopwatch = Stopwatch.StartNew();
+                Enumerable
+                    .Range(0, count)
+                    .Iterate(() => localAction.Value());
 
-				var localAction = action;
+                reportList
+                    .Add(new BenchmarkReport(action.Key, stopwatch.ElapsedMilliseconds));
+            }
 
-				Enumerable
-					.Range(0, count)
-					.Iterate(() => localAction.Value());
+            var maxTime = reportList.Max(x => x.Milliseconds);
 
-				reportList
-					.Add(new BenchmarkReport(action.Key, stopwatch.ElapsedMilliseconds));
-			}
+            foreach (var report in reportList)
+            {
+                var percentage = (report.Milliseconds * 100) / (double)maxTime;
 
-			var maxTime = reportList.Max(x => x.Milliseconds);
+                if (digits.HasValue)
+                {
+                    percentage = Math.Round(percentage, digits.Value);
+                }
 
-			foreach (var report in reportList)
-			{
-				var percentage = (report.Milliseconds * 100) / (double)maxTime;
+                report.Percentage = percentage;
+                report.TimesFaster = (int)Math.Round(maxTime / (double)report.Milliseconds);
+            }
 
-				if (digits.HasValue)
-				{
-					percentage = Math.Round(percentage, digits.Value);
-				}
-
-				report.Percentage = percentage;
-				report.TimesFaster = (int)Math.Round(maxTime / (double)report.Milliseconds);
-			}
-
-			return reportList;
-		}
-	}
+            return reportList;
+        }
+    }
 }
