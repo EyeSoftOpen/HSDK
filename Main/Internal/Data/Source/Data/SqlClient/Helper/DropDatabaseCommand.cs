@@ -5,16 +5,16 @@ namespace EyeSoft.Data.SqlClient.Helper
 	public class DropDatabaseCommand : IHelperCommand
 	{
 		private const string DataBaseExistsSql =
-			"IF EXISTS (SELECT name FROM sys.databases WHERE name = N'{DbName}')";
+			"IF EXISTS (SELECT name FROM sys.databases WHERE name = N'{0}')";
 
 		private const string DropDataBaseIfExistSql =
 			DataBaseExistsSql + "\n" +
-			"ALTER DATABASE [{DbName}]" + "\n" +
+			"ALTER DATABASE [{0}]" + "\n" +
 			"SET SINGLE_USER" + "\n" +
 			"WITH ROLLBACK IMMEDIATE" + "\n" +
 			"USE Master" + "\n" +
 			DataBaseExistsSql + "\n" +
-			"DROP DATABASE [{DbName}]";
+			"DROP DATABASE [{0}]";
 
 		private readonly string connectionString;
 
@@ -32,7 +32,7 @@ namespace EyeSoft.Data.SqlClient.Helper
 			{
 				using (var command = connection.CreateCommand())
 				{
-					var commandText = DropDataBaseIfExistSql.NamedFormat(initialCatalog);
+				    var commandText = string.Format(DropDataBaseIfExistSql, initialCatalog);
 					command.CommandText = commandText;
 
 					connection.Open();

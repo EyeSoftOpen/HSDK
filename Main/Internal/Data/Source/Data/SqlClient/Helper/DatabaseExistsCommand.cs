@@ -12,7 +12,7 @@ namespace EyeSoft.Data.SqlClient.Helper
 			"		WHEN EXISTS(" +
 			"			SELECT NULL AS [EMPTY]" +
 			"			FROM [sys].[databases] AS [t0]" +
-			"			WHERE [t0].[name] = N'{DbName}'" +
+			"			WHERE [t0].[name] = N'{0}'" +
 			"			) THEN 1" +
 			"		ELSE 0" +
 			"	 END) AS [value]";
@@ -33,7 +33,7 @@ namespace EyeSoft.Data.SqlClient.Helper
 			{
 				using (var command = connection.CreateCommand())
 				{
-					var commandText = CheckDataBaseExistsSql.NamedFormat(initialCatalog);
+					var commandText = string.Format(CheckDataBaseExistsSql, initialCatalog);
 
 					command.CommandText = commandText;
 

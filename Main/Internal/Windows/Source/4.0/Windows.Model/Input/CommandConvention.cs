@@ -36,7 +36,7 @@ namespace EyeSoft.Windows.Model.Input
 
 			if (allErrors.Any())
 			{
-				allErrors.Insert(0, "- command {Command}".NamedFormat(commandProperty.Name));
+				allErrors.Insert(0, $"- command {commandProperty.Name}");
 			}
 
 			return new CommandMethods(actionMethod, canExecuteMethod, allErrors);
@@ -74,9 +74,7 @@ namespace EyeSoft.Windows.Model.Input
 
 			if ((actionMethod == null) && (!isCanExecuteMethod))
 			{
-				var message =
-					" - missing action: looking for {ActionName} or {SyncActionName} method"
-						.NamedFormat(actionName, syncActionMethodName);
+			    var message = $" - missing action: looking for {actionName} or {syncActionMethodName} method";
 
 				errors.Add(message);
 			}
@@ -114,8 +112,7 @@ namespace EyeSoft.Windows.Model.Input
 			}
 
 			var error =
-				" - wrong return type: the method {MethodName} must be of type {ReturnType}"
-					.NamedFormat(method.Name, returnType.FullName);
+                $" - wrong return type: the method {method.Name} must be of type {returnType.FullName}";
 
 			return error;
 		}

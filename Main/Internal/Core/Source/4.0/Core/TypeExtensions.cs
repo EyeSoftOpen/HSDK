@@ -24,6 +24,21 @@ namespace EyeSoft
         private static readonly IEqualityComparer<Type> typeEqualityComparer =
             new TypeEqualityComparer();
 
+        public static string FriendlyShortName(this Type type)
+        {
+            return TypeNameHelper.FriendlyShortName(type);
+        }
+
+        public static string FriendlyName(this Type type, IEnumerable<string> namespaceNameCollection)
+        {
+            return TypeNameHelper.FriendlyName(type, namespaceNameCollection);
+        }
+
+        public static string FriendlyName(this Type type, params string[] namespaceNameCollection)
+        {
+            return TypeNameHelper.FriendlyName(type, namespaceNameCollection);
+        }
+
         public static bool IsValueTypeOrString(this Type type)
         {
             return type.IsValueType || type == StringType;

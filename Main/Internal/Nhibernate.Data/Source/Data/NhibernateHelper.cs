@@ -45,8 +45,6 @@
 			IConfigurationApplier configurationApplier)
 				: this(databaseProvider, mapping, configurationApplier)
 		{
-			Enforce.Argument(() => interceptor);
-
 			this.interceptor = interceptor;
 		}
 
@@ -57,11 +55,6 @@
 
 		public NhibernateHelper(IDatabaseProvider databaseProvider, HbmMapping mapping, IConfigurationApplier configurationApplier)
 		{
-			Enforce
-				.Argument(() => databaseProvider)
-				.Argument(() => mapping)
-				.Argument(() => configurationApplier);
-
 			configurationApplier.Apply(Configuration, databaseProvider);
 
 			Configuration.AddDeserializedMapping(mapping, null);

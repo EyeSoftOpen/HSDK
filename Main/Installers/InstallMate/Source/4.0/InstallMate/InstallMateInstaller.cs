@@ -69,16 +69,9 @@
 		public void Dispose()
 		{
 			Execute("Close", () => ApplicationUpdater.CloseUpdate(handle));
-
-			if (!updateAvailable)
-			{
-				return;
-			}
-
-			RestartApplication();
 		}
 
-		private void RestartApplication()
+	    public void RestartApplication()
 		{
 			Process.Start(entryAssemblyToRestart.Location);
 

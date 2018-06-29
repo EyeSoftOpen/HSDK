@@ -87,10 +87,6 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 
 		HbmMapping IModelAnnotationsMapper.CompileMapping()
 		{
-			Ensure
-				.That(entityList.Keys.AsEnumerable())
-				.Is.Not.Empty();
-
 			entityList
 				.ForEach(AddMapping);
 

@@ -1,10 +1,9 @@
 namespace EyeSoft.Windows.Model.Conventions
 {
-	using System.Windows;
+    using System.Windows;
+    using EyeSoft.Conventions;
 
-	using EyeSoft.Conventions;
-
-	public abstract class ViewModelToViewConvention : TypeConvention<ViewModel, Window>
+    public abstract class ViewModelToViewConvention : TypeConvention<ViewModel, Window>
 	{
 	}
 }

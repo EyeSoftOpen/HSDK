@@ -10,8 +10,6 @@ namespace EyeSoft.Data.Common
 	{
 		public static void CreateIfNotExists(this IDatabaseProvider databaseProvider)
 		{
-			Enforce.Argument(() => databaseProvider);
-
 			if (!databaseProvider.Exists())
 			{
 				databaseProvider.Create();
@@ -20,8 +18,6 @@ namespace EyeSoft.Data.Common
 
 		public static void DropIfExists(this IDatabaseProvider databaseProvider)
 		{
-			Enforce.Argument(() => databaseProvider);
-
 			if (databaseProvider.Exists())
 			{
 				databaseProvider.Drop();
@@ -30,8 +26,6 @@ namespace EyeSoft.Data.Common
 
 		public static void DropIfExistsAndCreate(this IDatabaseProvider databaseProvider)
 		{
-			Enforce.Argument(() => databaseProvider);
-
 			if (databaseProvider.Exists())
 			{
 				databaseProvider.Drop();
@@ -45,10 +39,6 @@ namespace EyeSoft.Data.Common
 			string statement,
 			DbConnectionStringBuilder dbConnectionBuilder = null)
 		{
-			Enforce
-				.Argument(() => databaseProvider)
-				.Argument(() => statement);
-
 			var connectionString = (dbConnectionBuilder == null) ? null : dbConnectionBuilder.ToString();
 
 			ExecuteNonQuery(
@@ -62,10 +52,6 @@ namespace EyeSoft.Data.Common
 			string statement,
 			string connectionString = null)
 		{
-			Enforce
-				.Argument(() => databaseProvider)
-				.Argument(() => statement);
-
 			ExecuteCommand(
 				databaseProvider,
 				statement,
@@ -78,10 +64,6 @@ namespace EyeSoft.Data.Common
 			string statement,
 			DbConnectionStringBuilder dbConnectionBuilder = null)
 		{
-			Enforce
-				.Argument(() => databaseProvider)
-				.Argument(() => statement);
-
 			var connectionString = (dbConnectionBuilder == null) ? null : dbConnectionBuilder.ToString();
 
 			return
@@ -96,10 +78,6 @@ namespace EyeSoft.Data.Common
 			string statement,
 			string connectionString = null)
 		{
-			Enforce
-				.Argument(() => databaseProvider)
-				.Argument(() => statement);
-
 			return
 				ExecuteCommand(
 					databaseProvider,
@@ -114,10 +92,6 @@ namespace EyeSoft.Data.Common
 			string connectionString,
 			Func<IDbCommand, T> func)
 		{
-			Enforce
-				.Argument(() => databaseProvider)
-				.Argument(() => statement);
-
 			var factory = DbProviderFactories.GetFactory(databaseProvider.ProviderName);
 
 			using (var connection = factory.CreateConnection())

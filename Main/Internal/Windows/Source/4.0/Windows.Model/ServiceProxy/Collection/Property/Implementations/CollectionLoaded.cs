@@ -43,24 +43,18 @@
 		ICollectionSorted<TService, TCollectionType>
 			ICollectionLoaded<TService, TCollectionType>.Sort(Expression<Func<TCollectionType, IComparable>> func)
 		{
-			Enforce.Argument(() => func);
-
 			return ((ICollectionLoaded<TService, TCollectionType>)this).Sort(ComparerFactory<TCollectionType>.Create(func));
 		}
 
 		ICollectionSorted<TService, TCollectionType>
 			ICollectionLoaded<TService, TCollectionType>.Sort(Func<TCollectionType, TCollectionType, int> comparerFunc)
 		{
-			Enforce.Argument(() => comparerFunc);
-
 			return ((ICollectionLoaded<TService, TCollectionType>)this).Sort(ComparerFactory<TCollectionType>.Create(comparerFunc));
 		}
 
 		ICollectionSorted<TService, TCollectionType>
 			ICollectionLoaded<TService, TCollectionType>.Sort(IComparer<TCollectionType> customComparer)
 		{
-			Enforce.Argument(() => customComparer);
-
 			comparer = customComparer.ToNonGeneric();
 
 			return this;

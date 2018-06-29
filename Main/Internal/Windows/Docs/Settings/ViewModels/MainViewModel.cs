@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Docs.Settings.ViewModels
 {
-	using EyeSoft.Data;
+    using Windows.Model.Settings;
 	using EyeSoft.Windows.Model;
 
 	public class MainViewModel : ViewModel

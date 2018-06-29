@@ -14,8 +14,6 @@ namespace EyeSoft.Data.Common
 
 		protected DatabaseProvider(string connectionString)
 		{
-			Enforce.Argument(() => connectionString);
-
 			ConnectionString = connectionString;
 		}
 

@@ -6,9 +6,7 @@ namespace EyeSoft.Data.Common
 	{
 		public static string DropCreateSchema(this IDatabaseSchema databaseSchema)
 		{
-			return
-				"{Drop} {NewLine} {Create}"
-					.NamedFormat(databaseSchema.Drop(), Environment.NewLine, databaseSchema.Create());
+			return $"{databaseSchema.Drop()} {Environment.NewLine} {databaseSchema.Create()}";
 		}
 	}
 }

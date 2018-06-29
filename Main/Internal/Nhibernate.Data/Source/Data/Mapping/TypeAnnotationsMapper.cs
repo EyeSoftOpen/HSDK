@@ -16,15 +16,6 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 		public IConformistHoldersProvider Map<T>(MappedType mappedType, IClassMapper<T> classMapper)
 			where T : class
 		{
-			Enforce
-				.Argument(() => mappedType)
-				.Argument(() => classMapper);
-
-			Ensure
-				.That(mappedType.Key)
-				.WithException(new KeyMissingException(typeof(T)))
-				.Is.Not.Null();
-
 			MapKey(mappedType.Key, classMapper);
 
 			MapVersion(mappedType.Version, classMapper);

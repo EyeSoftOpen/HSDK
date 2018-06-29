@@ -13,16 +13,12 @@ namespace EyeSoft.Data.SqLite
 		public SqLiteDatabaseProvider(SQLiteConnectionStringBuilder connectionStringBuilder)
 			: base(connectionStringBuilder)
 		{
-			Enforce.Argument(() => connectionStringBuilder);
-
 			this.connectionStringBuilder = connectionStringBuilder;
 		}
 
 		public SqLiteDatabaseProvider(string connectionString)
 			: base(connectionString)
 		{
-			Enforce.Argument(() => connectionString);
-
 			connectionStringBuilder = new SQLiteConnectionStringBuilder(connectionString);
 		}
 

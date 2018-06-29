@@ -4,8 +4,6 @@
 	{
 		public FiscalCode Calculate(NaturalPerson naturalPerson, AreaCode areaCode)
 		{
-			Enforce.Argument(() => areaCode);
-
 			var lastName = new LastNameCode(naturalPerson.LastName.Replace(" ", null));
 
 			var firstName = new FirstNameCode(naturalPerson.FirstName.Replace(" ", null));

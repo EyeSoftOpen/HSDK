@@ -6,11 +6,6 @@
 	{
 		public NaturalPerson(string firstName, string lastName, DateTime birthDate, Sex sex)
 		{
-			Enforce
-				.Argument(() => firstName)
-				.Argument(() => lastName)
-				.Argument(() => birthDate);
-
 			FirstName = firstName;
 			LastName = lastName;
 			BirthDate = birthDate;
@@ -43,13 +38,7 @@
 
 		public override string ToString()
 		{
-			return
-				"{FirstName} {LastName} {BirthDate} {Sex}"
-				.NamedFormat(
-					FirstName,
-					LastName,
-					BirthDate.ToInvariantCultureDateString(),
-					Enum.GetName(typeof(Sex), Sex));
+		    return $"{FirstName} {LastName} {BirthDate.ToInvariantCultureDateString()} {Enum.GetName(typeof(Sex), Sex)}";
 		}
 	}
 }

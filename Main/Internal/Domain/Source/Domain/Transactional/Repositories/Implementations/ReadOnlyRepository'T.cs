@@ -12,8 +12,6 @@ namespace EyeSoft.Domain.Transactional.Implementations
 
 		protected internal ReadOnlyRepository(IReadOnlyRepository<T> repository)
 		{
-			Enforce.Argument(() => repository);
-
 			this.repository = repository;
 		}
 

@@ -52,8 +52,6 @@
 
 		public static ListCollectionView Sort<T>(this IEnumerable<T> source, IComparer<T> comparer)
 		{
-			Enforce.Argument(() => comparer);
-
 			return SetComparer(source, comparer);
 		}
 

@@ -46,8 +46,6 @@ namespace EyeSoft.Data.Common
 
 		public static IDatabaseProvider GetDatabaseProvider(this DbConnectionStringBuilder connectionStringBuilder)
 		{
-			Enforce.Argument(() => connectionStringBuilder);
-
 			var connectionStringBuilderTypeName = connectionStringBuilder.GetType().FullName;
 
 			if (!connectionStringBuilderProviderNameDictionary.ContainsKey(connectionStringBuilderTypeName))
@@ -55,7 +53,7 @@ namespace EyeSoft.Data.Common
 				const string Message =
 					"The provider {ProviderName} is not known. Use the RegisterDatabaseProvider method.";
 
-				new ArgumentException(Message.NamedFormat(connectionStringBuilderTypeName))
+				new ArgumentException(connectionStringBuilderTypeName)
 					.Throw();
 			}
 

@@ -67,7 +67,7 @@ namespace EyeSoft.Windows.Model.Input
 				return;
 			}
 
-			errors.Insert(0, "Issues found on type {0}:".NamedFormat(viewModel.GetType().Name));
+			errors.Insert(0, $"Issues found on type {viewModel.GetType().Name}:");
 			var message = errors.JoinMultiLine();
 
 			new InvalidOperationException(message).Throw();

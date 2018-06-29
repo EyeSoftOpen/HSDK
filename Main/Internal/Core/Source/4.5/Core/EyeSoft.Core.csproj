@@ -170,6 +170,9 @@
     <Compile Include="..\..\4.0\Core\ComponentModel\DataAnnotations\Schema\NotMappedAttribute.cs">
       <Link>ComponentModel\DataAnnotations\Schema\NotMappedAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\..\4.0\Core\Conventions\TypeConvention.cs">
+      <Link>Conventions\TypeConvention.cs</Link>
+    </Compile>
     <Compile Include="..\..\4.0\Core\Conversion\Converters.cs">
       <Link>Conversion\Converters.cs</Link>
     </Compile>
@@ -793,6 +796,9 @@
     </Compile>
     <Compile Include="..\..\4.0\Core\TypeExtensions.cs">
       <Link>TypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\TypeNameHelper.cs">
+      <Link>TypeNameHelper.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Core\Validation\IValidator.cs">
       <Link>Validation\IValidator.cs</Link>

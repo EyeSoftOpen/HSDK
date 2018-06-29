@@ -93,8 +93,7 @@ namespace EyeSoft.Windows.Model
 			if (!viewModelType.IsSubclassOf(typeof(ViewModel)))
 			{
 				var message =
-					"The specified view model type '{0}' must inheriths from the ViewModel class."
-					.NamedFormat(viewModelType.Name);
+					$"The specified view model type '{viewModelType.Name}' must inheriths from the ViewModel class.";
 
 				new ArgumentException(message).Throw();
 			}

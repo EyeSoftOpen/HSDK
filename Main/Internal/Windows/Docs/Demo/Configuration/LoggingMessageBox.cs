@@ -11,7 +11,7 @@ namespace EyeSoft.Windows.Model.Demo.Configuration
 	{
 		public MessageBoxResult ShowBox(Window window, string title, string message, MessageBoxButton button, MessageBoxImage icon)
 		{
-			Debug.WriteLine("Showed MessageBox: Title: {Title} - Message: {Message}".NamedFormat(title, message));
+			Debug.WriteLine($"Showed MessageBox: Title: {title} - Message: {message}");
 
 			return MessageBox.Show(window, message, title, button, icon);
 		}

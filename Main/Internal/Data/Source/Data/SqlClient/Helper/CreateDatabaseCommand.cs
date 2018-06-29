@@ -19,7 +19,7 @@ namespace EyeSoft.Data.SqlClient.Helper
 
 			if (new DatabaseExistsCommand(connectionString).Execute())
 			{
-				new DataException("The database {DbName} already exists.".NamedFormat(initialCatalog))
+				new DataException($"The database {initialCatalog} already exists.")
 					.Throw();
 			}
 		}
@@ -30,7 +30,7 @@ namespace EyeSoft.Data.SqlClient.Helper
 			{
 				using (var command = connection.CreateCommand())
 				{
-					var commandText = CreateDataBaseSql.NamedFormat(initialCatalog);
+					var commandText = $"CREATE DATABASE[ {initialCatalog}]";
 
 					command.CommandText = commandText;
 
