@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>data database sql</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6670.26418" />
+      <dependency id="EyeSoft.Core" version="3.0.6715.33312" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="" />

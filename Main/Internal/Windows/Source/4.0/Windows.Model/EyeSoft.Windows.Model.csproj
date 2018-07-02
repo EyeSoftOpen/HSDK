@@ -121,7 +121,8 @@
     <Compile Include="Settings\DataSettingsConfiguration.cs" />
     <Compile Include="Settings\DataSettingsKey.cs" />
     <Compile Include="Settings\DataScope.cs" />
-    <Compile Include="Settings\IApplicationDataSettings.cs" />
+    <Compile Include="Settings\IApplicationDataSettings%27T.cs" />
+    <Compile Include="Settings\IApplicationSettings%27T.cs" />
     <Compile Include="Threading\WindowsThreadingFactory.cs" />
     <Compile Include="Threading\DispatcherTaskScheduler.cs" />
     <Compile Include="Threading\DispatcherTimerFactory.cs" />

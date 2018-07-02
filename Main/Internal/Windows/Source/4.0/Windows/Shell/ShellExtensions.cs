@@ -4,8 +4,8 @@
 	using System.IO;
 	using System.Runtime.InteropServices;
 
-	public class ShellExtensionsLegalDeskUpdateChecker
-    {
+	public class ShellExtensions
+	{
 		public static void CreateShortcut(string title, string linkPath, string filePath, Hotkey hotkey = null)
 		{
 			var shellType = Type.GetTypeFromProgID("WScript.Shell");
@@ -65,7 +65,7 @@
 			}
 			catch (Exception e)
 			{
-			    throw;
+				throw;
 			}
 		}
 	}

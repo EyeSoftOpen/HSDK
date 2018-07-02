@@ -50,6 +50,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xaml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="WindowsBase" />
@@ -262,6 +263,24 @@
     <Compile Include="..\..\4.0\Windows.Model\ServiceProxy\With\IValueExecuted.cs">
       <Link>ServiceProxy\With\IValueExecuted.cs</Link>
     </Compile>
+    <Compile Include="..\..\4.0\Windows.Model\Settings\ApplicationData.cs">
+      <Link>Settings\ApplicationData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Windows.Model\Settings\ApplicationDataSettings.cs">
+      <Link>Settings\ApplicationDataSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Windows.Model\Settings\ApplicationInfo.cs">
+      <Link>Settings\ApplicationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Windows.Model\Settings\DataScope.cs">
+      <Link>Settings\DataScope.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Windows.Model\Settings\DataSettingsConfiguration.cs">
+      <Link>Settings\DataSettingsConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Windows.Model\Settings\DataSettingsKey.cs">
+      <Link>Settings\DataSettingsKey.cs</Link>
+    </Compile>
     <Compile Include="..\..\4.0\Windows.Model\Threading\DispatcherTaskScheduler.cs">
       <Link>Threading\DispatcherTaskScheduler.cs</Link>
     </Compile>
@@ -356,6 +375,8 @@
       <Link>ViewModels\ViewModelFactory.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\IApplicationDataSettings%27T.cs" />
+    <Compile Include="Settings\IApplicationSettings%27T.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
