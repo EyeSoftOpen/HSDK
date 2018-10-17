@@ -79,6 +79,9 @@
     <Compile Include="Collections\Generic\Comparer\ComparerFactory%27T.cs" />
     <Compile Include="Comparer.cs" />
     <Compile Include="Collections\Generic\Comparer\EqualityComparerFactory.cs" />
+    <Compile Include="Configuration\ConfigurationContext.cs" />
+    <Compile Include="Configuration\FileConfigurationContext.cs" />
+    <Compile Include="Configuration\IConfigurationContext.cs" />
     <Compile Include="Conventions\TypeConvention.cs" />
     <Compile Include="Conventions\TypeOrMetadataConvention.cs" />
     <Compile Include="Dependency\ComponentResolutionException.cs" />

@@ -170,6 +170,15 @@
     <Compile Include="..\..\4.0\Core\ComponentModel\DataAnnotations\Schema\NotMappedAttribute.cs">
       <Link>ComponentModel\DataAnnotations\Schema\NotMappedAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\..\4.0\Core\Configuration\ConfigurationContext.cs">
+      <Link>Configuration\ConfigurationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\Configuration\FileConfigurationContext.cs">
+      <Link>Configuration\FileConfigurationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Core\Configuration\IConfigurationContext.cs">
+      <Link>Configuration\IConfigurationContext.cs</Link>
+    </Compile>
     <Compile Include="..\..\4.0\Core\Conventions\TypeConvention.cs">
       <Link>Conventions\TypeConvention.cs</Link>
     </Compile>

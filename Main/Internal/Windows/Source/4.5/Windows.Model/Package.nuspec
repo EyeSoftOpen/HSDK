@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>MVVM AOP DialogService MessageBroker mediator conventions</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6715.33312" />
+      <dependency id="EyeSoft.Core" version="3.0.6836.35031" />
       <dependency id="Microsoft.Bcl" version="1.1.6" />
     </dependencies>
     <frameworkAssemblies>
