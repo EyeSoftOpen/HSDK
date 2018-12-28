@@ -75,29 +75,6 @@ Bibliography, resourses used during project development and growing.
 
 Get Started
 
-Follow us on Twitter: #HSDK Follow us on LinkedId: Hyperion SDK - CodePlex - Software Development
-Powered By
-
-Powered by ReSharper
-
-![alt tag](http://download-codeplex.sec.s-msft.com/Download?ProjectName=hsdk&DownloadId=1538351)
-
-Powered by LINQPad
-
-![alt tag](http://download-codeplex.sec.s-msft.com/Download?ProjectName=hsdk&DownloadId=1538350)
-
-
-
-Branching plan
-
-![alt tag](http://download-codeplex.sec.s-msft.com/Download?ProjectName=hsdk&DownloadId=137506)
-
-
-Technologies
-
-![alt tag](http://download-codeplex.sec.s-msft.com/Download?ProjectName=hsdk&DownloadId=137656)
-
-
 Team
 
  
