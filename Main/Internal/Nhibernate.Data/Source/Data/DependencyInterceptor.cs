@@ -2,13 +2,11 @@ namespace EyeSoft.Data.Nhibernate
 {
 	using System;
 	using System.Collections.Generic;
-
-	using Microsoft.Practices.ServiceLocation;
+	using CommonServiceLocator;
 
 	using NHibernate;
 
-	public class DependencyInterceptor
-		: EmptyInterceptor
+	public class DependencyInterceptor : EmptyInterceptor
 	{
 		private readonly IDictionary<string, Type> typesDictionary;
 

@@ -3,8 +3,7 @@ namespace EyeSoft.ServiceLocator
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-
-	using Microsoft.Practices.ServiceLocation;
+	using CommonServiceLocator;
 
 	public abstract class ServiceLocator : ServiceLocatorImplBase, IServiceLocator
 	{

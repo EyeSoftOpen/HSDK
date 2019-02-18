@@ -2,8 +2,7 @@ namespace EyeSoft.ServiceLocator
 {
 	using System;
 	using System.Collections.Generic;
-
-	using Microsoft.Practices.ServiceLocation;
+	using CommonServiceLocator;
 
 	public abstract class ResolverContainer : ServiceLocator, IResolverContainer
 	{

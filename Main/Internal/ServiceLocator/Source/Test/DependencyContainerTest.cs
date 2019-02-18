@@ -1,12 +1,9 @@
 ﻿namespace EyeSoft.ServiceLocator.Test
 {
 	using System;
-
+	using CommonServiceLocator;
 	using EyeSoft.ServiceLocator;
 	using EyeSoft.ServiceLocator.Test.Helpers;
-
-	using Microsoft.Practices.ServiceLocation;
-
 	using SharpTestsEx;
 
 	public abstract class DependencyContainerTest

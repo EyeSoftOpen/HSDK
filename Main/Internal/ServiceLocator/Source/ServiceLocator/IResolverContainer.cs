@@ -1,6 +1,6 @@
 namespace EyeSoft.ServiceLocator
 {
-	using Microsoft.Practices.ServiceLocation;
+    using CommonServiceLocator;
 
 	public interface IResolverContainer : IResolverLocator, IServiceLocator
 	{

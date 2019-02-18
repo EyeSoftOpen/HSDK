@@ -7,10 +7,8 @@
 	using Castle.MicroKernel;
 	using Castle.MicroKernel.Registration;
 	using Castle.Windsor;
-
-	using Microsoft.Practices.ServiceLocation;
-
-	using ComponentResolutionException = EyeSoft.ComponentResolutionException;
+	using CommonServiceLocator;
+	using ComponentResolutionException = ComponentResolutionException;
 
 	public class WindsorDependencyContainer : DependencyContainer
 	{
@@ -53,7 +51,7 @@
 
 		public override object Resolve(Type serviceType, string key)
 		{
-			return TryResolve(() => container.Resolve(serviceType, key));
+			return TryResolve(() => container.Resolve(key, serviceType));
 		}
 
 		public override IEnumerable<object> ResolveAll(Type serviceType)

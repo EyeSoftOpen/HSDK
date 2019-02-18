@@ -85,7 +85,7 @@ namespace EyeSoft.Windows.Model
 
 		public void ShowMain<TViewModel>(params object[] arguments) where TViewModel : ViewModel
 		{
-			ShowWindowSafe(default(TViewModel), false, null, true);
+			ShowWindowSafe(default(TViewModel), false, arguments, true);
 		}
 
 		public void ShowMain<TViewModel>(TViewModel viewModel) where TViewModel : ViewModel
