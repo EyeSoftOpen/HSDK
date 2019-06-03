@@ -155,11 +155,14 @@
     <Compile Include="..\..\4.0\Windows.Model\Execution\SyncExecution.cs">
       <Link>Execution\SyncExecution.cs</Link>
     </Compile>
-    <Compile Include="..\..\4.0\Windows.Model\Input\AsyncCommand.cs">
-      <Link>Input\AsyncCommand.cs</Link>
+    <Compile Include="..\..\4.0\Windows.Model\Input\AsyncRefreshCommand.cs">
+      <Link>Input\AsyncRefreshCommand.cs</Link>
     </Compile>
-    <Compile Include="..\..\4.0\Windows.Model\Input\AsyncCommandT.cs">
-      <Link>Input\AsyncCommandT.cs</Link>
+    <Compile Include="..\..\4.0\Windows.Model\Input\AsyncRefreshCommandT.cs">
+      <Link>Input\AsyncRefreshCommandT.cs</Link>
+    </Compile>
+    <Compile Include="..\..\4.0\Windows.Model\Input\BaseAsyncRefreshCommand.cs">
+      <Link>Input\BaseAsyncRefreshCommand.cs</Link>
     </Compile>
     <Compile Include="..\..\4.0\Windows.Model\Input\CommandBuilder.cs">
       <Link>Input\CommandBuilder.cs</Link>

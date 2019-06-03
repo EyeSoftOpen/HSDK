@@ -19,17 +19,41 @@
 
 			viewModel.ShowChildCommand.Should().Not.Be.Null();
 
-			viewModel.ShowChildCommand.Should().Be.OfType<AsyncCommand<string>>();
+			viewModel.ShowChildCommand.Should().Be.OfType<AsyncRefreshCommand<string>>();
 		}
 
-		private class ViewModelCommandWithParameter : AutoRegisterViewModel
+	    [TestMethod]
+	    public void UpdateViewModelPropertiesAndCheckIfCommandCanExecuteWasUpdated()
+	    {
+	        var viewModel = new ViewModelCommandWithParameter();
+
+	        viewModel.CanShowChild(null).Should().Be.False();
+
+	        viewModel.AllowCommand = true;
+
+	        viewModel.CanShowChild(null).Should().Be.True();
+        }
+
+        private class ViewModelCommandWithParameter : AutoRegisterViewModel
 		{
+		    public bool AllowCommand
+		    {
+		        get { return GetProperty<bool>(); }
+		        set { SetProperty(value); }
+            }
+
 			public ICommand ShowChildCommand { get; private set; }
 
-			protected void ShowChild(string param)
+		    public void ShowChild(string param)
 			{
 				Console.WriteLine(param);
 			}
-		}
+
+		    public bool CanShowChild(string param)
+		    {
+		        return AllowCommand;
+		    }
+
+        }
 	}
 }

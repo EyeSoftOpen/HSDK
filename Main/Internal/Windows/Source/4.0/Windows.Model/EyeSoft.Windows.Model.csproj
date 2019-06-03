@@ -80,6 +80,9 @@
     <Compile Include="Collections\ObjectModel\EnumerableExtensions.cs" />
     <Compile Include="ExceptionLogger\DialogLogger.cs" />
     <Compile Include="ExceptionLogger\ExceptionHandler.cs" />
+    <Compile Include="Input\AsyncRefreshCommandT.cs" />
+    <Compile Include="Input\AsyncRefreshCommand.cs" />
+    <Compile Include="Input\BaseAsyncRefreshCommand.cs" />
     <Compile Include="Input\CommandsDiscoverFactory.cs" />
     <Compile Include="ServiceProxy\Collection\Direct\ICollectionFilled.cs" />
     <Compile Include="ServiceProxy\Collection\Direct\ICollectionLoaded.cs" />
@@ -153,7 +156,6 @@
     <Compile Include="Execution\Execution.cs" />
     <Compile Include="Collections\ObjectModel\ConcurrentObservableCollection%27T.cs" />
     <Compile Include="Execution\SyncExecution.cs" />
-    <Compile Include="Input\AsyncCommandT.cs" />
     <Compile Include="Input\CommandBuilder.cs" />
     <Compile Include="Input\CommandMethod.cs" />
     <Compile Include="Input\GenericCommandFactory.cs" />
@@ -162,7 +164,6 @@
     <Compile Include="Input\NonGenericCommandFactory.cs" />
     <Compile Include="ViewModels\AutoRegisterViewModel.cs" />
     <Compile Include="BindingListExtensions.cs" />
-    <Compile Include="Input\AsyncCommand.cs" />
     <Compile Include="Input\CommandConvention.cs" />
     <Compile Include="Input\CommandFactory.cs" />
     <Compile Include="Input\CommandMethods.cs" />

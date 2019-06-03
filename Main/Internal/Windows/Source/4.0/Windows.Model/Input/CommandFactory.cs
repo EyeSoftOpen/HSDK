@@ -18,42 +18,42 @@ namespace EyeSoft.Windows.Model.Input
 
 		public ICommand Create(Action action)
 		{
-			return new AsyncCommand(action);
+			return new AsyncRefreshCommand(action);
 		}
 
 		public ICommand Create(Action action, Func<bool> canExecute)
 		{
-			return new AsyncCommand(action, canExecute);
+			return new AsyncRefreshCommand(action, canExecute);
 		}
 
 		public ICommand CreateAsync(Action action)
 		{
-			return new AsyncCommand(action, isAsync);
+			return new AsyncRefreshCommand(action, isAsync);
 		}
 
 		public ICommand CreateAsync(Action action, Func<bool> canExecute)
 		{
-			return new AsyncCommand(action, canExecute, isAsync);
+			return new AsyncRefreshCommand(action, canExecute, isAsync);
 		}
 
 		public ICommand Create<T>(Action<T> action)
 		{
-			return new AsyncCommand<T>(action);
+			return new AsyncRefreshCommand<T>(action);
 		}
 
 		public ICommand Create<T>(Action<T> action, Func<T, bool> canExecute)
 		{
-			return new AsyncCommand<T>(action, canExecute);
+			return new AsyncRefreshCommand<T>(action, canExecute);
 		}
 
 		public ICommand CreateAsync<T>(Action<T> action)
 		{
-			return new AsyncCommand<T>(action, isAsync);
+			return new AsyncRefreshCommand<T>(action, isAsync);
 		}
 
 		public ICommand CreateAsync<T>(Action<T> action, Func<T, bool> canExecute)
 		{
-			return new AsyncCommand<T>(action, canExecute, isAsync);
+			return new AsyncRefreshCommand<T>(action, canExecute, isAsync);
 		}
 	}
 }

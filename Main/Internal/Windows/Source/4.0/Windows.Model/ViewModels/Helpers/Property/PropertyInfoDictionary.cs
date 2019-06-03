@@ -16,31 +16,28 @@ namespace EyeSoft.Windows.Model
 
 		private readonly IDictionary<string, PropertyInfo> propertyInfoDictionary = new Dictionary<string, PropertyInfo>();
 
-		private readonly Type currentViewModelType;
+	    private readonly IDictionary<string, PropertyInfo> commandsPropertyInfoDictionary = new Dictionary<string, PropertyInfo>();
+
+        private readonly Type currentViewModelType;
 
 		private readonly ViewModel viewModel;
 
 		public PropertyInfoDictionary(ViewModel viewModel)
 		{
 			this.viewModel = viewModel;
+
 			currentViewModelType = viewModel.GetType();
 
-			var properties = GetPropertiesExcludingCommand();
+			var properties = GetAllProperties();
 
-			foreach (var property in properties)
-			{
-				var propertyName = property.Name;
+		    var allPropertiesExcludedCommands = properties.Where(p => !commandType.IsAssignableFrom(p.PropertyType)).ToArray();
 
-				if (propertyInfoDictionary.ContainsKey(propertyName))
-				{
-					const string Message = "The property '{0}' of the ViewModel '{1}' is already declared in a base class.";
+		    var allPropertiesCommands = properties.Where(p => commandType.IsAssignableFrom(p.PropertyType)).ToArray();
 
-					throw new InvalidOperationException(string.Format(Message, propertyName, currentViewModelType.Name));
-				}
+		    AddPropertiesToDictionary(propertyInfoDictionary, allPropertiesExcludedCommands);
 
-				propertyInfoDictionary.Add(propertyName, property);
-			}
-		}
+		    AddPropertiesToDictionary(commandsPropertyInfoDictionary, allPropertiesCommands);
+        }
 
 		public PropertyInfo this[string propertyName]
 		{
@@ -66,12 +63,48 @@ namespace EyeSoft.Windows.Model
 			return value;
 		}
 
-		private IEnumerable<PropertyInfo> GetPropertiesExcludingCommand()
+	    public object GetCommandValue(string commandPropertyName)
+	    {
+	        var propertyInfo = commandsPropertyInfoDictionary[commandPropertyName];
+
+	        var value = propertyInfo.GetValue(viewModel, null);
+
+	        return value;
+
+        }
+
+        public IEnumerable<PropertyInfo> GetCommands()
+        {
+            return commandsPropertyInfoDictionary
+                .Select(x => x.Value)
+                .ToArray();
+	    }
+
+	    private void AddPropertiesToDictionary(IDictionary<string, PropertyInfo> dictionary, IEnumerable<PropertyInfo> properties)
+	    {
+	        foreach (var property in properties)
+	        {
+	            var propertyName = property.Name;
+
+	            if (dictionary.ContainsKey(propertyName))
+	            {
+	                const string Message = "The property '{0}' of the ViewModel '{1}' is already declared in a base class.";
+
+	                throw new InvalidOperationException(string.Format(Message, propertyName, currentViewModelType.Name));
+	            }
+
+	            dictionary.Add(propertyName, property);
+	        }
+        }
+
+        private PropertyInfo[] GetAllProperties()
 		{
 			return
-				currentViewModelType.GetProperties(Bindings)
-					.Where(p => p.DeclaringType != baseViewModelType && !commandType.IsAssignableFrom(p.PropertyType))
-					.OrderBy(x => x.Name).ToArray();
+				currentViewModelType
+				    .GetProperties(Bindings)
+					.Where(p => p.DeclaringType != baseViewModelType)
+					.OrderBy(x => x.Name)
+				    .ToArray();
 		}
 	}
 }

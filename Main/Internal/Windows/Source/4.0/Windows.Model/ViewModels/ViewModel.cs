@@ -12,6 +12,7 @@ namespace EyeSoft.Windows.Model
     using EyeSoft.Logging;
     using EyeSoft.Reflection;
     using EyeSoft.Validation;
+    using Input;
 
     public abstract class ViewModel : INotifyPropertyChanged,
                                       INotifyPropertyChanging,
@@ -265,6 +266,15 @@ namespace EyeSoft.Windows.Model
             viewModelProperties.Changed(
                 propertyInfoDictionary[e.PropertyName],
                 () => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
+
+            var commandProperties = propertyInfoDictionary.GetCommands();
+
+            foreach (var commandProperty in commandProperties)
+            {
+                var commandInstance = propertyInfoDictionary.GetCommandValue(commandProperty.Name);
+
+                (commandInstance as BaseAsyncRefreshCommand)?.RaiseCanExecuteChanged();
+            }
 
             HandlePropertyChanged(e);
         }

@@ -116,7 +116,7 @@
 			}
 		}
 
-		private class MyAsyncCommand : AsyncCommand
+		private class MyAsyncCommand : AsyncRefreshCommand
 		{
 			public MyAsyncCommand(Action action)
 				: base(action)
