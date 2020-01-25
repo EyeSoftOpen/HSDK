@@ -33,7 +33,7 @@
 			{
 				if (value.GetType() != other.GetType())
 				{
-					new ArgumentException("Cannot compare objects of different type.").Throw();
+					throw new ArgumentException("Cannot compare objects of different type.");
 				}
 
 				type = value.GetType();

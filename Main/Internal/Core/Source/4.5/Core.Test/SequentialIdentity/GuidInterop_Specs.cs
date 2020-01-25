@@ -2,13 +2,13 @@
 {
     using System;
     using EyeSoft.SequentialIdentity;
-    using NUnit.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-    [TestFixture]
+    [TestClass]
     public class When_interoperating_with_the_guid_type
     {
-        [Test]
+        [TestMethod]
         public void Should_convert_from_a_guid_quickly()
         {
             Guid g = Guid.NewGuid();
@@ -21,7 +21,7 @@
             Assert.AreEqual(ns, gs);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_convert_to_guid_quickly()
         {
             NewId n = NewId.Next();
@@ -34,7 +34,7 @@
             Assert.AreEqual(ns, gs);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_display_sequentially_for_newid()
         {
             NewId id = NewId.Next();
@@ -42,7 +42,7 @@
             Console.WriteLine(id.ToString("DS"));
         }
 
-        [Test]
+        [TestMethod]
         public void Should_make_the_round_trip_successfully_via_bytes()
         {
             Guid g = Guid.NewGuid();
@@ -54,7 +54,7 @@
             Assert.AreEqual(g, gn);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_match_string_output_b()
         {
             var bytes = new byte[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 14, 15};
@@ -68,7 +68,7 @@
             Assert.AreEqual(gs, ns);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_match_string_output_d()
         {
             var bytes = new byte[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 14, 15};
@@ -82,7 +82,7 @@
             Assert.AreEqual(gs, ns);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_match_string_output_n()
         {
             var bytes = new byte[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 14, 15};
@@ -96,7 +96,7 @@
             Assert.AreEqual(gs, ns);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_match_string_output_p()
         {
             var bytes = new byte[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 14, 15};
@@ -110,7 +110,7 @@
             Assert.AreEqual(gs, ns);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_properly_handle_string_passthrough()
         {
             NewId n = NewId.Next();
@@ -124,7 +124,7 @@
             Assert.AreEqual(n, nn);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_support_the_same_constructor()
         {
             var guid = new Guid(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
@@ -133,7 +133,7 @@
             Assert.AreEqual(guid.ToString(), newid.ToString());
         }
 
-        [Test]
+        [TestMethod]
         public void Should_work_from_newid_to_guid_to_newid()
         {
             NewId n = NewId.Next();

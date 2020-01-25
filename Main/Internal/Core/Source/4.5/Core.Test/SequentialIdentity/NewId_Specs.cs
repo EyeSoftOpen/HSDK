@@ -8,13 +8,12 @@
     using System.Threading.Tasks;
     using EyeSoft.SequentialIdentity;
     using EyeSoft.SequentialIdentity.NewIdProviders;
-    using NUnit.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
-    [TestFixture]
+    [TestClass]
     public class Using_the_newid_generator
     {
-        [Test, Explicit]
+        [TestMethod]
         public void Should_be_able_to_extract_timestamp()
         {
             DateTime now = DateTime.UtcNow;
@@ -28,10 +27,10 @@
             if (difference < TimeSpan.Zero)
                 difference = difference.Negate();
 
-            Assert.LessOrEqual(difference, TimeSpan.FromMinutes(1));
+            Assert.IsTrue(difference <= TimeSpan.FromMinutes(1));
         }
 
-        [Test, Explicit]
+        [TestMethod]
         public void Should_be_able_to_extract_timestamp_with_process_id()
         {
             DateTime now = DateTime.UtcNow;
@@ -46,10 +45,10 @@
             if (difference < TimeSpan.Zero)
                 difference = difference.Negate();
 
-            Assert.LessOrEqual(difference, TimeSpan.FromMinutes(1));
+            Assert.IsTrue(difference <= TimeSpan.FromMinutes(1));
         }
 
-        [Test]
+        [TestMethod]
         public void Should_generate_sequential_ids_quickly()
         {
             NewId.SetTickProvider(new StopwatchTickProvider());
@@ -68,7 +67,7 @@
             }
         }
 
-        [Test, Explicit]
+        [TestMethod]
         public void Should_generate_unique_identifiers_with_each_invocation()
         {
             NewId.Next();
@@ -95,7 +94,7 @@
                 limit / timer.ElapsedMilliseconds);
         }
 
-        [Test, Explicit]
+        [TestMethod]
         public void Should_be_completely_thread_safe_to_avoid_duplicates()
         {
             NewId.Next();

@@ -2,7 +2,6 @@ namespace EyeSoft.Windows.Model.Demo.Configuration
 {
 	using System;
 
-	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
 

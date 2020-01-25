@@ -22,13 +22,6 @@
 		}
 
 		[TestMethod]
-		public void VerifyApplicationDataSettingsWithoutAValidAssemblyEntryThrowException()
-		{
-			Executing.This(() => ApplicationInfo.FromEntryAssembly())
-				.Should().Throw<InvalidOperationException>();
-		}
-
-		[TestMethod]
 		public void VerifyApplicationDataSettingsPath()
 		{
 			var info = new ApplicationInfo("EyeSoft", "Test");

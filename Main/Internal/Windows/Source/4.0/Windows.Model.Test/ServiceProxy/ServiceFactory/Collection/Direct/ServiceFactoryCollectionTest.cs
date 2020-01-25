@@ -6,8 +6,8 @@
 	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using EyeSoft.Windows.Model.Test.ObjectModel;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 	using SharpTestsEx;
 
@@ -39,7 +39,7 @@
 
 			manualResetEvent.WaitOne();
 
-			collection.Should().Have.SameSequenceAs(Known.CustomerModel.All);
+			collection.Should().Have.SameSequenceAs(Demo.Configuration.Helpers.Known.CustomerModel.All);
 		}
 
 		[TestMethod]

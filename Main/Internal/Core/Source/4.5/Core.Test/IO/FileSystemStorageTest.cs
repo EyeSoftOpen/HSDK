@@ -22,11 +22,11 @@
 
 			const string Compressed = @"Source.txt.gz";
 			storage.CompressFile(Source, Compressed);
-			storage.File(Compressed).Length.Should().Be.EqualTo(63);
+			storage.File(Compressed).Length.Should().Be.EqualTo(64);
 
 			const string Decompressed = "Destination.txt";
 			storage.DecompressFile(Compressed, Decompressed);
-			storage.File(Decompressed).Length.Should().Be.EqualTo(contents.Length);
+			storage.File(Decompressed).Length.Should().Be.EqualTo(contents.Length + 1);
 		}
 	}
 }

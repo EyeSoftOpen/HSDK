@@ -70,7 +70,7 @@ namespace EyeSoft.Windows.Model.Input
 			errors.Insert(0, $"Issues found on type {viewModel.GetType().Name}:");
 			var message = errors.JoinMultiLine();
 
-			new InvalidOperationException(message).Throw();
+			throw new InvalidOperationException(message);
 		}
 
 		private IEnumerable<string> AssignCommand(

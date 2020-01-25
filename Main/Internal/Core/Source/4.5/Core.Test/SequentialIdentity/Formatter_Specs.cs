@@ -6,24 +6,19 @@
     using EyeSoft.SequentialIdentity;
     using EyeSoft.SequentialIdentity.NewIdFormatters;
     using EyeSoft.SequentialIdentity.NewIdParsers;
-    using NUnit.Framework;
-    using Assert = NUnit.Framework.Assert;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
-    [TestFixture]
+    [TestClass]
     public class Using_the_newid_formatters
     {
-        [Test]
+        [TestMethod]
         public void Should_compare_known_conversions()
         {
-            string directory = AppDomain.CurrentDomain.BaseDirectory;
-            string newIdFileName = Path.Combine(directory, "guids.txt");
-            string textsFileName = Path.Combine(directory, "texts.txt");
+            var assembly = GetType().Assembly;
 
             var newIds = new List<NewId>();
 
-            using (FileStream file = File.Open(newIdFileName, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (var reader = new StreamReader(file))
+            using (var reader = new StreamReader(assembly.GetManifestResourceStream("EyeSoft.Core.Test.SequentialIdentity.guids.txt")))
             {
                 while (!reader.EndOfStream)
                 {
@@ -34,8 +29,7 @@
 
             var texts = new List<string>(newIds.Count);
 
-            using (FileStream file = File.Open(textsFileName, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (var reader = new StreamReader(file))
+            using (var reader = new StreamReader(assembly.GetManifestResourceStream("EyeSoft.Core.Test.SequentialIdentity.texts.txt")))
             {
                 while (!reader.EndOfStream)
                 {
@@ -48,7 +42,7 @@
 
             var formatter = new Base32Formatter("0123456789ABCDEFGHIJKLMNOPQRSTUV");
 
-            for (int i = 0; i < newIds.Count; i++)
+            for (var i = 0; i < newIds.Count; i++)
             {
                 string text = newIds[i].ToString(formatter);
 
@@ -58,7 +52,7 @@
             Console.WriteLine("Compared {0} equal conversions", texts.Count);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_convert_back_using_parser()
         {
             var n = new NewId("F6B27C7C-8AB8-4498-AC97-3A6107A21320");
@@ -74,7 +68,7 @@
             Assert.AreEqual(n, newId);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_convert_back_using_standard_parser()
         {
             var n = new NewId("F6B27C7C-8AB8-4498-AC97-3A6107A21320");
@@ -90,7 +84,7 @@
             Assert.AreEqual(n, newId);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_convert_using_custom_base32_formatting_characters()
         {
             var n = new NewId("F6B27C7C-8AB8-4498-AC97-3A6107A21320");
@@ -102,7 +96,7 @@
             Assert.AreEqual("UQP7OV4AN129HB4N79GGF8GJ10", ns);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_convert_using_standard_base32_formatting_characters()
         {
             var n = new NewId("F6B27C7C-8AB8-4498-AC97-3A6107A21320");
@@ -114,7 +108,7 @@
             Assert.AreEqual("62ZHY7EKXBCJRLEXHJQQPIQTBA", ns);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_convert_using_the_optimized_human_readable_formatter()
         {
             var n = new NewId("F6B27C7C-8AB8-4498-AC97-3A6107A21320");
@@ -126,7 +120,7 @@
             Assert.AreEqual("6438A9RKZBNJTMRZ8JOOXEOUBY", ns);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_translate_often_transposed_characters_to_proper_values()
         {
             var n = new NewId("F6B27C7C-8AB8-4498-AC97-3A6107A21320");

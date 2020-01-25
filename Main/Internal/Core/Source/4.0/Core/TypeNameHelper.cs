@@ -4,7 +4,6 @@ namespace EyeSoft
     using System.CodeDom;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.CSharp;
 
     public static class TypeNameHelper
     {
@@ -40,11 +39,11 @@ namespace EyeSoft
 
         public static string FriendlyName(Type type)
         {
-            using (var provider = new CSharpCodeProvider())
-            {
-                var typeRef = new CodeTypeReference(type);
-                return provider.GetTypeOutput(typeRef);
-            }
+            var typeRef = new CodeTypeReference(type);
+            var friendlyName = new TypeName().GetTypeOutput(typeRef);
+            return friendlyName;
         }
+
+
     }
 }

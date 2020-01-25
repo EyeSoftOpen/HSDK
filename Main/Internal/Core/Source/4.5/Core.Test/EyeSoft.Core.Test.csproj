@@ -1,234 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9702B58C-F6D0-4A75-A2A8-2F4A847536DD}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EyeSoft.Test</RootNamespace>
-    <AssemblyName>EyeSoft.Core.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <LangVersion>8.0</LangVersion>
+
+    <IsPackable>false</IsPackable>
     <SignAssembly>true</SignAssembly>
+
+    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+
+    <Version>3.0.6633.19873</Version>
+
+    <Authors>EyeSoft</Authors>
+
+    <Product>EyeSoft.Core</Product>
   </PropertyGroup>
-  <PropertyGroup>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Moq, Version=4.5.10.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Moq.4.5.10\lib\net45\Moq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, PublicKeyToken=8c60d8070630b1c1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\SharpTestsEx.1.2.1\lib\SharpTestsEx.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
+    <None Remove="Reflection\Compression\Source.txt.gz" />
   </ItemGroup>
+
+
   <ItemGroup>
-    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
-      <Visible>False</Visible>
-    </CodeAnalysisDependentAssemblyPaths>
+    <EmbeddedResource Include="SequentialIdentity\guids.txt" />
+    <EmbeddedResource Include="SequentialIdentity\texts.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Calendar\Scheduling\SchedulingRecurrencyDaysTest.cs" />
-    <Compile Include="Calendar\Scheduling\SchedulingStartRecurrencyDateTest.cs" />
-    <Compile Include="Calendar\Scheduling\SchedulingCalendarRangeTest.cs" />
-    <Compile Include="Collections\Concurrent\SafeConcurrentDictionaryTest.cs" />
-    <Compile Include="Helpers\Category.cs" />
-    <Compile Include="Collections\Generic\CollectionExtensionsTest.cs" />
-    <Compile Include="Collections\Generic\EqualityComparerTest.cs" />
-    <Compile Include="ComparerFactoryTest.cs" />
-    <Compile Include="ComparerTest.cs" />
-    <Compile Include="DoubleExtensionsTest.cs" />
-    <Compile Include="IO\FileSystemStorageTest.cs" />
-    <Compile Include="IO\StorageTest.cs" />
-    <Compile Include="IO\FileInfoWrapperTest.cs" />
-    <Compile Include="IO\PathTest.cs" />
-    <Compile Include="Logging\XmlFileExceptionLoggerTest.cs" />
-    <Compile Include="Net\Mail\MailAddressTest.cs" />
-    <Compile Include="Normalization\NormalizerTest.cs" />
-    <Compile Include="Reflection\AssemblyExtensionsTest.cs" />
-    <Compile Include="Reflection\Compression\AssemblyExtensionsCompressionTest.cs" />
-    <Compile Include="Runtime\Serialization\BinarySerializerTest.cs" />
-    <Compile Include="SequentialIdentity\Formatter_Specs.cs" />
-    <Compile Include="SequentialIdentity\Generator_Specs.cs" />
-    <Compile Include="SequentialIdentity\GuidInterop_Specs.cs" />
-    <Compile Include="SequentialIdentity\LongTerm_Specs.cs" />
-    <Compile Include="SequentialIdentity\NetworkAddress_Specs.cs" />
-    <Compile Include="SequentialIdentity\NewId_Specs.cs" />
-    <Compile Include="SequentialIdentity\Provider_Specs.cs" />
-    <Compile Include="SequentialIdentity\Usage_Specs.cs" />
-    <Compile Include="Serialization\SerializerTest.cs" />
-    <Compile Include="ObjectTreeTest.cs" />
-    <Compile Include="TypeExtensions.RootType.Test.cs" />
-    <Compile Include="Extensions\ObjectHashTest.cs" />
-    <Compile Include="GenericTypeExtensionsTest.cs" />
-    <Compile Include="DateTimeExtensionsTest.cs" />
-    <Compile Include="Diagnostic\BenchmarkTest.cs" />
-    <Compile Include="Conversion\ConvertersTest.cs" />
-    <Compile Include="Extensions\BooleanExtensionsTest.cs" />
-    <Compile Include="Extensions\ObjectExtensionsTest.cs" />
-    <Compile Include="Extensions\GenericExtensionsTest.cs" />
-    <Compile Include="Helpers\Address.cs" />
-    <Compile Include="Helpers\Conversion\CustomerDtoToCustomerConverter.cs" />
-    <Compile Include="Helpers\KnownCustomer.cs" />
-    <Compile Include="Helpers\Teacher.cs" />
-    <Compile Include="Helpers\CustomerDto.cs" />
-    <Compile Include="Helpers\Customer.cs" />
-    <Compile Include="Helpers\IEntity.cs" />
-    <Compile Include="Helpers\Person.cs" />
-    <Compile Include="Calendar\Holiday\AgnosticDayTest.cs" />
-    <Compile Include="Calendar\Holiday\HolidayFactoryTest.cs" />
-    <Compile Include="Calendar\Holiday\ItalianHolidayFactoryTest.cs" />
-    <Compile Include="IO\FileInfoTest.cs" />
-    <Compile Include="KnownCharSetTest.cs" />
-    <Compile Include="Helpers\TestEntity.cs" />
-    <Compile Include="Helpers\ExpressionConstant.cs" />
-    <Compile Include="Helpers\KnownCode.cs" />
-    <Compile Include="Helpers\KnownEntity.cs" />
-    <Compile Include="Helpers\KnownExpressions.cs" />
-    <Compile Include="Mapping\AccessorHelperTest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Mapping\Conventions\KeyConventionTest.cs" />
-    <Compile Include="Mapping\MemberInfoValidatorTest.cs" />
-    <Compile Include="Mapping\ProjectTest.cs" />
-    <Compile Include="Mapping\ReferencePropertyInfoMetadataTest.cs" />
-    <Compile Include="Mapping\PrimitivePropertyInfoMetadataTest.cs" />
-    <Compile Include="Mapping\Strategies\AllPrimitivePropertyStrategyTest.cs" />
-    <Compile Include="Mapping\Strategies\CollectionPropertyStrategyTest.cs" />
-    <Compile Include="Mapping\Strategies\PropertyStrategyTest.cs" />
-    <Compile Include="Mapping\Strategies\ReferencePropertyStrategyTest.cs" />
-    <Compile Include="Mapping\Strategies\OnlyValidablePrimitivePropertyStrategyTest.cs" />
-    <Compile Include="Net\NetworkInformation\TcpPingTest.cs" />
-    <Compile Include="Reflection\PropertyInfoExtensionsTest.cs" />
-    <Compile Include="Reflection\ReflectorTest.cs" />
-    <Compile Include="Reflection\GenericReflectionExtensionsTest.cs" />
-    <Compile Include="Runtime\Caching\Helpers\CacheTest.cs" />
-    <Compile Include="Runtime\Caching\MemoryCacheTest.cs" />
-    <Compile Include="Runtime\InteropServices\NetworkTest.cs" />
-    <Compile Include="Security\Cryptography\HashingTest.cs" />
-    <Compile Include="Helpers\XmlSerializable.cs" />
-    <Compile Include="Helpers\CustomException.cs" />
-    <Compile Include="Helpers\Message.cs" />
-    <Compile Include="Messanging\MessegeBrokerTest.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SingletonTest.cs" />
-    <Compile Include="StringExtensionsTest.cs" />
-    <Compile Include="Threading\ThreadExtensions.cs" />
-    <Compile Include="TypeExtensionsInterfaceTest.cs" />
-    <Compile Include="TypeExtensionsTest.cs" />
-    <Compile Include="Security\Cryptography\UniqueKeyTest.cs" />
-    <Compile Include="Validation\ValidatorTest.cs" />
-    <Compile Include="Xml\Linq\XElementExtensionsTest.cs" />
-    <Compile Include="Xml\Serialization\XmlTransformTest.cs" />
-    <Compile Include="Xml\Serialization\XmlSerializerTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\SharpTestsEx.Extensions\Source\Extensions\EyeSoft.SharpTests.Extensions.csproj">
-      <Project>{F213CB7D-2938-412D-9577-1D59D08753E3}</Project>
-      <Name>EyeSoft.SharpTests.Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Core\EyeSoft.Core.csproj">
-      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Reflection\Compression\Source.txt.gz" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Xml\Serialization\PersonToHtml.xslt" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="Moq" Version="4.13.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Management" Version="4.7.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="SequentialIdentity\guids.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SequentialIdentity\texts.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\..\..\..\SharpTestsEx.Extensions\Source\Extensions\EyeSoft.SharpTests.Extensions.csproj" />
+    <ProjectReference Include="..\..\4.0\Core\EyeSoft.Core.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="Linq\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>xcopy /y $(ProjectDir)\SequentialIdentity\guids.txt  $(ProjectDir)$(OutDir)
-xcopy /y $(ProjectDir)\SequentialIdentity\texts.txt  $(ProjectDir)$(OutDir)</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-			 Other similar extension points exist, see Microsoft.Common.targets.
-	<Target Name="BeforeBuild">
-	</Target>
-	<Target Name="AfterBuild">
-	</Target>
-	-->
+
 </Project>

@@ -1,74 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F213CB7D-2938-412D-9577-1D59D08753E3}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EyeSoft.SharpTests.Extensions</RootNamespace>
-    <AssemblyName>EyeSoft.SharpTests.Extensions</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
+
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>2.3.6002.26456</Version>
+    <Company>Copyright © EyeSoft 2019</Company>
+    <Description>Contains extensions for SharpTestsEx framework.</Description>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, PublicKeyToken=8c60d8070630b1c1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\SharpTestsEx.1.2.1\lib\SharpTestsEx.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Folder Include="Properties\" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="ComparableBeConstaintExtensions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="SharpTestsEx" Version="2.0.0" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-			 Other similar extension points exist, see Microsoft.Common.targets.
-	<Target Name="BeforeBuild">
-	</Target>
-	<Target Name="AfterBuild">
-	</Target>
-	-->
+
 </Project>
+
+

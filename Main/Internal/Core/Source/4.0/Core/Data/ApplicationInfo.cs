@@ -37,10 +37,16 @@
 
 		public Version Version { get; private set; }
 
+
 		public static ApplicationInfo FromEntryAssembly(bool includeVersion = false)
 		{
 			var assembly = Assembly.GetEntryAssembly();
 
+			return FromAssembly(assembly, includeVersion);
+		}
+
+		public static ApplicationInfo FromAssembly(Assembly assembly, bool includeVersion = false)
+		{
 			if (assembly == null)
 			{
 				const string Message =

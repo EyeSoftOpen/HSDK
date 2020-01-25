@@ -18,7 +18,7 @@
 			var xsl =
 				Assembly
 					.GetExecutingAssembly()
-					.ReadResourceText("EyeSoft.Test.Xml.Serialization.PersonToHtml.xslt", true);
+					.ReadResourceText("EyeSoft.Core.Test.Xml.Serialization.PersonToHtml.xslt", true);
 
 			var tranformedXml =
 				new XsltTransformer()

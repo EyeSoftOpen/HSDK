@@ -52,8 +52,7 @@
 		[TestMethod]
 		public void VerifyReferencePropertyThrowAnExceptionIfPassingPrimitiveProperty()
 		{
-			var propertyInfo =
-				Mocking.Property<string>("Test");
+			var propertyInfo = Mocking.Property<string>("Test");
 
 			Executing
 				.This(() => new ReferenceMemberInfoMetadata(propertyInfo))

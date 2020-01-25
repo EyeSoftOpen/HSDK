@@ -19,8 +19,7 @@ namespace EyeSoft.Data.SqlClient.Helper
 
 			if (new DatabaseExistsCommand(connectionString).Execute())
 			{
-				new DataException($"The database {initialCatalog} already exists.")
-					.Throw();
+				throw new DataException($"The database {initialCatalog} already exists.");
 			}
 		}
 

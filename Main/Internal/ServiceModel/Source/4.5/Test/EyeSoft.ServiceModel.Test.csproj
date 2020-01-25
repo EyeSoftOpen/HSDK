@@ -93,10 +93,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
-      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Web\Source\4.5\Web\EyeSoft.Web.csproj">
       <Project>{134c2203-97c9-416d-83e2-5fcbb5d2eb5e}</Project>
       <Name>EyeSoft.Web</Name>

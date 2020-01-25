@@ -6,27 +6,27 @@
     using System.Net.NetworkInformation;
     using EyeSoft.Core.SequentialIdentity.NewIdProviders;
     using EyeSoft.SequentialIdentity.NewIdProviders;
-    using NUnit.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+    [TestClass]
     public class When_getting_a_network_address_for_the_id_generator
     {
-        [Test, Explicit]
-        public void Should_match_perhaps()
-        {
-            var networkAddressWorkerIdProvider = new NetworkAddressWorkerIdProvider();
+        //[TestMethod]
+        //public void Should_match_perhaps()
+        //{
+        //    var networkAddressWorkerIdProvider = new NetworkAddressWorkerIdProvider();
 
-            byte[] firstId = networkAddressWorkerIdProvider.GetWorkerId(0);
+        //    byte[] firstId = networkAddressWorkerIdProvider.GetWorkerId(0);
 
-            var wmiNetworkAddressWorkerIdProvider = new WmiNetworkAddressWorkerIdProvider();
+        //    var wmiNetworkAddressWorkerIdProvider = new WmiNetworkAddressWorkerIdProvider();
 
-            byte[] secondId = wmiNetworkAddressWorkerIdProvider.GetWorkerId(2);
+        //    byte[] secondId = wmiNetworkAddressWorkerIdProvider.GetWorkerId(2);
 
 
-            Assert.AreEqual(firstId, secondId);
-        }
+        //    Assert.AreEqual(firstId, secondId);
+        //}
 
-        [Test]
+        [TestMethod]
         public void Should_pull_all_adapters()
         {
             NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces()
@@ -39,7 +39,7 @@
             }
         }
 
-        [Test]
+        [TestMethod]
         public void Should_pull_the_network_adapter_mac_address()
         {
             var networkIdProvider = new NetworkAddressWorkerIdProvider();
@@ -50,18 +50,18 @@
             Assert.AreEqual(6, networkId.Length);
         }
 
-        [Test]
-        public void Should_pull_the_network_from_wmi()
-        {
-            var networkIdProvider = new WmiNetworkAddressWorkerIdProvider();
+        //[TestMethod]
+        //public void Should_pull_the_network_from_wmi()
+        //{
+        //    var networkIdProvider = new WmiNetworkAddressWorkerIdProvider();
 
-            byte[] networkId = networkIdProvider.GetWorkerId(0);
+        //    byte[] networkId = networkIdProvider.GetWorkerId(0);
 
-            Assert.IsNotNull(networkId);
-            Assert.AreEqual(6, networkId.Length);
-        }
+        //    Assert.IsNotNull(networkId);
+        //    Assert.AreEqual(6, networkId.Length);
+        //}
 
-        [Test]
+        [TestMethod]
         public void Should_pull_using_WMI()
         {
             var options = new EnumerationOptions {Rewindable = false, ReturnImmediately = true};
@@ -88,7 +88,7 @@
             }
         }
 
-        [Test]
+        [TestMethod]
         public void Should_pull_using_host_name()
         {
             var networkIdProvider = new HostNameHashWorkerIdProvider();
@@ -99,7 +99,7 @@
             Assert.AreEqual(6, networkId.Length);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_pull_using_net()
         {
             NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces()

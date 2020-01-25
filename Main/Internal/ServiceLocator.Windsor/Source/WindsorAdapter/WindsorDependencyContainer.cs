@@ -7,10 +7,9 @@
 	using Castle.MicroKernel;
 	using Castle.MicroKernel.Registration;
 	using Castle.Windsor;
-	using CommonServiceLocator;
-	using ComponentResolutionException = ComponentResolutionException;
+    using CommonServiceLocator;
 
-	public class WindsorDependencyContainer : DependencyContainer
+    public class WindsorDependencyContainer : DependencyContainer
 	{
 		protected readonly IWindsorContainer container;
 
@@ -188,7 +187,7 @@
 			}
 			catch (Exception e)
 			{
-				throw new ComponentResolutionException(e);
+				throw new ComponentResolutionException("Cannot solve the type.", e);
 			}
 		}
 	}

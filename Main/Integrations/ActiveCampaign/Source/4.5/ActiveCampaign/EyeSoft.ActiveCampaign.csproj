@@ -1,135 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D536A032-8856-4B03-A54D-54BF3504CD17}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EyeSoft.ActiveCampaign</RootNamespace>
-    <AssemblyName>EyeSoft.ActiveCampaign</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <TargetFrameworkProfile />
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
+
   <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>The ActiveCampaign API .NET wrapper.</Description>
+    <Version>3.0.6603.29625</Version>
+    <Authors>EyeSoft</Authors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net.Http" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveCampaignConnection.cs" />
-    <Compile Include="ActiveCampaignRestClient.cs" />
-    <Compile Include="Commanding\ActiveCampaignRequest.cs" />
-    <Compile Include="Commanding\Automation\AutomationCommandingClient.cs" />
-    <Compile Include="Commanding\Automation\IAutomationCommandingClient.cs" />
-    <Compile Include="Commanding\Automation\Models\AutomationContactAdd.cs" />
-    <Compile Include="Commanding\Automation\Models\AutomationRemoveContact.cs" />
-    <Compile Include="Commanding\Contact\ContactCommandingClient.cs" />
-    <Compile Include="Commanding\Contact\IContactCommandingClient.cs" />
-    <Compile Include="Commanding\Contact\Models\AddContactCommand.cs" />
-    <Compile Include="Commanding\Contact\Models\AddTagsCommand.cs" />
-    <Compile Include="Commanding\Contact\Models\DeleteContactCommand.cs" />
-    <Compile Include="Commanding\Contact\Models\RemoveTagsCommand.cs" />
-    <Compile Include="Commanding\Contact\Models\SyncContactCommand.cs" />
-    <Compile Include="Commanding\List\IListCommandingClient.cs" />
-    <Compile Include="Commanding\List\ListCommandingClient.cs" />
-    <Compile Include="Commanding\List\Models\AddListCommand.cs" />
-    <Compile Include="Extensions\RequestExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Helpers\NullToEmptyStringValueProvider.cs" />
-    <Compile Include="Helpers\UnderscoreMappingResolver.cs" />
-    <Compile Include="Helpers\UrlHelper.cs" />
-    <Compile Include="Helpers\JsonConvertWrapper.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query\Account\AccountQueryClient.cs" />
-    <Compile Include="Query\Account\IAccountQueryClient.cs" />
-    <Compile Include="Query\Account\Models\AccountDetail.cs" />
-    <Compile Include="Query\Account\Models\Groups.cs" />
-    <Compile Include="Query\Account\Models\UserMe.cs" />
-    <Compile Include="Query\ActiveCampaignResponse.cs" />
-    <Compile Include="Query\Automation\Models\AutomationContact.cs" />
-    <Compile Include="Query\Automation\Models\AutomationContactList.cs" />
-    <Compile Include="Query\Automation\Models\AutomationContactListRequest.cs" />
-    <Compile Include="Query\Automation\Models\AutomationContactStatus.cs" />
-    <Compile Include="Query\Automation\Models\Automation.cs" />
-    <Compile Include="Query\Automation\Models\AutomationRequest.cs" />
-    <Compile Include="Query\Automation\Models\Automations.cs" />
-    <Compile Include="Query\Automation\IAutomationQueryClient.cs" />
-    <Compile Include="Query\Automation\AutomationQueryClient.cs" />
-    <Compile Include="Query\Automation\Models\AutomationStatus.cs" />
-    <Compile Include="Query\Contact\ContactQueryClient.cs" />
-    <Compile Include="Query\Contact\IContactQueryClient.cs" />
-    <Compile Include="Query\Contact\Models\ContactAutomationStatus.cs" />
-    <Compile Include="Query\Contact\Models\Contact.cs" />
-    <Compile Include="Query\Contact\Models\ContactAction.cs" />
-    <Compile Include="Query\Contact\Models\ContactAutomation.cs" />
-    <Compile Include="Query\Contact\Models\ContactAutomationList.cs" />
-    <Compile Include="Query\Contact\Models\ContactAutomationListRequest.cs" />
-    <Compile Include="Query\Contact\Models\Contacts.cs" />
-    <Compile Include="Query\Contact\Models\ContactsRequest.cs" />
-    <Compile Include="Query\Contact\Models\ContactViewEmailRequest.cs" />
-    <Compile Include="Query\Contact\Models\PaginatedContactRequest.cs" />
-    <Compile Include="Query\Contact\Models\PaginatedContacts.cs" />
-    <Compile Include="Query\List\IListQueryClient.cs" />
-    <Compile Include="Query\List\ListQueryClient.cs" />
-    <Compile Include="Query\List\Models\List.cs" />
-    <Compile Include="Query\List\Models\ListRequest.cs" />
-    <Compile Include="Query\List\Models\Lists.cs" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Package.nuspec">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commanding\User\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

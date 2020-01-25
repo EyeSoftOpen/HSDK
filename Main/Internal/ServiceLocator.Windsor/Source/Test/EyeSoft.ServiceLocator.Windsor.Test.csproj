@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EyeSoft.ServiceLocator.Windsor.Test</RootNamespace>
     <AssemblyName>EyeSoft.ServiceLocator.Windsor.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SccProjectName>SAK</SccProjectName>
@@ -49,29 +49,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Castle.Core.4.3.1\lib\net40\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Castle.Windsor.5.0.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Castle.Windsor.5.0.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\CommonServiceLocator.2.0.4\lib\net40\CommonServiceLocator.dll</HintPath>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\CommonServiceLocator.2.0.5\lib\net48\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Moq, Version=4.13.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Moq.4.13.1\lib\net45\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, PublicKeyToken=8c60d8070630b1c1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\SharpTestsEx.1.2.1\lib\SharpTestsEx.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\SharpTestsEx.2.0.0\lib\net45\SharpTestsEx.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -91,7 +96,7 @@
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\ServiceLocator\Source\ServiceLocator\EyeSoft.ServiceLocator.csproj">
-      <Project>{E3495AF5-EAA2-4AFE-80E3-AD44F1DF481B}</Project>
+      <Project>{e3495af5-eaa2-4afe-80e3-ad44f1df481b}</Project>
       <Name>EyeSoft.ServiceLocator</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\ServiceLocator\Source\Test\EyeSoft.ServiceLocator.Test.csproj">

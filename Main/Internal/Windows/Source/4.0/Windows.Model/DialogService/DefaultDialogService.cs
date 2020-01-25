@@ -208,7 +208,7 @@ namespace EyeSoft.Windows.Model
 			{
 				var message = string.Format("Cannot find the window for the view model of type '{0}'.", viewModel.GetType().Name);
 
-				new ArgumentException(message).Throw();
+				throw new ArgumentException(message);
 			}
 
 			window.Close();

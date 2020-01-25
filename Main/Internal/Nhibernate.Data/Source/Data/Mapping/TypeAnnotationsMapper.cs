@@ -113,10 +113,7 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 				return Generators.Identity;
 			}
 
-			new ArgumentException("Only Guid or int are supported as types of key the key.")
-				.Throw();
-
-			return null;
+			throw new ArgumentException("Only Guid or int are supported as types of key the key.");
 		}
 	}
 }

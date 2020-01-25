@@ -28,12 +28,6 @@ namespace EyeSoft.Mapping
                 new TypeMapper(typeMapperConventions);
         }
 
-        public static TypeMapper CreateByConventions()
-        {
-            return
-                CreateByConventions(new MetadataConvention(), new KeyConvention(), new VersionConvention());
-        }
-
         public static TypeMapper CreateByConventions(
             TypeConvention<object, object> convention,
             IKeyConvention keyConvention,

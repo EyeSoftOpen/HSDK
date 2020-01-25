@@ -2,8 +2,7 @@
 {
 	public class FirstNameCode : NameCode
 	{
-		internal FirstNameCode(string name)
-			: base(name)
+		internal FirstNameCode(string name) : base(name)
 		{
 		}
 

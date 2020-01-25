@@ -5,8 +5,7 @@ namespace EyeSoft.Mapping
 
     using EyeSoft.Extensions;
 
-    public class MemberInfoMetadata
-        : MemberInfo
+    public class MemberInfoMetadata : MemberInfo
     {
         private readonly MemberInfo memberInfo;
 
@@ -14,8 +13,7 @@ namespace EyeSoft.Mapping
 
         private readonly bool nullReflectedTypeFromConstructor;
 
-        internal MemberInfoMetadata(MemberInfo memberInfo)
-            : this(memberInfo, null)
+        internal MemberInfoMetadata(MemberInfo memberInfo) : this(memberInfo, null)
         {
             nullReflectedTypeFromConstructor = true;
         }
@@ -24,14 +22,12 @@ namespace EyeSoft.Mapping
         {
             if (reflectedType == null && nullReflectedTypeFromConstructor)
             {
-                new ArgumentException("The reflected type cannot be null", "reflectedType")
-                    .Throw();
+                throw new ArgumentException("The reflected type cannot be null", "reflectedType");
             }
 
             if ((memberInfo.MemberType != MemberTypes.Property) && (memberInfo.MemberType != MemberTypes.Field))
             {
-                new ArgumentException("Allowed only field or property in the constructor.", "memberInfo")
-                    .Throw();
+                throw new ArgumentException("Allowed only field or property in the constructor.", "memberInfo");
             }
 
             this.memberInfo = memberInfo;

@@ -1,103 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EyeSoft.Accounting.Italian</RootNamespace>
-    <AssemblyName>EyeSoft.Accounting.Italian</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <BuildPackage>true</BuildPackage>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>3.0.6836.35031</Version>
+    <Description>Provide a base class library for manage the accounting.</Description>
     <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Folder Include="Properties\" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="FiscalCode\CalculatedFiscalCode.cs" />
-    <Compile Include="FiscalCode\FiscalCodeTokens.cs" />
-    <Compile Include="FiscalCode\FiscalCodeValidator.cs" />
-    <Compile Include="FiscalCode\Parts\AreaCode.cs" />
-    <Compile Include="FiscalCode\Parts\ControlCode.cs" />
-    <Compile Include="FiscalCode\Parts\BirthDateCode.cs" />
-    <Compile Include="FiscalCode\Parts\Code.cs" />
-    <Compile Include="FiscalCode\Parts\FirstNameCode.cs" />
-    <Compile Include="FiscalCode\FiscalCodeProvider.cs" />
-    <Compile Include="FiscalCode\FiscalCode.cs" />
-    <Compile Include="FiscalCode\Parts\LastNameCode.cs" />
-    <Compile Include="FiscalCode\Parts\MonthCode.cs" />
-    <Compile Include="FiscalCode\Parts\NameCode.cs" />
-    <Compile Include="FiscalCode\Parts\ControlCode\RestCode.cs" />
-    <Compile Include="FiscalCode\Parts\ControlCode\OddCode.cs" />
-    <Compile Include="FiscalCode\Parts\ControlCode\EvenCode.cs" />
-    <Compile Include="FiscalCode\Parts\YearCode.cs" />
-    <Compile Include="FiscalCode\RevertedFiscalCode.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FiscalCode\StringExtensions.cs" />
+    <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj" />
+    <ProjectReference Include="..\Accounting\EyeSoft.Accounting.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4c464a88-7d14-4755-9ebf-82bbe1b168ed}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Accounting\EyeSoft.Accounting.csproj">
-      <Project>{E14F83BE-7567-453E-8884-F02B6A7B0552}</Project>
-      <Name>EyeSoft.Accounting</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Package.nuspec">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- <Import Project="$(SolutionDir)\.nuget\nuget.targets" /> -->
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-			 Other similar extension points exist, see Microsoft.Common.targets.
-	<Target Name="BeforeBuild">
-	</Target>
-	<Target Name="AfterBuild">
-	</Target>
-	-->
+
 </Project>

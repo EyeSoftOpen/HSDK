@@ -16,7 +16,7 @@
 		{
 			var contents = "This is a compression test. With accent è." + new string('c', 100);
 
-			GetType().Assembly.ReadGzipResourceText("EyeSoft.Test.Reflection.Compression.Source.txt.gz", true, Encoding.Default).Should().Be.EqualTo(contents);
+			GetType().Assembly.ReadGzipResourceText("EyeSoft.Core.Test.Reflection.Compression.Source.txt.gz", true, Encoding.UTF8).Should().Be.EqualTo(contents);
 		}
 	}
 }

@@ -63,7 +63,8 @@
 
 		internal static string KeyOrTypeName<TType>(string key = null)
 		{
-			return key ?? typeof(TType).FriendlyShortName().Replace('<', '\'').Replace('>', '\'');
+			var friendlyName = key ?? typeof(TType).FriendlyShortName().Replace('<', '\'').Replace('>', '\'');
+			return friendlyName;
 		}
 
 		private static void ValidateKey(string key)

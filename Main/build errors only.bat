@@ -1,0 +1,1 @@
+msbuild EyeSoft.Hsdk.sln /m /nologo /clp:ErrorsOnly

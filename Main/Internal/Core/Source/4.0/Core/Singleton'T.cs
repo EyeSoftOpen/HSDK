@@ -53,6 +53,11 @@
 
         public void Set(T instance)
         {
+            if (instance is null)
+            {
+                throw new ArgumentNullException(nameof(instance));
+            }
+
             lock (lockInstance)
             {
                 Set(() => instance);

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,11 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EyeSoft.Demo.FiscalCode.Windows</RootNamespace>
     <AssemblyName>EyeSoft.Demo.FiscalCode.Windows</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <SccProjectName>SAK</SccProjectName>
@@ -21,6 +21,20 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,9 +84,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\FluentValidation.8.0.100\lib\net45\FluentValidation.dll</HintPath>
+      <HintPath>..\..\..\..\..\packages\FluentValidation.8.6.1\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
@@ -176,20 +193,20 @@
       <Project>{e14f83be-7567-453e-8884-f02b6a7b0552}</Project>
       <Name>EyeSoft.Accounting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
-      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
+      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\FluentValidation\Source\FluentValidation\EyeSoft.FluentValidation.csproj">
       <Project>{1b6b2ce4-0605-4567-919f-9eadc60b1d43}</Project>
       <Name>EyeSoft.FluentValidation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
-      <Project>{83d0880a-fc3f-4c86-8ff5-f392ab1ffee9}</Project>
+    <ProjectReference Include="..\..\..\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj">
+      <Project>{0311e947-b90b-47ab-8c28-526d65c17827}</Project>
       <Name>EyeSoft.Windows.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\4.5\Windows\EyeSoft.Windows.csproj">
-      <Project>{ea283877-0461-415e-941a-663cc13c371f}</Project>
+    <ProjectReference Include="..\..\..\Source\4.0\Windows\EyeSoft.Windows.csproj">
+      <Project>{aeb9b57c-50e1-4858-86ac-6b9dc21031bb}</Project>
       <Name>EyeSoft.Windows</Name>
     </ProjectReference>
   </ItemGroup>

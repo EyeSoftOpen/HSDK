@@ -15,8 +15,7 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 	using NHibernate.Mapping.ByCode;
 	using NHibernate.Mapping.ByCode.Conformist;
 
-	public class ModelAnnotationsMapper
-		: IModelAnnotationsMapper
+	public class ModelAnnotationsMapper : IModelAnnotationsMapper
 	{
 		private readonly TypeMapper typeMapper;
 
@@ -33,11 +32,6 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 
 		private readonly IDictionary<MappedType, MappingStrategy> entityList =
 			new Dictionary<MappedType, MappingStrategy>();
-
-		public ModelAnnotationsMapper()
-			: this(new TypeOrMetadataConvention(), new KeyConvention(), new VersionConvention())
-		{
-		}
 
 		public ModelAnnotationsMapper(TypeMapperConventions conventions)
 		{

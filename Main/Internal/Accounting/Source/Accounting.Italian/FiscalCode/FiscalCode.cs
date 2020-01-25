@@ -4,7 +4,7 @@
 	{
 		private readonly string code;
 
-		internal FiscalCode(
+		public FiscalCode(
 			LastNameCode lastNameCode,
 			FirstNameCode firstNameCode,
 			YearCode yearCode,
@@ -23,7 +23,7 @@
 		{
 		}
 
-		internal FiscalCode(
+		public FiscalCode(
 			string lastNameCode,
 			string firstNameCode,
 			string yearCode,

@@ -95,7 +95,7 @@ namespace EyeSoft.Windows.Model
 				var message =
 					$"The specified view model type '{viewModelType.Name}' must inheriths from the ViewModel class.";
 
-				new ArgumentException(message).Throw();
+				throw new ArgumentException(message);
 			}
 
 			var instanceBuilder = viewModelType.CreateInstanceBuilder(arguments);
@@ -136,7 +136,7 @@ namespace EyeSoft.Windows.Model
 				{
 					if (argumentIndex != 0)
 					{
-						new ArgumentException("The runtime arguments must after all dependencies.").Throw();
+						throw new ArgumentException("The runtime arguments must after all dependencies.");
 					}
 
 					continue;

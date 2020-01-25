@@ -12,12 +12,11 @@ namespace EyeSoft.Accounting.Italian
 			Sex = sex;
 		}
 
-		public Sex Sex { get; private set; }
+		public Sex Sex { get; }
 
 		protected internal override string GetCode()
 		{
-			var sexCode =
-				Sex == Sex.Male ? 0 : 40;
+			var sexCode = Sex == Sex.Male ? 0 : 40;
 
 			return (birthDate.Day + sexCode).ToInvariant().PadLeft(2, '0');
 		}

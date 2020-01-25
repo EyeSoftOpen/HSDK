@@ -4,9 +4,12 @@
 	{
 		internal DataSettingsConfiguration(ApplicationData applicationData, bool isProtected, string key)
 		{
-			Enforce.Argument(() => applicationData).Argument(() => key);
+			if (string.IsNullOrEmpty(key))
+			{
+				throw new System.ArgumentException("message", nameof(key));
+			}
 
-			Data = applicationData;
+			Data = applicationData ?? throw new System.ArgumentNullException(nameof(applicationData));
 
 			Key = key;
 

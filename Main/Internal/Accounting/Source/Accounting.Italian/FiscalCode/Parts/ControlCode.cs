@@ -4,7 +4,7 @@ namespace EyeSoft.Accounting.Italian
 	{
 		private readonly string partialCode;
 
-		internal ControlCode(
+		public ControlCode(
 			LastNameCode lastNameCode,
 			FirstNameCode firstNameCode,
 			YearCode yearCode,

@@ -60,11 +60,6 @@ namespace EyeSoft.Security.Cryptography
             get { return Create(HashAlgorithms.Sha512); }
         }
 
-        public IHashAlgorithm Ripemd160
-        {
-            get { return Create(HashAlgorithms.Ripemd160); }
-        }
-
         public void SetHashAlgorithm(Func<IHashAlgorithm> hashAlgorithm)
         {
             defaultHashAlgorithm.Set(() => hashAlgorithm);

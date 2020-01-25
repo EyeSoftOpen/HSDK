@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EyeSoft.Windows</RootNamespace>
     <AssemblyName>EyeSoft.Windows</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -85,6 +88,10 @@
     <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
       <Project>{4c464a88-7d14-4755-9ebf-82bbe1b168ed}</Project>
       <Name>EyeSoft.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Windows.Model\EyeSoft.Windows.Model.csproj">
+      <Project>{0311e947-b90b-47ab-8c28-526d65c17827}</Project>
+      <Name>EyeSoft.Windows.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

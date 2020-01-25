@@ -1,9 +1,8 @@
 ﻿namespace EyeSoft.Accounting.Italian
 {
-	internal class LastNameCode : NameCode
+	public class LastNameCode : NameCode
 	{
-		public LastNameCode(string name)
-			: base(name)
+		public LastNameCode(string name) : base(name)
 		{
 		}
 

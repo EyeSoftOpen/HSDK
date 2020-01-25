@@ -3,12 +3,12 @@
     using System;
     using System.Diagnostics;
     using EyeSoft.SequentialIdentity;
-    using NUnit.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+    [TestClass]
     public class When_generating_id
     {
-        [Test]
+        [TestMethod]
         public void Should_match_when_all_providers_equal()
         {
             // Arrange
@@ -23,7 +23,7 @@
             Assert.AreEqual(id1, id2);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_not_match_when_generated_from_two_processes()
         {
             // Arrange
@@ -40,7 +40,7 @@
             Assert.AreNotEqual(id1, id2);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_not_match_when_processor_id_provided()
         {
             // Arrange
@@ -55,7 +55,7 @@
             Assert.AreNotEqual(id1, id2);
         }
 
-        [SetUp]
+        [TestInitialize]
         public void Init()
         {
             _start = DateTime.UtcNow;

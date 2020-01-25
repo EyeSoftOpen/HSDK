@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EyeSoft.Demo.Validation.Windows.ViewModels</RootNamespace>
     <AssemblyName>EyeSoft.Demo.Validation.Windows.ViewModels</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,9 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\FluentValidation.8.0.100\lib\net45\FluentValidation.dll</HintPath>
+      <HintPath>..\..\..\..\..\packages\FluentValidation.8.6.1\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
@@ -66,16 +70,16 @@
     <Compile Include="Validators\SubjectViewModelValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
-      <Project>{0E048E30-4DFC-4362-8056-F809E4AF4FB1}</Project>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
+      <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\FluentValidation\Source\FluentValidation\EyeSoft.FluentValidation.csproj">
       <Project>{1B6B2CE4-0605-4567-919F-9EADC60B1D43}</Project>
       <Name>EyeSoft.FluentValidation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
-      <Project>{83D0880A-FC3F-4C86-8FF5-F392AB1FFEE9}</Project>
+    <ProjectReference Include="..\..\..\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj">
+      <Project>{0311e947-b90b-47ab-8c28-526d65c17827}</Project>
       <Name>EyeSoft.Windows.Model</Name>
     </ProjectReference>
   </ItemGroup>

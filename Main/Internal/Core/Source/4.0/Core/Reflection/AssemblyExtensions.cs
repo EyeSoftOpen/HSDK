@@ -49,6 +49,7 @@ namespace EyeSoft.Reflection
                         decompressedStream.Position = 0;
 
                         var decompressed = reader.ReadToEnd();
+
                         return decompressed;
                     }
                 }

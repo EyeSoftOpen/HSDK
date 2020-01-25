@@ -3,8 +3,7 @@ namespace EyeSoft.SequentialIdentity.NewIdProviders
     using System;
     using System.Diagnostics;
 
-    public class StopwatchTickProvider :
-        ITickProvider
+    public class StopwatchTickProvider : ITickProvider
     {
         readonly Stopwatch _stopwatch;
         DateTime _start;

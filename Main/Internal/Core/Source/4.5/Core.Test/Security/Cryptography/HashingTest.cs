@@ -91,7 +91,7 @@
 		[TestMethod]
 		public void VerifyDefaultAlgorithm()
 		{
-			Hashing.ComputeHashString(ClearText).Should().Be.EqualTo("÷ÿž‹{²à›p“Z]x^ÅÙÐ«ð");
+			Hashing.ComputeHashString(ClearText).Should().Be.EqualTo("����{���p�Z]x^��Ы�");
 		}
 
 		[TestMethod]
@@ -134,18 +134,11 @@
 		}
 
 		[TestMethod]
-		public void VerifyRipemd160Algorithm()
-		{
-			const string ExpectedHash = "1EQmrKiuCmnNvEAhxk+lrWjKMv4=";
-			VerifyBase64HashAlgorithm(HashAlgorithms.Ripemd160, ExpectedHash);
-		}
-
-		[TestMethod]
 		public void CompareFileHashWithTextHash()
 		{
 			const string Path = "Test.txt";
 			const string Contents = "Hello! è";
-			const string ExpectedSha1 = "c9b8b0a8d68cc4a67246ac895fec46d2d7eb3f2f";
+			const string ExpectedSha1 = "c42b73d217dfd2b7a2e701f1961fb3b8504ed369";
 
 			Storage.Reset(() => new FileSystemStorage());
 

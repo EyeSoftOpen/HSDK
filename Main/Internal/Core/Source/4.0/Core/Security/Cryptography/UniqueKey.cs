@@ -67,8 +67,7 @@ namespace EyeSoft.Security.Cryptography
 
             if (size < charSet.Length)
             {
-                new ArgumentException("The lenght of the generated text must be equal or greather than the charset set.")
-                    .Throw();
+                throw new ArgumentException("The lenght of the generated text must be equal or greather than the charset set.");
             }
 
             var generated = new StringBuilder();

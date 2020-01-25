@@ -11,7 +11,7 @@
 	[TestClass]
 	public class SchedulingCalendarRangeTest
 	{
-		private const int Year = 2013;
+		private const int Year = 2019;
 		private const int Month = 3;
 
 		[TestMethod]
@@ -29,7 +29,7 @@
 			var agendaDayWithTasks = Scheduling.Range(new DateTime(Year, Month, 21), CalendarView.Month);
 
 			agendaDayWithTasks.First.Date.Should().Be.EqualTo(new DateTime(Year, 2, 25));
-			agendaDayWithTasks.Last.Date.Should().Be.EqualTo(new DateTime(Year, 3, 31));
+			agendaDayWithTasks.Last.Date.Should().Be.EqualTo(new DateTime(Year, 4, 6));
 		}
 	}
 }

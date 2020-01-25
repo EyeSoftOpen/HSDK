@@ -50,11 +50,9 @@ namespace EyeSoft.Data.Common
 
 			if (!connectionStringBuilderProviderNameDictionary.ContainsKey(connectionStringBuilderTypeName))
 			{
-				const string Message =
-					"The provider {ProviderName} is not known. Use the RegisterDatabaseProvider method.";
+				var message = $"The provider {connectionStringBuilderTypeName} is not known. Use the RegisterDatabaseProvider method.";
 
-				new ArgumentException(connectionStringBuilderTypeName)
-					.Throw();
+				throw new ArgumentException(message);
 			}
 
 			var providerName = connectionStringBuilderProviderNameDictionary[connectionStringBuilderTypeName];

@@ -18,33 +18,40 @@ namespace EyeSoft.Test
 		private const int Value1 = 1;
 		private const string Value2 = "2";
 
-		[TestMethod]
-		public void CheckCombinedHashCodesIsCorrect()
-		{
-			ObjectHash.Combine(Value1.GetHashCode(), Value2.GetHashCode()).Should().Be.EqualTo(ExpectedHashCode);
-		}
+		//TODO: in .NET Core the hash of an object changes everytime it is calculated
+		//[TestMethod]
+		//public void CheckCombinedHashCodesIsCorrect()
+		//{
+		//	ObjectHash.Combine(Value1.GetHashCode(), Value2.GetHashCode()).Should().Be.EqualTo(ExpectedHashCode);
+		//}
 
-		[TestMethod]
-		public void CheckCombinedInvariantHashCodesInDifferentOrderIsCorrect()
-		{
-			ObjectHash.CombineInvariant(Value1.GetHashCode(), Value2.GetHashCode()).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
+		//[TestMethod]
+		//public void CheckCombinedInvariantHashCodesInDifferentOrderIsCorrect()
+		//{
+		//	ObjectHash.CombineInvariant(Value1.GetHashCode(), Value2.GetHashCode()).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
 
-			ObjectHash.CombineInvariant(Value2.GetHashCode(), Value1.GetHashCode()).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
-		}
+		//	ObjectHash.CombineInvariant(Value2.GetHashCode(), Value1.GetHashCode()).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
+		//}
 
-		[TestMethod]
-		public void CheckCombinedHashCodesFromIstancesIsCorrect()
-		{
-			ObjectHash.Combine(Value1, Value2).Should().Be.EqualTo(ExpectedHashCode);
-		}
+		//[TestMethod]
+		//public void CheckCombinedHashCodesFromIstancesIsCorrect()
+		//{
+		//	ObjectHash.Combine(Value1, Value2).Should().Be.EqualTo(ExpectedHashCode);
+		//}
 
-		[TestMethod]
-		public void CheckCombinedInvariantHashCodesFromIstancesInDifferentOrderIsCorrect()
-		{
-			ObjectHash.CombineInvariant(Value1, Value2).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
+		//[TestMethod]
+		//public void CheckCombinedInvariantHashCodesFromIstancesInDifferentOrderIsCorrect()
+		//{
+		//	ObjectHash.CombineInvariant(Value1, Value2).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
 
-			ObjectHash.CombineInvariant(Value2, Value1).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
-		}
+		//	ObjectHash.CombineInvariant(Value2, Value1).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
+		//}
+
+		//[TestMethod]
+		//public void CheckCombinedHashCodesFromIstancesWithNullValues()
+		//{
+		//	ObjectHash.CombineInvariant(new[] { "test", null }).Should().Be.EqualTo(-354185609);
+		//}
 
 		[TestMethod]
 		public void CheckCombinedHashCodesFromIstancesWithOnlyNullValues()
@@ -53,12 +60,6 @@ namespace EyeSoft.Test
 				() => ObjectHash.CombineInvariant(new[] { (object)null }).Should().Be.EqualTo(ExpectedHashCodeOrderChanged);
 			
 			Executing.This(emptyObject).Should().Throw<InvalidOperationException>();
-		}
-
-		[TestMethod]
-		public void CheckCombinedHashCodesFromIstancesWithNullValues()
-		{
-			ObjectHash.CombineInvariant(new[] { "test", null }).Should().Be.EqualTo(-354185609);
 		}
 	}
 }

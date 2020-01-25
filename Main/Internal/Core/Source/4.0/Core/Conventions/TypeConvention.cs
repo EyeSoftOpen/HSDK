@@ -8,14 +8,14 @@
         {
             if (!type.EqualsOrSubclassOf(typeof(TSource)))
             {
-                new ArgumentException("The source type must be of type {type}.").Throw();
+                throw new ArgumentException("The source type must be of type {type}.");
             }
 
             var mapTo = TryMapTo(type);
 
             if (!mapTo.EqualsOrSubclassOf(typeof(TDestination)))
             {
-                new ArgumentException("The destination type must be of type {type}.").Throw();
+                throw new ArgumentException("The destination type must be of type {type}.");
             }
 
             return mapTo;

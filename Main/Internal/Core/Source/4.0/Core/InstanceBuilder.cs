@@ -40,8 +40,7 @@ namespace EyeSoft
 					"A constructor for the type '{0}' with the specified parameters ({1}) was not found." + "\r\n" +
 					"Call the ConstructorFound " + "property before call this method.";
 
-				new InvalidOperationException(string.Format(Message, type.Name, argumentsTypes)).Throw();
-				return null;
+				throw new InvalidOperationException(string.Format(Message, type.Name, argumentsTypes));
 			}
 
 			return constructorInfo.Invoke(arguments);

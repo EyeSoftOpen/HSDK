@@ -3,12 +3,12 @@ namespace MassTransit.NewIdTests
     using System;
     using System.Threading;
     using EyeSoft.SequentialIdentity.NewIdProviders;
-    using NUnit.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+    [TestClass]
     public class StopwatchTickProvider_Specs
     {
-        [Test, Explicit]
+        [TestMethod]
         public void Should_keep_accurate_time()
         {
             TimeSpan timeDelta = TimeSpan.FromSeconds(3);
@@ -25,12 +25,12 @@ namespace MassTransit.NewIdTests
 
             long deltaTicks = Math.Abs(stop - start);
             // 0.01% acceptable delta
-            var acceptableDelta = (long)(timeDelta.Ticks);
+            var acceptableDelta = timeDelta.Ticks;
 
-            Assert.Less(deltaTicks, acceptableDelta);
+            Assert.IsTrue(deltaTicks < acceptableDelta);
         }
 
-        [Test, Explicit]
+        [TestMethod]
         public void Should_not_lag_time()
         {
             TimeSpan timeDelta = TimeSpan.FromMinutes(1);
@@ -44,7 +44,7 @@ namespace MassTransit.NewIdTests
             // 0.01% acceptable delta
             var acceptableDelta = (long)(timeDelta.Ticks * 0.0001);
 
-            Assert.Less(deltaTicks, acceptableDelta);
+            Assert.IsTrue(deltaTicks < acceptableDelta);
         }
     }
 }

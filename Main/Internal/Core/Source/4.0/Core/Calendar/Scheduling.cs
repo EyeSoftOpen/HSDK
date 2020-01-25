@@ -89,8 +89,7 @@
 					break;
 
 				default:
-					new ArgumentException("The specified recurrency is not valid.").Throw();
-					return null;
+					throw new ArgumentException("The specified recurrency is not valid.");
 			}
 
 			while (startRecurrencyDate < start)
@@ -109,7 +108,7 @@
 		{
 			var selectedDate = date.Date;
 
-			var firstDay = selectedDate.FirstDayOfWeek();
+			var firstDay = selectedDate.FirstDayOfWeek(firstDayOfWeek);
 
 			if (vista == CalendarView.Day)
 			{

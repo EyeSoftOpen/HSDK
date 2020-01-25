@@ -7,8 +7,7 @@
 
 	using EyeSoft.Reflection;
 	using EyeSoft.Validation;
-
-	using global::FluentValidation;
+    using global::FluentValidation;
 
 	public abstract class FluentValidator<T> : AbstractValidator<T>, Validation.IValidator<T>
 	{

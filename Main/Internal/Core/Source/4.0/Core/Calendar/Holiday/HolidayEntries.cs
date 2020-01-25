@@ -46,12 +46,12 @@ namespace EyeSoft.Calendar
 		{
 			if (holidayList.Any(holiday => holiday.Date.Month > agnosticDay.Month))
 			{
-				new ArgumentException().Throw();
+				throw new ArgumentException();
 			}
 
 			if (holidayList.Any(holiday => holiday.Date.Month == agnosticDay.Month && holiday.Date.Day > agnosticDay.Day))
 			{
-				new ArgumentException().Throw();
+				throw new ArgumentException();
 			}
 		}
 	}

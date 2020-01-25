@@ -4,11 +4,11 @@
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using System.Web.Script.Serialization;
 
 	using EyeSoft.Reflection;
+    using Newtonsoft.Json;
 
-	internal static class AccountingSerializer
+    internal static class AccountingSerializer
 	{
 		private static readonly object lockInstance = new object();
 
@@ -24,12 +24,9 @@
 
 				var resourceName = string.Format("Internals.{0}.json.gz", typeof(T).Name);
 
-				var decompressed = typeof(AccountingSerializer).Assembly.ReadGzipResourceText(resourceName);
+				var json = typeof(AccountingSerializer).Assembly.ReadGzipResourceText(resourceName);
 
-				var serializer = new JavaScriptSerializer();
-				var deserialized = serializer.Deserialize<IEnumerable<TSerializable>>(decompressed);
-
-				var list = deserialized.Select(convert).ToList();
+				var list = JsonConvert.DeserializeObject<IEnumerable<TSerializable>>(json).Select(convert).ToList();
 
 				collection = new ReadOnlyCollection<T>(list);
 

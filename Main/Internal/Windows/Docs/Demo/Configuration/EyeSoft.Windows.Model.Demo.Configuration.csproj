@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EyeSoft.Windows.Model.Demo.Configuration</RootNamespace>
     <AssemblyName>EyeSoft.Windows.Model.Demo.Configuration</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -50,18 +50,17 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Castle.Windsor.5.0.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <HintPath>..\..\..\..\..\packages\Castle.Windsor.5.0.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\CommonServiceLocator.2.0.5\lib\net48\CommonServiceLocator.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
@@ -91,8 +90,8 @@
       <Project>{f41f8342-2124-44cc-85de-b49d7dfa4c95}</Project>
       <Name>EyeSoft.AutoMapper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.5\Core\EyeSoft.Core.csproj">
-      <Project>{0e048e30-4dfc-4362-8056-f809e4af4fb1}</Project>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
+      <Project>{4c464a88-7d14-4755-9ebf-82bbe1b168ed}</Project>
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\ServiceLocator.Windsor\Source\WindsorAdapter\EyeSoft.ServiceLocator.Windsor.csproj">
@@ -103,8 +102,8 @@
       <Project>{e3495af5-eaa2-4afe-80e3-ad44f1df481b}</Project>
       <Name>EyeSoft.ServiceLocator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\4.5\Windows.Model\EyeSoft.Windows.Model.csproj">
-      <Project>{83d0880a-fc3f-4c86-8ff5-f392ab1ffee9}</Project>
+    <ProjectReference Include="..\..\..\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj">
+      <Project>{0311e947-b90b-47ab-8c28-526d65c17827}</Project>
       <Name>EyeSoft.Windows.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Contract\EyeSoft.Windows.Model.Demo.Contract.csproj">

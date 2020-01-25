@@ -69,9 +69,7 @@
                 return fieldInfo.GetValue(instance);
             }
 
-            new ArgumentException("The member must be a FieldInfo or a PropertyInfo.").Throw();
-
-            return null;
+            throw new ArgumentException("The member must be a FieldInfo or a PropertyInfo.");
         }
 
         public static void SetValue<T>(this MemberInfo memberInfo, object instance, T value)
@@ -116,7 +114,7 @@
                 return;
             }
 
-            new ArgumentException("The member must be a FieldInfo or a PropertyInfo.").Throw();
+            throw new ArgumentException("The member must be a FieldInfo or a PropertyInfo.");
         }
     }
 }

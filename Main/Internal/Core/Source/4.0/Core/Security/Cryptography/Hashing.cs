@@ -37,11 +37,6 @@ namespace EyeSoft.Security.Cryptography
 			get { return hashing.Sha512; }
 		}
 
-		public static IHashAlgorithm Ripemd160
-		{
-			get { return hashing.Ripemd160; }
-		}
-
 		public static string ComputeHex(byte[] buffer)
 		{
 			using (var hashAlgorithm = hashing.Default())

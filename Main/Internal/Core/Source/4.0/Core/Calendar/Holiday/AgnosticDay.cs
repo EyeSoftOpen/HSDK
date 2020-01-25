@@ -6,6 +6,16 @@ namespace EyeSoft.Calendar
     {
         public AgnosticDay(int day, int month)
         {
+            if (day < 1 || day > 31)
+            {
+                throw new ArgumentOutOfRangeException(nameof(day));
+            }
+
+            if (month < 1 || month > 12)
+            {
+                throw new ArgumentOutOfRangeException(nameof(month));
+            }
+
             Day = day;
             Month = month;
         }

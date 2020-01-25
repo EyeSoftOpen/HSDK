@@ -9,7 +9,7 @@
 		{
 			var now = date;
 
-			return string.Format("{0} {1}", now.ToShortDateString(), now.ToShortTimeString());
+			return $"{now.ToShortDateString()} {now.ToShortTimeString()}";
 		}
 
 		public static string FullSystemTime(this DateTime date)
@@ -46,7 +46,7 @@
 
 		public static DateTime LastDayOfWeek(this DateTime dateTime, DayOfWeek firstDayOfWeek)
 		{
-			return dateTime.FirstDayOfWeek().AddDays(6);
+			return dateTime.FirstDayOfWeek(firstDayOfWeek).AddDays(6);
 		}
 
 		public static DateTime FirstDayOfWeek(this DateTime dateTime, DayOfWeek firstDayOfWeek)

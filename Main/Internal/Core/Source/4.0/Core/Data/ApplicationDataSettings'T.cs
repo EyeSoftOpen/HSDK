@@ -10,8 +10,7 @@
 	{
 		internal ApplicationDataSettings(DataSettingsConfiguration configuration)
 		{
-			Enforce.Argument(() => configuration);
-			Configuration = configuration;
+			Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
 
 			configuration.Register(this);
 		}

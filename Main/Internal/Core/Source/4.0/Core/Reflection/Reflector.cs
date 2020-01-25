@@ -107,7 +107,7 @@
                 {
                     var invalidExpressionMessage = $"Invalid expression type: Expected ExpressionType.MemberAccess, Found {expression.Body.NodeType}";
 
-                    new Exception(invalidExpressionMessage).Throw();
+                    throw new Exception(invalidExpressionMessage);
                 }
             }
             else
@@ -140,7 +140,7 @@
             }
             else
             {
-                new ArgumentException("The expression must be a FieldInfo or a PropertyInfo.").Throw();
+                throw new ArgumentException("The expression must be a FieldInfo or a PropertyInfo.");
             }
 
             var propertyNotFoundMessage =

@@ -64,7 +64,7 @@ namespace EyeSoft.Reflection
                     {
                         var message = $"Cannot find the method '{methodName}' into the type '{type}'.";
 
-                        new ArgumentException(message).Throw();
+                        throw new ArgumentException(message);
                     }
 
                     typeMethodInfoCache.Add(key, methodInfo);
