@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Windows.Model.Test.Item.Direct
 {
 	using System.Threading;
-
-	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
+    using EyeSoft.AutoMapper;
+    using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 
@@ -47,8 +47,6 @@
 		[TestMethod]
 		public void ServiceFactoryGetItemWithoutCompletedAncConversioneActionVerifyWorks()
 		{
-	        global::AutoMapper.Mapper.CreateMap<CustomerDto, CustomerViewModel>();
-
 		    CustomerViewModel model = null;
 
 			var manuelResetEvent = new ManualResetEvent(false);

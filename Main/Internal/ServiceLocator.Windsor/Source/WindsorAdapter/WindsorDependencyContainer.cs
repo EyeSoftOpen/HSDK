@@ -187,7 +187,7 @@
 			}
 			catch (Exception e)
 			{
-				throw new ComponentResolutionException("Cannot solve the type.", e);
+				throw new EyeSoft.ComponentResolutionException("Cannot solve the type.", e);
 			}
 		}
 	}

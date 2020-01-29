@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Windows.Model.Test
 {
 	using System.Threading;
-
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
+    using EyeSoft.AutoMapper;
+    using EyeSoft.Windows.Model.Collections.ObjectModel;
 	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
@@ -14,11 +14,6 @@
 	[TestClass]
 	public class ServiceFactoryCollectionTest : ServiceFactoryTest
 	{
-	    public ServiceFactoryCollectionTest()
-	    {
-	        global::AutoMapper.Mapper.CreateMap<CustomerDto, CustomerViewModel>();
-	    }
-
 		[TestMethod]
 		public void ServiceFactoryGetCollectionWithCompletedActionVerifyWorks()
 		{

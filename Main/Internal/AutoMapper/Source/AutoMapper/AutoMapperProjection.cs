@@ -4,11 +4,10 @@
 	using System.Linq;
 	using System.Reflection;
 
-	using global::AutoMapper.QueryableExtensions;
-
 	using EyeSoft.Mapping;
+    using global::AutoMapper;
 
-	public class AutoMapperProjection : IProjection
+    public class AutoMapperProjection : IProjection
 	{
 		private static readonly Type autoMapperProjectionType = typeof(AutoMapperProjection);
 
@@ -18,7 +17,8 @@
 		{
 			projectMethod =
 				autoMapperProjectionType
-					.GetMethods().Single(x => x.Name == "Project" && x.GetParameters().Single().ParameterType.IsGenericType);
+					.GetMethods()
+					.Single(x => x.Name == "Project" && x.GetParameters().Single().ParameterType.IsGenericType);
 		}
 
 		public IQueryable<TResult> Project<TResult>(IQueryable source)
@@ -32,9 +32,11 @@
 
 		public IQueryable<TResult> Project<TSource, TResult>(IQueryable<TSource> source)
 		{
-			var expression = global::AutoMapper.Mapper.Engine.CreateMapExpression<TSource, TResult>();
+			var config = new MapperConfiguration(cfg => cfg.CreateMap(typeof(TSource), typeof(TResult)));
 
-			return source.Select(expression);
+			var mapper = config.CreateMapper();
+
+			return mapper.ProjectTo<TResult>(source);
 		}
 
 		private MethodInfo GetGenericProjectMethod<TResult>(IQueryable source)

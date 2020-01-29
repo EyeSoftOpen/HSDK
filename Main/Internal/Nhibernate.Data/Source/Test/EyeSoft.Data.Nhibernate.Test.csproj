@@ -74,9 +74,6 @@
       <HintPath>..\..\..\..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\SharpTestsEx.2.0.0\lib\net45\SharpTestsEx.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
@@ -110,6 +107,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj">
+      <Project>{837ccbfe-28f0-4aa2-897d-aa43223b4293}</Project>
+      <Name>SharpTestsEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
       <Project>{4C464A88-7D14-4755-9EBF-82BBE1B168ED}</Project>
       <Name>EyeSoft.Core</Name>

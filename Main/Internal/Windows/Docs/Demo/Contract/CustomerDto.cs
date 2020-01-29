@@ -15,5 +15,15 @@ namespace EyeSoft.Windows.Model.Demo.Contract
 		public int Visits { get; set; }
 
 		public DateTime? Visited { get; set; }
+
+		public override bool Equals(object obj)
+		{
+			if (!(obj is CustomerDto other))
+			{
+				return false;
+			}
+
+			return Id.Equals(other.Id);
+		}
 	}
 }

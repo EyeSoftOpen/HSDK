@@ -18,12 +18,12 @@ namespace EyeSoft.Mapping
 
 		public static TDestination Map<TDestination>(object source)
 		{
-			return source == null ? default(TDestination) : singletonInstance.Instance.Map<TDestination>(source);
+			return source == null ? default : singletonInstance.Instance.Map<TDestination>(source);
 		}
 
 		public static TDestination Map<TSource, TDestination>(TSource source, TDestination destination)
 		{
-			return Comparer.Equals(source, default(TSource)) ? destination : singletonInstance.Instance.Map(source, destination);
+			return Comparer.Equals(source, default) ? destination : singletonInstance.Instance.Map(source, destination);
 		}
     }
 }

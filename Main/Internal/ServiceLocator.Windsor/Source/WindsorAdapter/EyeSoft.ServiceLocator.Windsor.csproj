@@ -13,6 +13,8 @@
     <Version>3.0.6836.35031</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A service locator adapter to implement CommonServiceLocator on top of Castle Windsor.</Description>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

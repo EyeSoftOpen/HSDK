@@ -13,6 +13,8 @@
     <Version>3.0.6836.35031</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>An inversion control abstraction system.</Description>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

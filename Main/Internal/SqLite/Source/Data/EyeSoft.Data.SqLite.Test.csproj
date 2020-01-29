@@ -46,7 +46,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
@@ -63,9 +63,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\SharpTestsEx.2.0.0\lib\net45\SharpTestsEx.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
@@ -92,6 +89,10 @@
     <Compile Include="DatabaseProvidersSqLiteTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj">
+      <Project>{837ccbfe-28f0-4aa2-897d-aa43223b4293}</Project>
+      <Name>SharpTestsEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Data\Source\Data\EyeSoft.Data.csproj">
       <Project>{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}</Project>
       <Name>EyeSoft.Data</Name>

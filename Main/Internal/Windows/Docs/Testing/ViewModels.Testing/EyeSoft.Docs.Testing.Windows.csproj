@@ -46,10 +46,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\SharpTestsEx.2.0.0\lib\net45\SharpTestsEx.dll</HintPath>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -72,6 +72,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj">
+      <Project>{837ccbfe-28f0-4aa2-897d-aa43223b4293}</Project>
+      <Name>SharpTestsEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\AutoMapper\Source\AutoMapper\EyeSoft.AutoMapper.csproj">
       <Project>{F41F8342-2124-44CC-85DE-B49D7DFA4C95}</Project>
       <Name>EyeSoft.AutoMapper</Name>

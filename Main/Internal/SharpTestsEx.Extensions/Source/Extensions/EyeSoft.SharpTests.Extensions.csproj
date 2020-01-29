@@ -13,6 +13,8 @@
     <Company>Copyright © EyeSoft 2019</Company>
     <Description>Contains extensions for SharpTestsEx framework.</Description>
     <LangVersion>8.0</LangVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SharpTestsEx" Version="2.0.0" />
+    <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj" />
   </ItemGroup>
 
 </Project>

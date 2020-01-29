@@ -11,6 +11,8 @@
 		    <Version>3.0.6836.35031</Version>
 		    <Company>EyeSoft</Company>
 		    <Authors>EyeSoft</Authors>
+		    <SignAssembly>true</SignAssembly>
+		    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
 		  </PropertyGroup>
 		
 		  <ItemGroup>

@@ -54,9 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\SharpTestsEx.2.0.0\lib\net45\SharpTestsEx.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -78,6 +75,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj">
+      <Project>{837ccbfe-28f0-4aa2-897d-aa43223b4293}</Project>
+      <Name>SharpTestsEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Accounting.Italian\EyeSoft.Accounting.Italian.csproj">
       <Project>{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}</Project>
       <Name>EyeSoft.Accounting.Italian</Name>
@@ -86,9 +87,6 @@
       <Project>{E14F83BE-7567-453E-8884-F02B6A7B0552}</Project>
       <Name>EyeSoft.Accounting</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

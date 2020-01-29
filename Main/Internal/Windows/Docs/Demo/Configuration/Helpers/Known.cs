@@ -2,20 +2,18 @@ namespace EyeSoft.Windows.Model.Demo.Configuration.Helpers
 {
 	using System;
 	using System.Linq;
-
-	using EyeSoft.Windows.Model.Demo.Contract;
+    using EyeSoft.AutoMapper;
+    using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 
-	using global::AutoMapper;
-
-	internal static class Known
+	public static class Known
 	{
 		public static class CustomerModel
 		{
-		    public static readonly IQueryable<CustomerViewModel> All =
-		        Customer.All.Select(c => Mapper.Map<CustomerViewModel>(c)).AsQueryable();
+			public static readonly IQueryable<CustomerViewModel> All =
+				new AutoMapperProjection().Project<CustomerViewModel>(Customer.All);
 
-		    public static readonly CustomerViewModel Main = Mapper.Map<CustomerViewModel>(Customer.Main);
+		    public static readonly CustomerViewModel Main = new AutoMapperMapper().Map<CustomerViewModel>(Customer.Main);
 		}
 
 		public static class Customer

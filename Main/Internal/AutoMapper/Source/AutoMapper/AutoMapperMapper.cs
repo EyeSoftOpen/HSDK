@@ -2,32 +2,35 @@
 {
 	using System;
 
-	using EyeSoft.Mapping;
-
 	using global::AutoMapper;
 
-	using Mapping = global::AutoMapper.Mapper;
-
-	public class AutoMapperMapper : IMapper
+	public class AutoMapperMapper : EyeSoft.Mapping.IMapper
 	{
         public object Map(object source, Type sourceType, Type destinationType)
 		{
-			return Mapping.Map(source, sourceType, destinationType);
+			var config = new MapperConfiguration(cfg => cfg.CreateMap(sourceType, destinationType));
+
+			var mapper = config.CreateMapper();
+
+			return mapper.Map(source, sourceType, destinationType);
 		}
 
 		public TDestination Map<TDestination>(object source)
 		{
-            return Mapping.Map<TDestination>(source, m => m.CreateMissingTypeMaps = true);
+			var config = new MapperConfiguration(cfg => cfg.CreateMap(source.GetType(), typeof(TDestination)));
+
+			var mapper = config.CreateMapper();
+
+			return mapper.Map<TDestination>(source);
         }
 
 		public TDestination Map<TSource, TDestination>(TSource source, TDestination destination)
 		{
-			return Mapping.Map(source, destination);
-		}
+			var config = new MapperConfiguration(cfg => cfg.CreateMap(source.GetType(), typeof(TDestination)));
 
-	    public IMappingExpression<TSource, TDestination> CreateMap<TSource, TDestination>()
-	    {
-	        return Mapping.CreateMap<TSource, TDestination>();
-	    }
+			var mapper = config.CreateMapper();
+
+			return mapper.Map(source, destination);
+		}
 	}
 }

@@ -73,9 +73,6 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="SharpTestsEx, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\SharpTestsEx.2.0.0\lib\net45\SharpTestsEx.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -146,6 +143,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj">
+      <Project>{a90336cf-686d-4994-aa31-8bf8cd12abca}</Project>
+      <Name>SharpTestsEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\AutoMapper\Source\AutoMapper\EyeSoft.AutoMapper.csproj">
       <Project>{F41F8342-2124-44CC-85DE-B49D7DFA4C95}</Project>
       <Name>EyeSoft.AutoMapper</Name>
