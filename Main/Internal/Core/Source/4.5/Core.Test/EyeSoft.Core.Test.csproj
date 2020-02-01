@@ -10,6 +10,7 @@
     <Company>EyeSoft</Company>
     <Product>EyeSoft.Core</Product>
     <Description>Base class library tests.</Description>
+    <Version>3.0.7333.34942</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Reflection\Compression\Source.txt.gz" />

@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Version>1.2.0</Version>
     <Description>Set of extensible constraints extensions to work on-top of various unit test frameworks.</Description>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
 </Project>

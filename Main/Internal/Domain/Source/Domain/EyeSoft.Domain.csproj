@@ -8,11 +8,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>EyeSoft.Domain</Authors>
+    <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
     <Description>Base classes to implement a Domain Model also using DDD (Domain Driven Development) and to abstract the ORM or the storage and change it simply.</Description>
-    <Version>3.0.6836.35031</Version>
+    <Version>3.0.7333.34942</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>EyeSoft ©2020</Copyright>
+    <Product>EyeSoft.Domain</Product>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +26,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

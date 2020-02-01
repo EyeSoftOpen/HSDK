@@ -13,6 +13,15 @@
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Contracts ensuring, Messanging, LINQ expression parser and extension methods, Task Parallel Library helpers, Type auto-mapping for storage and benchmark.</Description>
+    <Version>3.0.7333.34942</Version>
+    <Company>EyeSoft</Company>
+    <Copyright>EyeSoft ©2020</Copyright>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <Authors>Matteo Migliore</Authors>
+    <Product>EyeSoft.Core</Product>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
@@ -29,6 +38,13 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <PackageReference Include="System.Runtime.Caching" Version="4.7.0" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

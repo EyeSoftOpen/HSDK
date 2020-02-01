@@ -4,7 +4,7 @@
     <id>$title$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>Eye Soft</authors>
+    <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
     <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>

@@ -9,10 +9,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.6836.35031</Version>
-    <Description>Provide a base class library for manage the accounting.</Description>
+    <Version>3.0.7333.34942</Version>
+    <Description>Provide a base class library for manage the italian accounting.</Description>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <Authors>Matteo Migliore</Authors>
+    <Company>EyeSoft</Company>
+    <Copyright>EyeSoft ©2020</Copyright>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <Product>EyeSoft.Accounting.Italian</Product>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +29,13 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj" />
     <ProjectReference Include="..\Accounting\EyeSoft.Accounting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

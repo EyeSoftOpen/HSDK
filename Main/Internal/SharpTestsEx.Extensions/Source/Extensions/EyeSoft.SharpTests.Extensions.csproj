@@ -8,13 +8,19 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <IsPackable>true</IsPackable>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.3.6002.26456</Version>
-    <Company>Copyright © EyeSoft 2019</Company>
+    <Version>3.0.7333.34942</Version>
+    <Company>EyeSoft</Company>
     <Description>Contains extensions for SharpTestsEx framework.</Description>
     <LangVersion>8.0</LangVersion>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageTags>SharpTestsEx, unit test, unit testing</PackageTags>
+    <Copyright>EyeSoft 2020</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +29,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

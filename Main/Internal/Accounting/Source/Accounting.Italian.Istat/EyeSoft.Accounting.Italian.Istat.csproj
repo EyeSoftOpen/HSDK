@@ -9,15 +9,26 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.6836.35031</Version>
-    <Description>Provide a base class library for manage the accounting.</Description>
+    <Version>3.0.7333.34942</Version>
+    <Description>Provide classes to query Italian cities and towns using ISTAT data.</Description>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <Authors>Matteo Migliore</Authors>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <Company>EyeSoft</Company>
+    <Copyright>EyeSoft ©2020</Copyright>
+    <Product>EyeSoft.Accounting.Italian.Istat</Product>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Internals\City.json.gz" />
     <None Remove="Internals\Town.json.gz" />
+    <None Include="..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

@@ -10,11 +10,16 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
-    <Version>3.0.6836.35031</Version>
+    <Version>3.0.7333.34942</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>An inversion control abstraction system.</Description>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <PackageTags>inversion of control, dependency injection</PackageTags>
+    <Copyright>EyeSoft ©2020</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +32,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

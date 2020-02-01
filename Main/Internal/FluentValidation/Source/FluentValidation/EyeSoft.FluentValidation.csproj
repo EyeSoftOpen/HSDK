@@ -8,13 +8,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>EyeSoft.FluentValidation</Authors>
+    <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
-    <Description>Base classes to implement a Domain Model also using DDD (Domain Driven Development) and to abstract the ORM or the storage and change it simply.</Description>
-    <Version>3.0.6836.35031</Version>
+    <Description>A wrapper class for FluentValidation library. Allow to inject a custom validator or the AbstractValidator..</Description>
+    <Version>3.0.7333.34942</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <Copyright>EyeSoft ©2020</Copyright>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <Product>EyeSoft.FluentValidation</Product>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +32,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

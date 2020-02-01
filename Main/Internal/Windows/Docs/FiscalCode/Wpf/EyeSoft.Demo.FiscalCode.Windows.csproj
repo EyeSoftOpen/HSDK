@@ -148,7 +148,6 @@
     </Compile>
     <AppDesigner Include="Properties\" />
     <None Include="App.config" />
-    <None Include="EyeSoft.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

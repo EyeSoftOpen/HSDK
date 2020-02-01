@@ -10,18 +10,30 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>The ActiveCampaign API .NET wrapper.</Description>
-    <Version>3.0.6603.29625</Version>
-    <Authors>EyeSoft</Authors>
+    <Version>3.0.7333.34942</Version>
+    <Authors>Matteo Migliore</Authors>
+    <Copyright>EyeSoft ©2020</Copyright>
+    <Company>EyeSoft</Company>
+    <Product>EyeSoft.ActiveCampaign</Product>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
