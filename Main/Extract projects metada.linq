@@ -21,8 +21,10 @@ public class NugetPackageMetaHelper
 				!x.FullName.Contains("packages") &&
 				!x.FullName.Contains("Libraries") &&
 				!x.Name.Contains(".symbols"))
+			.Select(x => x.FullName)
+			.Dump("Deleted packages")
 			.ToList()
-			.ForEach(x => x.Delete());
+			.ForEach(x => File.Delete(x));
 	}
 	
 	public IEnumerable<NugetPackage> GetPackages()
