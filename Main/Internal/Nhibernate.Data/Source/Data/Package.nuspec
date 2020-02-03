@@ -4,27 +4,26 @@
     <id>$title$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>Eye Soft</authors>
+    <authors>Matteo Migliore</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://hyperionsdk.codeplex.com/license</licenseUrl>
-    <projectUrl>http://hyperionsdk.codeplex.com/</projectUrl>
+    <projectUrl>https://github.com/Eye-Soft/HSDK</projectUrl>
     <iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>$author$</copyright>
     <tags>nhibernate dataannotations mapping ORM abstraction</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6836.35031" />
-      <dependency id="EyeSoft.Data" version="3.0.6836.35031" />
-      <dependency id="EyeSoft.Domain" version="3.0.6836.35031" />
-      <dependency id="CommonServiceLocator" version="1.3" />
+      <dependency id="EyeSoft.Core" version="3.0.7333.34942" />
+      <dependency id="EyeSoft.Data" version="3.0.7333.34942" />
+      <dependency id="EyeSoft.Domain" version="3.0.7333.34942" />
+      <dependency id="CommonServiceLocator" version="2.0.5" />
       <dependency id="NHibernate" version="4.0.4.4000" />
     </dependencies>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="" />
-      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
-      <frameworkAssembly assemblyName="System.Data" targetFramework="" />
-      <frameworkAssembly assemblyName="System.Data.Entity" targetFramework="" />
+      <frameworkAssembly assemblyName="System" />
+      <frameworkAssembly assemblyName="System.Core" />
+      <frameworkAssembly assemblyName="System.Data" />
+      <frameworkAssembly assemblyName="System.Data.Entity" />
     </frameworkAssemblies>
   </metadata>
 </package>

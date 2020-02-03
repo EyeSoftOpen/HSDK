@@ -22,6 +22,7 @@
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>active campaign,email marketing,funnel,email automation</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

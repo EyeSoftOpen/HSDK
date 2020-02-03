@@ -21,6 +21,17 @@
     <BuildPackage>true</BuildPackage>
     <TargetFrameworkProfile />
   </PropertyGroup>
+  <PropertyGroup>
+    <Title>packageid</Title>
+    <Description>your description</Description>
+    <Version>1.1.1</Version>
+    <ReleaseNotes>New package system</ReleaseNotes>
+    <Authors>authors</Authors>
+    <Owners>owners</Owners>
+    <Copyright>your copyrights</Copyright>
+    <PackageOutputPath>bin\Package</PackageOutputPath>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>

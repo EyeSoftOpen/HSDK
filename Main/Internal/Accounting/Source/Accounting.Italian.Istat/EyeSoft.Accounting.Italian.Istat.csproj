@@ -20,6 +20,7 @@
     <Product>EyeSoft.Accounting.Italian.Istat</Product>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>codice fiscale, istat, comuni, fiscal code, accounting, italian accounting</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

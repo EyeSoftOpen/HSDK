@@ -20,6 +20,7 @@
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>CommonServiceLocator, inversion of control, dependency injection, Castle, Windsor</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
 [assembly: AssemblyProduct("EyeSoft.Windows")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
 
 [assembly: AssemblyTitle("EyeSoft.Windows")]
 [assembly: AssemblyDescription("WPF controls, converters and helpers for MVVM.")]
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("3aeabfe8-7a57-4317-a215-18dfbd510c4e")]
 
-[assembly: AssemblyVersion("3.0.6757.13049")]
-[assembly: AssemblyFileVersion("3.0.6757.13049")]
+[assembly: AssemblyVersion("3.0.7333.34942")]
+[assembly: AssemblyFileVersion("3.0.7333.34942")]

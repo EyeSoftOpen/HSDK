@@ -4,7 +4,7 @@ void Main()
 {
 	//new NugetPackageMetaHelper().DeleteAllPackages();
 	
-	var packages = new NugetPackageMetaHelper().GetPackages();
+	var packages = new NugetPackageMetaHelper().GetPackages().Dump();
 	
 	new ProjectMetadataHelper().GetProjects(packages);
 }
@@ -39,6 +39,7 @@ public class NugetPackageMetaHelper
 				.Distinct()
 				.Select(x => new { x.FullName, Name = x.Name, Version = GetVersion(x.Name) })
 				.Select(x => new NugetPackage(x.FullName, x.Name.Replace(x.Version.ToString(), null).Trim('.'), x.Version))
+				.OrderBy(x => x.Name)
 				.ToArray();
 				
 		return packages;
@@ -89,22 +90,6 @@ public class ProjectMetadataHelper
 {
 	public void GetProjects(IEnumerable<NugetPackage> packages)
 	{
-		var projects =
-		new[]
-			{
-				"EyeSoft.Core.csproj",
-				"EyeSoft.Domain.csproj",
-				"EyeSoft.Accounting.csproj",
-				"EyeSoft.Accounting.Italian.csproj",
-				"EyeSoft.Accounting.Italian.Istat.csproj",
-				"EyeSoft.FluentValidation.csproj",
-				"EyeSoft.Data.Nhibernate.csproj",
-				"EyeSoft.ServiceLocator.csproj",
-				"EyeSoft.ActiveCampaign.csproj",
-				"EyeSoft.Windows.Model.csproj",
-				"EyeSoft.Windows.csproj"
-			};
-		
 		new DirectoryInfo(PathHelper.CurrentFolderPath())
 			.GetFiles("*.csproj", SearchOption.AllDirectories)
 			.Where(x => packages.Any(p => p.Name == Path.GetFileNameWithoutExtension(x.Name)))
@@ -120,6 +105,7 @@ public class ProjectMetadataHelper
 					Url = x.ProjectUrl == null ? null : new Hyperlinq(x.ProjectUrl),
 					Name = new Hyperlinq($"https://www.nuget.org/packages/{x.Package}", x.Package),
 					x.Description,
+					x.Tags,
 					x.TargetFramework,
 					Files = packages.Where(p => p.Name == x.Package)
 				})			
@@ -139,9 +125,9 @@ public class ProjectMetadataHelper
 			assemblyInfoProjectMetadata = parser.Parse(assemblyInfoPath);
 		}
 		
-		var projectMetadata = new XmlProjectMetadataParser().Parse(projectPath);
+		var project = new XmlProjectMetadataParser().Parse(projectPath);
 		
-		return new ProjectMergedMetadata(Path.GetFileNameWithoutExtension(projectPath), projectMetadata, assemblyInfoProjectMetadata);
+		return new ProjectMergedMetadata(Path.GetFileNameWithoutExtension(projectPath), project, assemblyInfoProjectMetadata);
 	}
 }
 
@@ -156,8 +142,9 @@ public class PackageMetadata : ProjectMetadata
 		string projectUrl,
 		string version,
 		string description,
+		string tags,
 		string targetFramework)
-		: base(package, authors, company, product, copyright, projectUrl, version, description, targetFramework)
+		: base(package, authors, company, product, copyright, projectUrl, version, description, tags, targetFramework)
 	{
 	}
 }
@@ -173,6 +160,7 @@ public class ProjectMetadata
 		string projectUrl,
 		string version,
 		string description,
+		string tags,
 		string targetFramework)
 	{
 		Version = version;
@@ -183,6 +171,7 @@ public class ProjectMetadata
 		ProjectUrl = projectUrl;
 		Package = package;
 		Description = description;
+		Tags = tags;
 		TargetFramework = targetFramework;
 	}
 
@@ -194,6 +183,7 @@ public class ProjectMetadata
 	public string Product { get; }
 	public string Package { get; }
 	public string Description { get; }
+	public string Tags { get; }
 	public string TargetFramework { get; }
 }
 
@@ -224,6 +214,7 @@ public class ProjectMergedMetadata
 				XmlProject.ProjectUrl,
 				AssemblyInfo?.Version ?? XmlProject.Version,
 				AssemblyInfo?.Description ?? XmlProject.Description,
+				XmlProject.Tags,
 				XmlProject.TargetFramework				
 			);
 	}
@@ -294,11 +285,9 @@ public class AssemblyInfoProjectMetadata
 #region XML project parse
 public class XmlProjectMetadataParser
 {
-	private XDocument document;
-	
 	public XmlProjectMetadata Parse(string projectPath)
 	{
-		document = XDocument.Load(projectPath);
+		var document = XDocument.Load(projectPath);
 
 		var isNewFormat = document.Root.Attributes().Any(x => x.Name == "Sdk");
 		
@@ -307,20 +296,22 @@ public class XmlProjectMetadataParser
 			//document.Dump();
 		}
 		
-		var description = isNewFormat ? GetProperty("Description", isNewFormat) : null;
-		var authors = GetProperty("Authors", isNewFormat);
-		var company = GetProperty("Company", isNewFormat);
-		var copyright = GetProperty("Copyright", isNewFormat);
-		var product = GetProperty("Product", isNewFormat);
-		var projectUrl = GetProperty("PackageProjectUrl", isNewFormat);
+		var description = isNewFormat ? GetProperty(document, "Description", isNewFormat) : null;
+		var tags = GetProperty(document, "PackageTags", isNewFormat);
+		var authors = GetProperty(document, "Authors", isNewFormat);
+		var company = GetProperty(document, "Company", isNewFormat);
+		var copyright = GetProperty(document, "Copyright", isNewFormat);
+		var product = GetProperty(document, "Product", isNewFormat);
+		var projectUrl = GetProperty(document, "PackageProjectUrl", isNewFormat);
 		
-		var targetFramework = GetProperty(isNewFormat ? "TargetFramework" : "TargetFrameworkVersion", isNewFormat);
-		var version = GetProperty("Version", isNewFormat);
-		var signAssembly = GetProperty("SignAssembly", isNewFormat);
-		var assemblyOriginatorKeyFile = GetProperty("AssemblyOriginatorKeyFile", isNewFormat);
+		var targetFramework = GetProperty(document, isNewFormat ? "TargetFramework" : "TargetFrameworkVersion", isNewFormat);
+		var version = GetProperty(document, "Version", isNewFormat);
+		var signAssembly = GetProperty(document, "SignAssembly", isNewFormat);
+		var assemblyOriginatorKeyFile = GetProperty(document, "AssemblyOriginatorKeyFile", isNewFormat);
 		
 		var metadata = new XmlProjectMetadata(
 			description,
+			tags,
 			authors,
 			company,
 			product,
@@ -334,7 +325,7 @@ public class XmlProjectMetadataParser
 		return metadata;
 	}
 
-	private string GetProperty(string meta, bool isNewFormat)
+	private string GetProperty(XDocument document, string meta, bool isNewFormat)
 	{
 		if (!isNewFormat)
 		{
@@ -362,6 +353,7 @@ public class XmlProjectMetadata
 {
 	public XmlProjectMetadata(
 		string description,
+		string tags,
 		string authors,
 		string company,
 		string product,
@@ -373,6 +365,7 @@ public class XmlProjectMetadata
 		string assemblyOriginatorKeyFile)
 	{
 		Description = description;
+		Tags = tags;
 		Authors = authors;
 		Company = company;
 		Product = product;
@@ -385,6 +378,7 @@ public class XmlProjectMetadata
 	}
 
 	public string Description { get; }
+	public string Tags { get; }
 	public string Authors { get; }
 	public string Company { get; }
 	public string Product { get; }

@@ -13,7 +13,7 @@
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Contracts ensuring, Messanging, LINQ expression parser and extension methods, Task Parallel Library helpers, Type auto-mapping for storage and benchmark.</Description>
+    <Description>A base class library to add useful extensions to .NET, like messanging, LINQ expression parser and extension methods, Task Parallel Library helpers, type auto-mapping for storage and benchmark.</Description>
     <Version>3.0.7333.34942</Version>
     <Company>EyeSoft</Company>
     <Copyright>EyeSoft ©2020</Copyright>
@@ -22,6 +22,7 @@
     <Product>EyeSoft.Core</Product>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>contract checking, message broker, LINQ, expression parser, IO, TPL, type auto-mapper, benchmark, calendar, schedule, serialization</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">

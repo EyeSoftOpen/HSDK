@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
 [assembly: AssemblyProduct("EyeSoft.Data.SqLite")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2016")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
 
 [assembly: AssemblyTitle("EyeSoft.Data.SqLite")]
 

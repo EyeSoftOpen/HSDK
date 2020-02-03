@@ -16,7 +16,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
-    <PackageTags>inversion of control, dependency injection</PackageTags>
+    <PackageTags>CommonServiceLocator, inversion of control, dependency injection</PackageTags>
     <Copyright>EyeSoft ©2020</Copyright>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />

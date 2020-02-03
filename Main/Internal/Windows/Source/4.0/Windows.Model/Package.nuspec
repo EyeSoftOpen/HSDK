@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>$author$</copyright>
-    <tags>Simplify the adoption of the MVVM pattern using WPF.</tags>
+    <tags>WPF windows converters MVVM presentation UI</tags>
     <dependencies>
       <dependency id="EyeSoft.Core" version="3.0.7333.34942" />
     </dependencies>

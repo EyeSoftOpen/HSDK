@@ -20,6 +20,7 @@
     <Product>EyeSoft.FluentValidation</Product>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>validation, fluent validation, FluentValidation, commanding</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

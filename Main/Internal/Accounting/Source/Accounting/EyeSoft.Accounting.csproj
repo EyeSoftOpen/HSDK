@@ -20,6 +20,7 @@
     <Product>EyeSoft.Accounting</Product>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>accounting, natural person, fiscal</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

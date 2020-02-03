@@ -18,6 +18,7 @@
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>domain, model, DDD, aggregatem aggregate root, ORM</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
