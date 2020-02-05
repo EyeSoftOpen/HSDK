@@ -15,6 +15,7 @@
 		    <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
 		    <PackageIcon>icon.png</PackageIcon>
 		    <PackageIconUrl />
+        <IncludeSymbols>true</IncludeSymbols>
 		  </PropertyGroup>
 		
 		  <ItemGroup>

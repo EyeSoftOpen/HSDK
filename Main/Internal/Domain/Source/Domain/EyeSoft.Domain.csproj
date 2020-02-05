@@ -19,6 +19,7 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <PackageTags>domain, model, DDD, aggregatem aggregate root, ORM</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>

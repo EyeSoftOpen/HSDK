@@ -21,6 +21,7 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <PackageTags>codice fiscale, istat, comuni, fiscal code, accounting, italian accounting</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>

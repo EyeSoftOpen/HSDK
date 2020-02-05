@@ -21,6 +21,7 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <PackageTags>validation, fluent validation, FluentValidation, commanding</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>

@@ -21,6 +21,7 @@
     <PackageIconUrl />
     <PackageTags>SharpTestsEx, unit test, unit testing</PackageTags>
     <Copyright>EyeSoft 2020</Copyright>
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>

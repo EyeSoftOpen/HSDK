@@ -31,16 +31,16 @@ public class NugetPackageMetaHelper
 	{
 		var packages =
 			new DirectoryInfo(PathHelper.CurrentFolderPath())
-				.GetFiles("*.nupkg", SearchOption.AllDirectories)
+				.GetFiles("*.symbols.nupkg", SearchOption.AllDirectories)
 				.Where(x =>
 					!x.FullName.Contains("Nuget.Packages") &&
 					!x.FullName.Contains("packages") &&
 					!x.FullName.Contains("Libraries") &&
-					!x.Name.Contains(".symbols"))
+					x.Directory.Name == "Release")
 				.Select(x => new { x.FullName, Name = Path.GetFileNameWithoutExtension(x.Name) })
 				.Distinct()
 				.Select(x => new { x.FullName, Name = x.Name, Version = GetVersion(x.Name) })
-				.Select(x => new NugetPackage(x.FullName, x.Name.Replace(x.Version.ToString(), null).Trim('.'), x.Version))
+				.Select(x => new NugetPackage(x.FullName, x.Name.Replace(".symbols", null).Replace(x.Version.ToString(), null).Trim('.'), x.Version))
 				.OrderBy(x => x.Name)
 				.ToArray();
 				
@@ -49,7 +49,7 @@ public class NugetPackageMetaHelper
 
 	private Version GetVersion(string name)
 	{
-		var version = name;
+		var version = name.Replace(".symbols", null);
 
 		for (var i = 0; i < name.Length; i++)
 		{
