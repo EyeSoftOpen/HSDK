@@ -33,7 +33,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CFA87D
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{D04D43B2-5449-42C1-A04B-890A5B2350E4}"
@@ -181,7 +180,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpTestsEx", "External\Sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpTestsEx.Test", "External\SharpTestsEx\Source\Test\SharpTestsEx.Test.csproj", "{95D85E3C-6ED4-46CB-83BC-3BD3185F40A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeSoft.Core.Test", "Internal\Core\Source\4.5\Core.Test\EyeSoft.Core.Test.csproj", "{FD58B16B-E7FA-4E4C-AF7A-8E1C7BB27707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EyeSoft.Core.Test", "Internal\Core\Source\4.5\Core.Test\EyeSoft.Core.Test.csproj", "{FD58B16B-E7FA-4E4C-AF7A-8E1C7BB27707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

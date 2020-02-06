@@ -4,17 +4,28 @@ void Main()
 {
 	//new NugetPackageMetaHelper().DeleteAllPackages();
 	
-	var packages = new NugetPackageMetaHelper().GetPackages().Dump();
+	var basePath = PathHelper.CurrentFolderPath();
 	
-	new ProjectMetadataHelper().GetProjects(packages);
+	var packages = new NugetPackageMetaHelper(basePath).GetPackages().Dump("Found packages with symbols");
+	
+	var foundPackages = new ProjectMetadataHelper(basePath).GetPackages(packages).Dump("Packages metadata");
+	
+	new ProjectMetadataHelper(basePath).CopyPackages(foundPackages).Dump("Copied packages to be published and placed under source control");
 }
 
 #region Nuget
 public class NugetPackageMetaHelper
 {
+	private readonly string basePath;
+	
+	public NugetPackageMetaHelper(string basePath)
+	{
+		this.basePath = basePath;
+	}
+	
 	public void DeleteAllPackages()
 	{
-		new DirectoryInfo(PathHelper.CurrentFolderPath())
+		new DirectoryInfo(basePath)
 			.GetFiles("*.nupkg", SearchOption.AllDirectories)
 			.Where(x =>
 				!x.FullName.Contains("Nuget.Packages") &&
@@ -30,7 +41,7 @@ public class NugetPackageMetaHelper
 	public IEnumerable<NugetPackage> GetPackages()
 	{
 		var packages =
-			new DirectoryInfo(PathHelper.CurrentFolderPath())
+			new DirectoryInfo(basePath)
 				.GetFiles("*.symbols.nupkg", SearchOption.AllDirectories)
 				.Where(x =>
 					!x.FullName.Contains("Nuget.Packages") &&
@@ -90,28 +101,63 @@ public class NugetPackage
 #region Project
 public class ProjectMetadataHelper
 {
-	public void GetProjects(IEnumerable<NugetPackage> packages)
+	private readonly string basePath;
+
+	public ProjectMetadataHelper(string basePath)
 	{
-		new DirectoryInfo(PathHelper.CurrentFolderPath())
-			.GetFiles("*.csproj", SearchOption.AllDirectories)
-			.Where(x => packages.Any(p => p.Name == Path.GetFileNameWithoutExtension(x.Name)))
-			.Select(x => Parse(x.FullName).Merge())
-			.OrderBy(x => x.Package)
-			.Select(x => new
-				{
-					x.Version,
-					x.Authors,
-					x.Product,					
-					x.Company,
-					x.Copyright,
-					Url = x.ProjectUrl == null ? null : new Hyperlinq(x.ProjectUrl),
-					Name = new Hyperlinq($"https://www.nuget.org/packages/{x.Package}", x.Package),
-					x.Description,
-					x.Tags,
-					x.TargetFramework,
-					Files = packages.Where(p => p.Name == x.Package)
-				})			
-			.Dump();
+		this.basePath = basePath;
+	}
+
+	public IEnumerable<NugetPackageToPublish> GetPackages(IEnumerable<NugetPackage> foundPackages)
+	{
+		var packages =
+			new DirectoryInfo(basePath)
+				.GetFiles("*.csproj", SearchOption.AllDirectories)
+				.Where(x => foundPackages.Any(p => p.Name == Path.GetFileNameWithoutExtension(x.Name)))
+				.Select(x => Parse(x.FullName).Merge())
+				.OrderBy(x => x.Package)
+				.Select(x =>
+					new NugetPackageToPublish(
+						x.Version,
+						x.Authors,
+						x.Product,					
+						x.Company,
+						x.Copyright,
+						x.ProjectUrl == null ? null : new Hyperlinq(x.ProjectUrl),
+						new Hyperlinq($"https://www.nuget.org/packages/{x.Package}", x.Package),
+						x.Description,
+						x.Tags,
+						x.TargetFramework,
+						foundPackages.Where(p => p.Name == x.Package)
+					))
+					.ToArray();
+					
+		return packages;
+	}
+
+	public IEnumerable<NugetPackageToPublish> CopyPackages(IEnumerable<NugetPackageToPublish> foundPackages)
+	{
+		var copied =  new List<NugetPackageToPublish>();
+		
+		var nugetPackagesFolder = Path.Combine(basePath, "Nuget.Packages");
+		
+		foreach(var package in foundPackages)
+		{
+			var newerPackage = package.Packages.OrderByDescending(x => x.Version).First();
+			
+			var packageFileName = Path.GetFileName(newerPackage.Path);
+			
+			var nugetPackagePath = Path.Combine(nugetPackagesFolder, packageFileName);
+			
+			if (!File.Exists(nugetPackagePath))
+			{
+				File.Copy(newerPackage.Path, nugetPackagePath);
+				
+				copied.Add(package);
+			}
+		}
+		
+		return copied;
 	}
 	
 	public ProjectMergedMetadata Parse(string projectPath)
@@ -131,6 +177,47 @@ public class ProjectMetadataHelper
 		
 		return new ProjectMergedMetadata(Path.GetFileNameWithoutExtension(projectPath), project, assemblyInfoProjectMetadata);
 	}
+}
+
+public class NugetPackageToPublish
+{
+	public NugetPackageToPublish(
+		string version,
+		string authors,
+		string product,
+		string company,
+		string copyright,
+		Hyperlinq projectUrl,
+		Hyperlinq nugetUrl,
+		string description,
+		string tags,
+		string targetFramework,
+		IEnumerable<NugetPackage> packages)
+	{
+		Version = version;
+		Authors = authors;
+		Product = product;
+		Company = company;
+		Copyright = copyright;
+		ProjectUrl = projectUrl;
+		NugetUrl = nugetUrl;
+		Description = description;
+		Tags = tags;
+		TargetFramework = targetFramework;
+		Packages = packages;
+	}
+
+	public string Version { get; }
+	public string Authors { get; }
+	public string Product { get; }
+	public string Company { get; }
+	public string Copyright { get; }
+	public Hyperlinq ProjectUrl { get; }
+	public object NugetUrl { get; }
+	public string Description { get; }
+	public string Tags { get; }
+	public string TargetFramework { get; }
+	public IEnumerable<NugetPackage> Packages { get; }
 }
 
 public class PackageMetadata : ProjectMetadata

@@ -96,10 +96,6 @@
       <Project>{4c464a88-7d14-4755-9ebf-82bbe1b168ed}</Project>
       <Name>EyeSoft.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Windows.Model\EyeSoft.Windows.Model.csproj">
-      <Project>{0311e947-b90b-47ab-8c28-526d65c17827}</Project>
-      <Name>EyeSoft.Windows.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Package.nuspec" />

@@ -14,6 +14,7 @@
     <tags>WPF windows converters MVVM presentation UI</tags>
     <dependencies>
       <dependency id="EyeSoft.Core" version="3.0.7333.34942" />
+      <dependency id="System.Security.Cryptography.ProtectedData" version="4.7.0" />
     </dependencies>
   </metadata>
 </package>

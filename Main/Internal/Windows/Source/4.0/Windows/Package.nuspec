@@ -14,6 +14,7 @@
     <tags>Simplify the adoption of the MVVM pattern using WPF.</tags>
     <dependencies>
       <dependency id="EyeSoft.Core" version="3.0.7333.34942" />
+      <dependency id="EyeSoft.Core" version="3.0.7333.34942" />
     </dependencies>
   </metadata>
 </package>
