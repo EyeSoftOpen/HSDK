@@ -14,11 +14,12 @@ namespace EyeSoft.Windows.Model
     using EyeSoft.Validation;
     using Input;
 
-    public abstract class ViewModel : INotifyPropertyChanged,
-                                      INotifyPropertyChanging,
-                                      INotifyViewModel,
-                                      IDataErrorInfo,
-                                      IDisposable
+    public abstract class ViewModel :
+        INotifyPropertyChanged,
+        INotifyPropertyChanging,
+        INotifyViewModel,
+        IDataErrorInfo,
+        IDisposable
     {
         private readonly ViewModelProperties viewModelProperties;
 

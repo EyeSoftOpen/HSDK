@@ -5,7 +5,6 @@
 	using EyeSoft.Logging;
 	using EyeSoft.Windows.Model.Demo.Configuration;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration;
 
 	public partial class App
 	{
