@@ -52,7 +52,7 @@
 		{
 			public string Name { get; set; }
 
-			protected override IEnumerable<ValidationError> Validate()
+			public override IEnumerable<ValidationError> Validate()
 			{
 				return new ValidableViewModelValidator().Validate(this).ToList();
 			}

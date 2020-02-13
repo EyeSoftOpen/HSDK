@@ -15,7 +15,7 @@ namespace EyeSoft.Windows.Model.Input
 			this.commandFactory = commandFactory;
 		}
 
-		public ICommand Create(INotifyPropertyChanged viewModel, CommandMethods methods)
+		public ICommand Create(IViewModel viewModel, CommandMethods methods)
 		{
 			if (methods.HasErrors)
 			{

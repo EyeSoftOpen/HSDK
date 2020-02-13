@@ -1,8 +1,9 @@
 namespace EyeSoft.Windows.Model.Demo.ViewModels
 {
-	using System.Diagnostics;
-
-	using EyeSoft.Windows.Model;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using EyeSoft.Validation;
+    using EyeSoft.Windows.Model;
 
 	[DebuggerDisplay("{Customer.FirstName} {Customer.LastName}")]
 	public class EditCustomerViewModel : ConfirmCancelViewModel<string>
@@ -24,6 +25,11 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 		public override bool IsValid
 		{
 			get { return Customer.IsValid; }
+		}
+
+		public override IEnumerable<ValidationError> Validate()
+		{
+			return Customer.Validate();
 		}
 
 		protected override void Confirm()

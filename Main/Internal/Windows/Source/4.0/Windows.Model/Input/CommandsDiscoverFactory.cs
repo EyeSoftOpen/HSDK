@@ -4,15 +4,15 @@ namespace EyeSoft.Windows.Model.Input
 
 	public static class CommandsDiscoverFactory
 	{
-		private static readonly Singleton<CommandsDiscover> singletonInstance =
-			new Singleton<CommandsDiscover>(() => new CommandsDiscover(new CommandFactory(true)));
+		private static readonly Singleton<ICommandsDiscover> singletonInstance =
+			new Singleton<ICommandsDiscover>(() => new CommandsDiscover(new CommandFactory(true)));
 
-		public static void Set(Func<CommandsDiscover> instance)
+		public static void Set(Func<ICommandsDiscover> instance)
 		{
 			singletonInstance.Set(instance);
 		}
 
-		public static CommandsDiscover Create()
+		public static ICommandsDiscover Create()
 		{
 			return singletonInstance.Instance;
 		}

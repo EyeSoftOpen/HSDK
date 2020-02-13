@@ -88,7 +88,7 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 			}
 		}
 
-		protected override IEnumerable<ValidationError> Validate()
+		public override IEnumerable<ValidationError> Validate()
 		{
 			if (!Changed)
 			{

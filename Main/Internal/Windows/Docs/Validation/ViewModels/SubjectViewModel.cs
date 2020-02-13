@@ -24,7 +24,7 @@
             set { SetProperty(value); }
         }
 
-        protected override IEnumerable<ValidationError> Validate()
+        public override IEnumerable<ValidationError> Validate()
         {
             return new SubjectViewModelValidator().Validate(this);
         }

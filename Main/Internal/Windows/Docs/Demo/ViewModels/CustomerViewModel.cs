@@ -49,7 +49,7 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 			set { SetProperty(value); }
 		}
 
-		protected override IEnumerable<ValidationError> Validate()
+		public override IEnumerable<ValidationError> Validate()
 		{
 			return new CustomerViewModelValidator().Validate(this);
 		}

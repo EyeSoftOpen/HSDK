@@ -86,7 +86,7 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 			return !string.IsNullOrWhiteSpace(FullName) && IsValid;
 		}
 
-		protected override IEnumerable<ValidationError> Validate()
+		public override IEnumerable<ValidationError> Validate()
 		{
 			return new MainViewModelValidator().Validate(this);
 		}

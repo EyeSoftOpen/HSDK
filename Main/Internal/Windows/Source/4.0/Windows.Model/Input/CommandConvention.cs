@@ -5,7 +5,7 @@ namespace EyeSoft.Windows.Model.Input
 	using System.Linq;
 	using System.Reflection;
 
-	public class CommandConvention
+	public class CommandConvention : ICommandConvention
 	{
 		public CommandMethods Get(Type viewModelType, PropertyInfo commandProperty)
 		{

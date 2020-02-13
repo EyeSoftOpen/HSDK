@@ -91,10 +91,17 @@
     <Compile Include="Collections\ObjectModel\EnumerableExtensions.cs" />
     <Compile Include="ExceptionLogger\DialogLogger.cs" />
     <Compile Include="ExceptionLogger\ExceptionHandler.cs" />
+    <Compile Include="Input\AlwaysCanExectureCommandFactoryHalper.cs" />
     <Compile Include="Input\AsyncRefreshCommandT.cs" />
     <Compile Include="Input\AsyncRefreshCommand.cs" />
     <Compile Include="Input\BaseAsyncRefreshCommand.cs" />
     <Compile Include="Input\CommandsDiscoverFactory.cs" />
+    <Compile Include="Input\CommandSetter.cs" />
+    <Compile Include="Input\DefaultViewModelChecker.cs" />
+    <Compile Include="Input\ICommandConvention.cs" />
+    <Compile Include="Input\ICommandsDiscover.cs" />
+    <Compile Include="Input\ICommandSetter.cs" />
+    <Compile Include="Input\IViewModelChecker.cs" />
     <Compile Include="ServiceProxy\Collection\Direct\ICollectionFilled.cs" />
     <Compile Include="ServiceProxy\Collection\Direct\ICollectionLoaded.cs" />
     <Compile Include="ServiceProxy\Collection\Direct\Implementations\CollectionFilled.cs" />
@@ -158,6 +165,7 @@
     <Compile Include="ViewModels\IConfirmCancelViewModel.cs" />
     <Compile Include="ViewModels\IIdentityViewModel%27T.cs" />
     <Compile Include="ViewModels\Helpers\INotifyViewModel.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
     <Compile Include="ViewModels\Navigation\INavigableViewModel.cs" />
     <Compile Include="ViewModels\Navigation\NavigableViewModel.cs" />
     <Compile Include="ViewModels\Navigation\ShellViewModel.cs" />

@@ -5,12 +5,12 @@ namespace EyeSoft.Windows.Model.Input
 
 	public interface IGenericCommandFactory
 	{
-		ICommand Create<T>(Action<T> action);
+		ICommand Create<T>(IViewModel viewModel, Action<T> action);
 
-		ICommand Create<T>(Action<T> action, Func<T, bool> canExecute);
+		ICommand Create<T>(IViewModel viewModel, Action<T> action, Func<T, bool> canExecute);
 
-		ICommand CreateAsync<T>(Action<T> action);
+		ICommand CreateAsync<T>(IViewModel viewModel, Action<T> action);
 
-		ICommand CreateAsync<T>(Action<T> action, Func<T, bool> canExecute);
+		ICommand CreateAsync<T>(IViewModel viewModel, Action<T> action, Func<T, bool> canExecute);
 	}
 }

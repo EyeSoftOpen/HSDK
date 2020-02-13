@@ -12,13 +12,11 @@ namespace EyeSoft.Windows.Model
     using EyeSoft.Logging;
     using EyeSoft.Reflection;
     using EyeSoft.Validation;
-    using Input;
 
     public abstract class ViewModel :
-        INotifyPropertyChanged,
+        IViewModel,
         INotifyPropertyChanging,
         INotifyViewModel,
-        IDataErrorInfo,
         IDisposable
     {
         private readonly ViewModelProperties viewModelProperties;
@@ -182,14 +180,16 @@ namespace EyeSoft.Windows.Model
             return new AsyncExecution(Application.Current);
         }
 
-        protected virtual IEnumerable<ValidationError> Validate()
+        public virtual IEnumerable<ValidationError> Validate()
         {
             return new DefaultValidator().Validate(this);
         }
 
-        protected virtual IEnumerable<ValidationError> Validate(string propertyName)
+        public virtual IEnumerable<ValidationError> Validate(string propertyName)
         {
-            return Validate().Where(x => x.PropertyName == propertyName);
+            var errors = Validate().Where(x => x.PropertyName == propertyName).ToArray();
+            
+            return errors;
         }
 
         #region property get/set

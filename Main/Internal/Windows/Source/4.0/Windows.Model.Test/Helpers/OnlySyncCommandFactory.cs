@@ -7,44 +7,44 @@ namespace EyeSoft.Windows.Model.Test.Helpers
 
 	internal class OnlySyncCommandFactory : ICommandFactory
 	{
-		public ICommand Create(Action action)
+		public ICommand Create(IViewModel viewModel, Action action)
 		{
-			return new AsyncRefreshCommand(action);
+			return new AsyncRefreshCommand(viewModel, action);
 		}
 
-		public ICommand Create(Action action, Func<bool> canExecute)
+		public ICommand Create(IViewModel viewModel, Action action, Func<bool> canExecute)
 		{
-			return new AsyncRefreshCommand(action, canExecute);
+			return new AsyncRefreshCommand(viewModel, action, canExecute);
 		}
 
-		public ICommand CreateAsync(Action action)
+		public ICommand CreateAsync(IViewModel viewModel, Action action)
 		{
-			return new AsyncRefreshCommand(action);
+			return new AsyncRefreshCommand(viewModel, action);
 		}
 
-		public ICommand CreateAsync(Action action, Func<bool> canExecute)
+		public ICommand CreateAsync(IViewModel viewModel, Action action, Func<bool> canExecute)
 		{
-			return new AsyncRefreshCommand(action, canExecute);
+			return new AsyncRefreshCommand(viewModel, action, canExecute);
 		}
 
-		public ICommand Create<T>(Action<T> action)
+		public ICommand Create<T>(IViewModel viewModel, Action<T> action)
 		{
-			return new AsyncRefreshCommand<T>(action);
+			return new AsyncRefreshCommand<T>(viewModel, action);
 		}
 
-		public ICommand Create<T>(Action<T> action, Func<T, bool> canExecute)
+		public ICommand Create<T>(IViewModel viewModel, Action<T> action, Func<T, bool> canExecute)
 		{
-			return new AsyncRefreshCommand<T>(action, canExecute);
+			return new AsyncRefreshCommand<T>(viewModel, action, canExecute);
 		}
 
-		public ICommand CreateAsync<T>(Action<T> action)
+		public ICommand CreateAsync<T>(IViewModel viewModel, Action<T> action)
 		{
-			return new AsyncRefreshCommand<T>(action);
+			return new AsyncRefreshCommand<T>(viewModel, action);
 		}
 
-		public ICommand CreateAsync<T>(Action<T> action, Func<T, bool> canExecute)
+		public ICommand CreateAsync<T>(IViewModel viewModel, Action<T> action, Func<T, bool> canExecute)
 		{
-			return new AsyncRefreshCommand<T>(action, canExecute);
+			return new AsyncRefreshCommand<T>(viewModel, action, canExecute);
 		}
 	}
 }

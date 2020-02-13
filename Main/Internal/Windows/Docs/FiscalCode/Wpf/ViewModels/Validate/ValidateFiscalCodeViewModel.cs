@@ -54,7 +54,7 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 
 		public string Town { get; private set; }
 
-		protected override IEnumerable<ValidationError> Validate()
+		public override IEnumerable<ValidationError> Validate()
 		{
 			return new ValidateFiscalCodeViewModelValidator().Validate(this);
 		}

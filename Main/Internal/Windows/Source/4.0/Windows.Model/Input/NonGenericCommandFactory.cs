@@ -17,7 +17,7 @@ namespace EyeSoft.Windows.Model.Input
 		private static readonly MethodInfo createCanExecuteMethod =
 			typeof(NonGenericCommandFactory).GetMethod("GiveCanExecute", NonPublic);
 
-		private readonly INotifyPropertyChanged viewModel;
+		private readonly IViewModel viewModel;
 
 		private readonly CommandMethods methods;
 
@@ -25,7 +25,7 @@ namespace EyeSoft.Windows.Model.Input
 
 		public NonGenericCommandFactory(
 			ICommandFactory commandFactory,
-			INotifyPropertyChanged viewModel,
+			IViewModel viewModel,
 			CommandMethods methods)
 		{
 			this.viewModel = viewModel;
@@ -41,13 +41,13 @@ namespace EyeSoft.Windows.Model.Input
 
 			if (methods.CanExecuteMethod == null)
 			{
-				command = CreateCommand(action);
+				command = CreateCommand(viewModel, action);
 			}
 			else
 			{
 				var canExecute = CreateCanExecute();
 
-				command = CreateCommand(action, canExecute);
+				command = CreateCommand(viewModel, action, canExecute);
 			}
 
 			return command;

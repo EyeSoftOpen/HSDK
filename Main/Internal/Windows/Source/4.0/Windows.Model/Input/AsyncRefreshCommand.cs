@@ -6,48 +6,51 @@
 
     public class AsyncRefreshCommand : BaseAsyncRefreshCommand, ICommand
     {
-        private readonly Action execute;
-        private readonly Func<bool> canExecute;
-        private readonly bool isAsync;
-
-        public AsyncRefreshCommand(Action execute, bool isAsync = false)
-            : this(execute, null, isAsync)
+        public AsyncRefreshCommand(IViewModel viewModel, Action execute, bool isAsync = false)
+            : this(viewModel, execute, null, isAsync)
         {
         }
 
-        public AsyncRefreshCommand(Action execute, Func<bool> canExecute, bool isAsync = false)
+        public AsyncRefreshCommand(IViewModel viewModel, Action execute, Func<bool> canExecute, bool isAsync = false)
+            : base(viewModel)
         {
-            this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
-            this.canExecute = canExecute;
-            this.isAsync = isAsync;
+            ExecuteAction = execute ?? throw new ArgumentNullException(nameof(execute));
+            CanExecuteFunc = canExecute;
+            IsAsync = isAsync;
         }
 
-        public bool CanExecute(object parameter)
+        protected Action ExecuteAction { get; private set; }
+
+        protected Func<bool> CanExecuteFunc { get; private set; }
+
+        protected bool IsAsync { get; private set; }
+
+        public virtual bool CanExecute(object parameter)
         {
-            if (canExecute == null)
+            if (CanExecuteFunc == null)
             {
                 return true;
             }
 
-            if (isAsync)
+            if (IsAsync)
             {
-                return Task.Factory.StartNew(canExecute).Result;
+                return Task.Factory.StartNew(CanExecuteFunc).Result;
             }
 
-            return canExecute();
+            return CanExecuteFunc();
         }
 
-        public void Execute(object parameter)
+        public virtual void Execute(object parameter)
         {
-            if (!isAsync)
+            if (!IsAsync)
             {
-                execute();
+                ExecuteAction();
             }
             else
             {
                 Task.Factory.StartNew(() =>
                 {
-                    execute();
+                    ExecuteAction();
                 });
             }
         }

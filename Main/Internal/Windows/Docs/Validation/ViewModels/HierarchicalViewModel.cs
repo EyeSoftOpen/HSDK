@@ -33,7 +33,7 @@ namespace EyeSoft.Demo.Validation.Windows.ViewModels
 			}
 		}
 
-		protected override IEnumerable<ValidationError> Validate()
+		public override IEnumerable<ValidationError> Validate()
 		{
 			return new HierarchicalViewModelValidator().Validate(this);
 		}

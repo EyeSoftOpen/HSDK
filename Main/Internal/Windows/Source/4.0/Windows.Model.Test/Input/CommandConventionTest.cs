@@ -106,7 +106,7 @@
 		{
 			public ViewModelNoConsiderAssignedCommands()
 			{
-				NewCustomerCommand = new MyAsyncCommand(() => { });
+				NewCustomerCommand = new MyAsyncCommand(this, () => { });
 			}
 
 			public ICommand NewCustomerCommand { get; private set; }
@@ -118,8 +118,8 @@
 
 		private class MyAsyncCommand : AsyncRefreshCommand
 		{
-			public MyAsyncCommand(Action action)
-				: base(action)
+			public MyAsyncCommand(IViewModel viewModel, Action action)
+				: base(viewModel, action)
 			{
 			}
 		}
