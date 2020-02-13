@@ -7,8 +7,6 @@ namespace EyeSoft.Windows.Model.Input
 	using System.Reflection;
 	using System.Windows.Input;
 
-	using EyeSoft.Reflection;
-
 	public class CommandsDiscover
 	{
 		private readonly ICommandFactory commandFactory;

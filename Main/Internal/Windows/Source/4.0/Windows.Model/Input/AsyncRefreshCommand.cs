@@ -42,14 +42,12 @@
             if (!isAsync)
             {
                 execute();
-                RaiseCanExecuteChanged();
             }
             else
             {
                 Task.Factory.StartNew(() =>
                 {
                     execute();
-                    RaiseCanExecuteChanged();
                 });
             }
         }

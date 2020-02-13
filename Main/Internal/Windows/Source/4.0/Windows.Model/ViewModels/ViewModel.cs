@@ -34,6 +34,7 @@ namespace EyeSoft.Windows.Model
             propertyInfoDictionary = new PropertyInfoDictionary(this);
 
             viewModelProperties = new ViewModelProperties(this);
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -267,15 +268,6 @@ namespace EyeSoft.Windows.Model
             viewModelProperties.Changed(
                 propertyInfoDictionary[e.PropertyName],
                 () => propertyInfoDictionary.GetPropertyValue(e.PropertyName));
-
-            var commandProperties = propertyInfoDictionary.GetCommands();
-
-            foreach (var commandProperty in commandProperties)
-            {
-                var commandInstance = propertyInfoDictionary.GetCommandValue(commandProperty.Name);
-
-                (commandInstance as BaseAsyncRefreshCommand)?.RaiseCanExecuteChanged();
-            }
 
             HandlePropertyChanged(e);
         }

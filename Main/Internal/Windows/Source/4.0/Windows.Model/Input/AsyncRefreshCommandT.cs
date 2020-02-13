@@ -44,14 +44,12 @@
             if (!isAsync)
             {
                 execute((T)parameter);
-                RaiseCanExecuteChanged();
             }
             else
             {
                 Task.Factory.StartNew(() =>
                 {
                     execute((T) parameter);
-                    RaiseCanExecuteChanged();
                 });
             }
         }

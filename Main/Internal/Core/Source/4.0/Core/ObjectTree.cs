@@ -41,9 +41,7 @@
 
 			foreach (var child in children)
 			{
-				var enumerable = child as IEnumerable;
-
-				if (enumerable != null)
+				if (child is IEnumerable enumerable)
 				{
 					foreach (var item in enumerable)
 					{
