@@ -9,19 +9,24 @@ namespace EyeSoft.Windows.Model.Input
 		{
 		}
 
-		public CommandsDiscover(ICommandFactory commandFactory) : this(commandFactory, new CommandConvention())
+		public CommandsDiscover(ICommandFactory commandFactory)
+			: this(commandFactory, new CommandConvention())
 		{
 		}
 
-		public CommandsDiscover(ICommandConvention commandConvention) : this(new CommandFactory(), commandConvention)
+		public CommandsDiscover(ICommandConvention commandConvention)
+			: this(new CommandFactory(), commandConvention)
 		{
 		}
 
-		public CommandsDiscover(ICommandFactory commandFactory, ICommandConvention commandConvention, ICommandSetter commandSetter = null)
+		public CommandsDiscover(
+			ICommandFactory commandFactory,
+			ICommandConvention commandConvention,
+			ICommandSetter commandSetter = null)
 		{
 			CommandFactory = commandFactory;
 			CommandConvention = commandConvention;
-			this.commandSetter = commandSetter ?? new CommandSetter(commandFactory, commandConvention);
+			this.commandSetter = commandSetter ?? new CommandSetter(commandConvention, new CommandBuilder(commandFactory));
 		}
 
         public ICommandConvention CommandConvention { get; }

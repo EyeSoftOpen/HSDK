@@ -1,18 +1,30 @@
 namespace EyeSoft.Windows.Model.Input
 {
-	using System.ComponentModel;
-	using System.Linq;
+    using System;
+    using System.Linq;
 	using System.Windows.Input;
-
+	using EyeSoft;
 	using EyeSoft.Extensions;
 
-	internal class CommandBuilder
+	public class CommandBuilder : ICommandBuilder
 	{
-		private readonly ICommandFactory commandFactory;
+		private readonly Func<IViewModel, CommandMethods, IFactory<ICommand>> nonGenericCommandFactory;
+		private readonly Func<IViewModel, CommandMethods, Type, IFactory<ICommand>> genericCommandFactory;
 
-		public CommandBuilder(ICommandFactory commandFactory)
+		public CommandBuilder(
+			ICommandFactory commandFactory,
+			Func<IViewModel, CommandMethods, IFactory<ICommand>> nonGenericCommandFactory = null,
+			Func<IViewModel, CommandMethods, Type, IFactory<ICommand>> genericCommandFactory = null)
 		{
-			this.commandFactory = commandFactory;
+			IFactory<ICommand> defaultNonGeneric(IViewModel viewModel, CommandMethods methods) =>
+				new NonGenericCommandFactory(commandFactory, viewModel, methods);
+
+			IFactory<ICommand> defaultGeneric(IViewModel viewModel, CommandMethods methods, Type parameterType) =>
+				new GenericCommandFactory(commandFactory, viewModel, methods, parameterType);
+
+			this.nonGenericCommandFactory = nonGenericCommandFactory ?? defaultNonGeneric;
+
+			this.genericCommandFactory = genericCommandFactory ?? defaultGeneric;
 		}
 
 		public ICommand Create(IViewModel viewModel, CommandMethods methods)
@@ -24,10 +36,16 @@ namespace EyeSoft.Windows.Model.Input
 
 			var parameter = methods.ActionMethod.MethodInfo.GetParameters().SingleOrDefault();
 
-			var factory =
-				parameter.IsNull() ?
-					new NonGenericCommandFactory(commandFactory, viewModel, methods) :
-					(IFactory<ICommand>)new GenericCommandFactory(commandFactory, viewModel, methods, parameter.ParameterType);
+			IFactory<ICommand> factory;
+
+			if (parameter.IsNull())
+			{
+				factory = nonGenericCommandFactory(viewModel, methods);
+			}
+			else
+			{
+				factory = genericCommandFactory(viewModel, methods, parameter.ParameterType);
+			}
 
 			return factory.Create();
 		}

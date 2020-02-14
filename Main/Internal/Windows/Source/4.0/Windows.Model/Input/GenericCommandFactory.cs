@@ -1,21 +1,22 @@
 namespace EyeSoft.Windows.Model.Input
 {
 	using System;
-	using System.ComponentModel;
+    using System.Collections.Generic;
+    using System.ComponentModel;
 	using System.Reflection;
 	using System.Windows.Input;
 
 	using EyeSoft.Reflection;
 
-	internal class GenericCommandFactory : IFactory<ICommand>
+	public class GenericCommandFactory : IFactory<ICommand>
 	{
 		private const BindingFlags NonPublic = BindingFlags.Instance | BindingFlags.NonPublic;
 
 		private static readonly MethodInfo createActionMethod =
-			typeof(GenericCommandFactory).GetMethod("GiveAction", NonPublic);
+			typeof(GenericCommandFactory).GetMethod(nameof(GiveAction), NonPublic);
 
 		private static readonly MethodInfo createCanExecuteMethod =
-			typeof(GenericCommandFactory).GetMethod("GiveCanExecute", NonPublic);
+			typeof(GenericCommandFactory).GetMethod(nameof(GiveCanExecute), NonPublic);
 
 		private readonly INotifyPropertyChanged viewModel;
 
@@ -59,16 +60,16 @@ namespace EyeSoft.Windows.Model.Input
 
 		private ICommand CreateCommand(params object[] args)
 		{
-			var createMethodName = "Create";
+			var createMethodName = methods.ActionMethod.IsAsync ?
+				nameof(ICommandFactory.CreateAsync) :
+				nameof(ICommandFactory.Create);
 
-			if (methods.ActionMethod.IsAsync)
-			{
-				createMethodName = createMethodName.Concatenate("Async");
-			}
+			var allArgs = new List<object>(args);
 
-			var command =
-				(ICommand)commandFactory
-					.Invoke(createMethodName, new[] { parameterType }, args);
+			allArgs.Insert(0, viewModel);
+
+			var command = (ICommand)commandFactory
+				.Invoke(createMethodName, new[] { parameterType }, allArgs.ToArray());
 
 			return command;
 		}

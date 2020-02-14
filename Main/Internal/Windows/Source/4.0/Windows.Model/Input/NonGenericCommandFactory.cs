@@ -1,21 +1,20 @@
 namespace EyeSoft.Windows.Model.Input
 {
 	using System;
-	using System.ComponentModel;
 	using System.Reflection;
 	using System.Windows.Input;
 
 	using EyeSoft.Reflection;
 
-	internal class NonGenericCommandFactory : IFactory<ICommand>
+	public class NonGenericCommandFactory : IFactory<ICommand>
 	{
 		private const BindingFlags NonPublic = BindingFlags.Instance | BindingFlags.NonPublic;
 
 		private static readonly MethodInfo createActionMethod =
-			typeof(NonGenericCommandFactory).GetMethod("GiveAction", NonPublic);
+			typeof(NonGenericCommandFactory).GetMethod(nameof(GiveAction), NonPublic);
 
 		private static readonly MethodInfo createCanExecuteMethod =
-			typeof(NonGenericCommandFactory).GetMethod("GiveCanExecute", NonPublic);
+			typeof(NonGenericCommandFactory).GetMethod(nameof(GiveCanExecute), NonPublic);
 
 		private readonly IViewModel viewModel;
 
@@ -55,12 +54,9 @@ namespace EyeSoft.Windows.Model.Input
 
 		private ICommand CreateCommand(params object[] args)
 		{
-			var createMethodName = "Create";
-
-			if (methods.ActionMethod.IsAsync)
-			{
-				createMethodName = createMethodName.Concatenate("Async");
-			}
+			var createMethodName = methods.ActionMethod.IsAsync ?
+				nameof(ICommandFactory.CreateAsync) :
+				nameof(ICommandFactory.Create);
 
 			var command = (ICommand)commandFactory.Invoke(createMethodName, args);
 

@@ -8,14 +8,17 @@
 
     public class CommandSetter : ICommandSetter
 	{
-		private readonly ICommandFactory commandFactory;
 		private readonly ICommandConvention commandConvention;
+		private readonly ICommandBuilder commandBuilder;
 
-		public CommandSetter(ICommandFactory commandFactory, ICommandConvention commandConvention)
+		public CommandSetter(
+			ICommandConvention commandConvention,
+			ICommandBuilder commandBuilder)
 		{
 			this.commandConvention = commandConvention;
-			this.commandFactory = commandFactory;
+			this.commandBuilder = commandBuilder;
 		}
+
 		public virtual void AssignAllCommands(IViewModel viewModel)
 		{
 			var viewModelType = viewModel.GetType();
@@ -47,7 +50,7 @@
 		{
 			var methods = commandConvention.Get(commandProperty.ReflectedType, commandProperty);
 
-			var command = new CommandBuilder(commandFactory).Create(viewModel, methods);
+			var command = commandBuilder.Create(viewModel, methods);
 
 			if (command == null)
 			{
