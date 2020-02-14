@@ -5,7 +5,7 @@
 
     public abstract class BaseAsyncRefreshCommand
     {
-        public BaseAsyncRefreshCommand(IViewModel viewModel)
+        protected BaseAsyncRefreshCommand(IViewModel viewModel)
         {
             ViewModel = viewModel;
         }

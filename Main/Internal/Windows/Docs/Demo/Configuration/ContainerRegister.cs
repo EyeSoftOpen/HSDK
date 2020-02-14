@@ -22,7 +22,8 @@ namespace EyeSoft.Windows.Model.Demo.Configuration
 			container
 				.Singleton(container)
 				.Singleton<ICommandFactory, CommandFactory>()
-				.Singleton(() => new CommandsDiscover(AlwaysCanExectureCommandFactoryHalper.CreateCommandFactory(true, new DefaultViewModelChecker("Validation errors on UI", "Check the UI"))))
+				.Singleton(() => new CommandsDiscover(EvaluateExecuteCommandFactoryHalper.Create(true)))
+				//.Singleton(() => new CommandsDiscover(AlwaysCanExecuteCommandFactoryHalper.Create(true, new DefaultViewModelChecker("Validation errors on UI", "Check the UI"))))
 				.Singleton<IMessageBroker, LocalMessageBroker>()
 				.Singleton<IDialogService, DefaultDialogService>()
 				.Singleton<IMapper, AutoMapperMapper>()
