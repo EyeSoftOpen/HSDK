@@ -1,10 +1,10 @@
-namespace EyeSoft.Calendar
+namespace EyeSoft.Core.Calendar
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-	internal class HolidayEntries
+    internal class HolidayEntries
 	{
 		private readonly List<Holiday> holidayList = new List<Holiday>();
 

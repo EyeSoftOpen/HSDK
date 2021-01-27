@@ -1,8 +1,11 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode
 {
-	using System;
+    using System;
+    using Core;
+    using Core.Extensions;
+    using Parts;
 
-	public class RevertedFiscalCode : CalculatedFiscalCode
+    public class RevertedFiscalCode : CalculatedFiscalCode
 	{
 		public RevertedFiscalCode(string code)
 		{

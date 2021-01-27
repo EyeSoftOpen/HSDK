@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Net.NetworkInformation
+﻿namespace EyeSoft.Core.Test.Net.NetworkInformation
 {
-	using System;
-	using System.Net.Sockets;
+    using System;
+    using System.Net.Sockets;
+    using Core.Net.NetworkInformation;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Net.NetworkInformation;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class TcpPingTest
 	{
 		private const string CorrectHost = "www.microsoft.com";

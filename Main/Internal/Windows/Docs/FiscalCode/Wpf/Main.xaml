@@ -5,6 +5,8 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
 	xmlns:viewModels="clr-namespace:EyeSoft.Demo.FiscalCode.Windows.ViewModels"
+	xmlns:calculate="clr-namespace:EyeSoft.Demo.FiscalCode.Windows.ViewModels.Calculate"
+	xmlns:validate="clr-namespace:EyeSoft.Demo.FiscalCode.Windows.ViewModels.Validate"
 	mc:Ignorable="d" x:Class="EyeSoft.Demo.FiscalCode.Windows.MainWindow"
 	Title="EyeSoft - Italian FiscalCode v. 1.2.0.0000"
 	Width="370"	
@@ -16,7 +18,7 @@
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="Themes\Generic.xaml" />
 			</ResourceDictionary.MergedDictionaries>
-			<DataTemplate x:Key="CalculateFiscalCodeTemplate" DataType="viewModels:CalculateFiscalCodeViewModel">
+			<DataTemplate x:Key="CalculateFiscalCodeTemplate" DataType="calculate:CalculateFiscalCodeViewModel">
 				<Grid>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto" />
@@ -65,7 +67,7 @@
 						</StackPanel>
 				</Grid>
 			</DataTemplate>
-			<DataTemplate x:Key="ValidateFiscalCodeTemplate" DataType="viewModels:ValidateFiscalCodeViewModel">
+			<DataTemplate x:Key="ValidateFiscalCodeTemplate" DataType="validate:ValidateFiscalCodeViewModel">
 				<Grid>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto" />

@@ -1,17 +1,15 @@
-using System;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class AssertExceptionTest
+    using NUnit.Framework;
+
+    public class AssertExceptionTest
 	{
 		[Test]
 		public void StackTraceFiltered()
 		{
 			var e = Executing.This(() => "foo".Should().Be.EqualTo("bar")).Should().Throw().And.Exception;
 			e.StackTrace.Should().Not.Contain("StringConstraints");
-			e.StackTrace.Lines().Length.Should("->" + e.StackTrace).Be.EqualTo(2);
+			e.StackTrace.Lines().Length.Should("->" + e.StackTrace).Be.EqualTo(1);
 		}
 	}
 }

@@ -1,6 +1,8 @@
-namespace EyeSoft.Domain.Transactional.Implementations
+namespace EyeSoft.Domain.Transactional.Repositories.Implementations
 {
-	public class Repository<T> : ReadOnlyRepository<T>, IRepository<T> where T : class, IAggregate
+    using Aggregates;
+
+    public class Repository<T> : ReadOnlyRepository<T>, IRepository<T> where T : class, IAggregate
 	{
 		private readonly IRepository<T> repository;
 

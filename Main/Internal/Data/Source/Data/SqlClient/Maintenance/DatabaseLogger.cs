@@ -3,8 +3,9 @@
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
+    using Core.Extensions;
 
-	public class DatabaseLogger
+    public class DatabaseLogger
 	{
 		private readonly List<string> log = new List<string>();
 

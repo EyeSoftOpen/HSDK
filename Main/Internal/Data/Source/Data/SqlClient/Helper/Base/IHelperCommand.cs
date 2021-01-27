@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Data.SqlClient.Helper
+﻿namespace EyeSoft.Data.SqlClient.Helper.Base
 {
 	public interface IHelperCommand
 	{

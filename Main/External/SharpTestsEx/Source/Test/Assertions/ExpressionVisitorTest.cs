@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class ExpressionVisitorTest
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class ExpressionVisitorTest
 	{
 		[Test]
 		public void WhenCalledWithAllCostant_IsIvalid()

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Logging
+﻿namespace EyeSoft.Core.Logging
 {
 	public interface IAggregatorLogger : ILogger
 	{

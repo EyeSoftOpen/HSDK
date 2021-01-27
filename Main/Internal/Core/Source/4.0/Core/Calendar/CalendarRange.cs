@@ -1,10 +1,9 @@
-﻿namespace EyeSoft.Calendar
+﻿namespace EyeSoft.Core.Calendar
 {
-	using System;
+    using System;
+    using Extensions;
 
-	using EyeSoft.Extensions;
-
-	public class CalendarRange
+    public class CalendarRange
 	{
 		public CalendarRange(DateTime first, DateTime last)
 		{

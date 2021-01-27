@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Windows.Model.With
+﻿namespace EyeSoft.Windows.Model.ServiceProxy.With.Implementations
 {
-	using System;
-	using System.Threading.Tasks;
+    using System;
+    using System.Threading.Tasks;
+    using Core.Mapping;
 
-	using EyeSoft.Mapping;
-
-	internal class ValueAction<TService, TStart> : IValueAction<TService, TStart> where TService : IDisposable
+    internal class ValueAction<TService, TStart> : IValueAction<TService, TStart> where TService : IDisposable
 	{
 		private readonly LoaderParams<TService> loaderParams;
 

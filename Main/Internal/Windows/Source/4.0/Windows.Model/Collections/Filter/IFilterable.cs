@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.Collections
+﻿namespace EyeSoft.Windows.Model.Collections.Filter
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public interface IFilterable
+    public interface IFilterable
 	{
 		IEnumerable<string> Keys { get; }
 	}

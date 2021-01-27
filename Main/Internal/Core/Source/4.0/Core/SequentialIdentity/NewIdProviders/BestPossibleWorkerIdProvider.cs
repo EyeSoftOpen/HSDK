@@ -1,8 +1,7 @@
-namespace EyeSoft.SequentialIdentity.NewIdProviders
+namespace EyeSoft.Core.SequentialIdentity.NewIdProviders
 {
     using System;
     using System.Collections.Generic;
-    using Core.SequentialIdentity.NewIdProviders;
 
     public class BestPossibleWorkerIdProvider :
         IWorkerIdProvider

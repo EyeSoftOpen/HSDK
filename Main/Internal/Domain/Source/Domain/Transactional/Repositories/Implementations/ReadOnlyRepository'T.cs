@@ -1,12 +1,13 @@
-namespace EyeSoft.Domain.Transactional.Implementations
+namespace EyeSoft.Domain.Transactional.Repositories.Implementations
 {
-	using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using Aggregates;
 
-	public class ReadOnlyRepository<T> : IReadOnlyRepository<T> where T : class, IAggregate
+    public class ReadOnlyRepository<T> : IReadOnlyRepository<T> where T : class, IAggregate
 	{
 		private readonly IReadOnlyRepository<T> repository;
 

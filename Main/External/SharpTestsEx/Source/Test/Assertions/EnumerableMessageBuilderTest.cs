@@ -1,11 +1,10 @@
-using System.Collections.Generic;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class EnumerableMessageBuilderTest
+    using System.Collections.Generic;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class EnumerableMessageBuilderTest
 	{
 		[Test]
 		public void ComposeNull()

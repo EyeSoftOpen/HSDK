@@ -11,11 +11,11 @@
 // </license>
 // ****************************************************************************
 
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
-	using System;
+    using System;
 
-	public interface IMessageBroker
+    public interface IMessageBroker
 	{
 		void Register<TMessage>(object recipient, Action<TMessage> action);
 

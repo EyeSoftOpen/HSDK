@@ -1,4 +1,4 @@
-namespace EyeSoft.Extensions
+namespace EyeSoft.Core.Extensions
 {
 	internal class ObjectExtender<T> : IObjectExtender<T>
 	{

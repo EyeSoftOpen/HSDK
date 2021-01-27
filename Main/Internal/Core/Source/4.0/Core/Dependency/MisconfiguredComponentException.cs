@@ -1,8 +1,8 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core
 {
-	using System;
+    using System;
 
-	public class MisconfiguredComponentException : Exception
+    public class MisconfiguredComponentException : Exception
 	{
 		public MisconfiguredComponentException(string message) : base(message)
 		{

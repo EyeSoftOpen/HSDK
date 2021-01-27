@@ -1,8 +1,8 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public static class Comparer
+    public static class Comparer
 	{
 		public static bool Equals<T>(T first, T second)
 		{

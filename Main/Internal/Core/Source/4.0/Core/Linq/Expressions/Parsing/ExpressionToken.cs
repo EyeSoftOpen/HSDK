@@ -1,11 +1,11 @@
-namespace EyeSoft.Linq.Expressions.Parsing
+namespace EyeSoft.Core.Linq.Expressions.Parsing
 {
-	using System;
-	using System.ComponentModel;
-	using System.Linq.Expressions;
-	using System.Reflection;
+    using System;
+    using System.ComponentModel;
+    using System.Linq.Expressions;
+    using System.Reflection;
 
-	internal class ExpressionToken
+    internal class ExpressionToken
 	{
 		private ExpressionToken()
 		{

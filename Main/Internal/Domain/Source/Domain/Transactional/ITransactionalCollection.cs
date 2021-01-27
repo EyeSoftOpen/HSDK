@@ -1,6 +1,8 @@
 namespace EyeSoft.Domain.Transactional
 {
-	public interface ITransactionalCollection : IReadTransactionalCollection
+    using Aggregates;
+
+    public interface ITransactionalCollection : IReadTransactionalCollection
 	{
 		void Save<T>(T entity) where T : class, IAggregate;
 

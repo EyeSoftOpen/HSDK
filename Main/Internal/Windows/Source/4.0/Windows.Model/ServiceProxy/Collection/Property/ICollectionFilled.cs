@@ -1,10 +1,9 @@
-﻿namespace EyeSoft.Windows.Model.Collection.Property
+﻿namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Property
 {
-	using System;
+    using System;
+    using Collections.ObjectModel;
 
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
-
-	public interface ICollectionFilled<TCollectionType>
+    public interface ICollectionFilled<TCollectionType>
 	{
 		void Completed(Action<IObservableCollection<TCollectionType>> action);
 

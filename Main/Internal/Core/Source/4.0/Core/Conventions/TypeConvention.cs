@@ -1,6 +1,7 @@
-﻿namespace EyeSoft.Conventions
+﻿namespace EyeSoft.Core.Conventions
 {
     using System;
+    using Extensions;
 
     public abstract class TypeConvention<TSource, TDestination>
     {

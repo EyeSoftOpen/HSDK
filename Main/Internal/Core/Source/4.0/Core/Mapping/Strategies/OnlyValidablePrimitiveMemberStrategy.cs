@@ -1,11 +1,10 @@
-namespace EyeSoft.Mapping.Strategies
+namespace EyeSoft.Core.Mapping.Strategies
 {
-	using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
+    using Extensions;
+    using Reflection;
 
-	using EyeSoft.Extensions;
-	using EyeSoft.Reflection;
-
-	public class OnlyValidablePrimitiveMemberStrategy : IMemberStrategy
+    public class OnlyValidablePrimitiveMemberStrategy : IMemberStrategy
 	{
 		public bool HasToMap(MemberInfoMetadata memberInfoMetadata)
 		{

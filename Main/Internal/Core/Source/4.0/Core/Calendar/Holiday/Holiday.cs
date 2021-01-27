@@ -1,8 +1,7 @@
-namespace EyeSoft.Calendar
+namespace EyeSoft.Core.Calendar
 {
     using System;
-
-    using EyeSoft.Extensions;
+    using Extensions;
 
     public class Holiday
     {

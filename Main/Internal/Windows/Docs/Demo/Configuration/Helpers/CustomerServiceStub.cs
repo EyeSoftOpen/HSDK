@@ -1,14 +1,12 @@
-namespace EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers
+namespace EyeSoft.Windows.Model.Demo.Configuration.Helpers
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Threading;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading;
+    using Contract;
 
-	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
-	using EyeSoft.Windows.Model.Demo.Contract;
-
-	internal class CustomerServiceStub : ICustomerService
+    internal class CustomerServiceStub : ICustomerService
 	{
 		private readonly bool runSlow;
 

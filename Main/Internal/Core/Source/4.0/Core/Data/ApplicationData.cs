@@ -1,11 +1,11 @@
-﻿namespace EyeSoft.Data
+﻿namespace EyeSoft.Core.Data
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
 
-	public class ApplicationData
+    public class ApplicationData
 	{
 		private readonly IList<ApplicationData> childrenList = new List<ApplicationData>();
 

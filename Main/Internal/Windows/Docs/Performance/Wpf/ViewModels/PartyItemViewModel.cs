@@ -1,10 +1,9 @@
-﻿namespace EyeSoft.Docs.Performance.Wpf.ViewModels
+﻿namespace EyeSoft.Docs.Performance.Windows.ViewModels
 {
-	using System.Windows.Input;
+    using System.Windows.Input;
+    using EyeSoft.Windows.Model.ViewModels;
 
-	using EyeSoft.Windows.Model;
-
-	public class PartyItemViewModel : AutoRegisterViewModel
+    public class PartyItemViewModel : AutoRegisterViewModel
 	{
 		public PartyItemViewModel(int value1, int value2)
 		{

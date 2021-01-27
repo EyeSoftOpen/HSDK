@@ -1,10 +1,10 @@
-﻿namespace EyeSoft.Collections.Specialized
+﻿namespace EyeSoft.Core.Collections.Specialized
 {
-	using System;
-	using System.Collections.Specialized;
-	using System.ComponentModel;
+    using System;
+    using System.Collections.Specialized;
+    using System.ComponentModel;
 
-	public static class NameValueCollectionExtensions
+    public static class NameValueCollectionExtensions
 	{
 		public static T Get<T>(this NameValueCollection collection, string key)
 		{

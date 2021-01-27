@@ -1,8 +1,9 @@
-﻿namespace EyeSoft.Security.Cryptography
+﻿namespace EyeSoft.Core.Security.Cryptography
 {
-	using System.Security.Cryptography;
+    using System.Security.Cryptography;
+    using Extensions;
 
-	public static class DataProtection
+    public static class DataProtection
 	{
 		private const DataProtectionScope DefaultProtectionScope = DataProtectionScope.CurrentUser;
 

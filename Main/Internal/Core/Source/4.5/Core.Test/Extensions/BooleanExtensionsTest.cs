@@ -1,12 +1,10 @@
-﻿namespace EyeSoft.Test
+﻿namespace EyeSoft.Core.Test
 {
-	using EyeSoft.Extensions;
+    using Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class BooleanExtensionsTest
 	{
 		[TestMethod]

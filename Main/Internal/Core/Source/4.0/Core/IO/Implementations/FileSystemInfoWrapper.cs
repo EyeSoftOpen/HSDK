@@ -1,10 +1,11 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
-	using System;
-	using System.Diagnostics;
-	using System.IO;
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using Extensions;
 
-	[DebuggerDisplay("{FullName}")]
+    [DebuggerDisplay("{FullName}")]
 	internal abstract class FileSystemInfoWrapper : IFileSystemInfo
 	{
 		private readonly FileSystemInfo fileSystemInfo;

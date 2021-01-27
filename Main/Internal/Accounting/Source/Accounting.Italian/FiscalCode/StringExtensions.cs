@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Accounting.Italian
+﻿namespace EyeSoft.Accounting.Italian.FiscalCode
 {
-	using System.Linq;
+    using System.Linq;
 
-	internal static class StringExtensions
+    internal static class StringExtensions
 	{
 		public static string EvenChars(this string word)
 		{

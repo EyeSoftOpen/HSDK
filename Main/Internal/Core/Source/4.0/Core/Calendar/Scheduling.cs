@@ -1,10 +1,11 @@
-﻿namespace EyeSoft.Calendar
+﻿namespace EyeSoft.Core.Calendar
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Extensions;
 
-	public static class Scheduling
+    public static class Scheduling
 	{
 		private static readonly IDictionary<RecurrencyFrequency, Func<DateTime, DateTime>> timeSpanToAddBasedOnFrequency =
 				new Dictionary<RecurrencyFrequency, Func<DateTime, DateTime>>

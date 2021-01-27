@@ -2,11 +2,10 @@
 {
 	using System;
 	using System.Windows;
+    using Core.Diagnostic;
+    using Core.Threading.Tasks.Schedulers;
 
-	using EyeSoft.Diagnostic;
-	using EyeSoft.Threading.Tasks.Schedulers;
-
-	public class DispatcherTaskScheduler : LimitedConcurrencyLevelTaskScheduler
+    public class DispatcherTaskScheduler : LimitedConcurrencyLevelTaskScheduler
 	{
 		protected override void OnTaskFault(AggregateException exception)
 		{

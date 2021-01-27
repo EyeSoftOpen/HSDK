@@ -1,12 +1,11 @@
-namespace EyeSoft.Extensions
+namespace EyeSoft.Core.Extensions
 {
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-
-    using EyeSoft.Collections.Generic;
+    using Collections.Generic;
 
     public static class GenericsExtensions
     {

@@ -1,8 +1,9 @@
 namespace EyeSoft.Data.SqlClient.Helper
 {
 	using System.Data.SqlClient;
+    using Base;
 
-	public class DropDatabaseCommand : IHelperCommand
+    public class DropDatabaseCommand : IHelperCommand
 	{
 		private const string DataBaseExistsSql =
 			"IF EXISTS (SELECT name FROM sys.databases WHERE name = N'{0}')";

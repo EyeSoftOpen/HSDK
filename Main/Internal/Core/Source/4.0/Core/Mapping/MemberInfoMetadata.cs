@@ -1,9 +1,8 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
     using System;
     using System.Reflection;
-
-    using EyeSoft.Extensions;
+    using Extensions;
 
     public class MemberInfoMetadata : MemberInfo
     {

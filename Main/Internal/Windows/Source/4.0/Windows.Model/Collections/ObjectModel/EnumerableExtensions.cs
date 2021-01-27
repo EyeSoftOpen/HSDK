@@ -7,10 +7,9 @@
 	using System.Linq.Expressions;
 	using System.Windows;
 	using System.Windows.Data;
+    using Core.Collections.Generic;
 
-	using EyeSoft.Collections.Generic;
-
-	public static class EnumerableExtensions
+    public static class EnumerableExtensions
 	{
 		public static ListCollectionView ListView<T>(this IEnumerable<T> source)
 		{

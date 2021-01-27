@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.IO
+﻿namespace EyeSoft.Core.IO
 {
-	using System.IO;
-	using System.Linq;
+    using System.IO;
+    using System.Linq;
 
-	public static class DirectoryInfoExtensions
+    public static class DirectoryInfoExtensions
 	{
 		public static bool IsEmpty(this IDirectoryInfo directoryInfo)
 		{

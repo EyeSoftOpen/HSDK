@@ -1,4 +1,4 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode
 {
 	internal static class FiscalCodeTokens
 	{

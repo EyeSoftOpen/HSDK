@@ -1,5 +1,8 @@
 ﻿namespace EyeSoft.Windows.Model.Input
 {
+    using DialogService;
+    using ViewModels;
+
     public class DefaultViewModelChecker : IViewModelChecker
 	{
 		private readonly string title;

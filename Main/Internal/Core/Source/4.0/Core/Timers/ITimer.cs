@@ -1,8 +1,8 @@
-namespace EyeSoft.Timers
+namespace EyeSoft.Core.Timers
 {
-	using System;
+    using System;
 
-	public interface ITimer : IDisposable
+    public interface ITimer : IDisposable
 	{
 		double Interval { get; set; }
 

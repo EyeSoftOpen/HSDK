@@ -1,17 +1,14 @@
-﻿namespace EyeSoft.Test
+﻿namespace EyeSoft.Core.Test
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Extensions;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Extensions;
-	using EyeSoft.Test.Helpers;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class GenericExtensionsTest
 	{
 		private interface IAggregate

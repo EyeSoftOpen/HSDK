@@ -1,14 +1,12 @@
-﻿namespace EyeSoft.Docs.Performance.Wpf.ViewModels
+﻿namespace EyeSoft.Docs.Performance.Windows.ViewModels
 {
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Threading.Tasks;
-	using System.Windows.Input;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using EyeSoft.Windows.Model.Collections.ObjectModel;
+    using EyeSoft.Windows.Model.ViewModels;
 
-	using EyeSoft.Windows.Model;
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
-
-	public class MainViewModel : AutoRegisterViewModel
+    public class MainViewModel : AutoRegisterViewModel
 	{
 		private readonly IObservableCollection<PartyItemViewModel> partyList = CollectionFactory.Create<PartyItemViewModel>();
 

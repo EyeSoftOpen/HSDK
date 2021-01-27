@@ -1,4 +1,4 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core.Reflection
 {
     using System;
     using System.Diagnostics;
@@ -10,45 +10,44 @@
 		// Returns whether the match is found in the lookup table
 		internal static bool Contains(string[][] lookupTable, string value, bool ignoreCase)
 		{
-			int length = value.Length;
+			var length = value.Length;
 			if (length <= 0 || length - 1 >= lookupTable.Length)
 			{
 				return false;
 			}
 
-			string[] subArray = lookupTable[length - 1];
-			if (subArray == null)
-			{
-				return false;
-			}
-			return Contains(subArray, value, ignoreCase);
-		}
+			var subArray = lookupTable[length - 1];
+			return subArray != null && Contains(subArray, value, ignoreCase);
+        }
 
 #if DEBUG
 
 		internal static void VerifyLookupTable(string[][] lookupTable, bool ignoreCase)
 		{
-			for (int i = 0; i < lookupTable.Length; i++)
+			for (var i = 0; i < lookupTable.Length; i++)
 			{
-				string[] subArray = lookupTable[i];
-				if (subArray != null)
-				{
-					string lastValue = null;
-					for (int j = 0; j < subArray.Length; j++)
-					{
-						string value = subArray[j];
-						// Must all be the length of the hashed position
-						Debug.Assert(value.Length == i + 1, "Lookup table contains an item in the wrong subtable.  Item name: " + value);
-						if (lastValue != null)
-						{
-							// Must be sorted within the sub array;
-							Debug.Assert(string.Compare(lastValue, value, ((ignoreCase) ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal)) < 0,
-										 String.Format(CultureInfo.InvariantCulture, "Lookup table is out of order.  Items {0} and {1} are reversed", lastValue, value));
-						}
-						lastValue = value;
-					}
-				}
-			}
+				var subArray = lookupTable[i];
+                
+                if (subArray == null)
+                {
+					continue;
+
+                }
+                string lastValue = null;
+                
+                foreach (var value in subArray)
+                {
+                    // Must all be the length of the hashed position
+                    Debug.Assert(value.Length == i + 1, "Lookup table contains an item in the wrong sub table. Item name: " + value);
+                    if (lastValue != null)
+                    {
+                        // Must be sorted within the sub array;
+                        Debug.Assert(string.Compare(lastValue, value, ((ignoreCase) ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal)) < 0,
+                            string.Format(CultureInfo.InvariantCulture, "Lookup table is out of order.  Items {0} and {1} are reversed", lastValue, value));
+                    }
+                    lastValue = value;
+                }
+            }
 		}
 
 #endif
@@ -57,9 +56,9 @@
 		// value and all the strings are of the same length.
 		private static bool Contains(string[] array, string value, bool ignoreCase)
 		{
-			int min = 0;
-			int max = array.Length;
-			int pos = 0;
+			var min = 0;
+			var max = array.Length;
+			var pos = 0;
 			char searchChar;
 			while (pos < value.Length)
 			{
@@ -96,22 +95,22 @@
 		// Do a binary search on the character array at the specific position and constrict the ranges appropriately.
 		private static bool FindCharacter(string[] array, char value, int pos, ref int min, ref int max)
 		{
-			int index = min;
+			var index = min;
 			while (min < max)
 			{
 				index = (min + max) / 2;
-				char comp = array[index][pos];
+				var comp = array[index][pos];
 				if (value == comp)
 				{
 					// We have a match. Now adjust to any adjacent matches
-					int newMin = index;
+					var newMin = index;
 					while (newMin > min && array[newMin - 1][pos] == value)
 					{
 						newMin--;
 					}
 					min = newMin;
 
-					int newMax = index + 1;
+					var newMax = index + 1;
 					while (newMax < max && array[newMax][pos] == value)
 					{
 						newMax++;

@@ -1,10 +1,9 @@
-﻿namespace EyeSoft.Threading.Tasks
+﻿namespace EyeSoft.Core.Threading.Tasks
 {
-	using System.Threading.Tasks;
+    using System.Threading.Tasks;
+    using Schedulers;
 
-	using EyeSoft.Threading.Tasks.Schedulers;
-
-	public static class ThreadingFactory
+    public static class ThreadingFactory
 	{
 		public static TaskFactory Instance
 		{

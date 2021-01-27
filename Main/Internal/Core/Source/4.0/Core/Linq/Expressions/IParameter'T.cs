@@ -1,8 +1,8 @@
-namespace EyeSoft.Linq.Expressions
+namespace EyeSoft.Core.Linq.Expressions
 {
-	using System;
+    using System;
 
-	public interface IParameter<out T>
+    public interface IParameter<out T>
 	{
 		T Value { get; }
 

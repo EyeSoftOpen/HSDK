@@ -3,8 +3,9 @@
 	using System;
 
 	using global::AutoMapper;
+    using IMapper = Core.Mapping.IMapper;
 
-	public class AutoMapperMapper : EyeSoft.Mapping.IMapper
+    public class AutoMapperMapper : IMapper
 	{
         public object Map(object source, Type sourceType, Type destinationType)
 		{

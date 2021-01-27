@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Collections.Generic
+﻿namespace EyeSoft.Core.Collections.Generic
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public class FuncToComparer<T> : IComparer<T>
+    public class FuncToComparer<T> : IComparer<T>
 	{
 		private readonly Func<T, T, int> func;
 

@@ -1,12 +1,10 @@
-﻿namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
+﻿namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels.Calculate
 {
-	using System;
+    using System;
+    using FluentValidation;
+    using global::FluentValidation;
 
-	using EyeSoft.FluentValidation;
-
-	using global::FluentValidation;
-
-	public class CalculateFiscalCodeViewModelValidator : FluentValidator<CalculateFiscalCodeViewModel>
+    public class CalculateFiscalCodeViewModelValidator : FluentValidator<CalculateFiscalCodeViewModel>
 	{
 		public CalculateFiscalCodeViewModelValidator()
 		{

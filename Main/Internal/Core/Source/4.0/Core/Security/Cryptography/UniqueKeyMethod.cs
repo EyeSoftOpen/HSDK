@@ -1,4 +1,4 @@
-namespace EyeSoft.Security.Cryptography
+namespace EyeSoft.Core.Security.Cryptography
 {
 	public enum UniqueKeyMethod
 	{

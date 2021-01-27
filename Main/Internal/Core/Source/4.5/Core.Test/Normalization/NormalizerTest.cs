@@ -1,13 +1,12 @@
-﻿namespace EyeSoft.Test.Normalization
+﻿namespace EyeSoft.Core.Test.Normalization
 {
-	using EyeSoft.Normalization;
-	using EyeSoft.Test.Helpers;
+    using Core.Normalization;
+    using Core.Reflection;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class NormalizerTest
 	{
 		private readonly DefaultNormalizer normalizer = new DefaultNormalizer();

@@ -1,10 +1,10 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
-	using System;
-	using System.Linq.Expressions;
-	using System.Reflection;
+    using System;
+    using System.Linq.Expressions;
+    using System.Reflection;
 
-	public class TypeReflector<T> : TypeReflector
+    public class TypeReflector<T> : TypeReflector
 	{
 		public string PropertyName(Expression<Func<T, object>> expression)
 		{

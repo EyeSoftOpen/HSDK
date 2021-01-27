@@ -1,10 +1,10 @@
 ﻿namespace EyeSoft.Docs.Settings.Windows
 {
-	using EyeSoft.Docs.Settings.ViewModels;
-	using EyeSoft.Serialization;
-	using EyeSoft.Windows.Model;
-
-	using Newtonsoft.Json;
+    using Core.Serialization;
+    using EyeSoft.Docs.Settings.ViewModels;
+    using EyeSoft.Windows.Model;
+    using EyeSoft.Windows.Model.DialogService;
+    using Newtonsoft.Json;
 
 	public partial class App
 	{

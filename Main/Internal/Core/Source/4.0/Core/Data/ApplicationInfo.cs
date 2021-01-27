@@ -1,13 +1,13 @@
-﻿namespace EyeSoft.Data
+﻿namespace EyeSoft.Core.Data
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
+    using Extensions;
+    using Reflection;
 
-	using EyeSoft.Reflection;
-
-	public class ApplicationInfo
+    public class ApplicationInfo
 	{
 		private static readonly Singleton<ApplicationInfo> singletonInstance = new Singleton<ApplicationInfo>(() => FromEntryAssembly());
 

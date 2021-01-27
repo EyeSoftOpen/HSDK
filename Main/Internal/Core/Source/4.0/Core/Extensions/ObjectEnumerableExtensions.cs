@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Extensions
+﻿namespace EyeSoft.Core.Extensions
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
 
-	public static class ObjectEnumerableExtensions
+    public static class ObjectEnumerableExtensions
 	{
 		public static bool AnyInstanceOf<T>(this IEnumerable<object> enumerable)
 			where T : class

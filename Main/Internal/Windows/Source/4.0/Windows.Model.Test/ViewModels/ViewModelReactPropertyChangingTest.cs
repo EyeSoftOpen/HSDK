@@ -2,13 +2,11 @@
 {
 	using System;
 	using System.Collections.Generic;
-
-	using EyeSoft.Collections.Generic;
-	using EyeSoft.Reflection;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
+    using Core.Collections.Generic;
+    using Core.Reflection;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
 	[TestClass]
 	public class ViewModelReactPropertyChangingTest

@@ -1,9 +1,9 @@
-namespace EyeSoft.Extensions
+namespace EyeSoft.Core.Extensions
 {
-	using System.ComponentModel;
-	using System.Diagnostics;
+    using System.ComponentModel;
+    using System.Diagnostics;
 
-	public static class ObjectExtensions
+    public static class ObjectExtensions
 	{
 		[DebuggerStepThrough]
 		public static IObjectExtender<T> Extend<T>(this T obj)

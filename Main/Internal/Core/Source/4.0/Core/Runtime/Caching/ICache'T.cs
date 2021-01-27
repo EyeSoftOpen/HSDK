@@ -1,4 +1,4 @@
-namespace EyeSoft.Runtime.Caching
+namespace EyeSoft.Core.Runtime.Caching
 {
     using System;
     using System.Collections;

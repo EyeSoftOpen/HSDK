@@ -1,17 +1,14 @@
-﻿namespace EyeSoft.Test.Configuration
+﻿namespace EyeSoft.Core.Test.Configuration
 {
-	using System.Collections.Specialized;
+    using System.Collections.Specialized;
+    using Core.Collections.Specialized;
+    using Core.Configuration;
+    using Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    using SharpTestsEx;
 
-	using EyeSoft.Collections.Specialized;
-	using EyeSoft.Configuration;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using Moq;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ConfigurationContextTest
 	{
 		[TestMethod]

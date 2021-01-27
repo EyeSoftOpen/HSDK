@@ -1,8 +1,8 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System;
+    using System;
 
-	public interface IRegisterLocator : IDisposable
+    public interface IRegisterLocator : IDisposable
 	{
 		IRegisterLocator Register<TContract>(Type implementationType, LifeStyle lifeStyle = LifeStyles.Default, string key = null)
 			where TContract : class;

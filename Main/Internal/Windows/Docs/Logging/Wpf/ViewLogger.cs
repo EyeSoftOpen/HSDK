@@ -1,11 +1,11 @@
-﻿namespace EyeSoft.Docs.Logging.Wpf
+﻿namespace EyeSoft.Docs.Logging.Windows
 {
-	using System;
+    using System;
+    using Core.Extensions;
+    using Core.Logging;
+    using ViewModels;
 
-	using EyeSoft.Docs.Logging.Wpf.ViewModels;
-	using EyeSoft.Logging;
-
-	internal class ViewLogger : ILogger
+    internal class ViewLogger : ILogger
 	{
 		private readonly MainViewModel mainViewModel;
 

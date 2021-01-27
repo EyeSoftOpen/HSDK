@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Windows.Model.Test.ViewModels
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
 	[TestClass]
 	public class ViewModelTest

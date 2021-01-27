@@ -1,8 +1,8 @@
-namespace EyeSoft.Extensions
+namespace EyeSoft.Core.Extensions
 {
-	using System.Linq;
+    using System.Linq;
 
-	public static class ObjectHash
+    public static class ObjectHash
 	{
 		public static int Combine(params int[] hashes)
 		{

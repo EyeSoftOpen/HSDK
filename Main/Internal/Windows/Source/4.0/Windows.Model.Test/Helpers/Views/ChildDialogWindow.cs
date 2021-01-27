@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model.Test.Helpers
+namespace EyeSoft.Windows.Model.Test.Helpers.Views
 {
-	using System.Windows;
+    using System.Windows;
 
-	internal class ChildDialogWindow : Window
+    internal class ChildDialogWindow : Window
 	{
 	}
 }

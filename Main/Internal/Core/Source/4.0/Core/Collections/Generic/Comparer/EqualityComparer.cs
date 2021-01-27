@@ -1,11 +1,11 @@
-﻿namespace EyeSoft.Collections.Generic
+﻿namespace EyeSoft.Core.Collections.Generic
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
 
-	public static class EqualityComparer
+    public static class EqualityComparer
 	{
 		private static readonly object lockInstance = new object();
 

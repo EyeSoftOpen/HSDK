@@ -1,16 +1,13 @@
-﻿namespace EyeSoft.Test.Collections.Concurrent
+﻿namespace EyeSoft.Core.Test.Collections.Concurrent
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Threading.Tasks;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Core.Collections.Concurrent;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Collections.Concurrent;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class SafeConcurrentDictionaryTest
 	{
 		[TestMethod]

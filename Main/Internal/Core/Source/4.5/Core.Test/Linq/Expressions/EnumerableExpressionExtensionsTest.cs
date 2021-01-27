@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Linq.Expressions
+﻿namespace EyeSoft.Core.Test.Linq.Expressions
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
+    using Core.Linq.Expressions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Linq.Expressions;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class EnumerableExpressionExtensions
 	{
 		[TestMethod]

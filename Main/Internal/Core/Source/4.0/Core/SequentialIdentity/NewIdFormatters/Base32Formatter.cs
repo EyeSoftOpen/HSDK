@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.SequentialIdentity.NewIdFormatters
+﻿namespace EyeSoft.Core.SequentialIdentity.NewIdFormatters
 {
     using System;
 

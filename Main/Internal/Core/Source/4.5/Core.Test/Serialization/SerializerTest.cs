@@ -1,13 +1,11 @@
-﻿namespace EyeSoft.Test.Serialization
+﻿namespace EyeSoft.Core.Test.Serialization
 {
-	using EyeSoft.Serialization;
-	using EyeSoft.Xml.Serialization;
+    using Core.Serialization;
+    using Core.Xml.Serialization;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class SerializerTest
 	{
 		[TestMethod]

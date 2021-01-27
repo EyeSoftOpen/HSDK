@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Test.Helpers
+﻿namespace EyeSoft.Core.Test.Helpers
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	internal class Category
+    internal class Category
 	{
 		private readonly IList<Category> children = new List<Category>();
 

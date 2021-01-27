@@ -1,8 +1,9 @@
 ﻿namespace EyeSoft.Accounting
 {
 	using System;
+    using Core.Extensions;
 
-	public class NaturalPerson
+    public class NaturalPerson
 	{
 		public NaturalPerson(string firstName, string lastName, DateTime birthDate, Sex sex)
 		{

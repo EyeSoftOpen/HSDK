@@ -7,8 +7,9 @@
 	using Castle.MicroKernel.Handlers;
 	using Castle.Windsor;
 	using Castle.Windsor.Diagnostics;
+    using Core;
 
-	public static class WindsorContainerExtensions
+    public static class WindsorContainerExtensions
 	{
 		public static void CheckForPotentiallyMisconfiguredComponents(this IWindsorContainer container)
 		{

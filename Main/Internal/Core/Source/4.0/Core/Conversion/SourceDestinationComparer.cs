@@ -1,8 +1,8 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	internal class SourceDestinationComparer
+    internal class SourceDestinationComparer
 		: IEqualityComparer<SourceDestination>
 	{
 		public bool Equals(SourceDestination x, SourceDestination y)

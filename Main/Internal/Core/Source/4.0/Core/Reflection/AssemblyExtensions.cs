@@ -1,4 +1,4 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
     using System;
     using System.IO;

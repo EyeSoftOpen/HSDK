@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Mapping
+﻿namespace EyeSoft.Core.Mapping
 {
-	using System;
-	using System.Linq;
+    using System;
+    using System.Linq;
 
-	public static class Projection
+    public static class Projection
 	{
 		private static readonly Singleton<IProjection> singletonInstance = new Singleton<IProjection>();
 

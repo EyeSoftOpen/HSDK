@@ -1,13 +1,13 @@
-namespace EyeSoft.Xml.Serialization
+namespace EyeSoft.Core.Xml.Serialization
 {
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
-	using System.Xml.Linq;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Xml.Linq;
+    using Core.Serialization;
+    using Extensions;
 
-	using EyeSoft.Serialization;
-
-	public class XmlSerializer<T> : ISerializer<T>
+    public class XmlSerializer<T> : ISerializer<T>
 	{
 		private readonly FormattedXmlSerializer serializer = new FormattedXmlSerializer(typeof(T));
 

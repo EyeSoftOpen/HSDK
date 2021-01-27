@@ -1,12 +1,11 @@
-namespace EyeSoft.Diagnostic
+namespace EyeSoft.Core.Diagnostic
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
-
-    using EyeSoft.Collections.Generic;
+    using Collections.Generic;
 
     public class BenchmarkActionScheduler
         : IBenchmarkActionScheduler

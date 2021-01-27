@@ -1,8 +1,8 @@
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
-	using System;
+    using System;
 
-	public class ExceptionMessage
+    public class ExceptionMessage
 		: ExceptionMessage<object, Exception>
 	{
 		public ExceptionMessage(object sender, Exception exception)

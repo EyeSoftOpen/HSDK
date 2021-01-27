@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
-	using System;
+    using System;
 
-	public static class AssembliesResolver
+    public static class AssembliesResolver
 	{
 		private static readonly IAssembliesResolver resourceAssemblyResolver;
 

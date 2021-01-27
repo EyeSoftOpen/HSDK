@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows
+﻿namespace EyeSoft.Windows.SingleInstance
 {
-	using EyeSoft.Runtime.InteropServices;
+    using Core.Runtime.InteropServices;
 
-	public static class WindowsHelper
+    public static class WindowsHelper
 	{
 		public static bool ForceForegroundWindow(int handle)
 		{

@@ -4,8 +4,10 @@
 	using System.Collections.Generic;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
+    using Model.ViewModels.Helpers;
+    using Model.ViewModels.Helpers.Property;
+    using Model.ViewModels.Helpers.Property.FluentInterface;
+    using SharpTestsEx;
 
 	[TestClass]
 	public class ViewModelPropertyTest

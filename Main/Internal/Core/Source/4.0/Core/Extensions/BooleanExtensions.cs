@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Extensions
+﻿namespace EyeSoft.Core.Extensions
 {
-	using System;
+    using System;
 
-	public static class BooleanExtensions
+    public static class BooleanExtensions
 	{
 		public static void OnTrueExecute(this IObjectExtender<bool> value, Action action)
 		{

@@ -1,9 +1,10 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+    using Extensions;
 
     public static class ReflectionCache
     {

@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Accounting.Italian
+﻿namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
-	using System.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-	public abstract class NameCode : Code
+    public abstract class NameCode : Code
 	{
 		protected readonly string name;
 

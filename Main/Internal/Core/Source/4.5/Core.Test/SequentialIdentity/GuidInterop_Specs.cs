@@ -1,9 +1,8 @@
-﻿namespace MassTransit.NewIdTests
+﻿namespace EyeSoft.Core.Test.SequentialIdentity
 {
     using System;
-    using EyeSoft.SequentialIdentity;
+    using Core.SequentialIdentity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 
     [TestClass]
     public class When_interoperating_with_the_guid_type

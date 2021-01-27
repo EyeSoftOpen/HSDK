@@ -1,8 +1,8 @@
-namespace EyeSoft.Domain
+namespace EyeSoft.Domain.Aggregates
 {
-	using System;
+    using System;
 
-	[Serializable]
+    [Serializable]
 	public abstract class Aggregate<TKey> : Entity<TKey>, IAggregate where TKey : IComparable<TKey>
 	{
 		protected Aggregate()

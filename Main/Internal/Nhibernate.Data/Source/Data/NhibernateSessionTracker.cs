@@ -2,10 +2,8 @@
 {
 	using System.Collections.Generic;
 	using System.Diagnostics;
-
-	using EyeSoft.Collections.Concurrent;
-
-	using NHibernate;
+    using Core.Collections.Concurrent;
+    using NHibernate;
 	using NHibernate.Impl;
 
 	[DebuggerDisplay("{SessionDictionary.Count}")]

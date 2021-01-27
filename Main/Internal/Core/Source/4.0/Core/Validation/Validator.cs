@@ -1,14 +1,13 @@
-﻿namespace EyeSoft.Validation
+﻿namespace EyeSoft.Core.Validation
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Reflection;
+    using Reflection;
 
-	using EyeSoft.Reflection;
-
-	public abstract class Validator<T> : IValidator<T>
+    public abstract class Validator<T> : IValidator<T>
 	{
 		public virtual IEnumerable<ValidationError> Validate(T instance)
 		{

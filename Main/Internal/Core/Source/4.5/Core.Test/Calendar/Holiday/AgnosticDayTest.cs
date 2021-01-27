@@ -1,12 +1,10 @@
-namespace EyeSoft.Test.Calendar
+namespace EyeSoft.Core.Test.Calendar
 {
-	using EyeSoft.Calendar;
+    using Core.Calendar;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class AgnosticDayTest
 	{
 		[TestMethod]

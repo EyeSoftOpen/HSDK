@@ -1,13 +1,12 @@
-﻿namespace EyeSoft.Serialization
+﻿namespace EyeSoft.Core.Serialization
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using Xml.Serialization;
 
-	using EyeSoft.Xml.Serialization;
-
-	public static class Serializer
+    public static class Serializer
 	{
 		private static readonly Singleton<IDictionary<string, ISerializerFactory>> singletonInstance =
 			new Singleton<IDictionary<string, ISerializerFactory>>(() => new Dictionary<string, ISerializerFactory>());

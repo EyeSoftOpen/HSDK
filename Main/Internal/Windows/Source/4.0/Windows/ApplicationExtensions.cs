@@ -5,8 +5,10 @@
 	using System.IO;
 	using System.Reflection;
 	using System.Windows;
+    using Core.Extensions;
+    using SingleInstance;
 
-	public static class ApplicationExtensions
+    public static class ApplicationExtensions
 	{
 		public static ApplicationMutex ApplicationMutex(this Application application, Process process = null)
 		{

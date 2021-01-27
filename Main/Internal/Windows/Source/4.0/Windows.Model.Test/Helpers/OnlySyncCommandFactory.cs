@@ -4,8 +4,9 @@ namespace EyeSoft.Windows.Model.Test.Helpers
 	using System.Windows.Input;
 
 	using EyeSoft.Windows.Model.Input;
+    using Model.ViewModels;
 
-	internal class OnlySyncCommandFactory : ICommandFactory
+    internal class OnlySyncCommandFactory : ICommandFactory
 	{
 		public ICommand Create(IViewModel viewModel, Action action)
 		{

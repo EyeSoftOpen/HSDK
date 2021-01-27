@@ -1,4 +1,4 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
 	internal class SourceDestination<TSource, TDestination>
 		: SourceDestination

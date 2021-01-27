@@ -1,6 +1,6 @@
-﻿namespace EyeSoft.Demo.Validation.Windows.ViewModels
+﻿namespace EyeSoft.Demo.Validation.Windows.ViewModels.Validators
 {
-    using EyeSoft.FluentValidation;
+    using FluentValidation;
 
     public class HierarchicalViewModelValidator : FluentValidator<HierarchicalViewModel>
     {

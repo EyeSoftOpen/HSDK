@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Threading.Tasks
+﻿namespace EyeSoft.Core.Threading.Tasks
 {
-	using System;
-	using System.Reflection;
-	using System.Threading.Tasks;
+    using System;
+    using System.Reflection;
+    using System.Threading.Tasks;
+    using Schedulers;
 
-	using EyeSoft.Threading.Tasks.Schedulers;
-
-	internal static class TaskLogging
+    internal static class TaskLogging
 	{
 		private static readonly string loggerTaskSchedulerType = typeof(ILoggerTaskScheduler).Name;
 

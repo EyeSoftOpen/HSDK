@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Net.NetworkInformation
+﻿namespace EyeSoft.Core.Net.NetworkInformation
 {
-	using System;
-	using System.Net.Sockets;
+    using System;
+    using System.Net.Sockets;
 
-	public class NetTcpPing : INetTcpPing
+    public class NetTcpPing : INetTcpPing
 	{
 		public bool Send(string hostName, int port = 80, bool throwOnError = true, int timeout = 100)
 		{

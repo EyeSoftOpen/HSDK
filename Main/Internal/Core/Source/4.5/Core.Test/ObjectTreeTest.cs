@@ -1,16 +1,14 @@
-﻿namespace EyeSoft.Test
+﻿namespace EyeSoft.Core.Test
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Core.Normalization;
+    using Core.Reflection;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Normalization;
-	using EyeSoft.Test.Helpers;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ObjectTreeTest
 	{
 		[TestMethod]

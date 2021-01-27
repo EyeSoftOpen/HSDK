@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Windows.Model.Test
+﻿namespace EyeSoft.Windows.Model.Test.DialogService.ViewModelFactory
 {
-	using EyeSoft.Extensions;
+    using Core.Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ViewModelFactoryWithRuntimeParameterTest
 	{
 		[TestMethod]

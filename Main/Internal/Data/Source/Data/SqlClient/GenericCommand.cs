@@ -3,8 +3,9 @@ namespace EyeSoft.Data.SqlClient
 	using System.Data.SqlClient;
 
 	using EyeSoft.Data.SqlClient.Helper;
+    using Helper.Base;
 
-	public class GenericCommand : HelperCommand
+    public class GenericCommand : HelperCommand
 	{
 		public GenericCommand(SqlCommand command, string commandText)
 			: base(command)

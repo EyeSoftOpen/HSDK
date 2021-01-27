@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Reflection
+﻿namespace EyeSoft.Core.Test.Reflection
 {
-	using System;
+    using System;
+    using Core.Reflection;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Reflection;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class GenericReflectionExtensionsTest
 	{
 		[TestMethod]

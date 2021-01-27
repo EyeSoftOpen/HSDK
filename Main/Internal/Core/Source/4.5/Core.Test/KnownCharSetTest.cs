@@ -1,12 +1,11 @@
-namespace EyeSoft.Test
+namespace EyeSoft.Core.Test
 {
-	using System.Linq;
+    using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
+    using Text;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class KnownCharSetTest
 	{
 		[TestMethod]

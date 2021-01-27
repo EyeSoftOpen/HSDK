@@ -3,12 +3,10 @@ namespace EyeSoft.Data.Nhibernate.Mapping.Mappers
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-
-	using EyeSoft.Collections.Generic;
-	using EyeSoft.Mapping;
-	using EyeSoft.Reflection;
-
-	using NHibernate.Mapping.ByCode;
+    using Core.Collections.Generic;
+    using Core.Mapping;
+    using Core.Reflection;
+    using NHibernate.Mapping.ByCode;
 
 	internal class CollectionMapper<T>
 		where T : class

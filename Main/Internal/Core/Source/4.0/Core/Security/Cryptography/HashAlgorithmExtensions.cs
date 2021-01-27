@@ -1,10 +1,10 @@
-namespace EyeSoft.Security.Cryptography
+namespace EyeSoft.Core.Security.Cryptography
 {
-	using System;
-	using System.IO;
-	using System.Text;
+    using System;
+    using System.IO;
+    using System.Text;
 
-	public static class HashAlgorithmExtensions
+    public static class HashAlgorithmExtensions
 	{
 		public static byte[] ComputeHash(this IHashAlgorithm hashAlgorithm, string value)
 		{

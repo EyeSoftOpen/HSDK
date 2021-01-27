@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Collections.Generic
+﻿namespace EyeSoft.Core.Collections.Generic
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Mapping;
 
-	using EyeSoft.Mapping;
-
-	public static class CollectionExtensions
+    public static class CollectionExtensions
 	{
 		public static ICollection<T> AddRange<T>(this ICollection<T> collection, IEnumerable<T> items)
 		{

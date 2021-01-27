@@ -2,8 +2,9 @@ namespace EyeSoft.Windows.Model.Test.Helpers
 {
 	using System;
 	using System.Collections.Generic;
+    using Model.DialogService;
 
-	internal class TestDefaultDialogService : DefaultDialogService
+    internal class TestDefaultDialogService : DefaultDialogService
 	{
 		private readonly Action action;
 

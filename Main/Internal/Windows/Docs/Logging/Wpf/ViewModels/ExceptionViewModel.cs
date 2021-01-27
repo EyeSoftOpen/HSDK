@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Docs.Logging.Wpf.ViewModels
+﻿namespace EyeSoft.Docs.Logging.Windows.ViewModels
 {
-	using System;
+    using System;
 
-	public class ExceptionViewModel
+    public class ExceptionViewModel
 	{
 		public ExceptionViewModel(string message, DateTime dateTime)
 		{

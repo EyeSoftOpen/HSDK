@@ -1,8 +1,8 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-	using System;
+    using System;
 
-	public class NotLazyAttribute
+    public class NotLazyAttribute
 		: Attribute
 	{
 	}

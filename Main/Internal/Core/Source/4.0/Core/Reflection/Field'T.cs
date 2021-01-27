@@ -1,8 +1,8 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
-	using System.Reflection;
+    using System.Reflection;
 
-	public class Field<T>
+    public class Field<T>
 	{
 		private readonly FieldInfo fieldInfo;
 

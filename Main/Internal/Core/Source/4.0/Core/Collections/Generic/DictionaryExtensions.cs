@@ -1,4 +1,4 @@
-namespace EyeSoft.Collections.Generic
+namespace EyeSoft.Core.Collections.Generic
 {
     using System.Collections.Generic;
 

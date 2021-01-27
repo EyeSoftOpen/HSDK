@@ -1,8 +1,8 @@
-namespace EyeSoft.Text
+namespace EyeSoft.Core.Text
 {
-	using System.Text;
+    using System.Text;
 
-	public static class CodeStringBuilderExtensions
+    public static class CodeStringBuilderExtensions
 	{
 		internal static StringBuilder OpenBracket(this StringBuilder stringBuilder, int tabulations = 0)
 		{

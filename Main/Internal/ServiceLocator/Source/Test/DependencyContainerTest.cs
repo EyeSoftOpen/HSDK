@@ -2,7 +2,8 @@
 {
 	using System;
 	using CommonServiceLocator;
-	using EyeSoft.ServiceLocator;
+    using Core;
+    using EyeSoft.ServiceLocator;
 	using EyeSoft.ServiceLocator.Test.Helpers;
 	using SharpTestsEx;
 

@@ -1,9 +1,9 @@
-namespace EyeSoft.Configuration
+namespace EyeSoft.Core.Configuration
 {
-	using System.Collections.Specialized;
-	using System.Configuration;
+    using System.Collections.Specialized;
+    using System.Configuration;
 
-	public interface IConfigurationContext
+    public interface IConfigurationContext
 	{
 		NameValueCollection AppSettings { get; }
 

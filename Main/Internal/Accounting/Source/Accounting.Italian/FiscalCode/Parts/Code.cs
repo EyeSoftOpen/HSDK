@@ -1,4 +1,4 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
 	public abstract class Code
 	{

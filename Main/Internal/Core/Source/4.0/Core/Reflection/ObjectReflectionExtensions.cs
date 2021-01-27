@@ -1,11 +1,10 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
-	using System;
-	using System.Reflection;
+    using System;
+    using System.Reflection;
+    using Extensions;
 
-	using EyeSoft.Extensions;
-
-	public static class ObjectReflectionExtensions
+    public static class ObjectReflectionExtensions
 	{
 		public static T GetField<T>(this object obj, string name)
 		{
@@ -22,14 +21,12 @@ namespace EyeSoft.Reflection
 			if (obj.GetType().Name == "RuntimeType")
 			{
 				return
-					EyeSoft
-						.TypeExtensions
+					TypeExtensions
 						.GetField<T>((Type)obj);
 			}
 
 			return
-				EyeSoft
-					.TypeExtensions
+				TypeExtensions
 					.GetField<T>(obj.GetType());
 		}
 

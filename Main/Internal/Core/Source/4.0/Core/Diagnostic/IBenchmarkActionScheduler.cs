@@ -1,9 +1,9 @@
-namespace EyeSoft.Diagnostic
+namespace EyeSoft.Core.Diagnostic
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public interface IBenchmarkActionScheduler
+    public interface IBenchmarkActionScheduler
 	{
 		IEnumerable<BenchmarkReport> Report(int? digits = null);
 

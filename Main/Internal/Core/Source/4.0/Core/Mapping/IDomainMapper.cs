@@ -1,8 +1,8 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public interface IDomainMapper
+    public interface IDomainMapper
 	{
 		IDomainMapper Register<T>()
 			where T : class;

@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.FluentValidation.Test
+﻿namespace EyeSoft.FluentValidation.Test.Helpers
 {
-	using global::FluentValidation;
+    using global::FluentValidation;
 
-	internal class CustomerFluentValidator : FluentValidator<ValidatorTest.ValidableCustomer>
+    internal class CustomerFluentValidator : FluentValidator<ValidatorTest.ValidableCustomer>
 	{
 		public CustomerFluentValidator()
 		{

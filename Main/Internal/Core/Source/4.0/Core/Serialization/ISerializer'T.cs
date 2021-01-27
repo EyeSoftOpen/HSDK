@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Serialization
+﻿namespace EyeSoft.Core.Serialization
 {
-	using System.IO;
+    using System.IO;
 
-	public interface ISerializer<T>
+    public interface ISerializer<T>
 	{
 		T DeserializeFromReader(TextReader reader);
 

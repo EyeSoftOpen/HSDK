@@ -1,10 +1,9 @@
-﻿namespace EyeSoft.Serialization
+﻿namespace EyeSoft.Core.Serialization
 {
-	using System.IO;
+    using System.IO;
+    using IO;
 
-	using EyeSoft.IO;
-
-	public static class SerializerExtensions
+    public static class SerializerExtensions
 	{
 		public static T Clone<T>(this ISerializer<T> serializer, T value)
 		{

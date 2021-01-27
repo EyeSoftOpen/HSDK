@@ -1,10 +1,10 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
-	using System;
-	using System.Linq;
-	using System.Reflection;
+    using System;
+    using System.Linq;
+    using System.Reflection;
 
-	public static class MethodInfoExtensions
+    public static class MethodInfoExtensions
 	{
 		private const string SetPropertyMethodPrefix = "set_";
 		private const string GetPropertyMethodPrefix = "get_";

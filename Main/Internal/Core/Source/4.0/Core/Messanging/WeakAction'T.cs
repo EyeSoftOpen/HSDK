@@ -11,11 +11,11 @@
 // </license>
 // ****************************************************************************
 
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
-	using System;
+    using System;
 
-	/// <summary>
+    /// <summary>
 	/// Stores an Action without causing a hard reference
 	/// to be created to the Action's owner. The owner can be garbage collected at any time.
 	/// </summary>

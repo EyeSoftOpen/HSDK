@@ -1,11 +1,11 @@
 namespace EyeSoft.Windows.Model.Demo.Configuration
 {
 	using System;
+    using Core;
+    using EyeSoft.Windows.Model.Demo.Contract;
+    using Helpers;
 
-	using EyeSoft.Windows.Model.Demo.Contract;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
-
-	internal class DemoProxyFactory<T> : IDisposableFactory<T> where T : IDisposable
+    internal class DemoProxyFactory<T> : IDisposableFactory<T> where T : IDisposable
 	{
 		private readonly CustomerServiceStub stub;
 

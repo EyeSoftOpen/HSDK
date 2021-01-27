@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Test.Runtime.Caching
+﻿namespace EyeSoft.Core.Test.Runtime.Caching
 {
-	using EyeSoft.Runtime.Caching;
-	using EyeSoft.Test.Runtime.Caching.Helpers;
+    using Core.Runtime.Caching;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	[TestClass]
+    [TestClass]
 	public class MemoryCacheTest : CacheTest
 	{
 		[TestMethod]

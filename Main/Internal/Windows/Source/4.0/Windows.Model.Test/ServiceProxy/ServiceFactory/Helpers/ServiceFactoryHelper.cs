@@ -1,16 +1,15 @@
-﻿namespace EyeSoft.Windows.Model.Test
+﻿namespace EyeSoft.Windows.Model.Test.ServiceProxy.ServiceFactory.Helpers
 {
-	using System;
+    using System;
+    using AutoMapper;
+    using Core.Mapping;
+    using Core.Threading.Tasks;
+    using Demo.Configuration;
+    using Demo.Configuration.Helpers;
+    using Demo.Contract;
+    using Model.ServiceProxy;
 
-	using EyeSoft.AutoMapper;
-	using EyeSoft.Mapping;
-	using EyeSoft.Threading.Tasks;
-	using EyeSoft.Windows.Model.Demo.Configuration;
-	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
-	using EyeSoft.Windows.Model.Demo.Contract;
-	using EyeSoft.Wpf.Facilities.Demo.Configuration.Helpers;
-
-	public class ServiceFactoryHelper : IDisposable
+    public class ServiceFactoryHelper : IDisposable
 	{
 		private readonly CustomerServiceStub service;
 

@@ -1,10 +1,10 @@
-﻿namespace EyeSoft.Normalization
+﻿namespace EyeSoft.Core.Normalization
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
 
-	public static class Normalizer
+    public static class Normalizer
 	{
 		private static readonly DefaultNormalizer defaultNormalizer = new DefaultNormalizer();
 

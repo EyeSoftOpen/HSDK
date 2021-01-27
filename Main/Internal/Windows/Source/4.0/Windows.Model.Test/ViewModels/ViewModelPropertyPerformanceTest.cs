@@ -4,8 +4,9 @@
 	using System.Diagnostics;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.ViewModels;
 
-	[TestClass]
+    [TestClass]
 	public class ViewModelPropertyPerformanceTest
 	{
 		private const int Times = 1000;

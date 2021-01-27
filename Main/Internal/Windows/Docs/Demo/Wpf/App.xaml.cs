@@ -1,9 +1,10 @@
 ﻿namespace EyeSoft.Windows.Model.Demo
 {
 	using System.Windows;
-
-	using EyeSoft.Logging;
-	using EyeSoft.Windows.Model.Demo.Configuration;
+    using Core.Logging;
+    using DialogService;
+    using ExceptionLogger;
+    using EyeSoft.Windows.Model.Demo.Configuration;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 
 	public partial class App

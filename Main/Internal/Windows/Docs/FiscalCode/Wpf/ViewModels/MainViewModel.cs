@@ -1,11 +1,13 @@
 ﻿namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
 {
 	using System.Threading.Tasks;
-
-	using EyeSoft.Accounting.Italian.Istat;
+    using Calculate;
+    using EyeSoft.Accounting.Italian.Istat;
 	using EyeSoft.Windows.Model;
+    using EyeSoft.Windows.Model.ViewModels;
+    using Validate;
 
-	public class MainViewModel : AutoRegisterViewModel
+    public class MainViewModel : AutoRegisterViewModel
 	{
 		public MainViewModel()
 		{

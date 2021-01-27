@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Runtime.Serialization
+﻿namespace EyeSoft.Core.Runtime.Serialization
 {
-	using System.IO;
-	using System.Runtime.Serialization.Formatters.Binary;
-	using System.Text;
+    using System.IO;
+    using System.Runtime.Serialization.Formatters.Binary;
+    using System.Text;
+    using Core.Serialization;
 
-	using EyeSoft.Serialization;
-
-	public class BinarySerializer<T> : ISerializer<T>
+    public class BinarySerializer<T> : ISerializer<T>
 	{
 		public T DeserializeFromReader(TextReader reader)
 		{

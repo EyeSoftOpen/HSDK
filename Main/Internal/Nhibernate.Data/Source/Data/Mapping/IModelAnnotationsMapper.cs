@@ -1,8 +1,7 @@
 namespace EyeSoft.Data.Nhibernate.Mapping
 {
-	using EyeSoft.Mapping.Data;
-
-	using NHibernate.Cfg.MappingSchema;
+    using Core.Mapping.Data;
+    using NHibernate.Cfg.MappingSchema;
 
 	public interface IModelAnnotationsMapper
 	{

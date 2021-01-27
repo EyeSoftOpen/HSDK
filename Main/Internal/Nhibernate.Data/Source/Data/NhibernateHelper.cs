@@ -2,11 +2,9 @@
 {
 	using System;
 	using System.Collections.Generic;
-
-	using EyeSoft.Data.Common;
-	using EyeSoft.Extensions;
-
-	using NHibernate;
+    using Core.Extensions;
+    using EyeSoft.Data.Common;
+    using NHibernate;
 	using NHibernate.Cfg;
 	using NHibernate.Cfg.MappingSchema;
 	using NHibernate.Stat;

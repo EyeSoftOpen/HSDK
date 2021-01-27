@@ -1,8 +1,8 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public class IndexedTokens
+    public class IndexedTokens
 	{
 		private readonly IDictionary<int, string> tokens;
 

@@ -3,10 +3,10 @@ namespace EyeSoft.Domain.Transactional.Discover
 	using System;
 	using System.Linq;
 	using System.Reflection;
+    using Core.Extensions;
+    using Repositories;
 
-	using EyeSoft.Extensions;
-
-	public class RepositoryDiscover :
+    public class RepositoryDiscover :
 		IRepositoryDiscover
 	{
 		public Type GetEntityTypeIfRepository(Type type)

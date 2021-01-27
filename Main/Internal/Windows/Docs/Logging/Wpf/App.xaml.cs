@@ -1,11 +1,12 @@
-﻿namespace EyeSoft.Docs.Logging.Wpf
+﻿namespace EyeSoft.Docs.Logging.Windows
 {
-	using EyeSoft.Diagnostic;
-	using EyeSoft.Docs.Logging.Wpf.ViewModels;
-	using EyeSoft.Logging;
-	using EyeSoft.Windows.Model;
+    using Core.Diagnostic;
+    using Core.Logging;
+    using EyeSoft.Windows.Model;
+    using EyeSoft.Windows.Model.DialogService;
+    using ViewModels;
 
-	public partial class App
+    public partial class App
 	{
 		public App()
 		{

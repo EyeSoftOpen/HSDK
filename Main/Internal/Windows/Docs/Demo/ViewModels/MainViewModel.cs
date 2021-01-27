@@ -5,17 +5,19 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 	using System.Threading;
 	using System.Windows;
 	using System.Windows.Input;
-
-	using EyeSoft.Messanging;
-	using EyeSoft.Timers;
-	using EyeSoft.Validation;
-	using EyeSoft.Windows.Model;
-	using EyeSoft.Windows.Model.Collection.Property;
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
+    using Core.Messanging;
+    using Core.Timers;
+    using Core.Validation;
+    using DialogService;
+    using EyeSoft.Windows.Model;
+    using EyeSoft.Windows.Model.Collections.ObjectModel;
 	using EyeSoft.Windows.Model.Demo.Contract;
 	using EyeSoft.Windows.Model.Demo.ViewModels.Validators;
+    using Model.ViewModels;
+    using ServiceProxy;
+    using ServiceProxy.Collection.Property;
 
-	public class MainViewModel : BaseViewModel
+    public class MainViewModel : BaseViewModel
 	{
 		private readonly ServiceFactory<ICustomerService> serviceFactory;
 

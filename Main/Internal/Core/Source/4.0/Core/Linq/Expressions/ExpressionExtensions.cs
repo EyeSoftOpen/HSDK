@@ -1,11 +1,10 @@
-namespace EyeSoft.Linq.Expressions
+namespace EyeSoft.Core.Linq.Expressions
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq.Expressions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq.Expressions;
 
-
-	public static class ExpressionExtensions
+    public static class ExpressionExtensions
 	{
 		public static Expression<Func<object, object>> ToObjectConstantLambda(this KeyValuePair<string, object> expectedValue)
 		{

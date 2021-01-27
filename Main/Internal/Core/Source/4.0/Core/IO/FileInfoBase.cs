@@ -1,8 +1,7 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
     using System;
     using System.IO;
-    using System.Security.AccessControl;
 
     public class FileInfoBase : IFileInfo
     {

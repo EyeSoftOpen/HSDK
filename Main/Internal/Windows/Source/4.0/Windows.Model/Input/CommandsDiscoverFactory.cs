@@ -1,8 +1,9 @@
 namespace EyeSoft.Windows.Model.Input
 {
 	using System;
+    using Core;
 
-	public static class CommandsDiscoverFactory
+    public static class CommandsDiscoverFactory
 	{
 		private static readonly Singleton<ICommandsDiscover> singletonInstance =
 			new Singleton<ICommandsDiscover>(() => new CommandsDiscover(new CommandFactory(true)));

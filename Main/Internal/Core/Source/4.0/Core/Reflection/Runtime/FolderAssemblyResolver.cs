@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
-	using System.IO;
-	using System.Reflection;
+    using System.IO;
+    using System.Reflection;
+    using IO;
 
-	using EyeSoft.IO;
-
-	public class FolderAssemblyResolver : IAssemblyResolver
+    public class FolderAssemblyResolver : IAssemblyResolver
 	{
 		private readonly string assembliesFolder;
 

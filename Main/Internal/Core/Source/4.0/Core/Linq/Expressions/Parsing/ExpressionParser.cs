@@ -1,11 +1,11 @@
-namespace EyeSoft.Linq.Expressions.Parsing
+namespace EyeSoft.Core.Linq.Expressions.Parsing
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
 
-	public class ExpressionParser
+    public class ExpressionParser
 		: IExpressionParser
 	{
 		private const int TokenToSkip = 2;

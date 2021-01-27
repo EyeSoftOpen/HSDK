@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Collections.Generic
+﻿namespace EyeSoft.Core.Collections.Generic
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public class FluentDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+    public class FluentDictionary<TKey, TValue> : Dictionary<TKey, TValue>
 	{
 		public FluentDictionary<TKey, TValue> Entry(TKey key, TValue value)
 		{

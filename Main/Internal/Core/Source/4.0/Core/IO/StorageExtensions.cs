@@ -1,9 +1,8 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
     using System.IO;
     using System.Linq;
-
-    using EyeSoft.Extensions;
+    using Extensions;
 
     public static class StorageExtensions
     {

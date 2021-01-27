@@ -1,7 +1,8 @@
 ﻿namespace EyeSoft.Docs.Settings.ViewModels
 {
     using Windows.Model.Settings;
-	using EyeSoft.Windows.Model;
+    using Windows.Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
 	public class MainViewModel : ViewModel
 	{

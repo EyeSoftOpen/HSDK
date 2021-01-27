@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Logging
+﻿namespace EyeSoft.Core.Logging
 {
-	using System;
-	using System.IO;
+    using System;
+    using System.IO;
+    using IO;
 
-	using EyeSoft.IO;
-
-	public class FileLogger : ILogger
+    public class FileLogger : ILogger
 	{
 		private readonly string logFilePath;
 

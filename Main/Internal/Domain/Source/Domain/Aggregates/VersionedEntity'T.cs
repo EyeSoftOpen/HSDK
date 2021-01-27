@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Domain
+﻿namespace EyeSoft.Domain.Aggregates
 {
-	using System;
+    using System;
 
-	[Serializable]
+    [Serializable]
 	public abstract class VersionedEntity<T> : Entity<T> where T : IComparable<T>
 	{
 		public virtual DateTime Version

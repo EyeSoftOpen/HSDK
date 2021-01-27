@@ -1,9 +1,9 @@
-namespace EyeSoft.Test.Helpers
+namespace EyeSoft.Core.Test.Helpers
 {
-	using System;
-	using System.Runtime.Serialization;
+    using System;
+    using System.Runtime.Serialization;
 
-	[Serializable]
+    [Serializable]
 	internal class CustomException
 		: Exception
 	{

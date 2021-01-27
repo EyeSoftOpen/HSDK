@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Data
+﻿namespace EyeSoft.Core.Data
 {
-	using System;
+    using System;
 
-	public interface IApplicationDataSettings<T>
+    public interface IApplicationDataSettings<T>
 	{
 		void Save(T value);
 

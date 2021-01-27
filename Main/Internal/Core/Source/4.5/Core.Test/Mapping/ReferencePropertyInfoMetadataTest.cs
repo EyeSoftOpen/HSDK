@@ -1,16 +1,13 @@
-﻿namespace EyeSoft.Test.Mapping
+﻿namespace EyeSoft.Core.Test.Mapping
 {
-	using System;
-	using System.ComponentModel.DataAnnotations;
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using Core.Mapping;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Mapping;
-	using EyeSoft.Test.Helpers;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ReferencePropertyInfoMetadataTest
 	{
 		[TestMethod]

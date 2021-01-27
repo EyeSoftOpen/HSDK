@@ -1,18 +1,17 @@
-﻿namespace EyeSoft.Windows.Model.Test
+﻿namespace EyeSoft.Windows.Model.Test.ServiceProxy.ServiceFactory.Collection.Property
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Demo.Configuration.Helpers;
+    using Demo.Contract;
+    using Demo.ViewModels;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.Collections.ObjectModel;
+    using Model.ServiceProxy;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
-	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
-	using EyeSoft.Windows.Model.Demo.Contract;
-	using EyeSoft.Windows.Model.Demo.ViewModels;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ServiceFactoryCollectionFieldTest : ServiceFactoryTest
 	{
 		[TestMethod]

@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Windows.Model.Item.Property
+﻿namespace EyeSoft.Windows.Model.ServiceProxy.Item.Property.Implementations
 {
-	using System;
-	using System.ComponentModel;
-	using System.Reflection;
+    using System;
+    using System.ComponentModel;
+    using System.Reflection;
+    using Core.Reflection;
 
-	using EyeSoft.Reflection;
-
-	internal class ItemLoaded<TService, TProperty>
+    internal class ItemLoaded<TService, TProperty>
 		: IItemLoaded<TService, TProperty>
 		where TService : IDisposable
 	{

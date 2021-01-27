@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Docs.Performance.Wpf
+﻿namespace EyeSoft.Docs.Performance.Windows
 {
-	using EyeSoft.Docs.Performance.Wpf.ViewModels;
-	using EyeSoft.Windows.Model;
+    using EyeSoft.Windows.Model.DialogService;
+    using ViewModels;
 
-	public partial class App
+    public partial class App
 	{
 		public App()
 		{

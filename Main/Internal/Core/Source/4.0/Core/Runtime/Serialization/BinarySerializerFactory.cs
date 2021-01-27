@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Runtime.Serialization
+﻿namespace EyeSoft.Core.Runtime.Serialization
 {
-	using EyeSoft.Serialization;
+    using Core.Serialization;
 
-	public class BinarySerializerFactory : ISerializerFactory
+    public class BinarySerializerFactory : ISerializerFactory
 	{
 		public const string Name = "bin";
 

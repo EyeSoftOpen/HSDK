@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Runtime.Serialization
+﻿namespace EyeSoft.Core.Test.Runtime.Serialization
 {
-	using System;
+    using System;
+    using Core.Runtime.Serialization;
+    using Core.Serialization;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Runtime.Serialization;
-	using EyeSoft.Serialization;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class BinarySerializerTest
 	{
 		[TestMethod]

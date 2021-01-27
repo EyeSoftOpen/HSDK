@@ -1,4 +1,4 @@
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
 	public abstract class Message<T>
 	{

@@ -1,13 +1,11 @@
-﻿namespace EyeSoft.Test.Messanging
+﻿namespace EyeSoft.Core.Test.Messanging
 {
-	using EyeSoft.Messanging;
-	using EyeSoft.Test.Helpers;
+    using Core.Messanging;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class MessageBrokerTest
 	{
 		private const string MessageTitle = "Title1";

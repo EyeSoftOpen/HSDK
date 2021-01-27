@@ -1,14 +1,13 @@
-﻿namespace EyeSoft.Collections.Generic
+﻿namespace EyeSoft.Core.Collections.Generic
 {
-	using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Linq.Expressions;
-	using System.Reflection;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq.Expressions;
+    using System.Reflection;
+    using Reflection;
 
-	using EyeSoft.Reflection;
-
-	public static class ComparerFactory<T>
+    public static class ComparerFactory<T>
 	{
 		public static IComparer<T> Create(Expression<Func<T, IComparable>> expression)
 		{

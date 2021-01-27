@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	internal class PropertyValue
+    internal class PropertyValue
 	{
 		private readonly string propertyName;
 

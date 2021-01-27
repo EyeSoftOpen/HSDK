@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Net.NetworkInformation
+﻿namespace EyeSoft.Core.Net.NetworkInformation
 {
-	using System;
+    using System;
 
-	public static class TcpPing
+    public static class TcpPing
 	{
 		private static readonly Singleton<INetTcpPing> singletonInstance =
 			new Singleton<INetTcpPing>(() => new NetTcpPing());

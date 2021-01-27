@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Mapping
+﻿namespace EyeSoft.Core.Mapping
 {
-	using System.Reflection;
+    using System.Reflection;
+    using Extensions;
+    using Reflection;
 
-	using EyeSoft.Extensions;
-	using EyeSoft.Reflection;
-
-	internal class MemberInfoValidator
+    internal class MemberInfoValidator
 	{
 		private const BindingFlags PropertyBindingFlags =
 			BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;

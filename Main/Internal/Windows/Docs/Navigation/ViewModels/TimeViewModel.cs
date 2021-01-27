@@ -1,11 +1,11 @@
 ﻿namespace EyeSoft.Demo.Navigation.Windows.ViewModels
 {
 	using System;
+    using Core.Timers;
+    using EyeSoft.Windows.Model;
+    using EyeSoft.Windows.Model.ViewModels.Navigation;
 
-	using EyeSoft.Timers;
-	using EyeSoft.Windows.Model;
-
-	public class TimeViewModel : NavigableViewModel
+    public class TimeViewModel : NavigableViewModel
 	{
 		private readonly ITimer timer;
 

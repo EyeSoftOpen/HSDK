@@ -1,8 +1,8 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	internal class MembersCache<T> : Dictionary<MemberKey, T>
+    internal class MembersCache<T> : Dictionary<MemberKey, T>
 	{
 	}
 }

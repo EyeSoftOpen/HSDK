@@ -1,11 +1,12 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using Extensions;
 
-	public static class GenericReflectionExtensions
+    public static class GenericReflectionExtensions
 	{
 		private const BindingFlags InstanceBindingFlags =
 			BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;

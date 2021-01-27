@@ -1,4 +1,4 @@
-namespace EyeSoft.Security
+namespace EyeSoft.Core.Security
 {
 	public interface ICredentials
 	{

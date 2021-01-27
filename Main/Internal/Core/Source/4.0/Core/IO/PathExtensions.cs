@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.IO
+﻿namespace EyeSoft.Core.IO
 {
-	using System;
-	using System.IO;
+    using System;
+    using System.IO;
 
-	public static class PathExtensions
+    public static class PathExtensions
 	{
 		private static readonly char directorySeparatorChar = Path.DirectorySeparatorChar;
 

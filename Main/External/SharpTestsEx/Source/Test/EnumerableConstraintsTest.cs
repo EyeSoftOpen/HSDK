@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class EnumerableConstraintsTest
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using NUnit.Framework;
+
+    public class EnumerableConstraintsTest
 	{
 		[Test]
 		public void ShouldWork()

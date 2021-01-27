@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class SameSequenceAsMessageBuilderTest
+    using System;
+    using System.Collections.Generic;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class SameSequenceAsMessageBuilderTest
 	{
 		[Test]
 		public void ShouldContainDiffPositionAndValues()

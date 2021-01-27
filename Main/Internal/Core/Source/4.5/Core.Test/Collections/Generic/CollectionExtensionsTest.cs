@@ -1,16 +1,13 @@
-﻿namespace EyeSoft.Test.Collections.Generic
+﻿namespace EyeSoft.Core.Test.Collections.Generic
 {
-	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using Core.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Collections.Generic;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class CollectionExtensionsTest
 	{
 		[TestMethod]

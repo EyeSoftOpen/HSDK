@@ -11,15 +11,14 @@
 // </license>
 // ****************************************************************************
 
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Extensions;
 
-	using EyeSoft.Extensions;
-
-	public class LocalMessageBroker
+    public class LocalMessageBroker
 		: IMessageBroker
 	{
 		private readonly object registerLock = new object();

@@ -1,8 +1,9 @@
 ﻿namespace EyeSoft.Data.SqlClient.Helper
 {
 	using System.Data.SqlClient;
+    using Base;
 
-	public class BackupCommand : HelperCommand
+    public class BackupCommand : HelperCommand
 	{
 		private readonly string databaseName;
 

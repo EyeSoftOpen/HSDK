@@ -1,8 +1,8 @@
-namespace EyeSoft.Domain
+namespace EyeSoft.Domain.Aggregates
 {
-	using System;
+    using System;
 
-	public interface IEntity
+    public interface IEntity
 	{
 		IComparable Id { get; set; }
 	}

@@ -1,15 +1,13 @@
-﻿namespace EyeSoft.Windows.Model.Test
+﻿namespace EyeSoft.Windows.Model.Test.DialogService.ViewModelFactory
 {
-	using Castle.MicroKernel.Registration;
+    using Castle.MicroKernel.Registration;
+    using Core.Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.ViewModels;
+    using ServiceLocator.Windsor;
+    using SharpTestsEx;
 
-	using EyeSoft.Extensions;
-	using EyeSoft.ServiceLocator.Windsor;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ViewModelFactoryWithLocatorAndRuntimeParameterTest
 	{
 		[TestMethod]

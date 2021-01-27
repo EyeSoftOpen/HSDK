@@ -1,9 +1,9 @@
-namespace EyeSoft.Security.Cryptography
+namespace EyeSoft.Core.Security.Cryptography
 {
-	using System;
-	using System.IO;
+    using System;
+    using System.IO;
 
-	public interface IHashAlgorithm : IDisposable
+    public interface IHashAlgorithm : IDisposable
 	{
 		byte[] ComputeHash(Stream stream);
 

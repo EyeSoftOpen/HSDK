@@ -1,8 +1,8 @@
-namespace EyeSoft.Collections.Generic
+namespace EyeSoft.Core.Collections.Generic
 {
-	using System.Collections;
+    using System.Collections;
 
-	public static class ComparerExtensions
+    public static class ComparerExtensions
 	{
 		public static IComparer Invert(this IComparer comparer)
 		{

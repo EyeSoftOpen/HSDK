@@ -1,9 +1,9 @@
-namespace EyeSoft.Security.Cryptography
+namespace EyeSoft.Core.Security.Cryptography
 {
-	using System;
-	using System.IO;
+    using System;
+    using System.IO;
 
-	public static class Hashing
+    public static class Hashing
 	{
 		private static readonly DefaultHashing hashing = new DefaultHashing();
 

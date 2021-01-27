@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Windows.Model.Test.ObjectModel
+﻿namespace EyeSoft.Windows.Model.Test.Collections.ObjectModel
 {
-	using System;
+    using System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.Collections.Filter;
+    using SharpTestsEx;
 
-	using EyeSoft.Windows.Model.Collections;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class FullTextFilterTest
 	{
 		[TestMethod]

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Docs.Performance.Wpf.Views
+﻿namespace EyeSoft.Docs.Performance.Windows.Views
 {
 	public partial class MainWindow
 	{

@@ -1,6 +1,7 @@
 ﻿namespace EyeSoft.Windows.Model.Input
 {
     using System.Windows.Input;
+    using ViewModels;
 
     public interface ICommandBuilder
     {

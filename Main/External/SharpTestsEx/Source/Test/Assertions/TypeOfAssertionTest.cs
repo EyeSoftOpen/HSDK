@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class TypeOfAssertionTest
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class TypeOfAssertionTest
 	{
 		[Test]
 		public void Ctor()

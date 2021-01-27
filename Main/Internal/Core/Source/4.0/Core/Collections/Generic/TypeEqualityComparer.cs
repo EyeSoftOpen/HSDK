@@ -1,9 +1,9 @@
-namespace EyeSoft.Collections.Generic
+namespace EyeSoft.Core.Collections.Generic
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	internal class TypeEqualityComparer : IEqualityComparer<Type>
+    internal class TypeEqualityComparer : IEqualityComparer<Type>
 	{
 		public bool Equals(Type x, Type y)
 		{

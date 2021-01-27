@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Validation
+﻿namespace EyeSoft.Core.Validation
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public class ValidationError
+    public class ValidationError
 	{
 		public ValidationError(string propertyName, string message, object value)
 		{

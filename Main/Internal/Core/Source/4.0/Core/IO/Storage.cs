@@ -1,13 +1,12 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using Compression;
 
-	using EyeSoft.IO.Compression;
-
-	public static class Storage
+    public static class Storage
 	{
 		public const string AllPattern = "*.*";
 

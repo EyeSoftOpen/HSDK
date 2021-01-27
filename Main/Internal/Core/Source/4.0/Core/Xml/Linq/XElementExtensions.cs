@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Xml.Linq
+﻿namespace EyeSoft.Core.Xml.Linq
 {
-	using System.Linq;
-	using System.Xml.Linq;
+    using System.Linq;
+    using System.Xml.Linq;
 
-	public static class XElementExtensions
+    public static class XElementExtensions
 	{
 		public static XElement RemoveNamespaces(this XElement xmlDocument)
 		{

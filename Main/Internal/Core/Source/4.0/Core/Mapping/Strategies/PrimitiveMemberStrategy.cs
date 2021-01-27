@@ -1,6 +1,8 @@
-namespace EyeSoft.Mapping.Strategies
+namespace EyeSoft.Core.Mapping.Strategies
 {
-	public class PrimitiveMemberStrategy : IMemberStrategy
+    using Extensions;
+
+    public class PrimitiveMemberStrategy : IMemberStrategy
 	{
 		public bool HasToMap(MemberInfoMetadata memberInfoMetadata)
 		{

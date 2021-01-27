@@ -1,9 +1,10 @@
 ﻿namespace EyeSoft.Demo.Validation.Windows.ViewModels
 {
     using System.Collections.Generic;
-
-    using EyeSoft.Validation;
+    using Core.Validation;
     using EyeSoft.Windows.Model;
+    using EyeSoft.Windows.Model.ViewModels;
+    using Validators;
 
     public class AddressViewModel : ViewModel
     {

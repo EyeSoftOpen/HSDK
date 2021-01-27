@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Domain
+﻿namespace EyeSoft.Domain.DomainEvents
 {
-	using System;
+    using System;
 
-	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
 	public class DomainEventAttribute : Attribute
 	{
 	}

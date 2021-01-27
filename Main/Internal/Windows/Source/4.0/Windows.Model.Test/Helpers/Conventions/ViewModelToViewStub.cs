@@ -1,11 +1,13 @@
-namespace EyeSoft.Windows.Model.Test.Helpers
+namespace EyeSoft.Windows.Model.Test.Helpers.Conventions
 {
-	using System;
-	using System.Windows;
+    using System;
+    using System.Windows;
+    using Core.Conventions;
+    using Model.ViewModels;
+    using ViewModels;
+    using Views;
 
-	using EyeSoft.Conventions;
-
-	internal class ViewModelToViewStub : TypeConvention<ViewModel, Window>
+    internal class ViewModelToViewStub : TypeConvention<ViewModel, Window>
 	{
 		protected override Type TryMapTo(Type type)
 		{

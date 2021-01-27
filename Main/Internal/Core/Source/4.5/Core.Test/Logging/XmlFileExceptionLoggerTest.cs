@@ -1,20 +1,16 @@
-﻿namespace EyeSoft.Test.Logging
+﻿namespace EyeSoft.Core.Test.Logging
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using Core.IO;
+    using Core.Logging;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    using SharpTestsEx;
 
-	using EyeSoft.IO;
-	using EyeSoft.Logging;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using Moq;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class XmlFileExceptionLoggerTest
 	{
 		[TestMethod]

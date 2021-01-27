@@ -1,9 +1,8 @@
-using System;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	public class ClassConstraintsFixture
+    using NUnit.Framework;
+
+    public class ClassConstraintsFixture
 	{
 		[Test]
 		public void ShouldWork()

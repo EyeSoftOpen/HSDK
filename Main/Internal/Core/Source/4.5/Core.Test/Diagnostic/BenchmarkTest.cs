@@ -1,12 +1,10 @@
-﻿namespace EyeSoft.Test.Diagnostic
+﻿namespace EyeSoft.Core.Test.Diagnostic
 {
-	using EyeSoft.Diagnostic;
+    using Core.Diagnostic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class BenchmarkTest
 	{
 		[TestMethod]

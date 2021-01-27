@@ -1,10 +1,10 @@
-﻿namespace EyeSoft.Logging
+﻿namespace EyeSoft.Core.Logging
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Diagnostics;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
 
-	internal class AggregatorLogger : IAggregatorLogger
+    internal class AggregatorLogger : IAggregatorLogger
 	{
 		protected readonly IList<ILogger> loggerList = new List<ILogger>();
 

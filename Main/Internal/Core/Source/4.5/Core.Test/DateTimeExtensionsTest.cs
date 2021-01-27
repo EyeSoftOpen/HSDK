@@ -1,15 +1,13 @@
-﻿namespace EyeSoft.Test
+﻿namespace EyeSoft.Core.Test
 {
-	using System;
-	using System.Threading;
+    using System;
+    using System.Threading;
+    using Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
+    using Threading;
 
-	using EyeSoft.Test.Threading;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class DateTimeExtensionsTest
 	{
 		[TestMethod]

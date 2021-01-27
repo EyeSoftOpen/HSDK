@@ -1,9 +1,9 @@
-using System;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	public class MyTypeConstraintsAttribute : Attribute {}
+    using System;
+    using NUnit.Framework;
+
+    public class MyTypeConstraintsAttribute : Attribute {}
 
 	public class TypeConstraintsTest
 	{

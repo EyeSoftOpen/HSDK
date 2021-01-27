@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.IO.Compression
+﻿namespace EyeSoft.Core.IO.Compression
 {
-	using System;
-	using System.IO;
+    using System;
+    using System.IO;
 
-	public interface ICompressor : IDisposable
+    public interface ICompressor : IDisposable
 	{
 		Stream Compress(Stream source);
 

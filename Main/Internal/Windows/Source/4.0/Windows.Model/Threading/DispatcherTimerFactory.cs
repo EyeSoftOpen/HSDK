@@ -1,10 +1,9 @@
 namespace EyeSoft.Windows.Model.Threading
 {
 	using System;
+    using Core.Timers;
 
-	using EyeSoft.Timers;
-
-	public class DispatcherTimerFactory : ITimerFactory
+    public class DispatcherTimerFactory : ITimerFactory
 	{
 		public ITimer Create(int interval, Action action)
 		{

@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Logging
+﻿namespace EyeSoft.Core.Logging
 {
-	using System;
-	using System.Diagnostics;
+    using System;
+    using System.Diagnostics;
 
-	public static class Logger
+    public static class Logger
 	{
 		private static readonly Singleton<IAggregatorLogger> agregatorLogger =
 			new Singleton<IAggregatorLogger>(() => new DefaultAggregatorLogger());

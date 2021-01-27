@@ -1,18 +1,15 @@
-﻿namespace EyeSoft.Test.IO
+﻿namespace EyeSoft.Core.Test.IO
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Core.IO;
+    using Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    using SharpTestsEx;
 
-	using EyeSoft.IO;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using Moq;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class StorageTest
 	{
 		private const string Decompressed = @"C:\File1.txt";

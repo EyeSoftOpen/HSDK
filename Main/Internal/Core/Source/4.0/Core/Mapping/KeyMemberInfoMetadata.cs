@@ -1,8 +1,8 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-	using System.Reflection;
+    using System.Reflection;
 
-	public class KeyMemberInfoMetadata
+    public class KeyMemberInfoMetadata
 		: MemberInfoMetadata
 	{
 		internal KeyMemberInfoMetadata(MemberInfo propertyInfo)

@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Xml.Serialization
+﻿namespace EyeSoft.Core.Test.Xml.Serialization
 {
-	using System.Reflection;
+    using System.Reflection;
+    using Core.Reflection;
+    using Core.Xml.Serialization;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Reflection;
-	using EyeSoft.Xml.Serialization;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class XsltTransformerTest
 	{
 		[TestMethod]

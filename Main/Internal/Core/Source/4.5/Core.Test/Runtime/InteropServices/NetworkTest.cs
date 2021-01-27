@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Runtime.InteropServices
+﻿namespace EyeSoft.Core.Test.Runtime.InteropServices
 {
-	using EyeSoft.Runtime.InteropServices;
+    using Core.Runtime.InteropServices;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using Moq;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class NetworkTest
 	{
 		[TestMethod]

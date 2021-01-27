@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Xml.Linq
+﻿namespace EyeSoft.Core.Test.Xml.Linq
 {
-	using System.Xml.Linq;
+    using System.Xml.Linq;
+    using Core.Xml.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Xml.Linq;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class XElementExtensionsTest
 	{
 		[TestMethod]

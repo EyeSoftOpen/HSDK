@@ -1,12 +1,12 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Core.Collections.Generic;
+    using Core.Extensions;
 
-	using EyeSoft.Collections.Generic;
-
-	public class MonthCode : Code
+    public class MonthCode : Code
 	{
 		private static readonly IDictionary<int, char> monthToCode =
 				new FluentDictionary<int, char>()

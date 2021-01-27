@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.ComponentModel.DataAnnotations
+﻿namespace EyeSoft.Core.ComponentModel.DataAnnotations
 {
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Reflection;
-
-    using EyeSoft.Extensions;
-    using EyeSoft.Mapping;
-    using EyeSoft.Reflection;
+    using Extensions;
+    using Mapping;
+    using Reflection;
 
     public static class MemberInfoDataAnnotationsExtensions
     {

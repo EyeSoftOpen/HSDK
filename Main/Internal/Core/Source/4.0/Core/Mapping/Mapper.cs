@@ -1,8 +1,8 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-	using System;
+    using System;
 
-	public static class Mapper
+    public static class Mapper
 	{
 		private static readonly Singleton<IMapper> singletonInstance = new Singleton<IMapper>();
 

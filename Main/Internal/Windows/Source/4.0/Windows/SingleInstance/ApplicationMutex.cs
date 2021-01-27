@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Windows
+﻿namespace EyeSoft.Windows.SingleInstance
 {
-	using System;
-	using System.Threading;
+    using System;
+    using System.Threading;
 
-	public class ApplicationMutex : IDisposable
+    public class ApplicationMutex : IDisposable
 	{
 		private readonly Mutex mutex;
 

@@ -1,8 +1,8 @@
-namespace EyeSoft.Domain
+namespace EyeSoft.Domain.Aggregates
 {
-	using System;
+    using System;
 
-	[Serializable]
+    [Serializable]
 	public abstract class VersionedEntity : VersionedEntity<Guid>
 	{
 		protected VersionedEntity() : this(Guid.NewGuid())

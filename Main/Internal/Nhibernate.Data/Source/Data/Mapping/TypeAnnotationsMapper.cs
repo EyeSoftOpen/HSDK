@@ -2,13 +2,10 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 {
 	using System;
 	using System.Linq;
-
-	using EyeSoft.Data.Nhibernate.Mapping.Mappers;
-	using EyeSoft.Extensions;
-	using EyeSoft.Mapping;
-	using EyeSoft.Mapping.Data;
-
-	using NHibernate.Mapping.ByCode;
+    using Core.Extensions;
+    using Core.Mapping;
+    using EyeSoft.Data.Nhibernate.Mapping.Mappers;
+    using NHibernate.Mapping.ByCode;
 	using NHibernate.Type;
 
 	internal class TypeAnnotationsMapper

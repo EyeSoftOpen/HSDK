@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Accounting.Italian.Istat
+﻿namespace EyeSoft.Accounting.Italian.Istat.Internals.Serialization
 {
 	internal class TownSerializable
 	{

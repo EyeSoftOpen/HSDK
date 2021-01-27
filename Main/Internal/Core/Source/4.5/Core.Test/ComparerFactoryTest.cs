@@ -1,13 +1,11 @@
-﻿namespace EyeSoft.Test
+﻿namespace EyeSoft.Core.Test
 {
-	using EyeSoft.Collections.Generic;
-	using EyeSoft.SharpTests.Extensions;
+    using Core.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTests.Extensions;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ComparerFactoryTest
 	{
 		[TestMethod]

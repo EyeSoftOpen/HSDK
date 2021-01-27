@@ -1,10 +1,9 @@
-using System;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class ActionConstraintsTest
+    using System;
+    using NUnit.Framework;
+
+    public class ActionConstraintsTest
 	{
 		public class AClass
 		{

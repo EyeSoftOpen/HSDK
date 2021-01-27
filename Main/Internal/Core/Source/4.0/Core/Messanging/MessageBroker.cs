@@ -11,11 +11,11 @@
 // </license>
 // ****************************************************************************
 
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
-	using System;
+    using System;
 
-	public static class MessageBroker
+    public static class MessageBroker
 	{
 		private static readonly Singleton<IMessageBroker> singleton =
 			new Singleton<IMessageBroker>(() => new LocalMessageBroker());

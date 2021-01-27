@@ -1,12 +1,10 @@
-﻿namespace EyeSoft.Test.IO
+﻿namespace EyeSoft.Core.Test.IO
 {
-	using EyeSoft.IO;
+    using Core.IO;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class PathExtensionsTest
 	{
 		[TestMethod]

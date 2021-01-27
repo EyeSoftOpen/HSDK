@@ -1,8 +1,9 @@
-namespace EyeSoft.Domain.Transactional
+namespace EyeSoft.Domain.Transactional.Repositories
 {
-	using System;
+    using System;
+    using Aggregates;
 
-	public interface ILoadRepository<out T> where T : class, IAggregate
+    public interface ILoadRepository<out T> where T : class, IAggregate
 	{
 		T Load(IComparable key);
 	}

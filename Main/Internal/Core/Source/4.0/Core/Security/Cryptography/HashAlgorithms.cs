@@ -1,8 +1,8 @@
-namespace EyeSoft.Security.Cryptography
+namespace EyeSoft.Core.Security.Cryptography
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public static class HashAlgorithms
+    public static class HashAlgorithms
 	{
 		public const string Md5 = "MD5";
 		public const string Sha1 = "Sha1";

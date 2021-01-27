@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Validation
+﻿namespace EyeSoft.Core.Validation
 {
-	using System;
+    using System;
 
-	[Serializable]
+    [Serializable]
 	public class ValidationException : Exception
 	{
 		public ValidationException(string message) : base(message)

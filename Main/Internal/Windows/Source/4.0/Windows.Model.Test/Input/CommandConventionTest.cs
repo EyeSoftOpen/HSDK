@@ -2,13 +2,12 @@
 {
 	using System;
 	using System.Windows.Input;
-
-	using EyeSoft.Reflection;
-	using EyeSoft.Windows.Model.Input;
+    using Core.Reflection;
+    using EyeSoft.Windows.Model.Input;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
 	[TestClass]
 	public class CommandConventionTest

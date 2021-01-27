@@ -1,8 +1,8 @@
 namespace EyeSoft.Data.SqlClient.Helper
 {
 	using System.Data.SqlClient;
-
-	using EyeSoft.Data.Common;
+    using Base;
+    using EyeSoft.Data.Common;
 
 	public class DatabaseExistsCommand : IHelperCommand<bool>
 	{

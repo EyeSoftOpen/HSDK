@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Xml.Serialization
+﻿namespace EyeSoft.Core.Test.Xml.Serialization
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
+    using Core.Xml.Serialization;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Test.Helpers;
-	using EyeSoft.Xml.Serialization;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class XmlSerializerTest
 	{
 		internal const string Title1 = "Title1";

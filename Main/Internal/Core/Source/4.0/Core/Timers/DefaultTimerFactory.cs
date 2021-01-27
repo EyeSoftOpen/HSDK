@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Timers
+﻿namespace EyeSoft.Core.Timers
 {
-	using System;
+    using System;
 
-	public class DefaultTimerFactory : ITimerFactory
+    public class DefaultTimerFactory : ITimerFactory
 	{
 		public ITimer Create(int interval, Action action)
 		{

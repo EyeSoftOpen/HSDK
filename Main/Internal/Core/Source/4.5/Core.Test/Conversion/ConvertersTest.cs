@@ -1,13 +1,11 @@
-﻿namespace EyeSoft.Test.Conversion
+﻿namespace EyeSoft.Core.Test.Conversion
 {
-	using EyeSoft.Test.Helpers;
-	using EyeSoft.Test.Helpers.Conversion;
+    using Helpers;
+    using Helpers.Conversion;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ConvertersTest
 	{
 		[TestMethod]

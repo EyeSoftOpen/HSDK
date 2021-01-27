@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Xml.Serialization
+﻿namespace EyeSoft.Core.Xml.Serialization
 {
-	using System.Xml;
+    using System.Xml;
 
-	public static class FormattedXmlWriterSettings
+    public static class FormattedXmlWriterSettings
 	{
 		public static readonly XmlWriterSettings Settings =
 			new XmlWriterSettings

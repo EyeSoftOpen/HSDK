@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.ViewModels
 {
-	using EyeSoft.Windows.Model.Input;
+    using Input;
 
-	public abstract class AutoRegisterViewModel : ViewModel
+    public abstract class AutoRegisterViewModel : ViewModel
 	{
 		protected AutoRegisterViewModel()
 		{

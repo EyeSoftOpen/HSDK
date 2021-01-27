@@ -1,7 +1,7 @@
 ﻿//// The original article
 //// http://www.codeproject.com/Articles/14403/Generating-Unique-Keys-in-Net
 
-namespace EyeSoft.Security.Cryptography
+namespace EyeSoft.Core.Security.Cryptography
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +9,8 @@ namespace EyeSoft.Security.Cryptography
     using System.Linq;
     using System.Security.Cryptography;
     using System.Text;
+    using Extensions;
+    using Text;
 
     public static class UniqueKey
     {

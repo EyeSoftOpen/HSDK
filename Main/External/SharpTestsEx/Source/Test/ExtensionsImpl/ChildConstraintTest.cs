@@ -1,10 +1,9 @@
-using NUnit.Framework;
-using SharpTestsEx.ExtensionsImpl;
-
-namespace SharpTestsEx.Tests.ExtensionsImpl
+namespace SharpTestsEx.Test.ExtensionsImpl
 {
-	
-	public class ChildConstraintTest
+    using NUnit.Framework;
+    using SharpTestsEx.ExtensionsImpl;
+
+    public class ChildConstraintTest
 	{
 		private class ConstraintStub<T> : Constraint<T>
 		{

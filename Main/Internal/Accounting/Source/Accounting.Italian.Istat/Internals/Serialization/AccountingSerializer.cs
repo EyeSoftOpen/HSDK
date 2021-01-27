@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Accounting.Italian.Istat
+﻿namespace EyeSoft.Accounting.Italian.Istat.Internals.Serialization
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
-	using System.Linq;
-
-	using EyeSoft.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using Core.Reflection;
     using Newtonsoft.Json;
 
     internal static class AccountingSerializer

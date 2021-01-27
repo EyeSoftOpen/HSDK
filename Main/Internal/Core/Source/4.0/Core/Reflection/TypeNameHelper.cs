@@ -1,9 +1,10 @@
-namespace EyeSoft
+namespace EyeSoft.Core.Reflection
 {
     using System;
     using System.CodeDom;
     using System.Collections.Generic;
     using System.Linq;
+    using Extensions;
 
     public static class TypeNameHelper
     {

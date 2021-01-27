@@ -1,4 +1,4 @@
-namespace EyeSoft.Data
+namespace EyeSoft.Core.Data
 {
 	public interface IApplicationSettings<T>
 	{

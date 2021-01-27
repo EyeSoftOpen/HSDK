@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.IO
+﻿namespace EyeSoft.Core.Test.IO
 {
-	using System.IO;
+    using System.IO;
+    using Core.IO;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.IO;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class FileInfoWrapperTest
 	{
 		private const string Path = @"R:\Fake-Path\2013\19\08\AA093F6A-96E7-474A-89E9-7DBC5E9EA47F.txt";

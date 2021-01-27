@@ -1,13 +1,13 @@
-﻿namespace EyeSoft.Data
+﻿namespace EyeSoft.Core.Data
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using Extensions;
+    using Serialization;
 
-	using EyeSoft.Serialization;
-
-	internal static class DataSettingsKey
+    internal static class DataSettingsKey
 	{
 		private static readonly IDictionary<DataScope, Environment.SpecialFolder> scopeToFolder =
 			new Dictionary<DataScope, Environment.SpecialFolder>

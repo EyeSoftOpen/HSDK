@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Windows.Runtime
 {
-	using EyeSoft.Diagnostic;
+    using Core.Diagnostic;
 
-	internal class FluentApplicationRuntimeConfiguration :
+    internal class FluentApplicationRuntimeConfiguration :
 		IApplicationRuntimeConfigurationName,
 		IApplicationRuntimeConfigurationDownloadUrl
 	{

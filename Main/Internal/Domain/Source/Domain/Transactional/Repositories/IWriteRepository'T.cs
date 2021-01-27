@@ -1,6 +1,8 @@
-namespace EyeSoft.Domain.Transactional
+namespace EyeSoft.Domain.Transactional.Repositories
 {
-	public interface IWriteRepository<T> : ILoadRepository<T> where T : class, IAggregate
+    using Aggregates;
+
+    public interface IWriteRepository<T> : ILoadRepository<T> where T : class, IAggregate
 	{
 		void Save(T entity);
 

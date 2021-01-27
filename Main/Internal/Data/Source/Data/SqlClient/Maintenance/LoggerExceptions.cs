@@ -2,10 +2,10 @@
 {
 	using System;
 	using System.IO;
+    using Core.Extensions;
+    using Core.Logging;
 
-	using EyeSoft.Logging;
-
-	public class FileExceptionLogger : ILogger
+    public class FileExceptionLogger : ILogger
 	{
 		private readonly string folder;
 

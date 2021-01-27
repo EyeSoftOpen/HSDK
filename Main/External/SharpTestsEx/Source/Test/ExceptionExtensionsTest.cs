@@ -1,11 +1,10 @@
-using System;
-using System.Linq;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class ExceptionExtensionsTest
+    using System;
+    using System.Linq;
+    using NUnit.Framework;
+
+    public class ExceptionExtensionsTest
 	{
 		[Test]
 		public void InnerExceptionsShouldReturnAllInner()

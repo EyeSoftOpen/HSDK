@@ -1,8 +1,8 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core
 {
-	using System;
+    using System;
 
-	[Serializable]
+    [Serializable]
 	public class ComponentResolutionException : Exception
 	{
 		public ComponentResolutionException(Exception exception)

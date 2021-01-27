@@ -1,9 +1,11 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.DialogService
 {
-	using System;
-	using System.Windows;
+    using System;
+    using System.Windows;
+    using Core;
+    using ViewModels;
 
-	public static class DialogService
+    public static class DialogService
 	{
 		private static readonly Singleton<IDialogService> singletonInstance;
 

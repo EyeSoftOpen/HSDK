@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.ComponentModel.DataAnnotations.Schema
+﻿namespace EyeSoft.Core.ComponentModel.DataAnnotations.Schema
 {
-	using System;
+    using System;
 
-	// TODO: remove this class with .NET 4.5
+    // TODO: remove this class with .NET 4.5
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
 	public class NotMappedAttribute
 		: Attribute

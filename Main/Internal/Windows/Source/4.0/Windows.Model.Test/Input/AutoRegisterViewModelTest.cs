@@ -8,8 +8,8 @@
 	using EyeSoft.Windows.Model.Input;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
 	[TestClass]
 	public class AutoRegisterViewModelTest

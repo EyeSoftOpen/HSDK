@@ -2,8 +2,8 @@ namespace EyeSoft.Windows.Model.Demo.Configuration
 {
 	using System.Diagnostics;
 	using System.Windows;
-
-	using EyeSoft.Windows.Model;
+    using DialogService;
+    using EyeSoft.Windows.Model;
 
 	using MessageBox = System.Windows.MessageBox;
 

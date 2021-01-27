@@ -1,16 +1,13 @@
-namespace EyeSoft.Test.Mapping.Conventions
+namespace EyeSoft.Core.Test.Mapping.Conventions
 {
-	using System;
-	using System.ComponentModel.DataAnnotations;
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using Core.Mapping;
+    using Core.Mapping.Conventions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Mapping;
-	using EyeSoft.Mapping.Conventions;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class KeyConventionTest
 	{
 		[TestMethod]

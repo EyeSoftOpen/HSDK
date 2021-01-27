@@ -1,9 +1,9 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public interface IResolverLocator : IDisposable
+    public interface IResolverLocator : IDisposable
 	{
 		bool IsRegistered(Type serviceType);
 

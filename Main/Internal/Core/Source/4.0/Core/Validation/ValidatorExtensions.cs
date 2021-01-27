@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Validation
+﻿namespace EyeSoft.Core.Validation
 {
-	using System.Linq;
-	using System.Text;
+    using System.Linq;
+    using System.Text;
 
-	public static class ValidatorExtensions
+    public static class ValidatorExtensions
 	{
 		public static void ThrowOnErrors<T>(this IValidator<T> validator, T instance)
 		{

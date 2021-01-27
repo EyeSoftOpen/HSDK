@@ -1,10 +1,10 @@
-namespace EyeSoft.Linq.Expressions.Parsing
+namespace EyeSoft.Core.Linq.Expressions.Parsing
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq.Expressions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq.Expressions;
 
-	internal static class ExpressionParserHelper
+    internal static class ExpressionParserHelper
 	{
 		private static readonly IDictionary<string, Func<Expression, Expression, BinaryExpression>> logicOperatorDictionary =
 			new Dictionary<string, Func<Expression, Expression, BinaryExpression>>

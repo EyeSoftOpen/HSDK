@@ -1,14 +1,11 @@
-namespace EyeSoft.Test.Runtime.Caching.Helpers
+namespace EyeSoft.Core.Test.Runtime.Caching.Helpers
 {
-	using System;
+    using System;
+    using Core.Runtime.Caching;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Runtime.Caching;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public abstract class CacheTest : IDisposable
 	{
 		private ICache factory;

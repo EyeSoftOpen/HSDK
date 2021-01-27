@@ -1,8 +1,9 @@
-﻿namespace EyeSoft.Windows
+﻿namespace EyeSoft.Windows.Clipboard
 {
-	using System.Windows;
+    using System.Windows;
+    using Core;
 
-	public class Clipboard : IClipboard
+    public class Clipboard : IClipboard
 	{
 		private static readonly Singleton<IClipboard> singletonInstance =
 			new Singleton<IClipboard>(() => new ClipboardWrapper());

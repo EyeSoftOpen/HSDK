@@ -1,9 +1,9 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public static class Locator
+    public static class Locator
 	{
 		private static readonly Singleton<ILocator> singleton = new Singleton<ILocator>();
 

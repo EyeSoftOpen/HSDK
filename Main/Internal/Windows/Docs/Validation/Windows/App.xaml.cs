@@ -1,10 +1,10 @@
 ﻿namespace EyeSoft.Demo.Validation.Windows
 {
 	using System.Windows;
-	using EyeSoft.Demo.Validation.Windows.ViewModels;
-	using EyeSoft.Logging;
+    using Core.Logging;
+    using EyeSoft.Demo.Validation.Windows.ViewModels;
 
-	public partial class App
+    public partial class App
 	{
 		private readonly MainViewModel mainViewModel;
 

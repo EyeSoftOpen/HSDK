@@ -1,4 +1,4 @@
-namespace EyeSoft.SequentialIdentity.NewIdProviders
+namespace EyeSoft.Core.SequentialIdentity.NewIdProviders
 {
     using System;
     using System.Net;

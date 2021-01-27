@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Mapping
+﻿namespace EyeSoft.Core.Test.Mapping
 {
-	using System.Linq;
+    using System.Linq;
+    using Core.Mapping;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Mapping;
-	using EyeSoft.Test.Helpers;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ProjectTest
 	{
 		private const string ExpectedName = "Bill";

@@ -3,8 +3,10 @@
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
+    using Core.Extensions;
+    using Internals.Serialization;
 
-	public class CityRepository
+    public class CityRepository
 	{
 		private static ReadOnlyCollection<Town> townCollection;
 

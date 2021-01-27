@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
     using System;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
-
-    using EyeSoft.Extensions;
+    using Extensions;
 
     public static class Reflector
     {

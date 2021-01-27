@@ -1,14 +1,10 @@
-﻿namespace EyeSoft.Test
+﻿namespace EyeSoft.Core.Test
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Linq.Expressions;
-
-    using EyeSoft.Test.Helpers;
-
+    using Extensions;
+    using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     using SharpTestsEx;
 
     [TestClass]

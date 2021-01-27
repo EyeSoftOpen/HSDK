@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Collections.Generic
+﻿namespace EyeSoft.Core.Test.Collections.Generic
 {
-	using System;
+    using System;
+    using Core.Collections.Generic;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Collections.Generic;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class EqualityComparerTest
 	{
 		[TestMethod]

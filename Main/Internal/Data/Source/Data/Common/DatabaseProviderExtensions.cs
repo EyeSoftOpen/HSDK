@@ -3,10 +3,9 @@ namespace EyeSoft.Data.Common
 	using System;
 	using System.Data;
 	using System.Data.Common;
+    using Core.Extensions;
 
-	using EyeSoft.Extensions;
-
-	public static class DatabaseProviderExtensions
+    public static class DatabaseProviderExtensions
 	{
 		public static void CreateIfNotExists(this IDatabaseProvider databaseProvider)
 		{

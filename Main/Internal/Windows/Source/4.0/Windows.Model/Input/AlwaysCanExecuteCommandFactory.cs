@@ -2,6 +2,7 @@
 {
     using System;
     using System.Windows.Input;
+    using ViewModels;
 
     public class AlwaysCanExecuteCommandFactory : ICommandFactory
 	{

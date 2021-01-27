@@ -8,6 +8,8 @@
 	using Castle.MicroKernel.Registration;
 	using Castle.Windsor;
     using CommonServiceLocator;
+    using Core;
+    using ComponentResolutionException = Core.ComponentResolutionException;
 
     public class WindsorDependencyContainer : DependencyContainer
 	{
@@ -187,7 +189,7 @@
 			}
 			catch (Exception e)
 			{
-				throw new EyeSoft.ComponentResolutionException("Cannot solve the type.", e);
+				throw new ComponentResolutionException("Cannot solve the type.", e);
 			}
 		}
 	}

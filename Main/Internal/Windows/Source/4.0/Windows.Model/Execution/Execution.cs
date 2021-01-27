@@ -1,10 +1,10 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.Execution
 {
-	using System;
-	using System.Windows;
-	using System.Windows.Threading;
+    using System;
+    using System.Windows;
+    using System.Windows.Threading;
 
-	public abstract class Execution
+    public abstract class Execution
 	{
 		protected readonly Application application;
 

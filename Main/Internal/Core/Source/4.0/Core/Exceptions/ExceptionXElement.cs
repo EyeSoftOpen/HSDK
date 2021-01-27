@@ -1,11 +1,11 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core
 {
-	using System;
-	using System.Collections;
-	using System.Linq;
-	using System.Xml.Linq;
+    using System;
+    using System.Collections;
+    using System.Linq;
+    using System.Xml.Linq;
 
-	/// <summary>Represent an Exception as XML data.</summary>
+    /// <summary>Represent an Exception as XML data.</summary>
 	public class ExceptionXElement : XElement
 	{
 		/// <summary>Initializes a new instance.</summary>

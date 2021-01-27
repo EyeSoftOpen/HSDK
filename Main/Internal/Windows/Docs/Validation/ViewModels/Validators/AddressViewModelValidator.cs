@@ -1,7 +1,6 @@
-namespace EyeSoft.Demo.Validation.Windows.ViewModels
+namespace EyeSoft.Demo.Validation.Windows.ViewModels.Validators
 {
-    using EyeSoft.FluentValidation;
-
+    using FluentValidation;
     using global::FluentValidation;
 
     public class AddressViewModelValidator : FluentValidator<AddressViewModel>

@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class SatisfyFailureMessagesTest
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using NUnit.Framework;
+
+    public class SatisfyFailureMessagesTest
 	{
 		[Test]
 		public void ShouldContaingTheStringFailureMagnifier()

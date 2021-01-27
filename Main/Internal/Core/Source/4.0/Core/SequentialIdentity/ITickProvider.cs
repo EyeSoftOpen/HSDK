@@ -1,4 +1,4 @@
-namespace EyeSoft.SequentialIdentity
+namespace EyeSoft.Core.SequentialIdentity
 {
     public interface ITickProvider
     {

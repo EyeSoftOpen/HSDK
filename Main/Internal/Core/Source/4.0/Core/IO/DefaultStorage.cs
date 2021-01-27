@@ -1,14 +1,13 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.IO.Compression;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.IO.Compression;
+    using System.Text;
+    using Compression;
 
-	using EyeSoft.IO.Compression;
-
-	public abstract class DefaultStorage : IStorage
+    public abstract class DefaultStorage : IStorage
 	{
 		public abstract IFileInfo File(string path);
 

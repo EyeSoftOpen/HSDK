@@ -1,20 +1,16 @@
-﻿namespace EyeSoft.Test.Mapping
+﻿namespace EyeSoft.Core.Test.Mapping
 {
-	using System;
-	using System.Collections.Generic;
-	using System.ComponentModel.DataAnnotations;
-	using System.Linq;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Reflection;
+    using Core.Mapping;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    using SharpTestsEx;
 
-	using EyeSoft.Mapping;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using Moq;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class PrimitivePropertyInfoMetadataTest
 	{
 		[TestMethod]

@@ -1,11 +1,10 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Core.Collections.Generic;
 
-	using EyeSoft.Collections.Generic;
-
-	internal class OddCode
+    internal class OddCode
 	{
 		private static readonly IDictionary<char, int> codes =
 			new Dictionary<char, int>()

@@ -1,4 +1,4 @@
-namespace EyeSoft.Extensions
+namespace EyeSoft.Core.Extensions
 {
 	public interface IObjectExtender<out T>
 	{

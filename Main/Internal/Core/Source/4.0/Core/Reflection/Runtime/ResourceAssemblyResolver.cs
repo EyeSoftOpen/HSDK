@@ -1,14 +1,13 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Reflection;
-	using System.Security;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using System.Security;
+    using Collections.Concurrent;
 
-	using EyeSoft.Collections.Concurrent;
-
-	[SecurityCritical]
+    [SecurityCritical]
 	internal class ResourceAssemblyResolver : IAssembliesResolver
 	{
 		private static readonly object lockInstance = new object();

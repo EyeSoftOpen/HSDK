@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.ExtensionsImpl;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class ExpressionActionConstraintsTest
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.ExtensionsImpl;
+
+    public class ExpressionActionConstraintsTest
 	{
 		private class MyClass
 		{

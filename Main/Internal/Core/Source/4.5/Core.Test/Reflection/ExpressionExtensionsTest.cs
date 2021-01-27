@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Reflection
+﻿namespace EyeSoft.Core.Test.Reflection
 {
-	using System;
-	using System.Linq.Expressions;
+    using System;
+    using System.Linq.Expressions;
+    using Core.Linq.Expressions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Linq.Expressions;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ExpressionExtensionsTest
 	{
 		[TestMethod]

@@ -1,13 +1,11 @@
-﻿namespace EyeSoft.Test.Reflection
+﻿namespace EyeSoft.Core.Test.Reflection
 {
+    using Core.Reflection;
+    using Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Reflection;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class PropertyInfoExtensionsTest
 	{
 		[TestMethod]

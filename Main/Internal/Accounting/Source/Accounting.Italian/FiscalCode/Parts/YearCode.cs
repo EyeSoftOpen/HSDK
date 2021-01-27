@@ -1,8 +1,8 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
-	using System;
+    using System;
 
-	public class YearCode : Code
+    public class YearCode : Code
 	{
 		private readonly DateTime birthDate;
 

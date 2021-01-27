@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
-	using System.Globalization;
-	using System.Reflection;
+    using System.Globalization;
+    using System.Reflection;
 
-	public class AssemblyResolver : IAssemblyResolver
+    public class AssemblyResolver : IAssemblyResolver
 	{
 		private const string ResourceNameSeparator = ".";
 

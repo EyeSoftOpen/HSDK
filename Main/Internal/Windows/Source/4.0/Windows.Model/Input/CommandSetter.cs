@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Reflection;
     using System.Windows.Input;
+    using Core.Extensions;
+    using ViewModels;
 
     public class CommandSetter : ICommandSetter
 	{

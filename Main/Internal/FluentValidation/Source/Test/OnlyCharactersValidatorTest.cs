@@ -22,7 +22,7 @@
 		[TestMethod]
 		public void VerifyOnlyCharactersValidatorWithNullTextNotReturnsErrors()
 		{
-			var result = Validate(null);
+			var result = Validate((object)null);
 			result.Should().Be.Empty();
 		}
 
@@ -40,11 +40,11 @@
 			result.Should().Not.Be.Empty();
 		}
 
-		private static IEnumerable<ValidationFailure> Validate(object value)
+		private static IEnumerable<ValidationFailure> Validate<T>(T value)
 		{
-			var parentContext = new ValidationContext(null);
+			var parentContext = new ValidationContext<T>(value);
 			var rule = new PropertyRule(null, x => value, null, null, typeof(string), null) { PropertyName = "Name" };
-			var context = new PropertyValidatorContext(parentContext, rule, null);
+			var context = new PropertyValidatorContext(parentContext, rule, "Name", value);
 			var validator = new OnlyCharactersValidator();
 			var result = validator.Validate(context);
 			return result;

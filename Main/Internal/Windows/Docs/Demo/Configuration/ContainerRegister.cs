@@ -1,17 +1,21 @@
 namespace EyeSoft.Windows.Model.Demo.Configuration
 {
-	using EyeSoft.AutoMapper;
-	using EyeSoft.Mapping;
-	using EyeSoft.Messanging;
-	using EyeSoft.ServiceLocator.Windsor;
-	using EyeSoft.Timers;
-	using EyeSoft.Windows.Model;
+    using Core;
+    using Core.Mapping;
+    using Core.Messanging;
+    using Core.Timers;
+    using DialogService;
+    using EyeSoft.AutoMapper;
+    using EyeSoft.ServiceLocator.Windsor;
+    using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Model.Collections.ObjectModel;
 	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Input;
 	using EyeSoft.Windows.Model.Threading;
+    using Model.ViewModels;
+    using ServiceProxy;
 
-	public static class ContainerRegister
+    public static class ContainerRegister
 	{
 		private static readonly ILocator container = new WindsorDependencyContainer();
 

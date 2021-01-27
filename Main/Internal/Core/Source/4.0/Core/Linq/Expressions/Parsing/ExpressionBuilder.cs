@@ -1,4 +1,4 @@
-namespace EyeSoft.Linq.Expressions.Parsing
+namespace EyeSoft.Core.Linq.Expressions.Parsing
 {
 	public class ExpressionBuilder
 	{

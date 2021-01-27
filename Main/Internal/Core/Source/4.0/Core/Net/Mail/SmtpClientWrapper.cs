@@ -1,10 +1,10 @@
-namespace EyeSoft.Net.Mail
+namespace EyeSoft.Core.Net.Mail
 {
-	using System.Net;
-	using System.Net.Mail;
-	using System.Security.Cryptography.X509Certificates;
+    using System.Net;
+    using System.Net.Mail;
+    using System.Security.Cryptography.X509Certificates;
 
-	internal class SmtpClientWrapper : ISmtpClient
+    internal class SmtpClientWrapper : ISmtpClient
 	{
 		private readonly SmtpClient smtpClient = new SmtpClient();
 

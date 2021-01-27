@@ -4,10 +4,10 @@
 	using System.Collections.Generic;
 	using System.ComponentModel;
 	using System.Reflection;
+    using Core;
+    using Core.Reflection;
 
-	using EyeSoft.Reflection;
-
-	public static class CollectionFactory
+    public static class CollectionFactory
 	{
 		private static readonly Singleton<ICollectionFactory> collectionFactoryInstance =
 			new Singleton<ICollectionFactory>(() => new DefaultCollectionFactory());

@@ -1,11 +1,12 @@
-namespace EyeSoft.Mapping.Strategies
+namespace EyeSoft.Core.Mapping.Strategies
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using Extensions;
 
-	public class CollectionMemberStrategy : IMemberStrategy
+    public class CollectionMemberStrategy : IMemberStrategy
 	{
 		private static readonly HashSet<Type> notAllowedCollectionTypeDictionary =
 			new HashSet<Type>

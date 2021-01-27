@@ -11,11 +11,11 @@
 // </license>
 // ****************************************************************************
 
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
-	using System;
+    using System;
 
-	public class WeakAction
+    public class WeakAction
 	{
 		private readonly Action action;
 

@@ -1,17 +1,14 @@
-﻿namespace EyeSoft.Test.Data
+﻿namespace EyeSoft.Core.Test.Data
 {
-	using System;
-	using System.Diagnostics;
+    using System;
+    using System.Diagnostics;
+    using Core.Data;
+    using Core.IO;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Data;
-	using EyeSoft.IO;
-	using EyeSoft.Test.Data.Helpers;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ApplicationDataTest
 	{
 		private readonly ApplicationDataSettings<Foo> dataSettings;

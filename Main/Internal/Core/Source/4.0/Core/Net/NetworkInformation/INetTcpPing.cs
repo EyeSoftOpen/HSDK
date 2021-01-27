@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Net.NetworkInformation
+﻿namespace EyeSoft.Core.Net.NetworkInformation
 {
 	public interface INetTcpPing
 	{

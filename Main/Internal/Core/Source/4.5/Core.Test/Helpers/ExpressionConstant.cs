@@ -1,9 +1,9 @@
-namespace EyeSoft.Test.Helpers
+namespace EyeSoft.Core.Test.Helpers
 {
-	using System;
-	using System.Linq.Expressions;
+    using System;
+    using System.Linq.Expressions;
 
-	internal class ExpressionConstant
+    internal class ExpressionConstant
 	{
 		public ExpressionConstant(string source, Expression<Func<TestEntity, bool>> compiled)
 		{

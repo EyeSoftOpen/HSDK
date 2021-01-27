@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Logging
+﻿namespace EyeSoft.Core.Logging
 {
-	using System;
+    using System;
 
-	public class ConsoleLogger : ILogger
+    public class ConsoleLogger : ILogger
 	{
 		public void Write(string message)
 		{

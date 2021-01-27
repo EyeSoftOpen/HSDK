@@ -1,9 +1,9 @@
-namespace EyeSoft.Linq.Expressions
+namespace EyeSoft.Core.Linq.Expressions
 {
-	using System;
-	using System.Linq.Expressions;
+    using System;
+    using System.Linq.Expressions;
 
-	public interface IExpressionParser
+    public interface IExpressionParser
 	{
 		Expression<Func<T, bool>> Parse<T>(string evalExpression);
 	}

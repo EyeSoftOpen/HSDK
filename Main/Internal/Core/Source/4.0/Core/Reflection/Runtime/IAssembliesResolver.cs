@@ -1,4 +1,4 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
 	public interface IAssembliesResolver
 	{

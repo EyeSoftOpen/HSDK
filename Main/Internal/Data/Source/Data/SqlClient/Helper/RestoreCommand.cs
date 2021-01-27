@@ -2,8 +2,9 @@
 {
 	using System.Data.SqlClient;
 	using System.IO;
+    using Base;
 
-	public class RestoreCommand : HelperCommand
+    public class RestoreCommand : HelperCommand
 	{
 		private readonly string databaseName;
 

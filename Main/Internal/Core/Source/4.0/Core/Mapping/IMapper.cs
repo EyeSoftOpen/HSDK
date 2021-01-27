@@ -1,8 +1,8 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-	using System;
+    using System;
 
-	public interface IMapper
+    public interface IMapper
 	{
 		object Map(object source, Type sourceType, Type destinationType);
 

@@ -1,13 +1,12 @@
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class ExpressionStringBuilderTest
+    using System;
+    using System.Collections.Generic;
+    using System.Linq.Expressions;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class ExpressionStringBuilderTest
 	{
 		[Test]
 		public void NullExpress()

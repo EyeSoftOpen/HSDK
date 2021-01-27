@@ -3,11 +3,9 @@ namespace EyeSoft.Data.Nhibernate.Mapping.Mappers
 	using System;
 	using System.Collections.Generic;
 	using System.Reflection;
-
-	using EyeSoft.Collections.Generic;
-	using EyeSoft.Mapping;
-
-	using NHibernate.Mapping.ByCode;
+    using Core.Collections.Generic;
+    using Core.Mapping;
+    using NHibernate.Mapping.ByCode;
 
 	internal class ReferenceMapper<T>
 		where T : class

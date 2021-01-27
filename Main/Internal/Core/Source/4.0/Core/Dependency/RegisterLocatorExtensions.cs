@@ -1,8 +1,8 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core
 {
-	using System;
+    using System;
 
-	public static class RegisterLocatorExtensions
+    public static class RegisterLocatorExtensions
 	{
 		public static IRegisterLocator Singleton<TContract>(this IRegisterLocator locator, Type implementationType, string key = null)
 			where TContract : class

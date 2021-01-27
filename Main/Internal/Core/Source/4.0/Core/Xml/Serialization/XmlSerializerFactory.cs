@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Xml.Serialization
+﻿namespace EyeSoft.Core.Xml.Serialization
 {
-	using EyeSoft.Serialization;
+    using Core.Serialization;
 
-	public class XmlSerializerFactory : ISerializerFactory
+    public class XmlSerializerFactory : ISerializerFactory
 	{
 		public const string Name = "xml";
 

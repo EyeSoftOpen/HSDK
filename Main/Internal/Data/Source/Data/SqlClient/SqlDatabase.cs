@@ -3,11 +3,10 @@
 	using System;
 	using System.Data.SqlClient;
 	using System.Reflection;
+    using Core.Reflection;
+    using EyeSoft.Data.SqlClient.Helper;
 
-	using EyeSoft.Data.SqlClient.Helper;
-	using EyeSoft.Reflection;
-
-	public class SqlDatabase : IDisposable
+    public class SqlDatabase : IDisposable
 	{
 		private readonly SqlConnection connection;
 

@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Mapping
+﻿namespace EyeSoft.Core.Test.Mapping
 {
-	using System.Reflection;
+    using System.Reflection;
+    using Core.Mapping;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Mapping;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class AccessorHelperTest
 	{
 		private const BindingFlags InstanceBindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;

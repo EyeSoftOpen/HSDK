@@ -1,15 +1,14 @@
-namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
+namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels.Validate
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Accounting;
+    using Accounting.Italian.FiscalCode;
+    using Accounting.Italian.Istat;
+    using Core.Validation;
+    using EyeSoft.Windows.Model.ViewModels;
 
-	using EyeSoft.Accounting;
-	using EyeSoft.Accounting.Italian;
-	using EyeSoft.Accounting.Italian.Istat;
-	using EyeSoft.Validation;
-	using EyeSoft.Windows.Model;
-
-	public class ValidateFiscalCodeViewModel : AutoRegisterViewModel
+    public class ValidateFiscalCodeViewModel : AutoRegisterViewModel
 	{
 		public ValidateFiscalCodeViewModel()
 		{

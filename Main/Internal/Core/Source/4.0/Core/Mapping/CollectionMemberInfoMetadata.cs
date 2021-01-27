@@ -1,12 +1,11 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-	using System.Linq;
-	using System.Reflection;
+    using System.Linq;
+    using System.Reflection;
+    using Extensions;
+    using Reflection;
 
-	using EyeSoft.Extensions;
-	using EyeSoft.Reflection;
-
-	public class CollectionMemberInfoMetadata
+    public class CollectionMemberInfoMetadata
 		: MemberInfoMetadata
 	{
 		internal CollectionMemberInfoMetadata(MemberInfo memberInfo)

@@ -1,12 +1,11 @@
-namespace EyeSoft.Mapping.Conventions
+namespace EyeSoft.Core.Mapping.Conventions
 {
-	using System;
-	using System.ComponentModel.DataAnnotations;
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using Extensions;
+    using Reflection;
 
-	using EyeSoft.Extensions;
-	using EyeSoft.Reflection;
-
-	public class VersionConvention
+    public class VersionConvention
 		: IVersionConvention
 	{
 		public bool CanBeTheVersion(MemberInfoMetadata memberInfoMetadata)

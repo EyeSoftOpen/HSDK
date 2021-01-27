@@ -1,12 +1,10 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
     using System.Reflection;
-
-    using EyeSoft.ComponentModel.DataAnnotations;
-    using EyeSoft.Extensions;
-    using EyeSoft.Reflection;
+    using ComponentModel.DataAnnotations;
+    using Extensions;
+    using Reflection;
 
     public class PrimitiveMemberInfoMetadata : MemberInfoMetadata
     {

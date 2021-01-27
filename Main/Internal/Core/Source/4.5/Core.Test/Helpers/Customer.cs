@@ -1,8 +1,8 @@
-namespace EyeSoft.Test.Helpers
+namespace EyeSoft.Core.Test.Helpers
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	internal class Customer
+    internal class Customer
 		: Person
 	{
 		public Customer(string name, string address)

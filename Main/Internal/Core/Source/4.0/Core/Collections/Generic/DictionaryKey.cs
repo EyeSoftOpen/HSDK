@@ -1,9 +1,9 @@
-namespace EyeSoft.Collections.Generic
+namespace EyeSoft.Core.Collections.Generic
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	public class DictionaryKey<TKey, TValue>
+    public class DictionaryKey<TKey, TValue>
 	{
 		private readonly IDictionary<TKey, TValue> dictionary;
 

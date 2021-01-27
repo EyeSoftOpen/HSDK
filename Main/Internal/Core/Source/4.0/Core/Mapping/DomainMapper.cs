@@ -1,10 +1,9 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
     using System;
     using System.Collections.Generic;
-	using System.Linq;
 
-	public class DomainMapper : IDomainMapper
+    public class DomainMapper : IDomainMapper
 	{
 		private readonly ISet<MappedType> mappedTypes = new HashSet<MappedType>();
 

@@ -1,16 +1,14 @@
-﻿namespace EyeSoft.Windows.Model.Collection.Direct
+﻿namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Direct.Implementations
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Threading.Tasks;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Collections.ObjectModel;
+    using Core.Mapping;
+    using Threading;
 
-	using EyeSoft.Collections.Generic;
-	using EyeSoft.Mapping;
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
-	using EyeSoft.Windows.Model.Threading;
-
-	internal class CollectionFilled<TService, TCollectionType> : ICollectionFilled<TCollectionType>
+    internal class CollectionFilled<TService, TCollectionType> : ICollectionFilled<TCollectionType>
 		where TService : IDisposable
 	{
 		private readonly LoaderParams<TService> loaderParams;

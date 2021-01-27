@@ -4,7 +4,9 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
-    using Reflection;
+    using Core;
+    using Core.Extensions;
+    using Core.Reflection;
 
     public class ApplicationInfo
     {

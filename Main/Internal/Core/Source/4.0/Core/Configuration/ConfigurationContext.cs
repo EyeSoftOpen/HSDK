@@ -1,12 +1,10 @@
-namespace EyeSoft.Configuration
+namespace EyeSoft.Core.Configuration
 {
-	using System;
-	using System.Collections.Specialized;
-	using System.Configuration;
+    using System;
+    using System.Collections.Specialized;
+    using System.Configuration;
 
-	using EyeSoft;
-
-	public static class ConfigurationContext
+    public static class ConfigurationContext
 	{
 		private static readonly Singleton<IConfigurationContext> configuration =
 			new Singleton<IConfigurationContext>(() => new FileConfigurationContext());

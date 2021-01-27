@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.IO
+﻿namespace EyeSoft.Core.IO
 {
-	using System.Collections.Generic;
-	using System.IO;
+    using System.Collections.Generic;
+    using System.IO;
 
-	public interface IDirectoryInfo : IFileSystemInfo
+    public interface IDirectoryInfo : IFileSystemInfo
 	{
 		IDirectoryInfo Parent { get; }
 

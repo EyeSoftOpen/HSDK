@@ -1,16 +1,13 @@
-﻿namespace EyeSoft.Test.Mapping
+﻿namespace EyeSoft.Core.Test.Mapping
 {
-	using System;
-	using System.Linq;
+    using System;
+    using System.Linq;
+    using Core.Mapping;
+    using Core.Mapping.Conventions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Mapping;
-	using EyeSoft.Mapping.Conventions;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class TypeMapperTestVersionedEntity
 	{
 		[TestMethod]

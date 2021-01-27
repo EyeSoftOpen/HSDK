@@ -3,7 +3,6 @@ namespace EyeSoft.Core.SequentialIdentity.NewIdProviders
     using System;
     using System.Linq;
     using System.Net.NetworkInformation;
-    using EyeSoft.SequentialIdentity;
 
     public class NetworkAddressWorkerIdProvider :
         IWorkerIdProvider

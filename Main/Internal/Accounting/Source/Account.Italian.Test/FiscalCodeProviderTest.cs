@@ -1,8 +1,9 @@
 ﻿namespace EyeSoft.Accounting.Italian.Test
 {
 	using EyeSoft.Accounting.Italian.Test.Helpers;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using FiscalCode;
+    using FiscalCode.Parts;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 	using SharpTestsEx;
 

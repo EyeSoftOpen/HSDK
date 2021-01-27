@@ -1,9 +1,8 @@
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class BoleanConstraintsTest
+    using NUnit.Framework;
+
+    public class BoleanConstraintsTest
 	{
 		[Test]
 		public void ShouldWork()

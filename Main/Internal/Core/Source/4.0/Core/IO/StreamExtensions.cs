@@ -1,9 +1,9 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
-	using System.IO;
-	using System.Text;
+    using System.IO;
+    using System.Text;
 
-	public static class StreamExtensions
+    public static class StreamExtensions
 	{
 		public static string StreamToString(this Stream stream)
 		{

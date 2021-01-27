@@ -1,9 +1,9 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property.FluentInterface
 {
-	using System;
-	using System.Linq.Expressions;
+    using System;
+    using System.Linq.Expressions;
 
-	public interface IChangeViewModelProperty<out TProperty>
+    public interface IChangeViewModelProperty<out TProperty>
 	{
 		IChangeViewModelProperty<TProperty> DependsFrom(params Expression<Func<object>>[] dependentFrom);
 	}

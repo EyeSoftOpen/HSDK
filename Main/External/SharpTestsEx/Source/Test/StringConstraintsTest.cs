@@ -1,10 +1,9 @@
-using System.Text.RegularExpressions;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class StringConstraintsTest
+    using System.Text.RegularExpressions;
+    using NUnit.Framework;
+
+    public class StringConstraintsTest
 	{
 		[Test]
 		public void ShouldWork()

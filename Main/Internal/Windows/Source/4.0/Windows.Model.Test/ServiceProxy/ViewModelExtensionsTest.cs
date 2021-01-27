@@ -1,13 +1,12 @@
-﻿namespace EyeSoft.Windows.Model.Test
+﻿namespace EyeSoft.Windows.Model.Test.ServiceProxy
 {
-	using System;
-	using System.Linq;
+    using System;
+    using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ViewModelExtensionsTest
 	{
 		private const int PropertyChanges = 10;

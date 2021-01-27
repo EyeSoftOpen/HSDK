@@ -1,14 +1,11 @@
-namespace EyeSoft.Test
+namespace EyeSoft.Core.Test
 {
-	using System;
+    using System;
+    using Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Extensions;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ObjectHashTest
 	{
 		private const int ExpectedHashCode = -842343738;

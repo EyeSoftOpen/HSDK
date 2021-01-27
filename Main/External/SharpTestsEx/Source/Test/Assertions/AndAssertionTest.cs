@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class AndAssertionTest
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class AndAssertionTest
 	{
 		private class AssertionStub<T> : UnaryAssertion<T>
 		{

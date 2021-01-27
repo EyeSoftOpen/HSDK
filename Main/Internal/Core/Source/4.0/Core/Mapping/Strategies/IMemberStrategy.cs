@@ -1,4 +1,4 @@
-namespace EyeSoft.Mapping.Strategies
+namespace EyeSoft.Core.Mapping.Strategies
 {
 	public interface IMemberStrategy
 	{

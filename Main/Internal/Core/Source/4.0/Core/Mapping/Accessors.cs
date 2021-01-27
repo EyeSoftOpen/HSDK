@@ -1,4 +1,4 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
 	public enum Accessors
 	{

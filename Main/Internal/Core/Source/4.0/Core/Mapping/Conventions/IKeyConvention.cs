@@ -1,4 +1,4 @@
-namespace EyeSoft.Mapping.Conventions
+namespace EyeSoft.Core.Mapping.Conventions
 {
 	public interface IKeyConvention
 	{

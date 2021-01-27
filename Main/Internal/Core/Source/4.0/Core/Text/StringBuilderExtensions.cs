@@ -1,8 +1,8 @@
-namespace EyeSoft.Text
+namespace EyeSoft.Core.Text
 {
-	using System.Text;
+    using System.Text;
 
-	public static class StringBuilderExtensions
+    public static class StringBuilderExtensions
 	{
 		public static StringBuilder AppendIndentedFormat(
 			this StringBuilder stringBuilder,

@@ -1,8 +1,9 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
-	using System;
+    using System;
+    using Core.Extensions;
 
-	public class DayCode : Code
+    public class DayCode : Code
 	{
 		private readonly DateTime birthDate;
 

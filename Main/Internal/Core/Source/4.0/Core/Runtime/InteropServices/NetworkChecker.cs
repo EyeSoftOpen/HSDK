@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Runtime.InteropServices
+﻿namespace EyeSoft.Core.Runtime.InteropServices
 {
-	using System.Runtime.InteropServices;
+    using System.Runtime.InteropServices;
 
-	public class NetworkChecker : INetworkChecker
+    public class NetworkChecker : INetworkChecker
 	{
 		bool INetworkChecker.IsInternetAvailable
 		{

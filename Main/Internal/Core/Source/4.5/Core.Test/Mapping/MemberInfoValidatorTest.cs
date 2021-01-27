@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Mapping
+﻿namespace EyeSoft.Core.Test.Mapping
 {
-	using System.Linq;
-	using System.Reflection;
+    using System.Linq;
+    using System.Reflection;
+    using Core.Mapping;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Mapping;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class MemberInfoValidatorTest
 	{
 		[TestMethod]

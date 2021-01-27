@@ -1,10 +1,9 @@
-using System.Linq;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class SatisfyTest
+    using System.Linq;
+    using NUnit.Framework;
+
+    public class SatisfyTest
 	{
 		public enum MyEnum
 		{

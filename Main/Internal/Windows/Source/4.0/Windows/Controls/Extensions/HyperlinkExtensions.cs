@@ -1,10 +1,10 @@
-﻿namespace EyeSoft.Windows.Controls
+﻿namespace EyeSoft.Windows.Controls.Extensions
 {
-	using System.Diagnostics;
-	using System.Windows;
-	using System.Windows.Documents;
+    using System.Diagnostics;
+    using System.Windows;
+    using System.Windows.Documents;
 
-	public static class HyperlinkExtensions
+    public static class HyperlinkExtensions
 	{
 		public static readonly DependencyProperty IsExternalProperty =
 			DependencyProperty.RegisterAttached("IsExternal", typeof(bool), typeof(HyperlinkExtensions), new UIPropertyMetadata(false, OnIsExternalChanged));

@@ -1,11 +1,11 @@
-﻿namespace EyeSoft.Collections.Concurrent
+﻿namespace EyeSoft.Core.Collections.Concurrent
 {
-	using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
 
-	public class TypeOnceCollection<T> : ICollection<T>
+    public class TypeOnceCollection<T> : ICollection<T>
 	{
 		private readonly Collections.Concurrent.SafeConcurrentDictionary<Type, T> safeConcurrentDictionary =
 			new Collections.Concurrent.SafeConcurrentDictionary<Type, T>();

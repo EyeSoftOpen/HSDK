@@ -1,16 +1,14 @@
-﻿namespace EyeSoft.Test.Security.Cryptography
+﻿namespace EyeSoft.Core.Test.Security.Cryptography
 {
-	using System;
-	using System.Security.Cryptography;
+    using System;
+    using System.Security.Cryptography;
+    using Core.IO;
+    using Core.Security.Cryptography;
+    using Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.IO;
-	using EyeSoft.Security.Cryptography;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class HashingTest
 	{
 		private const string FakeProviderName = "Fake";

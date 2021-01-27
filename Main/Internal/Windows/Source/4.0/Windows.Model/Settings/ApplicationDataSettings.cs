@@ -1,9 +1,10 @@
 ﻿namespace EyeSoft.Windows.Model.Settings
 {
     using System;
-    using IO;
-    using Security.Cryptography;
-    using Serialization;
+    using Core.Extensions;
+    using Core.IO;
+    using Core.Security.Cryptography;
+    using Core.Serialization;
 
     public class ApplicationDataSettings<T> : IApplicationDataSettings<T>
     {

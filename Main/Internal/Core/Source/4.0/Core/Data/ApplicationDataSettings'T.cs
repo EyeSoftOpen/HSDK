@@ -1,12 +1,12 @@
-﻿namespace EyeSoft.Data
+﻿namespace EyeSoft.Core.Data
 {
-	using System;
+    using System;
+    using Extensions;
+    using IO;
+    using Security.Cryptography;
+    using Serialization;
 
-	using EyeSoft.IO;
-	using EyeSoft.Security.Cryptography;
-	using EyeSoft.Serialization;
-
-	public class ApplicationDataSettings<T> : IApplicationDataSettings<T>
+    public class ApplicationDataSettings<T> : IApplicationDataSettings<T>
 	{
 		internal ApplicationDataSettings(DataSettingsConfiguration configuration)
 		{

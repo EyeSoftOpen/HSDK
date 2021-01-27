@@ -1,16 +1,13 @@
-﻿namespace EyeSoft.Test.Validation
+﻿namespace EyeSoft.Core.Test.Validation
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Core.Validation;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Validation;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ValidatorTest
 	{
 		public const string PropertyEmpty = "Should not be empty.";

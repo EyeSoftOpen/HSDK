@@ -1,6 +1,8 @@
-﻿namespace EyeSoft.Accounting.Italian
+﻿namespace EyeSoft.Accounting.Italian.FiscalCode
 {
-	public class FiscalCode : CalculatedFiscalCode
+    using Parts;
+
+    public class FiscalCode : CalculatedFiscalCode
 	{
 		private readonly string code;
 

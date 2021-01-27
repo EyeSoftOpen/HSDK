@@ -1,8 +1,8 @@
-namespace EyeSoft.Domain
+namespace EyeSoft.Domain.Aggregates
 {
-	using System;
+    using System;
 
-	public interface IValueObject<T> : IEquatable<T> where T : class
+    public interface IValueObject<T> : IEquatable<T> where T : class
 	{
 	}
 }

@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class StringEqualityMessageBuilderTest
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class StringEqualityMessageBuilderTest
 	{
 		[Test]
 		public void ComposeEqualsStrings()

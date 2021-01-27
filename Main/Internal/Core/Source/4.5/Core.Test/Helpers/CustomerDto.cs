@@ -1,4 +1,4 @@
-namespace EyeSoft.Test.Helpers
+namespace EyeSoft.Core.Test.Helpers
 {
 	internal class CustomerDto
 	{

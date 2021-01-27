@@ -1,9 +1,9 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
-	using System;
-	using System.IO;
+    using System;
+    using System.IO;
 
-	public interface IFileSystemInfo
+    public interface IFileSystemInfo
 	{
 		FileAttributes Attributes { get; set;  }
 

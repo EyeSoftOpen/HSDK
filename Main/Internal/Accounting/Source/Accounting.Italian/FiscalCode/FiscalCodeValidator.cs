@@ -1,9 +1,10 @@
-﻿namespace EyeSoft.Accounting.Italian
+﻿namespace EyeSoft.Accounting.Italian.FiscalCode
 {
-	using System.Linq;
-	using System.Text.RegularExpressions;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+    using Parts;
 
-	public class FiscalCodeValidator
+    public class FiscalCodeValidator
 	{
 		private static readonly Regex fiscalCodeFormat = new Regex(@"^[A-Z]{6}[\d]{2}[A-Z][\d]{2}[A-Z][\d]{3}[A-Z]$");
 

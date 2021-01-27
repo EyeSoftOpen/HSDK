@@ -1,9 +1,8 @@
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class NullableComparableConstraintsTest
+    using NUnit.Framework;
+
+    public class NullableComparableConstraintsTest
 	{
 		[Test]
 		public void ShouldWork()

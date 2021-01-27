@@ -1,9 +1,8 @@
-﻿namespace EyeSoft.Test
+﻿namespace EyeSoft.Core.Test
 {
     using System;
-
+    using Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     using SharpTestsEx;
 
     [TestClass]

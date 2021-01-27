@@ -1,4 +1,4 @@
-namespace EyeSoft.Normalization
+namespace EyeSoft.Core.Normalization
 {
 	public interface INormalizer
 	{

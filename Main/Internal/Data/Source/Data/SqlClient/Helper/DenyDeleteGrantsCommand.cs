@@ -1,8 +1,9 @@
 namespace EyeSoft.Data.SqlClient.Helper
 {
 	using System.Data.SqlClient;
+    using Base;
 
-	public class DenyDeleteGrantsCommand : HelperCommand
+    public class DenyDeleteGrantsCommand : HelperCommand
 	{
 		private const string CommandText = "DENY DELETE ON @tableName TO @userOrRole";
 

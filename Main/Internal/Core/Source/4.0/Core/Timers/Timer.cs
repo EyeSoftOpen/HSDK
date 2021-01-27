@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Timers
+﻿namespace EyeSoft.Core.Timers
 {
-	using System;
+    using System;
 
-	public class Timer : ITimer
+    public class Timer : ITimer
 	{
 		private readonly System.Timers.Timer timer;
 

@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Collections.Concurrent
+﻿namespace EyeSoft.Core.Collections.Concurrent
 {
-	using System.Collections.Concurrent;
-	using System.Collections.Generic;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
 
-	public class SafeConcurrentDictionary<TKey, TValue> : ConcurrentDictionary<TKey, TValue>, IDictionary<TKey, TValue>
+    public class SafeConcurrentDictionary<TKey, TValue> : ConcurrentDictionary<TKey, TValue>, IDictionary<TKey, TValue>
 	{
 		private readonly object lockInstance = new object();
 

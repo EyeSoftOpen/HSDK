@@ -1,11 +1,10 @@
-namespace EyeSoft.Test.Mapping.Strategies
+namespace EyeSoft.Core.Test.Mapping.Strategies
 {
-	using EyeSoft.Mapping;
-	using EyeSoft.Mapping.Strategies;
+    using Core.Mapping;
+    using Core.Mapping.Strategies;
+    using SharpTestsEx;
 
-	using SharpTestsEx;
-
-	public abstract class PropertyStrategyTest<T>
+    public abstract class PropertyStrategyTest<T>
 		where T : IMemberStrategy, new()
 	{
 		protected void CheckProperty<TProperty>(bool expected, params object[] attributes)

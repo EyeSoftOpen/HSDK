@@ -1,11 +1,11 @@
-namespace EyeSoft.Xml.Serialization
+namespace EyeSoft.Core.Xml.Serialization
 {
-	using System;
-	using System.IO;
-	using System.Xml;
-	using System.Xml.Serialization;
+    using System;
+    using System.IO;
+    using System.Xml;
+    using System.Xml.Serialization;
 
-	public class FormattedXmlSerializer : XmlSerializer
+    public class FormattedXmlSerializer : XmlSerializer
 	{
 		private readonly XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
 

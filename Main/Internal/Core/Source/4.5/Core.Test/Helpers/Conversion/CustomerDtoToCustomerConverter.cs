@@ -1,4 +1,4 @@
-namespace EyeSoft.Test.Helpers.Conversion
+namespace EyeSoft.Core.Test.Helpers.Conversion
 {
 	internal class CustomerDtoToCustomerConverter
 		: IConverter<Customer, CustomerDto>

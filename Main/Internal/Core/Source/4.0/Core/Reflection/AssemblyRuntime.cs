@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
-	using System.IO;
-	using System.Reflection;
+    using System.IO;
+    using System.Reflection;
+    using IO;
 
-	using EyeSoft.IO;
-
-	public static class AssemblyRuntime
+    public static class AssemblyRuntime
 	{
 		private const string DebugFolder = "Debug";
 

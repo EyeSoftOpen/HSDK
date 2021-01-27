@@ -1,7 +1,7 @@
-﻿namespace EyeSoft.Net.Mail
+﻿namespace EyeSoft.Core.Net.Mail
 {
     using System.Text.RegularExpressions;
-    
+
     public static class MailAddress
     {
         public static bool IsValid(string mailAddress)

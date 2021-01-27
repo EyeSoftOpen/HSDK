@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Test.Threading
+﻿namespace EyeSoft.Core.Test.Threading
 {
-	using System.Globalization;
-	using System.Threading;
+    using System.Globalization;
+    using System.Threading;
 
-	public static class ThreadExtensions
+    public static class ThreadExtensions
 	{
 		public static void AssignCulture(this Thread thread, string culture)
 		{

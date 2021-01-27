@@ -1,15 +1,13 @@
-﻿namespace EyeSoft.Test.Security.Cryptography
+﻿namespace EyeSoft.Core.Test.Security.Cryptography
 {
-	using System;
-	using System.Linq;
+    using System;
+    using System.Linq;
+    using Core.Security.Cryptography;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
+    using Text;
 
-	using EyeSoft.Security.Cryptography;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class UniqueKeyTest
 	{
 		[TestMethod]

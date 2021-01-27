@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Runtime.InteropServices
+﻿namespace EyeSoft.Core.Runtime.InteropServices
 {
 	public interface INetworkChecker
 	{

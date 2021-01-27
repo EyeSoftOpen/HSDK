@@ -1,4 +1,4 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core.Reflection
 {
     using System;
     using System.CodeDom;

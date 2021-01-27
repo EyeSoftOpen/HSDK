@@ -1,11 +1,10 @@
-namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels
+namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels.Validate
 {
-	using EyeSoft.Accounting.Italian;
-	using EyeSoft.FluentValidation;
+    using Accounting.Italian.FiscalCode;
+    using FluentValidation;
+    using global::FluentValidation;
 
-	using global::FluentValidation;
-
-	public class ValidateFiscalCodeViewModelValidator : FluentValidator<ValidateFiscalCodeViewModel>
+    public class ValidateFiscalCodeViewModelValidator : FluentValidator<ValidateFiscalCodeViewModel>
 	{
 		public ValidateFiscalCodeViewModelValidator()
 		{

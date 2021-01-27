@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.IO
+﻿namespace EyeSoft.Core.IO
 {
-	using System.Collections.Generic;
-	using System.IO;
+    using System.Collections.Generic;
+    using System.IO;
+    using Security.Cryptography;
 
-	using EyeSoft.Security.Cryptography;
-
-	public static class FileInfoExtensions
+    public static class FileInfoExtensions
 	{
 		public static IEnumerable<string> GetLines(this IFileInfo fileInfo)
 		{

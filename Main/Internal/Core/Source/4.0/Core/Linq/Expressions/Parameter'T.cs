@@ -1,10 +1,10 @@
-namespace EyeSoft.Linq.Expressions
+namespace EyeSoft.Core.Linq.Expressions
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq.Expressions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq.Expressions;
 
-	internal class Parameter<T> : IParameter<T>
+    internal class Parameter<T> : IParameter<T>
 	{
 		public Parameter(Expression<Func<T>> expression)
 		{

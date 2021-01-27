@@ -1,8 +1,9 @@
 namespace EyeSoft.ServiceLocator
 {
 	using System;
+    using Core;
 
-	public abstract class DependencyContainer : ResolverContainer, IDependencyContainer
+    public abstract class DependencyContainer : ResolverContainer, IDependencyContainer
 	{
 		protected DependencyContainer(bool throwExceptionOnMissingComponent = true)
 			: base(throwExceptionOnMissingComponent)

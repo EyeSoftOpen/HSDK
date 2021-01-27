@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Reflection.Compression
+﻿namespace EyeSoft.Core.Test.Reflection.Compression
 {
-	using System.Text;
+    using System.Text;
+    using Core.Reflection;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Reflection;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class AssemblyExtensionsCompressionTest
 	{
 		[TestMethod]

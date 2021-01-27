@@ -1,12 +1,11 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Text;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using Compression;
 
-	using EyeSoft.IO.Compression;
-
-	public interface IStorage
+    public interface IStorage
 	{
 		IFileInfo File(string path);
 

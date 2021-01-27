@@ -1,12 +1,10 @@
 ﻿namespace EyeSoft.Windows.Model.Test
 {
 	using System.ComponentModel;
-
-	using EyeSoft.Extensions;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
+    using Core.Extensions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
 	[TestClass]
 	public class ObjectEventsExtensionsTest

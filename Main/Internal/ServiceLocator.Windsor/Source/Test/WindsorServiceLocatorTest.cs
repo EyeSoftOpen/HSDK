@@ -1,6 +1,7 @@
 namespace EyeSoft.ServiceLocator.Windsor.Test
 {
-	using EyeSoft.ServiceLocator.Test;
+    using Core;
+    using EyeSoft.ServiceLocator.Test;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 

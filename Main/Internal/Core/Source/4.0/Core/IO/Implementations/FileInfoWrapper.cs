@@ -1,7 +1,6 @@
-namespace EyeSoft.IO
+namespace EyeSoft.Core.IO
 {
     using System.IO;
-    using System.Security.AccessControl;
 
     internal sealed class FileInfoWrapper : FileSystemInfoWrapper, IFileInfo
     {

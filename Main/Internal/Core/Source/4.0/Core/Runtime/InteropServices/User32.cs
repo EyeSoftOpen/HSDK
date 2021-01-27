@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Runtime.InteropServices
+﻿namespace EyeSoft.Core.Runtime.InteropServices
 {
-	using System;
-	using System.Runtime.InteropServices;
+    using System;
+    using System.Runtime.InteropServices;
 
-	public static class User32
+    public static class User32
 	{
 		public const int Show = 5;
 		public const int Restore = 9;

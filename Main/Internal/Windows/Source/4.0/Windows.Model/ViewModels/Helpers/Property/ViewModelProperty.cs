@@ -1,9 +1,9 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property
 {
-	using System;
-	using System.Reflection;
+    using System;
+    using System.Reflection;
 
-	internal class ViewModelProperty
+    internal class ViewModelProperty
 	{
 		protected readonly PropertyChanges changedActions = new PropertyChanges();
 

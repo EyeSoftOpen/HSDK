@@ -1,8 +1,8 @@
-namespace EyeSoft.Net.Mail
+namespace EyeSoft.Core.Net.Mail
 {
-	using System;
+    using System;
 
-	public static class SmtpClientFactory
+    public static class SmtpClientFactory
 	{
 		private static readonly Singleton<Func<ISmtpClient>> singletonInstance =
 			new Singleton<Func<ISmtpClient>>(() => () => new SmtpClientWrapper());

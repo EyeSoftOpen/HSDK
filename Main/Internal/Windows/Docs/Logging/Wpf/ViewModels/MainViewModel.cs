@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Docs.Logging.Wpf.ViewModels
+﻿namespace EyeSoft.Docs.Logging.Windows.ViewModels
 {
-	using System;
-	using System.Windows.Input;
+    using System;
+    using System.Windows.Input;
+    using EyeSoft.Windows.Model.Collections.ObjectModel;
+    using EyeSoft.Windows.Model.ViewModels;
 
-	using EyeSoft.Windows.Model;
-	using EyeSoft.Windows.Model.Collections.ObjectModel;
-
-	public class MainViewModel : AutoRegisterViewModel
+    public class MainViewModel : AutoRegisterViewModel
 	{
 		private readonly IObservableCollection<ExceptionViewModel> exceptions;
 

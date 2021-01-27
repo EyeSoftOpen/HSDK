@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Calendar
+﻿namespace EyeSoft.Core.Calendar
 {
 	public enum CalendarView
 	{

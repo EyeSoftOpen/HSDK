@@ -1,8 +1,8 @@
-namespace EyeSoft.Calendar
+namespace EyeSoft.Core.Calendar
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public class HolidayFactory
+    public class HolidayFactory
 	{
 		private readonly Holidays holidays;
 

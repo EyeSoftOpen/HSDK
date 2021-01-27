@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Data.SqlClient.Helper
+﻿namespace EyeSoft.Data.SqlClient.Helper.Base
 {
-	using System.Data.SqlClient;
+    using System.Data.SqlClient;
 
-	public abstract class HelperCommand : IHelperCommand
+    public abstract class HelperCommand : IHelperCommand
 	{
 		protected readonly SqlCommand command;
 

@@ -1,10 +1,9 @@
-using System;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class ObjectExtensionsTest
+    using System;
+    using NUnit.Framework;
+
+    public class ObjectExtensionsTest
 	{
 		public class A
 		{

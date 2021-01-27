@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Windows.Model.Test.ObjectModel
+﻿namespace EyeSoft.Windows.Model.Test.Collections.ObjectModel
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Model.Collections.Filter;
 
-	using EyeSoft.Windows.Model.Collections;
-
-	internal class Subject : IFilterable
+    internal class Subject : IFilterable
 	{
 		public string FirstName { get; set; }
 

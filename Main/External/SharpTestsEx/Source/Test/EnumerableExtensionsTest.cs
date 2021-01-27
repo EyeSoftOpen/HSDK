@@ -1,11 +1,10 @@
-using System;
-using System.Collections.Generic;
-using NUnit.Framework;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class EnumerableExtensionsTest
+    using System;
+    using System.Collections.Generic;
+    using NUnit.Framework;
+
+    public class EnumerableExtensionsTest
 	{
 		[Test]
 		public void PositionOfFirstDifferenceParameters()

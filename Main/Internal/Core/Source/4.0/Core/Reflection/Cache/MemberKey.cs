@@ -1,8 +1,8 @@
-namespace EyeSoft.Reflection
+namespace EyeSoft.Core.Reflection
 {
-	using System;
+    using System;
 
-	internal class MemberKey
+    internal class MemberKey
 	{
 		public MemberKey(Type type, string memberName)
 		{

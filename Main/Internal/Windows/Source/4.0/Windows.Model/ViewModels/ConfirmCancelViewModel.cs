@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.ViewModels
 {
-	using System.Windows.Input;
+    using System.Windows.Input;
 
-	public abstract class ConfirmCancelViewModel : AutoRegisterViewModel, IConfirmCancelViewModel
+    public abstract class ConfirmCancelViewModel : AutoRegisterViewModel, IConfirmCancelViewModel
 	{
 		private bool cancelled;
 

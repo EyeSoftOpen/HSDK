@@ -1,17 +1,12 @@
-﻿namespace EyeSoft.Windows.Model.Test
+﻿namespace EyeSoft.Windows.Model.Test.ServiceProxy.ServiceFactory.Collection.Direct
 {
-	using System.Threading;
-    using EyeSoft.AutoMapper;
-    using EyeSoft.Windows.Model.Collections.ObjectModel;
-	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
-	using EyeSoft.Windows.Model.Demo.Contract;
-	using EyeSoft.Windows.Model.Demo.ViewModels;
-    using EyeSoft.Windows.Model.Test.ObjectModel;
+    using System.Threading;
+    using Demo.ViewModels;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.Collections.ObjectModel;
+    using SharpTestsEx;
 
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ServiceFactoryCollectionTest : ServiceFactoryTest
 	{
 		[TestMethod]

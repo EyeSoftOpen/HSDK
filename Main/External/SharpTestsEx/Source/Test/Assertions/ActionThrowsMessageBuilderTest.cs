@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.Assertions;
-
-namespace SharpTestsEx.Tests.Assertions
+namespace SharpTestsEx.Test.Assertions
 {
-	
-	public class ActionThrowsMessageBuilderTest
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.Assertions;
+
+    public class ActionThrowsMessageBuilderTest
 	{
 		[Test]
 		public void WhenActualIsNull_ThenContainTheActionAndTheExpected()

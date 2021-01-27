@@ -1,11 +1,11 @@
-namespace EyeSoft.Accounting.Italian
+namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
-	using System.Collections.Generic;
-	using System.Linq;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Core.Collections.Generic;
+    using Core.Extensions;
 
-	using EyeSoft.Collections.Generic;
-
-	internal class RestCode
+    internal class RestCode
 	{
 		private readonly string value;
 

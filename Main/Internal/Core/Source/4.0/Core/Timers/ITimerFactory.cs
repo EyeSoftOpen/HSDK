@@ -1,8 +1,8 @@
-namespace EyeSoft.Timers
+namespace EyeSoft.Core.Timers
 {
-	using System;
+    using System;
 
-	public interface ITimerFactory
+    public interface ITimerFactory
 	{
 		ITimer Create(int interval, Action action);
 

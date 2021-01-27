@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.DialogService
 {
-	using System.Windows;
+    using System.Windows;
 
-	public interface IMessageBox
+    public interface IMessageBox
 	{
 		MessageBoxResult ShowBox(
 			Window window,

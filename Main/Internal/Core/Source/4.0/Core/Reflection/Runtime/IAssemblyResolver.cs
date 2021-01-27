@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
-	using System.Reflection;
+    using System.Reflection;
 
-	public interface IAssemblyResolver
+    public interface IAssemblyResolver
 	{
 		Assembly Resolve(AssemblyName name);
 

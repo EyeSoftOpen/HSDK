@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Timers
+﻿namespace EyeSoft.Core.Timers
 {
-	using System;
+    using System;
 
-	public static class TimerFactory
+    public static class TimerFactory
 	{
 		private static readonly Singleton<ITimerFactory> singletonInstance = new Singleton<ITimerFactory>(() => new DefaultTimerFactory());
 

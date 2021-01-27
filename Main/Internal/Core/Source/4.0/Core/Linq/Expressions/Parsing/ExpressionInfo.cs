@@ -1,13 +1,12 @@
-namespace EyeSoft.Linq.Expressions.Parsing
+namespace EyeSoft.Core.Linq.Expressions.Parsing
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
-	using System.Linq.Expressions;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq.Expressions;
+    using Collections.Generic;
 
-	using EyeSoft.Collections.Generic;
-
-	public class ExpressionInfo
+    public class ExpressionInfo
 	{
 		private ExpressionInfo(IEnumerable<string> tokens, Type type, string[] expressionTokens, string parameterName)
 		{

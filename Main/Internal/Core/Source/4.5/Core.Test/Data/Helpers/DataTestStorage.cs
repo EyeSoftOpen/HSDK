@@ -1,15 +1,13 @@
-﻿namespace EyeSoft.Test.Data.Helpers
+﻿namespace EyeSoft.Core.Test.Data.Helpers
 {
-	using System;
-	using System.Collections.Generic;
-	using System.IO;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using Core.IO;
+    using Moq;
 
-	using EyeSoft.IO;
-
-	using Moq;
-
-	internal class DataTestStorage : DefaultStorage
+    internal class DataTestStorage : DefaultStorage
 	{
 		private readonly bool fileExists;
 

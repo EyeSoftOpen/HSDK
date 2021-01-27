@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Reflection
+﻿namespace EyeSoft.Core.Reflection
 {
     using System;
     using System.Linq;
     using System.Reflection;
     using System.Runtime.CompilerServices;
-
-    using EyeSoft.Extensions;
+    using Extensions;
 
     public static class MemberInfoExtensions
     {

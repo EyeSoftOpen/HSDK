@@ -1,13 +1,9 @@
-﻿namespace MassTransit.NewIdTests
+﻿namespace EyeSoft.Core.Test.SequentialIdentity
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
-    using System.Linq;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using EyeSoft.SequentialIdentity;
-    using EyeSoft.SequentialIdentity.NewIdProviders;
+    using Core.SequentialIdentity;
+    using Core.SequentialIdentity.NewIdProviders;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

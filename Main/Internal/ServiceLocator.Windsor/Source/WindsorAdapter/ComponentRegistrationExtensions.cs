@@ -3,8 +3,9 @@
 	using System;
 
 	using Castle.MicroKernel.Registration;
+    using Core;
 
-	internal static class ComponentRegistrationExtensions
+    internal static class ComponentRegistrationExtensions
 	{
 		public static IRegisterLocator Include<TContract>(
 			this ComponentRegistration<TContract> componentRegistration,

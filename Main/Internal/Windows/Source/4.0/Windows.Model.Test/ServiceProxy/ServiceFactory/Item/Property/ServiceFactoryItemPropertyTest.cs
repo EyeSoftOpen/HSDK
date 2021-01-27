@@ -1,16 +1,16 @@
-﻿namespace EyeSoft.Windows.Model.Test.Item.Property
+﻿namespace EyeSoft.Windows.Model.Test.ServiceProxy.ServiceFactory.Item.Property
 {
-	using System.Threading;
+    using System.Threading;
+    using Demo.Configuration.Helpers;
+    using Demo.Contract;
+    using Demo.ViewModels;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Model.ServiceProxy;
+    using Model.ViewModels;
+    using SharpTestsEx;
 
-	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
-	using EyeSoft.Windows.Model.Demo.Contract;
-	using EyeSoft.Windows.Model.Demo.ViewModels;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ServiceFactoryItemPropertyTest : ServiceFactoryTest
 	{
 		[TestMethod]

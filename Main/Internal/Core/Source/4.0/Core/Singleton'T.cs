@@ -1,6 +1,7 @@
-﻿namespace EyeSoft
+﻿namespace EyeSoft.Core
 {
     using System;
+    using Reflection;
 
     public class Singleton<T> where T : class
     {

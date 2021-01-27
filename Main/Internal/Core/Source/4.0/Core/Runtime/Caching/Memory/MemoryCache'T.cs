@@ -1,13 +1,13 @@
-namespace EyeSoft.Runtime.Caching
+namespace EyeSoft.Core.Runtime.Caching
 {
-	using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Globalization;
-	using System.Linq;
-	using System.Runtime.Caching;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Runtime.Caching;
 
-	public class MemoryCache<T> : ICache<T>
+    public class MemoryCache<T> : ICache<T>
 	{
 		private readonly System.Runtime.Caching.MemoryCache cache;
 

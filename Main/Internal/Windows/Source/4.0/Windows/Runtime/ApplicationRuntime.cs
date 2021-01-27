@@ -4,12 +4,11 @@
 	using System.Collections.Generic;
 	using System.IO;
 	using System.Linq;
+    using Core.Diagnostic;
+    using Core.IO;
+    using Core.Reflection;
 
-	using EyeSoft.Diagnostic;
-	using EyeSoft.IO;
-	using EyeSoft.Reflection;
-
-	public static class ApplicationRuntime
+    public static class ApplicationRuntime
 	{
 		private const InstallationType DefaultInstallationType = InstallationType.LocalUser;
 

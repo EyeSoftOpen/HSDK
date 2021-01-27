@@ -4,11 +4,9 @@
 	using System.IO;
 	using System.Linq;
 	using System.Windows;
-
-	using Exceptionless;
-
-	using EyeSoft.IO;
-	using EyeSoft.Windows;
+    using Core.IO;
+    using Exceptionless;
+    using EyeSoft.Windows;
 	using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Runtime;
 

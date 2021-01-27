@@ -1,10 +1,9 @@
-namespace EyeSoft.Mapping
+namespace EyeSoft.Core.Mapping
 {
-	using System.Reflection;
+    using System.Reflection;
+    using Extensions;
 
-	using EyeSoft.Extensions;
-
-	internal static class AccessorHelper
+    internal static class AccessorHelper
 	{
 		public static Accessors Get(MemberInfo member)
 		{

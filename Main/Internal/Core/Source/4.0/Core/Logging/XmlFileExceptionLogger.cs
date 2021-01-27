@@ -1,11 +1,10 @@
-﻿namespace EyeSoft.Logging
+﻿namespace EyeSoft.Core.Logging
 {
-	using System;
-	using System.IO;
+    using System;
+    using System.IO;
+    using IO;
 
-	using EyeSoft.IO;
-
-	public class XmlFileExceptionLogger : ILogger
+    public class XmlFileExceptionLogger : ILogger
 	{
 		private readonly string logFolder;
 

@@ -1,8 +1,9 @@
-﻿namespace EyeSoft.Windows.Model.Test
+﻿namespace EyeSoft.Windows.Model.Test.ServiceProxy.ServiceFactory
 {
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	[TestClass]
+    [TestClass]
 	public abstract class ServiceFactoryTest
 	{
 		protected readonly ServiceFactoryHelper factoryHelper = ServiceFactoryHelper.Create();

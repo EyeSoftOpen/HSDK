@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Mapping
+﻿namespace EyeSoft.Core.Mapping
 {
-	using System.Linq;
+    using System.Linq;
 
-	public interface IProjection
+    public interface IProjection
 	{
 		IQueryable<TResult> Project<TResult>(IQueryable source);
 

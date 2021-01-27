@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Calendar
+﻿namespace EyeSoft.Core.Test.Calendar
 {
-	using System;
+    using System;
+    using Core.Calendar;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Calendar;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class SchedulingStartRecurrencyDateTest
 	{
 		private const int Year = 2013;

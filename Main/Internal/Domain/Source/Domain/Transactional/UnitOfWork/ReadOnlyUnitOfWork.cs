@@ -1,15 +1,16 @@
-namespace EyeSoft.Domain.Transactional
+namespace EyeSoft.Domain.Transactional.UnitOfWork
 {
-	using System;
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.Reflection;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Reflection;
+    using Aggregates;
+    using Repositories;
+    using Repositories.Implementations;
 
-	using EyeSoft.Domain.Transactional.Implementations;
-
-	public abstract class ReadOnlyUnitOfWork : IDisposable
+    public abstract class ReadOnlyUnitOfWork : IDisposable
 	{
 		private readonly IReadTransactionalCollection transactionalCollection;
 

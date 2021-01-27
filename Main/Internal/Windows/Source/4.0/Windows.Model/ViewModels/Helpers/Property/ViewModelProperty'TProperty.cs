@@ -1,12 +1,12 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property
 {
-	using System;
-	using System.Linq;
-	using System.Linq.Expressions;
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using Core.Reflection;
+    using FluentInterface;
 
-	using EyeSoft.Reflection;
-
-	internal class ViewModelProperty<TProperty> : ViewModelProperty, IViewModelProperty<TProperty>
+    internal class ViewModelProperty<TProperty> : ViewModelProperty, IViewModelProperty<TProperty>
 	{
 		private readonly Action<string, string[]> addToDependent;
 

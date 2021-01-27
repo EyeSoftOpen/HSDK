@@ -1,8 +1,8 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System;
+    using System;
 
-	public interface IDisposableFactory
+    public interface IDisposableFactory
 	{
 		T Create<T>() where T : IDisposable;
 	}

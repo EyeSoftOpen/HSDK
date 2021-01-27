@@ -2,8 +2,9 @@ namespace EyeSoft.Data.SqlClient.Helper
 {
 	using System.Data;
 	using System.Data.SqlClient;
+    using Base;
 
-	public class CreateDatabaseCommand : IHelperCommand
+    public class CreateDatabaseCommand : IHelperCommand
 	{
 		private const string CreateDataBaseSql = "CREATE DATABASE [{DbName}]";
 

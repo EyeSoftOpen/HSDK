@@ -1,10 +1,11 @@
-﻿namespace EyeSoft.Normalization
+﻿namespace EyeSoft.Core.Normalization
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using Reflection;
 
-	public class DefaultNormalizer
+    public class DefaultNormalizer
 	{
 		private readonly IDictionary<string, EnumerablePropertyInfo> stringPropertiesCache =
 			new Dictionary<string, EnumerablePropertyInfo>();

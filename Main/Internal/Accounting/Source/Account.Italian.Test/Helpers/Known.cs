@@ -1,8 +1,9 @@
 namespace EyeSoft.Accounting.Italian.Test.Helpers
 {
 	using System;
+    using FiscalCode;
 
-	internal static class Known
+    internal static class Known
 	{
 		public static class FiscalCodes
 		{

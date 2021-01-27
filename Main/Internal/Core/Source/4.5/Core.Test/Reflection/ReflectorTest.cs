@@ -1,15 +1,12 @@
-﻿namespace EyeSoft.Test.Reflection
+﻿namespace EyeSoft.Core.Test.Reflection
 {
-	using System.Linq;
+    using System.Linq;
+    using Core.Reflection;
+    using Helpers;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Reflection;
-	using EyeSoft.Test.Helpers;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ReflectorTest
 	{
 		[TestMethod]

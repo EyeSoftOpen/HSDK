@@ -1,12 +1,10 @@
-namespace EyeSoft.Test.Mapping.Strategies
+namespace EyeSoft.Core.Test.Mapping.Strategies
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
+    using Core.Mapping.Strategies;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using EyeSoft.Mapping.Strategies;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	[TestClass]
+    [TestClass]
 	public class CollectionPropertyStrategyTest
 		: PropertyStrategyTest<CollectionMemberStrategy>
 	{

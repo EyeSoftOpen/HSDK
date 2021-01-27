@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Windows.Model.Test.ObjectModel
+﻿namespace EyeSoft.Windows.Model.Test.Collections.ObjectModel
 {
 	internal static class Known
 	{

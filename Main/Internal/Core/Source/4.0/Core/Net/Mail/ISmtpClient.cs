@@ -1,11 +1,11 @@
-namespace EyeSoft.Net.Mail
+namespace EyeSoft.Core.Net.Mail
 {
-	using System;
-	using System.Net;
-	using System.Net.Mail;
-	using System.Security.Cryptography.X509Certificates;
+    using System;
+    using System.Net;
+    using System.Net.Mail;
+    using System.Security.Cryptography.X509Certificates;
 
-	public interface ISmtpClient : IDisposable
+    public interface ISmtpClient : IDisposable
 	{
 		SmtpDeliveryMethod DeliveryMethod { get; set; }
 

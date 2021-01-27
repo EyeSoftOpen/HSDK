@@ -1,8 +1,8 @@
-namespace EyeSoft.Test.Helpers
+namespace EyeSoft.Core.Test.Helpers
 {
-	using System;
+    using System;
 
-	internal static class KnownCode
+    internal static class KnownCode
 	{
 		public static readonly string VoidMethod =
 			"namespace EyeSoft.Sample" + Environment.NewLine +

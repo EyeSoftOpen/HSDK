@@ -1,8 +1,8 @@
-namespace EyeSoft.Linq.Expressions.Parsing
+namespace EyeSoft.Core.Linq.Expressions.Parsing
 {
-	using System.Linq.Expressions;
+    using System.Linq.Expressions;
 
-	public class ExpressionResult
+    public class ExpressionResult
 	{
 		private ExpressionResult(Expression expression, int tokensParsed)
 		{

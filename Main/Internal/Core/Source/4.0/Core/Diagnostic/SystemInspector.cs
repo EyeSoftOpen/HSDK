@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Diagnostic
+﻿namespace EyeSoft.Core.Diagnostic
 {
-	using System;
+    using System;
 
-	public static class SystemInspector
+    public static class SystemInspector
 	{
 		public static class Debugger
 		{

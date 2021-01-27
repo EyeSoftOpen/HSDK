@@ -1,9 +1,9 @@
-namespace EyeSoft.Test.Helpers
+namespace EyeSoft.Core.Test.Helpers
 {
-	using System.Collections.Generic;
-	using System.Diagnostics;
+    using System.Collections.Generic;
+    using System.Diagnostics;
 
-	[DebuggerDisplay("{Title}")]
+    [DebuggerDisplay("{Title}")]
 	public class XmlSerializable
 	{
 		public string Title { get; set; }

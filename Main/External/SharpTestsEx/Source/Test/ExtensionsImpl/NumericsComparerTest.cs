@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.ExtensionsImpl;
-
-namespace SharpTestsEx.Tests.ExtensionsImpl
+namespace SharpTestsEx.Test.ExtensionsImpl
 {
-	
-	public class NumericsComparerTest
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.ExtensionsImpl;
+
+    public class NumericsComparerTest
 	{
 		[Test]
 		public void CanCompareDifferentNumericTypes()

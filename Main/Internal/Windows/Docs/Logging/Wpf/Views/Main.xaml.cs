@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Docs.Logging.Wpf.Views
+﻿namespace EyeSoft.Docs.Logging.Windows.Views
 {
 	public partial class Main
 	{

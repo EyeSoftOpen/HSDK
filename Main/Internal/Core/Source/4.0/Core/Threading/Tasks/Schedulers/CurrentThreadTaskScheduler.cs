@@ -1,15 +1,13 @@
-﻿namespace EyeSoft.Threading.Tasks.Schedulers
+﻿namespace EyeSoft.Core.Threading.Tasks.Schedulers
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Diagnostics;
-	using System.Linq;
-	using System.Threading.Tasks;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Diagnostic;
+    using Logging;
 
-	using EyeSoft.Diagnostic;
-	using EyeSoft.Logging;
-
-	/// <summary>Provides a task scheduler that runs tasks on the current thread.</summary>
+    /// <summary>Provides a task scheduler that runs tasks on the current thread.</summary>
 	public class CurrentThreadTaskScheduler : TaskScheduler, ILoggerTaskScheduler
 	{
 		/// <summary>Gets the maximum degree of parallelism for this scheduler.</summary>

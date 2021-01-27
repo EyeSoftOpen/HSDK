@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Diagnostic
+﻿namespace EyeSoft.Core.Diagnostic
 {
-	using System;
-	using System.Diagnostics;
-	using System.Runtime.InteropServices;
+    using System;
+    using System.Diagnostics;
+    using System.Runtime.InteropServices;
+    using Runtime.InteropServices;
 
-	using EyeSoft.Runtime.InteropServices;
-
-	public static class ProccessExtensions
+    public static class ProccessExtensions
 	{
 		public static void SendStopMessage(this Process process)
 		{

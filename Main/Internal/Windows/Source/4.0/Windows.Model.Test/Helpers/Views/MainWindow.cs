@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model.Test.Helpers
+namespace EyeSoft.Windows.Model.Test.Helpers.Views
 {
-	using System.Windows;
+    using System.Windows;
 
-	internal class MainWindow : Window
+    internal class MainWindow : Window
 	{
 	}
 }

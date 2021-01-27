@@ -4,8 +4,9 @@
 	using EyeSoft.Windows;
 	using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Model.Conventions;
+    using EyeSoft.Windows.Model.DialogService;
 
-	public partial class App
+    public partial class App
 	{
 		public App()
 		{

@@ -3,15 +3,13 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-
-	using EyeSoft.Collections.Generic;
-	using EyeSoft.Conventions;
-	using EyeSoft.Mapping;
-	using EyeSoft.Mapping.Conventions;
-	using EyeSoft.Mapping.Data;
-	using EyeSoft.Reflection;
-
-	using NHibernate.Cfg.MappingSchema;
+    using Core.Collections.Generic;
+    using Core.Conventions;
+    using Core.Mapping;
+    using Core.Mapping.Conventions;
+    using Core.Mapping.Data;
+    using Core.Reflection;
+    using NHibernate.Cfg.MappingSchema;
 	using NHibernate.Mapping.ByCode;
 	using NHibernate.Mapping.ByCode.Conformist;
 

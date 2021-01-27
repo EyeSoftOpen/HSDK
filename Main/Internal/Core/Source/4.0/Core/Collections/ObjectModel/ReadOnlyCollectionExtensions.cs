@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Collections.ObjectModel
+﻿namespace EyeSoft.Core.Collections.ObjectModel
 {
-	using System.Collections.ObjectModel;
-	using System.Collections.Specialized;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
 
-	public static class ReadOnlyCollectionExtensions
+    public static class ReadOnlyCollectionExtensions
 	{
 		public static INotifyCollectionChanged AsNotifyCollectionChanged<T>(
 			this ReadOnlyObservableCollection<T> collection)

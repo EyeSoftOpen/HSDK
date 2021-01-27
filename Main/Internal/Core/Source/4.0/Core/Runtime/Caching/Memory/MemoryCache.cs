@@ -1,9 +1,9 @@
-namespace EyeSoft.Runtime.Caching
+namespace EyeSoft.Core.Runtime.Caching
 {
-	using System;
-	using System.Globalization;
+    using System;
+    using System.Globalization;
 
-	public class MemoryCache : MemoryCache<object>, ICache
+    public class MemoryCache : MemoryCache<object>, ICache
 	{
 		public MemoryCache()
 			: base(new System.Runtime.Caching.MemoryCache(DateTime.Now.Ticks.ToString(CultureInfo.InvariantCulture)))

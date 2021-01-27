@@ -1,12 +1,12 @@
-namespace EyeSoft.Windows.Model
+namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Reflection;
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using Core.Collections.Concurrent;
+    using FluentInterface;
 
-	using EyeSoft.Collections.Concurrent;
-
-	internal class ViewModelProperties
+    internal class ViewModelProperties
 	{
 		private readonly INotifyViewModel notifyViewModelViewModel;
 
@@ -83,7 +83,7 @@ namespace EyeSoft.Windows.Model
 			if (!viewModelProperties.ContainsKey(propertyName))
 			{
 				var dependentProperty =
-					Model.ViewModelProperty.Create(propertyInfo, notifyViewModelViewModel, AddDependencies);
+					Helpers.Property.ViewModelProperty.Create(propertyInfo, notifyViewModelViewModel, AddDependencies);
 
 				viewModelProperties.Add(propertyName, dependentProperty);
 			}

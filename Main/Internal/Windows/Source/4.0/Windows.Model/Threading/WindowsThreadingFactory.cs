@@ -4,10 +4,9 @@
 	using System.Threading.Tasks;
 	using System.Windows;
 	using System.Windows.Threading;
+    using Core.Threading.Tasks;
 
-	using EyeSoft.Threading.Tasks;
-
-	public class WindowsThreadingFactory
+    public class WindowsThreadingFactory
 	{
 		static WindowsThreadingFactory()
 		{

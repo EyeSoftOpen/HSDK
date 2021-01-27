@@ -1,9 +1,10 @@
-namespace EyeSoft.Security.Cryptography
+namespace EyeSoft.Core.Security.Cryptography
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Security.Cryptography;
+    using Extensions;
 
     internal class DefaultHashing
     {

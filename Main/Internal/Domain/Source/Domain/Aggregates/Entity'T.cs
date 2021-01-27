@@ -1,9 +1,9 @@
-namespace EyeSoft.Domain
+namespace EyeSoft.Domain.Aggregates
 {
-	using System;
-	using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-	[Serializable]
+    [Serializable]
 	public abstract class Entity<TKey> : IEntity where TKey : IComparable<TKey>
 	{
 		protected Entity()

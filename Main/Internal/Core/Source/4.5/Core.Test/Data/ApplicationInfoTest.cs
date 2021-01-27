@@ -1,14 +1,11 @@
-﻿namespace EyeSoft.Test.Data
+﻿namespace EyeSoft.Core.Test.Data
 {
-	using System;
+    using System;
+    using Core.Data;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using SharpTestsEx;
 
-	using EyeSoft.Data;
-
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public class ApplicationInfoTest
 	{
 		private readonly ApplicationInfo applicationInfo = new ApplicationInfo("EyeSoft", "Test");

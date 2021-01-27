@@ -1,10 +1,10 @@
-namespace EyeSoft.Xml.Serialization
+namespace EyeSoft.Core.Xml.Serialization
 {
-	using System.IO;
-	using System.Xml;
-	using System.Xml.Xsl;
+    using System.IO;
+    using System.Xml;
+    using System.Xml.Xsl;
 
-	public class XsltTransformer
+    public class XsltTransformer
 	{
 		private readonly XslCompiledTransform xslTransform =
 			new XslCompiledTransform();

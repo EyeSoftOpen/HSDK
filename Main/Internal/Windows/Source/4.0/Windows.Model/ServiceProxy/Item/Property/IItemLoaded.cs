@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.Item.Property
+﻿namespace EyeSoft.Windows.Model.ServiceProxy.Item.Property
 {
-	using System;
+    using System;
 
-	public interface IItemLoaded<out TService, out TProperty>
+    public interface IItemLoaded<out TService, out TProperty>
 	{
 		IItemPropertyFilled<TProperty> Fill<T>(Func<TService, T> func);
 	}

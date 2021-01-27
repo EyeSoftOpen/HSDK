@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.IO.Compression
+﻿namespace EyeSoft.Core.IO.Compression
 {
-	using System.IO;
-	using System.IO.Compression;
+    using System.IO;
+    using System.IO.Compression;
 
-	public class GzipCompressor : ICompressor
+    public class GzipCompressor : ICompressor
 	{
 		public Stream Compress(Stream source)
 		{

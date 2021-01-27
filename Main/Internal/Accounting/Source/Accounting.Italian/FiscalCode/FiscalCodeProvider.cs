@@ -1,6 +1,8 @@
-﻿namespace EyeSoft.Accounting.Italian
+﻿namespace EyeSoft.Accounting.Italian.FiscalCode
 {
-	public class FiscalCodeProvider
+    using Parts;
+
+    public class FiscalCodeProvider
 	{
 		public FiscalCode Calculate(NaturalPerson naturalPerson, AreaCode areaCode)
 		{

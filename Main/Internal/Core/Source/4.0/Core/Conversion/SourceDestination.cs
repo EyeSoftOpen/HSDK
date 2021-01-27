@@ -1,8 +1,8 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System;
+    using System;
 
-	internal class SourceDestination
+    internal class SourceDestination
 	{
 		internal readonly Type sourceType;
 		internal readonly Type destinationType;

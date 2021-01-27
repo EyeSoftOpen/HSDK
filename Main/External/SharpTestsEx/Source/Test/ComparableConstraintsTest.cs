@@ -1,11 +1,10 @@
-using System;
-using NUnit.Framework;
-using SharpTestsEx.ExtensionsImpl;
-
-namespace SharpTestsEx.Tests
+namespace SharpTestsEx.Test
 {
-	
-	public class ComparableConstraintsFixture
+    using System;
+    using NUnit.Framework;
+    using SharpTestsEx.ExtensionsImpl;
+
+    public class ComparableConstraintsFixture
 	{
 		[Test]
 		public void ShouldWork()

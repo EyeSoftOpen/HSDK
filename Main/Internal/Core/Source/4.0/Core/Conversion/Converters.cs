@@ -1,8 +1,8 @@
-namespace EyeSoft
+namespace EyeSoft.Core
 {
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 
-	public static class Converters
+    public static class Converters
 	{
 		private static readonly IDictionary<SourceDestination, object> converterDictionary =
 			new Dictionary<SourceDestination, object>(new SourceDestinationComparer());

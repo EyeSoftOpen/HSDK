@@ -1,8 +1,8 @@
-namespace EyeSoft.Messanging
+namespace EyeSoft.Core.Messanging
 {
-	using System;
+    using System;
 
-	public class ExceptionMessage<TSender, TException>
+    public class ExceptionMessage<TSender, TException>
 		: Message<TSender>
 		where TException : Exception
 	{

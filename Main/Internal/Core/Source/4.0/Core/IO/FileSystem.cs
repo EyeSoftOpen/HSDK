@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.IO
+﻿namespace EyeSoft.Core.IO
 {
-	using System.IO;
-	using System.Reflection;
+    using System.IO;
+    using System.Reflection;
 
-	public static class FileSystem
+    public static class FileSystem
 	{
 		public static string GetCurrentDirectory()
 		{

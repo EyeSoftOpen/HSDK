@@ -2,11 +2,13 @@ namespace EyeSoft.Windows.Model
 {
 	using System.Diagnostics;
 	using System.Windows;
+    using Core;
+    using Core.Logging;
+    using Core.Threading.Tasks.Schedulers;
+    using ExceptionLogger;
+    using Execution;
 
-	using EyeSoft.Logging;
-	using EyeSoft.Threading.Tasks.Schedulers;
-
-	public static class ApplicationExtensions
+    public static class ApplicationExtensions
 	{
 		private static readonly Singleton<ExceptionHandler> singletonExceptionHandler = new Singleton<ExceptionHandler>();
 
