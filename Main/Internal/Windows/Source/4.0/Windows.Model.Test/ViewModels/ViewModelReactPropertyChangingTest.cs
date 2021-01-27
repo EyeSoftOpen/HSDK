@@ -44,16 +44,13 @@
 
 			public string Primary
 			{
-				get { return GetProperty<string>(); }
-				set { SetProperty(value); }
-			}
+				get => GetProperty<string>();
+                set => SetProperty(value);
+            }
 
-			public IEnumerable<Tuple<string, string>> ChangesLog
-			{
-				get { return changesLog; }
-			}
+			public IEnumerable<Tuple<string, string>> ChangesLog => changesLog;
 
-			private void AddChange(string propertyValue)
+            private void AddChange(string propertyValue)
 			{
 				changesLog.Add(primary, propertyValue);
 			}

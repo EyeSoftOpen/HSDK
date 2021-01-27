@@ -13,15 +13,15 @@
 
 		public string Name
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public string Address
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public override bool CanClose()
 		{

@@ -8,12 +8,9 @@ namespace SharpTestsEx.ExtensionsImpl
 		public StringConstraints(string actual) : base(actual) { }
 		public StringConstraints(string actual, Func<string> messageBuilder) : base(actual, messageBuilder) { }
 
-		public IStringBeConstraints Be
-		{
-			get { return new StringBeConstraints(this); }
-		}
+		public IStringBeConstraints Be => new StringBeConstraints(this);
 
-		public object Clone()
+        public object Clone()
 		{
 			return new StringConstraints(AssertionInfo.Actual, () => AssertionInfo.FailureMessage);
 		}

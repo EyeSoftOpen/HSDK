@@ -13,20 +13,20 @@
 
 		public int Value1
 		{
-			get { return GetProperty<int>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<int>();
+            private set => SetProperty(value);
+        }
 
 		public int Value2
 		{
-			get { return GetProperty<int>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<int>();
+            private set => SetProperty(value);
+        }
 
         public Area Area
         {
-            get { return GetProperty<Area>(); }
-            private set { SetProperty(value); }
+            get => GetProperty<Area>();
+            private set => SetProperty(value);
         }
 
         public ICommand UpdateValueCommand { get; private set; }

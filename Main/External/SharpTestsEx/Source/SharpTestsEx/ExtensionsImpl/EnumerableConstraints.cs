@@ -11,17 +11,11 @@ namespace SharpTestsEx.ExtensionsImpl
 		public EnumerableConstraints(IEnumerable<T> actual) : base(actual) {}
 		public EnumerableConstraints(IEnumerable<T> actual, Func<string> messageBuilder) : base(actual, messageBuilder) {}
 
-		public IEnumerableBeConstraints<T> Be
-		{
-			get { return new EnumerableBeConstraints<T>(this); }
-		}
+		public IEnumerableBeConstraints<T> Be => new EnumerableBeConstraints<T>(this);
 
-		public IEnumerableHaveConstraints<T> Have
-		{
-			get { return new EnumerableHaveConstraints<T>(this); }
-		}
+        public IEnumerableHaveConstraints<T> Have => new EnumerableHaveConstraints<T>(this);
 
-		public object Clone()
+        public object Clone()
 		{
 			return new EnumerableConstraints<T>(AssertionInfo.Actual, () => AssertionInfo.FailureMessage);
 		}

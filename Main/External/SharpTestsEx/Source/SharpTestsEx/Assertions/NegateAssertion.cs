@@ -16,15 +16,9 @@ namespace SharpTestsEx.Assertions
 			source.Predicate = Properties.Resources.Negation + " " + source.Predicate;
 		}
 
-		public override string Predicate
-		{
-			get
-			{
-				return source.Predicate;
-			}
-		}
+		public override string Predicate => source.Predicate;
 
-		public override Func<TA, bool> Matcher
+        public override Func<TA, bool> Matcher
 		{
 			get
 			{

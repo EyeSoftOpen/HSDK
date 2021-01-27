@@ -15,9 +15,6 @@
 		    Task.Run(() => Enumerable.Range(1, 10000).ToList().ForEach(x => partyList.Add(new PartyItemViewModel(x, x * 2))));
 		}
 
-		public IEnumerable<PartyItemViewModel> PartyList
-		{
-			get { return partyList; }
-		}
+		public IEnumerable<PartyItemViewModel> PartyList => partyList;
     }
 }

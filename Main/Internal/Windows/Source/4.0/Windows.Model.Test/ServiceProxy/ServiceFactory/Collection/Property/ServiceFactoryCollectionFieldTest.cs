@@ -39,13 +39,7 @@
 		{
 			protected readonly IObservableCollection<CustomerViewModel> customerCollection = null;
 
-			public IEnumerable<CustomerViewModel> CustomerCollection
-			{
-				get
-				{
-					return customerCollection;
-				}
-			}
-		}
+			public IEnumerable<CustomerViewModel> CustomerCollection => customerCollection;
+        }
 	}
 }

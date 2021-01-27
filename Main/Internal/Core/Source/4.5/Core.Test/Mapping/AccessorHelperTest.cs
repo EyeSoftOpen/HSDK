@@ -69,11 +69,8 @@
 				this.test = test;
 			}
 
-			public string Test
-			{
-				get { return test; }
-			}
-		}
+			public string Test => test;
+        }
 
 		private class AutomaticPropertyAccessor
 		{
@@ -91,16 +88,10 @@
 
 			public string Test
 			{
-				get
-				{
-					return test;
-				}
+				get => test;
 
-				set
-				{
-					test = value;
-				}
-			}
+                set => test = value;
+            }
 		}
 	}
 }

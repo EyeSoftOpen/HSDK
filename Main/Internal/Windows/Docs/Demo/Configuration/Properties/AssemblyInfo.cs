@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2021")]
 
 [assembly: AssemblyTitle("EyeSoft.Windows.Model.Demo.Configuration")]
 [assembly: AssemblyProduct("EyeSoft.Windows.Model.Demo")]

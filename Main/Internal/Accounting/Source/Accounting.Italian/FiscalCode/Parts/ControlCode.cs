@@ -15,12 +15,9 @@ namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 			partialCode = string.Concat(lastNameCode, firstNameCode, yearCode, monthCode, dayCode, areaCode);
 		}
 
-		public char Char
-		{
-			get { return GetControlCode(partialCode); }
-		}
+		public char Char => GetControlCode(partialCode);
 
-		internal static char GetControlCode(string partialWithoutControlCode)
+        internal static char GetControlCode(string partialWithoutControlCode)
 		{
 			var sum = 0;
 

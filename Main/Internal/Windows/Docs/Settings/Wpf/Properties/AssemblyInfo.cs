@@ -7,7 +7,7 @@ using System.Windows;
 [assembly: AssemblyTitle("EyeSoft.Docs.Settings.Windows")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

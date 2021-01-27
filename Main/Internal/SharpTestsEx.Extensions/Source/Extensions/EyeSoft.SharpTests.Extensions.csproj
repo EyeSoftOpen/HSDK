@@ -10,7 +10,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <Company>EyeSoft</Company>
     <Description>Contains extensions for SharpTestsEx framework.</Description>
     <LangVersion>8.0</LangVersion>

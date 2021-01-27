@@ -7,12 +7,9 @@
 	{
 		private static readonly Singleton<ILocator> singleton = new Singleton<ILocator>();
 
-		public static ILocator Instance
-		{
-			get { return singleton.Instance; }
-		}
+		public static ILocator Instance => singleton.Instance;
 
-		public static void Set(ILocator locator)
+        public static void Set(ILocator locator)
 		{
 			singleton.Set(locator);
 		}

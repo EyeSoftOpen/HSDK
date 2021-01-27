@@ -24,22 +24,13 @@ namespace SharpTestsEx.Assertions
 			this.@operator = @operator;
 		}
 
-		public UnaryAssertion<TA> Left
-		{
-			get { return left; }
-		}
+		public UnaryAssertion<TA> Left => left;
 
-		public UnaryAssertion<TA> Right
-		{
-			get { return right; }
-		}
+        public UnaryAssertion<TA> Right => right;
 
-		public string Operator
-		{
-			get { return @operator; }
-		}
+        public string Operator => @operator;
 
-		public override string GetMessage(TA actual, string customMessage)
+        public override string GetMessage(TA actual, string customMessage)
 		{
 			var sb = new StringBuilder(500);
 			sb.AppendLine(GetUnaryFailureMessage(left, actual));

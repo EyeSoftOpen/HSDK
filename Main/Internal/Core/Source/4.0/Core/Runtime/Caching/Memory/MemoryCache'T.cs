@@ -32,16 +32,13 @@ namespace EyeSoft.Core.Runtime.Caching
 
 		public string Name { get; private set; }
 
-		public long Count
-		{
-			get { return cache.GetCount(); }
-		}
+		public long Count => cache.GetCount();
 
-		public T this[string key]
+        public T this[string key]
 		{
-			get { return Get(key); }
-			set { Add(key, value); }
-		}
+			get => Get(key);
+            set => Add(key, value);
+        }
 
 		public bool Contains(string key, string regionName = null)
 		{

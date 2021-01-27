@@ -18,17 +18,11 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 
 		public CustomerViewModel Customer { get; private set; }
 
-		public override string Result
-		{
-			get { return result; }
-		}
+		public override string Result => result;
 
-		public override bool IsValid
-		{
-			get { return Customer.IsValid; }
-		}
+        public override bool IsValid => Customer.IsValid;
 
-		public override IEnumerable<ValidationError> Validate()
+        public override IEnumerable<ValidationError> Validate()
 		{
 			return Customer.Validate();
 		}

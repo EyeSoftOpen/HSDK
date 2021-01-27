@@ -53,15 +53,9 @@
 
 			public string Name
 			{
-				get
-				{
-					return name;
-				}
-				set
-				{
-					SetProperty(value);
-				}
-			}
+				get => name;
+                set => SetProperty(value);
+            }
 		}
 	}
 }

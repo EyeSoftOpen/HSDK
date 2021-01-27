@@ -11,9 +11,9 @@
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
     <Description>Base classes to implement a Domain Model also using DDD (Domain Driven Development) and to abstract the ORM or the storage and change it simply.</Description>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Copyright>EyeSoft ©2020</Copyright>
+    <Copyright>EyeSoft ©2021</Copyright>
     <Product>EyeSoft.Domain</Product>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>

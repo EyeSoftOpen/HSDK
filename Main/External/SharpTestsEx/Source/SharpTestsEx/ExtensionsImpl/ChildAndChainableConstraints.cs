@@ -10,11 +10,8 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region IChildAndChainableConstraints<T,TParentConstraint> Members
 
-		public IAndConstraints<TParentConstraint> AndChain
-		{
-			get { return ConstraintsHelper.AndChain(AssertionParent); }
-		}
+		public IAndConstraints<TParentConstraint> AndChain => ConstraintsHelper.AndChain(AssertionParent);
 
-		#endregion
+        #endregion
 	}
 }

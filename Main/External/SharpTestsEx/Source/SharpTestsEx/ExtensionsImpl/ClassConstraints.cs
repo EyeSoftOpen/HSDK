@@ -11,12 +11,9 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region IClassConstraints Members
 
-		public IClassBeConstraints Be
-		{
-			get { return new ClassBeConstraints(this); }
-		}
+		public IClassBeConstraints Be => new ClassBeConstraints(this);
 
-		#endregion
+        #endregion
 
 		public object Clone()
 		{
@@ -28,16 +25,10 @@ namespace SharpTestsEx.ExtensionsImpl
 	{
 		public ClassConstraints(object actual, Func<string> messageBuilder) : base(actual, messageBuilder) { }
 
-		public TValue ValueOf
-		{
-			get { return (TValue)AssertionInfo.Actual; }
-		}
+		public TValue ValueOf => (TValue)AssertionInfo.Actual;
 
-		public TValue Value
-		{
-			get { return (TValue)AssertionInfo.Actual; }
-		}
-	}
+        public TValue Value => (TValue)AssertionInfo.Actual;
+    }
 
 	public class ClassBeConstraints : ChildAndChainableConstraints<object, IClassConstraints>, IClassBeConstraints
 	{

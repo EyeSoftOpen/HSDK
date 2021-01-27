@@ -38,15 +38,9 @@ namespace EyeSoft.Core.Messanging
 		/// <summary>
 		/// Gets the Action associated to this instance.
 		/// </summary>
-		public new Action<T> Action
-		{
-			get
-			{
-				return action;
-			}
-		}
+		public new Action<T> Action => action;
 
-		/// <summary>
+        /// <summary>
 		/// Executes the action. This only happens if the action's owner
 		/// is still alive. The action's parameter is set to default(T).
 		/// </summary>

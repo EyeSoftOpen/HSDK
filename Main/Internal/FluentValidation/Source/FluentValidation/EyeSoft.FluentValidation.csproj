@@ -11,11 +11,11 @@
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
     <Description>A wrapper class for FluentValidation library. Allow to inject a custom validator or the AbstractValidator..</Description>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
-    <Copyright>EyeSoft ©2020</Copyright>
+    <Copyright>EyeSoft ©2021</Copyright>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <Product>EyeSoft.FluentValidation</Product>
     <PackageIcon>icon.png</PackageIcon>

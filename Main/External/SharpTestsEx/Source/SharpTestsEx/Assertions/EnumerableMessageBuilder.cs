@@ -13,12 +13,9 @@ namespace SharpTestsEx.Assertions
 			this.differencesDelegate = differencesDelegate;
 		}
 
-		public Func<IEnumerable<T>, IEnumerable<T>, IEnumerable<T>> DifferencesDelegate
-		{
-			get { return differencesDelegate; }
-		}
+		public Func<IEnumerable<T>, IEnumerable<T>, IEnumerable<T>> DifferencesDelegate => differencesDelegate;
 
-		#region Implementation of IMessageBuilder
+        #region Implementation of IMessageBuilder
 
 		public virtual string Compose(MessageBuilderInfo<IEnumerable<T>, IEnumerable<T>> info)
 		{

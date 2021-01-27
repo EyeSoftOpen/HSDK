@@ -21,9 +21,9 @@ namespace EyeSoft.Demo.Validation.Windows.ViewModels
 
 		public SubjectViewModel Subject
 		{
-			get { return GetProperty<SubjectViewModel>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<SubjectViewModel>();
+            set => SetProperty(value);
+        }
 
 		public override bool IsValid
 		{

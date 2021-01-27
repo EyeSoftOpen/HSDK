@@ -83,18 +83,18 @@
 		{
 			public int Value
 			{
-				get { return GetProperty<int>(); }
-				set { SetProperty(value); }
-			}
+				get => GetProperty<int>();
+                set => SetProperty(value);
+            }
 		}
 
 		private class ReferencePropertyViewModel : ViewModel
 		{
 			public Foo Value
 			{
-				get { return GetProperty<Foo>(); }
-				set { SetProperty(value); }
-			}
+				get => GetProperty<Foo>();
+                set => SetProperty(value);
+            }
 		}
 
 		private class Foo

@@ -35,40 +35,20 @@ namespace EyeSoft.Core.Messanging
 		/// <summary>
 		/// Gets the Action associated to this instance.
 		/// </summary>
-		public Action Action
-		{
-			get
-			{
-				return action;
-			}
-		}
+		public Action Action => action;
 
-		/// <summary>
+        /// <summary>
 		/// Gets a value indicating whether the Action's owner is still alive, or if it was collected
 		/// by the Garbage Collector already.
 		/// </summary>
-		public bool IsAlive
-		{
-			get
-			{
-				return
-					reference != null && reference.IsAlive;
-			}
-		}
+		public bool IsAlive => reference != null && reference.IsAlive;
 
-		/// <summary>
+        /// <summary>
 		/// Gets the Action's owner. This object is stored as a <see cref="WeakReference" />.
 		/// </summary>
-		public object Target
-		{
-			get
-			{
-				return
-					reference == null ? null : reference.Target;
-			}
-		}
+		public object Target => reference == null ? null : reference.Target;
 
-		/// <summary>
+        /// <summary>
 		/// Executes the action. This only happens if the action's owner
 		/// is still alive.
 		/// </summary>

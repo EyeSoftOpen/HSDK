@@ -38,8 +38,8 @@
 		{
 		    public bool AllowCommand
 		    {
-		        get { return GetProperty<bool>(); }
-		        set { SetProperty(value); }
+		        get => GetProperty<bool>();
+                set => SetProperty(value);
             }
 
 			public ICommand ShowChildCommand { get; private set; }

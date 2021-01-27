@@ -34,23 +34,17 @@
 				Property(() => Dependent).DependsFrom(() => Primary);
 			}
 
-			public string Dependent
-			{
-				get { return "DependentValue"; }
-			}
+			public string Dependent => "DependentValue";
 
-			public string Primary
+            public string Primary
 			{
-				get { return GetProperty<string>(); }
-				set { SetProperty(value); }
-			}
+				get => GetProperty<string>();
+                set => SetProperty(value);
+            }
 
-			public IEnumerable<string> ChangeList
-			{
-				get { return changeList; }
-			}
+			public IEnumerable<string> ChangeList => changeList;
 
-			protected override void OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs e)
+            protected override void OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs e)
 			{
 				changeList.Add(e.PropertyName);
 				base.OnPropertyChanged(e);

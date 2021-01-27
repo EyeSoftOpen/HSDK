@@ -11,12 +11,9 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region Implementation of IBeConstraints<IComparableBeConstraints<T>>
 
-		public IComparableBeConstraints<T> Be
-		{
-			get { return new ComparableBeConstraints<T>(this); }
-		}
+		public IComparableBeConstraints<T> Be => new ComparableBeConstraints<T>(this);
 
-		#endregion
+        #endregion
 
 		#region Implementation of IAllowClone
 
@@ -29,21 +26,15 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region Implementation of IHaveConstraints<IHaveNullableComparableConstraints<T>>
 
-		public IHaveNullableComparableConstraints<T> Have
-		{
-			get { return new HaveNullableComparableConstraints<T>(this); }
-		}
+		public IHaveNullableComparableConstraints<T> Have => new HaveNullableComparableConstraints<T>(this);
 
-		#endregion
+        #endregion
 
 		#region INegableConstraints<IComparableConstraints<T>> Members
 
-		IComparableConstraints<T> INegableConstraints<IComparableConstraints<T>>.Not
-		{
-			get { return Not as IComparableConstraints<T>; }
-		}
+		IComparableConstraints<T> INegableConstraints<IComparableConstraints<T>>.Not => Not as IComparableConstraints<T>;
 
-		#endregion
+        #endregion
 	}
 
 	public class HaveNullableComparableConstraints<T> : ChildAndChainableConstraints<T, INullableComparableConstraints<T>>, IHaveNullableComparableConstraints<T>

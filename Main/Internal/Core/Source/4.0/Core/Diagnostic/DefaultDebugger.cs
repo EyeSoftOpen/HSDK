@@ -12,12 +12,9 @@
 			this.isLogging = isLogging;
 		}
 
-		public virtual bool IsAttached
-		{
-			get { return isAttached.HasValue ? isAttached.Value : System.Diagnostics.Debugger.IsAttached; }
-		}
+		public virtual bool IsAttached => isAttached.HasValue ? isAttached.Value : System.Diagnostics.Debugger.IsAttached;
 
-		public virtual bool IsLogging()
+        public virtual bool IsLogging()
 		{
 			return isLogging.HasValue ? isLogging.Value : System.Diagnostics.Debugger.IsLogging();
 		}

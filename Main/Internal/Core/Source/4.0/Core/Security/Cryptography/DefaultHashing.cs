@@ -31,35 +31,17 @@ namespace EyeSoft.Core.Security.Cryptography
             defaultHashAlgorithm = new Singleton<Func<IHashAlgorithm>>(() => () => Sha1);
         }
 
-        public Func<IHashAlgorithm> Default
-        {
-            get { return defaultHashAlgorithm.Instance; }
-        }
+        public Func<IHashAlgorithm> Default => defaultHashAlgorithm.Instance;
 
-        public IHashAlgorithm Md5
-        {
-            get { return Create(HashAlgorithms.Md5); }
-        }
+        public IHashAlgorithm Md5 => Create(HashAlgorithms.Md5);
 
-        public IHashAlgorithm Sha1
-        {
-            get { return Create(HashAlgorithms.Sha1); }
-        }
+        public IHashAlgorithm Sha1 => Create(HashAlgorithms.Sha1);
 
-        public IHashAlgorithm Sha256
-        {
-            get { return Create(HashAlgorithms.Sha256); }
-        }
+        public IHashAlgorithm Sha256 => Create(HashAlgorithms.Sha256);
 
-        public IHashAlgorithm Sha384
-        {
-            get { return Create(HashAlgorithms.Sha384); }
-        }
+        public IHashAlgorithm Sha384 => Create(HashAlgorithms.Sha384);
 
-        public IHashAlgorithm Sha512
-        {
-            get { return Create(HashAlgorithms.Sha512); }
-        }
+        public IHashAlgorithm Sha512 => Create(HashAlgorithms.Sha512);
 
         public void SetHashAlgorithm(Func<IHashAlgorithm> hashAlgorithm)
         {

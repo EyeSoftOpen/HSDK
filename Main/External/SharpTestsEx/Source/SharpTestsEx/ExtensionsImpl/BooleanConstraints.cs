@@ -12,11 +12,8 @@ namespace SharpTestsEx.ExtensionsImpl
 			this.concreteConstraint = concreteConstraint;
 		}
 
-		public IBooleanBeConstraints Be
-		{
-			get { return concreteConstraint; }
-		}
-	}
+		public IBooleanBeConstraints Be => concreteConstraint;
+    }
 
 	public class BooleanBeConstraints : Constraint<bool>, IBooleanBeConstraints
 	{

@@ -32,33 +32,33 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels.Calculate
 
 		public string FirstName
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public string LastName
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public string TownSearch
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public DateTime Birthdate
 		{
-			get { return GetProperty<DateTime>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<DateTime>();
+            set => SetProperty(value);
+        }
 
 		public int Sex
 		{
-			get { return GetProperty<int>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<int>();
+            set => SetProperty(value);
+        }
 
 		public string FiscalCode
 		{

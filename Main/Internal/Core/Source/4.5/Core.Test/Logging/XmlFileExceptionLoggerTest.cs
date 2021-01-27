@@ -35,12 +35,9 @@
 
 			private string localPath;
 
-			public IList<Tuple<string, string>> OperationsLog
-			{
-				get { return operationsLog; }
-			}
+			public IList<Tuple<string, string>> OperationsLog => operationsLog;
 
-			public IStorage Storage()
+            public IStorage Storage()
 			{
 				var storageMock = new Mock<IStorage>();
 

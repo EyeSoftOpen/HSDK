@@ -16,27 +16,15 @@ namespace EyeSoft.Domain.Transactional.Repositories.Implementations
 			this.repository = repository;
 		}
 
-		public Expression Expression
-		{
-			get { return repository.Expression; }
-		}
+		public Expression Expression => repository.Expression;
 
-		public Type ElementType
-		{
-			get { return repository.ElementType; }
-		}
+        public Type ElementType => repository.ElementType;
 
-		public IQueryProvider Provider
-		{
-			get { return repository.Provider; }
-		}
+        public IQueryProvider Provider => repository.Provider;
 
-		public virtual bool IsReadOnly
-		{
-			get { return true; }
-		}
+        public virtual bool IsReadOnly => true;
 
-		public IEnumerator<T> GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
 		{
 			return repository.GetEnumerator();
 		}

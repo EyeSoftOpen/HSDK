@@ -4,7 +4,7 @@ using System.Windows;
 
 [assembly: AssemblyCompany("EyeSoft")]
 [assembly: AssemblyProduct("EyeSoft.Demo.Navigation.Windows")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2021")]
 
 [assembly: AssemblyTitle("EyeSoft.Demo.Navigation.Windows.Presentation")]
 [assembly: AssemblyDescription("")]

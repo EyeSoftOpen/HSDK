@@ -9,9 +9,6 @@ namespace EyeSoft.Core.Extensions
 			this.obj = obj;
 		}
 
-		public T Instance
-		{
-			get { return obj; }
-		}
-	}
+		public T Instance => obj;
+    }
 }

@@ -17,11 +17,8 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		public IAssertionInfo<T> AssertionInfo { get; private set; }
 
-		public IConstraints<T> Parent
-		{
-			get { return null; }
-		}
+		public IConstraints<T> Parent => null;
 
-		#endregion
+        #endregion
 	}
 }

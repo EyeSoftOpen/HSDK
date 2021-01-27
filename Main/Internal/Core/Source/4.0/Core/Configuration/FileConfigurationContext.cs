@@ -5,14 +5,8 @@ namespace EyeSoft.Core.Configuration
 
     internal class FileConfigurationContext : IConfigurationContext
 	{
-		public NameValueCollection AppSettings
-		{
-			get { return ConfigurationManager.AppSettings; }
-		}
+		public NameValueCollection AppSettings => ConfigurationManager.AppSettings;
 
-		public ConnectionStringSettingsCollection ConnectionStrings
-		{
-			get { return ConfigurationManager.ConnectionStrings; }
-		}
-	}
+        public ConnectionStringSettingsCollection ConnectionStrings => ConfigurationManager.ConnectionStrings;
+    }
 }

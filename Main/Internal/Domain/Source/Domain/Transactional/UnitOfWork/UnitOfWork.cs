@@ -54,22 +54,13 @@ namespace EyeSoft.Domain.Transactional.UnitOfWork
 				this.commit = commit;
 			}
 
-			public Expression Expression
-			{
-				get { return readOnlyRepository.Expression; }
-			}
+			public Expression Expression => readOnlyRepository.Expression;
 
-			public Type ElementType
-			{
-				get { return readOnlyRepository.ElementType; }
-			}
+            public Type ElementType => readOnlyRepository.ElementType;
 
-			public IQueryProvider Provider
-			{
-				get { return readOnlyRepository.Provider; }
-			}
+            public IQueryProvider Provider => readOnlyRepository.Provider;
 
-			public T Load(IComparable key)
+            public T Load(IComparable key)
 			{
 				return readOnlyRepository.Load(key);
 			}

@@ -27,12 +27,9 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		public bool IsNegated { get; private set; }
 
-		public string FailureMessage
-		{
-			get { return messageBuilder != null ? messageBuilder() : null; }
-		}
+		public string FailureMessage => messageBuilder != null ? messageBuilder() : null;
 
-		#endregion
+        #endregion
 
 		#region INegable Members
 

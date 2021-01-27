@@ -10,12 +10,9 @@ namespace SharpTestsEx.ExtensionsImpl
 		public ComparableConstraints(T actual) : base(actual) {}
 		public ComparableConstraints(T actual, Func<string> messageBuilder) : base(actual, messageBuilder) {}
 
-		public IComparableBeConstraints<T> Be
-		{
-			get { return new ComparableBeConstraints<T>(this); }
-		}
+		public IComparableBeConstraints<T> Be => new ComparableBeConstraints<T>(this);
 
-		public object Clone()
+        public object Clone()
 		{
 			return new ComparableConstraints<T>(AssertionInfo.Actual, () => AssertionInfo.FailureMessage);
 		}

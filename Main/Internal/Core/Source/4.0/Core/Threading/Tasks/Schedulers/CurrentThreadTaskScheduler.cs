@@ -11,12 +11,9 @@
 	public class CurrentThreadTaskScheduler : TaskScheduler, ILoggerTaskScheduler
 	{
 		/// <summary>Gets the maximum degree of parallelism for this scheduler.</summary>
-		public override int MaximumConcurrencyLevel
-		{
-			get { return 1; }
-		}
+		public override int MaximumConcurrencyLevel => 1;
 
-		/// <summary>Runs the provided Task synchronously on the current thread.</summary>
+        /// <summary>Runs the provided Task synchronously on the current thread.</summary>
 		/// <param name="task">The task to be executed.</param>
 		protected override void QueueTask(Task task)
 		{

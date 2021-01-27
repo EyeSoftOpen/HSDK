@@ -67,12 +67,9 @@
 		}
 
 		/// <summary>Gets the maximum concurrency level supported by this scheduler.</summary>
-		public override sealed int MaximumConcurrencyLevel
-		{
-			get { return maxDegreeOfParallelism; }
-		}
+		public override sealed int MaximumConcurrencyLevel => maxDegreeOfParallelism;
 
-		/// <summary>Queues a task to the scheduler.</summary>
+        /// <summary>Queues a task to the scheduler.</summary>
 		/// <param name="task">The task to be queued.</param>
 		protected sealed override void QueueTask(Task task)
 		{

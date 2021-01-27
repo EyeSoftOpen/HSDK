@@ -56,9 +56,9 @@
 
 			public FooItemViewModel CurrentFooItem
 			{
-				get { return GetProperty<FooItemViewModel>(); }
-				private set { SetProperty(value); }
-			}
+				get => GetProperty<FooItemViewModel>();
+                private set => SetProperty(value);
+            }
 
 			public IEnumerable<FooItemViewModel> FooList { get; set; }
 		}

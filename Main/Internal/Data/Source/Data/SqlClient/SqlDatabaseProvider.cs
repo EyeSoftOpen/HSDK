@@ -18,12 +18,9 @@ namespace EyeSoft.Data.SqlClient
 		{
 		}
 
-		public override string ProviderName
-		{
-			get { return DatabaseProviders.SqlServer; }
-		}
+		public override string ProviderName => DatabaseProviders.SqlServer;
 
-		public override bool Exists()
+        public override bool Exists()
 		{
 			return new DatabaseExistsCommand(ConnectionString).Execute();
 		}

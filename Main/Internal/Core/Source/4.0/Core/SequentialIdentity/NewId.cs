@@ -76,25 +76,13 @@ namespace EyeSoft.Core.SequentialIdentity
             _d = a;
         }
 
-        static NewIdGenerator Generator
-        {
-            get { return _generator ?? (_generator = new NewIdGenerator(TickProvider, WorkerIdProvider, ProcessIdProvider)); }
-        }
+        static NewIdGenerator Generator => _generator ?? (_generator = new NewIdGenerator(TickProvider, WorkerIdProvider, ProcessIdProvider));
 
-        static IWorkerIdProvider WorkerIdProvider
-        {
-            get { return _workerIdProvider ?? (_workerIdProvider = new BestPossibleWorkerIdProvider()); }
-        }
+        static IWorkerIdProvider WorkerIdProvider => _workerIdProvider ?? (_workerIdProvider = new BestPossibleWorkerIdProvider());
 
-        static IProcessIdProvider ProcessIdProvider
-        {
-            get { return _processIdProvider; }
-        }
+        static IProcessIdProvider ProcessIdProvider => _processIdProvider;
 
-        static ITickProvider TickProvider
-        {
-            get { return _tickProvider ?? (_tickProvider = new StopwatchTickProvider()); }
-        }
+        static ITickProvider TickProvider => _tickProvider ?? (_tickProvider = new StopwatchTickProvider());
 
         public DateTime Timestamp
         {

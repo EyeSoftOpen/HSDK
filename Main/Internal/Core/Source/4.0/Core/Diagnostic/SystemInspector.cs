@@ -9,12 +9,9 @@
 			private static readonly Singleton<IDebugger> singletonInstance =
 				new Singleton<IDebugger>(() => new DefaultDebugger());
 
-			public static bool IsAttached
-			{
-				get { return singletonInstance.Instance.IsAttached; }
-			}
+			public static bool IsAttached => singletonInstance.Instance.IsAttached;
 
-			public static void SetAsDetached()
+            public static void SetAsDetached()
 			{
 				Set(false);
 			}

@@ -7,37 +7,19 @@ namespace EyeSoft.Core.Security.Cryptography
 	{
 		private static readonly DefaultHashing hashing = new DefaultHashing();
 
-		public static IHashAlgorithm Default
-		{
-			get { return hashing.Default(); }
-		}
+		public static IHashAlgorithm Default => hashing.Default();
 
-		public static IHashAlgorithm Md5
-		{
-			get { return hashing.Md5; }
-		}
+        public static IHashAlgorithm Md5 => hashing.Md5;
 
-		public static IHashAlgorithm Sha1
-		{
-			get { return hashing.Sha1; }
-		}
+        public static IHashAlgorithm Sha1 => hashing.Sha1;
 
-		public static IHashAlgorithm Sha256
-		{
-			get { return hashing.Sha256; }
-		}
+        public static IHashAlgorithm Sha256 => hashing.Sha256;
 
-		public static IHashAlgorithm Sha384
-		{
-			get { return hashing.Sha384; }
-		}
+        public static IHashAlgorithm Sha384 => hashing.Sha384;
 
-		public static IHashAlgorithm Sha512
-		{
-			get { return hashing.Sha512; }
-		}
+        public static IHashAlgorithm Sha512 => hashing.Sha512;
 
-		public static string ComputeHex(byte[] buffer)
+        public static string ComputeHex(byte[] buffer)
 		{
 			using (var hashAlgorithm = hashing.Default())
 			{

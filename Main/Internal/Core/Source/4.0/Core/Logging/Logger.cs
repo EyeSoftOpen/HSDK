@@ -8,12 +8,9 @@
 		private static readonly Singleton<IAggregatorLogger> agregatorLogger =
 			new Singleton<IAggregatorLogger>(() => new DefaultAggregatorLogger());
 
-		public static ILogger Instance
-		{
-			get { return agregatorLogger.Instance; }
-		}
+		public static ILogger Instance => agregatorLogger.Instance;
 
-		public static void Set(IAggregatorLogger instance)
+        public static void Set(IAggregatorLogger instance)
 		{
 			agregatorLogger.Set(instance);
 		}

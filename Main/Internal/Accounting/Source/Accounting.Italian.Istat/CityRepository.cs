@@ -12,17 +12,11 @@
 
 		private static ReadOnlyCollection<City> cityCollection;
 
-		private static IEnumerable<Town> TownCollection
-		{
-			get { return AccountingSerializer.Collection<TownSerializable, Town>(ref townCollection, Convert); }
-		}
+		private static IEnumerable<Town> TownCollection => AccountingSerializer.Collection<TownSerializable, Town>(ref townCollection, Convert);
 
-		private static IEnumerable<City> CityCollection
-		{
-			get { return AccountingSerializer.Collection<CitySerializable, City>(ref cityCollection, Convert); }
-		}
+        private static IEnumerable<City> CityCollection => AccountingSerializer.Collection<CitySerializable, City>(ref cityCollection, Convert);
 
-		public IEnumerable<Town> AllTown()
+        public IEnumerable<Town> AllTown()
 		{
 			return TownCollection;
 		}

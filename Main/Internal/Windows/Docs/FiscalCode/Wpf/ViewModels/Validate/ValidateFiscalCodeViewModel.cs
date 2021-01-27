@@ -23,33 +23,33 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels.Validate
 
 		public string FirstName
 		{
-			get { return GetProperty<string>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            private set => SetProperty(value);
+        }
 
 		public string LastName
 		{
-			get { return GetProperty<string>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            private set => SetProperty(value);
+        }
 
 		public string Birthdate
 		{
-			get { return GetProperty<string>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            private set => SetProperty(value);
+        }
 
 		public Sex? Sex
 		{
-			get { return GetProperty<Sex?>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<Sex?>();
+            private set => SetProperty(value);
+        }
 
 		public string FiscalCode
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public string Town { get; private set; }
 

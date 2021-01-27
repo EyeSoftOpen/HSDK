@@ -53,20 +53,11 @@ namespace EyeSoft.Core.Mapping
             Incapsulated = incapsulated;
         }
 
-        public override string Name
-        {
-            get { return memberInfo.Name; }
-        }
+        public override string Name => memberInfo.Name;
 
-        public override Type DeclaringType
-        {
-            get { return memberInfo.DeclaringType; }
-        }
+        public override Type DeclaringType => memberInfo.DeclaringType;
 
-        public override Type ReflectedType
-        {
-            get { return reflectedType ?? memberInfo.ReflectedType; }
-        }
+        public override Type ReflectedType => reflectedType ?? memberInfo.ReflectedType;
 
         public bool CanRead { get; private set; }
 
@@ -74,15 +65,9 @@ namespace EyeSoft.Core.Mapping
 
         public Type Type { get; private set; }
 
-        public override MemberTypes MemberType
-        {
-            get { return memberInfo.MemberType; }
-        }
+        public override MemberTypes MemberType => memberInfo.MemberType;
 
-        public override int MetadataToken
-        {
-            get { return memberInfo.MetadataToken; }
-        }
+        public override int MetadataToken => memberInfo.MetadataToken;
 
         public Accessors Accessor { get; private set; }
 

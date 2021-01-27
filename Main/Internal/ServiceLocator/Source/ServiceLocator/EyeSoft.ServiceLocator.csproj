@@ -10,14 +10,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>An inversion control abstraction system.</Description>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <PackageTags>CommonServiceLocator, inversion of control, dependency injection</PackageTags>
-    <Copyright>EyeSoft ©2020</Copyright>
+    <Copyright>EyeSoft ©2021</Copyright>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>

@@ -22,15 +22,9 @@ namespace EyeSoft.Data.SqLite
 			connectionStringBuilder = new SQLiteConnectionStringBuilder(connectionString);
 		}
 
-		public override string ProviderName
-		{
-			get
-			{
-				return DatabaseProviders.SqLite;
-			}
-		}
+		public override string ProviderName => DatabaseProviders.SqLite;
 
-		public static void Register()
+        public static void Register()
 		{
 			DatabaseProviders
 				.Register<SQLiteConnectionStringBuilder>(

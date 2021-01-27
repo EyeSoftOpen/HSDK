@@ -160,8 +160,8 @@ namespace SharpTestsEx.Test
 		private class MyDynamicClass
 		{
 			private int i;
-			public int Next { get { return ++i; } }
-		}
+			public int Next => ++i;
+        }
 
 		[Test]
 		public void WhenPropertyChangesItsValueThenMessageIsCoherent()

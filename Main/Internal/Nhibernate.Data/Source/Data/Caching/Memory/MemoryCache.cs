@@ -53,32 +53,17 @@
 			StoreRootCacheKey();
 		}
 
-		public string Region
-		{
-			get { return region; }
-		}
+		public string Region => region;
 
-		public TimeSpan Expiration
-		{
-			get { return expiration; }
-		}
+        public TimeSpan Expiration => expiration;
 
-		public CacheItemPriority Priority
-		{
-			get { return priority; }
-		}
+        public CacheItemPriority Priority => priority;
 
-		public int Timeout
-		{
-			get { return Timestamper.OneMs * 60000; } // 60 seconds
-		}
+        public int Timeout => Timestamper.OneMs * 60000; // 60 seconds
 
-		public string RegionName
-		{
-			get { return region; }
-		}
+        public string RegionName => region;
 
-		public object Get(object key)
+        public object Get(object key)
 		{
 			if (key == null)
 			{

@@ -1,11 +1,10 @@
 <Query Kind="Program">
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
-  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\Pw.Vs.Com\Dc\Es.Hsdk\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll">D:\GitHub\HSDK\Nuget.Publisher\Core\bin\Debug\EyeSoft.Nuget.Publisher.Core.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe">D:\GitHub\HSDK\Nuget.Publisher\Shell\bin\Debug\EyeSoft.Nuget.Publisher.Shell.exe</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll">D:\GitHub\HSDK\Nuget.Publisher\Core\bin\Debug\Microsoft.Web.XmlTransform.dll</Reference>
+  <Reference Relative="Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll">D:\GitHub\HSDK\Nuget.Publisher\Core\bin\Debug\NuGet.Core.dll</Reference>
   <NuGetReference>Castle.WcfIntegrationFacility</NuGetReference>
   <NuGetReference>Castle.Windsor</NuGetReference>
-  <NuGetReference>De.TorstenMandelkow.MetroChart</NuGetReference>
   <NuGetReference>DotNetZip</NuGetReference>
   <NuGetReference>EyeSoft.Core</NuGetReference>
   <NuGetReference>HtmlAgilityPack</NuGetReference>
@@ -16,8 +15,8 @@
   <Namespace>EyeSoft.Nuget.Publisher.Core.Core</Namespace>
   <Namespace>EyeSoft.Nuget.Publisher.Core.Nuget</Namespace>
   <Namespace>EyeSoft.Nuget.Publisher.Core.Workflow</Namespace>
-  <Namespace>Query</Namespace>
   <Namespace>NuGet</Namespace>
+  <Namespace>Query</Namespace>
 </Query>
 
 void Main()

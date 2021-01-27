@@ -75,12 +75,9 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region Implementation of IActionAndConstraints<TConstraints>
 
-		public TException Exception
-		{
-			get { return currentException; }
-		}
+		public TException Exception => currentException;
 
-		#endregion
+        #endregion
 	}
 
 	public class ThrowConstraints<TException> : IThrowConstraints<TException> where TException : Exception
@@ -94,12 +91,9 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		public TException ValueOf { get; private set; }
 
-		public TException Exception
-		{
-			get { return ValueOf; }
-		}
+		public TException Exception => ValueOf;
 
-		#endregion
+        #endregion
 
 		public object Clone()
 		{

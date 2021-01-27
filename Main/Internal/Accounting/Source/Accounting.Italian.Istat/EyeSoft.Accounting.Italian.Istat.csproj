@@ -9,14 +9,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <Description>Provide classes to query Italian cities and towns using ISTAT data.</Description>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <Authors>Matteo Migliore</Authors>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <Company>EyeSoft</Company>
-    <Copyright>EyeSoft ©2020</Copyright>
+    <Copyright>EyeSoft ©2021</Copyright>
     <Product>EyeSoft.Accounting.Italian.Istat</Product>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />

@@ -42,21 +42,21 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 
 		public string FullName
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public int NameLength
 		{
-			get { return GetProperty<int>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<int>();
+            private set => SetProperty(value);
+        }
 
 		public CustomerViewModel MainCustomer
 		{
-			get { return GetProperty<CustomerViewModel>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<CustomerViewModel>();
+            set => SetProperty(value);
+        }
 
 		public IObservableCollection<CustomerViewModel> CustomerCollection { get; set; }
 

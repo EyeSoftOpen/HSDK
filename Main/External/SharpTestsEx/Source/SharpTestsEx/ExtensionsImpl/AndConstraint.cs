@@ -9,9 +9,6 @@ namespace SharpTestsEx.ExtensionsImpl
 			this.rootConstraint = rootConstraint;
 		}
 
-		public T And
-		{
-			get { return rootConstraint; }
-		}
-	}
+		public T And => rootConstraint;
+    }
 }

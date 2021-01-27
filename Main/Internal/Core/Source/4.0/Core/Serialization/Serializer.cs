@@ -11,12 +11,9 @@
 		private static readonly Singleton<IDictionary<string, ISerializerFactory>> singletonInstance =
 			new Singleton<IDictionary<string, ISerializerFactory>>(() => new Dictionary<string, ISerializerFactory>());
 
-		public static string Name
-		{
-			get { return DefaultSerializerFactory().TypeName; }
-		}
+		public static string Name => DefaultSerializerFactory().TypeName;
 
-		public static void Set<TSerializerFactory>() where TSerializerFactory : ISerializerFactory, new()
+        public static void Set<TSerializerFactory>() where TSerializerFactory : ISerializerFactory, new()
 		{
 			Set(new TSerializerFactory());
 		}

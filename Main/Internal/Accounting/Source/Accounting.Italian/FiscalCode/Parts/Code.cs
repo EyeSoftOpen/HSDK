@@ -4,12 +4,9 @@ namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 	{
 		private string value;
 
-		private string Value
-		{
-			get { return value ?? (value = GetCode().ToUpper()); }
-		}
+		private string Value => value ?? (value = GetCode().ToUpper());
 
-		public override string ToString()
+        public override string ToString()
 		{
 			return Value;
 		}

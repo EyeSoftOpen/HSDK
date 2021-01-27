@@ -37,9 +37,9 @@
 
 		public double Interval
 		{
-			get { return timer.Interval; }
-			set { timer.Interval = value; }
-		}
+			get => timer.Interval;
+            set => timer.Interval = value;
+        }
 
 		public ITimer Start()
 		{

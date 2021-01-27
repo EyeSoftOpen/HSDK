@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2021")]
 
 [assembly: AssemblyTitle("EyeSoft.Data.Nhibernate.Test")]
 [assembly: AssemblyProduct("EyeSoft.Data.Nhibernate")]

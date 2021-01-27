@@ -8,11 +8,8 @@ namespace SharpTestsEx.ExtensionsImpl
 			AssertionParent = parent;
 		}
 
-		public IAssertionInfo<T> AssertionInfo
-		{
-			get { return AssertionParent.AssertionInfo; }
-		}
+		public IAssertionInfo<T> AssertionInfo => AssertionParent.AssertionInfo;
 
-		public TParentConstraint AssertionParent { get; private set; }
+        public TParentConstraint AssertionParent { get; private set; }
 	}
 }

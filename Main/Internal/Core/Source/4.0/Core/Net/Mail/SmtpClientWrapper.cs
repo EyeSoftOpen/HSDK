@@ -10,43 +10,37 @@ namespace EyeSoft.Core.Net.Mail
 
 		public SmtpDeliveryMethod DeliveryMethod
 		{
-			get { return smtpClient.DeliveryMethod; }
-			set { smtpClient.DeliveryMethod = value; }
-		}
+			get => smtpClient.DeliveryMethod;
+            set => smtpClient.DeliveryMethod = value;
+        }
 
 		public ICredentialsByHost Credentials
 		{
-			get { return smtpClient.Credentials; }
-			set { smtpClient.Credentials = value; }
-		}
+			get => smtpClient.Credentials;
+            set => smtpClient.Credentials = value;
+        }
 
-		public X509CertificateCollection ClientCertificates
-		{
-			get { return smtpClient.ClientCertificates; }
-		}
+		public X509CertificateCollection ClientCertificates => smtpClient.ClientCertificates;
 
-		public ServicePoint ServicePoint
-		{
-			get { return smtpClient.ServicePoint; }
-		}
+        public ServicePoint ServicePoint => smtpClient.ServicePoint;
 
-		public string TargetName
+        public string TargetName
 		{
-			get { return smtpClient.TargetName; }
-			set { smtpClient.TargetName = value; }
-		}
+			get => smtpClient.TargetName;
+            set => smtpClient.TargetName = value;
+        }
 
 		public int Timeout
 		{
-			get { return smtpClient.Timeout; }
-			set { smtpClient.Timeout = value; }
-		}
+			get => smtpClient.Timeout;
+            set => smtpClient.Timeout = value;
+        }
 
 		public bool UseDefaultCredentials
 		{
-			get { return smtpClient.UseDefaultCredentials; }
-			set { smtpClient.UseDefaultCredentials = value; }
-		}
+			get => smtpClient.UseDefaultCredentials;
+            set => smtpClient.UseDefaultCredentials = value;
+        }
 		
 		public void Send(MailMessage mailMessage)
 		{

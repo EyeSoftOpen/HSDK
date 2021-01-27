@@ -15,12 +15,9 @@
 
 		public Category Parent { get; set; }
 
-		public IList<Category> Children
-		{
-			get { return children; }
-		}
+		public IList<Category> Children => children;
 
-		public static Category CreateHierarchy()
+        public static Category CreateHierarchy()
 		{
 			return
 				new Category("Root ")

@@ -10,8 +10,8 @@
     {
         public string FirstName
         {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
+            get => GetProperty<string>();
+            set => SetProperty(value);
         }
 
         public override IEnumerable<ValidationError> Validate()

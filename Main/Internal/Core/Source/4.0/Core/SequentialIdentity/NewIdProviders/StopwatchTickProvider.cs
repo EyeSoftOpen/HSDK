@@ -14,9 +14,6 @@ namespace EyeSoft.Core.SequentialIdentity.NewIdProviders
             _stopwatch = Stopwatch.StartNew();
         }
 
-        public long Ticks
-        {
-            get { return (_start.AddTicks(_stopwatch.Elapsed.Ticks)).Ticks; }
-        }
+        public long Ticks => (_start.AddTicks(_stopwatch.Elapsed.Ticks)).Ticks;
     }
 }

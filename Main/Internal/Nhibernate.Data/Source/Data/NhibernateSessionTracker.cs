@@ -11,17 +11,11 @@
 	{
 		private static readonly IDictionary<string, string> sessionDictionary = new SafeConcurrentDictionary<string, string>();
 
-		public static IEnumerable<KeyValuePair<string, string>> OpenedSessions
-		{
-			get { return sessionDictionary; }
-		}
+		public static IEnumerable<KeyValuePair<string, string>> OpenedSessions => sessionDictionary;
 
-		public static bool IsEmpty
-		{
-			get { return sessionDictionary.Count == 0; }
-		}
+        public static bool IsEmpty => sessionDictionary.Count == 0;
 
-		public static bool Enabled
+        public static bool Enabled
 		{
 			get; set;
 		}

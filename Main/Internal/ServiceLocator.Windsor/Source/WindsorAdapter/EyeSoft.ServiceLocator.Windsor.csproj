@@ -10,17 +10,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A service locator adapter to implement CommonServiceLocator on top of Castle Windsor.</Description>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
-    <Copyright>EyeSoft ©2020</Copyright>
+    <Copyright>EyeSoft ©2021</Copyright>
     <Product>EyeSoft.ServiceLocator.Windsor</Product>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <PackageTags>CommonServiceLocator, inversion of control, dependency injection, Castle, Windsor</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>

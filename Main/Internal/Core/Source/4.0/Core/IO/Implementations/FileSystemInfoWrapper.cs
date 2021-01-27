@@ -17,65 +17,53 @@ namespace EyeSoft.Core.IO
 
 		public FileAttributes Attributes
 		{
-			get { return fileSystemInfo.Attributes; }
-			set { fileSystemInfo.Attributes = value; }
-		}
+			get => fileSystemInfo.Attributes;
+            set => fileSystemInfo.Attributes = value;
+        }
 
-		public string Name
-		{
-			get { return fileSystemInfo.Name; }
-		}
+		public string Name => fileSystemInfo.Name;
 
-		public string FullName
-		{
-			get { return fileSystemInfo.FullName; }
-		}
+        public string FullName => fileSystemInfo.FullName;
 
-		public bool Exists
-		{
-			get { return fileSystemInfo.Exists; }
-		}
+        public bool Exists => fileSystemInfo.Exists;
 
-		public string Extension
-		{
-			get { return fileSystemInfo.Extension; }
-		}
+        public string Extension => fileSystemInfo.Extension;
 
-		public DateTime CreationTime
+        public DateTime CreationTime
 		{
-			get { return fileSystemInfo.CreationTime; }
-			set { fileSystemInfo.CreationTime = value; }
-		}
+			get => fileSystemInfo.CreationTime;
+            set => fileSystemInfo.CreationTime = value;
+        }
 
 		public DateTime CreationTimeUtc
 		{
-			get { return fileSystemInfo.CreationTimeUtc; }
-			set { fileSystemInfo.CreationTimeUtc = value; }
-		}
+			get => fileSystemInfo.CreationTimeUtc;
+            set => fileSystemInfo.CreationTimeUtc = value;
+        }
 
 		public DateTime LastAccessTime
 		{
-			get { return fileSystemInfo.LastAccessTime; }
-			set { fileSystemInfo.LastAccessTime = value; }
-		}
+			get => fileSystemInfo.LastAccessTime;
+            set => fileSystemInfo.LastAccessTime = value;
+        }
 
 		public DateTime LastAccessTimeUtc
 		{
-			get { return fileSystemInfo.LastAccessTimeUtc; }
-			set { fileSystemInfo.LastAccessTimeUtc = value; }
-		}
+			get => fileSystemInfo.LastAccessTimeUtc;
+            set => fileSystemInfo.LastAccessTimeUtc = value;
+        }
 
 		public DateTime LastWriteTime
 		{
-			get { return fileSystemInfo.LastWriteTime; }
-			set { fileSystemInfo.LastWriteTime = value; }
-		}
+			get => fileSystemInfo.LastWriteTime;
+            set => fileSystemInfo.LastWriteTime = value;
+        }
 
 		public DateTime LastWriteTimeUtc
 		{
-			get { return fileSystemInfo.LastWriteTimeUtc; }
-			set { fileSystemInfo.LastWriteTimeUtc = value; }
-		}
+			get => fileSystemInfo.LastWriteTimeUtc;
+            set => fileSystemInfo.LastWriteTimeUtc = value;
+        }
 
 		public void Delete()
 		{

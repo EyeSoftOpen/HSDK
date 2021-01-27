@@ -10,17 +10,11 @@
 		private readonly Collections.Concurrent.SafeConcurrentDictionary<Type, T> safeConcurrentDictionary =
 			new Collections.Concurrent.SafeConcurrentDictionary<Type, T>();
 
-		public int Count
-		{
-			get { return safeConcurrentDictionary.Count; }
-		}
+		public int Count => safeConcurrentDictionary.Count;
 
-		public bool IsReadOnly
-		{
-			get { return false; }
-		}
+        public bool IsReadOnly => false;
 
-		public IEnumerator<T> GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
 		{
 			return safeConcurrentDictionary.Values.GetEnumerator();
 		}

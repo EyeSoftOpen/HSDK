@@ -52,12 +52,9 @@ namespace EyeSoft.Windows.Model.Test.Helpers
 				this.synchronizationContext = synchronizationContext;
 			}
 
-			public override int MaximumConcurrencyLevel
-			{
-				get { return 1; }
-			}
+			public override int MaximumConcurrencyLevel => 1;
 
-			public void WaitAll()
+            public void WaitAll()
 			{
 				Task.WaitAll(taskQueue.ToArray());
 			}

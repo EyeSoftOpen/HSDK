@@ -18,12 +18,9 @@
 
 		public ICommand ThreadExceptionCommand { get; private set; }
 
-		public IReadOnlyObservableCollection<ExceptionViewModel> Exceptions
-		{
-			get { return exceptions; }
-		}
+		public IReadOnlyObservableCollection<ExceptionViewModel> Exceptions => exceptions;
 
-		internal void LogError(string message, DateTime dateTime)
+        internal void LogError(string message, DateTime dateTime)
 		{
 			exceptions.Insert(0, new ExceptionViewModel(message.Replace("\r\n", " "), dateTime));
 		}

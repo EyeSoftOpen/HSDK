@@ -11,12 +11,9 @@ namespace EyeSoft.Domain.Transactional.Repositories.Implementations
 			this.repository = repository;
 		}
 
-		public override bool IsReadOnly
-		{
-			get { return false; }
-		}
+		public override bool IsReadOnly => false;
 
-		public virtual void Save(T entity)
+        public virtual void Save(T entity)
 		{
 			repository.Save(entity);
 		}

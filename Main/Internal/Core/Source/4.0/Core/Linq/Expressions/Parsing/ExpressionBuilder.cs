@@ -16,15 +16,9 @@ namespace EyeSoft.Core.Linq.Expressions.Parsing
 			set;
 		}
 
-		private string CurrentTokenText
-		{
-			get
-			{
-				return expressionInfo.Tokens[Token + stepForwards];
-			}
-		}
+		private string CurrentTokenText => expressionInfo.Tokens[Token + stepForwards];
 
-		public ExpressionResult Parse(int token)
+        public ExpressionResult Parse(int token)
 		{
 			var expressionToken = ExpressionToken.Create();
 

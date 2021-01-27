@@ -14,9 +14,9 @@
     <DelaySign>false</DelaySign>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A base class library to add useful extensions to .NET, like messanging, LINQ expression parser and extension methods, Task Parallel Library helpers, type auto-mapping for storage and benchmark.</Description>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <Company>EyeSoft</Company>
-    <Copyright>EyeSoft ©2020</Copyright>
+    <Copyright>EyeSoft ©2021</Copyright>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <Authors>Matteo Migliore</Authors>
     <Owners>EyeSoft</Owners>
@@ -24,6 +24,7 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageTags>contract checking, message broker, LINQ, expression parser, IO, TPL, type auto-mapper, benchmark, calendar, schedule, serialization</PackageTags>
   </PropertyGroup>
   <ItemGroup>

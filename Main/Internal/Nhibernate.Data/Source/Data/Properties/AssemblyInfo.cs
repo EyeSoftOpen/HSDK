@@ -1,8 +1,8 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2021")]
 [assembly: AssemblyProduct("EyeSoft.Data.Nhibernate")]
 
 [assembly: AssemblyTitle("EyeSoft.Data.Nhibernate")]
@@ -14,5 +14,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 [assembly: Guid("d39bd305-70fa-4dfe-96a3-8e42a3f7d9d3")]
-[assembly: AssemblyVersion("3.0.7333.34942")]
-[assembly: AssemblyFileVersion("3.0.7333.34942")]
+[assembly: AssemblyVersion("3.0.7697.30643")]
+[assembly: AssemblyFileVersion("3.0.7697.30643")]

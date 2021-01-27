@@ -9,13 +9,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.7333.34942</Version>
+    <Version>3.0.7697.30643</Version>
     <Description>Provide a base class library for manage the accounting.</Description>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
-    <Copyright>EyeSoft ©2020</Copyright>
+    <Copyright>EyeSoft ©2021</Copyright>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <Product>EyeSoft.Accounting</Product>
     <PackageIcon>icon.png</PackageIcon>

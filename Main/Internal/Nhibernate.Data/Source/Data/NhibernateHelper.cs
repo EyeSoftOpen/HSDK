@@ -62,17 +62,11 @@
 			ExecuteSchemaAction(configurationApplier.SchemaAction, databaseSchema);
 		}
 
-		public Configuration Configuration
-		{
-			get { return configuration; }
-		}
+		public Configuration Configuration => configuration;
 
-		public IStatistics Statistics
-		{
-			get { return CreateSessionFactory().Statistics; }
-		}
+        public IStatistics Statistics => CreateSessionFactory().Statistics;
 
-		public ISession OpenSession()
+        public ISession OpenSession()
 		{
 			return
 				interceptor == null ?

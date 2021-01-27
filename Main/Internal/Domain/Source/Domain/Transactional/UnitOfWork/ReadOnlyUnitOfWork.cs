@@ -122,22 +122,13 @@ namespace EyeSoft.Domain.Transactional.UnitOfWork
 				queryable = transactionalCollection.Query<T>();
 			}
 
-			public Expression Expression
-			{
-				get { return queryable.Expression; }
-			}
+			public Expression Expression => queryable.Expression;
 
-			public Type ElementType
-			{
-				get { return queryable.ElementType; }
-			}
+            public Type ElementType => queryable.ElementType;
 
-			public IQueryProvider Provider
-			{
-				get { return queryable.Provider; }
-			}
+            public IQueryProvider Provider => queryable.Provider;
 
-			public T Load(IComparable key)
+            public T Load(IComparable key)
 			{
 				return transactionalCollection.Load<T>(key);
 			}

@@ -5,12 +5,9 @@
 
     public static class ThreadingFactory
 	{
-		public static TaskFactory Instance
-		{
-			get { return TaskLogging.Instance; }
-		}
+		public static TaskFactory Instance => TaskLogging.Instance;
 
-		public static TaskFactory SetCurrentThreadScheduler()
+        public static TaskFactory SetCurrentThreadScheduler()
 		{
 			var taskFactory = new TaskFactory(new CurrentThreadTaskScheduler());
 			Set(taskFactory);

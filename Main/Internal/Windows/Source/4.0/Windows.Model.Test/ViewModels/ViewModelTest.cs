@@ -70,9 +70,9 @@
 		{
 			public string Name
 			{
-				get { return GetProperty<string>(); }
-				set { SetProperty(value); }
-			}
+				get => GetProperty<string>();
+                set => SetProperty(value);
+            }
 		}
 
 		private class ViewModelWithExpressionOnPropertyChanged : ViewModel
@@ -81,11 +81,8 @@
 
 			public string Name
 			{
-				get
-				{
-					return name;
-				}
-				set
+				get => name;
+                set
 				{
 					name = value;
 					OnPropertyChanged(() => Name);

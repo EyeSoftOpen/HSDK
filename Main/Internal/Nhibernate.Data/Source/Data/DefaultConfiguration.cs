@@ -16,12 +16,9 @@ namespace EyeSoft.Data.Nhibernate
 			this.schemaAction = schemaAction;
 		}
 
-		public SchemaAction SchemaAction
-		{
-			get { return schemaAction; }
-		}
+		public SchemaAction SchemaAction => schemaAction;
 
-		public virtual void Apply(Configuration configuration, IDatabaseProvider databaseProvider)
+        public virtual void Apply(Configuration configuration, IDatabaseProvider databaseProvider)
 		{
 			configuration.CurrentSessionContext<CallSessionContext>();
 

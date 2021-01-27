@@ -13,14 +13,8 @@ namespace EyeSoft.Data.Nhibernate.Caching.Memory
 			properties = new Dictionary<string, string> { { "expiration", expiration }, { "priority", priority } };
 		}
 
-		public string Region
-		{
-			get { return regionName; }
-		}
+		public string Region => regionName;
 
-		public IDictionary<string, string> Properties
-		{
-			get { return properties; }
-		}
-	}
+        public IDictionary<string, string> Properties => properties;
+    }
 }

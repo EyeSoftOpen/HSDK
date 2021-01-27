@@ -26,12 +26,9 @@
 			fullName = Path.Combine(Company, Product, versionName);
 		}
 
-		public static ApplicationInfo Instance
-		{
-			get { return singletonInstance.Instance; }
-		}
+		public static ApplicationInfo Instance => singletonInstance.Instance;
 
-		public string Company { get; private set; }
+        public string Company { get; private set; }
 
 		public string Product { get; private set; }
 

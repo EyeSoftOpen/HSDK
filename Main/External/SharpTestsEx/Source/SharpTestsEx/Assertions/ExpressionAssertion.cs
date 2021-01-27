@@ -26,12 +26,9 @@ namespace SharpTestsEx.Assertions
 
 		public IMessageComposer<TA> MessageComposer { get; set; }
 
-		public override Func<TA, bool> Matcher
-		{
-			get { return compiledMatcher; }
-		}
+		public override Func<TA, bool> Matcher => compiledMatcher;
 
-		public override string GetMessage(TA actual, string customMessage)
+        public override string GetMessage(TA actual, string customMessage)
 		{
 			return MessageComposer.GetMessage(actual, customMessage);
 		}

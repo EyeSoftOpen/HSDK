@@ -12,21 +12,15 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region Implementation of IBeConstraints<ITypeBeConstraints>
 
-		public ITypeBeConstraints Be
-		{
-			get { return new TypeBeConstraints(this); }
-		}
+		public ITypeBeConstraints Be => new TypeBeConstraints(this);
 
-		#endregion
+        #endregion
 
 		#region Implementation of IHaveConstraints<ITypeHaveConstraints>
 
-		public ITypeHaveConstraints Have
-		{
-			get { return new TypeHaveConstraints(this); }
-		}
+		public ITypeHaveConstraints Have => new TypeHaveConstraints(this);
 
-		#endregion
+        #endregion
 
 		#region Implementation of IAllowClone
 

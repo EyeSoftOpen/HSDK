@@ -11,9 +11,9 @@ namespace SharpTestsEx.Test
 
 			public int OneField
 			{
-				get { return oneField; }
-				set { oneField = value; }
-			}
+				get => oneField;
+                set => oneField = value;
+            }
 		}
 
 		[Test]

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
 [assembly: AssemblyProduct("EyeSoft.Demo.Navigation")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2021")]
 
 [assembly: AssemblyTitle("EyeSoft.Demo.Navigation.Windows.Presentation.Startup")]
 [assembly: AssemblyDescription("")]

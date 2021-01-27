@@ -46,14 +46,11 @@
 
 			public string Primary
 			{
-				get { return GetProperty<string>(); }
-				set { SetProperty(value); }
-			}
+				get => GetProperty<string>();
+                set => SetProperty(value);
+            }
 
-			public IEnumerable<Tuple<string, string>> ChangesLog
-			{
-				get { return changes; }
-			}
-		}
+			public IEnumerable<Tuple<string, string>> ChangesLog => changes;
+        }
 	}
 }

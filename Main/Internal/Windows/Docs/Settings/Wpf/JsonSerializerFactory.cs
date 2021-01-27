@@ -6,12 +6,9 @@ namespace EyeSoft.Docs.Settings.Windows
 
 	public class JsonSerializerFactory : ISerializerFactory
 	{
-		public string TypeName
-		{
-			get { return "json"; }
-		}
+		public string TypeName => "json";
 
-		public ISerializer<T> Create<T>()
+        public ISerializer<T> Create<T>()
 		{
 			return new JsonSerializer<T>();
 		}

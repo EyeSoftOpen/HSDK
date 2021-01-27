@@ -19,9 +19,9 @@ namespace EyeSoft.Domain.Aggregates
 
 		IComparable IEntity.Id
 		{
-			get { return (IComparable)Id; }
-			set { Id = (TKey)value; }
-		}
+			get => (IComparable)Id;
+            set => Id = (TKey)value;
+        }
 
 		public override bool Equals(object obj)
 		{

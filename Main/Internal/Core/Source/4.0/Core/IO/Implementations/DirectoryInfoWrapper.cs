@@ -19,13 +19,7 @@
             this.directoryInfo = directoryInfo;
         }
 
-        public IDirectoryInfo Parent
-        {
-            get
-            {
-                return directoryInfo.Parent == null ? null : new DirectoryInfoWrapper(directoryInfo.Parent.FullName);
-            }
-        }
+        public IDirectoryInfo Parent => directoryInfo.Parent == null ? null : new DirectoryInfoWrapper(directoryInfo.Parent.FullName);
 
         public void Create()
         {

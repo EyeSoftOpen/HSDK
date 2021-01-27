@@ -44,9 +44,9 @@
 		{
 			public int Value
 			{
-				get { return GetProperty<int>(); }
-				set { SetProperty(value); }
-			}
+				get => GetProperty<int>();
+                set => SetProperty(value);
+            }
 		}
 	}
 }

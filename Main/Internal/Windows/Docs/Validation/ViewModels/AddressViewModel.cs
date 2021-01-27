@@ -10,14 +10,14 @@
     {
         public string Street
         {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
+            get => GetProperty<string>();
+            set => SetProperty(value);
         }
 
         public string City
         {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
+            get => GetProperty<string>();
+            set => SetProperty(value);
         }
 
         public override IEnumerable<ValidationError> Validate()

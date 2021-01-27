@@ -17,9 +17,9 @@
 
 		public DateTime CurrentTime
 		{
-			get { return GetProperty<DateTime>(); }
-			private set { SetProperty(value); }
-		}
+			get => GetProperty<DateTime>();
+            private set => SetProperty(value);
+        }
 
 		protected override void Release()
 		{

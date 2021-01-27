@@ -12,17 +12,11 @@ namespace EyeSoft.Core.Calendar
 
 		private bool lastWasFixed;
 
-		public IEnumerable<Holiday> LastHolidaysAdded
-		{
-			get { return lastHolidaysAdded; }
-		}
+		public IEnumerable<Holiday> LastHolidaysAdded => lastHolidaysAdded;
 
-		public bool LastWasFixed
-		{
-			get { return lastWasFixed; }
-		}
+        public bool LastWasFixed => lastWasFixed;
 
-		public void AddRange(IList<Holiday> holidays)
+        public void AddRange(IList<Holiday> holidays)
 		{
 			AddRange(holidays, lastWasFixed);
 		}

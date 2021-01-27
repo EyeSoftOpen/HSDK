@@ -49,11 +49,8 @@
 
 		private abstract class NoSetterProperty
 		{
-			public string Name
-			{
-				get { return null; }
-			}
-		}
+			public string Name => null;
+        }
 
 		private abstract class WriteProperty
 		{

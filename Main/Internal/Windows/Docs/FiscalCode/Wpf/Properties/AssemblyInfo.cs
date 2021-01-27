@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("EyeSoft")]
-[assembly: AssemblyCopyright("Copyright © EyeSoft 2020")]
+[assembly: AssemblyCopyright("Copyright © EyeSoft 2021")]
 [assembly: AssemblyProduct("EyeSoft.Demo.FiscalCode.Wpf")]
 
 [assembly: AssemblyTitle("EyeSoft.Demo.FiscalCode.Wpf")]

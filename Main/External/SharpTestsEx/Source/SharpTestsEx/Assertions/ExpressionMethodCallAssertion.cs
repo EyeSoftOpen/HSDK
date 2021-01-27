@@ -24,12 +24,9 @@ namespace SharpTestsEx.Assertions
 			compiledMatcher = Expression.Lambda<Func<TA, bool>>(expression, actualParameter).Compile();
 		}
 
-		public override Func<TA, bool> Matcher
-		{
-			get { return compiledMatcher; }
-		}
+		public override Func<TA, bool> Matcher => compiledMatcher;
 
-		private string MatcherString()
+        private string MatcherString()
 		{
 			return new ExpressionStringBuilder(expression).ToString();
 		}

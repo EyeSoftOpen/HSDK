@@ -25,29 +25,29 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 
 		public string FirstName
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public string LastName
 		{
-			get { return GetProperty<string>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<string>();
+            set => SetProperty(value);
+        }
 
 		public string FullName => $"{FirstName} {LastName}";
 
 		public int Visits
 		{
-			get { return GetProperty<int>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<int>();
+            set => SetProperty(value);
+        }
 
 		public DateTime? Visited
 		{
-			get { return GetProperty<DateTime?>(); }
-			set { SetProperty(value); }
-		}
+			get => GetProperty<DateTime?>();
+            set => SetProperty(value);
+        }
 
 		public override IEnumerable<ValidationError> Validate()
 		{

@@ -18,10 +18,7 @@ namespace EyeSoft.Core.IO
             Directory = new DirectoryInfoWrapper(fileInfo.DirectoryName);
         }
 
-        public long Length
-        {
-            get { return fileInfo.Length; }
-        }
+        public long Length => fileInfo.Length;
 
         public string DirectoryName { get; private set; }
 
