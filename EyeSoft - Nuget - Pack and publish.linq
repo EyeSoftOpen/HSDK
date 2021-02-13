@@ -5,89 +5,98 @@ void Main()
 	//Push pack
 	//D:\GitHub\HSDK\Main\.nuget\nuget push EyeSoft.Windows.Model.3.0.7713.28810.nupkg -Source https://www.nuget.org/api/v2/package
 	
-	var packages = new[]
-		{
-			"EyeSoft.Core",
-			"EyeSoft.Domain",
-			"EyeSoft.FluentValidation",
-			"EyeSoft.Windows",
-			"EyeSoft.Windows.Model"
-		}
-		.Select(x => $"{x}.csproj");
-	
-	new DirectoryInfo(@"D:\GitHub\HSDK\Main")
-		.GetFiles("*.csproj", SearchOption.AllDirectories)
-		.Where(x => packages.Contains(x.Name))
-		.Select(x => x.FullName)
-		.AsParallel()
-		.Select(x => 		
-			{
-				
-				Pack(x, "3.0.7714.20388");
-				//return;
-				var nupkgPath = GetNugetPackagePath(x);
-				
-				Publish(nupkgPath);
-				
-				return nupkgPath;
-			})
-		.Dump();
-		
-}
+	//D:\GitHub\HSDK\Packages
 
-string GetNugetPackagePath(string projectPath)
-{
-	var releasePath = Path.Combine(new FileInfo(projectPath).DirectoryName, "bin", "Release");
-	
-	var nugetPkg = GetNugetPackagePath(projectPath, releasePath);
-	
-	if (nugetPkg == null)
+	new[]
 	{
-		nugetPkg = GetNugetPackagePath(projectPath, new FileInfo(projectPath).DirectoryName);
+		//"EyeSoft.Core",
+		//"EyeSoft.Domain",
+		//"EyeSoft.FluentValidation",
+		//"EyeSoft.Windows",
+		"EyeSoft.Windows.Model"
 	}
+	.Pack(@"D:\GitHub\HSDK\Main", "3.0.7714.24435");
+}
+
+public static class NugetHelper
+{
+	public static void Pack(this IEnumerable<string> packages, string basePath, string version)
+	{
+		var projects = packages.Select(x => $"{x}.csproj").ToArray();
+
+		new DirectoryInfo(basePath)
+			.GetFiles("*.csproj", SearchOption.AllDirectories)
+			.Where(x => projects.Contains(x.Name))
+			.Select(x => x.FullName)
+			.AsParallel()
+			.Select(x =>
+				{
+					Pack(x, version);
 	
-	return nugetPkg;
-}
+					var nupkgPath = GetNugetPackagePath(x);
 
-string GetNugetPackagePath(string projectPath, string folderPath)
-{
-	var nugetPkg = new DirectoryInfo(folderPath)
-		.GetFiles("*.nupkg")
-		.Where(x => !x.Name.EndsWith(".symbols.nupkg"))
-		.SingleOrDefault()?.FullName;
+					Publish(nupkgPath);
 
-	return nugetPkg;
-}
+					return nupkgPath;
+				})
+			.Dump();
+	}
 
-public void Pack(string projectPath, string version)
-{
-	//var command = $"dotnet pack --include-symbols --include-source --configuration Release \"{projectPath}\"";
+	private static string GetNugetPackagePath(string projectPath)
+	{
+		var releasePath = Path.Combine(new FileInfo(projectPath).DirectoryName, "bin", "Release");
 
-	var projectDirectory = new FileInfo(projectPath).Directory;
+		var nugetPkg = GetNugetPackagePath(projectPath, releasePath);
 
-	var path = projectPath;
+		if (nugetPkg == null)
+		{
+			nugetPkg = GetNugetPackagePath(projectPath, new FileInfo(projectPath).DirectoryName);
+		}
 
-	//var nuspecPath = projectDirectory.GetFiles("*.nuspec").SingleOrDefault();
-	//
-	//var isNuspec = nuspecPath != null;
-	//
-	//var path = nuspecPath?.FullName;
-	//
-	//path = path?? projectPath;
+		return nugetPkg;
+	}
 
-	var command = $@"D:\GitHub\HSDK\Main\.nuget\nuget.exe pack {path} -Prop Configuration=Release -Symbols -SymbolPackageFormat snupkg";
+	private static string GetNugetPackagePath(string projectPath, string folderPath)
+	{
+		var nugetPkg = new DirectoryInfo(folderPath)
+			.GetFiles("*.nupkg")
+			.Where(x => !x.Name.EndsWith(".symbols.nupkg"))
+			.SingleOrDefault()?.FullName;
 
-	//if (isNuspec)
-	//{
-	//	var id = Path.GetFileNameWithoutExtension(projectPath);
-	//	command = $"{command} -Version {version} -Id {id}";
-	//}
+		return nugetPkg;
+	}
 
-	command.Dump();
-	Util.Cmd(command); 
-}
+	public static void Pack(string projectPath, string version)
+	{
+		//var command = $"dotnet pack --include-symbols --include-source --configuration Release \"{projectPath}\"";
 
-public void Publish(string nupkgPath)
-{
-	Util.Cmd(@$"D:\GitHub\HSDK\Main\.nuget\nuget.exe push ""{nupkgPath}"" -Source https://www.nuget.org/api/v2/package");
+		var projectDirectory = new FileInfo(projectPath).Directory;
+
+		var path = projectPath;
+
+		//var nuspecPath = projectDirectory.GetFiles("*.nuspec").SingleOrDefault();
+		//
+		//var isNuspec = nuspecPath != null;
+		//
+		//var path = nuspecPath?.FullName;
+		//
+		//path = path?? projectPath;
+
+		//var command = $@"D:\GitHub\HSDK\Main\.nuget\nuget.exe pack {path} -Prop Configuration=Release -Symbols -SymbolPackageFormat snupkg -Version {version}";
+		var command = $@"D:\GitHub\HSDK\Main\.nuget\nuget.exe pack {path} -Prop Configuration=Release -Symbols -SymbolPackageFormat snupkg";
+
+		//if (isNuspec)
+		//{
+		//	var id = Path.GetFileNameWithoutExtension(projectPath);
+		//	command = $"{command} -Version {version} -Id {id}";
+		//}
+
+		command.Dump();
+		Util.Cmd(command);
+	}
+
+	public static void Publish(string nupkgPath)
+	{
+		Util.Cmd(@$"D:\GitHub\HSDK\Main\.nuget\nuget.exe push ""{nupkgPath}"" -Source https://www.nuget.org/api/v2/package");
+	}
 }

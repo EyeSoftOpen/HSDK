@@ -8,8 +8,8 @@ void Main()
 	
 	var basePath = @"D:\GitHub\HSDK\Main";
 
-	//var newVersion = GetNewVersion().Dump("New version");
-	
+	var newVersion = GetNewVersion().Dump("New version");
+	return;
 	CopyAllPackagesToFolderForPublish(basePath, true);
 	
 	//return;
