@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.ComponentModel.DataAnnotations.Schema
+﻿namespace EyeSoft.ComponentModel.DataAnnotations.Schema
 {
     using System;
 

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.SequentialIdentity.NewIdFormatters
+﻿namespace EyeSoft.SequentialIdentity.NewIdFormatters
 {
     public class ZBase32Formatter :
         Base32Formatter

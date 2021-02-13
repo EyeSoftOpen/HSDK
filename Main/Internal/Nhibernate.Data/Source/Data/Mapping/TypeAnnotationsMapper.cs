@@ -2,9 +2,9 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 {
 	using System;
 	using System.Linq;
-    using Core.Extensions;
-    using Core.Mapping;
+    using Extensions;
     using EyeSoft.Data.Nhibernate.Mapping.Mappers;
+    using EyeSoft.Mapping;
     using NHibernate.Mapping.ByCode;
 	using NHibernate.Type;
 

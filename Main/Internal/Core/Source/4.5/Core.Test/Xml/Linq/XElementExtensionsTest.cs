@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.Xml.Linq
 {
     using System.Xml.Linq;
-    using Core.Xml.Linq;
+    using EyeSoft.Xml.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

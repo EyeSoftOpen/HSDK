@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Net.Mail
+﻿namespace EyeSoft.Net.Mail
 {
     using System.Text.RegularExpressions;
 

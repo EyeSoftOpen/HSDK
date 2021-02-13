@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Security.Cryptography
+namespace EyeSoft.Security.Cryptography
 {
     using System.IO;
     using System.Security.Cryptography;

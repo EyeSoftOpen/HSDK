@@ -1,7 +1,7 @@
 namespace EyeSoft.Windows.Model.Demo.ViewModels
 {
 	using System.Windows.Input;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
     public abstract class BaseViewModel : AutoRegisterViewModel
 	{

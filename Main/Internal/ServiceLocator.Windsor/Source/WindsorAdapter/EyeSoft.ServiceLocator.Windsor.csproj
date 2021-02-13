@@ -10,7 +10,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
-    <Version>3.0.7697.30643</Version>
+    <Version>3.0.7714.20388</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A service locator adapter to implement CommonServiceLocator on top of Castle Windsor.</Description>
     <SignAssembly>true</SignAssembly>
@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <PackageReference Include="Castle.Windsor" Version="5.1.1" />
-    <PackageReference Include="CommonServiceLocator" Version="2.0.5" />
+    <PackageReference Include="CommonServiceLocator" Version="2.0.6" />
   </ItemGroup>
 
   <ItemGroup>

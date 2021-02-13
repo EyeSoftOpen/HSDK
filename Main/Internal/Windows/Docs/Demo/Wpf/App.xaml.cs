@@ -1,9 +1,7 @@
 ﻿namespace EyeSoft.Windows.Model.Demo
 {
 	using System.Windows;
-    using Core.Logging;
-    using DialogService;
-    using ExceptionLogger;
+    using EyeSoft.Logging;
     using EyeSoft.Windows.Model.Demo.Configuration;
 	using EyeSoft.Windows.Model.Demo.ViewModels;
 

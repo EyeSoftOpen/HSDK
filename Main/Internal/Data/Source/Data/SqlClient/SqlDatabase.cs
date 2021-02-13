@@ -3,7 +3,7 @@
 	using System;
 	using System.Data.SqlClient;
 	using System.Reflection;
-    using Core.Reflection;
+    using EyeSoft.Reflection;
     using EyeSoft.Data.SqlClient.Helper;
 
     public class SqlDatabase : IDisposable

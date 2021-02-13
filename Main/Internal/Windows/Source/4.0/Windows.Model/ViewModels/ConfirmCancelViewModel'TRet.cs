@@ -1,8 +1,6 @@
-namespace EyeSoft.Windows.Model.ViewModels
+namespace EyeSoft.Windows.Model
 {
-    using DialogService;
-
-    public abstract class ConfirmCancelViewModel<TRet> : ConfirmCancelViewModel, IDialogViewModel<TRet>
+	public abstract class ConfirmCancelViewModel<TRet> : ConfirmCancelViewModel, IDialogViewModel<TRet>
 	{
 		public abstract TRet Result { get; }
 	}

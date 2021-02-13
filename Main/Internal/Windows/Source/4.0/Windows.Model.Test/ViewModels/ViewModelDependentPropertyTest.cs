@@ -1,9 +1,9 @@
 ﻿namespace EyeSoft.Windows.Model.Test.ViewModels
 {
 	using System.Collections.Generic;
-    using Core.Reflection;
+    using EyeSoft.Reflection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
     using SharpTestsEx;
 
 	[TestClass]

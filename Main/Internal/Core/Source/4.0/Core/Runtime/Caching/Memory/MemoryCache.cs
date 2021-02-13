@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Runtime.Caching
+namespace EyeSoft.Runtime.Caching
 {
     using System;
     using System.Globalization;

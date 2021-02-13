@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Core.Runtime.Serialization
+﻿namespace EyeSoft.Runtime.Serialization
 {
     using System.IO;
     using System.Runtime.Serialization.Formatters.Binary;
     using System.Text;
-    using Core.Serialization;
+    using EyeSoft.Serialization;
 
     public class BinarySerializer<T> : ISerializer<T>
 	{

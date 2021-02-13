@@ -7,14 +7,21 @@
     <authors>Matteo Migliore</authors>
     <owners>$author$</owners>
     <projectUrl>https://github.com/Eye-Soft/HSDK</projectUrl>
-    <iconUrl>http://blob.eye-soft.com/common/eyesoft.logo.square.png</iconUrl>
+    <icon>icon.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>$author$</copyright>
     <tags>WPF windows converters MVVM presentation UI</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.7333.34942" />
-      <dependency id="System.Security.Cryptography.ProtectedData" version="4.7.0" />
+      <dependency id="EyeSoft.Core" version="3.0.7713.28810" />
+
+      <dependency id="System.IO" version="4.7.0" />
+      <dependency id="System.Runtime" version="5.0.0" />
+      <dependency id="System.Security.Cryptography.ProtectedData" version="5.0.0" />
+      <dependency id="System.Threading.Tasks" version="4.7.0" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="..\..\..\..\..\doc\imgs\icon.png"></file>
+  </files>
 </package>

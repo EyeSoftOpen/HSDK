@@ -1,7 +1,7 @@
 namespace EyeSoft.Core.Test.Runtime.Caching.Helpers
 {
     using System;
-    using Core.Runtime.Caching;
+    using EyeSoft.Runtime.Caching;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

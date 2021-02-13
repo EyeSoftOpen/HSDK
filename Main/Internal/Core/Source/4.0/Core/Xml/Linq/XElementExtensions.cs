@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Xml.Linq
+﻿namespace EyeSoft.Xml.Linq
 {
     using System.Linq;
     using System.Xml.Linq;

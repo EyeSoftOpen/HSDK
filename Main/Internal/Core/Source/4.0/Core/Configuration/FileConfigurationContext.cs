@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Configuration
+namespace EyeSoft.Configuration
 {
     using System.Collections.Specialized;
     using System.Configuration;

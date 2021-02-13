@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Reflection
+﻿namespace EyeSoft.Reflection
 {
     using System;
     using System.Reflection;
@@ -11,8 +11,8 @@
 			Predicate = predicate;
 		}
 
-		public string Name { get; private set; }
+		public string Name { get; }
 
-		public Func<PropertyInfo, bool> Predicate { get; private set; }
+		public Func<PropertyInfo, bool> Predicate { get; }
 	}
 }

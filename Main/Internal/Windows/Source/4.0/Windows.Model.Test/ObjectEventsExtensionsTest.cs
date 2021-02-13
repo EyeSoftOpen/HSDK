@@ -1,9 +1,9 @@
 ﻿namespace EyeSoft.Windows.Model.Test
 {
 	using System.ComponentModel;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
     using SharpTestsEx;
 
 	[TestClass]

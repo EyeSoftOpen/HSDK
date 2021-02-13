@@ -3,12 +3,10 @@ namespace EyeSoft.Windows.Model.Input
     using System;
     using System.Linq;
 	using System.Windows.Input;
-    using Core;
-    using Core.Extensions;
-    using EyeSoft;
-    using ViewModels;
+	using EyeSoft;
+	using EyeSoft.Extensions;
 
-    public class CommandBuilder : ICommandBuilder
+	public class CommandBuilder : ICommandBuilder
 	{
 		private readonly Func<IViewModel, CommandMethods, IFactory<ICommand>> nonGenericCommandFactory;
 		private readonly Func<IViewModel, CommandMethods, Type, IFactory<ICommand>> genericCommandFactory;

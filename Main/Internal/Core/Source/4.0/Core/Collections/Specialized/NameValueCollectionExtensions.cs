@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Collections.Specialized
+﻿namespace EyeSoft.Collections.Specialized
 {
     using System;
     using System.Collections.Specialized;

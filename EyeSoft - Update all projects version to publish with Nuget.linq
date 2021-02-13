@@ -4,18 +4,29 @@
 
 void Main()
 {
+	Util.AutoScrollResults = true;
+	
 	var basePath = @"D:\GitHub\HSDK\Main";
+
+	//var newVersion = GetNewVersion().Dump("New version");
 	
-	//var newVersion = GetNewVersion().Dump("New version");	
-	//ReplaceOldVersionWithNewVersion(basePath, "3.0.7333.34942", newVersion, "2020");
+	CopyAllPackagesToFolderForPublish(basePath, true);
 	
+	//return;
+	ReplaceOldVersionWithNewVersion(basePath, "3.0.7713.28810", "3.0.7714.20388", "2020");
+	ReplaceOldVersionWithNewVersion(basePath, "3.0.7349.34482", "3.0.7714.20388", "2020");
+	ReplaceOldVersionWithNewVersion(basePath, "3.0.7697.30643", "3.0.7714.20388", "2020");
+
+	//CopyAllPackagesToFolderForPublish(basePath, true);
+	//return;
+	//var msbuild = $@"""{msBuildPath}"" ""D:\GitHub\HSDK\Main\Internal\Windows\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj"" /p:Configuration=""Release"" /t:Rebuild;Pack /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /p:SymbolPackageFormat=snupkg";
+	var msBuildPath = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\MSBuild\Current\Bin\msbuild.exe";
+	var msbuild = $@"""{msBuildPath}"" ""D:\GitHub\HSDK\Main\EyeSoft.Hsdk.sln"" /p:Configuration=""Release"" /t:Rebuild /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /m";
+	
+	msbuild.Dump();
+	Util.Cmd(msbuild);
+
 	CopyAllPackagesToFolderForPublish(basePath, false);
-	
-	//var msBuildPath = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\MSBuild\Current\Bin\msbuild.exe";
-	//var msbuild = $@"""{msBuildPath}"" ""D:\GitHub\HSDK\Main\Internal\Windows\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj"" /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg";
-	//
-	//msbuild.Dump();
-	//Util.Cmd(msbuild);
 }
 
 void CopyAllPackagesToFolderForPublish(string basePath, bool deleteSymbols)
@@ -24,18 +35,19 @@ void CopyAllPackagesToFolderForPublish(string basePath, bool deleteSymbols)
 	
 	var symbolsPackages =
 		nuget
-			.GetFiles("*.nupkg", SearchOption.AllDirectories)
-			.Where(x => x.Extension == "");
+			.GetFiles("*.*", SearchOption.AllDirectories)
+			.Where(x => x.Name.EndsWith(".snupkg") || x.Name.EndsWith(".symbols.nupkg") || x.Name.EndsWith(".nupkg"));
 
 	if (deleteSymbols)
 	{
 		symbolsPackages.ToList().ForEach(x => x.Delete());
+		return;
 	}
 	
 	var builtSymbols =
 		symbolsPackages
 			.Where(x => x.Directory.Name == "Release")
-			.Select(x => x.FullName)
+			.Select(x => Explorer.CreateLink(x.FullName))
 			.Dump();
 }
 
@@ -44,7 +56,7 @@ public void ReplaceOldVersionWithNewVersion(string basePath, string currentVersi
 	var files =
 	new DirectoryInfo(basePath)
 		.GetFiles("*.*", SearchOption.AllDirectories)
-		.Where(x => new[] { ".csproj" }.Contains(x.Extension) || x.Name == "AssemblyInfo.cs")
+		.Where(x => new[] { ".csproj" }.Contains(x.Extension) || x.Name == "AssemblyInfo.cs" ||  x.Name == "Package.nuspec")
 		.Select(x => new { File = x, Text = File.ReadAllText(x.FullName, Encoding.UTF8) })
 		.ToArray();
 
@@ -174,5 +186,20 @@ public class BuildAndRevision
 	public override string ToString()
 	{
 		return Date.HasValue ? $"{Build} {Revision} {Date.Value}" : $"{Build} {Revision}";
+	}
+}
+
+public static class Explorer
+{
+	public static Hyperlinq CreateLink(string path, string text = null)
+	{
+		var hyperlinq = new Hyperlinq(() => OpenFileInExplorer(path), text?? path);
+		
+		return hyperlinq;
+	}
+	
+	public static void OpenFileInExplorer(string path)
+	{
+		Process.Start("explorer", string.Format("/select, \"{0}\"", path));
 	}
 }

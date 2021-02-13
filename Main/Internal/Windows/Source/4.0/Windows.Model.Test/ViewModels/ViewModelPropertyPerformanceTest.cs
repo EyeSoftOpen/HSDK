@@ -4,7 +4,7 @@
 	using System.Diagnostics;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
     [TestClass]
 	public class ViewModelPropertyPerformanceTest

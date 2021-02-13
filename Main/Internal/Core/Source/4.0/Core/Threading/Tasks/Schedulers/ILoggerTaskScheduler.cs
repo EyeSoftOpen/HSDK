@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Threading.Tasks.Schedulers
+﻿namespace EyeSoft.Threading.Tasks.Schedulers
 {
 	public interface ILoggerTaskScheduler
 	{

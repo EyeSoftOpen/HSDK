@@ -3,12 +3,12 @@ namespace EyeSoft.Data.Nhibernate.Mapping.Mappers
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-    using Core.Collections.Generic;
-    using Core.Mapping;
-    using Core.Reflection;
+    using Collections.Generic;
+    using EyeSoft.Mapping;
     using NHibernate.Mapping.ByCode;
+    using Reflection;
 
-	internal class CollectionMapper<T>
+    internal class CollectionMapper<T>
 		where T : class
 	{
 		private readonly IEnumerable<CollectionMemberInfoMetadata> collectionProperties;
@@ -24,8 +24,7 @@ namespace EyeSoft.Data.Nhibernate.Mapping.Mappers
 
 		public void Map()
 		{
-			collectionProperties
-				.ForEach(InvokeMapCollection);
+			collectionProperties.ForEach(InvokeMapCollection);
 		}
 
 		private void InvokeMapCollection(CollectionMemberInfoMetadata property)

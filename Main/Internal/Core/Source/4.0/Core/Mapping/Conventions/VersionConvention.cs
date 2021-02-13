@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping.Conventions
+namespace EyeSoft.Mapping.Conventions
 {
     using System;
     using System.ComponentModel.DataAnnotations;

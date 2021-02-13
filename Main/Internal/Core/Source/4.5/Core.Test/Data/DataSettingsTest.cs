@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.Data
 {
     using System.Collections.Generic;
-    using Core.Data;
+    using EyeSoft.Data;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

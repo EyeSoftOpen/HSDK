@@ -3,8 +3,8 @@ namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Core.Collections.Generic;
-    using Core.Extensions;
+    using EyeSoft.Collections.Generic;
+    using EyeSoft.Extensions;
 
     public class MonthCode : Code
 	{

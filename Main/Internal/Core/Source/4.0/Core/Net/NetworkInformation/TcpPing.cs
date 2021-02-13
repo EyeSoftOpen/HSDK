@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Net.NetworkInformation
+﻿namespace EyeSoft.Net.NetworkInformation
 {
     using System;
 

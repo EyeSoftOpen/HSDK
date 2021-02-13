@@ -1,9 +1,8 @@
 ﻿namespace EyeSoft.Docs.Logging.Windows
 {
-    using Core.Diagnostic;
-    using Core.Logging;
+    using EyeSoft.Diagnostic;
+    using EyeSoft.Logging;
     using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.DialogService;
     using ViewModels;
 
     public partial class App

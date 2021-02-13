@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test.Runtime.InteropServices
 {
-    using Core.Runtime.InteropServices;
+    using EyeSoft.Runtime.InteropServices;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
     using SharpTestsEx;

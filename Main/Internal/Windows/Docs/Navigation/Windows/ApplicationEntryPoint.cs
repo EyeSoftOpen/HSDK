@@ -4,7 +4,6 @@
 	using EyeSoft.Windows;
 	using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Model.Conventions;
-    using EyeSoft.Windows.Model.DialogService;
 
     internal class ApplicationEntryPoint : IApplicationEntryPoint
 	{

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Extensions
+﻿namespace EyeSoft.Extensions
 {
     using System;
 

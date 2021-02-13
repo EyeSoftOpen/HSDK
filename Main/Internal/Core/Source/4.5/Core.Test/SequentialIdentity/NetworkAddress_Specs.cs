@@ -4,7 +4,7 @@
     using System.Linq;
     using System.Management;
     using System.Net.NetworkInformation;
-    using Core.SequentialIdentity.NewIdProviders;
+    using EyeSoft.SequentialIdentity.NewIdProviders;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

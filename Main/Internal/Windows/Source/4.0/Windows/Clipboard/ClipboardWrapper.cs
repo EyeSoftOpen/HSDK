@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Clipboard
+﻿namespace EyeSoft.Windows
 {
-    using System.Windows;
+	using System.Windows;
 
-    internal class ClipboardWrapper : IClipboard
+	internal class ClipboardWrapper : IClipboard
 	{
 		public string GetText()
 		{

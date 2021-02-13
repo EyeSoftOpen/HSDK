@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Core.Test.Runtime.Serialization
 {
     using System;
-    using Core.Runtime.Serialization;
-    using Core.Serialization;
+    using EyeSoft.Runtime.Serialization;
+    using EyeSoft.Serialization;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

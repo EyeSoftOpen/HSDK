@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.ViewModels
+﻿namespace EyeSoft.Windows.Model
 {
-    using System;
+	using System;
 
-    public interface IIdentityViewModel<out T> where T : IComparable
+	public interface IIdentityViewModel<out T> where T : IComparable
 	{
 		T Id { get; }
 	}

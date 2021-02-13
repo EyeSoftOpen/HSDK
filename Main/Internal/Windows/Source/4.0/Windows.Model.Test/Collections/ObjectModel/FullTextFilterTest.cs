@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.Collections.Filter;
+    using Model.Collections;
     using SharpTestsEx;
 
     [TestClass]

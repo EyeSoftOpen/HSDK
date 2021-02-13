@@ -1,4 +1,4 @@
-namespace EyeSoft.Core
+namespace EyeSoft
 {
 	public class FluentConverter<TSource, TDestination>
 	{

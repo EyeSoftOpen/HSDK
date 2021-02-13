@@ -2,8 +2,8 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    using Core.Collections.Generic;
-    using Core.Mapping;
+    using EyeSoft.Collections.Generic;
+    using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

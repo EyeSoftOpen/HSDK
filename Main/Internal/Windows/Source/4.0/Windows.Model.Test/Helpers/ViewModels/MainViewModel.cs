@@ -1,8 +1,6 @@
 namespace EyeSoft.Windows.Model.Test.Helpers.ViewModels
 {
     using System.Windows.Input;
-    using Model.DialogService;
-    using Model.ViewModels;
 
     internal class MainViewModel : AutoRegisterViewModel
 	{

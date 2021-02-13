@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Calendar
+namespace EyeSoft.Calendar
 {
     using System;
     using Extensions;
@@ -12,11 +12,11 @@ namespace EyeSoft.Core.Calendar
             IsFixed = isFixed;
         }
 
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public DateTime Date { get; private set; }
+        public DateTime Date { get; }
 
-        public bool IsFixed { get; private set; }
+        public bool IsFixed { get; }
 
         public static Holiday Fixed(string name, DateTime dateTime)
         {

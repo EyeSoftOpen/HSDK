@@ -1,7 +1,6 @@
 ﻿namespace EyeSoft.Demo.Validation.Windows.ViewModels
 {
 	using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.ViewModels;
 
     public class MainViewModel : ViewModel
 	{

@@ -2,9 +2,9 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 {
     using System.Collections.Generic;
     using System.Diagnostics;
-    using Core.Validation;
+    using EyeSoft.Validation;
     using EyeSoft.Windows.Model;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
     [DebuggerDisplay("{Customer.FirstName} {Customer.LastName}")]
 	public class EditCustomerViewModel : ConfirmCancelViewModel<string>

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Windows.Model.ViewModels.Navigation
+﻿namespace EyeSoft.Windows.Model
 {
 	public interface INavigableViewModel
 	{

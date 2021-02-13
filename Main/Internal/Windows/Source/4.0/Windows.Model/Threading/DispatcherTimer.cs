@@ -1,9 +1,10 @@
 namespace EyeSoft.Windows.Model.Threading
 {
 	using System;
-    using Core.Timers;
 
-    public class DispatcherTimer : ITimer
+	using EyeSoft.Timers;
+
+	public class DispatcherTimer : ITimer
 	{
 		private readonly System.Windows.Threading.DispatcherTimer timer;
 

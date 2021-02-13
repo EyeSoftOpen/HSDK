@@ -10,8 +10,8 @@ namespace EyeSoft.ServiceLocator.Test.Helpers
 			Id = id;
 		}
 
-		public FooValidator FooValidator { get; private set; }
+		public FooValidator FooValidator { get; }
 
-		public Guid Id { get; private set; }
+		public Guid Id { get; }
 	}
 }

@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.Collections.Filter
+﻿namespace EyeSoft.Windows.Model.Collections
 {
-    using Core.Collections.Generic;
+	using EyeSoft.Collections.Generic;
 
-    public class FullTextFilter<T> : IFilter where T : IFilterable
+	public class FullTextFilter<T> : IFilter where T : IFilterable
 	{
 		private readonly IFilterable filterable;
 

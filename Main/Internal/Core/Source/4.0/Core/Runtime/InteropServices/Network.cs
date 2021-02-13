@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Runtime.InteropServices
+﻿namespace EyeSoft.Runtime.InteropServices
 {
 	public static class Network
 	{

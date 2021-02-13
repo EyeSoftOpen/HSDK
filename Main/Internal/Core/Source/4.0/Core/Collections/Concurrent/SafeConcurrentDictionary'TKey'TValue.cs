@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Collections.Concurrent
+﻿namespace EyeSoft.Collections.Concurrent
 {
     using System.Collections.Concurrent;
     using System.Collections.Generic;

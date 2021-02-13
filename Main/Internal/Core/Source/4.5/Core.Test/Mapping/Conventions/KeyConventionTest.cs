@@ -2,8 +2,8 @@ namespace EyeSoft.Core.Test.Mapping.Conventions
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    using Core.Mapping;
-    using Core.Mapping.Conventions;
+    using EyeSoft.Mapping;
+    using EyeSoft.Mapping.Conventions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

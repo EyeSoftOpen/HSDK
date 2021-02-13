@@ -2,8 +2,8 @@
 {
 	using System;
 	using System.IO;
-    using Core.Extensions;
-    using Core.Logging;
+    using EyeSoft.Extensions;
+    using EyeSoft.Logging;
 
     public class FileExceptionLogger : ILogger
 	{

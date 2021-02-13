@@ -1,14 +1,14 @@
-﻿namespace EyeSoft.Windows.SingleInstance
+﻿namespace EyeSoft.Windows
 {
-    using System;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Reflection;
-    using System.Runtime.InteropServices;
-    using System.Security;
-    using System.Security.Permissions;
+	using System;
+	using System.Diagnostics;
+	using System.Linq;
+	using System.Reflection;
+	using System.Runtime.InteropServices;
+	using System.Security;
+	using System.Security.Permissions;
 
-    public static class SingleInstance
+	public static class SingleInstance
 	{
 		public static ApplicationMutex ApplicationMutex(
 			this Assembly assembly, Action shutdown = null, Process mainProcess = null)

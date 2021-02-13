@@ -1,13 +1,14 @@
-﻿namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Property.Implementations
+﻿namespace EyeSoft.Windows.Model.Collection.Property
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq.Expressions;
-    using Collections.ObjectModel;
-    using Core.Collections.Generic;
+	using System;
+	using System.Collections;
+	using System.Collections.Generic;
+	using System.Linq.Expressions;
 
-    internal class CollectionLoaded<TService, TCollectionType> :
+	using EyeSoft.Collections.Generic;
+	using EyeSoft.Windows.Model.Collections.ObjectModel;
+
+	internal class CollectionLoaded<TService, TCollectionType> :
 		ICollectionLoaded<TService, TCollectionType>,
 		ICollectionSorted<TService, TCollectionType>
 		where TService : IDisposable

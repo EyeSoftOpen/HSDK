@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test.Diagnostic
 {
-    using Core.Diagnostic;
+    using EyeSoft.Diagnostic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

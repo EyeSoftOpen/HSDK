@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Windows.Model.ServiceProxy.Collection.Direct
+﻿namespace EyeSoft.Windows.Model.Collection.Direct
 {
-    using System;
-    using System.Collections.Generic;
+	using System;
+	using System.Collections.Generic;
 
-    public interface ICollectionLoaded<out TService>
+	public interface ICollectionLoaded<out TService>
 		where TService : IDisposable
 	{
 		ICollectionFilled<T> Fill<T>(Func<TService, IEnumerable<T>> func);

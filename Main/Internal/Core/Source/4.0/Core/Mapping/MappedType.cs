@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping
+namespace EyeSoft.Mapping
 {
     using System;
     using System.Collections.Generic;
@@ -24,19 +24,19 @@ namespace EyeSoft.Core.Mapping
 			Collections = collections;
 		}
 
-		public Type Source { get; private set; }
+		public Type Source { get; }
 
-		public Type Mapped { get; private set; }
+		public Type Mapped { get; }
 
-		public KeyMemberInfoMetadata Key { get; private set; }
+		public KeyMemberInfoMetadata Key { get; }
 
-		public MemberInfoMetadata Version { get; private set; }
+		public MemberInfoMetadata Version { get; }
 
-		public IEnumerable<PrimitiveMemberInfoMetadata> Primitives { get; private set; }
+		public IEnumerable<PrimitiveMemberInfoMetadata> Primitives { get; }
 
-		public IEnumerable<ReferenceMemberInfoMetadata> References { get; private set; }
+		public IEnumerable<ReferenceMemberInfoMetadata> References { get; }
 
-		public IEnumerable<CollectionMemberInfoMetadata> Collections { get; private set; }
+		public IEnumerable<CollectionMemberInfoMetadata> Collections { get; }
 
 		public override bool Equals(object obj)
 		{

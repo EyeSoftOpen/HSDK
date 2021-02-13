@@ -2,7 +2,7 @@
 {
     using System;
     using System.Net.Sockets;
-    using Core.Net.NetworkInformation;
+    using EyeSoft.Net.NetworkInformation;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

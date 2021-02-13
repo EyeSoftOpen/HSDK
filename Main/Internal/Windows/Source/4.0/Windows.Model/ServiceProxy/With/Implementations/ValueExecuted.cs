@@ -1,11 +1,12 @@
-﻿namespace EyeSoft.Windows.Model.ServiceProxy.With.Implementations
+﻿namespace EyeSoft.Windows.Model.With
 {
-    using System;
-    using System.Threading.Tasks;
-    using Collections.ObjectModel;
-    using Threading;
+	using System;
+	using System.Threading.Tasks;
 
-    internal class ValueExecuted<TParameter> : IValueExecuted<TParameter>
+	using EyeSoft.Windows.Model.Collections.ObjectModel;
+	using EyeSoft.Windows.Model.Threading;
+
+	internal class ValueExecuted<TParameter> : IValueExecuted<TParameter>
 	{
 		private readonly Task<TParameter> task;
 

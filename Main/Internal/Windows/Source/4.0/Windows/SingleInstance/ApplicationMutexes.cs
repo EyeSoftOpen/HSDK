@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Windows.SingleInstance
+﻿namespace EyeSoft.Windows
 {
-    using System.Collections.Generic;
-    using System.Threading;
+	using System.Collections.Generic;
+	using System.Threading;
 
-    internal static class ApplicationMutexes
+	internal static class ApplicationMutexes
 	{
 		private static readonly IDictionary<string, Mutex> mutexDictionary = new Dictionary<string, Mutex>();
 

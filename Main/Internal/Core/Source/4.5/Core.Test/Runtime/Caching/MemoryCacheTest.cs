@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test.Runtime.Caching
 {
-    using Core.Runtime.Caching;
+    using EyeSoft.Runtime.Caching;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

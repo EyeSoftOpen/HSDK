@@ -1,6 +1,6 @@
 namespace EyeSoft.ServiceLocator
 {
-    using Core;
+    using EyeSoft;
 
     public interface IDependencyContainer : ILocator, IResolverContainer
 	{

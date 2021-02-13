@@ -3,8 +3,8 @@ namespace EyeSoft.Data.Nhibernate.Mapping.Mappers
 	using System;
 	using System.Collections.Generic;
 	using System.Reflection;
-    using Core.Collections.Generic;
-    using Core.Mapping;
+    using Collections.Generic;
+    using EyeSoft.Mapping;
     using NHibernate.Mapping.ByCode;
 
 	internal class ReferenceMapper<T>

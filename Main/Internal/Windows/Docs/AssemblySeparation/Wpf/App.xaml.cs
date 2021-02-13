@@ -2,7 +2,6 @@
 {
 	using EyeSoft.AssemblySeparation.ViewModels;
 	using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.DialogService;
 
     public partial class App
 	{

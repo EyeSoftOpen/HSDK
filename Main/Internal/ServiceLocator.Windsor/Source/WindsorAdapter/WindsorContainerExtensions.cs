@@ -7,7 +7,7 @@
 	using Castle.MicroKernel.Handlers;
 	using Castle.Windsor;
 	using Castle.Windsor.Diagnostics;
-    using Core;
+    using EyeSoft;
 
     public static class WindsorContainerExtensions
 	{

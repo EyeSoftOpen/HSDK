@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Data
+﻿namespace EyeSoft.Data
 {
     using System;
     using Extensions;
@@ -15,7 +15,7 @@
 			configuration.Register(this);
 		}
 
-		public DataSettingsConfiguration Configuration { get; private set; }
+		public DataSettingsConfiguration Configuration { get; }
 
 		public void Save(T value)
 		{

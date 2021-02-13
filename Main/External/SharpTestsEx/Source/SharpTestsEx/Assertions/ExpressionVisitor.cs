@@ -21,7 +21,7 @@ namespace SharpTestsEx.Assertions
 			actual = expression.Parameters.Single();
 		}
 
-		public Expression<Func<TA, bool>> TestExpression { get; private set; }
+		public Expression<Func<TA, bool>> TestExpression { get; }
 
 		public IAssertion<TA> Visit()
 		{

@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using Core.IO;
     using Extensions;
+    using EyeSoft.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
     using SharpTestsEx;

@@ -1,7 +1,7 @@
 namespace EyeSoft.Docs.Settings.Windows
 {
 	using System.IO;
-    using Core.Serialization;
+    using EyeSoft.Serialization;
     using Newtonsoft.Json;
 
 	public class JsonSerializerFactory : ISerializerFactory

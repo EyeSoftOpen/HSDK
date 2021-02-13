@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.SequentialIdentity
+﻿namespace EyeSoft.SequentialIdentity
 {
     using System;
 

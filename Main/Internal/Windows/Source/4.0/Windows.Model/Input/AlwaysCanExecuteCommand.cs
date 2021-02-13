@@ -2,7 +2,6 @@
 {
     using System;
     using System.Threading.Tasks;
-    using ViewModels;
 
     public class AlwaysCanExecuteCommand : AsyncRefreshCommand
 	{

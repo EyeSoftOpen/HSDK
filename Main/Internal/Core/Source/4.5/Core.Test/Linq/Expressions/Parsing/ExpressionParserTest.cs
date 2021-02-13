@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test.Linq.Expressions.Parsing
 {
-    using Core.Linq.Expressions.Parsing;
+    using EyeSoft.Linq.Expressions.Parsing;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;

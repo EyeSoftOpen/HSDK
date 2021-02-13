@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Messanging
+namespace EyeSoft.Messanging
 {
     using System;
 

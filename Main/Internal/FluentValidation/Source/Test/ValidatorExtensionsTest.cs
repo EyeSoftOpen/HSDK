@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.FluentValidation.Test
 {
-    using Core.Validation;
+    using EyeSoft.Validation;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

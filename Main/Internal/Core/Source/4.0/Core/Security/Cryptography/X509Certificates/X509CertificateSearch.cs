@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Security.Cryptography.X509Certificates
+﻿namespace EyeSoft.Security.Cryptography.X509Certificates
 {
     using System.Linq;
     using System.Security.Cryptography.X509Certificates;

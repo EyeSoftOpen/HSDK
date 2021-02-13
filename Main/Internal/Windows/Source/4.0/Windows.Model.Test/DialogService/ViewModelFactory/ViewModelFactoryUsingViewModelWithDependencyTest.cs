@@ -1,12 +1,12 @@
 ﻿namespace EyeSoft.Windows.Model.Test.DialogService.ViewModelFactory
 {
     using System.Linq;
-    using Core;
-    using Core.Extensions;
+    using EyeSoft;
+    using EyeSoft.Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
     using ServiceLocator.Windsor;
     using SharpTestsEx;
+    using ViewModelFactory = Model.ViewModelFactory;
 
     [TestClass]
 	public class ViewModelFactoryWithLocatorTest

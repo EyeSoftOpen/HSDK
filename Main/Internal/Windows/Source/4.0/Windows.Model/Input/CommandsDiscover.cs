@@ -1,8 +1,7 @@
 namespace EyeSoft.Windows.Model.Input
 {
-    using ViewModels;
 
-    public class CommandsDiscover : ICommandsDiscover
+	public class CommandsDiscover : ICommandsDiscover
 	{
 		private readonly ICommandSetter commandSetter;
 

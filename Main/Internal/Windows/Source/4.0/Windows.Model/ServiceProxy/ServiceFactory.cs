@@ -1,23 +1,20 @@
-﻿namespace EyeSoft.Windows.Model.ServiceProxy
+﻿namespace EyeSoft.Windows.Model
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Linq.Expressions;
-    using System.Threading.Tasks;
-    using Collection.Direct.Implementations;
-    using Collection.Property;
-    using Collection.Property.Implementations;
-    using Collections.ObjectModel;
-    using Core;
-    using Core.Reflection;
-    using Item;
-    using Item.Property;
-    using Item.Property.Implementations;
-    using With;
-    using With.Implementations;
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel;
+	using System.Linq.Expressions;
+	using System.Threading.Tasks;
 
-    public class ServiceFactory<TService> where TService : IDisposable
+	using EyeSoft.Reflection;
+	using EyeSoft.Windows.Model.Collection.Direct;
+	using EyeSoft.Windows.Model.Collection.Property;
+	using EyeSoft.Windows.Model.Collections.ObjectModel;
+	using EyeSoft.Windows.Model.Item;
+	using EyeSoft.Windows.Model.Item.Property;
+	using EyeSoft.Windows.Model.With;
+
+	public class ServiceFactory<TService> where TService : IDisposable
 	{
 		private readonly LoaderParams<TService> loaderParams;
 

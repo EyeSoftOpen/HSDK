@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Mapping
+﻿namespace EyeSoft.Mapping
 {
     using System.Linq;
 

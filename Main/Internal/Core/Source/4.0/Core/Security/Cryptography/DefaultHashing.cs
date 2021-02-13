@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Security.Cryptography
+namespace EyeSoft.Security.Cryptography
 {
     using System;
     using System.Collections.Generic;
@@ -116,9 +116,9 @@ namespace EyeSoft.Core.Security.Cryptography
                 HashingType = hashingType;
             }
 
-            public Func<IHashAlgorithm> Create { get; private set; }
+            public Func<IHashAlgorithm> Create { get; }
 
-            public Type HashingType { get; private set; }
+            public Type HashingType { get; }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Reflection
+﻿namespace EyeSoft.Reflection
 {
     using System.Collections;
     using System.Collections.Generic;

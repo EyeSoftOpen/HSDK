@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Docs.Logging.Windows
 {
     using System;
-    using Core.Extensions;
-    using Core.Logging;
+    using EyeSoft.Extensions;
+    using EyeSoft.Logging;
     using ViewModels;
 
     internal class ViewLogger : ILogger

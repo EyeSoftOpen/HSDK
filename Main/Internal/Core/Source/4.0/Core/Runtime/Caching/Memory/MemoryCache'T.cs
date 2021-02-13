@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Runtime.Caching
+namespace EyeSoft.Runtime.Caching
 {
     using System;
     using System.Collections;
@@ -28,9 +28,9 @@ namespace EyeSoft.Core.Runtime.Caching
 			Name = cache.Name;
 		}
 
-		public DefaultCacheCapabilities DefaultCacheCapabilities { get; private set; }
+		public DefaultCacheCapabilities DefaultCacheCapabilities { get; }
 
-		public string Name { get; private set; }
+		public string Name { get; }
 
 		public long Count => cache.GetCount();
 

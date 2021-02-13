@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.ServiceProxy
+﻿namespace EyeSoft.Windows.Model
 {
-    using System;
+	using System;
 
-    internal class LoaderParams<TService> where TService : IDisposable
+	internal class LoaderParams<TService> where TService : IDisposable
 	{
 		public LoaderParams(Func<TService> proxyCreator, bool useTaskFactory)
 		{

@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Reflection
+namespace EyeSoft.Reflection
 {
     using System;
 
@@ -10,9 +10,9 @@ namespace EyeSoft.Core.Reflection
 			MemberName = memberName;
 		}
 
-		public Type Type { get; private set; }
+		public Type Type { get; }
 
-		public string MemberName { get; private set; }
+		public string MemberName { get; }
 
 		public override bool Equals(object obj)
 		{

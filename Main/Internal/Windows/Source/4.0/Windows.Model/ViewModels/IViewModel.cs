@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Model.ViewModels
+﻿namespace EyeSoft.Windows.Model
 {
+    using EyeSoft.Validation;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using Core.Validation;
 
     public interface IViewModel : INotifyPropertyChanged, IDataErrorInfo
     {

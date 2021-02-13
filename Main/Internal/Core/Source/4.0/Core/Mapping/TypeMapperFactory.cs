@@ -1,7 +1,7 @@
-namespace EyeSoft.Core.Mapping
+namespace EyeSoft.Mapping
 {
     using Conventions;
-    using Core.Conventions;
+    using EyeSoft.Conventions;
 
     public static class TypeMapperFactory
     {

@@ -2,8 +2,8 @@
 {
     using System;
     using System.Windows.Input;
+    using EyeSoft.Windows.Model;
     using EyeSoft.Windows.Model.Collections.ObjectModel;
-    using EyeSoft.Windows.Model.ViewModels;
 
     public class MainViewModel : AutoRegisterViewModel
 	{

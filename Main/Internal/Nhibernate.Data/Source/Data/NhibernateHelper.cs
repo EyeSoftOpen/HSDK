@@ -2,7 +2,7 @@
 {
 	using System;
 	using System.Collections.Generic;
-    using Core.Extensions;
+    using Extensions;
     using EyeSoft.Data.Common;
     using NHibernate;
 	using NHibernate.Cfg;

@@ -4,7 +4,7 @@
 	using System.IO;
 	using System.Linq;
 	using System.Windows;
-    using Core.IO;
+    using EyeSoft.IO;
     using Exceptionless;
     using EyeSoft.Windows;
 	using EyeSoft.Windows.Model;

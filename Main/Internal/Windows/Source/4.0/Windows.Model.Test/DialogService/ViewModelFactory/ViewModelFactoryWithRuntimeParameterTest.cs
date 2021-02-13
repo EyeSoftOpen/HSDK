@@ -1,9 +1,9 @@
 ﻿namespace EyeSoft.Windows.Model.Test.DialogService.ViewModelFactory
 {
-    using Core.Extensions;
+    using EyeSoft.Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
     using SharpTestsEx;
+    using ViewModelFactory = Model.ViewModelFactory;
 
     [TestClass]
 	public class ViewModelFactoryWithRuntimeParameterTest
@@ -31,7 +31,7 @@
 				Id = id;
 			}
 
-			public object Id { get; private set; }
+			public object Id { get; }
 		}
 
 		private class TestDependency

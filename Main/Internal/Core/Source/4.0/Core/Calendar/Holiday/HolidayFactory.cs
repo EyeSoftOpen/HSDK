@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Calendar
+namespace EyeSoft.Calendar
 {
     using System.Collections.Generic;
 

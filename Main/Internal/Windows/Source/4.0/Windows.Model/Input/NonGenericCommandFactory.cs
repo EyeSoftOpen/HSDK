@@ -3,11 +3,10 @@ namespace EyeSoft.Windows.Model.Input
 	using System;
 	using System.Reflection;
 	using System.Windows.Input;
-    using Core;
-    using Core.Reflection;
-    using ViewModels;
 
-    public class NonGenericCommandFactory : IFactory<ICommand>
+	using EyeSoft.Reflection;
+
+	public class NonGenericCommandFactory : IFactory<ICommand>
 	{
 		private const BindingFlags NonPublic = BindingFlags.Instance | BindingFlags.NonPublic;
 

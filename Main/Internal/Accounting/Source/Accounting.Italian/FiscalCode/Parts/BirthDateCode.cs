@@ -1,7 +1,7 @@
 namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
     using System;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
 
     public class DayCode : Code
 	{

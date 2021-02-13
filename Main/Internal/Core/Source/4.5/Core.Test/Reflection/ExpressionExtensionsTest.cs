@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq.Expressions;
-    using Core.Linq.Expressions;
+    using EyeSoft.Linq.Expressions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

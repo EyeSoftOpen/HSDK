@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core
+﻿namespace EyeSoft
 {
     using System;
     using System.Collections;

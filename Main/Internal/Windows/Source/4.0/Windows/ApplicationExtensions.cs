@@ -5,8 +5,7 @@
 	using System.IO;
 	using System.Reflection;
 	using System.Windows;
-    using Core.Extensions;
-    using SingleInstance;
+    using Extensions;
 
     public static class ApplicationExtensions
 	{

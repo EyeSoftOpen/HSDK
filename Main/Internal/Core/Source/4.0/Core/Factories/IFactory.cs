@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core
+﻿namespace EyeSoft
 {
 	internal interface IFactory : IFactory<object>
 	{

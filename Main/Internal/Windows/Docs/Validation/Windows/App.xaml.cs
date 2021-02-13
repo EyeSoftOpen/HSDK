@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Demo.Validation.Windows
 {
 	using System.Windows;
-    using Core.Logging;
+    using EyeSoft.Logging;
     using EyeSoft.Demo.Validation.Windows.ViewModels;
 
     public partial class App

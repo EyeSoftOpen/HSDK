@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping.Strategies
+namespace EyeSoft.Mapping.Strategies
 {
     using Extensions;
 

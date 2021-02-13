@@ -2,7 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    using Core.Mapping;
+    using EyeSoft.Mapping;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;

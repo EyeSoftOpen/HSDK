@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Linq.Expressions.Parsing
+namespace EyeSoft.Linq.Expressions.Parsing
 {
     using System;
     using System.Collections.Generic;
@@ -17,15 +17,15 @@ namespace EyeSoft.Core.Linq.Expressions.Parsing
 			Parameter = Expression.Parameter(type, parameterName);
 		}
 
-		public ReadOnlyCollection<string> Tokens { get; private set; }
+		public ReadOnlyCollection<string> Tokens { get; }
 
-		public string[] ExpressionTokens { get; private set; }
+		public string[] ExpressionTokens { get; }
 
-		public string ParameterName { get; private set; }
+		public string ParameterName { get; }
 
-		public ParameterExpression Parameter { get; private set; }
+		public ParameterExpression Parameter { get; }
 
-		public string ParameterSyntax { get; private set; }
+		public string ParameterSyntax { get; }
 
 		public static ExpressionInfo Create<T>(string expression)
 		{

@@ -5,10 +5,10 @@ namespace EyeSoft.Windows.Model.Input
     using System.ComponentModel;
 	using System.Reflection;
 	using System.Windows.Input;
-    using Core;
-    using Core.Reflection;
 
-    public class GenericCommandFactory : IFactory<ICommand>
+	using EyeSoft.Reflection;
+
+	public class GenericCommandFactory : IFactory<ICommand>
 	{
 		private const BindingFlags NonPublic = BindingFlags.Instance | BindingFlags.NonPublic;
 

@@ -14,21 +14,21 @@
 			Population = population;
 		}
 
-		public string Istat { get; private set; }
+		public string Istat { get; }
 
 		public string Name { get; }
 
-		public string City { get; private set; }
+		public string City { get; }
 
-		public string Region { get; private set; }
+		public string Region { get; }
 
-		public string Prefix { get; private set; }
+		public string Prefix { get; }
 
-		public string Zip { get; private set; }
+		public string Zip { get; }
 
-		public string Area { get; private set; }
+		public string Area { get; }
 
-		public int Population { get; private set; }
+		public int Population { get; }
 
 		public override string ToString()
 		{

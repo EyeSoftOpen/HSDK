@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Messanging
+namespace EyeSoft.Messanging
 {
     using System;
 
@@ -12,6 +12,6 @@ namespace EyeSoft.Core.Messanging
 			Exception = exception;
 		}
 
-		public TException Exception { get; private set; }
+		public TException Exception { get; }
 	}
 }

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.IO
+﻿namespace EyeSoft.IO
 {
     using System.Collections.Generic;
     using System.Diagnostics;

@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping.Data
+namespace EyeSoft.Mapping.Data
 {
     using System;
 

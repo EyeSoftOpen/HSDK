@@ -3,9 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-    using Windows.Model.ServiceProxy;
-    using Windows.Model.ViewModels;
-    using Core.Mapping;
+    using EyeSoft.Mapping;
     using EyeSoft.AutoMapper;
     using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Model.Threading;

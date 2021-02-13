@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Data
+﻿namespace EyeSoft.Data
 {
 	public class DataSettingsConfiguration
 	{
@@ -20,15 +20,15 @@
 			Path = DataSettingsKey.GetFullPathWithExtension(applicationData, key, isProtected);
 		}
 
-		public ApplicationData Data { get; private set; }
+		public ApplicationData Data { get; }
 
-		public string Path { get; private set; }
+		public string Path { get; }
 
-		public string Key { get; private set; }
+		public string Key { get; }
 
-		public bool Protected { get; private set; }
+		public bool Protected { get; }
 
-		public string Extension { get; private set; }
+		public string Extension { get; }
 
 		public override string ToString()
 		{

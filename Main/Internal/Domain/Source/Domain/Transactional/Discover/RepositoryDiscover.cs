@@ -3,7 +3,7 @@ namespace EyeSoft.Domain.Transactional.Discover
 	using System;
 	using System.Linq;
 	using System.Reflection;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
     using Repositories;
 
     public class RepositoryDiscover :

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Diagnostic
+﻿namespace EyeSoft.Diagnostic
 {
 	public class DefaultDebugger : IDebugger
 	{

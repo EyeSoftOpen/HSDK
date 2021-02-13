@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.Normalization
 {
-    using Core.Normalization;
-    using Core.Reflection;
+    using EyeSoft.Normalization;
+    using EyeSoft.Reflection;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
@@ -201,7 +201,7 @@
 
 			public string Name { get; private set; }
 
-			public Address Address { get; private set; }
+			public Address Address { get; }
 		}
 
 		private class Address
@@ -211,7 +211,7 @@
 				Street = street;
 			}
 
-			public string Street { get; private set; }
+			public string Street { get; }
 		}
 	}
 }

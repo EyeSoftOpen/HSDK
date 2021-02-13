@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Clipboard
+﻿namespace EyeSoft.Windows
 {
-    using System.Windows;
+	using System.Windows;
 
-    internal interface IClipboard
+	internal interface IClipboard
 	{
 		string GetText();
 

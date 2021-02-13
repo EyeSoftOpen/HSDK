@@ -17,7 +17,7 @@ namespace EyeSoft.Data.Common
 			ConnectionString = connectionString;
 		}
 
-		public string ConnectionString { get; private set; }
+		public string ConnectionString { get; }
 
 		public abstract string ProviderName { get; }
 

@@ -3,7 +3,7 @@
 	using System;
 	using System.Linq;
 	using System.Reflection;
-    using Core.Mapping;
+    using EyeSoft.Mapping;
     using global::AutoMapper;
 
     public class AutoMapperProjection : IProjection

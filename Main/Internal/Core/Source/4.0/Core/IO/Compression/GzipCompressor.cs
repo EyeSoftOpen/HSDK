@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.IO.Compression
+﻿namespace EyeSoft.IO.Compression
 {
     using System.IO;
     using System.IO.Compression;

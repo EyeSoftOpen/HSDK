@@ -1,7 +1,7 @@
-namespace EyeSoft.Core.Mapping
+namespace EyeSoft.Mapping
 {
     using Conventions;
-    using Core.Conventions;
+    using EyeSoft.Conventions;
     using Strategies;
 
     public class TypeMapperConventions
@@ -38,16 +38,16 @@ namespace EyeSoft.Core.Mapping
             VersionConvention = versionConvention;
         }
 
-        public TypeConvention<object, object> TypeConvention { get; private set; }
+        public TypeConvention<object, object> TypeConvention { get; }
 
-        public IKeyConvention KeyConvention { get; private set; }
+        public IKeyConvention KeyConvention { get; }
 
-        public IMemberStrategy PrimitiveStrategy { get; private set; }
+        public IMemberStrategy PrimitiveStrategy { get; }
 
-        public IMemberStrategy ReferenceStrategy { get; private set; }
+        public IMemberStrategy ReferenceStrategy { get; }
 
-        public IMemberStrategy CollectionStrategy { get; private set; }
+        public IMemberStrategy CollectionStrategy { get; }
 
-        public IVersionConvention VersionConvention { get; private set; }
+        public IVersionConvention VersionConvention { get; }
     }
 }

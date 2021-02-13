@@ -47,7 +47,7 @@
 			IsValid = true;
 		}
 
-		public bool IsValid { get; private set; }
+		public bool IsValid { get; }
 
 		public override string ToString()
 		{

@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.Reflection
 {
-    using Core.Reflection;
     using Extensions;
+    using EyeSoft.Reflection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

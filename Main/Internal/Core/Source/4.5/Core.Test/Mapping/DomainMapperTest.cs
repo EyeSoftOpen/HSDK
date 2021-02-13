@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq;
-    using Core.Mapping;
+    using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

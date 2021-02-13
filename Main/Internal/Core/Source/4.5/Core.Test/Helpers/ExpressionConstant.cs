@@ -11,8 +11,8 @@ namespace EyeSoft.Core.Test.Helpers
 			Compiled = compiled.ToString();
 		}
 
-		public string Source { get; private set; }
+		public string Source { get; }
 
-		public string Compiled { get; private set; }
+		public string Compiled { get; }
 	}
 }

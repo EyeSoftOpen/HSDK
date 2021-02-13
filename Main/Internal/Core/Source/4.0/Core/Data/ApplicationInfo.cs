@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Data
+﻿namespace EyeSoft.Data
 {
     using System;
     using System.Collections.Generic;
@@ -28,11 +28,11 @@
 
 		public static ApplicationInfo Instance => singletonInstance.Instance;
 
-        public string Company { get; private set; }
+        public string Company { get; }
 
-		public string Product { get; private set; }
+		public string Product { get; }
 
-		public Version Version { get; private set; }
+		public Version Version { get; }
 
 
 		public static ApplicationInfo FromEntryAssembly(bool includeVersion = false)

@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test.IO
 {
-    using Core.IO;
+    using EyeSoft.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

@@ -2,8 +2,8 @@
 {
     using System;
     using System.Diagnostics;
-    using Core.SequentialIdentity;
-    using Core.SequentialIdentity.NewIdProviders;
+    using EyeSoft.SequentialIdentity;
+    using EyeSoft.SequentialIdentity.NewIdProviders;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

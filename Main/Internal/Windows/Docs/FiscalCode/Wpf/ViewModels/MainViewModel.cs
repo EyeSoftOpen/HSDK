@@ -4,7 +4,6 @@
     using Calculate;
     using EyeSoft.Accounting.Italian.Istat;
 	using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.ViewModels;
     using Validate;
 
     public class MainViewModel : AutoRegisterViewModel
@@ -20,13 +19,11 @@
 		public CalculateFiscalCodeViewModel CalculateFiscalCode
 		{
 			get;
-			private set;
-		}
+        }
 
 		public ValidateFiscalCodeViewModel ValidateFiscalCode
 		{
 			get;
-			private set;
-		}
+        }
 	}
 }

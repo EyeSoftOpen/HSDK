@@ -9,7 +9,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.7697.30643</Version>
+    <Version>3.0.7714.20388</Version>
     <Description>Provide classes to query Italian cities and towns using ISTAT data.</Description>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>

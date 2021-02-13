@@ -2,8 +2,8 @@ namespace EyeSoft.Windows.Model.Test.Helpers.Conventions
 {
     using System;
     using System.Windows;
-    using Core.Conventions;
-    using Model.ViewModels;
+    using EyeSoft.Conventions;
+    using EyeSoft.Windows.Model;
     using ViewModels;
     using Views;
 

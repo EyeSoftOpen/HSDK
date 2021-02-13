@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Data
+﻿namespace EyeSoft.Data
 {
     using System;
 

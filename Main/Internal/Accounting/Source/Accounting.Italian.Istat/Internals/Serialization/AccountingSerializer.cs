@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
-    using Core.Reflection;
+    using EyeSoft.Reflection;
     using Newtonsoft.Json;
 
     internal static class AccountingSerializer

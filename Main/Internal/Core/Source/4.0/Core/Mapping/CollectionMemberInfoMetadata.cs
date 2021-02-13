@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping
+namespace EyeSoft.Mapping
 {
     using System.Linq;
     using System.Reflection;
@@ -15,9 +15,9 @@ namespace EyeSoft.Core.Mapping
 			Lazy = memberInfo.GetAttribute<NotLazyAttribute>().IsNull();
 		}
 
-		public bool Lazy { get; private set; }
+		public bool Lazy { get; }
 
-		public bool Inverse { get; private set; }
+		public bool Inverse { get; }
 
 		private bool IsInverse()
 		{

@@ -1,6 +1,6 @@
-﻿namespace EyeSoft.Core.Runtime.Serialization
+﻿namespace EyeSoft.Runtime.Serialization
 {
-    using Core.Serialization;
+    using EyeSoft.Serialization;
 
     public class BinarySerializerFactory : ISerializerFactory
 	{

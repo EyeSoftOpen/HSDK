@@ -1,6 +1,6 @@
-﻿namespace EyeSoft.Core.Xml.Serialization
+﻿namespace EyeSoft.Xml.Serialization
 {
-    using Core.Serialization;
+    using EyeSoft.Serialization;
 
     public class XmlSerializerFactory : ISerializerFactory
 	{

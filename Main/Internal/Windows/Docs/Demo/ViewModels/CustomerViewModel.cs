@@ -4,11 +4,11 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 	using System.Collections.Generic;
 	using System.Diagnostics;
 	using System.Windows.Input;
-    using Core.Messanging;
-    using Core.Validation;
+    using EyeSoft.Messanging;
+    using EyeSoft.Validation;
     using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Model.Demo.ViewModels.Validators;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
     [DebuggerDisplay("{FirstName} {LastName}")]
 	public class CustomerViewModel : IdentityViewModel

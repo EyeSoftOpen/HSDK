@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.IO
+namespace EyeSoft.IO
 {
     using System;
     using System.IO;
@@ -16,7 +16,7 @@ namespace EyeSoft.Core.IO
 
         public string Name { get; private set; }
 
-        public string FullName { get; private set; }
+        public string FullName { get; }
 
         public long Length { get; protected set; }
 

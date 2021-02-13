@@ -3,17 +3,17 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-    using Core.Collections.Generic;
-    using Core.Conventions;
-    using Core.Mapping;
-    using Core.Mapping.Conventions;
-    using Core.Mapping.Data;
-    using Core.Reflection;
+    using Collections.Generic;
+    using Conventions;
+    using EyeSoft.Mapping;
+    using EyeSoft.Mapping.Conventions;
+    using EyeSoft.Mapping.Data;
     using NHibernate.Cfg.MappingSchema;
 	using NHibernate.Mapping.ByCode;
 	using NHibernate.Mapping.ByCode.Conformist;
+    using Reflection;
 
-	public class ModelAnnotationsMapper : IModelAnnotationsMapper
+    public class ModelAnnotationsMapper : IModelAnnotationsMapper
 	{
 		private readonly TypeMapper typeMapper;
 
@@ -57,8 +57,7 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 
 		public HbmMapping Map(IEnumerable<Type> types)
 		{
-			types
-				.ForEach(type => Map(typeMapper.Map(type)));
+			types.ForEach(type => Map(typeMapper.Map(type)));
 
 			return ((IModelAnnotationsMapper)this).CompileMapping();
 		}

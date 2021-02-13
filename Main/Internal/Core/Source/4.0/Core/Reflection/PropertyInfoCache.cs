@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Reflection
+﻿namespace EyeSoft.Reflection
 {
     using System;
     using System.Collections.Generic;
@@ -35,7 +35,7 @@
 					return propertyCache[fullKey];
 				}
 
-				var properties = type.GetAnyInstanceProperties().Where(predicate);
+				var properties = type.GetAnyInstanceProperties().Where(predicate).ToArray();
 
 				var typeProperties = new EnumerablePropertyInfo(properties);
 

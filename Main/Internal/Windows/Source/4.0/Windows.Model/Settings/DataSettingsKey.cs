@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using Core.Extensions;
-    using Core.Serialization;
+    using Extensions;
+    using Serialization;
 
     internal static class DataSettingsKey
     {

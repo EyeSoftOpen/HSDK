@@ -1,11 +1,10 @@
-namespace EyeSoft.Windows.Model.ViewModels
+namespace EyeSoft.Windows.Model
 {
-    using System;
-    using Core;
-    using Core.Timers;
-    using ServiceProxy;
+	using System;
 
-    public static class ViewModelController
+	using EyeSoft.Timers;
+
+	public static class ViewModelController
 	{
 		private static readonly Singleton<IResolverLocator> singletonContainer =
 			new Singleton<IResolverLocator>();
@@ -27,7 +26,7 @@ namespace EyeSoft.Windows.Model.ViewModels
 
 		public static ITimerFactory TimerFactory()
 		{
-			return Core.Timers.TimerFactory.Create();
+			return Timers.TimerFactory.Create();
 		}
 
 		public static TViewModel Create<TViewModel>() where TViewModel : AutoRegisterViewModel

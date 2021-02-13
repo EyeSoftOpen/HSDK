@@ -1,6 +1,6 @@
 namespace EyeSoft.Core.Test.Calendar
 {
-    using Core.Calendar;
+    using EyeSoft.Calendar;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

@@ -2,7 +2,7 @@
 {
 	using System.Collections.Generic;
 	using System.Diagnostics;
-    using Core.Collections.Concurrent;
+    using Collections.Concurrent;
     using NHibernate;
 	using NHibernate.Impl;
 

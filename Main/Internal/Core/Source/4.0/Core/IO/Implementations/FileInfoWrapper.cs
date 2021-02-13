@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.IO
+namespace EyeSoft.IO
 {
     using System.IO;
 
@@ -20,9 +20,9 @@ namespace EyeSoft.Core.IO
 
         public long Length => fileInfo.Length;
 
-        public string DirectoryName { get; private set; }
+        public string DirectoryName { get; }
 
-        public IDirectoryInfo Directory { get; private set; }
+        public IDirectoryInfo Directory { get; }
 
         public IFileInfo CopyTo(string destination)
         {

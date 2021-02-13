@@ -1,11 +1,11 @@
-namespace EyeSoft.Core.Xml.Serialization
+namespace EyeSoft.Xml.Serialization
 {
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Xml.Linq;
-    using Core.Serialization;
     using Extensions;
+    using EyeSoft.Serialization;
 
     public class XmlSerializer<T> : ISerializer<T>
 	{

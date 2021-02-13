@@ -28,9 +28,9 @@ namespace SharpTestsEx.Assertions
 		public Assertion(string predicate, TE expected, Func<TA, bool> match)
 			: this(predicate, expected, match, new DefaultMessageBuilder<TA, TE>()) {}
 
-		protected virtual TE Expected { get; private set; }
+		protected virtual TE Expected { get; }
 
-		protected virtual Func<MessageBuilderInfo<TA, TE>, string> MessageBuilder { get; private set; }
+		protected virtual Func<MessageBuilderInfo<TA, TE>, string> MessageBuilder { get; }
 
 		protected virtual MessageBuilderInfo<TA, TE> GetMessageBuilderInfo(TA actual, string customMessage)
 		{

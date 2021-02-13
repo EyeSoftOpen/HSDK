@@ -1,4 +1,4 @@
-namespace EyeSoft.Windows.Model.ViewModels.Helpers
+namespace EyeSoft.Windows.Model
 {
 	internal interface INotifyViewModel
 	{

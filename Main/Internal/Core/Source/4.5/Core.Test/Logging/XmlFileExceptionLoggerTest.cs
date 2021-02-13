@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
-    using Core.IO;
-    using Core.Logging;
+    using EyeSoft.IO;
+    using EyeSoft.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
     using SharpTestsEx;

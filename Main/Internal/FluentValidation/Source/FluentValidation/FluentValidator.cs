@@ -4,11 +4,11 @@
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Linq.Expressions;
-    using Core.Reflection;
-    using Core.Validation;
     using global::FluentValidation;
+    using Reflection;
+    using Validation;
 
-	public abstract class FluentValidator<T> : AbstractValidator<T>, global::EyeSoft.Core.Validation.IValidator<T>
+    public abstract class FluentValidator<T> : AbstractValidator<T>, Validation.IValidator<T>
 	{
 		public new IEnumerable<ValidationError> Validate(T instance)
 		{

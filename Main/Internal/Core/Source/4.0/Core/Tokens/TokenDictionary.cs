@@ -1,4 +1,4 @@
-namespace EyeSoft.Core
+namespace EyeSoft
 {
     using System.Collections.Generic;
 
@@ -18,7 +18,7 @@ namespace EyeSoft.Core
 			Token(tokenNumber, length);
 		}
 
-		public IndexedTokens Tokens { get; private set; }
+		public IndexedTokens Tokens { get; }
 
 		public TokenDictionary Token(int tokenNumber, int length)
 		{

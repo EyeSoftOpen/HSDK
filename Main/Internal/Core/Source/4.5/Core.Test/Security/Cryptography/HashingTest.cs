@@ -2,9 +2,9 @@
 {
     using System;
     using System.Security.Cryptography;
-    using Core.IO;
-    using Core.Security.Cryptography;
     using Extensions;
+    using EyeSoft.IO;
+    using EyeSoft.Security.Cryptography;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Diagnostic
+namespace EyeSoft.Diagnostic
 {
     using System;
     using System.Collections.Generic;

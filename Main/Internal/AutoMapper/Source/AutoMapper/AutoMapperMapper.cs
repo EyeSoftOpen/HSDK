@@ -3,7 +3,7 @@
 	using System;
 
 	using global::AutoMapper;
-    using IMapper = Core.Mapping.IMapper;
+    using IMapper = Mapping.IMapper;
 
     public class AutoMapperMapper : IMapper
 	{

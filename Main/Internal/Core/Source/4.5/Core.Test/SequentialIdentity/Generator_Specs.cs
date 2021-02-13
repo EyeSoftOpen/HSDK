@@ -2,7 +2,7 @@
 {
     using System;
     using System.Diagnostics;
-    using Core.SequentialIdentity;
+    using EyeSoft.SequentialIdentity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

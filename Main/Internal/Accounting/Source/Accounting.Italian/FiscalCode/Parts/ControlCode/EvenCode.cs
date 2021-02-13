@@ -2,7 +2,7 @@ namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Core.Collections.Generic;
+    using EyeSoft.Collections.Generic;
 
     internal class EvenCode
 	{
@@ -28,6 +28,6 @@ namespace EyeSoft.Accounting.Italian.FiscalCode.Parts
 			Total = sum;
 		}
 
-		public int Total { get; private set; }
+		public int Total { get; }
 	}
 }

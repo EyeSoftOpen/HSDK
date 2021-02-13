@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.Linq.Expressions
 {
     using System.Collections.Generic;
-    using Core.Linq.Expressions;
+    using EyeSoft.Linq.Expressions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

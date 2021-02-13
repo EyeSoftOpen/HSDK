@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Validation
+﻿namespace EyeSoft.Validation
 {
     using System.Collections.Generic;
 
@@ -11,11 +11,11 @@
 			Value = value;
 		}
 
-		public string PropertyName { get; private set; }
+		public string PropertyName { get; }
 
-		public string Message { get; private set; }
+		public string Message { get; }
 
-		public object Value { get; private set; }
+		public object Value { get; }
 
 		public override bool Equals(object obj)
 		{

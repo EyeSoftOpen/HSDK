@@ -23,7 +23,7 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region Implementation of IAssertionInfo<T>
 
-		public T Actual { get; private set; }
+		public T Actual { get; }
 
 		public bool IsNegated { get; private set; }
 

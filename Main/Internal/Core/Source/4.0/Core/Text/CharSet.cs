@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Text
+namespace EyeSoft.Text
 {
     using System.Collections.Generic;
     using System.Linq;

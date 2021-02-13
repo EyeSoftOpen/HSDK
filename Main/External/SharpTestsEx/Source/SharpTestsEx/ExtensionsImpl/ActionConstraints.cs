@@ -89,7 +89,7 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region IThrowConstraints<TException> Members
 
-		public TException ValueOf { get; private set; }
+		public TException ValueOf { get; }
 
 		public TException Exception => ValueOf;
 

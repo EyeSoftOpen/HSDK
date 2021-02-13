@@ -3,7 +3,7 @@ namespace EyeSoft.FluentValidation.Test
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-    using Core.Validation;
+    using EyeSoft.Validation;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 	using SharpTestsEx;

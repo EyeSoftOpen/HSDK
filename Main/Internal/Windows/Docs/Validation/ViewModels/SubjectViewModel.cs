@@ -1,9 +1,8 @@
 ﻿namespace EyeSoft.Demo.Validation.Windows.ViewModels
 {
     using System.Collections.Generic;
-    using Core.Validation;
+    using EyeSoft.Validation;
     using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.ViewModels;
     using Validators;
 
     public class SubjectViewModel : ViewModel

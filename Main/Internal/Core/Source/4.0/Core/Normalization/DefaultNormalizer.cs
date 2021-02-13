@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Normalization
+﻿namespace EyeSoft.Normalization
 {
     using System;
     using System.Collections.Generic;
@@ -77,7 +77,7 @@
 		{
 			if (typeNormalizers.ContainsKey(type))
 			{
-				var message = string.Format("The normalizer for the type '{0}' has already been removed.", type.Name);
+				var message = $"The normalizer for the type '{type.Name}' has already been removed.";
 				throw new ArgumentException(message);
 			}
 
@@ -88,9 +88,7 @@
 		{
 			var properties = GetStringProperties(obj);
 
-			Func<string, string> trim = value => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
-
-			NormalizeProperties(obj, properties, trim);
+            NormalizeProperties(obj, properties, (Func<string, string>) Trim);
 		}
 
 		public void NormalizeProperties<T>(object obj, Func<T, T> normalize)
@@ -117,7 +115,14 @@
 			return primitivePropertiesCache.GetProperties(obj.GetType(), PropertyPredicates.Primitive);
 		}
 
-		private void CustomNormalizeOrTrim(object obj)
+        protected  virtual string Trim(string value)
+        {
+            var trimmed = string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+
+            return trimmed;
+        }
+
+        private void CustomNormalizeOrTrim(object obj)
 		{
 			var type = obj.GetType();
 

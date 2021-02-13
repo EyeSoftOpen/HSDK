@@ -95,7 +95,7 @@
 				Children = new[] { new Child(bill), new Child(steve) };
 			}
 
-			private IEnumerable<IAggregate> Children { get; set; }
+			private IEnumerable<IAggregate> Children { get; }
 		}
 
 		private class Child : IAggregate
@@ -105,7 +105,7 @@
 				Name = name;
 			}
 
-			private string Name { get; set; }
+			private string Name { get; }
 		}
 	}
 }

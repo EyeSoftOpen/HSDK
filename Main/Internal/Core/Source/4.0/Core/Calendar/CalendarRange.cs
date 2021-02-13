@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Calendar
+﻿namespace EyeSoft.Calendar
 {
     using System;
     using Extensions;
@@ -13,11 +13,11 @@
 			Days = Last.Subtract(First).Days;
 		}
 
-		public DateTime First { get; private set; }
+		public DateTime First { get; }
 
-		public DateTime Last { get; private set; }
+		public DateTime Last { get; }
 
-		public int Days { get; private set; }
+		public int Days { get; }
 
 		public override bool Equals(object obj)
 		{

@@ -2,12 +2,11 @@
 {
     using System;
     using AutoMapper;
-    using Core.Mapping;
-    using Core.Threading.Tasks;
+    using EyeSoft.Mapping;
+    using EyeSoft.Threading.Tasks;
     using Demo.Configuration;
     using Demo.Configuration.Helpers;
     using Demo.Contract;
-    using Model.ServiceProxy;
 
     public class ServiceFactoryHelper : IDisposable
 	{
@@ -26,7 +25,7 @@
 			this.service = service;
 		}
 
-		public ServiceFactory<ICustomerService> ServiceFactory { get; private set; }
+		public ServiceFactory<ICustomerService> ServiceFactory { get; }
 
 		public bool ItemLoaded => service.ItemLoaded;
 

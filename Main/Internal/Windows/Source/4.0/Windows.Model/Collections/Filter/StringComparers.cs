@@ -1,9 +1,10 @@
-namespace EyeSoft.Windows.Model.Collections.Filter
+namespace EyeSoft.Windows.Model.Collections
 {
-    using System.Collections.Generic;
-    using Core.Collections.Generic;
+	using System.Collections.Generic;
 
-    public static class StringComparers
+	using EyeSoft.Collections.Generic;
+
+	public static class StringComparers
 	{
 		public static readonly IEqualityComparer<string> Contains =
 			EqualityComparerFactory<string>.Create((x, y) => x.Contains(y), x => 1);

@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Validation
+﻿namespace EyeSoft.Validation
 {
     using System.Linq;
     using System.Text;

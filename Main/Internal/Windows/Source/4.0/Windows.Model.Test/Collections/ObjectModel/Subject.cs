@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Model.Collections.Filter;
+    using Model.Collections;
 
     internal class Subject : IFilterable
 	{

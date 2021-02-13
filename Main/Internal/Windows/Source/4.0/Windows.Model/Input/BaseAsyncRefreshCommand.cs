@@ -2,7 +2,6 @@
 {
     using System;
     using System.Windows.Input;
-    using ViewModels;
 
     public abstract class BaseAsyncRefreshCommand
     {

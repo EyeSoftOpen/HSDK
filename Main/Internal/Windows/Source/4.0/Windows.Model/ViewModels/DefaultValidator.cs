@@ -1,10 +1,11 @@
-namespace EyeSoft.Windows.Model.ViewModels
+namespace EyeSoft.Windows.Model
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using Core.Validation;
+	using System.Collections.Generic;
+	using System.Linq;
 
-    internal class DefaultValidator : Validator<object>
+	using EyeSoft.Validation;
+
+	internal class DefaultValidator : Validator<object>
 	{
 		public override IEnumerable<ValidationError> Validate(object instance, string propertyName)
 		{

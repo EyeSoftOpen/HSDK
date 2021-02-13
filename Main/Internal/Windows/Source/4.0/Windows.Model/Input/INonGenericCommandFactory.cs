@@ -2,9 +2,8 @@ namespace EyeSoft.Windows.Model.Input
 {
 	using System;
 	using System.Windows.Input;
-    using ViewModels;
 
-    public interface INonGenericCommandFactory
+	public interface INonGenericCommandFactory
 	{
 		ICommand Create(IViewModel viewModel, Action action);
 

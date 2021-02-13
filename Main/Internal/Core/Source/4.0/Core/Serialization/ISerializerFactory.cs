@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Serialization
+﻿namespace EyeSoft.Serialization
 {
 	public interface ISerializerFactory
 	{

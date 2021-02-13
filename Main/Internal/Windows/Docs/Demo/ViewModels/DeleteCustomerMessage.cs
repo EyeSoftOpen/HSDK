@@ -7,6 +7,6 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
 			Customer = customer;
 		}
 
-		public CustomerViewModel Customer { get; private set; }
+		public CustomerViewModel Customer { get; }
 	}
 }

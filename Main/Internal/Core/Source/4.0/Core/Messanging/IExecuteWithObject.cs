@@ -11,7 +11,7 @@
 // </license>
 // ****************************************************************************
 
-namespace EyeSoft.Core.Messanging
+namespace EyeSoft.Messanging
 {
 	public interface IExecuteWithObject
 	{

@@ -1,10 +1,9 @@
 namespace EyeSoft.Windows.Model.Demo.Configuration
 {
-    using Core;
-    using Core.Mapping;
-    using Core.Messanging;
-    using Core.Timers;
-    using DialogService;
+    using EyeSoft;
+    using EyeSoft.Mapping;
+    using EyeSoft.Messanging;
+    using EyeSoft.Timers;
     using EyeSoft.AutoMapper;
     using EyeSoft.ServiceLocator.Windsor;
     using EyeSoft.Windows.Model;
@@ -12,8 +11,6 @@ namespace EyeSoft.Windows.Model.Demo.Configuration
 	using EyeSoft.Windows.Model.Demo.Configuration.Helpers;
 	using EyeSoft.Windows.Model.Input;
 	using EyeSoft.Windows.Model.Threading;
-    using Model.ViewModels;
-    using ServiceProxy;
 
     public static class ContainerRegister
 	{

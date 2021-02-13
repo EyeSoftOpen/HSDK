@@ -15,8 +15,8 @@ namespace SharpTestsEx.ExtensionsImpl
 				Comparer = comparer;
 			}
 
-			public Type[] Types { get; set; }
-			public Func<object, object, int> Comparer { get; private set; }
+			public Type[] Types { get; }
+			public Func<object, object, int> Comparer { get; }
 
 			public bool Match(Type xType, Type yType)
 			{

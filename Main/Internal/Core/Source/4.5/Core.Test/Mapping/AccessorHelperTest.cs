@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.Mapping
 {
     using System.Reflection;
-    using Core.Mapping;
+    using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

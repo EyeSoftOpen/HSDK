@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping.Conventions
+namespace EyeSoft.Mapping.Conventions
 {
 	public interface IVersionConvention
 	{

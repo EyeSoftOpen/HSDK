@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.SequentialIdentity
 {
     using System;
-    using Core.SequentialIdentity;
+    using EyeSoft.SequentialIdentity;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

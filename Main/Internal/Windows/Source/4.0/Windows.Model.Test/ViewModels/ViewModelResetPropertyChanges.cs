@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Windows.Model.Test.ViewModels
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
     using SharpTestsEx;
 
 	[TestClass]
@@ -38,7 +38,7 @@
 				Customer = new CustomerViewModel();
 			}
 
-			public CustomerViewModel Customer { get; private set; }
+			public CustomerViewModel Customer { get; }
 		}
 
 		private class CustomerViewModel : ViewModel

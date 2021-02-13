@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Linq.Expressions.Parsing
+namespace EyeSoft.Linq.Expressions.Parsing
 {
     using System.Linq.Expressions;
 
@@ -10,9 +10,9 @@ namespace EyeSoft.Core.Linq.Expressions.Parsing
 			TokensParsed = tokensParsed;
 		}
 
-		public Expression Expression { get; private set; }
+		public Expression Expression { get; }
 
-		public int TokensParsed { get; private set; }
+		public int TokensParsed { get; }
 
 		public static ExpressionResult Create(Expression expression, int stepsForward)
 		{

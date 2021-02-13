@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Diagnostic
+namespace EyeSoft.Diagnostic
 {
 	public class BenchmarkReport
 	{
@@ -8,9 +8,9 @@ namespace EyeSoft.Core.Diagnostic
 			Milliseconds = milliseconds;
 		}
 
-		public string OperationName { get; private set; }
+		public string OperationName { get; }
 
-		public long Milliseconds { get; private set; }
+		public long Milliseconds { get; }
 
 		public double Percentage { get; internal set; }
 

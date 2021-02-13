@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model.ViewModels.Helpers.Property.FluentInterface
+namespace EyeSoft.Windows.Model
 {
-    using System;
+	using System;
 
-    public interface IChangingViewModelProperty<out TProperty>
+	public interface IChangingViewModelProperty<out TProperty>
 	{
 		IChangeViewModelProperty<TProperty> OnChanged(Action<TProperty> func);
 	}

@@ -4,7 +4,7 @@ namespace EyeSoft.Windows.Model.Test.Helpers
 	using System.Windows.Input;
 
 	using EyeSoft.Windows.Model.Input;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
     internal class OnlySyncCommandFactory : ICommandFactory
 	{

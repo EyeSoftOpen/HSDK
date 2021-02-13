@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Linq.Expressions
+namespace EyeSoft.Linq.Expressions
 {
     using System;
     using System.Linq.Expressions;

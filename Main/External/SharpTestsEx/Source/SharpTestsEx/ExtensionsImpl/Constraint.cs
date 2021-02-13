@@ -15,7 +15,7 @@ namespace SharpTestsEx.ExtensionsImpl
 
 		#region Implementation of IConstraints<T>
 
-		public IAssertionInfo<T> AssertionInfo { get; private set; }
+		public IAssertionInfo<T> AssertionInfo { get; }
 
 		public IConstraints<T> Parent => null;
 

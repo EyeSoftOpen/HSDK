@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test.Net.Mail
 {
-    using Core.Net.Mail;
+    using EyeSoft.Net.Mail;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

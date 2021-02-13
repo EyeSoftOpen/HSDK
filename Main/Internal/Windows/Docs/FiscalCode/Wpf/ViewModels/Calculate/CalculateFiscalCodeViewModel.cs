@@ -7,8 +7,8 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels.Calculate
     using Accounting.Italian.FiscalCode;
     using Accounting.Italian.FiscalCode.Parts;
     using Accounting.Italian.Istat;
-    using Core.Validation;
-    using EyeSoft.Windows.Model.ViewModels;
+    using EyeSoft.Validation;
+    using EyeSoft.Windows.Model;
 
     public class CalculateFiscalCodeViewModel : AutoRegisterViewModel
 	{

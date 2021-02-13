@@ -1,7 +1,7 @@
 namespace EyeSoft.Core.Test.Mapping.Strategies
 {
     using System.ComponentModel.DataAnnotations;
-    using Core.Mapping.Strategies;
+    using EyeSoft.Mapping.Strategies;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

@@ -1,10 +1,10 @@
 ﻿namespace EyeSoft.Windows.Model.Settings
 {
     using System;
-    using Core.Extensions;
-    using Core.IO;
-    using Core.Security.Cryptography;
-    using Core.Serialization;
+    using Extensions;
+    using IO;
+    using Security.Cryptography;
+    using Serialization;
 
     public class ApplicationDataSettings<T> : IApplicationDataSettings<T>
     {
@@ -15,7 +15,7 @@
             configuration.Register(this);
         }
 
-        public DataSettingsConfiguration Configuration { get; private set; }
+        public DataSettingsConfiguration Configuration { get; }
 
         public void Save(T value)
         {
@@ -28,7 +28,7 @@
 
             if (loadToString == null)
             {
-                return defaultValue == null ? default(T) : defaultValue();
+                return defaultValue == null ? default : defaultValue();
             }
 
             var value = Serializer.DeserializeFromString<T>(loadToString);
@@ -60,7 +60,7 @@
         {
             var loadDataToByteArray = LoadToByteArray();
 
-            return loadDataToByteArray == null ? null : loadDataToByteArray.GetString();
+            return loadDataToByteArray?.GetString();
         }
 
         private byte[] LoadToByteArray()

@@ -7,8 +7,6 @@
     using Demo.ViewModels;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Model.Collections.ObjectModel;
-    using Model.ServiceProxy;
-    using Model.ViewModels;
     using SharpTestsEx;
 
     [TestClass]

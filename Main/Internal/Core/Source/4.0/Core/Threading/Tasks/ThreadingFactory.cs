@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Threading.Tasks
+﻿namespace EyeSoft.Threading.Tasks
 {
     using System.Threading.Tasks;
     using Schedulers;

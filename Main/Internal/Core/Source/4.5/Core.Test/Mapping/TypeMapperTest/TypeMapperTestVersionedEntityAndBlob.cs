@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Core.Test.Mapping
 {
     using System.Linq;
-    using Core.Mapping;
-    using Core.Mapping.Conventions;
+    using EyeSoft.Mapping;
+    using EyeSoft.Mapping.Conventions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

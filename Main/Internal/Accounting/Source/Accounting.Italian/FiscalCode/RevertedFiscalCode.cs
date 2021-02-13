@@ -1,8 +1,8 @@
 namespace EyeSoft.Accounting.Italian.FiscalCode
 {
     using System;
-    using Core;
-    using Core.Extensions;
+    using EyeSoft;
+    using EyeSoft.Extensions;
     using Parts;
 
     public class RevertedFiscalCode : CalculatedFiscalCode
@@ -12,7 +12,7 @@ namespace EyeSoft.Accounting.Italian.FiscalCode
 			IsValid = Validate(code);
 		}
 
-		public bool IsValid { get; private set; }
+		public bool IsValid { get; }
 
 		public DateTime? BirthDate { get; private set; }
 

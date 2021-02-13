@@ -3,7 +3,6 @@
 	using System.Windows.Input;
 
 	using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.ViewModels.Navigation;
 
     public class WelcomeViewModel : NavigableViewModel
 	{

@@ -1,9 +1,8 @@
 ﻿namespace EyeSoft.Demo.Navigation.Windows.ViewModels
 {
 	using System;
-    using Core.Timers;
+    using EyeSoft.Timers;
     using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.ViewModels.Navigation;
 
     public class TimeViewModel : NavigableViewModel
 	{

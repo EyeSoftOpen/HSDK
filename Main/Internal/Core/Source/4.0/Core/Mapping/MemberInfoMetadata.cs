@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping
+namespace EyeSoft.Mapping
 {
     using System;
     using System.Reflection;
@@ -69,9 +69,9 @@ namespace EyeSoft.Core.Mapping
 
         public override int MetadataToken => memberInfo.MetadataToken;
 
-        public Accessors Accessor { get; private set; }
+        public Accessors Accessor { get; }
 
-        public MemberInfo Incapsulated { get; private set; }
+        public MemberInfo Incapsulated { get; }
 
         public override object[] GetCustomAttributes(bool inherit)
         {

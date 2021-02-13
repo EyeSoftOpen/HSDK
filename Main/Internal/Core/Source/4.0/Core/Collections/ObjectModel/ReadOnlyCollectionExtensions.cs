@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Collections.ObjectModel
+﻿namespace EyeSoft.Collections.ObjectModel
 {
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;

@@ -1,9 +1,9 @@
-﻿namespace EyeSoft.Windows.Controls.Extensions
+﻿namespace EyeSoft.Windows.Controls
 {
-    using System.Windows;
-    using System.Windows.Input;
+	using System.Windows;
+	using System.Windows.Input;
 
-    public class MouseExtensions
+	public class MouseExtensions
 	{
 		public static readonly DependencyProperty MouseUpCommandProperty =
 			DependencyProperty

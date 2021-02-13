@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Core.Test.Data
 {
     using System;
-    using Core.Data;
-    using Core.IO;
+    using EyeSoft.Data;
+    using EyeSoft.IO;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;

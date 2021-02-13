@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.SequentialIdentity.NewIdProviders
+namespace EyeSoft.SequentialIdentity.NewIdProviders
 {
     using System;
     using System.Collections.Generic;

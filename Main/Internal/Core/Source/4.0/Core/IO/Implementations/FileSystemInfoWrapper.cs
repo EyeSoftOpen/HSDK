@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.IO
+namespace EyeSoft.IO
 {
     using System;
     using System.Diagnostics;

@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq;
-    using Core.Security.Cryptography;
+    using EyeSoft.Security.Cryptography;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
     using Text;

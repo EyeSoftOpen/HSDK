@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.ComponentModel.DataAnnotations
+﻿namespace EyeSoft.ComponentModel.DataAnnotations
 {
     using System;
     using System.ComponentModel.DataAnnotations;

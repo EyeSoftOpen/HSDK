@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Calendar
+namespace EyeSoft.Calendar
 {
     using System;
 
@@ -20,9 +20,9 @@ namespace EyeSoft.Core.Calendar
             Month = month;
         }
 
-        public int Day { get; private set; }
+        public int Day { get; }
 
-        public int Month { get; private set; }
+        public int Month { get; }
 
         public int CompareTo(AgnosticDay other)
         {

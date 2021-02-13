@@ -8,8 +8,8 @@
 	using Castle.MicroKernel.Registration;
 	using Castle.Windsor;
     using CommonServiceLocator;
-    using Core;
-    using ComponentResolutionException = Core.ComponentResolutionException;
+    using EyeSoft;
+    using ComponentResolutionException = EyeSoft.ComponentResolutionException;
 
     public class WindsorDependencyContainer : DependencyContainer
 	{

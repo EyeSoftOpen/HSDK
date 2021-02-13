@@ -3,7 +3,7 @@
 	using System;
 
 	using Castle.MicroKernel.Registration;
-    using Core;
+    using EyeSoft;
 
     internal static class ComponentRegistrationExtensions
 	{

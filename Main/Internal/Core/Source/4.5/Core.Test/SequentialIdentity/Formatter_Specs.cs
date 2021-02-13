@@ -3,9 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using Core.SequentialIdentity;
-    using Core.SequentialIdentity.NewIdFormatters;
-    using Core.SequentialIdentity.NewIdParsers;
+    using EyeSoft.SequentialIdentity;
+    using EyeSoft.SequentialIdentity.NewIdFormatters;
+    using EyeSoft.SequentialIdentity.NewIdParsers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

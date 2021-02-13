@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Accounting
 {
 	using System;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
 
     public class NaturalPerson
 	{
@@ -13,13 +13,13 @@
 			Sex = sex;
 		}
 
-		public string FirstName { get; private set; }
+		public string FirstName { get; }
 
-		public string LastName { get; private set; }
+		public string LastName { get; }
 
-		public DateTime BirthDate { get; private set; }
+		public DateTime BirthDate { get; }
 
-		public Sex Sex { get; private set; }
+		public Sex Sex { get; }
 
 		public override bool Equals(object obj)
 		{

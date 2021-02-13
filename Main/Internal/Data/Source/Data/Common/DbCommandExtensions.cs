@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Data.Common
 {
 	using System.Data;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
 
     public static class DbCommandExtensions
 	{

@@ -8,7 +8,7 @@
 	using EyeSoft.Windows.Model.Input;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
     using SharpTestsEx;
 
 	[TestClass]

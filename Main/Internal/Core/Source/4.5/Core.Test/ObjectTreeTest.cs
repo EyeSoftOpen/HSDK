@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Core.Normalization;
-    using Core.Reflection;
+    using EyeSoft.Normalization;
+    using EyeSoft.Reflection;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
@@ -11,6 +11,16 @@
     [TestClass]
 	public class ObjectTreeTest
 	{
+        [TestMethod]
+        public void GetStringProperties()
+        {
+            var parent = Category.CreateHierarchy();
+
+            var properties = new DefaultNormalizer().GetStringProperties(parent).ToArray();
+
+            properties.Select(x => x.Name).Should().Have.SameSequenceAs(nameof(Category.Name));
+        }
+
 		[TestMethod]
 		public void TraverseReferences()
 		{

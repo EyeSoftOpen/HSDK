@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Core.Test.Xml.Serialization
 {
     using System.Collections.Generic;
-    using Core.Xml.Serialization;
+    using EyeSoft.Xml.Serialization;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;

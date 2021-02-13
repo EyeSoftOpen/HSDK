@@ -1,12 +1,11 @@
-﻿namespace EyeSoft.Windows.Model.ExceptionLogger
+﻿namespace EyeSoft.Windows.Model
 {
-    using System;
-    using System.Windows;
-    using Core.Extensions;
-    using Core.Logging;
-    using DialogService;
+	using System;
+	using System.Windows;
+    using Extensions;
+    using EyeSoft.Logging;
 
-    public class DialogLogger : ILogger
+	public class DialogLogger : ILogger
 	{
 		public void Write(string message)
 		{

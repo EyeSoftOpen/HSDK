@@ -10,7 +10,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
-    <Version>3.0.7697.30643</Version>
+    <Version>3.0.7714.20388</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>An inversion control abstraction system.</Description>
     <SignAssembly>true</SignAssembly>
@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommonServiceLocator" Version="2.0.5" />
+    <PackageReference Include="CommonServiceLocator" Version="2.0.6" />
   </ItemGroup>
 
   <ItemGroup>

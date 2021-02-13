@@ -1,11 +1,10 @@
 namespace EyeSoft.Demo.Validation.Windows.ViewModels
 {
 	using System.Collections.Generic;
-    using Core.Logging;
-    using Core.Timers;
-    using Core.Validation;
+    using EyeSoft.Logging;
+    using EyeSoft.Timers;
+    using EyeSoft.Validation;
     using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.ViewModels;
     using Validators;
 
     public class HierarchicalViewModel : ViewModel

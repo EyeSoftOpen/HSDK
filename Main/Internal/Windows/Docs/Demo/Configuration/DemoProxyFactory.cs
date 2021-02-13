@@ -1,7 +1,7 @@
 namespace EyeSoft.Windows.Model.Demo.Configuration
 {
 	using System;
-    using Core;
+    using EyeSoft;
     using EyeSoft.Windows.Model.Demo.Contract;
     using Helpers;
 

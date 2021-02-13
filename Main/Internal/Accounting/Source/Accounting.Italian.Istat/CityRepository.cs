@@ -3,7 +3,7 @@
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
     using Internals.Serialization;
 
     public class CityRepository

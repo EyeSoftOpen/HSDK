@@ -1,4 +1,4 @@
-namespace EyeSoft.Windows.Model.ViewModels
+namespace EyeSoft.Windows.Model
 {
     using System;
     using System.Collections.Generic;
@@ -8,15 +8,10 @@ namespace EyeSoft.Windows.Model.ViewModels
     using System.Runtime.CompilerServices;
     using System.Windows;
     using System.Windows.Input;
-    using Core.Extensions;
-    using Core.Logging;
-    using Core.Reflection;
-    using Core.Validation;
-    using DialogService;
-    using Execution;
-    using Helpers;
-    using Helpers.Property;
-    using Helpers.Property.FluentInterface;
+    using Extensions;
+    using EyeSoft.Logging;
+    using EyeSoft.Reflection;
+    using EyeSoft.Validation;
 
     public abstract class ViewModel :
         IViewModel,

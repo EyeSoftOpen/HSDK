@@ -1,7 +1,7 @@
 ﻿//// The original article
 //// http://www.codeproject.com/Articles/14403/Generating-Unique-Keys-in-Net
 
-namespace EyeSoft.Core.Security.Cryptography
+namespace EyeSoft.Security.Cryptography
 {
     using System;
     using System.Collections.Generic;

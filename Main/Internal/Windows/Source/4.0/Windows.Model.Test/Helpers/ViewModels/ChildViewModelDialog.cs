@@ -1,6 +1,6 @@
 namespace EyeSoft.Windows.Model.Test.Helpers.ViewModels
 {
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
     internal class ChildDialogViewModel : ViewModel
 	{

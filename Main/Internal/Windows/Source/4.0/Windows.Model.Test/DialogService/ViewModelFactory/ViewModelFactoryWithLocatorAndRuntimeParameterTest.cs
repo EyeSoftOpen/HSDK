@@ -1,9 +1,9 @@
 ﻿namespace EyeSoft.Windows.Model.Test.DialogService.ViewModelFactory
 {
     using Castle.MicroKernel.Registration;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
     using ServiceLocator.Windsor;
     using SharpTestsEx;
 
@@ -44,9 +44,9 @@
 				Id = id;
 			}
 
-			public TestDependency TestDependency { get; private set; }
+			public TestDependency TestDependency { get; }
 
-			public object Id { get; private set; }
+			public object Id { get; }
 		}
 
 		private class TestDependency

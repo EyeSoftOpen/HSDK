@@ -24,7 +24,7 @@ namespace SharpTestsEx.Assertions
 
 		#region IAssertionMatcher<TA> Members
 
-		public virtual Func<TA, bool> Matcher { get; private set; }
+		public virtual Func<TA, bool> Matcher { get; }
 
 		#endregion
 

@@ -1,8 +1,8 @@
 namespace EyeSoft.Data.Nhibernate.Mapping.Mappers
 {
 	using System.Collections.Generic;
-    using Core.Collections.Generic;
-    using Core.Mapping;
+    using Collections.Generic;
+    using EyeSoft.Mapping;
     using NHibernate.Mapping.ByCode;
 
 	internal class PrimitiveMapper<T>
@@ -22,8 +22,7 @@ namespace EyeSoft.Data.Nhibernate.Mapping.Mappers
 
 		public void Map()
 		{
-			properties
-				.ForEach(MapPrimitiveProperty);
+			properties.ForEach(MapPrimitiveProperty);
 		}
 
 		private void MapPrimitiveProperty(PrimitiveMemberInfoMetadata member)

@@ -1,8 +1,8 @@
-﻿namespace EyeSoft.Windows.Controls.Extensions
+﻿namespace EyeSoft.Windows.Controls
 {
-    using System.Windows;
+	using System.Windows;
 
-    public static class SizeExtensions
+	public static class SizeExtensions
 	{
 		public static readonly DependencyProperty ObserveProperty = DependencyProperty.RegisterAttached(
 			"Observe",

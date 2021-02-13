@@ -3,9 +3,8 @@
     using System;
     using System.Threading.Tasks;
     using System.Windows.Input;
-    using ViewModels;
 
-    public class AsyncRefreshCommand : BaseAsyncRefreshCommand, ICommand
+	public class AsyncRefreshCommand : BaseAsyncRefreshCommand, ICommand
 	{
 		public AsyncRefreshCommand(IViewModel viewModel, Action execute, bool isAsync = false)
 			: this(viewModel, execute, null, isAsync)

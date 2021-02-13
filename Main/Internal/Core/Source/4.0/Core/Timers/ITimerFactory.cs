@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Timers
+namespace EyeSoft.Timers
 {
     using System;
 

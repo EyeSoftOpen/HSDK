@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Data
+﻿namespace EyeSoft.Data
 {
     using System;
     using System.Collections.Generic;
@@ -37,17 +37,17 @@
 			Children = new ReadOnlyCollection<ApplicationData>(childrenList);
 		}
 
-		public ApplicationInfo ApplicationInfo { get; private set; }
+		public ApplicationInfo ApplicationInfo { get; }
 
-		public ApplicationData Parent { get; private set; }
+		public ApplicationData Parent { get; }
 
-		public ReadOnlyCollection<ApplicationData> Children { get; private set; }
+		public ReadOnlyCollection<ApplicationData> Children { get; }
 
-		public string Path { get; private set; }
+		public string Path { get; }
 
-		public ReadOnlyCollection<string> SubFolders { get; private set; }
+		public ReadOnlyCollection<string> SubFolders { get; }
 
-		public DataScope Scope { get; private set; }
+		public DataScope Scope { get; }
 
 		public ApplicationData Append(params string[] subFolders)
 		{

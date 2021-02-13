@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
-    using Core.IO;
+    using EyeSoft.IO;
     using Moq;
 
     internal class DataTestStorage : DefaultStorage

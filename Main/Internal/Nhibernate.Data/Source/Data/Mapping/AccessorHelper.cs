@@ -2,7 +2,7 @@ namespace EyeSoft.Data.Nhibernate.Mapping
 {
 	using System.Collections.Generic;
 	using System.Reflection;
-    using Core.Mapping;
+    using EyeSoft.Mapping;
     using NHibernate.Mapping.ByCode;
 
 	internal static class AccessorHelper

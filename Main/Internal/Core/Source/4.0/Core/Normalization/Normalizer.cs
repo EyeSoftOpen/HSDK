@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Normalization
+﻿namespace EyeSoft.Normalization
 {
     using System;
     using System.Collections.Generic;

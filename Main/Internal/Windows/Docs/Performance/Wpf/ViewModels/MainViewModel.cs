@@ -3,8 +3,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using EyeSoft.Windows.Model;
     using EyeSoft.Windows.Model.Collections.ObjectModel;
-    using EyeSoft.Windows.Model.ViewModels;
 
     public class MainViewModel : AutoRegisterViewModel
 	{

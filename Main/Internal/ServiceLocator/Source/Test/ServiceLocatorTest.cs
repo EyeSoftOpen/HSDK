@@ -2,7 +2,7 @@ namespace EyeSoft.ServiceLocator.Test
 {
 	using System.Collections;
 	using System.Collections.Generic;
-    using Core;
+    using EyeSoft;
     using EyeSoft.ServiceLocator.Test.Helpers;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;

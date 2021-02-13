@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.Logging
+﻿namespace EyeSoft.Logging
 {
 	internal class DefaultAggregatorLogger : AggregatorLogger
 	{

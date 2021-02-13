@@ -1,8 +1,8 @@
-namespace EyeSoft.Windows.Model.ViewModels.Helpers
+namespace EyeSoft.Windows.Model
 {
-    using System;
+	using System;
 
-    internal class PropertyChangeMetadata
+	internal class PropertyChangeMetadata
 	{
 		private readonly Delegate action;
 

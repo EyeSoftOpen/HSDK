@@ -1,7 +1,7 @@
 namespace EyeSoft.Core.Test.Mapping.Strategies
 {
-    using Core.Mapping;
-    using Core.Mapping.Strategies;
+    using EyeSoft.Mapping;
+    using EyeSoft.Mapping.Strategies;
     using SharpTestsEx;
 
     public abstract class PropertyStrategyTest<T>

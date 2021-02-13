@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Mapping
+namespace EyeSoft.Mapping
 {
     using System.ComponentModel.DataAnnotations;
     using System.Reflection;
@@ -30,10 +30,10 @@ namespace EyeSoft.Core.Mapping
             Length = stringLengthAttribute.MaximumLength;
         }
 
-        public bool Required { get; private set; }
+        public bool Required { get; }
 
-        public bool SupportLength { get; private set; }
+        public bool SupportLength { get; }
 
-        public int? Length { get; private set; }
+        public int? Length { get; }
     }
 }

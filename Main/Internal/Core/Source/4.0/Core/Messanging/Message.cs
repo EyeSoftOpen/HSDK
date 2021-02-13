@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Messanging
+namespace EyeSoft.Messanging
 {
 	public abstract class Message<T>
 	{
@@ -7,6 +7,6 @@ namespace EyeSoft.Core.Messanging
 			Sender = sender;
 		}
 
-		public T Sender { get; private set; }
+		public T Sender { get; }
 	}
 }

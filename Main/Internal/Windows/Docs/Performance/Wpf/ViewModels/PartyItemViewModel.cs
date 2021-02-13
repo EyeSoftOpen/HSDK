@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Docs.Performance.Windows.ViewModels
 {
     using System.Windows.Input;
-    using EyeSoft.Windows.Model.ViewModels;
+    using EyeSoft.Windows.Model;
 
     public class PartyItemViewModel : AutoRegisterViewModel
 	{

@@ -3,11 +3,10 @@ namespace EyeSoft.Windows.Model.Test.Helpers
 	using System.Threading.Tasks;
 
 	using Castle.MicroKernel.Registration;
-    using Core.Messanging;
+    using EyeSoft.Messanging;
     using EyeSoft.ServiceLocator;
 	using EyeSoft.ServiceLocator.Windsor;
 	using EyeSoft.Windows.Model.Input;
-    using Model.DialogService;
     using ViewModels;
 
     internal static class TestContainer

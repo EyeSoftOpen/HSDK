@@ -3,8 +3,6 @@
 	using System.Windows.Input;
 
 	using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.ViewModels.Navigation;
-
     public class MainViewModel : ShellViewModel
     {
 		public MainViewModel()

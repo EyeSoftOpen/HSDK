@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test
 {
-    using Core.Collections.Generic;
+    using EyeSoft.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTests.Extensions;
     using SharpTestsEx;

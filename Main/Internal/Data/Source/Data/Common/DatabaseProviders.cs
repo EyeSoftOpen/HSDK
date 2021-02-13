@@ -4,7 +4,7 @@ namespace EyeSoft.Data.Common
 	using System.Collections.Generic;
 	using System.Data.Common;
 	using System.Data.SqlClient;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
     using EyeSoft.Data.SqlClient;
 
     public static class DatabaseProviders

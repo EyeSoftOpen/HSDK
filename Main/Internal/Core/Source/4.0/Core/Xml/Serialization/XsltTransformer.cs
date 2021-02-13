@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Xml.Serialization
+namespace EyeSoft.Xml.Serialization
 {
     using System.IO;
     using System.Xml;

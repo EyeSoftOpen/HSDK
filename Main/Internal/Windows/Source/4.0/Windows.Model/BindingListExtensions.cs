@@ -3,10 +3,10 @@ namespace EyeSoft.Windows.Model
 	using System.Collections.Generic;
 	using System.ComponentModel;
 	using System.Windows;
-    using Core.Collections.Generic;
-    using Execution;
 
-    public static class BindingListExtensions
+	using EyeSoft.Collections.Generic;
+
+	public static class BindingListExtensions
 	{
 		public static void SafeAddRange<T>(this BindingList<T> bindingList, IEnumerable<T> data)
 		{

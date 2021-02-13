@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.SequentialIdentity.NewIdParsers
+﻿namespace EyeSoft.SequentialIdentity.NewIdParsers
 {
     public class ZBase32Parser :
         Base32Parser

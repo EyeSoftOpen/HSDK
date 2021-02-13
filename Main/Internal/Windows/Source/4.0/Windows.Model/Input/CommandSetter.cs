@@ -5,8 +5,7 @@
     using System.Linq;
     using System.Reflection;
     using System.Windows.Input;
-    using Core.Extensions;
-    using ViewModels;
+    using Extensions;
 
     public class CommandSetter : ICommandSetter
 	{
@@ -50,23 +49,32 @@
 			IViewModel viewModel,
 			PropertyInfo commandProperty)
 		{
-			var methods = commandConvention.Get(commandProperty.ReflectedType, commandProperty);
+            try
+            {
+                var methods = commandConvention.Get(commandProperty.ReflectedType, commandProperty);
 
-			var command = commandBuilder.Create(viewModel, methods);
+                var command = commandBuilder.Create(viewModel, methods);
 
-			if (command == null)
-			{
-				return methods.Errors;
-			}
+                if (command == null)
+                {
+                    return methods.Errors;
+                }
 
-			if (commandProperty.DeclaringType != commandProperty.ReflectedType)
-			{
-				commandProperty = commandProperty.DeclaringType.GetProperty(commandProperty.Name);
-			}
+                if (commandProperty.DeclaringType != commandProperty.ReflectedType)
+                {
+                    commandProperty = commandProperty?.DeclaringType?.GetProperty(commandProperty.Name);
+                }
 
-			commandProperty.SetValue(viewModel, command);
+                commandProperty.SetValue(viewModel, command);
 
-			return methods.Errors;
-		}
+                return methods.Errors;
+            }
+            catch (Exception exception)
+            {
+                var message = $"Cannot assign the command {commandProperty?.Name} of viewmodel {viewModel.GetType().FullName}. Check the Set method exists.";
+                
+                throw new InvalidOperationException(message, exception);
+            }
+        }
 	}
 }

@@ -1,4 +1,4 @@
-namespace EyeSoft.Core.Normalization
+namespace EyeSoft.Normalization
 {
 	public abstract class Normalizer<T> : INormalizer<T> where T : class
 	{

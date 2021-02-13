@@ -1,6 +1,6 @@
 ﻿namespace EyeSoft.Core.Test.Messanging
 {
-    using Core.Messanging;
+    using EyeSoft.Messanging;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;

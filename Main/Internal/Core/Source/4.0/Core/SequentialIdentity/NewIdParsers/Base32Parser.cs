@@ -1,4 +1,4 @@
-﻿namespace EyeSoft.Core.SequentialIdentity.NewIdParsers
+﻿namespace EyeSoft.SequentialIdentity.NewIdParsers
 {
     using System;
     using System.Diagnostics.Contracts;

@@ -6,8 +6,7 @@
     using Demo.ViewModels;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ServiceProxy;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
     using SharpTestsEx;
 
     [TestClass]

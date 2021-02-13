@@ -2,11 +2,11 @@
 {
 	using System;
 	using System.Windows.Input;
-    using Core.Reflection;
+    using EyeSoft.Reflection;
     using EyeSoft.Windows.Model.Input;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Model.ViewModels;
+    using EyeSoft.Windows.Model;
     using SharpTestsEx;
 
 	[TestClass]

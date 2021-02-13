@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Core.Collections.Concurrent;
+    using EyeSoft.Collections.Concurrent;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using SharpTestsEx;
 

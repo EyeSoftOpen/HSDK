@@ -1,13 +1,13 @@
-﻿namespace EyeSoft.Windows.Model.ServiceProxy.Item
+﻿namespace EyeSoft.Windows.Model.Item
 {
-    using System;
-    using System.Threading.Tasks;
-    using Core;
-    using Core.Mapping;
-    using Property;
-    using Threading;
+	using System;
+	using System.Threading.Tasks;
 
-    internal class ItemFilled<TService, T, TProperty> :
+	using EyeSoft.Mapping;
+	using EyeSoft.Windows.Model.Item.Property;
+	using EyeSoft.Windows.Model.Threading;
+
+	internal class ItemFilled<TService, T, TProperty> :
 		IItemFilled<TProperty>,
 		IItemPropertyFilled<TProperty>
 		where TService : IDisposable

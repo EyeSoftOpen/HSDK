@@ -20,18 +20,18 @@
 			Province = province;
 		}
 
-		public string Name { get; private set; }
+		public string Name { get; }
 
-		public int Population { get; private set; }
+		public int Population { get; }
 
-		public double AreaPercentage { get; private set; }
+		public double AreaPercentage { get; }
 
-		public int AreaTotal { get; private set; }
+		public int AreaTotal { get; }
 
-		public double Density { get; private set; }
+		public double Density { get; }
 
-		public short Towns { get; private set; }
+		public short Towns { get; }
 
-		public string Province { get; private set; }
+		public string Province { get; }
 	}
 }

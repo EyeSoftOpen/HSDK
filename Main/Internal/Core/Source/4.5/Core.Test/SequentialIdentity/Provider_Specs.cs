@@ -2,7 +2,7 @@ namespace EyeSoft.Core.Test.SequentialIdentity
 {
     using System;
     using System.Threading;
-    using Core.SequentialIdentity.NewIdProviders;
+    using EyeSoft.SequentialIdentity.NewIdProviders;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
@@ -33,14 +33,14 @@ namespace EyeSoft.Core.Test.SequentialIdentity
         [TestMethod]
         public void Should_not_lag_time()
         {
-            TimeSpan timeDelta = TimeSpan.FromMinutes(1);
+            var timeDelta = TimeSpan.FromSeconds(1);
 
             var startProvider = new StopwatchTickProvider();
             Thread.Sleep(timeDelta);
             var endProvider = new StopwatchTickProvider();
 
 
-            long deltaTicks = Math.Abs(endProvider.Ticks - startProvider.Ticks);
+            var deltaTicks = Math.Abs(endProvider.Ticks - startProvider.Ticks);
             // 0.01% acceptable delta
             var acceptableDelta = (long)(timeDelta.Ticks * 0.0001);
 

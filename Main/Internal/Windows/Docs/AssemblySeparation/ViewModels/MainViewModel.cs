@@ -1,7 +1,6 @@
 ﻿namespace EyeSoft.AssemblySeparation.ViewModels
 {
 	using System;
-    using Windows.Model.ViewModels;
     using EyeSoft.Windows.Model;
 
 	public class MainViewModel : ViewModel

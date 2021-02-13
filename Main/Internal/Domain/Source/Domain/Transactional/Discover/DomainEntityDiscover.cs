@@ -4,7 +4,7 @@ namespace EyeSoft.Domain.Transactional.Discover
 	using System.Collections.Generic;
 	using System.Linq;
     using Aggregates;
-    using Core.Extensions;
+    using EyeSoft.Extensions;
     using UnitOfWork;
 
     public static class DomainEntityDiscover

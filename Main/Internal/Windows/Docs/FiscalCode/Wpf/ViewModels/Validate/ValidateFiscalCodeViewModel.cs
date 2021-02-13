@@ -5,8 +5,8 @@ namespace EyeSoft.Demo.FiscalCode.Windows.ViewModels.Validate
     using Accounting;
     using Accounting.Italian.FiscalCode;
     using Accounting.Italian.Istat;
-    using Core.Validation;
-    using EyeSoft.Windows.Model.ViewModels;
+    using EyeSoft.Validation;
+    using EyeSoft.Windows.Model;
 
     public class ValidateFiscalCodeViewModel : AutoRegisterViewModel
 	{
