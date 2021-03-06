@@ -17,16 +17,21 @@ void Main()
 	ReplaceOldVersionWithNewVersion(basePath, "3.0.7349.34482", "3.0.7714.20388", "2020");
 	ReplaceOldVersionWithNewVersion(basePath, "3.0.7697.30643", "3.0.7714.20388", "2020");
 
+	BuildTheSolution(basePath);
+	
 	//CopyAllPackagesToFolderForPublish(basePath, true);
 	//return;
 	//var msbuild = $@"""{msBuildPath}"" ""D:\GitHub\HSDK\Main\Internal\Windows\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj"" /p:Configuration=""Release"" /t:Rebuild;Pack /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /p:SymbolPackageFormat=snupkg";
-	var msBuildPath = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\MSBuild\Current\Bin\msbuild.exe";
-	var msbuild = $@"""{msBuildPath}"" ""D:\GitHub\HSDK\Main\EyeSoft.Hsdk.sln"" /p:Configuration=""Release"" /t:Rebuild /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /m";
-	
-	msbuild.Dump();
-	Util.Cmd(msbuild);
 
 	CopyAllPackagesToFolderForPublish(basePath, false);
+}
+
+void BuildTheSolution(string basePath)
+{
+	var msBuildPath = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\MSBuild\Current\Bin\msbuild.exe";
+	var msbuild = $@"""{msBuildPath}"" ""{basePath}\EyeSoft.Hsdk.sln"" /p:Configuration=""Release"" /t:Rebuild /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /m";
+	msbuild.Dump();
+	Util.Cmd(msbuild);
 }
 
 void CopyAllPackagesToFolderForPublish(string basePath, bool deleteSymbols)

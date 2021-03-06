@@ -1,0 +1,17 @@
+- Use the script "EyeSoft - Update all projects version to publish with Nuget"
+- Generate a new version
+	- var newVersion = GetNewVersion().Dump("New version")
+- Replace the version with the new one
+	- ReplaceOldVersionWithNewVersion with all versions and replace them with the new one
+- Build the solution
+	- Change to Release configuration in Visual Studio
+	- Build from Visual Studio for the .NET Framework packages
+	- Build from script using the method BuildTheSolution for the .NET Standard packages
+- Copy all the packages to a folder
+	- CopyAllPackagesToFolderForPublish
+- Set the Nuget API key
+	- Find it logging in with Microsoft Account (matteo.migliore@gmail.com, ing.vicentini@gmail.com)
+- Push all the packages to nuget.org
+	- Use the script "EyeSoft - Nuget - Push all packages in a folder" or by command line
+
+	
