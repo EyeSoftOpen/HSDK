@@ -9,7 +9,7 @@
         {
             var tokens = key.Split('.');
 
-            var typeName = tokens.Length == 1 ? "Resources" : null;
+            var typeName = tokens.Length == 2 ? tokens[0] : "Resources";
             var keyName = tokens.Length == 1 ? tokens[0] : tokens[1];
 
             var translation = Translate(currentLanguage, typeName, keyName);
