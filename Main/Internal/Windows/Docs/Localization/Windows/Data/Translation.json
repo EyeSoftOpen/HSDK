@@ -1,0 +1,15 @@
+﻿{
+  "Cultures": [
+    "it-IT",
+    "en-US"
+  ],
+  "Translations": {
+    "Home": [ "Home", "Home" ],
+    "Login": [ "Accesso", "Login" ],
+    "Settings": [ "Impostazioni", "Settings" ],
+    "Languages": [ "Lingue", "Languages" ],
+    "Italian": [ "Italiano", "Italian" ],
+    "English": [ "Inglese", "English" ],
+    "About": [ "Chi siamo", "About us" ]
+  }
+}

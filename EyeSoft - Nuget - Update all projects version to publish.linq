@@ -9,13 +9,17 @@ void Main()
 	var basePath = @"D:\GitHub\HSDK\Main";
 
 	var newVersion = GetNewVersion().Dump("New version");
+	
+	ShowAllVersions(basePath);
 	return;
 	CopyAllPackagesToFolderForPublish(basePath, true);
 	
-	//return;
-	ReplaceOldVersionWithNewVersion(basePath, "3.0.7713.28810", "3.0.7714.20388", "2020");
-	ReplaceOldVersionWithNewVersion(basePath, "3.0.7349.34482", "3.0.7714.20388", "2020");
-	ReplaceOldVersionWithNewVersion(basePath, "3.0.7697.30643", "3.0.7714.20388", "2020");
+	var newVersionText = "3.0.7736.24658";
+	var oldYears = "2020";
+	return;
+	ReplaceOldVersionWithNewVersion(basePath, "3.0.7714.20388", newVersionText, oldYears);
+	ReplaceOldVersionWithNewVersion(basePath, "3.0.7349.34482", newVersionText, oldYears);
+	ReplaceOldVersionWithNewVersion(basePath, "3.0.7697.30643", newVersionText, oldYears);
 
 	BuildTheSolution(basePath);
 	
@@ -24,6 +28,19 @@ void Main()
 	//var msbuild = $@"""{msBuildPath}"" ""D:\GitHub\HSDK\Main\Internal\Windows\Source\4.0\Windows.Model\EyeSoft.Windows.Model.csproj"" /p:Configuration=""Release"" /t:Rebuild;Pack /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /p:SymbolPackageFormat=snupkg";
 
 	CopyAllPackagesToFolderForPublish(basePath, false);
+}
+
+public void ShowAllVersions(string basePath)
+{
+	new DirectoryInfo(basePath)
+		.GetFiles("*.*", SearchOption.AllDirectories)
+		.Where(x => new[] { ".nuspec", ".csproj" }.Contains(x.Extension))
+		.Select(x => new { x.FullName, Lines = File.ReadAllLines(x.FullName).Where(y =>
+			(y.Contains("<version>") ||
+			y.Contains("<dependency ")) &&
+			y.Contains("3.")) })
+		.Where(x => x.Lines.Any())
+		.Dump();
 }
 
 void BuildTheSolution(string basePath)
