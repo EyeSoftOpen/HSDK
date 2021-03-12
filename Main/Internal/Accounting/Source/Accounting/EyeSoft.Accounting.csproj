@@ -9,7 +9,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.7714.20388</Version>
+    <Version>3.0.7736.24658</Version>
     <Description>Provide a base class library for manage the accounting.</Description>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
@@ -19,12 +19,12 @@
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
     <Product>EyeSoft.Accounting</Product>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageIconUrl />
     <PackageTags>accounting, natural person, fiscal</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Properties\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

@@ -8,7 +8,6 @@ namespace EyeSoft.Windows.Model.Demo.ViewModels
     using EyeSoft.Validation;
     using EyeSoft.Windows.Model;
 	using EyeSoft.Windows.Model.Demo.ViewModels.Validators;
-    using EyeSoft.Windows.Model;
 
     [DebuggerDisplay("{FirstName} {LastName}")]
 	public class CustomerViewModel : IdentityViewModel

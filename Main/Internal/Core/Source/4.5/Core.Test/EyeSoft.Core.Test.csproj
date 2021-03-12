@@ -10,7 +10,7 @@
     <Company>EyeSoft</Company>
     <Product>EyeSoft.Core</Product>
     <Description>Base class library tests.</Description>
-    <Version>3.0.7714.20388</Version>
+    <Version>3.0.7736.24658</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Reflection\Compression\Source.txt.gz" />
@@ -31,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,7 +48,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj" />
     <ProjectReference Include="..\..\..\..\SharpTestsEx.Extensions\Source\Extensions\EyeSoft.SharpTests.Extensions.csproj" />
     <ProjectReference Include="..\..\4.0\Core\EyeSoft.Core.csproj" />
   </ItemGroup>

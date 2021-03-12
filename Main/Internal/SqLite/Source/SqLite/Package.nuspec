@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$title$</id>
@@ -14,8 +14,8 @@
     <copyright>$author$</copyright>
     <tags>data sqlite</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6836.35031" />
-      <dependency id="EyeSoft.Data" version="3.0.6836.35031" />
+      <dependency id="EyeSoft.Core" version="3.0.7736.24658" />
+      <dependency id="EyeSoft.Data" version="3.0.7736.24658" />
       <dependency id="System.Data.SQLite" version="1.0.101.0" />
     </dependencies>
     <frameworkAssemblies>

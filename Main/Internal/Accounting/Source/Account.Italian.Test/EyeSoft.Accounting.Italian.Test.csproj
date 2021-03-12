@@ -75,10 +75,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj">
-      <Project>{837ccbfe-28f0-4aa2-897d-aa43223b4293}</Project>
-      <Name>SharpTestsEx</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Accounting.Italian\EyeSoft.Accounting.Italian.csproj">
       <Project>{4F137981-7FAC-4E16-B3EE-90FC69DEFD29}</Project>
       <Name>EyeSoft.Accounting.Italian</Name>

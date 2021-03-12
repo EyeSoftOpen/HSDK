@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$title$</id>
@@ -14,7 +14,7 @@
     <copyright>$author$</copyright>
     <tags>service service model wcf ioc inversion-of-control locator configuration</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.6836.35031" />
+      <dependency id="EyeSoft.Core" version="3.0.7736.24658" />
     </dependencies>
   </metadata>
 </package>

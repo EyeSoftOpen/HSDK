@@ -10,7 +10,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.0.7714.20388</Version>
+    <Version>3.0.7736.24658</Version>
     <Company>EyeSoft</Company>
     <Description>Contains extensions for SharpTestsEx framework.</Description>
     <LangVersion>8.0</LangVersion>
@@ -26,10 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj" />
   </ItemGroup>
 
   <ItemGroup>

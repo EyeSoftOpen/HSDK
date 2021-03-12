@@ -11,7 +11,7 @@
     <Authors>Matteo Migliore</Authors>
     <Company>EyeSoft</Company>
     <Description>A wrapper class for FluentValidation library. Allow to inject a custom validator or the AbstractValidator..</Description>
-    <Version>3.0.7714.20388</Version>
+    <Version>3.0.7736.24658</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
@@ -25,6 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Properties\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

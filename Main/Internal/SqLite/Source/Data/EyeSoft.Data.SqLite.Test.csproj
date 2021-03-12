@@ -89,10 +89,6 @@
     <Compile Include="DatabaseProvidersSqLiteTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\External\SharpTestsEx\Source\SharpTestsEx\SharpTestsEx.csproj">
-      <Project>{837ccbfe-28f0-4aa2-897d-aa43223b4293}</Project>
-      <Name>SharpTestsEx</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Data\Source\Data\EyeSoft.Data.csproj">
       <Project>{1E19CF61-9C36-4F7C-A4C3-74B65F36CAAD}</Project>
       <Name>EyeSoft.Data</Name>

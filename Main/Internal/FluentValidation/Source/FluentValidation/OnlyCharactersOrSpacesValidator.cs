@@ -6,14 +6,16 @@
 
 	public class OnlyCharactersOrSpacesValidator : PropertyValidator
 	{
-		public OnlyCharactersOrSpacesValidator() : base("The value is not a text.")
-		{
-		}
-
-		protected override bool IsValid(PropertyValidatorContext context)
+        protected override bool IsValid(PropertyValidatorContext context)
 		{
 			return
 				context.PropertyValue == null || ((string)context.PropertyValue).All(x => char.IsLetter(x) || x == ' ');
 		}
-	}
+
+        protected override string GetDefaultMessageTemplate()
+        {
+            return "The value is not a text.";
+
+		}
+    }
 }

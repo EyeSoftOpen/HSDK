@@ -56,9 +56,7 @@ namespace EyeSoft.Windows.Model
 
 		private static void ExecuteDirectlyOrDuringATest(Delegate method)
 		{
-			var action = method as Action;
-
-			if (action != null)
+            if (method is Action action)
 			{
 				action();
 				return;

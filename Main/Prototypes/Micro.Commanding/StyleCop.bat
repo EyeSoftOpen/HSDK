@@ -1,1 +1,0 @@
-StyleCopSettingsEditor.exe Settings.StyleCop
