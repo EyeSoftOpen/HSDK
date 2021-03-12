@@ -9,7 +9,7 @@
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class AutoRegisterViewModelTest
@@ -24,7 +24,7 @@
 
 			var viewModel1 = container.Resolve<TestViewModel>();
 
-			viewModel1.ShowChildCommand.Should().Not.Be.Null();
+			viewModel1.ShowChildCommand.Should().NotBeNull();
 		}
 
 		private class TestViewModel : AutoRegisterViewModel

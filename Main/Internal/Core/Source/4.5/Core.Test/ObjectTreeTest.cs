@@ -6,7 +6,7 @@
     using EyeSoft.Reflection;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ObjectTreeTest
@@ -18,7 +18,7 @@
 
             var properties = new DefaultNormalizer().GetStringProperties(parent).ToArray();
 
-            properties.Select(x => x.Name).Should().Have.SameSequenceAs(nameof(Category.Name));
+            properties.Select(x => x.Name).Should().BeSameAs(new[] { nameof(Category.Name) });
         }
 
 		[TestMethod]
@@ -37,8 +37,8 @@
 				});
 
 			var names = new[] { "Root", "Root 1", "Root 1.1", "Root 2" };
-			actionReferences.Should().Have.SameSequenceAs(names);
-			references.Cast<Category>().Select(x => x.Name).Should().Have.SameSequenceAs(names);
+			actionReferences.Should().BeSameAs(names);
+			references.Cast<Category>().Select(x => x.Name).Should().BeSameAs(names);
 		}
 	}
 }

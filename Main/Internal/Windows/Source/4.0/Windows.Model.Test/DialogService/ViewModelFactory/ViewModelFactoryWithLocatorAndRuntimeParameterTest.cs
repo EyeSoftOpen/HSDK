@@ -5,7 +5,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
     using ServiceLocator.Windsor;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ViewModelFactoryWithLocatorAndRuntimeParameterTest
@@ -29,11 +29,11 @@
 				factory.CreateWithLocatorOrWithReflection(viewModelType, runtimeParameterValue)
 					.Convert<DependencyViewModel>();
 
-			viewModel.Should().Not.Be.Null();
+			viewModel.Should().NotBeNull();
 
-			viewModel.TestDependency.Should().Not.Be.Null();
-			viewModel.TestDependency.Should().Be.SameInstanceAs(testDependency);
-			viewModel.Id.Should().Be.SameInstanceAs(runtimeParameterValue);
+			viewModel.TestDependency.Should().NotBeNull();
+			viewModel.TestDependency.Should().BeSameAs(testDependency);
+			viewModel.Id.Should().BeSameAs(runtimeParameterValue);
 		}
 
 		private class DependencyViewModel : AutoRegisterViewModel

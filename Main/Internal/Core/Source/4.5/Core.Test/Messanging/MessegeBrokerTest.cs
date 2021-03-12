@@ -3,7 +3,7 @@
     using EyeSoft.Messanging;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class MessageBrokerTest
@@ -28,8 +28,7 @@
 
 			messageReceived
 				.Should()
-				.Be
-				.True();
+				.BeTrue();
 		}
 
 		[TestMethod]
@@ -53,7 +52,7 @@
 				message =>
 					{
 						messageReceived = true;
-						message.Title.Should().Be.EqualTo(MessageTitle);
+						message.Title.Should().Be(MessageTitle);
 					},
 				message => message.Title == conditionalMessageTitle);
 
@@ -61,8 +60,7 @@
 
 			messageReceived
 				.Should()
-				.Be
-				.EqualTo(expected);
+				.Be(expected);
 		}
 	}
 }

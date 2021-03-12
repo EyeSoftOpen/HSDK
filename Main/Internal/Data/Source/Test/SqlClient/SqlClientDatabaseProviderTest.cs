@@ -1,10 +1,11 @@
 ﻿namespace EyeSoft.Data.Test.SqlClient
 {
-	using EyeSoft.Data.SqlClient;
+    using System;
+    using EyeSoft.Data.SqlClient;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	////[TestClass]: Integration test
 	public class SqlClientDatabaseProviderTest
@@ -17,18 +18,15 @@
 
 			if (databaseProvider.Exists())
 			{
-				Executing
-					.This(databaseProvider.Drop)
-					.Should("The database drop doesn't work.").NotThrow();
+                Action action = databaseProvider.Drop;
+
+				action.Should().NotThrow("The database drop doesn't work.");
 			}
 
-			Executing
-				.This(databaseProvider.Create)
-				.Should("The database creation doesn't work.").NotThrow();
+            Action create = databaseProvider.Create;
+            create.Should().NotThrow("The database creation doesn't work.");
 
-			databaseProvider
-				.Exists()
-				.Should("The database was not created.").Be.True();
+            databaseProvider.Exists().Should().BeTrue("The database was not created.");
 		}
 	}
 }

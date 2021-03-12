@@ -2,7 +2,7 @@
 {
     using EyeSoft.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class FileSystemStorageTest
@@ -20,11 +20,11 @@
 
 			const string Compressed = @"Source.txt.gz";
 			storage.CompressFile(Source, Compressed);
-			storage.File(Compressed).Length.Should().Be.EqualTo(64);
+			storage.File(Compressed).Length.Should().Be(64);
 
 			const string Decompressed = "Destination.txt";
 			storage.DecompressFile(Compressed, Decompressed);
-			storage.File(Decompressed).Length.Should().Be.EqualTo(contents.Length + 1);
+			storage.File(Decompressed).Length.Should().Be(contents.Length + 1);
 		}
 	}
 }

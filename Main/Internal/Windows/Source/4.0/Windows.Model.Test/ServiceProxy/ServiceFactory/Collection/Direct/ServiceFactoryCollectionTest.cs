@@ -4,7 +4,7 @@
     using Demo.ViewModels;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Model.Collections.ObjectModel;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ServiceFactoryCollectionTest : ServiceFactoryTest
@@ -29,7 +29,7 @@
 
 			manualResetEvent.WaitOne();
 
-			collection.Should().Have.SameSequenceAs(Demo.Configuration.Helpers.Known.CustomerModel.All);
+			collection.Should().BeSameAs(Demo.Configuration.Helpers.Known.CustomerModel.All);
 		}
 
 		[TestMethod]
@@ -38,7 +38,7 @@
 			factoryHelper.ServiceFactory
 				.Fill(x => x.GetCustomersWithTurnoverGreatherThan(0));
 
-			factoryHelper.CollectionLoaded.Should().Be.False();
+			factoryHelper.CollectionLoaded.Should().BeFalse();
 		}
 	}
 }

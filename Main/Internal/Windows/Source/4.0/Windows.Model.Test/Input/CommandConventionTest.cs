@@ -7,7 +7,7 @@
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class CommandConventionTest
@@ -20,13 +20,13 @@
 					.Get(typeof(ViewModel1), Reflector.Property<ViewModel1>(x => x.ShowChildCommand));
 
 			methods.ActionMethod.MethodInfo.Name
-				.Should("Cannot find the associated method to the command.").Be.EqualTo("ShowChild");
+				.Should().Be("ShowChild", "Cannot find the associated method to the command.");
 
 			methods.CanExecuteMethod.MethodInfo.Name
-				.Should("Cannot find the associated can method to the command.").Be.EqualTo("CanShowChild");
+				.Should().Be("CanShowChild", "Cannot find the associated can method to the command.");
 
 			methods.ActionMethod.IsAsync
-				.Should("The discovered command should be identified as async.").Be.True();
+				.Should().BeTrue("The discovered command should be identified as async.");
 		}
 
 		[TestMethod]
@@ -39,7 +39,7 @@
 				new CommandConvention()
 				.Get(typeof(ViewModelNoValidActionName), commandProperty);
 
-			methods.Errors.Should().Have.Count.EqualTo(2);
+			methods.Errors.Should().HaveCount(2);
 		}
 
 		[TestMethod]
@@ -57,10 +57,10 @@
 				"- command NewOrderCommand" + "\r\n" +
 				" - missing action: looking for NewOrder or SyncNewOrder method";
 
-			Executing
-				.This(discoverCommand)
-				.Should().Throw<InvalidOperationException>()
-				.And.Exception.Message.Should().Be.EqualTo(ExpectedExceptionMessage);
+            discoverCommand
+                .Should().Throw<InvalidOperationException>()
+				.And
+                .Message.Should().Be(ExpectedExceptionMessage);
 		}
 
 		[TestMethod]
@@ -68,7 +68,7 @@
 		{
 			var viewModel = new ViewModelNoConsiderAssignedCommands();
 
-			viewModel.NewCustomerCommand.Should().Be.OfType<MyAsyncCommand>();
+			viewModel.NewCustomerCommand.Should().BeOfType<MyAsyncCommand>();
 		}
 
 		private class ViewModel1

@@ -2,7 +2,7 @@
 {
     using EyeSoft.Net.Mail;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
     public class MailAddressTest
@@ -10,13 +10,13 @@
         [TestMethod]
         public void CheckValidMail()
         {
-            MailAddress.IsValid("test@domain.com").Should().Be.True();
+            MailAddress.IsValid("test@domain.com").Should().BeTrue();
         }
 
         [TestMethod]
         public void CheckNotValidMail()
         {
-            MailAddress.IsValid("test.domain.com").Should().Be.False();
+            MailAddress.IsValid("test.domain.com").Should().BeFalse();
         }
     }
 }

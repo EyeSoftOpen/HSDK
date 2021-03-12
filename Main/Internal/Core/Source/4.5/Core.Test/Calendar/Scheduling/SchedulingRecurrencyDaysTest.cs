@@ -3,7 +3,7 @@
     using System;
     using EyeSoft.Calendar;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class SchedulingRecurrencyDaysTest
@@ -22,14 +22,14 @@
 		public void VerifyThereAreNotDatesWithNoRecurrencyAndEventBeforeTheStartDate()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.None, start, start.AddDays(5), start.AddDays(-3))
-				.Should().Be.Empty();
+				.Should().BeEmpty();
 		}
 
 		[TestMethod]
 		public void VerifyThereAreDatesWithDailyRecurrencyAndEventBeforeTheStartDateWithEndDate()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Daily, start, start.AddDays(7), start.AddDays(-3), start.AddDays(3))
-				.Should().Have.SameSequenceAs(start, start.AddDays(1), start.AddDays(2), start.AddDays(3));
+				.Should().BeSameAs(new [] { start, start.AddDays(1), start.AddDays(2), start.AddDays(3) });
 		}
 
 		[TestMethod]
@@ -38,7 +38,7 @@
 			var startWithTime = start.AddSeconds(2500);
 
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Daily, startWithTime.Date, startWithTime.AddDays(2).Date, startWithTime)
-				.Should().Have.SameSequenceAs(startWithTime, startWithTime.AddDays(1));
+				.Should().BeSameAs(new [] { startWithTime, startWithTime.AddDays(1) });
 		}
 
 		[TestMethod]
@@ -57,7 +57,7 @@
 					};
 
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Daily, start, end, eventDate)
-				.Should().Have.SameSequenceAs(expected);
+				.Should().BeSameAs(expected);
 		}
 
 		[TestMethod]
@@ -74,14 +74,14 @@
 					};
 
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Daily, start, end, start.AddDays(2))
-				.Should().Have.SameSequenceAs(expected);
+				.Should().BeSameAs(expected);
 		}
 
 		[TestMethod]
 		public void VerifyDatesWithWeeklyRecurrencyWhereEventIsBeforeStartDate()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Weekly, start, end, start.AddDays(-3))
-				.Should().Have.SameSequenceAs(new DateTime(Year, Month, 8));
+				.Should().BeSameAs(new [] { new DateTime(Year, Month, 8) });
 		}
 
 		[TestMethod]
@@ -93,14 +93,14 @@
 			var lastFrequency = new DateTime(2014, 12, 31);
 
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Weekly, start2, end2, currentDate, lastFrequency)
-				.Should().Have.SameSequenceAs(start2);
+				.Should().BeSameAs(new[] { start2 });
 		}
 
 		[TestMethod]
 		public void VerifyDatesWithWeeklyRecurrencyWhereEventIsPastStartDate()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Weekly, start, end, start.AddDays(2))
-				.Should().Have.SameSequenceAs(new DateTime(Year, Month, 6));
+				.Should().BeSameAs(new[] { new DateTime(Year, Month, 6) });
 		}
 
 		[TestMethod]
@@ -109,28 +109,28 @@
 			var endDate = end.AddDays(22);
 
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Biweekly, start, endDate, eventDate)
-				.Should().Have.SameSequenceAs(new DateTime(Year, 2, 4), new DateTime(Year, 2, 18), new DateTime(Year, 3, 4));
+				.Should().BeSameAs(new [] {new DateTime(Year, 2, 4), new DateTime(Year, 2, 18), new DateTime(Year, 3, 4) });
 		}
 
 		[TestMethod]
 		public void VerifyDatesWithMontlyRecurrency()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Monthly, start, end, eventDate)
-				.Should().Have.SameSequenceAs(new DateTime(Year, Month, EventDay));
+				.Should().BeSameAs(new[] { new DateTime(Year, Month, EventDay) });
 		}
 
 		[TestMethod]
 		public void VerifyDatesWithYearlyRecurrencyWhereEventIsBeforeStartDate()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Yearly, start, end, eventDate)
-				.Should().Have.SameSequenceAs(new DateTime(Year, Month, EventDay));
+				.Should().BeSameAs(new[] { new DateTime(Year, Month, EventDay) });
 		}
 
 		[TestMethod]
 		public void VerifyDatesWithYearlyRecurrencyWithEventDatePastStartDate()
 		{
 			Scheduling.RecurrencyDays(RecurrencyFrequency.Yearly, start, end, eventDate)
-				.Should().Have.SameSequenceAs(new DateTime(Year, Month, EventDay));
+				.Should().BeSameAs(new [] { new DateTime(Year, Month, EventDay) });
 		}
 	}
 }

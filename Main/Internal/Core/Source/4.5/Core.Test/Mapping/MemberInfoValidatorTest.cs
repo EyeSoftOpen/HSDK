@@ -4,7 +4,7 @@
     using System.Reflection;
     using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class MemberInfoValidatorTest
@@ -39,7 +39,7 @@
 
 			new MemberInfoValidator()
 				.IsValidFieldOrProperty(typeof(T).GetMember(memberName, BindingFlags).Single())
-				.Should().Be.EqualTo(expected);
+				.Should().Be(expected);
 		}
 
 		private abstract class Field

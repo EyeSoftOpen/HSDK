@@ -4,7 +4,7 @@
     using System.Net.Sockets;
     using EyeSoft.Net.NetworkInformation;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class TcpPingTest
@@ -19,13 +19,14 @@
 		[TestMethod]
 		public void TryPingExistingHostFalseOnError()
 		{
-			Executing.This(() => TcpPing.Send(CorrectHost)).Should().NotThrow();
+			Action action = () => TcpPing.Send(CorrectHost);
+            action.Should().NotThrow();
 		}
 
 		[TestMethod]
 		public void TryPingWrongHostFalseOnError()
 		{
-			TcpPing.Send(WrongDomain).Should().Be.False();
+			TcpPing.Send(WrongDomain).Should().BeFalse();
 		}
 
 		[TestMethod]
@@ -33,23 +34,22 @@
 		{
 			try
 			{
-				TcpPing.Send(CorrectHost, Port, ThrowOnError).Should().Be.True();
+				TcpPing.Send(CorrectHost, Port, ThrowOnError).Should().BeTrue();
 			}
 			catch (Exception ex)
 			{
 				var socketException = ex as SocketException;
-				socketException.Should().Not.Be.Null();
-				socketException.ErrorCode.Should().Be(11001);
+				socketException.Should().NotBeNull();
+				socketException?.ErrorCode.Should().Be(11001);
 			}
 		}
 
 		[TestMethod]
 		public void TryPingWrongHostExceptionOnError()
 		{
-			Executing.This(() => TcpPing.Send(WrongDomain, Port, ThrowOnError))
-				.Should().Throw<SocketException>()
-				.And.Exception.ErrorCode.Should()
-				.Be.EqualTo(11001);
+            Action action = () => TcpPing.Send(WrongDomain, Port, ThrowOnError);
+            
+            action.Should().Throw<SocketException>().And.ErrorCode.Should().Be(11001);
 		}
 	}
 }

@@ -1,15 +1,14 @@
 namespace EyeSoft.ServiceLocator.Test
 {
-	using System.Collections;
+    using System;
+    using System.Collections;
 	using System.Collections.Generic;
     using EyeSoft;
     using EyeSoft.ServiceLocator.Test.Helpers;
+    using FluentAssertions;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-	using SharpTestsEx;
-
-	[TestClass]
+    [TestClass]
 	public abstract class ServiceLocatorTest
 	{
 		private ILocator locator;
@@ -29,21 +28,22 @@ namespace EyeSoft.ServiceLocator.Test
 		{
 			var instance = locator.Resolve<ILogger>();
 
-			instance.Should("Instance should not be null").Not.Be.Null();
+			instance.Should().NotBeNull("Instance should not be null");
 		}
 
 		[TestMethod]
 		public virtual void AskingForNotRegisteredComponentShouldRaiseComponentResolutionException()
 		{
-			Executing.This(() => locator.Resolve<IDictionary>())
-				.Should().Throw<ComponentResolutionException>();
+            Action action = () => locator.Resolve<IDictionary>();
+
+            action.Should().Throw<ComponentResolutionException>();
 		}
 
 		[TestMethod]
 		public virtual void GetNamedInstance()
 		{
 			locator.Resolve<ILogger>(typeof(AdvancedLogger).FullName)
-				.Should("Should be an AdvancedLogger.").Be.OfType<AdvancedLogger>();
+				.Should().BeOfType<AdvancedLogger>("Should be an AdvancedLogger.");
 		}
 
 		[TestMethod]
@@ -51,21 +51,23 @@ namespace EyeSoft.ServiceLocator.Test
 		{
 			var instance = locator.Resolve<ILogger>(typeof(SimpleLogger).FullName);
 
-			instance.Should("Should be a SimpleLogger.").Be.OfType<SimpleLogger>();
+			instance.Should().BeOfType<SimpleLogger>("Should be a SimpleLogger.");
 		}
 
 		[TestMethod]
 		public virtual void GetNamedInstanceWithEmptyName()
 		{
-			Executing.This(() => locator.Resolve<ILogger>(string.Empty))
-				.Should().Throw<ComponentResolutionException>();
+            Action action = () => locator.Resolve<ILogger>(string.Empty);
+            
+            action.Should().Throw<ComponentResolutionException>();
 		}
 
 		[TestMethod]
 		public virtual void GetUnknownInstance2()
 		{
-			Executing.This(() => locator.Resolve<ILogger>("test"))
-				.Should().Throw<ComponentResolutionException>();
+           Action action  = () => locator.Resolve<ILogger>("test");
+
+           action.Should().Throw<ComponentResolutionException>();
 		}
 
 		[TestMethod]
@@ -74,7 +76,7 @@ namespace EyeSoft.ServiceLocator.Test
 			var instances = locator.ResolveAll<ILogger>();
 			var list = new List<ILogger>(instances);
 
-			list.Count.Should().Be.EqualTo(2);
+			list.Count.Should().Be(2);
 		}
 
 		[TestMethod]
@@ -83,30 +85,31 @@ namespace EyeSoft.ServiceLocator.Test
 			var instances = locator.ResolveAll<IDictionary>();
 			var list = new List<IDictionary>(instances);
 
-			list.Count.Should().Be.EqualTo(0);
+			list.Count.Should().Be(0);
 		}
 
 		[TestMethod]
 		public virtual void GenericOverloadGetInstance()
 		{
 			locator.Resolve<ILogger>().GetType()
-				.Should("Should get the same type.")
-				.Be.EqualTo(locator.Resolve(typeof(ILogger)).GetType());
+				.Should()
+				.Be(locator.Resolve(typeof(ILogger)).GetType(), "Should get the same type.");
 		}
 
 		[TestMethod]
 		public virtual void GenericOverloadGetInstanceWithName()
 		{
 			locator.Resolve<ILogger>().GetType()
-				.Should("Should get the same type.")
-				.Be.EqualTo(locator.Resolve(typeof(ILogger), typeof(SimpleLogger).FullName).GetType());
+				.Should()
+				.Be(locator.Resolve(typeof(ILogger), typeof(SimpleLogger).FullName).GetType(), "Should get the same type.");
 		}
 
 		[TestMethod]
 		public virtual void OverloadGetInstanceNoNameAndNullName()
 		{
-			Executing.This(() => locator.Resolve<ILogger>((string)null))
-				.Should("Should get the same type.").Throw<ComponentResolutionException>();
+			Action action = () => locator.Resolve<ILogger>((string)null);
+                
+            action.Should().Throw<ComponentResolutionException>("Should get the same type.");
 		}
 
 		[TestMethod]
@@ -115,13 +118,13 @@ namespace EyeSoft.ServiceLocator.Test
 			var genericLoggers = new List<ILogger>(locator.ResolveAll<ILogger>());
 			var plainLoggers = new List<object>(locator.ResolveAll(typeof(ILogger)));
 
-			genericLoggers.Count.Should().Be.EqualTo(plainLoggers.Count);
+			genericLoggers.Count.Should().Be(plainLoggers.Count);
 
 			for (var i = 0; i < genericLoggers.Count; i++)
 			{
 				genericLoggers[i].GetType()
-					.Should("Instances (" + i + ") should give the same type.")
-					.Be.EqualTo(plainLoggers[i].GetType());
+					.Should()
+					.Be(plainLoggers[i].GetType(), $"Instances ({i}) should give the same type.");
 			}
 		}
 

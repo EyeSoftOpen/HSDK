@@ -4,7 +4,7 @@
 	using System.Collections.Generic;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ViewModelPropertyTest
@@ -30,13 +30,13 @@
 
 			const int Value = 10;
 
-			property.SetValue(Value, false).Should().Be.True();
+			property.SetValue(Value, false).Should().BeTrue();
 			property.Changed(() => Value);
 
-			changing.Should().Have.SameSequenceAs(PropertyName);
-			changed.Should().Have.SameSequenceAs(PropertyName);
+			changing.Should().BeEquivalentTo(PropertyName);
+			changed.Should().BeSameAs(new[] { PropertyName });
 
-			values.Should().Have.SameSequenceAs(Value);
+			values.Should().BeSameAs(new[] { Value });
 		}
 
 		private class NotifyViewModel : INotifyViewModel

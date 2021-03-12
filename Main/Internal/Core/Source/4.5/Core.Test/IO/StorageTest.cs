@@ -7,7 +7,7 @@
     using EyeSoft.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class StorageTest
@@ -41,7 +41,7 @@
 				action(storage);
 
 				var result = stream.ToArray();
-				result.Should().Have.SameSequenceAs(exected);
+				result.Should().BeSameAs(exected);
 			}
 		}
 

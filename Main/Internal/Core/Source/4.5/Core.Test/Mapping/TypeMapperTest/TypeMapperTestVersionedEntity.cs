@@ -5,7 +5,7 @@
     using EyeSoft.Mapping;
     using EyeSoft.Mapping.Conventions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class TypeMapperTestVersionedEntity
@@ -19,10 +19,10 @@
 					.Map<VersionedEntity>();
 
 			mappedType.Primitives.Single()
-				.Name.Should().Be.EqualTo("Name");
+				.Name.Should().Be("Name");
 
 			mappedType.Version
-				.Name.Should().Be.EqualTo("Version");
+				.Name.Should().Be("Version");
 		}
 
 		private abstract class VersionedEntity

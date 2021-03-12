@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,5 +37,4 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-
 </Project>

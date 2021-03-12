@@ -6,7 +6,7 @@
     using EyeSoft.Configuration;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ConfigurationContextTest
@@ -26,7 +26,7 @@
 
 			ConfigurationContext.Set(configuration.Object);
 
-			ConfigurationContext.AppSettings.Get<int>(Key).Should().Be.EqualTo(ExpectedValue);
+			ConfigurationContext.AppSettings.Get<int>(Key).Should().Be(ExpectedValue);
 		}
 	}
 }

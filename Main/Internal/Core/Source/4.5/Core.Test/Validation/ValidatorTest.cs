@@ -5,7 +5,7 @@
     using System.Linq;
     using EyeSoft.Validation;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ValidatorTest
@@ -34,7 +34,7 @@
 		{
 			var customer = new ValidableCustomer { Name = NameProperty };
 
-			validator.Validate(customer, NameProperty).Should().Be.Empty();
+			validator.Validate(customer, NameProperty).Should().BeEmpty();
 		}
 
 		[TestMethod]
@@ -45,7 +45,7 @@
 
 			validator
 				.Validate(customer, NameProperty)
-				.Should().Have.SameSequenceAs(new ValidationError(NameProperty, PropertyTooShort, Name));
+				.Should().AllBeEquivalentTo(new ValidationError(NameProperty, PropertyTooShort, Name));
 		}
 
 		[TestMethod]
@@ -55,9 +55,12 @@
 
 			validator
 				.Validate(customer, NameProperty)
-				.Should().Have.SameSequenceAs(
-					new ValidationError(NameProperty, PropertyEmpty, string.Empty),
-					new ValidationError(NameProperty, PropertyTooShort, null));
+				.Should().AllBeEquivalentTo(
+					new[]
+                        {
+                            new ValidationError(NameProperty, PropertyEmpty, string.Empty),
+					        new ValidationError(NameProperty, PropertyTooShort, null)
+                        });
 		}
 
 		[TestMethod]
@@ -65,7 +68,7 @@
 		{
 			var customer = new ValidableCustomer { Name = NameProperty, Address = AddressProperty };
 
-			validator.Validate(customer).Should().Be.Empty();
+			validator.Validate(customer).Should().BeEmpty();
 		}
 
 		[TestMethod]
@@ -82,7 +85,7 @@
 						new ValidationError(AddressProperty, PropertyEmpty, null)
 					};
 
-			validationErrors.Should().Have.SameSequenceAs(expectedValidationErrors);
+			validationErrors.Should().BeSameAs(expectedValidationErrors);
 		}
 
 		public class ValidableCustomer

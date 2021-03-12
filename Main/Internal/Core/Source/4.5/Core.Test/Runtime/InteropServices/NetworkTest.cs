@@ -3,7 +3,7 @@
     using EyeSoft.Runtime.InteropServices;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class NetworkTest
@@ -26,7 +26,7 @@
 			networkCheckerMock.SetupGet(x => x.IsInternetAvailable).Returns(connectionAvailable);
 
 			Network.Set(networkCheckerMock.Object);
-			Network.IsInternetAvailable.Should().Be.EqualTo(connectionAvailable);
+			Network.IsInternetAvailable.Should().Be(connectionAvailable);
 		}
 	}
 }

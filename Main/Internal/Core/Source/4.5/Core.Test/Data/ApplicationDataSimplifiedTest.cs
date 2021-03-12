@@ -5,7 +5,7 @@
     using EyeSoft.IO;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ApplicationDataSimplifiedTest
@@ -24,7 +24,7 @@
 
 			var loaded = dataSettings.Load();
 
-			loaded.Name.Should().Be.EqualTo(ExpectedName);
+			loaded.Name.Should().Be(ExpectedName);
 		}
 
 		[Serializable]

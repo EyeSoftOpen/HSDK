@@ -4,7 +4,7 @@
     using EyeSoft.Reflection;
     using EyeSoft.Xml.Serialization;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class XsltTransformerTest
@@ -29,7 +29,7 @@
 
 			tranformedXml
 				.Should()
-				.Be.EqualTo(expected);
+				.Be(expected);
 		}
 	}
 }

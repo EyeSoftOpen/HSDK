@@ -2,7 +2,7 @@
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ViewModelResetPropertyChanges
@@ -16,19 +16,19 @@
 
 			viewModel.Customer.Name = LastValue;
 
-			viewModel.Customer.Changed.Should().Be.True();
-			viewModel.Customer.Changes.Should().Be.EqualTo(2);
+			viewModel.Customer.Changed.Should().BeTrue();
+			viewModel.Customer.Changes.Should().Be(2);
 
 			viewModel.Customer.Name = LastValue;
 
 		    viewModel.Customer.ResetPropertyChanges();
 
-			viewModel.Customer.Changed.Should().Be.False();
-			viewModel.Customer.Changes.Should().Be.EqualTo(0);
+			viewModel.Customer.Changed.Should().BeFalse();
+			viewModel.Customer.Changes.Should().Be(0);
 
 			viewModel.Customer.Name = "Value3";
-			viewModel.Customer.Changed.Should().Be.True();
-			viewModel.Customer.Changes.Should().Be.EqualTo(1);
+			viewModel.Customer.Changed.Should().BeTrue();
+			viewModel.Customer.Changes.Should().Be(1);
 		}
 
 		private class MainViewModel

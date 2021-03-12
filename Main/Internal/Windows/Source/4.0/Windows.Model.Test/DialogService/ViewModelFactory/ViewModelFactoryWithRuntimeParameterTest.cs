@@ -2,7 +2,7 @@
 {
     using EyeSoft.Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
     using ViewModelFactory = Model.ViewModelFactory;
 
     [TestClass]
@@ -20,8 +20,8 @@
 				factory.CreateWithLocatorOrWithReflection(viewModelType, runtimeParameterValue)
 					.Convert<DependencyViewModel>();
 
-			viewModel.Should().Not.Be.Null();
-			viewModel.Id.Should().Be.SameInstanceAs(runtimeParameterValue);
+			viewModel.Should().NotBeNull();
+			viewModel.Id.Should().BeSameAs(runtimeParameterValue);
 		}
 
 		private class DependencyViewModel : AutoRegisterViewModel

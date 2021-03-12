@@ -6,7 +6,7 @@
     using Extensions;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class GenericExtensionsTest
@@ -18,25 +18,25 @@
 		[TestMethod]
 		public void IsDefaultOnGenericDefaultValueReturnsTrue()
 		{
-			default(int).IsDefault().Should().Be.True();
+			default(int).IsDefault().Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void IsDefaultOnGenericDefaultValueUsingComparableReturnsTrue()
 		{
-			default(Guid).IsDefault<IComparable>().Should().Be.True();
+			default(Guid).IsDefault<IComparable>().Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void IsDefaultOnIntDefaultValueUsingComparableReturnsTrue()
 		{
-			default(int).IsDefault<IComparable>().Should().Be.True();
+			default(int).IsDefault<IComparable>().Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void IsDefaultOnObjectDefaultValueUsingComparableReturnsTrue()
 		{
-			default(object).IsDefault().Should().Be.True();
+			default(object).IsDefault().Should().BeTrue();
 		}
 
 		[TestMethod]
@@ -44,7 +44,7 @@
 		{
 			new Customer("Bill", "Olmi Street")
 				.Extend().GetEnumerable()
-				.Count().Should().Be.EqualTo(1);
+				.Count().Should().Be(1);
 		}
 
 		[TestMethod]
@@ -52,7 +52,7 @@
 		{
 			new List<Customer> { new Customer("Bill", "Olmi Street"), new Customer("Steve", "Oleandri Street") }
 				.Extend().GetEnumerable()
-				.Count().Should().Be.EqualTo(2);
+				.Count().Should().Be(2);
 		}
 
 		[TestMethod]
@@ -61,7 +61,7 @@
 			new List<Customer> { new Customer("Bill", "Olmi Street"), new Customer("Steve", "Oleandri Street") }
 				.AsReadOnly()
 				.Extend().GetEnumerable()
-				.Count().Should().Be.EqualTo(2);
+				.Count().Should().Be(2);
 		}
 
 		[TestMethod]
@@ -71,7 +71,7 @@
 				.SchoolWithTwoChildren
 				.Extend().GetFlatternChildren(type => type.IsEnumerableOf<IAggregate>() || type.Implements<IAggregate>())
 				.Cast<IAggregate>()
-				.Count().Should().Be.EqualTo(2);
+				.Count().Should().Be(2);
 		}
 
 		private static class Known

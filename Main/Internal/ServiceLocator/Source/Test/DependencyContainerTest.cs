@@ -5,9 +5,9 @@
     using EyeSoft;
     using EyeSoft.ServiceLocator;
 	using EyeSoft.ServiceLocator.Test.Helpers;
-	using SharpTestsEx;
+    using FluentAssertions;
 
-	public abstract class DependencyContainerTest
+    public abstract class DependencyContainerTest
 	{
 		protected readonly Guid key = new Guid("c951d82d-3d54-4d8a-9ac7-2d968d2138e2");
 
@@ -32,18 +32,17 @@
 			var customerService = container.GetInstance<IFooService>(id => key);
 
 			customerService.FooValidator
-				.Should().Not.Be.Null().And.Be.EqualTo(fooValidator);
+				.Should().NotBeNull().And.Be(fooValidator);
 
 			customerService.Id
-				.Should().Not.Be.Null().And.Be.EqualTo(key);
+				.Should().NotBe(Guid.Empty).And.Be(key);
 		}
 
 		public virtual void ResolveANotRegisterServiceExpectedNullInstance()
 		{
-			Executing.This(() => container
-				.GetService(typeof(INotRegisteredService)))
-				.Should()
-				.Throw<ActivationException>();
+			Action action = () => container.GetService(typeof(INotRegisteredService));
+
+            action.Should().Throw<ActivationException>();
 		}
 
 		protected abstract IDependencyContainer CreateDependencyContainer();

@@ -4,7 +4,7 @@
     using EyeSoft.Reflection;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ReflectorTest
@@ -13,21 +13,21 @@
 		public void VerifyPropertyNameByExpression()
 		{
 			Reflector.PropertyName<Customer>(x => x.MainAddress)
-				.Should("The property name extracted from the expression is wrong.").Be.EqualTo("MainAddress");
+				.Should().Be("MainAddress", "The property name extracted from the expression is wrong.");
 		}
 
 		[TestMethod]
 		public void VerifyPropertyByExpression()
 		{
 			Reflector.Property<Customer>(x => x.MainAddress)
-				.Name.Should("The property name extracted from the expression is wrong.").Be.EqualTo("MainAddress");
+				.Name.Should().Be("MainAddress", "The property name extracted from the expression is wrong.");
 		}
 
 		[TestMethod]
 		public void GetMethodInfoShouldReturnMethodInfo()
 		{
 			var methodInfo = Reflector.GetMethod<Foo>(c => c.AMethod());
-			methodInfo.Name.Should().Be.EqualTo("AMethod");
+			methodInfo.Name.Should().Be("AMethod");
 		}
 
 		[TestMethod]
@@ -35,8 +35,8 @@
 		{
 			var methodInfo = Reflector.GetMethod<Foo>(c => c.AMethod(default(int)));
 
-			methodInfo.Name.Should().Be.EqualTo("AMethod");
-			methodInfo.GetParameters().First().ParameterType.Should().Be.EqualTo(typeof(int));
+			methodInfo.Name.Should().Be("AMethod");
+			methodInfo.GetParameters().First().ParameterType.Should().Be(typeof(int));
 		}
 
 		[TestMethod]
@@ -44,8 +44,8 @@
 		{
 			var methodInfo = Reflector.GetMethod<Foo>(c => c.AMethod<int>(default(int)));
 
-			methodInfo.Name.Should().Be.EqualTo("AMethod");
-			methodInfo.GetParameters().First().ParameterType.Should().Be.EqualTo(typeof(int));
+			methodInfo.Name.Should().Be("AMethod");
+			methodInfo.GetParameters().First().ParameterType.Should().Be(typeof(int));
 		}
 
 		[TestMethod]
@@ -53,8 +53,8 @@
 		{
 			var methodInfo = Reflector.GetMethod(() => StaticFoo.StaticMethod());
 
-			methodInfo.Name.Should().Be.EqualTo("StaticMethod");
-			methodInfo.IsStatic.Should().Be.True();
+			methodInfo.Name.Should().Be("StaticMethod");
+			methodInfo.IsStatic.Should().BeTrue();
 		}
 
 		private static class StaticFoo

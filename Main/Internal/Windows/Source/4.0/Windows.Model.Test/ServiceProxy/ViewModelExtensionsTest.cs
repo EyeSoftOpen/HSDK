@@ -4,7 +4,7 @@
     using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ViewModelExtensionsTest
@@ -33,13 +33,13 @@
 
 			vm.PropertyChanged += (s, e) =>
 				{
-					e.PropertyName.Should().Be.EqualTo("Name");
+					e.PropertyName.Should().Be("Name");
 					changes++;
 				};
 
 			Enumerable.Range(1, PropertyChanges).ToList().ForEach(index => vm.Name = setNewName(index));
 
-			changes.Should().Be.EqualTo(expectedChanges);
+			changes.Should().Be(expectedChanges);
 		}
 
 		private class ChangePropertyViewModel : ViewModel

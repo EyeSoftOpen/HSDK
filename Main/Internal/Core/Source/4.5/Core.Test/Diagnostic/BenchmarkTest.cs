@@ -2,7 +2,7 @@
 {
     using EyeSoft.Diagnostic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class BenchmarkTest
@@ -20,7 +20,7 @@
 				.Report();
 
 			actionExecuted[0]
-				.Should().Be.EqualTo(Times * 2);
+				.Should().Be(Times * 2);
 		}
 	}
 }

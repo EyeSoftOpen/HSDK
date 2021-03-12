@@ -3,7 +3,7 @@
     using System;
     using Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class GenericTypeExtensionsTest
@@ -14,7 +14,7 @@
 			Action<string> genericAction = x => { };
 			Action<string> specificAction = x => { };
 
-			CompareGenericTypeWithSpecificType(genericAction, specificAction).Should().Be.True();
+			CompareGenericTypeWithSpecificType(genericAction, specificAction).Should().BeTrue();
 		}
 
 		private bool CompareGenericTypeWithSpecificType<T>(

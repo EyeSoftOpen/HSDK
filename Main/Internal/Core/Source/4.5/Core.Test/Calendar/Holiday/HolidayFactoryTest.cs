@@ -3,7 +3,7 @@
     using System;
     using EyeSoft.Calendar;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class HolidayFactoryTest
@@ -32,7 +32,7 @@
 				.Fixed(FirstDayOfYear, new AgnosticDay(1, 1))
 				.Fixed(Epiphany, new AgnosticDay(6, 1))
 				.List()
-				.Should().Have.SameSequenceAs(expected);
+				.Should().BeSameAs(expected);
 		}
 
 		[TestMethod]
@@ -45,8 +45,7 @@
 						.Fixed(FirstDayOfYear, new AgnosticDay(1, 1))
 						.List();
 
-			Executing
-				.This(action)
+			action
 				.Should().Throw<ArgumentException>();
 		}
 
@@ -68,7 +67,7 @@
 				.Entry(Heaster, new AgnosticDay(24, 4))
 					.NextDay(EasterMonday)
 				.List()
-				.Should().Have.SameSequenceAs(expected);
+				.Should().BeSameAs(expected);
 		}
 	}
 }

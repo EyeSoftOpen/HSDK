@@ -10,7 +10,10 @@ void Main()
 	
 	var newVersion = nugetHelper.GetNewVersion().Dump("New version");
 	
-	nugetHelper.BuildAndPackAll();
+	nugetHelper.BuildAndPackAndPushAll();
+	
+	//nugetHelper.CopyAllPackagesToFolderForPublish(false);
+	//nugetHelper.PushAllPackages();
 	//nugetHelper.ShowAllVersions();
 	//return;
 	//CopyAllPackagesToFolderForPublish(basePath, true);
@@ -51,22 +54,22 @@ public class HsdkNugetHelper : NugetHelper
 	{
 		var packages = new[]
 		{
-			new Package("EyeSoft.Accounting"),
-			new Package("EyeSoft.Accounting.Italian"),
-			new Package("EyeSoft.Accounting.Italian.Istat"),
-			new Package("EyeSoft.ActiveCampaign", "4.5"),
-			new Package("EyeSoft.AutoMapper"),
+			//new Package("EyeSoft.Accounting"),
+			//new Package("EyeSoft.Accounting.Italian"),
+			//new Package("EyeSoft.Accounting.Italian.Istat"),
+			//new Package("EyeSoft.ActiveCampaign", "4.5"),
+			//new Package("EyeSoft.AutoMapper"),
 			new Package("EyeSoft.Core", "4.0"),
-			new Package("EyeSoft.Data"),
-			new Package("EyeSoft.Data.Nhibernate"),
-			new Package("EyeSoft.Data.SqLite"),
-			new Package("EyeSoft.Domain"),
-			new Package("EyeSoft.FluentValidation"),
-			new Package("EyeSoft.ServiceLocator"),
-			new Package("EyeSoft.ServiceLocator.Windsor"),
-			//new Package("EyeSoft.Web", "4.5"),
-			new Package("EyeSoft.Windows", "4.0"),
-			new Package("EyeSoft.Windows.Model", "4.0")
+			//new Package("EyeSoft.Data"),
+			//new Package("EyeSoft.Data.Nhibernate"),
+			//new Package("EyeSoft.Data.SqLite"),
+			//new Package("EyeSoft.Domain"),
+			//new Package("EyeSoft.FluentValidation"),
+			//new Package("EyeSoft.ServiceLocator"),
+			//new Package("EyeSoft.ServiceLocator.Windsor"),
+			////new Package("EyeSoft.Web", "4.5"),
+			//new Package("EyeSoft.Windows", "4.0"),
+			//new Package("EyeSoft.Windows.Model", "4.0")
 		};
 		
 		return packages;
@@ -78,12 +81,14 @@ public class NugetHelper
 {
 	private readonly string basePath;
 	private readonly string solutionName;
+	private readonly string publishFolder;
 
 	public NugetHelper(string basePath, string solutionName, IEnumerable<Package> packages)
 	{
 		this.basePath = basePath;
 		this.solutionName = solutionName;
 		Packages = packages;
+		publishFolder = PathHelper.Combine(basePath, @"..\Packages");
 	}
 	
 	public string BasePath => basePath;
@@ -132,33 +137,36 @@ public class NugetHelper
 	{
 		var projectFile = FindProject(package);
 		
-		var nuspecFile = projectFile.Directory.GetFiles("*.nuspec").SingleOrDefault(x => x.Exists);
+		var nugetPathCommand = $"dotnet pack {projectFile.FullName} -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -c:Release";
+		
+		var nuspecFile = projectFile.Directory
+			.GetFiles("*.nuspec")
+			.SingleOrDefault(x => x.Exists);
 		
 		if (nuspecFile != null)
 		{
-			projectFile = nuspecFile;
+			nugetPathCommand = $"{nugetPathCommand} /p:NuspecFile=Package.nuspec";
 		}
-
-		var nugetPath = @"D:\GitHub\HSDK\Main\.nuget\NuGet.exe";
-		//var nugetPathCommand = $@"{nugetPath} pack {projectFile.FullName} -Build -SymbolPackageFormat snupkg -Properties Configuration=Release";
-		var nugetPathCommand = $"dotnet pack {projectFile.FullName} -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -c:Release";
+		
 		ConsoleHelper.WriteLine($"Building {package.Name}...", ConsoleColor.Blue);
 		ConsoleHelper.WriteLine($"{nugetPathCommand}", ConsoleColor.Green);
 		
 		Util.Cmd(nugetPathCommand);
+		
+		Console.WriteLine();
 	}
 
-	public void BuildAndPackAll()
+	public void BuildAndPackAndPushAll()
 	{
 		var projects =
 			new DirectoryInfo(basePath)
 				.GetFiles("*.csproj", SearchOption.AllDirectories)
 				.Select(x => new { x.FullName, Package = FindPackage(x) })
 				.Where(x => x.Package != null)
-				.Select(x => new { x.Package, x.FullName })
-				.Where(x => x.Package.Name == "EyeSoft.Windows.Model");
+				.Select(x => new { x.Package, x.FullName });
+				//.Where(x => x.Package.Name == "EyeSoft.Windows.Model");
 
-		//BuildSolution();
+		BuildSolution();
 		
 		foreach (var project in projects)
 		{
@@ -166,8 +174,37 @@ public class NugetHelper
 
 			Pack(project.Package);
 		}
+		
+		CopyAllPackagesToFolderForPublish(false);
+		
+		PushAllPackages();
 	}
-	
+
+	public void PushAllPackages()
+	{
+		var packages =
+			new DirectoryInfo(publishFolder)
+				.GetFiles("*.*", SearchOption.AllDirectories)
+				.Where(x =>
+					(x.Name.EndsWith(".snupkg") ||
+					x.Name.EndsWith(".symbols.nupkg") ||
+					x.Name.EndsWith(".nupkg")))
+				.ToArray();
+
+		foreach (var package in packages)
+		{
+			try
+			{
+				ConsoleHelper.WriteLine($"Pushing {package.Name}...", ConsoleColor.Blue);
+				var pushCommand = $"nuget push \"{package}\" -Source https://api.nuget.org/v3/index.json";
+
+				Util.Cmd(pushCommand);
+				
+				Console.WriteLine();
+			}catch{}
+		}
+	}
+
 	public void CopyAllPackagesToFolderForPublish(bool deleteSymbols)
 	{
 		var nuget = new DirectoryInfo(basePath);
@@ -175,7 +212,14 @@ public class NugetHelper
 		var symbolsPackages =
 			nuget
 				.GetFiles("*.*", SearchOption.AllDirectories)
-				.Where(x => x.Name.EndsWith(".snupkg") || x.Name.EndsWith(".symbols.nupkg") || x.Name.EndsWith(".nupkg"));
+				.Where(x =>
+					x.Directory.Name == "Release" &&
+					x.Name.StartsWith("EyeSoft") &&
+					(x.Name.EndsWith(".snupkg") ||
+					x.Name.EndsWith(".symbols.nupkg") ||
+					x.Name.EndsWith(".nupkg")))
+				.ToArray()
+				.Dump();
 
 		if (deleteSymbols)
 		{
@@ -188,6 +232,14 @@ public class NugetHelper
 				.Where(x => x.Directory.Name == "Release")
 				.Select(x => Explorer.CreateLink(x.FullName))
 				.Dump();
+		
+		foreach (var buildPackage in symbolsPackages)
+		{
+			var destination = Path.Combine(publishFolder, buildPackage.Name);
+			
+			Console.WriteLine(destination);
+			buildPackage.CopyTo(destination, true);
+		}
 	}
 
 	public void ReplaceOldVersionWithNewVersion(string currentVersion, string newVersion, params string[] years)
@@ -386,6 +438,38 @@ public static class Explorer
 	public static void OpenFileInExplorer(string path)
 	{
 		Process.Start("explorer", string.Format("/select, \"{0}\"", path));
+	}
+}
+
+public static class PathHelper
+{
+	public static string Combine(this string root, params string[] pathTokens)
+	{
+		var directoryInfo = new DirectoryInfo(root);
+
+		if (pathTokens == null || !pathTokens.Any())
+		{
+			return root;
+		}
+
+		const string UpFolder = @"..\";
+
+		var count = pathTokens[0].Split(new[] { UpFolder }, StringSplitOptions.None).Count() - 1;
+
+		if (count > 0)
+		{
+			while (count > 0)
+			{
+				directoryInfo = directoryInfo.Parent;
+				count--;
+			}
+
+			pathTokens[0] = pathTokens[0].Replace(UpFolder, null);
+		}
+
+		var allPath = new[] { directoryInfo.FullName }.Union(pathTokens).ToArray();
+
+		return Path.Combine(allPath);
 	}
 }
 #endregion

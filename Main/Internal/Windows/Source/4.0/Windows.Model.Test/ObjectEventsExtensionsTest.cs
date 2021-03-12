@@ -4,7 +4,7 @@
     using EyeSoft.Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ObjectEventsExtensionsTest
@@ -21,7 +21,7 @@
 			var person = RegisterUnregisterHandler();
 
 			person.Extend().HasHandlers()
-				.Should("An object without event handlers has still references into the handlers dictionary.").Be.False();
+				.Should().BeFalse("An object without event handlers has still references into the handlers dictionary.");
 		}
 
 		private object RegisterUnregisterHandler()
@@ -29,16 +29,16 @@
 			var person = new PersonNotify();
 			var executed = false;
 			person.PropertyChanged += person.Extend().Register<PropertyChangedEventHandler>((s, e) => executed = true);
-			executed.Should("The executed variable changed before the event was raised.").Be.False();
+			executed.Should().BeFalse("The executed variable changed before the event was raised.");
 
 			person.Name = "Test";
-			executed.Should("The event registered using the Register extension method was not raised.").Be.True();
+			executed.Should().BeTrue("The event registered using the Register extension method was not raised.");
 
 			executed = false;
 			person.Extend().Unregister("PropertyChanged");
 			person.Name = "Test2";
 			// ReSharper disable once ConditionIsAlwaysTrueOrFalse
-			executed.Should("The event was not unregistered from the Unregister extension method.").Be.False();
+			executed.Should().BeFalse("The event was not unregistered from the Unregister extension method.");
 
 			return person;
 		}

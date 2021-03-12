@@ -4,7 +4,7 @@
     using EyeSoft.Reflection;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class NormalizerTest
@@ -16,10 +16,10 @@
 		{
 			var obj = new Person();
 			normalizer.TrimProperties(obj);
-			obj.FirstName.Should().Be.Null();
-			obj.LastName.Should().Be.Null();
-			obj.Age.Should().Be.EqualTo(0);
-			obj.FullName.Should().Be.Null();
+			obj.FirstName.Should().BeNull();
+			obj.LastName.Should().BeNull();
+			obj.Age.Should().Be(0);
+			obj.FullName.Should().BeNull();
 		}
 
 		[TestMethod]
@@ -27,10 +27,10 @@
 		{
 			var obj = new Person { FirstName = "Bill " };
 			normalizer.TrimProperties(obj);
-			obj.FirstName.Should().Be.EqualTo("Bill");
-			obj.LastName.Should().Be.Null();
-			obj.Age.Should().Be.EqualTo(0);
-			obj.FullName.Should().Be.EqualTo("Bill");
+			obj.FirstName.Should().Be("Bill");
+			obj.LastName.Should().BeNull();
+			obj.Age.Should().Be(0);
+			obj.FullName.Should().Be("Bill");
 		}
 
 		[TestMethod]
@@ -38,10 +38,10 @@
 		{
 			var obj = new Person { FirstName = " " };
 			normalizer.TrimProperties(obj);
-			obj.FirstName.Should().Be.Null();
-			obj.LastName.Should().Be.Null();
-			obj.Age.Should().Be.EqualTo(0);
-			obj.FullName.Should().Be.Null();
+			obj.FirstName.Should().BeNull();
+			obj.LastName.Should().BeNull();
+			obj.Age.Should().Be(0);
+			obj.FullName.Should().BeNull();
 		}
 
 		[TestMethod]
@@ -49,10 +49,10 @@
 		{
 			var obj = new Person { LastName = " White " };
 			normalizer.TrimProperties(obj);
-			obj.FirstName.Should().Be.Null();
-			obj.LastName.Should().Be.EqualTo("White");
-			obj.Age.Should().Be.EqualTo(0);
-			obj.FullName.Should().Be.EqualTo("White");
+			obj.FirstName.Should().BeNull();
+			obj.LastName.Should().Be("White");
+			obj.Age.Should().Be(0);
+			obj.FullName.Should().Be("White");
 		}
 
 		[TestMethod]
@@ -60,10 +60,10 @@
 		{
 			var obj = new Person("Bill ", " White ");
 			normalizer.TrimProperties(obj);
-			obj.FirstName.Should().Be.EqualTo("Bill");
-			obj.LastName.Should().Be.EqualTo("White");
-			obj.Age.Should().Be.EqualTo(0);
-			obj.FullName.Should().Be.EqualTo("Bill White");
+			obj.FirstName.Should().Be("Bill");
+			obj.LastName.Should().Be("White");
+			obj.Age.Should().Be(0);
+			obj.FullName.Should().Be("Bill White");
 		}
 
 		[TestMethod]
@@ -73,10 +73,10 @@
 
 			normalizer.Normalize(category);
 
-			category.Name.Should().Be.EqualTo("Root");
-			category.Children[0].Name.Should().Be.EqualTo("Root 1");
-			category.Children[0].Children[0].Name.Should().Be.EqualTo("Root 1.1");
-			category.Children[1].Name.Should().Be.EqualTo("Root 2");
+			category.Name.Should().Be("Root");
+			category.Children[0].Name.Should().Be("Root 1");
+			category.Children[0].Children[0].Name.Should().Be("Root 1.1");
+			category.Children[1].Name.Should().Be("Root 2");
 		}
 
 		[TestMethod]
@@ -91,8 +91,8 @@
 
 			normalizer.Normalize(person);
 
-			person.FirstName.Should().Be.EqualTo(FirstName);
-			person.LastName.Should().Be.EqualTo(LastName);
+			person.FirstName.Should().Be(FirstName);
+			person.LastName.Should().Be(LastName);
 		}
 
 		[TestMethod]
@@ -107,9 +107,9 @@
 
 			normalizer.Normalize(person);
 
-			person.Age.Should().Be.EqualTo(0);
-			person.FirstName.Should().Be.EqualTo("BILL ");
-			person.LastName.Should().Be.EqualTo(" WHITE ");
+			person.Age.Should().Be(0);
+			person.FirstName.Should().Be("BILL ");
+			person.LastName.Should().Be(" WHITE ");
 		}
 
 		[TestMethod]
@@ -122,8 +122,8 @@
 
 			normalizer.Normalize(foo);
 
-			foo.Name.Should().Be.EqualTo("Acme");
-			foo.Address.Street.Should().Be.EqualTo(Street);
+			foo.Name.Should().Be("Acme");
+			foo.Address.Street.Should().Be(Street);
 		}
 
 		private abstract class Party

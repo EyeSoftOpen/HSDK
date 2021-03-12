@@ -4,7 +4,7 @@
     using System.Linq.Expressions;
     using EyeSoft.Linq.Expressions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ExpressionExtensionsTest
@@ -22,13 +22,13 @@
 
 			parameter
 				.Name
-				.Should("The variable name of the expression is wrong.")
-				.Be.EqualTo("x");
+				.Should()
+				.Be("x", "The variable name of the expression is wrong.");
 
 			parameter
 				.Value
-				.Should("The value of the expression is wrong.")
-				.Be.EqualTo(Test);
+				.Should()
+				.Be(Test, "The value of the expression is wrong.");
 		}
 	}
 }

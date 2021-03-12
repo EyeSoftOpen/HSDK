@@ -5,7 +5,7 @@
     using Extensions;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
     public class TypeExtensionsTest
@@ -13,7 +13,7 @@
         [TestMethod]
         public void CheckElementIsOneOfSequence()
         {
-            typeof(ReadOnlyCollection<string>).IsOneOf(typeof(ReadOnlyCollection<>)).Should().Be.True();
+            typeof(ReadOnlyCollection<string>).IsOneOf(typeof(ReadOnlyCollection<>)).Should().BeTrue();
         }
 
         [TestMethod]
@@ -38,22 +38,22 @@
         public void CheckCollectionsImplementsListInterface()
         {
             var typeName = typeof(IList<>).Name;
-            typeof(IEnumerable<string>).Implements(typeName).Should().Be.False();
-            typeof(List<string>).Implements(typeName).Should().Be.True();
-            typeof(Collection<string>).Implements(typeName).Should().Be.True();
-            typeof(ObservableCollection<string>).Implements(typeName).Should().Be.True();
+            typeof(IEnumerable<string>).Implements(typeName).Should().BeFalse();
+            typeof(List<string>).Implements(typeName).Should().BeTrue();
+            typeof(Collection<string>).Implements(typeName).Should().BeTrue();
+            typeof(ObservableCollection<string>).Implements(typeName).Should().BeTrue();
         }
 
         [TestMethod]
         public void CheckTypeIsEqualsToItSelf()
         {
-            typeof(Teacher).EqualsOrSubclassOf(typeof(Teacher)).Should().Be.True();
+            typeof(Teacher).EqualsOrSubclassOf(typeof(Teacher)).Should().BeTrue();
         }
 
         [TestMethod]
         public void CheckDerivedTypeIsSubclassOfBaseType()
         {
-            typeof(Teacher).EqualsOrSubclassOf<Person>().Should().Be.True();
+            typeof(Teacher).EqualsOrSubclassOf<Person>().Should().BeTrue();
         }
 
         [TestMethod]
@@ -62,19 +62,19 @@
             var type = typeof(byte[]);
 
             type.EqualsOrSubclassOf(typeof(string))
-                .Should().Be.False();
+                .Should().BeFalse();
         }
 
         [TestMethod]
         public void CheckBaseTypeIsNotSubclassOfDerivedType()
         {
-            typeof(Person).EqualsOrSubclassOf<Teacher>().Should().Be.False();
+            typeof(Person).EqualsOrSubclassOf<Teacher>().Should().BeFalse();
         }
 
         [TestMethod]
         public void CheckTypeIsSubclassOfObject()
         {
-            typeof(Person).EqualsOrSubclassOf<object>().Should().Be.True();
+            typeof(Person).EqualsOrSubclassOf<object>().Should().BeTrue();
         }
 
         [TestMethod]
@@ -82,7 +82,7 @@
         {
             typeof(ReadOnlyCollection<string>)
                 .EqualsOrSubclassOf(typeof(ReadOnlyCollection<>))
-                .Should().Be.True();
+                .Should().BeTrue();
         }
 
         [TestMethod]
@@ -91,7 +91,7 @@
             var type = typeof(Customer);
 
             type.TypeOrGenericParameterOfEnumerable()
-                .Should().Be.EqualTo(type);
+                .Should().Be(type);
         }
 
         [TestMethod]
@@ -100,7 +100,7 @@
             var type = typeof(List<Customer>);
 
             type.TypeOrGenericParameterOfEnumerable()
-                .Should().Be.EqualTo(typeof(Customer));
+                .Should().Be(typeof(Customer));
         }
 
         [TestMethod]
@@ -108,14 +108,14 @@
         {
             typeof(ReadOnlyCollection<>)
                 .EqualsOrSubclassOf<ReadOnlyCollection<string>>(false)
-                .Should().Be.False();
+                .Should().BeFalse();
         }
 
         [TestMethod]
         public void RelatedTypesCheckOnEmptyClass()
         {
             typeof(Person).RelatedTypes()
-                .Should().Be.Empty();
+                .Should().BeEmpty();
         }
 
         [TestMethod]
@@ -124,7 +124,7 @@
             var expected = new[] { typeof(Person), typeof(LocalAddress), typeof(City) };
 
             typeof(BusinessUnit).RelatedTypes()
-                .Should().Have.SameSequenceAs(expected);
+                .Should().BeSameAs(expected);
         }
 
         [TestMethod]
@@ -132,19 +132,19 @@
         {
             typeof(PersonFactory)
                 .CreateInstance<PersonFactory>(new Teacher())
-                .Should().Be.InstanceOf<PersonFactory>();
+                .Should().BeOfType<PersonFactory>();
         }
 
         [TestMethod]
         public void VerifyNullableTypeIsTrue()
         {
-            typeof(int?).IsNullable().Should().Be.True();
+            typeof(int?).IsNullable().Should().BeTrue();
         }
 
         [TestMethod]
         public void VerifyNotNullableTypeIsFalse()
         {
-            typeof(int).IsNullable().Should().Be.False();
+            typeof(int).IsNullable().Should().BeFalse();
         }
 
         [TestMethod]
@@ -152,7 +152,7 @@
         {
             typeof(ConstructorFromParameters)
                 .ConstructorMatchingWithParameters(typeof(string))
-                .Should().Not.Be.Null();
+                .Should().NotBeNull();
         }
 
         [TestMethod]
@@ -160,7 +160,7 @@
         {
             typeof(ConstructorFromParametersWithEnumerable)
                 .ConstructorMatchingWithParameters(typeof(List<string>), typeof(bool))
-                .Should().Not.Be.Null();
+                .Should().NotBeNull();
         }
 
         private void CheckIsEnumerableOfSame<T>()
@@ -179,7 +179,7 @@
 
             var message = $"{type} is not recognized as IEnumerable<TInterface>.";
 
-            type.IsEnumerableOf<TTypeCheck>().Should(message).Be.True();
+            type.IsEnumerableOf<TTypeCheck>().Should().BeTrue(message);
         }
 
         private class Person

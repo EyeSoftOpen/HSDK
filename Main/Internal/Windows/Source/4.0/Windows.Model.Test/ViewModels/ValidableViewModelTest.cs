@@ -5,7 +5,7 @@
     using EyeSoft.Validation;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ValidableViewModelTest
@@ -14,32 +14,32 @@
 		public void ValidateViewModelWithoutValidationLogicExpectedErrorIsEmpty()
 		{
 			var simpleViewModel = new SimpleViewModel();
-			simpleViewModel.IsValid.Should().Be.True();
-			simpleViewModel.Error.Should().Be.Empty();
+			simpleViewModel.IsValid.Should().BeTrue();
+			simpleViewModel.Error.Should().BeEmpty();
 		}
 
 		[TestMethod]
 		public void ValidateNotValidViewModelExpectedError()
 		{
 			var simpleViewModel = new ValidableViewModel();
-			simpleViewModel.IsValid.Should().Be.False();
-			simpleViewModel.Error.Should().Be.EqualTo(ValidableViewModel.ValidableViewModelValidator.ExpectedError);
+			simpleViewModel.IsValid.Should().BeFalse();
+			simpleViewModel.Error.Should().Be(ValidableViewModel.ValidableViewModelValidator.ExpectedError);
 		}
 
 		[TestMethod]
 		public void ValidateValidViewModelExpectedNoError()
 		{
 			var simpleViewModel = new ValidableViewModel { Name = "Ok" };
-			simpleViewModel.IsValid.Should().Be.True();
-			simpleViewModel.Error.Should().Be.Empty();
+			simpleViewModel.IsValid.Should().BeTrue();
+			simpleViewModel.Error.Should().BeEmpty();
 		}
 
 		[TestMethod]
 		public void ValidateViewModelThatDoesNotOverrideValidateMethodExpectedNoError()
 		{
 			var simpleViewModel = new ValidableViewModel();
-			simpleViewModel.IsValid.Should().Be.False();
-			simpleViewModel.Error.Should().Be.EqualTo(ValidableViewModel.ValidableViewModelValidator.ExpectedError);
+			simpleViewModel.IsValid.Should().BeFalse();
+			simpleViewModel.Error.Should().Be(ValidableViewModel.ValidableViewModelValidator.ExpectedError);
 		}
 
 		private class SimpleViewModel : AutoRegisterViewModel

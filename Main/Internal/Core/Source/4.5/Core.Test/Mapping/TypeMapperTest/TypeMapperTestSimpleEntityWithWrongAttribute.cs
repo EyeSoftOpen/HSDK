@@ -5,7 +5,7 @@
     using EyeSoft.Collections.Generic;
     using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class TypeMapperTestSimpleEntityWithWrongAttribute
@@ -15,9 +15,9 @@
 		{
 			var mappedType = TypeMapperFactory.Create().Map<Person>();
 
-			Executing
-				.This(() => mappedType.Primitives.ForEach(x => { }))
-				.Should().Throw<ArgumentException>();
+            Action action = () => mappedType.Primitives.ForEach(x => { });
+
+            action.Should().Throw<ArgumentException>();
 		}
 
 		private abstract class Person

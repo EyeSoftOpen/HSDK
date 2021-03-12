@@ -5,7 +5,7 @@
     using FiscalCode.Parts;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	[TestClass]
 	public class FiscalCodeProviderTest
@@ -40,17 +40,17 @@
 		{
 			var fiscalCode = provider.Calculate(person, new AreaCode(areaCode));
 
-			fiscalCode.LastName.Should().Be.EqualTo(expected.LastName);
-			fiscalCode.FirstName.Should().Be.EqualTo(expected.FirstName);
-			fiscalCode.Year.Should().Be.EqualTo(expected.Year);
-			fiscalCode.Month.Should().Be.EqualTo(expected.Month);
-			fiscalCode.Day.Should().Be.EqualTo(expected.Day);
-			fiscalCode.Area.Should().Be.EqualTo(expected.Area);
-			fiscalCode.Control.Should().Be.EqualTo(expected.Control);
+			fiscalCode.LastName.Should().Be(expected.LastName);
+			fiscalCode.FirstName.Should().Be(expected.FirstName);
+			fiscalCode.Year.Should().Be(expected.Year);
+			fiscalCode.Month.Should().Be(expected.Month);
+			fiscalCode.Day.Should().Be(expected.Day);
+			fiscalCode.Area.Should().Be(expected.Area);
+			fiscalCode.Control.Should().Be(expected.Control);
 
-			fiscalCode.Should().Be.EqualTo(expected);
+			fiscalCode.Should().Be(expected);
 
-			fiscalCode.IsValid.Should().Be.True();
+			fiscalCode.IsValid.Should().BeTrue();
 		}
 	}
 }

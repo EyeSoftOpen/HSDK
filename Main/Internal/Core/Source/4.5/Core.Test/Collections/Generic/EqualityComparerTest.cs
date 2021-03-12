@@ -3,7 +3,7 @@
     using System;
     using EyeSoft.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class EqualityComparerTest
@@ -11,46 +11,46 @@
 		[TestMethod]
 		public void CompareTwoNullValues()
 		{
-			EqualityComparer.AreEquals(null, null).Should().Be.True();
+			EqualityComparer.AreEquals(null, null).Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void CompareTwoEqualValueObjects()
 		{
-			EqualityComparer.AreEquals(1, 1).Should().Be.True();
+			EqualityComparer.AreEquals(1, 1).Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void CompareValueObjectsWithNull()
 		{
-			EqualityComparer.AreEquals(1, null).Should().Be.False();
+			EqualityComparer.AreEquals(1, null).Should().BeFalse();
 		}
 
 		[TestMethod]
 		public void CompareValueObjectsWithNullParametersOrderChanged()
 		{
-			EqualityComparer.AreEquals(null, 1).Should().Be.False();
+			EqualityComparer.AreEquals(null, 1).Should().BeFalse();
 		}
 
 		[TestMethod]
 		public void CompareTwoDifferentValueObjects()
 		{
-			EqualityComparer.AreEquals(1, 2).Should().Be.False();
+			EqualityComparer.AreEquals(1, 2).Should().BeFalse();
 		}
 
 		[TestMethod]
 		public void CompareTwoDifferentTypeOfValueObjectsExpectedException()
-		{
-			Executing
-				.This(() => EqualityComparer.AreEquals(1, "2"))
-				.Should().Throw<ArgumentException>();
+        {
+            Action action = () => EqualityComparer.AreEquals(1, "2");
+            
+            action.Should().Throw<ArgumentException>();
 		}
 
 		[TestMethod]
 		public void CompareTwoEqualReferenceObjects()
 		{
 			var reference = new Reference();
-			EqualityComparer.AreEquals(reference, reference).Should().Be.True();
+			EqualityComparer.AreEquals(reference, reference).Should().BeTrue();
 		}
 
 		[TestMethod]
@@ -59,7 +59,7 @@
 			const string Name = "1";
 
 			EqualityComparer.AreEquals(new ReferenceEquatable(Name), new ReferenceEquatable(Name))
-				.Should().Be.True();
+				.Should().BeTrue();
 		}
 
 		private class Reference

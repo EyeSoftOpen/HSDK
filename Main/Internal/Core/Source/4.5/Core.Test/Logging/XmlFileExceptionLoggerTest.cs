@@ -8,7 +8,7 @@
     using EyeSoft.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class XmlFileExceptionLoggerTest
@@ -23,8 +23,8 @@
 			new XmlFileExceptionLogger(@"C:\Logging\Test")
 				.Error(new InvalidOperationException("Custom message", new ArgumentException("Argument not valid.")));
 
-			testStorageResult.OperationsLog.Should().Have.Count.EqualTo(4);
-			testStorageResult.OperationsLog[3].Item1.Should().Be.EqualTo("Save");
+			testStorageResult.OperationsLog.Should().HaveCount(4);
+			testStorageResult.OperationsLog[3].Item1.Should().Be("Save");
 		}
 
 		private class TestStorageResult

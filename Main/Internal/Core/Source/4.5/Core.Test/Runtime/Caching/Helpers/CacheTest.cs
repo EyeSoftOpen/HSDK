@@ -3,7 +3,7 @@ namespace EyeSoft.Core.Test.Runtime.Caching.Helpers
     using System;
     using EyeSoft.Runtime.Caching;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public abstract class CacheTest : IDisposable
@@ -35,7 +35,7 @@ namespace EyeSoft.Core.Test.Runtime.Caching.Helpers
 
 				var valueRetrieved = cache.Get(Key);
 
-				valueRetrieved.Should().Be.EqualTo(Value);
+				valueRetrieved.Should().Be(Value);
 			}
 		}
 

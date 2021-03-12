@@ -3,7 +3,7 @@
     using System;
     using EyeSoft.Calendar;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ItalianHolidayFactoryTest
@@ -86,7 +86,7 @@
 				.Fixed(Natale, new AgnosticDay(25, 12))
 				.Fixed(SantoStefano, new AgnosticDay(26, 12))
 				.List()
-				.Should().Have.SameSequenceAs(expected);
+				.Should().BeSameAs(expected);
 		}
 	}
 }

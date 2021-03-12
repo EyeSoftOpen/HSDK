@@ -5,7 +5,7 @@
     using System.Linq;
     using EyeSoft.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class CollectionExtensionsTest
@@ -19,7 +19,7 @@
 
 			collection.Synchronize(synchronizeWith);
 
-			collection.Should().Have.SameSequenceAs(new Customer("1"), new Customer("5"), new Customer("6"));
+			collection.Should().BeSameAs(new[] { new Customer("1"), new Customer("5"), new Customer("6") });
 		}
 
 		[TestMethod]
@@ -31,11 +31,11 @@
 
 			collection.Synchronize(synchronizeWith, SetCustomerAsDeleted);
 
-			collection.Should().Have.SameSequenceAs(collection);
+			collection.Should().BeSameAs(collection);
 
 			foreach (var item in collection.Except(synchronizeWith))
 			{
-				item.IsDeleted.Should().Be.True();
+				item.IsDeleted.Should().BeTrue();
 			}
 		}
 
@@ -48,7 +48,7 @@
 
 			collection.Synchronize(synchronizeWith, x => new Customer(x.Name));
 
-			collection.Should().Have.SameSequenceAs(new Customer("1"), new Customer("5"), new Customer("6"));
+			collection.Should().BeSameAs(new [] { new Customer("1"), new Customer("5"), new Customer("6") });
 		}
 
 		[TestMethod]
@@ -60,11 +60,11 @@
 
 			collection.Synchronize(synchronizeWith, x => new Customer(x.Name), null, SetCustomerAsDeleted);
 
-			collection.Should().Have.SameSequenceAs(collection);
+			collection.Should().BeSameAs(collection);
 
 			foreach (var item in collection.Where(x => synchronizeWith.All(s => s.Name != x.Name)))
 			{
-				item.IsDeleted.Should().Be.True();
+				item.IsDeleted.Should().BeTrue();
 			}
 		}
 
@@ -81,7 +81,7 @@
 
 			for (var i = 0; i < list.Count; i++)
 			{
-				list[i].Should().Be.SameInstanceAs(collection[i]);
+				list[i].Should().BeSameAs(collection[i]);
 			}
 		}
 

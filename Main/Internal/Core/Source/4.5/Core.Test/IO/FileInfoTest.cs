@@ -4,7 +4,7 @@
     using EyeSoft.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class FileInfoTest
@@ -17,7 +17,7 @@
 			Storage.Reset(() => storage);
 
 			Storage.File(@"C:\FileName.iso").Hash()
-				.Should().Be.EqualTo("6c4244329888770c6fa7f3fbf1d3b8baf9ccb7d0");
+				.Should().Be("6c4244329888770c6fa7f3fbf1d3b8baf9ccb7d0");
 		}
 
 		private IStorage CreateStorage()

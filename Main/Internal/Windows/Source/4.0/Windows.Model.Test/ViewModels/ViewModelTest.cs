@@ -2,7 +2,7 @@
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ViewModelTest
@@ -17,7 +17,7 @@
 			var viewModel = CreateViewModelAndAssignProperty();
 
 			viewModel.Name = ExpectedPropertyName;
-			order.Should().Be.EqualTo(2);
+			order.Should().Be(2);
 		}
 
 		[TestMethod]
@@ -26,10 +26,10 @@
 			var viewModel = CreateViewModelAndAssignProperty();
 
 			viewModel.Name = ExpectedPropertyName;
-			order.Should().Be.EqualTo(2);
+			order.Should().Be(2);
 
 			viewModel.Name = ExpectedPropertyName;
-			order.Should().Be.EqualTo(2);
+			order.Should().Be(2);
 		}
 
 		[TestMethod]
@@ -42,7 +42,7 @@
 
 			viewModel.Name = "Test1";
 
-			propertyName.Should().Be.EqualTo("Name");
+			propertyName.Should().Be("Name");
 		}
 
 		private ViewModel1 CreateViewModelAndAssignProperty()
@@ -61,8 +61,8 @@
 			string expectedPropertyName,
 			int expectedOrder)
 		{
-			propertyName.Should().Be.EqualTo(expectedPropertyName);
-			order.Should().Be.EqualTo(expectedOrder);
+			propertyName.Should().Be(expectedPropertyName);
+			order.Should().Be(expectedOrder);
 			order++;
 		}
 

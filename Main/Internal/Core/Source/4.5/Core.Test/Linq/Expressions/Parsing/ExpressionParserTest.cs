@@ -3,7 +3,7 @@
     using EyeSoft.Linq.Expressions.Parsing;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ExpressionParserTest
@@ -26,8 +26,7 @@
 				.Parse<TestEntity>(expressionConstant.Source)
 				.ToString()
 				.Should()
-				.Be
-				.EqualTo(expressionConstant.Compiled);
+				.Be(expressionConstant.Compiled);
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 
 	using NHibernate.Cache;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	[TestClass]
 	public class MemoryCacheTest
@@ -45,9 +45,9 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 		{
 			var cache = provider.BuildCache(RegionName, props);
 
-			cache.Should("No cache returned").Not.Be.Null();
+			cache.Should().NotBeNull("No cache returned");
 
-			cache.Get(Key).Should("Cache returned an item we didn't add.").Be.Null();
+			cache.Get(Key).Should().BeNull("Cache returned an item we didn't add.");
 
 			cache.Put(Key, Value);
 			var item = cache.Get(Key);
@@ -116,9 +116,8 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 		{
 			var h = new Dictionary<string, string> { { "priority", 7.ToString(CultureInfo.InvariantCulture) } };
 
-			Executing
-				.This(() => new MemoryCache(RegionName, h))
-				.Should().Throw<IndexOutOfRangeException>();
+            Action action = () => new MemoryCache(RegionName, h);
+            action.Should().Throw<IndexOutOfRangeException>();
 		}
 
 		[TestMethod]
@@ -126,9 +125,9 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 		{
 			var h = new Dictionary<string, string> { { "expiration", "foobar" } };
 
-			Executing
-				.This(() => new MemoryCache(RegionName, h))
-				.Should().Throw<ArgumentException>();
+			Action action = () => new MemoryCache(RegionName, h);
+
+            action.Should().Throw<ArgumentException>();
 		}
 
 		[TestMethod]
@@ -143,9 +142,8 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 		{
 			ICache cache = new MemoryCache();
 
-			Executing
-				.This(() => cache.Put(null, null))
-				.Should().Throw<ArgumentNullException>();
+			Action action = () => cache.Put(null, null);
+            action.Should().Throw<ArgumentNullException>();
 		}
 
 		[TestMethod]
@@ -153,9 +151,9 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 		{
 			ICache cache = new MemoryCache();
 
-			Executing
-				.This(() => cache.Put(RegionName, null))
-				.Should().Throw<ArgumentNullException>();
+            Action action = () => cache.Put(RegionName, null);
+            
+            action.Should().Throw<ArgumentNullException>();
 		}
 
 		[TestMethod]
@@ -173,9 +171,9 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 		{
 			ICache cache = new MemoryCache();
 
-			Executing
-				.This(() => cache.Remove(null))
-				.Should().Throw<ArgumentNullException>();
+			Action action = () => cache.Remove(null);
+
+            action.Should().Throw<ArgumentNullException>();
 		}
 
 		[TestMethod]
@@ -190,7 +188,7 @@ namespace EyeSoft.Data.Nhibernate.Test.Caching
 			var get1 = cache1.Get(Key);
 			var get2 = cache2.Get(Key);
 
-			(get1 == get2).Should().Be.False();
+			(get1 == get2).Should().BeFalse();
 		}
 
 		[TestMethod]

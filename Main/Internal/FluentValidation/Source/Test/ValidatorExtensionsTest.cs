@@ -1,10 +1,11 @@
 ﻿namespace EyeSoft.FluentValidation.Test
 {
+    using System;
     using EyeSoft.Validation;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	[TestClass]
 	public class ValidatorExtensionsTest
@@ -17,10 +18,9 @@
 				"\t- Name: Should not be empty. - Value: \r\n" +
 				"\t- Address: Should not be empty. - Value:";
 
-			Executing.This(() => new CustomerFluentValidator().ThrowOnErrors(new ValidatorTest.ValidableCustomer()))
-				.Should().Throw<ValidationException>()
-				.And
-				.Exception.Message.Should().Be.EqualTo(ExceptionMessage);
+            Action action = () => new CustomerFluentValidator().ThrowOnErrors(new ValidatorTest.ValidableCustomer());
+                
+            action.Should().Throw<ValidationException>().And.Message.Should().Be(ExceptionMessage);
 		}
 	}
 }

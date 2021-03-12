@@ -3,7 +3,7 @@
     using Extensions;
     using EyeSoft.Reflection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class PropertyInfoExtensionsTest
@@ -36,7 +36,7 @@
 			new TypeReflector<PrivatePropertyClass>()
 				.PropertyExpression(x => x.Public)
 				.MemberExpression<PrivatePropertyClass, string>()
-				.ToString().Should().Be.EqualTo("x => x.Public");
+				.ToString().Should().Be("x => x.Public");
 		}
 
 		private static void CheckScopeIsCorrect(
@@ -50,8 +50,8 @@
 				typeof(PrivatePropertyClass)
 					.GetAnyInstanceProperty(propertyName);
 
-			property.IsPrivate().Should(privatePropertyMessage).Be.EqualTo(privateExpected);
-			property.IsPublic().Should(publicPropertyMessage).Be.EqualTo(publicExpected);
+			property.IsPrivate().Should().Be(privateExpected, privatePropertyMessage);
+			property.IsPublic().Should().Be(publicExpected, publicPropertyMessage);
 		}
 
 		private class PrivatePropertyClass

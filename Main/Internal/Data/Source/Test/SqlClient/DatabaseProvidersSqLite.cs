@@ -7,18 +7,19 @@
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	[TestClass]
 	public class DatabaseProvidersSqLite
 	{
 		[TestMethod]
 		public void VerifySqLiteConnectionStringBuilderGetRightDatabaseProvider()
-		{
-			new SqlConnectionStringBuilder { DataSource = "Test.db" }
-				.GetDatabaseProvider()
-				.Should().Be.InstanceOf<SqlDatabaseProvider>()
-				.And.Value.ConnectionString.Should().Be.EqualTo("Data Source=Test.db");
-		}
+        {
+            var databaseProvider = new SqlConnectionStringBuilder { DataSource = "Test.db" }.GetDatabaseProvider();
+
+            databaseProvider.Should().BeOfType<SqlDatabaseProvider>();
+
+            databaseProvider.ConnectionString.Should().Be("Data Source=Test.db");
+        }
 	}
 }

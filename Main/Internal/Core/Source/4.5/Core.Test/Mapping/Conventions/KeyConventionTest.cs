@@ -5,7 +5,7 @@ namespace EyeSoft.Core.Test.Mapping.Conventions
     using EyeSoft.Mapping;
     using EyeSoft.Mapping.Conventions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class KeyConventionTest
@@ -51,7 +51,7 @@ namespace EyeSoft.Core.Test.Mapping.Conventions
 
 			new KeyConvention()
 				.CanBeTheKey(new MemberInfoMetadata(memberInfo))
-				.Should().Be.EqualTo(expectedIsKey);
+				.Should().Be(expectedIsKey);
 		}
 	}
 }

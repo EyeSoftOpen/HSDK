@@ -7,7 +7,7 @@
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ServiceFactoryItemPropertyTest : ServiceFactoryTest
@@ -18,7 +18,7 @@
 			var viewModel = new FilledViewModel(factoryHelper.ServiceFactory);
 
 			viewModel.MainCustomer
-				.Should().Be.EqualTo(Known.CustomerModel.Main);
+				.Should().Be(Known.CustomerModel.Main);
 		}
 
 		[TestMethod]
@@ -31,7 +31,7 @@
 			manualResetEvent.WaitOne();
 
 			viewModel.MainCustomer.FirstName
-				.Should().Be.EqualTo(Known.Customer.Main.FirstName.ToUpper());
+				.Should().Be(Known.Customer.Main.FirstName.ToUpper());
 		}
 
 		private class FilledViewModel : CollectionViewModel

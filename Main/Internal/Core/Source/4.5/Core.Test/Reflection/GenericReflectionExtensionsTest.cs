@@ -3,7 +3,7 @@
     using System;
     using EyeSoft.Reflection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class GenericReflectionExtensionsTest
@@ -16,7 +16,7 @@
 
 			new TypeToReflect().Invoke("Method", new[] { typeof(bool) }, a);
 
-			called.Should().Be.True();
+			called.Should().BeTrue();
 		}
 
 		private class TypeToReflect

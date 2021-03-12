@@ -2,7 +2,7 @@
 {
     using Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class DoubleExtensionsTest
@@ -10,7 +10,7 @@
 		[TestMethod]
 		public void VerifyDoubleRoundToIntWorks()
 		{
-			6.8d.RoundToInt().Should().Be.EqualTo(7);
+			6.8d.RoundToInt().Should().Be(7);
 		}
 	}
 }

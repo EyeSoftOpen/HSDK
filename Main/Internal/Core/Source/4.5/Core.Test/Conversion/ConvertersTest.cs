@@ -3,7 +3,7 @@
     using Helpers;
     using Helpers.Conversion;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ConvertersTest
@@ -19,7 +19,7 @@
 				.From<Customer>()
 				.To<CustomerDto>(KnownCustomer.Customer)
 				.CustomerName
-				.Should().Be.EqualTo(KnownCustomer.Customer.Name);
+				.Should().Be(KnownCustomer.Customer.Name);
 		}
 
 		[TestMethod]
@@ -30,7 +30,7 @@
 				.Converter<CustomerDtoToCustomerConverter>()
 				.Convert(KnownCustomer.Customer)
 				.CustomerName
-				.Should().Be.EqualTo(KnownCustomer.Customer.Name);
+				.Should().Be(KnownCustomer.Customer.Name);
 		}
 	}
 }

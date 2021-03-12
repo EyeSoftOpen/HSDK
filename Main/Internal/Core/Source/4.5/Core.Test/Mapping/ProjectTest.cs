@@ -4,7 +4,7 @@
     using EyeSoft.Mapping;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ProjectTest
@@ -19,7 +19,7 @@
 
 			var mapped = customers.Project<CustomerProjection>();
 
-			mapped.Single().Name.Should().Be.EqualTo(ExpectedName);
+			mapped.Single().Name.Should().Be(ExpectedName);
 		}
 
 		protected virtual IProjection Create()

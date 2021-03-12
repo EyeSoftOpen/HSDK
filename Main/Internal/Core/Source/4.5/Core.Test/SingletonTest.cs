@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class SingletonTest
@@ -12,9 +12,9 @@
 		{
 			var singleton = new Singleton<Service>();
 
-			Executing
-				.This(() => singleton.Instance.Execute())
-				.Should().Throw<InvalidOperationException>();
+            Action action = () => singleton.Instance.Execute();
+
+            action.Should().Throw<InvalidOperationException>();
 		}
 
 		[TestMethod]
@@ -22,9 +22,8 @@
 		{
 			var singleton = new Singleton<Service>();
 
-			Executing
-				.This(() => singleton.Set((Service)null))
-				.Should().Throw<ArgumentNullException>();
+            Action action = () => singleton.Set((Service)null);
+            action.Should().Throw<ArgumentNullException>();
 		}
 
 		[TestMethod]
@@ -34,9 +33,9 @@
 
 			singleton.Set(() => new Service());
 
-			Executing
-				.This(() => singleton.Set(() => new Service()))
-				.Should().Throw<InvalidOperationException>();
+            Action action = () => singleton.Set(() => new Service());
+                
+            action.Should().Throw<InvalidOperationException>();
 		}
 
 		[TestMethod]
@@ -47,9 +46,8 @@
 
 			singleton.Instance.Execute();
 
-			Executing
-				.This(() => singleton.Set(() => new Service()))
-				.Should().Throw<InvalidOperationException>();
+            Action action = () => singleton.Set(() => new Service());
+            action.Should().Throw<InvalidOperationException>();
 		}
 
 		private class Service

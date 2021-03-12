@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using EyeSoft.Linq.Expressions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class EnumerableExpressionExtensions
@@ -20,7 +20,7 @@
 					expectedValue2.ToObjectConstantLambda()
 				}
 			.ToDictionary()
-			.Should().Have.SameSequenceAs(
+			.Should().BeEquivalentTo(
 				new[]
 					{
 						expectedValue1,

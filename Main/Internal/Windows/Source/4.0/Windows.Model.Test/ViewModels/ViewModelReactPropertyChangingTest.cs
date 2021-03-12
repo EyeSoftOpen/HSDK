@@ -6,7 +6,7 @@
     using EyeSoft.Reflection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ViewModelReactPropertyChangingTest
@@ -27,10 +27,13 @@
 
 			viewModel
 				.ChangesLog
-				.Should().Have.SameSequenceAs(
-					new Tuple<string, string>(primary, null),
-					new Tuple<string, string>(primary, Value1),
-					new Tuple<string, string>(primary, Value2));
+				.Should().BeSameAs(
+					new []
+                    {
+                        new Tuple<string, string>(primary, null),
+                        new Tuple<string, string>(primary, Value1),
+                        new Tuple<string, string>(primary, Value2)
+					});
 		}
 
 		private class ReactViewModel : ViewModel

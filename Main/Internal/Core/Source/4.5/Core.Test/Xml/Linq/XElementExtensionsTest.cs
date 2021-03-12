@@ -3,7 +3,7 @@
     using System.Xml.Linq;
     using EyeSoft.Xml.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class XElementExtensionsTest
@@ -24,7 +24,7 @@
 
 			var xml = XElement.Parse(Xml).RemoveNamespaces().ToString();
 
-			xml.Should().Be.EqualTo(XmlWithoutNamespaces);
+			xml.Should().Be(XmlWithoutNamespaces);
 		}
 	}
 }

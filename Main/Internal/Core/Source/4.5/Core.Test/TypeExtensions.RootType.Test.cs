@@ -2,7 +2,7 @@
 {
     using Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class TypeExtensionsRootTypeTest
@@ -14,31 +14,31 @@
 		[TestMethod]
 		public void CheckRootTypeOfBaseClass()
 		{
-			typeof(Person).RootType().Should().Be.EqualTo<Person>();
+			typeof(Person).RootType().Should().BeOfType<Person>();
 		}
 
 		[TestMethod]
 		public void CheckRootTypeOfDerivedClass()
 		{
-			typeof(Teacher).RootType().Should().Be.EqualTo<Person>();
+			typeof(Teacher).RootType().Should().BeOfType<Person>();
 		}
 
 		[TestMethod]
 		public void CheckRootTypeOfValueType()
 		{
-			typeof(int).RootType().Should().Be.EqualTo<int>();
+			typeof(int).RootType().Should().BeOfType<int>();
 		}
 
 		[TestMethod]
 		public void CheckRootTypeOfObjectType()
 		{
-			typeof(object).RootType().Should().Be.EqualTo<object>();
+			typeof(object).RootType().Should().BeOfType<object>();
 		}
 
 		[TestMethod]
 		public void CheckRootTypeOfInterfaceype()
 		{
-			typeof(ITest).RootType().Should().Be.EqualTo<ITest>();
+			typeof(ITest).RootType().Should().BeOfType<ITest>();
 		}
 
 		private class Person

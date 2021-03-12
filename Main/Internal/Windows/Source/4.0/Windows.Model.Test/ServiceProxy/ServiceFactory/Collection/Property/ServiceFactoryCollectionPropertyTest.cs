@@ -10,7 +10,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Model.Collections.ObjectModel;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ServiceFactoryCollectionPropertyTest : ServiceFactoryTest
@@ -23,7 +23,7 @@
 			viewModel
 				.CustomerCollection
 				.Select(x => x.Id)
-				.Should().Have.SameSequenceAs(Known.Customer.All.OrderBy(x => x.FirstName).Select(x => x.Id));
+				.Should().BeSameAs(Known.Customer.All.OrderBy(x => x.FirstName).Select(x => x.Id));
 		}
 
 		[TestMethod]
@@ -34,8 +34,8 @@
 			var viewModel = new PreAssignedCollectionViewModel(collection, factoryHelper.ServiceFactory);
 
 
-			viewModel.CustomerCollection.Should().Be.SameInstanceAs(collection);
-			viewModel.CustomerCollection.Should().Have.Count.EqualTo(3);
+			viewModel.CustomerCollection.Should().BeSameAs(collection);
+			viewModel.CustomerCollection.Should().HaveCount(3);
 		}
 
 		[TestMethod]
@@ -45,7 +45,7 @@
 
 			var listCollectionView = viewModel.CustomerCollection.ListView();
 
-			listCollectionView.Should().Not.Be.Null();
+			listCollectionView.Should().NotBeNull();
 		}
 
 		[TestMethod]
@@ -62,9 +62,9 @@
 			viewModel
 				.CustomerCollection
 				.Select(x => x.Id)
-				.Should().Have.SameSequenceAs(all);
+				.Should().BeSameAs(all);
 
-			viewModel.Completed.Should().Be.EqualTo(all.First());
+			viewModel.Completed.Should().Be(all.First());
 		}
 
 		private class PreAssignedCollectionViewModel : CollectionViewModel

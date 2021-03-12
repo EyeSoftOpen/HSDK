@@ -5,7 +5,7 @@
     using System.Threading.Tasks;
     using EyeSoft.Collections.Concurrent;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class SafeConcurrentDictionaryTest
@@ -35,7 +35,7 @@
 
 			Parallel.For(1, Environment.ProcessorCount, action);
 
-			exception.Should().Be.False();
+			exception.Should().BeFalse();
 		}
 	}
 }

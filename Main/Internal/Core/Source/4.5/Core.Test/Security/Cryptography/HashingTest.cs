@@ -6,7 +6,7 @@
     using EyeSoft.IO;
     using EyeSoft.Security.Cryptography;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class HashingTest
@@ -26,8 +26,8 @@
 		[TestMethod]
 		public void UseAnUnknowHashAlgorithmExpectedException()
 		{
-			Executing.This(() => VerifyBase64HashAlgorithm("Unknow", null))
-				.Should().Throw<ArgumentException>();
+            Action action = () => VerifyBase64HashAlgorithm("Unknow", null);
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[TestMethod]
@@ -51,32 +51,31 @@
 		{
 			Hashing.Register<FakeHashAlgorithm>(FakeProviderName);
 
-			Executing
-				.This(() => Hashing.Register<FakeHashAlgorithm>("Fake1"))
-				.Should().Throw<ArgumentException>();
+            Action action = () => Hashing.Register<FakeHashAlgorithm>("Fake1");
+
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[TestMethod]
 		public void RegisterAnHashAlgorithmWithAnExistingProviderName()
 		{
-			Executing
-				.This(() => Hashing.Register<FakeHashAlgorithm>(HashAlgorithms.Md5))
-				.Should().Throw<ArgumentException>();
+            Action action = () => Hashing.Register<FakeHashAlgorithm>(HashAlgorithms.Md5);
+
+			action.Should().Throw<ArgumentException>();
 		}
 
 		[TestMethod]
 		public void RegisterAnHashAlgorithmWithAnExistingProviderNameIgnoringCase()
 		{
-			Executing
-				.This(() => Hashing.Register<FakeHashAlgorithm>("Md5"))
-				.Should().Throw<ArgumentException>();
+            Action action = () => Hashing.Register<FakeHashAlgorithm>("Md5");
+            action.Should().Throw<ArgumentException>();
 		}
 
 		[TestMethod]
 		public void ComputeHexHashWithMd5Encoding()
 		{
 			var hex = Hashing.Md5.ComputeHexWithEncoding("value");
-			hex.Should().Be.EqualTo("2063c1608d6e0baf80249c42e2be5804");
+			hex.Should().Be("2063c1608d6e0baf80249c42e2be5804");
 		}
 
 		[TestMethod]
@@ -89,19 +88,19 @@
 		[TestMethod]
 		public void VerifyDefaultAlgorithm()
 		{
-			Hashing.ComputeHashString(ClearText).Should().Be.EqualTo("����{���p�Z]x^��Ы�");
+			Hashing.ComputeHashString(ClearText).Should().Be("����{���p�Z]x^��Ы�");
 		}
 
 		[TestMethod]
 		public void VerifyDefaultAlgorithmBase64()
 		{
-			Hashing.ComputeHashBase64String(ClearText).Should().Be.EqualTo(Sha1Base64ExpectedHash);
+			Hashing.ComputeHashBase64String(ClearText).Should().Be(Sha1Base64ExpectedHash);
 		}
 
 		[TestMethod]
 		public void VerifyDefaultAlgorithmHex()
 		{
-			Hashing.ComputeHex(ClearText).Should().Be.EqualTo("f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0");
+			Hashing.ComputeHex(ClearText).Should().Be("f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0");
 		}
 
 		[TestMethod]
@@ -143,20 +142,20 @@
 			Storage.WriteAllText(Path, Contents);
 			var text = Storage.ReadAllText(Path);
 
-			text.Should().Be.EqualTo(Contents);
+			text.Should().Be(Contents);
 
 			var textHash = Hashing.ComputeHex(text);
 			var fileHash = Storage.File(Path).Hash();
 
-			textHash.Should().Be.EqualTo(ExpectedSha1);
-			fileHash.Should().Be.EqualTo(ExpectedSha1);
+			textHash.Should().Be(ExpectedSha1);
+			fileHash.Should().Be(ExpectedSha1);
 		}
 
 		private void VerifyBase64HashAlgorithm(string providerName, string expectedHash)
 		{
 			var computedHash = Hashing.Create(providerName).ComputeHashBase64String(ClearText);
 
-			computedHash.Should().Be.EqualTo(expectedHash);
+			computedHash.Should().Be(expectedHash);
 		}
 
 		private class FakeHashAlgorithm : HashAlgorithm, IHashAlgorithm

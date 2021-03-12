@@ -4,7 +4,7 @@
     using EyeSoft.Xml.Serialization;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class XmlSerializerTest
@@ -37,7 +37,7 @@
 		{
 			var xml = new XmlSerializer<XmlSerializable>().SerializeToString(new XmlSerializable { Title = Title1 });
 
-			xml.Should().Be.EqualTo(ExpectedXml);
+			xml.Should().Be(ExpectedXml);
 		}
 
 		[TestMethod]
@@ -45,7 +45,7 @@
 		{
 			var xml = xmlSerializer.Serialize(collection);
 
-			xml.Should().Be.EqualTo(ExpectedCollectionXml);
+			xml.Should().Be(ExpectedCollectionXml);
 		}
 
 		[TestMethod]
@@ -53,7 +53,7 @@
 		{
 			var deserializedCollection = xmlSerializer.DeserializeCollection(ExpectedCollectionXml);
 
-			deserializedCollection.Should().Have.SameSequenceAs(collection);
+			deserializedCollection.Should().BeSameAs(collection);
 		}
 	}
 }

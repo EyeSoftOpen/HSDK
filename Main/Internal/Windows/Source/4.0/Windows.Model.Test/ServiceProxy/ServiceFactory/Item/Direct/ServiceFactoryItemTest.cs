@@ -5,7 +5,7 @@
     using Demo.Contract;
     using Demo.ViewModels;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ServiceFactoryItemTest : ServiceFactoryTest
@@ -28,9 +28,9 @@
 
 			manualResetEvent.WaitOne();
 
-			customer.Should().Be.EqualTo(Known.Customer.Main);
+			customer.Should().Be(Known.Customer.Main);
 
-			factoryHelper.ItemLoaded.Should().Be.True();
+			factoryHelper.ItemLoaded.Should().BeTrue();
 		}
 
 		[TestMethod]
@@ -38,7 +38,7 @@
 		{
 			factoryHelper.ServiceFactory.Fill(x => x.GetMainCustomer());
 
-			factoryHelper.ItemLoaded.Should().Be.False();
+			factoryHelper.ItemLoaded.Should().BeFalse();
 		}
 
 		[TestMethod]
@@ -60,7 +60,7 @@
 
 			manuelResetEvent.WaitOne();
 
-			model.Should().Be.EqualTo(Known.CustomerModel.Main);
+			model.Should().Be(Known.CustomerModel.Main);
 		}
 	}
 }

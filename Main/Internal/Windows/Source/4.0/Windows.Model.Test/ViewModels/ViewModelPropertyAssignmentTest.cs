@@ -2,7 +2,7 @@
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ViewModelPropertyAssignmentTest
@@ -15,18 +15,18 @@
 			var propertyChanged = false;
 
 			valuePropertyViewModel.PropertyChanged += (s, e) => propertyChanged = true;
-			valuePropertyViewModel.Changed.Should().Be.False();
+			valuePropertyViewModel.Changed.Should().BeFalse();
 
 			const int Value = 3;
 
 			valuePropertyViewModel.Value = Value;
 			valuePropertyViewModel.Value = Value;
-			valuePropertyViewModel.Value.Should().Be.EqualTo(Value);
+			valuePropertyViewModel.Value.Should().Be(Value);
 
-			valuePropertyViewModel.Changes.Should().Be.EqualTo(1);
-			valuePropertyViewModel.Changed.Should().Be.True();
+			valuePropertyViewModel.Changes.Should().Be(1);
+			valuePropertyViewModel.Changed.Should().BeTrue();
 
-			propertyChanged.Should().Be.True();
+			propertyChanged.Should().BeTrue();
 		}
 
 		[TestMethod]
@@ -38,20 +38,20 @@
 
 			valuePropertyViewModel.PropertyChanged += (s, e) => propertyChanged = true;
 
-			valuePropertyViewModel.Changed.Should().Be.False();
+			valuePropertyViewModel.Changed.Should().BeFalse();
 
 			var value = new Foo { Id = 3 };
 
 			valuePropertyViewModel.Value = value;
-			valuePropertyViewModel.Value.Should().Be.SameInstanceAs(value);
+			valuePropertyViewModel.Value.Should().BeSameAs(value);
 
 			valuePropertyViewModel.Value = value;
-			valuePropertyViewModel.Value.Should().Be.SameInstanceAs(value);
+			valuePropertyViewModel.Value.Should().BeSameAs(value);
 
-			valuePropertyViewModel.Changes.Should().Be.EqualTo(1);
-			valuePropertyViewModel.Changed.Should().Be.True();
+			valuePropertyViewModel.Changes.Should().Be(1);
+			valuePropertyViewModel.Changed.Should().BeTrue();
 
-			propertyChanged.Should().Be.True();
+			propertyChanged.Should().BeTrue();
 		}
 
 		[TestMethod]
@@ -63,20 +63,20 @@
 
 			valuePropertyViewModel.PropertyChanged += (s, e) => propertyChanged = true;
 
-			valuePropertyViewModel.Changed.Should().Be.False();
+			valuePropertyViewModel.Changed.Should().BeFalse();
 
 			var value = new Foo { Id = 3 };
 			valuePropertyViewModel.Value = value;
-			valuePropertyViewModel.Value.Should().Be.SameInstanceAs(value);
+			valuePropertyViewModel.Value.Should().BeSameAs(value);
 
 			var value2 = new Foo { Id = 3 };
 			valuePropertyViewModel.Value = value2;
-			valuePropertyViewModel.Value.Should().Be.SameInstanceAs(value);
+			valuePropertyViewModel.Value.Should().BeSameAs(value);
 
-			valuePropertyViewModel.Changes.Should().Be.EqualTo(1);
-			valuePropertyViewModel.Changed.Should().Be.True();
+			valuePropertyViewModel.Changes.Should().Be(1);
+			valuePropertyViewModel.Changed.Should().BeTrue();
 
-			propertyChanged.Should().Be.True();
+			propertyChanged.Should().BeTrue();
 		}
 
 		private class ValuePropertyViewModel : ViewModel

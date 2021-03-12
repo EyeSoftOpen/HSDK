@@ -6,7 +6,7 @@
     using EyeSoft.IO;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ApplicationDataTest
@@ -40,12 +40,12 @@
 			Console.WriteLine("Load data from string: {0}(ms)", stopwatch.ElapsedMilliseconds);
 
 			storage.WritePath.Should().EndWith(@"\EyeSoft\Test\Foo.xml.secure");
-			storage.WriteBytes.Should().Have.Count.EqualTo(CryptedBytesCount);
+			storage.WriteBytes.Should().HaveCount(CryptedBytesCount);
 
-			storage.ReadPath.Should().Be.EqualTo(storage.WritePath);
-			storage.ReadBytes.Should().Have.Count.EqualTo(CryptedBytesCount);
+			storage.ReadPath.Should().Be(storage.WritePath);
+			storage.ReadBytes.Should().HaveCount(CryptedBytesCount);
 
-			decrypted.Should().Be.EqualTo(original);
+			decrypted.Should().Be(original);
 		}
 
 		[TestMethod]
@@ -56,7 +56,7 @@
 
 			Storage.Reset(() => dataTestStorage);
 
-			dataSettings.Load().Should().Be.Null();
+			dataSettings.Load().Should().BeNull();
 		}
 
 		[Serializable]

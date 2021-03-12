@@ -4,7 +4,7 @@
     using System.Linq;
     using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class DomainMapperTest
@@ -17,18 +17,18 @@
 				.Register<HeadOffice>()
 				.Register<Order>()
 				.MappedTypes()
-				.Count().Should().Be.EqualTo(3);
+				.Count().Should().Be(3);
 		}
 
 		[TestMethod]
 		public void MapTheSameEntityMoreThanOnceExpectedException()
 		{
-			Executing
-				.This(() =>
-					new DomainMapper()
-						.Register<CustomerAggregate>()
-						.Register<CustomerAggregate>())
-				.Should().Throw<ArgumentException>();
+            Action action = () =>
+			    new DomainMapper()
+				    .Register<CustomerAggregate>()
+				    .Register<CustomerAggregate>();
+            
+            action.Should().Throw<ArgumentException>();
 		}
 
 		private class CustomerAggregate

@@ -6,7 +6,7 @@
 	using EyeSoft.Windows.Model.Input;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class AutoRegisterViewModelCommandWithParameterTest
@@ -16,9 +16,9 @@
 		{
 			var viewModel = new ViewModelCommandWithParameter();
 
-			viewModel.ShowChildCommand.Should().Not.Be.Null();
+			viewModel.ShowChildCommand.Should().NotBeNull();
 
-			viewModel.ShowChildCommand.Should().Be.OfType<AsyncRefreshCommand<string>>();
+			viewModel.ShowChildCommand.Should().BeOfType<AsyncRefreshCommand<string>>();
 		}
 
 	    [TestMethod]
@@ -26,11 +26,11 @@
 	    {
 	        var viewModel = new ViewModelCommandWithParameter();
 
-	        viewModel.CanShowChild(null).Should().Be.False();
+	        viewModel.CanShowChild(null).Should().BeFalse();
 
 	        viewModel.AllowCommand = true;
 
-	        viewModel.CanShowChild(null).Should().Be.True();
+	        viewModel.CanShowChild(null).Should().BeTrue();
         }
 
         private class ViewModelCommandWithParameter : AutoRegisterViewModel

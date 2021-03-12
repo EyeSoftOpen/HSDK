@@ -4,7 +4,7 @@
     using Extensions;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ObjectExtensionsTest
@@ -14,51 +14,49 @@
 		{
 			object obj = null;
 
-			obj.IsNull().Should().Be.True();
+			obj.IsNull().Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void UpCastToAnotherType()
 		{
 			3.Convert<double>()
-				.Should().Be.EqualTo(3d);
+				.Should().Be(3d);
 		}
 
 		[TestMethod]
 		public void DownCastToAnotherType()
 		{
 			3d.Convert<int>()
-				.Should().Be.EqualTo(3);
+				.Should().Be(3);
 		}
 
 		[TestMethod]
 		public void ConvertFromString()
 		{
 			"3".Convert<double>()
-				.Should().Be.EqualTo(3d);
+				.Should().Be(3d);
 		}
 
 		[TestMethod]
 		public void ConvertBaseTypeToDerivedTypeExpectedException()
-		{
-			Executing
-				.This(() => new Person().Convert<Teacher>())
-				.Should().Throw<InvalidCastException>();
+        {
+            Action action = () => new Person().Convert<Teacher>();
+            action.Should().Throw<InvalidCastException>();
 		}
 
 		[TestMethod]
 		public void ConvertDerivedTypeToBaseType()
 		{
-			Executing
-				.This(() => new Teacher().Convert<Person>())
-				.Should().NotThrow();
+            Action action = () => new Teacher().Convert<Person>();
+			action.Should().NotThrow();
 		}
 
 		[TestMethod]
 		public void ConvertToString()
 		{
 			3d.Convert<string>()
-				.Should().Be.EqualTo("3");
+				.Should().Be("3");
 		}
 
 		[TestMethod]
@@ -79,7 +77,7 @@
 
 			obj.Extend().OnNotDefault(action => actionCalled = true);
 
-			actionCalled.Should().Be.EqualTo(expected);
+			actionCalled.Should().Be(expected);
 		}
 	}
 }

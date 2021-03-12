@@ -4,7 +4,7 @@
     using EyeSoft.Reflection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using EyeSoft.Windows.Model;
-    using SharpTestsEx;
+    using FluentAssertions;
 
 	[TestClass]
 	public class ViewModelDependentPropertyTest
@@ -22,7 +22,7 @@
 
 			viewModel.Primary = "Value2";
 
-			viewModel.ChangeList.Should().Have.SameSequenceAs(primary, dependent, primary, dependent);
+			viewModel.ChangeList.Should().BeSameAs(new [] { primary, dependent, primary, dependent });
 		}
 
 		private class DependentViewModel : ViewModel

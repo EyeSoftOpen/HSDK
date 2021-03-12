@@ -1,8 +1,9 @@
 namespace EyeSoft.Core.Test.Calendar
 {
+    using System;
     using EyeSoft.Calendar;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class AgnosticDayTest
@@ -12,16 +13,16 @@ namespace EyeSoft.Core.Test.Calendar
 		{
 			var day = new AgnosticDay(24, 4);
 
-			day.Day.Should().Be.EqualTo(24);
-			day.Month.Should().Be.EqualTo(4);
+			day.Day.Should().Be(24);
+			day.Month.Should().Be(4);
 		}
 
 		[TestMethod]
 		public void CreateANotValidAgnosticDayExpectedException()
 		{
-			Executing
-				.This(() => new AgnosticDay(1, 13))
-				.Should().Throw();
+			Action action = () => new AgnosticDay(1, 13);
+
+            action.Should().Throw<Exception>();
 		}
 
 		[TestMethod]
@@ -29,7 +30,7 @@ namespace EyeSoft.Core.Test.Calendar
 		{
 			new AgnosticDay(1, 1)
 				.CompareTo(new AgnosticDay(1, 1))
-				.Should().Be.EqualTo(0);
+				.Should().Be(0);
 		}
 
 		[TestMethod]
@@ -37,7 +38,7 @@ namespace EyeSoft.Core.Test.Calendar
 		{
 			new AgnosticDay(1, 1)
 				.CompareTo(new AgnosticDay(2, 1))
-				.Should().Be.EqualTo(-1);
+				.Should().Be(-1);
 		}
 
 		[TestMethod]
@@ -45,7 +46,7 @@ namespace EyeSoft.Core.Test.Calendar
 		{
 			new AgnosticDay(1, 2)
 				.CompareTo(new AgnosticDay(2, 1))
-				.Should().Be.EqualTo(1);
+				.Should().Be(1);
 		}
 	}
 }

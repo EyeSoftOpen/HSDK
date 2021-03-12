@@ -2,7 +2,7 @@
 {
     using Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class TypeExtensionsInterfaceTest
@@ -19,35 +19,35 @@
 		public void CheckTypeImplementsInterface()
 		{
 			typeof(TypeThatImplementsInterface).Implements(typeof(IInterface<string>))
-				.Should().Be.True();
+				.Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void CheckTypeImplementsGenericDefinitionInterface()
 		{
 			typeof(TypeThatImplementsInterface).Implements(typeof(IInterface<>))
-				.Should().Be.True();
+				.Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void CheckTypeDoesNotImplementsOtherGenericDefinitionInterface()
 		{
 			typeof(TypeThatImplementsInterface).Implements(typeof(IInterface<int>))
-				.Should().Be.False();
+				.Should().BeFalse();
 		}
 
 		[TestMethod]
 		public void CheckTypeDoesNotImplementsInterface()
 		{
 			typeof(TypeThatImplementsInterface).Implements(typeof(INotImplementedInterface<string>))
-				.Should().Be.False();
+				.Should().BeFalse();
 		}
 
 		[TestMethod]
 		public void CheckTypeDoesNotImplementsGenericDefinitionInterface()
 		{
 			typeof(TypeThatImplementsInterface).Implements(typeof(INotImplementedInterface<>))
-				.Should().Be.False();
+				.Should().BeFalse();
 		}
 
 		private class TypeThatImplementsInterface : IInterface<string>

@@ -2,7 +2,7 @@
 {
     using Extensions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class BooleanExtensionsTest
@@ -24,7 +24,7 @@
 			var executed = false;
 			value.Extend().OnTrueExecute(() => executed = true);
 
-			executed.Should().Be.EqualTo(expectedExecuted);
+			executed.Should().Be(expectedExecuted);
 		}
 	}
 }

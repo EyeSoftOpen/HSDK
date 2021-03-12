@@ -3,7 +3,7 @@
     using EyeSoft.Serialization;
     using EyeSoft.Xml.Serialization;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class SerializerTest
@@ -13,7 +13,7 @@
 		{
 			Serializer.Set<XmlSerializerFactory>();
 
-			Serializer.Name.Should().Be.EqualTo(XmlSerializerFactory.Name);
+			Serializer.Name.Should().Be(XmlSerializerFactory.Name);
 		}
 	}
 }

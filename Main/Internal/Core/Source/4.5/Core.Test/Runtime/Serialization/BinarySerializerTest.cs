@@ -4,7 +4,7 @@
     using EyeSoft.Runtime.Serialization;
     using EyeSoft.Serialization;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class BinarySerializerTest
@@ -17,9 +17,9 @@
 			var original = new Foo { Property = "Value1" };
 			var cloned = serializer.Clone(original);
 
-			cloned.Property.Should().Be.EqualTo(original.Property);
+			cloned.Property.Should().Be(original.Property);
 
-			cloned.Should().Not.Be.SameInstanceAs(original);
+			cloned.Should().NotBeSameAs(original);
 		}
 
 		[Serializable]

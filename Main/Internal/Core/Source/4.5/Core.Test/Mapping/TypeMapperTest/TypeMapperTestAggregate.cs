@@ -4,7 +4,7 @@
     using System.Linq;
     using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class TypeMapperTestAggregate
@@ -15,12 +15,12 @@
 			var mappedType =
 				TypeMapperFactory.Create().Map<Blog>();
 
-			mappedType.Primitives.Count().Should("Primitives member are retrieved. Expected none.").Be.EqualTo(1);
-			mappedType.References.Count().Should("References member are retrieved. Expected none.").Be.EqualTo(0);
+			mappedType.Primitives.Count().Should().Be(1, "Primitives member are retrieved. Expected none.");
+			mappedType.References.Count().Should().Be(0, "References member are retrieved. Expected none.");
 			var collection = mappedType.Collections.Single();
 
-			collection.Name.Should().Be.EqualTo("PostList");
-			collection.Type.Should().Be.EqualTo(typeof(IList<Post>));
+			collection.Name.Should().Be("PostList");
+			collection.Type.Should().Be(typeof(IList<Post>));
 		}
 
 		// ReSharper disable once ClassNeverInstantiated.Local

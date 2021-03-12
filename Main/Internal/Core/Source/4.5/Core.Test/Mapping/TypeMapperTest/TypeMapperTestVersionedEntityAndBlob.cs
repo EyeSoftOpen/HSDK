@@ -4,7 +4,7 @@
     using EyeSoft.Mapping;
     using EyeSoft.Mapping.Conventions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class TypeMapperTestVersionedEntityAndBlob
@@ -20,10 +20,10 @@
 			mappedType
 				.Primitives
 				.Select(x => x.Name)
-				.Should().Have.SameValuesAs("Name", "Data");
+				.Should().BeEquivalentTo("Name", "Data");
 
 			mappedType.Version
-				.Name.Should().Be.EqualTo("Version");
+				.Name.Should().Be("Version");
 		}
 
 		private abstract class VersionedEntityWithBlob

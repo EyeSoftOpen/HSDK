@@ -2,7 +2,7 @@
 {
     using EyeSoft.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class PathExtensionsTest
@@ -10,19 +10,19 @@
 		[TestMethod]
 		public void VerifyTrimmedPathDoesNotContainDirectorySeparator()
 		{
-			@"c:\temp\".TrimPath().Should().Be.EqualTo(@"c:\temp");
+			@"c:\temp\".TrimPath().Should().Be(@"c:\temp");
 		}
 
 		[TestMethod]
 		public void CompareEqualPaths()
 		{
-			PathExtensions.Equals(@"c:\temp", @"c:\Temp\").Should().Be.True();
+			PathExtensions.Equals(@"c:\temp", @"c:\Temp\").Should().BeTrue();
 		}
 
 		[TestMethod]
 		public void CompareDifferentPaths()
 		{
-			PathExtensions.Equals(@"c:\temp1", @"c:\Temp").Should().Be.False();
+			PathExtensions.Equals(@"c:\temp1", @"c:\Temp").Should().BeFalse();
 		}
 	}
 }

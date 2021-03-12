@@ -10,7 +10,7 @@
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	[TestClass]
 	public class ViewModelWithFactoryTest
@@ -33,9 +33,9 @@
 		{
 			var viewModel = new MainViewModel(new ServiceFactory<IFooService>(() => new FooService()));
 
-			viewModel.FooList.Should().Have.Count.EqualTo(2);
-			viewModel.CurrentFooItem.Should().Be.SameInstanceAs(viewModel.FooList.First());
-			viewModel.Loaded.Should().Be.True();
+			viewModel.FooList.Should().HaveCount(2);
+			viewModel.CurrentFooItem.Should().BeSameAs(viewModel.FooList.First());
+			viewModel.Loaded.Should().BeTrue();
 		}
 
 		private class MainViewModel : ViewModel

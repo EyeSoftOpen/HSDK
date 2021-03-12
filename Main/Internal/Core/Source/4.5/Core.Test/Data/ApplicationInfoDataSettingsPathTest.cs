@@ -5,18 +5,16 @@
     using EyeSoft.IO;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ApplicationInfoDataSettingsPathTest
 	{
-		private readonly DataTestStorage storage;
-
-		public ApplicationInfoDataSettingsPathTest()
-		{
-			storage = new DataTestStorage(true);
-			Storage.Reset(() => storage);
-		}
+        public ApplicationInfoDataSettingsPathTest()
+        {
+            var storage = new DataTestStorage(true);
+            Storage.Reset(() => storage);
+        }
 
 		[TestMethod]
 		public void VerifyApplicationDataSettingsPath()
@@ -33,9 +31,9 @@
 			var info = new ApplicationInfo("EyeSoft", "Test");
 			var subFolders = new[] { "General", string.Empty };
 
-			Executing
-				.This(() => new DataSettingsConfiguration(new ApplicationData(info, DataScope.CurrentUser, subFolders), true, "MyData"))
-				.Should().Throw<ArgumentException>();
+            Action action = () => new DataSettingsConfiguration(new ApplicationData(info, DataScope.CurrentUser, subFolders), true, "MyData");
+
+			action.Should().Throw<ArgumentException>();
 		}
 	}
 }

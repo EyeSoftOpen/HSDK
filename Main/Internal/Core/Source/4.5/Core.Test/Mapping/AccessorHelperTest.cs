@@ -3,7 +3,7 @@
     using System.Reflection;
     using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class AccessorHelperTest
@@ -15,7 +15,7 @@
 		{
 			AccessorHelper
 				.Get(typeof(FieldAccessor).GetField("test", InstanceBindingFlags))
-				.Should().Be.EqualTo(Accessors.Field);
+				.Should().Be(Accessors.Field);
 		}
 
 		[TestMethod]
@@ -23,7 +23,7 @@
 		{
 			AccessorHelper
 				.Get(typeof(AutomaticPropertyAccessor).GetProperty("Test", InstanceBindingFlags))
-				.Should().Be.EqualTo(Accessors.Property);
+				.Should().Be(Accessors.Property);
 		}
 
 		[TestMethod]
@@ -31,7 +31,7 @@
 		{
 			AccessorHelper
 				.Get(new MemberInfoMetadata(typeof(PropertyNoSettAccessor).GetProperty("Test", InstanceBindingFlags)))
-				.Should().Be.EqualTo(Accessors.PropertyNoSetter);
+				.Should().Be(Accessors.PropertyNoSetter);
 		}
 
 		[TestMethod]
@@ -39,7 +39,7 @@
 		{
 			AccessorHelper
 				.Get(typeof(PropertyFieldAccessor).GetProperty("Test", InstanceBindingFlags))
-				.Should().Be.EqualTo(Accessors.Property);
+				.Should().Be(Accessors.Property);
 		}
 
 		[TestMethod]
@@ -47,7 +47,7 @@
 		{
 			AccessorHelper
 				.Get(typeof(ProtectedPropertyAccessor).GetProperty("Test", InstanceBindingFlags))
-				.Should().Be.EqualTo(Accessors.Property);
+				.Should().Be(Accessors.Property);
 		}
 
 		private class FieldAccessor

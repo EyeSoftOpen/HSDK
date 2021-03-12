@@ -6,7 +6,7 @@ namespace EyeSoft.FluentValidation.Test
     using EyeSoft.Validation;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	[TestClass]
 	public class ValidatorTest
@@ -36,7 +36,7 @@ namespace EyeSoft.FluentValidation.Test
 		{
 			var customer = new ValidableCustomer { Name = NameProperty };
 
-			validator.Validate(customer, NameProperty).Should().Be.Empty();
+			validator.Validate(customer, NameProperty).Should().BeEmpty();
 		}
 
 		[TestMethod]
@@ -47,7 +47,7 @@ namespace EyeSoft.FluentValidation.Test
 
 			validator
 				.Validate(customer, NameProperty)
-				.Should().Have.SameSequenceAs(new ValidationError(NameProperty, PropertyTooShort, Name));
+				.Should().BeSameAs(new[] { new ValidationError(NameProperty, PropertyTooShort, Name) });
 		}
 
 		[TestMethod]
@@ -57,9 +57,12 @@ namespace EyeSoft.FluentValidation.Test
 
 			validator
 				.Validate(customer, NameProperty)
-				.Should().Have.SameSequenceAs(
-					new ValidationError(NameProperty, PropertyEmpty, string.Empty),
-					new ValidationError(NameProperty, PropertyTooShort, null));
+				.Should().BeSameAs(
+					new[]
+                    {
+                        new ValidationError(NameProperty, PropertyEmpty, string.Empty),
+                        new ValidationError(NameProperty, PropertyTooShort, null)
+					});
 		}
 
 		[TestMethod]
@@ -67,7 +70,7 @@ namespace EyeSoft.FluentValidation.Test
 		{
 			var customer = new ValidableCustomer { Name = NameProperty, Address = AddressProperty };
 
-			validator.Validate(customer).Should().Be.Empty();
+			validator.Validate(customer).Should().BeEmpty();
 		}
 
 		[TestMethod]
@@ -84,7 +87,7 @@ namespace EyeSoft.FluentValidation.Test
 						new ValidationError(AddressProperty, PropertyEmpty, null)
 					};
 
-			validationErrors.Should().Have.SameSequenceAs(expectedValidationErrors);
+			validationErrors.Should().BeSameAs(expectedValidationErrors);
 		}
 
 		public class ValidableCustomer

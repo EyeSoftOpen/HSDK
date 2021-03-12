@@ -23,9 +23,7 @@
     <Owners>EyeSoft</Owners>
     <Product>EyeSoft.Core</Product>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageIconUrl />
     <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageTags>contract checking, message broker, LINQ, expression parser, IO, TPL, type auto-mapper, benchmark, calendar, schedule, serialization</PackageTags>
   </PropertyGroup>
   <ItemGroup>

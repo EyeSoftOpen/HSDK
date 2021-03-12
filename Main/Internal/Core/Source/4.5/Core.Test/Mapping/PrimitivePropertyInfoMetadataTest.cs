@@ -8,7 +8,7 @@
     using EyeSoft.Mapping;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class PrimitivePropertyInfoMetadataTest
@@ -22,10 +22,10 @@
 			var primitivePropertyInfoMetadata = new PrimitiveMemberInfoMetadata(propertyInfo);
 
 			primitivePropertyInfoMetadata
-				.Required.Should().Be.True();
+				.Required.Should().BeTrue();
 
 			primitivePropertyInfoMetadata
-				.Length.HasValue.Should().Be.False();
+				.Length.HasValue.Should().BeFalse();
 		}
 
 		[TestMethod]
@@ -39,10 +39,10 @@
 			var primitivePropertyInfoMetadata = new PrimitiveMemberInfoMetadata(propertyInfo);
 
 			primitivePropertyInfoMetadata
-				.SupportLength.Should().Be.True();
+				.SupportLength.Should().BeTrue();
 
 			primitivePropertyInfoMetadata
-				.Length.Should().Be.EqualTo(ExpectedLength);
+				.Length.Should().Be(ExpectedLength);
 		}
 
 		[TestMethod]
@@ -50,9 +50,9 @@
 		{
 			var propertyInfo = Mocking.Property<string>("Test");
 
-			Executing
-				.This(() => new ReferenceMemberInfoMetadata(propertyInfo))
-				.Should().Throw<ArgumentException>();
+			Action action = () => new ReferenceMemberInfoMetadata(propertyInfo);
+
+            action.Should().Throw<ArgumentException>();
 		}
 	}
 

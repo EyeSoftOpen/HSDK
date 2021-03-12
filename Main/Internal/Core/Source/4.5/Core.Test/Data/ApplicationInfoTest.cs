@@ -3,7 +3,7 @@
     using System;
     using EyeSoft.Data;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ApplicationInfoTest
@@ -17,7 +17,7 @@
 
 			Action register = () => applicationInfo.Settings<Foo>(true, new[] { "Folder" });
 
-			Executing.This(register).Should().Throw<InvalidOperationException>();
+            register.Should().Throw<InvalidOperationException>();
 		}
 
 		[TestMethod]
@@ -29,12 +29,12 @@
 			var applicationDataSettings = usersPath.Settings<Foo>();
 			var existingApplicationDataSettings = applicationInfo.Settings<Foo>(new[] { "Users" });
 
-			applicationDataSettings.Should().Be.SameInstanceAs(existingApplicationDataSettings);
+			applicationDataSettings.Should().BeSameAs(existingApplicationDataSettings);
 
 			var pathFromApplicationData = applicationDataSettings.Configuration.Path;
 			var pathFromApplicationInfo = existingApplicationDataSettings.Configuration.Path;
 
-			pathFromApplicationData.Should().Be.EqualTo(pathFromApplicationInfo);
+			pathFromApplicationData.Should().Be(pathFromApplicationInfo);
 		}
 
 		private class Foo

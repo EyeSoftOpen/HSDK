@@ -1,111 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AEB9B57C-50E1-4858-86AC-6B9DC21031BB}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EyeSoft.Windows</RootNamespace>
-    <AssemblyName>EyeSoft.Windows</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <TargetFrameworkProfile />
-    <RestorePackages>true</RestorePackages>
-    <BuildPackage>true</BuildPackage>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <RestorePackages>true</RestorePackages>
-    <BuildPackage>true</BuildPackage>
-  </PropertyGroup>
+
   <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>3.0.7736.24658</Version>
+    <Description>WPF controls, converters and helpers for MVVM.</Description>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyOriginatorKeyFile>J:\EyeSoft.pfx</AssemblyOriginatorKeyFile>
+    <Authors>Matteo Migliore</Authors>
+    <Company>EyeSoft</Company>
+    <Copyright>EyeSoft ©2021</Copyright>
+    <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
+    <Product>EyeSoft.Windows</Product>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>WPF, windows, converters, MVVM, presentation, UI</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
-  <PropertyGroup>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>EyeSoft.Windows.Test, PublicKey=0024000004800000140100000602000000240000525341310008000001000100b15645c56b6f2c52ff34036a74184b325041bdd35127b6bdeb6e5fd652148ba27714b15fd654deece4066a6033d04708ad339c63e11dd2a86e053370042ca45f0cc9f7c3acb315b730de3273c33a7f44c2fb0b1df81a593199e277e4304d239f8e7fe42fe7e2d660c81137a38a4de77499a68e9251e819cae272b91afbdefe737dc504da52596c4a79d77f1c9c3ed42c61496d9ab035888956ac075d1c58334bf27413c185f525e5957a8a42ca0a70a7c59ecc6d7018b96e94ca6feb9c04eee35e1c79b40d548b0310ff60ef8b6c3d1423e97ad4ba64109112539e48038851b677284a4f3c1cb685f6f6916d9935b2b55c93074f1c9423f20754ecc08e71ffca</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\doc\imgs\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ApplicationExtensions.cs" />
-    <Compile Include="Clipboard\Clipboard.cs" />
-    <Compile Include="Clipboard\ClipboardWrapper.cs" />
-    <Compile Include="Clipboard\IClipboard.cs" />
-    <Compile Include="Runtime\InstallationType.cs" />
-    <Compile Include="Shell\Hotkey.cs" />
-    <Compile Include="Shell\ShellExtensions.cs" />
-    <Compile Include="SingleInstance\ApplicationMutex.cs" />
-    <Compile Include="SingleInstance\ApplicationMutexes.cs" />
-    <Compile Include="Component.cs" />
-    <Compile Include="Converters\ViewModelToComponentConverter.cs" />
-    <Compile Include="Controls\EnsureVisibleListBox.cs" />
-    <Compile Include="Controls\Extensions\HyperlinkExtensions.cs" />
-    <Compile Include="Controls\Extensions\MouseExtensions.cs" />
-    <Compile Include="Converters\ValueConverter%27TSource%27TDestination%27TParameter.cs" />
-    <Compile Include="Converters\ValueConverter%27TSource%27TDestionation.cs" />
-    <Compile Include="IApplicationEntryPoint.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controls\Extensions\SizeExtensions.cs" />
-    <Compile Include="Markup\XamlParser.cs" />
-    <Compile Include="Runtime\ApplicationRuntime.cs" />
-    <Compile Include="Runtime\ApplicationRuntimeConfiguration.cs" />
-    <Compile Include="Runtime\FluentApplicationRuntimeConfiguration.cs" />
-    <Compile Include="Runtime\IApplicationRuntimeConfigurationDownloadUrl.cs" />
-    <Compile Include="Runtime\IApplicationRuntimeConfigurationName.cs" />
-    <Compile Include="SingleInstance\SingleInstance.cs" />
-    <Compile Include="SingleInstance\WindowsHelper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Core\Source\4.0\Core\EyeSoft.Core.csproj">
-      <Project>{4c464a88-7d14-4755-9ebf-82bbe1b168ed}</Project>
-      <Name>EyeSoft.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Package.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

@@ -5,7 +5,7 @@
     using EyeSoft.Mapping;
     using Helpers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ReferencePropertyInfoMetadataTest
@@ -15,9 +15,9 @@
 		{
 			var propertyInfo = Mocking.Property<string>("Test");
 
-			Executing
-				.This(() => new ReferenceMemberInfoMetadata(propertyInfo))
-				.Should().Throw<ArgumentException>();
+            Action action = () => new ReferenceMemberInfoMetadata(propertyInfo);
+
+            action.Should().Throw<ArgumentException>();
 		}
 
 		[TestMethod]
@@ -27,7 +27,7 @@
 				Mocking.Property<Address>("Test");
 
 			new ReferenceMemberInfoMetadata(propertyInfo)
-				.Required.Should().Be.False();
+				.Required.Should().BeFalse();
 		}
 
 		[TestMethod]
@@ -37,7 +37,7 @@
 				Mocking.Property<Address>("Test", new RequiredAttribute());
 
 			new ReferenceMemberInfoMetadata(propertyInfo)
-				.Required.Should().Be.True();
+				.Required.Should().BeTrue();
 		}
 	}
 }

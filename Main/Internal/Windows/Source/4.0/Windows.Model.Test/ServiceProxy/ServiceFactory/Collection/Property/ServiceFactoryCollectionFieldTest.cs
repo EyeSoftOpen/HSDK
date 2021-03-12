@@ -7,7 +7,7 @@
     using Demo.ViewModels;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Model.Collections.ObjectModel;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class ServiceFactoryCollectionFieldTest : ServiceFactoryTest
@@ -20,7 +20,7 @@
 			viewModel
 				.CustomerCollection
 				.Select(x => x.Id)
-				.Should().Have.SameSequenceAs(Known.Customer.All.OrderBy(x => x.FirstName).Select(x => x.Id));
+				.Should().BeSameAs(Known.Customer.All.OrderBy(x => x.FirstName).Select(x => x.Id));
 		}
 
 		private class FilledViewModel : CollectionViewModel

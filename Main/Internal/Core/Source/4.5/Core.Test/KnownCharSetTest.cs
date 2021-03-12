@@ -2,7 +2,7 @@ namespace EyeSoft.Core.Test
 {
     using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
     using Text;
 
     [TestClass]
@@ -13,7 +13,7 @@ namespace EyeSoft.Core.Test
 		{
 			CharSet
 				.LowerCase.All(char.IsLower)
-				.Should().Be.True();
+				.Should().BeTrue();
 		}
 
 		[TestMethod]
@@ -21,7 +21,7 @@ namespace EyeSoft.Core.Test
 		{
 			CharSet
 				.UpperCase.All(char.IsUpper)
-				.Should().Be.True();
+				.Should().BeTrue();
 		}
 
 		[TestMethod]
@@ -29,7 +29,7 @@ namespace EyeSoft.Core.Test
 		{
 			CharSet
 				.Numbers.All(char.IsNumber)
-				.Should().Be.True();
+				.Should().BeTrue();
 		}
 	}
 }

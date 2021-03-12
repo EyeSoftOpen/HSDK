@@ -1,9 +1,10 @@
 ﻿namespace EyeSoft.Core.Test.IO
 {
+    using System;
     using System.IO;
     using EyeSoft.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using SharpTestsEx;
+    using FluentAssertions;
 
     [TestClass]
 	public class FileInfoWrapperTest
@@ -15,21 +16,26 @@
 		{
 			IFileInfo fileInfo = null;
 
-			Executing.This(() => fileInfo = new FileInfoWrapper(Path)).Should().NotThrow();
+            Action create = () => fileInfo = new FileInfoWrapper(Path);
 
-			fileInfo.FullName.Should().Be.EqualTo(Path);
+            create.Should().NotThrow();
+
+			fileInfo.FullName.Should().Be(Path);
 
 			const string FullDirectoryName = "R:\\Fake-Path\\2013\\19\\08";
-			fileInfo.DirectoryName.Should().Be.EqualTo(FullDirectoryName);
-			fileInfo.Directory.Name.Should().Be.EqualTo("08");
-			fileInfo.Directory.FullName.Should().Be.EqualTo(FullDirectoryName);
+			fileInfo.DirectoryName.Should().Be(FullDirectoryName);
+			fileInfo.Directory.Name.Should().Be("08");
+			fileInfo.Directory.FullName.Should().Be(FullDirectoryName);
 
-			fileInfo.Exists.Should().Be.False();
+			fileInfo.Exists.Should().BeFalse();
 
 			const int ExpectedLength = -1;
 			long length = ExpectedLength;
-			Executing.This(() => { length = fileInfo.Length; }).Should().Throw<FileNotFoundException>();
-			length.Should().Be.EqualTo(ExpectedLength);
+
+            Action action = () => { length = fileInfo.Length; };
+            
+            action.Should().Throw<FileNotFoundException>();
+			length.Should().Be(ExpectedLength);
 		}
 	}
 }

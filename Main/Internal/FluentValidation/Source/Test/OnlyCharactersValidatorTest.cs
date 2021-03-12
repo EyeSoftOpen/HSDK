@@ -14,7 +14,7 @@
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-	using SharpTestsEx;
+	using FluentAssertions;
 
 	[TestClass]
 	public class OnlyCharactersValidatorTest
@@ -23,21 +23,21 @@
 		public void VerifyOnlyCharactersValidatorWithNullTextNotReturnsErrors()
 		{
 			var result = Validate((object)null);
-			result.Should().Be.Empty();
+			result.Should().BeEmpty();
 		}
 
 		[TestMethod]
 		public void VerifyOnlyCharactersValidatorWithTextNotReturnsErrors()
 		{
 			var result = Validate("Abc");
-			result.Should().Be.Empty();
+			result.Should().BeEmpty();
 		}
 
 		[TestMethod]
 		public void VerifyOnlyCharactersValidatorWithWrongTextReturnsErrors()
 		{
 			var result = Validate("Abc1");
-			result.Should().Not.Be.Empty();
+			result.Should().NotBeEmpty();
 		}
 
 		private static IEnumerable<ValidationFailure> Validate<T>(T value)
