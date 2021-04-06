@@ -1,8 +1,8 @@
 ﻿namespace EyeSoft.Demo.Localization.Windows.ViewModels.Main
 {
     using System;
+    using EyeSoft.Core.Localization;
     using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.Localization;
     using MahApps.Metro.IconPacks;
 
     public class MenuItemViewModel : ViewModel
@@ -11,7 +11,10 @@
         private readonly Action navigate;
         private readonly string label;
 
-        public MenuItemViewModel(ITranslationEngine translationEngine, string label, PackIconFontAwesomeKind icon,
+        public MenuItemViewModel(
+            ITranslationEngine translationEngine,
+            string label,
+            PackIconFontAwesomeKind icon,
             Action navigate)
         {
             this.translationEngine = translationEngine;

@@ -14,8 +14,8 @@
     <copyright>$author$</copyright>
     <tags>data sqlite</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.7736.24658" />
-      <dependency id="EyeSoft.Data" version="3.0.7736.24658" />
+      <dependency id="EyeSoft.Core" version="3.0.7760.34875" />
+      <dependency id="EyeSoft.Data" version="3.0.7760.34875" />
       <dependency id="System.Data.SQLite" version="1.0.101.0" />
     </dependencies>
     <frameworkAssemblies>

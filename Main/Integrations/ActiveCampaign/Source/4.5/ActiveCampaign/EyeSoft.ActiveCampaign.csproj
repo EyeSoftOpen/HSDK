@@ -14,7 +14,7 @@
     <DelaySign>false</DelaySign>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>The ActiveCampaign API .NET wrapper.</Description>
-    <Version>3.0.7736.24658</Version>
+    <Version>3.0.7760.34875</Version>
     <Authors>Matteo Migliore</Authors>
     <Copyright>EyeSoft ©2021</Copyright>
     <Company>EyeSoft</Company>

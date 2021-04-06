@@ -15,7 +15,7 @@
     <DelaySign>false</DelaySign>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A base class library to add useful extensions to .NET, like messanging, LINQ expression parser and extension methods, Task Parallel Library helpers, type auto-mapping for storage and benchmark.</Description>
-    <Version>3.0.7736.24658</Version>
+    <Version>3.0.7760.34875</Version>
     <Company>EyeSoft</Company>
     <Copyright>EyeSoft ©2021</Copyright>
     <PackageProjectUrl>https://github.com/Eye-Soft/HSDK</PackageProjectUrl>
@@ -32,11 +32,13 @@
     </AssemblyAttribute>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Localization\Providers\" />
     <Folder Include="Properties\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.CodeDom" Version="5.0.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />

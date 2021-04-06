@@ -1,7 +1,7 @@
 ﻿namespace EyeSoft.Demo.Localization.Windows.ViewModels.Main
 {
+    using EyeSoft.Core.Localization;
     using EyeSoft.Windows.Model;
-    using EyeSoft.Windows.Model.Localization;
 
     public class LanguageViewModel : ViewModel
     {

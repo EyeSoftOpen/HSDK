@@ -13,9 +13,9 @@
     <copyright>$author$</copyright>
     <tags>nhibernate dataannotations mapping ORM abstraction</tags>
     <dependencies>
-      <dependency id="EyeSoft.Core" version="3.0.7736.24658" />
-      <dependency id="EyeSoft.Data" version="3.0.7736.24658" />
-      <dependency id="EyeSoft.Domain" version="3.0.7736.24658" />
+      <dependency id="EyeSoft.Core" version="3.0.7760.34875" />
+      <dependency id="EyeSoft.Data" version="3.0.7760.34875" />
+      <dependency id="EyeSoft.Domain" version="3.0.7760.34875" />
       <dependency id="CommonServiceLocator" version="2.0.5" />
       <dependency id="NHibernate" version="4.0.4.4000" />
     </dependencies>

@@ -6,36 +6,29 @@ void Main()
 {
 	Util.AutoScrollResults = true;
 	
-	var nugetHelper = new HsdkNugetHelper();
+	//ICommandLine commandLine = new NullCommandLine();	
+	ICommandLine commandLine = new CommandLine();	
+	var nugetHelper = new HsdkNugetHelper(commandLine);
 	
-	var newVersion = nugetHelper.GetNewVersion().Dump("New version");
+	//var newVersion = nugetHelper.GetNewVersion().Dump("New version");
 	
-	nugetHelper.BuildAndPackAndPushAll();
+	nugetHelper.BuildAndPackAndPushAll(false, true);
 	
 	//nugetHelper.CopyAllPackagesToFolderForPublish(false);
 	//nugetHelper.PushAllPackages();
 	//nugetHelper.ShowAllVersions();
-	//return;
-	//CopyAllPackagesToFolderForPublish(basePath, true);
 	
-	var newVersionText = "3.0.7736.24658";
-	var oldYears = "2020";
 	//return;
-	//new[]
-	//{
-	//	"3.0.7713.28810",
-	//	"3.0.7714.20388",
-	//	"3.0.6836.35031",
-	//	"3.0.7349.34482",
-	//	"3.0.7333.34942"
-	//	}
-	//	.ToList()
-	//	.ForEach(x => ReplaceOldVersionWithNewVersion(basePath, x, newVersionText, oldYears));
-
-	//BuildTheSolution(basePath);
-
-	//CopyAllPackagesToFolderForPublish(basePath, true);
-	//return;
+	//nugetHelper.ReplaceOldVersionWithNewVersion(
+	//	new[]
+	//	{
+	//		"3.0.6836.35031",
+	//		"3.0.7333.34942",
+	//		"3.0.7349.34482",
+	//		"3.0.7713.28810",
+	//		"3.0.7714.20388",
+	//		"3.0.7736.24658"
+	//	}, "2020");
 
 	//nugetHelper.BuildProject("EyeSoft.Core");
 	//nugetHelper.CopyAllPackagesToFolderForPublish(false);
@@ -45,7 +38,7 @@ void Main()
 #endregion
 public class HsdkNugetHelper : NugetHelper
 {
-	public HsdkNugetHelper() : base(@"D:\GitHub\HSDK\Main", "EyeSoft.Hsdk.sln", GetPackages())
+	public HsdkNugetHelper(ICommandLine commandLine) : base(commandLine, @"D:\GitHub\HSDK\Main", "EyeSoft.Hsdk.sln", GetPackages())
 	{
 		
 	}
@@ -54,22 +47,22 @@ public class HsdkNugetHelper : NugetHelper
 	{
 		var packages = new[]
 		{
-			//new Package("EyeSoft.Accounting"),
-			//new Package("EyeSoft.Accounting.Italian"),
-			//new Package("EyeSoft.Accounting.Italian.Istat"),
-			//new Package("EyeSoft.ActiveCampaign", "4.5"),
-			//new Package("EyeSoft.AutoMapper"),
+			new Package("EyeSoft.Accounting"),
+			new Package("EyeSoft.Accounting.Italian"),
+			new Package("EyeSoft.Accounting.Italian.Istat"),
+			new Package("EyeSoft.ActiveCampaign", "4.5"),
+			new Package("EyeSoft.AutoMapper"),
 			new Package("EyeSoft.Core", "4.0"),
-			//new Package("EyeSoft.Data"),
-			//new Package("EyeSoft.Data.Nhibernate"),
-			//new Package("EyeSoft.Data.SqLite"),
-			//new Package("EyeSoft.Domain"),
-			//new Package("EyeSoft.FluentValidation"),
-			//new Package("EyeSoft.ServiceLocator"),
-			//new Package("EyeSoft.ServiceLocator.Windsor"),
-			////new Package("EyeSoft.Web", "4.5"),
-			//new Package("EyeSoft.Windows", "4.0"),
-			//new Package("EyeSoft.Windows.Model", "4.0")
+			new Package("EyeSoft.Data"),
+			new Package("EyeSoft.Data.Nhibernate"),
+			new Package("EyeSoft.Data.SqLite"),
+			new Package("EyeSoft.Domain"),
+			new Package("EyeSoft.FluentValidation"),
+			new Package("EyeSoft.ServiceLocator"),
+			new Package("EyeSoft.ServiceLocator.Windsor"),
+			//new Package("EyeSoft.Web", "4.5"),
+			new Package("EyeSoft.Windows", "4.0"),
+			new Package("EyeSoft.Windows.Model", "4.0")
 		};
 		
 		return packages;
@@ -77,14 +70,37 @@ public class HsdkNugetHelper : NugetHelper
 }
 
 #region Base
+public class CommandLine : ICommandLine
+{
+	public void Execute(string commandText)
+	{
+		Util.Cmd(commandText);
+	}
+}
+
+public class NullCommandLine : ICommandLine
+{
+	public void Execute(string commandText)
+	{
+		Console.WriteLine(commandText);
+	}
+}
+
+public interface ICommandLine
+{
+	void Execute(string commandText);
+}
+
 public class NugetHelper
 {
+	private ICommandLine commandLine;
 	private readonly string basePath;
 	private readonly string solutionName;
 	private readonly string publishFolder;
 
-	public NugetHelper(string basePath, string solutionName, IEnumerable<Package> packages)
+	public NugetHelper(ICommandLine commandLine, string basePath, string solutionName, IEnumerable<Package> packages)
 	{
+		this.commandLine = commandLine;
 		this.basePath = basePath;
 		this.solutionName = solutionName;
 		Packages = packages;
@@ -100,13 +116,18 @@ public class NugetHelper
 		new DirectoryInfo(basePath)
 			.GetFiles("*.*", SearchOption.AllDirectories)
 			.Where(x =>
-				new[] { ".nuspec", ".csproj" }.Contains(x.Extension) &&
-				!x.FullName.Contains("obj\\debug", StringComparison.InvariantCultureIgnoreCase))
+				!x.Name.Contains("Test") &&
+				(x.Name.Equals("AssemblyInfo.cs", StringComparison.InvariantCultureIgnoreCase) ||
+				new[] { ".csproj", ".nuspec" }.Contains(x.Extension)) &&
+				(!x.FullName.Contains("obj\\debug", StringComparison.InvariantCultureIgnoreCase) &&
+				!x.FullName.Contains("obj\\release", StringComparison.InvariantCultureIgnoreCase)))
 			.Select(x => new
 			{
 				x.FullName,
 				Lines = File.ReadAllLines(x.FullName).Where(y =>
-					(y.Contains("<version>") ||
+					(
+					y.Contains("<Version>") ||
+					y.Contains("<version>") ||
 					y.Contains("<dependency ")) &&
 					y.Contains("3."))
 			})
@@ -116,10 +137,27 @@ public class NugetHelper
 
 	public void BuildSolution()
 	{
+		CleanSolution();
+		
 		var msBuildPath = @"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\MSBuild\Current\Bin\msbuild.exe";
 		var msbuild = $@"""{msBuildPath}"" ""{basePath}\{solutionName}"" /p:Configuration=""Release"" /t:Rebuild /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /m";
 		msbuild.Dump();
-		Util.Cmd(msbuild);
+		commandLine.Execute(msbuild);
+	}
+
+	public void CleanSolution()
+	{
+		new DirectoryInfo(basePath)
+			.GetDirectories("*.*", SearchOption.AllDirectories)
+			.Where(x => x.FullName.IndexOf(@"\bin", StringComparison.InvariantCultureIgnoreCase) > 0)
+			.ToList()
+			.ForEach(x => { try { x.Delete(true); } catch { }});
+
+		new DirectoryInfo(basePath)
+			.GetDirectories("*.*", SearchOption.AllDirectories)
+			.Where(x => x.FullName.IndexOf(@"\obj", StringComparison.InvariantCultureIgnoreCase) > 0)
+			.ToList()
+			.ForEach(x => { try { x.Delete(true); } catch { } });
 	}
 
 	public void BuildProject(Package package)
@@ -130,7 +168,7 @@ public class NugetHelper
 
 		var msbuild = $@"""{msBuildPath}"" ""{projectFile.FullName}"" /p:Configuration=""Release"" /t:Rebuild /p:IncludeSource=true /p:IncludeSymbols=true /p:GeneratePackageOnBuild=true /p:SymbolPackageFormat=snupkg";
 		
-		Util.Cmd(msbuild);
+		commandLine.Execute(msbuild);
 	}
 
 	public void Pack(Package package)
@@ -151,12 +189,12 @@ public class NugetHelper
 		ConsoleHelper.WriteLine($"Building {package.Name}...", ConsoleColor.Blue);
 		ConsoleHelper.WriteLine($"{nugetPathCommand}", ConsoleColor.Green);
 		
-		Util.Cmd(nugetPathCommand);
+		commandLine.Execute(nugetPathCommand);
 		
 		Console.WriteLine();
 	}
 
-	public void BuildAndPackAndPushAll()
+	public void BuildAndPackAndPushAll(bool skipBuild = false, bool skipPack = false)
 	{
 		var projects =
 			new DirectoryInfo(basePath)
@@ -164,15 +202,21 @@ public class NugetHelper
 				.Select(x => new { x.FullName, Package = FindPackage(x) })
 				.Where(x => x.Package != null)
 				.Select(x => new { x.Package, x.FullName });
-				//.Where(x => x.Package.Name == "EyeSoft.Windows.Model");
+		//.Where(x => x.Package.Name == "EyeSoft.Windows.Model");
 
-		BuildSolution();
-		
-		foreach (var project in projects)
+		if (!skipBuild)
 		{
-			//BuildProject(project.Package);
+			BuildSolution();
+		}
 
-			Pack(project.Package);
+		if (!skipPack)
+		{
+			foreach (var project in projects)
+			{
+				//BuildProject(project.Package);
+
+				Pack(project.Package);
+			}
 		}
 		
 		CopyAllPackagesToFolderForPublish(false);
@@ -186,22 +230,31 @@ public class NugetHelper
 			new DirectoryInfo(publishFolder)
 				.GetFiles("*.*", SearchOption.AllDirectories)
 				.Where(x =>
+					IsPackage(x.Name) &&
 					(x.Name.EndsWith(".snupkg") ||
 					x.Name.EndsWith(".symbols.nupkg") ||
 					x.Name.EndsWith(".nupkg")))
 				.ToArray();
 
+		var apiKey = Util.GetPassword("Nuget.ApiKey");
+		
 		foreach (var package in packages)
 		{
 			try
 			{
 				ConsoleHelper.WriteLine($"Pushing {package.Name}...", ConsoleColor.Blue);
-				var pushCommand = $"nuget push \"{package}\" -Source https://api.nuget.org/v3/index.json";
+				var nugetPath = Path.Combine(basePath, ".nuget", "nuget.exe");
 
-				Util.Cmd(pushCommand);
+				var pushCommand = $"{nugetPath} push \"{package}\" -Source https://api.nuget.org/v3/index.json -ApiKey {apiKey}";
+
+				commandLine.Execute(pushCommand);
 				
 				Console.WriteLine();
-			}catch{}
+			}
+			catch (Exception exception)
+			{
+				exception.Dump($"Error publishing {package.Name}");
+			}
 		}
 	}
 
@@ -218,8 +271,7 @@ public class NugetHelper
 					(x.Name.EndsWith(".snupkg") ||
 					x.Name.EndsWith(".symbols.nupkg") ||
 					x.Name.EndsWith(".nupkg")))
-				.ToArray()
-				.Dump();
+				.ToArray();
 
 		if (deleteSymbols)
 		{
@@ -237,12 +289,11 @@ public class NugetHelper
 		{
 			var destination = Path.Combine(publishFolder, buildPackage.Name);
 			
-			Console.WriteLine(destination);
 			buildPackage.CopyTo(destination, true);
 		}
 	}
 
-	public void ReplaceOldVersionWithNewVersion(string currentVersion, string newVersion, params string[] years)
+	public void ReplaceOldVersionWithNewVersion(IEnumerable<string> previousVersions, string newVersion, params string[] years)
 	{
 		var files =
 		new DirectoryInfo(basePath)
@@ -259,53 +310,57 @@ public class NugetHelper
 		var currentYear = DateTime.UtcNow.Year;
 		var list = new List<string>();
 
-		foreach (var file in files)
+		foreach (var previousVersion in previousVersions)
 		{
-			var updatedText = file.Text;
-
-			switch (file.File.Extension)
+			foreach (var file in files)
 			{
-				case ".cs":
-					updatedText =
-						updatedText
-							.Replace($"[assembly: AssemblyVersion(\"{currentVersion}\")]", $"[assembly: AssemblyVersion(\"{newVersion}\")]")
-							.Replace($"[assembly: AssemblyFileVersion(\"{currentVersion}\")", $"[assembly: AssemblyFileVersion(\"{newVersion}\")");
+				var updatedText = file.Text;
 
-					foreach (var year in years)
-					{
-						updatedText = updatedText
-							.Replace($"[assembly: AssemblyCopyright(\"Copyright © EyeSoft {year}\")]", $"[assembly: AssemblyCopyright(\"Copyright © EyeSoft {currentYear}\")]");
-					}
+				switch (file.File.Extension)
+				{
+					case ".cs":
+						updatedText =
+							updatedText
+								.Replace($"[assembly: AssemblyVersion(\"{previousVersion}\")]", $"[assembly: AssemblyVersion(\"{newVersion}\")]")
+								.Replace($"[assembly: AssemblyFileVersion(\"{previousVersion}\")", $"[assembly: AssemblyFileVersion(\"{newVersion}\")");
 
-					break;
+						foreach (var year in years)
+						{
+							updatedText = updatedText
+								.Replace($"[assembly: AssemblyCopyright(\"Copyright © EyeSoft {year}\")]", $"[assembly: AssemblyCopyright(\"Copyright © EyeSoft {currentYear}\")]");
+						}
 
-				case ".csproj":
-					updatedText = updatedText.Replace($"<Version>{currentVersion}</Version>", $"<Version>{newVersion}</Version>");
+						break;
 
-					foreach (var year in years)
-					{
-						updatedText = updatedText
-							.Replace($"<Copyright>EyeSoft ©{year}</Copyright>", $"<Copyright>EyeSoft ©{currentYear}</Copyright>");
-					}
+					case ".csproj":
+						updatedText = updatedText.Replace($"<Version>{previousVersion}</Version>", $"<Version>{newVersion}</Version>");
 
-					break;
+						foreach (var year in years)
+						{
+							updatedText = updatedText
+								.Replace($"<Copyright>EyeSoft ©{year}</Copyright>", $"<Copyright>EyeSoft ©{currentYear}</Copyright>");
+						}
 
-				case ".nuspec":
-					updatedText = updatedText.Replace($@"version=""{currentVersion}""", $@"version=""{newVersion}""");
+						break;
 
-					foreach (var year in years)
-					{
-						updatedText = updatedText
-							.Replace($"<Copyright>EyeSoft ©{year}</Copyright>", $"<Copyright>EyeSoft ©{currentYear}</Copyright>");
-					}
+					case ".nuspec":
+						updatedText = updatedText.Replace($@"version=""{previousVersion}""", $@"version=""{newVersion}""");
 
-					break;
-			}
+						foreach (var year in years)
+						{
+							updatedText = updatedText
+								.Replace($"<Copyright>EyeSoft ©{year}</Copyright>", $"<Copyright>EyeSoft ©{currentYear}</Copyright>");
+						}
 
-			if (file.Text != updatedText)
-			{
-				list.Add(file.File.FullName);
-				File.WriteAllText(file.File.FullName, updatedText, Encoding.UTF8);
+						break;
+				}
+
+				if (file.Text != updatedText)
+				{
+					list.Add(file.File.FullName);
+
+					File.WriteAllText(file.File.FullName, updatedText, Encoding.UTF8);
+				}
 			}
 		}
 
@@ -320,7 +375,7 @@ public class NugetHelper
 		return $"{version}";
 	}
 
-	public FileInfo FindProject(Package package)
+	private FileInfo FindProject(Package package)
 	{
 		var projects = new DirectoryInfo(basePath)
 			.GetFiles("*.csproj", SearchOption.AllDirectories)
@@ -331,11 +386,28 @@ public class NugetHelper
 		return project;
 	}
 	
-	public Package FindPackage(FileInfo file)
+	private Package FindPackage(FileInfo file)
 	{
 		var package = Packages.SingleOrDefault(y => $"{y.Name}.csproj" == file.Name);
 		
 		return package;
+	}
+
+	private bool IsPackage(string name)
+	{
+		var packageName = Path.GetFileNameWithoutExtension(name);
+		
+		var firstNumber =
+			packageName
+				.Select((x, index) => new { Char = x, Index = index })
+				.First(x => char.IsNumber(x.Char))
+				.Index;
+				
+		packageName = packageName.Substring(0, firstNumber - 1);
+		
+		var isPackage = Packages.Any(x => x.Name == packageName);
+
+		return isPackage;
 	}
 }
 

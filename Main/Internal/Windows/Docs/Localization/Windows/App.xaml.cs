@@ -1,12 +1,12 @@
 ﻿namespace EyeSoft.Demo.Localization.Windows
 {
     using System.Globalization;
-    using System.Threading;
-    using System.Windows;
-    using System.Windows.Markup;
+    using System.IO;
+    using System.Reflection;
+    using EyeSoft.Core.Localization;
+    using EyeSoft.Core.Localization.Providers;
     using EyeSoft.Demo.Localization.Windows.ViewModels.Main;
     using EyeSoft.Windows.Model.Localization;
-    using EyeSoft.Windows.Model.Localization.Providers;
 
     public partial class App
     {
@@ -23,7 +23,8 @@
             //        CultureInfo.CreateSpecificCulture("en")));
 
             ITranslationEngine translationEngine =
-                new TranslationEngine(new JsonTranslationProvider(GetType().Assembly))
+                new WindowsTranslationEngine(new FileJsonTranslationProvider(Path.Combine(new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.Parent.Parent.FullName, "Data", "Translation.json")))
+                //new WindowsTranslationEngine(new EmbeddedJsonTranslationProvider(GetType().Assembly))
                 {
                     CurrentLanguage = culture
                 };

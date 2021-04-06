@@ -4,6 +4,7 @@
     using System.Globalization;
     using System.Linq;
     using System.Windows.Input;
+    using EyeSoft.Core.Localization;
     using EyeSoft.Demo.Localization.Windows.ViewModels.Home;
     using EyeSoft.Demo.Localization.Windows.ViewModels.Login;
     using EyeSoft.Demo.Localization.Windows.ViewModels.Settings;

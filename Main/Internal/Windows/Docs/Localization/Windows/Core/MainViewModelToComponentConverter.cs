@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using EyeSoft.Demo.Localization.Windows.ViewModels.Home;
-using EyeSoft.Demo.Localization.Windows.ViewModels.Login;
-using EyeSoft.Demo.Localization.Windows.ViewModels.Settings;
-using EyeSoft.Windows.Converters;
-
-namespace EyeSoft.Demo.Localization.Windows.Core
+﻿namespace EyeSoft.Demo.Localization.Windows.Core
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using EyeSoft.Demo.Localization.Windows.ViewModels.Home;
+    using EyeSoft.Demo.Localization.Windows.ViewModels.Login;
+    using EyeSoft.Demo.Localization.Windows.ViewModels.Settings;
+    using EyeSoft.Windows.Converters;
+
     public class MainViewModelToComponentConverter : ViewModelToComponentConverter
     {
         private static readonly Type defaultViewModelType = typeof(LoginViewModel);

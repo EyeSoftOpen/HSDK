@@ -10,7 +10,7 @@
     <Authors>EyeSoft.Domain</Authors>
     <Company>EyeSoft</Company>
     <Description>Base classes to implement a Domain Model also using DDD (Domain Driven Development) and to abstract the ORM or the storage and change it simply.</Description>
-    <Version>3.0.7736.24658</Version>
+    <Version>3.0.7760.34875</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>

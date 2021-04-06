@@ -3,6 +3,7 @@
     using System;
     using System.ComponentModel;
     using System.Windows;
+    using EyeSoft.Core.Localization;
 
     public class TranslationData : IWeakEventListener, INotifyPropertyChanged, IDisposable
     {

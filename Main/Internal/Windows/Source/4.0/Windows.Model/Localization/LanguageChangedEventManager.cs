@@ -2,6 +2,7 @@
 {
     using System;
     using System.Windows;
+    using EyeSoft.Core.Localization;
 
     public class LanguageChangedEventManager : WeakEventManager
     {
